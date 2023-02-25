@@ -1,0 +1,115 @@
+{
+    "items": [     
+        { 
+            "title": "[COLOR khaki]Open Addon Settings [/COLOR]", 
+            "type": "item", 
+            "link": "settings", 
+            "thumbnail": "", 
+            "fanart": ""
+        }, 
+        { 
+            "title": "[COLOR khaki]Authorise Resolveurl[/COLOR]", 
+            "type": "plugin", 
+            "link": "resolveurl_auth", 
+            "thumbnail": "", 
+            "fanart": ""
+        }, 
+        { 
+            "title": "[COLOR khaki]Open ResolveURL Settings[/COLOR]", 
+            "type": "plugin", 
+            "link": "resolveurl_settings", 
+            "thumbnail": "", 
+            "fanart": ""
+        }, 
+        {
+            "content": "movie",
+            "imdb": "tt0120903",
+            "link": [
+                "https://1fichier.com/?sj0fh64txn0hes2ion79",
+                "http://rapidgator.net/file/cfd54f87937c4d7861a2b80469903563/X-Men.2000.1080p.BluRay.x265.HEVC.10bit.AAC.5.1.Tigole-QxR.mkv.html",
+                "http://ignore"
+            ],
+            "thumbnail": "https://image.tmdb.org/t/p/original/ugKiyA4HMd16m3mxXVDeNlQV7xN.jpg",
+            "title": "[COLORskyblue]X-MEN (2000) [COLOR white](Sub Links)[/COLOR]",
+            "type": "item",
+            "year": "2000"
+        }, 
+        { 
+            "type": "item", 
+            "title": "[COLOR orange]DailyMotion Video Link [COLOR white](Method 1)[/COLOR]", 
+            "link": "plugin://plugin.video.dailymotion_com/?url=x81h7bd&mode=playVideo", 
+            "thumbnail": "",
+            "fanart": ""
+        }, 
+        {
+            "type": "item", 
+            "title": "[COLOR orange]DailyMotion Video Link [COLOR white](Method 2) [/COLOR]", 
+            "link": "dailymotion?url=x81h7bd&mode=playVideo", 
+            "thumbnail": "", 
+            "fanart": ""
+        }, 
+        {
+            "type": "plugin", 
+            "title": "[COLOR yellow]DailyMotion Channel List [COLOR white](Method 1)[/COLOR]", 
+            "link": "plugin://plugin.video.dailymotion_com/?mode=sortVideos1&url=channel:sport", 
+            "thumbnail": "", 
+            "fanart": ""
+        }, 
+        {
+            "type": "plugin", 
+            "title": "[COLOR yellow]DailyMotion Channel List [COLOR white](Method 2) [/COLOR]", 
+            "link": "dailymotion?mode=sortVideos1&url=channel:sport", 
+            "thumbnail": "", 
+            "fanart": ""
+        }, 
+        { 
+            "type": "dir", 
+            "title": "[COLOR red]YouTube Channel[/COLOR]", 
+            "link": "https://www.youtube.com/channel/UC-jBkGiRokRd-B2ylx1VqJQ", 
+            "thumbnail": "", 
+            "fanart": ""
+        }, 
+        { 
+            "type": "dir", 
+            "title": "[COLOR red]YouTube Playlist[/COLOR]", 
+            "link": "https://www.youtube.com/playlist_list=PLyEyQCZKWQANYNwvgIS0ogI6xxP2C-5Tx", 
+            "thumbnail": "", 
+            "fanart": ""
+        }, 
+        { 
+            "type": "item", 
+            "title": "[COLOR red]YouTube Video[COLOR white] (Method 1) [/COLOR]", 
+            "link": "https://www.youtube.com/watch?v=vNBw9MLqYSY", 
+            "thumbnail": "", 
+            "fanart": ""
+        }, 
+        { 
+            "type": "item", 
+            "title": "[COLOR red]YouTube Video[COLOR white] (Method 2) [/COLOR]", 
+            "link": "https://www.youtube.com/embed/XNSKIg1o5Sg", 
+            "thumbnail": "", 
+            "fanart": ""
+        }, 
+        { 
+            "type": "item", 
+            "title": "[COLOR orange]Pop Up Message [COLOR white] (Method 1) [/COLOR]", 
+            "link": "message/POP UP MESSAGE TEST", 
+            "thumbnail": "", 
+            "fanart": ""
+        }, 
+        { 
+            "type": "item", 
+            "title": "[COLOR orange]Pop Up Message[COLOR white] (Method 2) [/COLOR]", 
+            "link": "message/http://narcacist.com/fourk/4k.xml", 
+            "thumbnail": "", 
+            "fanart": ""
+        }, 
+        { 
+            "type": "item", 
+            "title": "[COLOR yellow]Pop Up Message[COLOR white] (Method 3 - Local) [/COLOR]", 
+            "link": "message/file://info.xml", 
+            "thumbnail": "", 
+            "fanart": ""
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "items": [
+        {
+            "name": "Authorize ResolveURL Link Snappy",
+            "url": "RunPlugin(plugin://script.module.resolveurl/?mode=auth_ls)",
+            "icon": "https://multihoster.org/wp-content/uploads/2018/10/logo-3.png",
+            "fanart": "https://multihoster.org/wp-content/uploads/2018/10/logo-3.png",
+            "description": "",
+            "type": ""
+        },		
+        {
+            "name": "Revoke ResolveURL Link Snappy",
+            "url": "RunPlugin(plugin://script.module.resolveurl/?mode=reset_ls)",
+            "icon": "https://multihoster.org/wp-content/uploads/2018/10/logo-3.png",
+            "fanart": "https://multihoster.org/wp-content/uploads/2018/10/logo-3.png",
+            "description": "",
+            "type": ""
+        }
+    ]
+}

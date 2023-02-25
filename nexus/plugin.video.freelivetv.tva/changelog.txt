@@ -1,0 +1,198 @@
+[B]Version 0.7.1[/B]
+- Fixed VPN message typo
+
+[B]Version 0.6.9[/B]
+- Updated for Kodi 19
+
+[B]Version 0.6.8[/B]
+- Updated for Kodi 19
+
+[B]Version 0.6.7[/B]
+- Updated for Kodi 19
+
+[B]Version 0.6.6[/B]
+- Updated for Kodi 19
+
+[B]Version 0.6.5[/B]
+- Updated for Kodi 19
+
+[B]Version 0.6.4[/B]
+- Updated for Kodi 19
+
+[B]Version 0.6.3[/B]
+- Fixed search when only one item returned
+
+[B]Version 0.6.2[/B]
+- Updates to logic
+
+[B]Version 0.6.1[/B]
+- Added Channel Search
+
+[B]Version 0.6.0[/B]
+- Fixed encoding issue
+
+[B]Version 0.5.9[/B]
+- Added Patreon info
+
+[B]Version 0.5.8[/B]
+- Updated for API changes
+
+[B]Version 0.5.7[/B]
+- Updated for API changes
+
+[B]Version 0.5.6[/B]
+- Set channels to live
+
+[B]Version 0.5.5[/B]
+- Fixes for Android (hopefully)
+
+[B]Version 0.5.4[/B]
+- Refactored for updates to m7lib
+
+[B]Version 0.5.3[/B]
+- Removed unused import
+- Update import for python 2/3 support
+- Removed bare exception
+
+[B]Version 0.5.2[/B]
+- Added error handling
+
+[B]Version 0.5.1[/B]
+- Code cleanup
+
+[B]Version 0.5.0[/B]
+- Started adding support for Python 3
+
+[B]Version 0.4.9[/B]
+- Minor refactor
+
+[B]Version 0.4.8[/B]
+- Changed colors in settings
+
+[B]Version 0.4.7[/B]
+- Fixed issue with Settings Info
+
+[B]Version 0.4.6[/B]
+- Fixed issue with Settings Info
+
+[B]Version 0.4.5[/B]
+- Updated to work with new m7lib
+- Added Genres section
+- Tons of new channels
+
+[B]Version 0.4.4[/B]
+- Moved common functions to m7lib
+
+[B]Version 0.4.3[/B]
+- Major refactoring
+
+[B]Version 0.4.2[/B]
+- Added CBS Sports
+- Added ET Live
+
+[B]Version 0.4.1[/B]
+- More code refactoring
+
+[B]Version 0.4.0[/B]
+- More code refactoring
+
+[B]Version 0.3.9[/B]
+- Removed Cheddar since it is now a pay service
+- Lots of code refactoring and cleanup
+
+[B]Version 0.3.8[/B]
+- Fixed issues with Aljazeera, Sky News, HSN, and RT
+
+[B]Version 0.3.7[/B]
+- Cleaned up images
+
+[B]Version 0.3.6[/B]
+- Minor tweaks
+
+[B]Version 0.3.5[/B]
+- Updated to use common module
+
+[B]Version 0.3.4[/B]
+- Fixed broken sources
+- Removed Newsy (now requires login to TV provider)
+- Removed TuffTV (source has shutdown)
+
+[B]Version 0.3.3[/B]
+- Added The CatholicTV Network
+
+[B]Version 0.3.2[/B]
+- Fixed issue with TBD 
+
+[B]Version 0.3.1[/B]
+- Added PBS Kids to US TV
+
+[B]Version 0.3.0[/B]
+- Added Spirit TV to US TV
+- Added RadioU to US TV
+
+[B]Version 0.2.9[/B]
+- Updated graphics. Thanks jokster!!
+
+[B]Version 0.2.8[/B]
+- Fixed HSN program info
+
+[B]Version 0.2.7[/B]
+- another fix for User-Agent bug
+
+[B]Version 0.2.6[/B]
+- fixed User-Agent bug
+
+[B]Version 0.2.5[/B]
+- Total code rewrite
+- Added US TV and UK TV sections
+- Added Buzzr to US TV section
+- Added 24/7 Retro to US TV section
+- Removed France24 from US TV section
+
+[B]Version 0.2.4[/B]
+- Initial Rewrite
+
+[B]Version 0.2.3[/B]
+- Added Rev'n TV
+
+[B]Version 0.2.2[/B]
+- Added Stadium
+
+[B]Version 0.2.1[/B]
+- Added The Country Network
+
+[B]Version 0.2.0[/B]
+- Added Light TV
+
+[B]Version 0.1.9[/B]
+- Added QVC
+- Added Tuff TV
+
+[B]Version 0.1.8[/B]
+- Added Newsmax TV Live
+
+[B]Version 0.1.7[/B]
+- Added France 24 Live
+
+[B]Version 0.1.6[/B]
+- Added Bloomberg Global News Live
+
+[B]Version 0.1.5[/B]
+- Added Cheddar Live
+
+[B]Version 0.1.4[/B]
+- Added RT News Live
+
+[B]Version 0.1.3[/B]
+- Fixed order
+
+[B]Version 0.1.2[/B]
+- Updated Icon
+- Added VPN Message
+- Some refactoring
+
+[B]Version 0.1.1[/B]
+- Renamed addon
+
+[B]Version 0.1.0[/B]
+- Initial version

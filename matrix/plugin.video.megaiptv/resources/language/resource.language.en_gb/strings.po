@@ -1,0 +1,214 @@
+# XBMC Media Center language file
+# Addon Name: Mega IPTV
+# Addon id: plugin.video.megaiptv
+# Addon Provider: X
+msgid ""
+msgstr ""
+"Project-Id-Version: XBMC Addons\n"
+"Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: XBMC Translation Team\n"
+"Language-Team: English (http://www.transifex.com/projects/p/xbmc-addons/language/en/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#used in settings.xml
+
+msgctxt "#30000"
+msgid "General Settings"
+msgstr ""
+
+msgctxt "#30001"
+msgid "Debug"
+msgstr ""
+
+msgctxt "#30002"
+msgid "Categories and Channel editor"
+msgstr ""
+
+msgctxt "#30003"
+msgid "Categories"
+msgstr ""
+
+msgctxt "#30004"
+msgid "Channels"
+msgstr ""
+
+msgctxt "#30005"
+msgid "Edit Hidden"
+msgstr ""
+
+msgctxt "#30006"
+msgid "Tools/Maintenance"
+msgstr ""
+
+msgctxt "#30007"
+msgid "User Data"
+msgstr ""
+
+msgctxt "#30008"
+msgid "Reset all hidden items"
+msgstr ""
+
+msgctxt "#30009"
+msgid "Temporary files"
+msgstr ""
+
+msgctxt "#30010"
+msgid "Delete temporary files"
+msgstr ""
+
+msgctxt "#30011"
+msgid "Search Settings"
+msgstr ""
+
+
+msgctxt "#30012"
+msgid "Use squence matcher for search query"
+msgstr ""
+
+msgctxt "#30013"
+msgid "Use in string for search query"
+msgstr ""
+
+msgctst "#30014"
+msgid "Value"
+msgstr ""
+
+msgctxt "#30015"
+msgid "Smart Check AI"
+msgstr ""
+
+msgctxt "#30016"
+msgid "Enable"
+msgstr ""
+
+msgctxt "#30017"
+msgid "Check stream before play"
+msgstr ""
+
+msgctxt "#30018"
+msgid "Check Streams listed in myFavorites"
+msgstr ""
+
+msgctxt "#30019"
+msgid "Cache"
+msgstr ""
+
+msgctxt "#30020"
+msgid "Max items stored in Recently played"
+msgstr ""
+
+msgctxt "#30021"
+msgid "Max items stored in previous search's"
+msgstr ""
+
+###########--used in addon--##########
+
+msgctxt "#32000"
+msgid "Search"
+msgstr ""
+
+msgctxt "#32001"
+msgid "myFavorites"
+msgstr ""
+
+msgctxt "#32002"
+msgid "Recently Played"
+msgstr ""
+
+msgctxt "#32003"
+msgid "Settings"
+msgstr ""
+
+msgctxt "#32004"
+msgid "Search all sources"
+msgstr ""
+
+msgctxt "#32005"
+msgid "myFavorite channels"
+msgstr ""
+
+msgctxt "#32006"
+msgid "Recently played streams"
+msgstr ""
+
+msgctxt "#32007"
+msgid "Addon settings and tools"
+msgstr ""
+
+msgctxt "#32008"
+msgid "New search"
+msgstr ""
+
+msgctxt "#32009"
+msgid "Either Select new Search or from list of previous"
+msgstr ""
+
+msgctxt "#32010"
+msgid "Would you like to run a new search or use previous search results?"
+msgstr ""
+
+msgctxt "#32011"
+msgid "New"
+msgstr ""
+
+msgctxt "#32012"
+msgid "Previous"
+msgstr ""
+
+msgctxt "#32013"
+msgid "Unable to find a match for {query} in the channel lists would you like to search again?"
+msgstr ""
+
+msgctxt "#32014"
+msgid "Hide Category"
+msgstr ""
+
+msgctxt "#32015"
+msgid "Hide Channel"
+msgstr ""
+
+msgctxt "#32016"
+msgid "Add to myFavorites"
+msgstr ""
+
+msgctxt "#32017"
+msgid "Remove from myFavorites"
+msgstr ""
+
+msgctxt "#32018"
+msgid "{stream_name} Has failed Smart check What would you like to do with this favorite?"
+msgstr ""
+
+msgctxt "#32019"
+msgid "Remove"
+msgstr ""
+
+msgctxt "#32020"
+msgid "Replace"
+msgstr ""
+
+msgctxt "#32021"
+msgid "Ignore"
+msgstr ""
+
+msgctxt "#32022"
+msgid "Please select which channels you would like to add to favorites"
+msgstr ""
+
+msgctxt "#32023"
+msgid "Stream no longer working"
+msgstr ""
+
+msgctxt "#32024"
+msgid "No items have been added to {menu}"
+msgstr ""
+
+msgctxt "#32025"
+msgid "Cancel"
+msgstr ""

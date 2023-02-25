@@ -1,0 +1,62 @@
+{
+    "items": [
+        {
+            "link": "file://basics.json",
+            "title": "Various Methods",
+            "type": "dir"
+        },
+        {
+            "link": "file://formats/main.xml",
+            "title": "Formats",
+            "type": "dir"
+        },
+        {
+            "link": "file://shared lists/main.xml",
+            "title": "Shared Lists",
+            "type": "dir"
+        },
+        {
+            "link": "file://formats/main.json",
+            "title": "Json example",
+            "type": "dir"
+        },
+        {
+            "link": "youtube/J1wVVPZ2DGI",
+            "title": "Dabs k19 help Create Custom RSS feed for kodi 19",
+            "type": "item"
+        },
+        {
+            "link": "file://shared lists/youtube.json",
+            "title": "Youtube example",
+            "type": "dir"
+        },
+        {
+            "content": "movie",
+            "thumbnail": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/l3CCtoklH4uPn5zFgJZhastTxZ9.jpg",
+            "title": "art of the dead",
+            "type": "item"
+        },
+        {
+            "content": "episode",
+            "episode": "1",
+            "fanart": "https://www.themoviedb.org/t/p/w533_and_h300_bestv2/1i1N0AVRb54H6ZFPDTwbo9MLxSF.jpg",
+            "season": "1",
+            "thumbnail": "https://www.themoviedb.org/t/p/original/oNCzeCXFanVEWNpzRzyffhLLfZs.jpg",
+            "title": "1x1: Filmed Before a Live Studio Audience",
+            "type": "item"
+        },
+        {
+            "content": "movie",
+            "imdb": "tt0120903",
+            "link": [
+                "https://1fichier.com/?sj0fh64txn0hes2ion79",
+                "http://rapidgator.net/file/cfd54f87937c4d7861a2b80469903563/X-Men.2000.1080p.BluRay.x265.HEVC.10bit.AAC.5.1.Tigole-QxR.mkv.html",
+                "http://ignore"
+            ],
+            "thumbnail": "https://image.tmdb.org/t/p/original/ugKiyA4HMd16m3mxXVDeNlQV7xN.jpg",
+            "title": "[COLORred]X-MEN (2000)[/COLOR]",
+            "type": "item",
+            "year": "2000"
+        }
+    ]
+}

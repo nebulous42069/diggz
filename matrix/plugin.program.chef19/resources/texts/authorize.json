@@ -1,0 +1,84 @@
+{
+    "items": [
+        {
+            "name": "Authorize Real-Debrid",
+            "url": "plugin://script.module.resolveurl/?mode=auth_rd",
+            "icon": "https://www.mytechblog.net/wp-content/uploads/2020/10/real-debrid-logo.jpg",
+            "fanart": "https://www.mytechblog.net/wp-content/uploads/2020/10/real-debrid-logo.jpg",
+            "description": "",
+            "type": ""
+        },
+        {
+            "name": "Authorize Premiumize.me",
+            "url": "plugin://script.module.resolveurl/?mode=auth_pm",
+            "icon": "https://play-lh.googleusercontent.com/LCdGKehB8Cqa36eh0hQwy3CIWMI4bzSB9SUrAKmRQaXkZsFUNdcxuBgKM7nmBUyIVg",
+            "fanart": "https://play-lh.googleusercontent.com/LCdGKehB8Cqa36eh0hQwy3CIWMI4bzSB9SUrAKmRQaXkZsFUNdcxuBgKM7nmBUyIVg",
+            "description": "",
+            "type": ""
+        },
+        {
+            "name": "Authorize AllDebrid",
+            "url": "plugin://script.module.resolveurl/?mode=auth_ad",
+            "icon": "http://4.bp.blogspot.com/-D-mA8RDa9KI/U11fxrpEUHI/AAAAAAAAAYY/uxM3YucdoeI/s1600/alldebrid.jpg",
+            "fanart": "http://4.bp.blogspot.com/-D-mA8RDa9KI/U11fxrpEUHI/AAAAAAAAAYY/uxM3YucdoeI/s1600/alldebrid.jpg",
+            "description": "",
+            "type": ""
+        },
+        {
+            "name": "Authorize Debrid-Link.fr",
+            "url": "plugin://script.module.resolveurl/?mode=auth_dl",
+            "icon": "https://cdn.debrid-link.com/img/cover.png",
+            "fanart": "https://cdn.debrid-link.com/img/cover.png",
+            "description": "",
+            "type": ""
+        },
+        {
+            "name": "Authorize Link Snappy",
+            "url": "plugin://script.module.resolveurl/?mode=auth_ls",
+            "icon": "https://multihoster.org/wp-content/uploads/2018/10/logo-3.png",
+            "fanart": "https://multihoster.org/wp-content/uploads/2018/10/logo-3.png",
+            "description": "",
+            "type": ""
+        },
+        {
+            "name": "Reset Real-Debrid",
+            "url": "plugin://script.module.resolveurl/?mode=reset_rd",
+            "icon": "https://www.mytechblog.net/wp-content/uploads/2020/10/real-debrid-logo.jpg",
+            "fanart": "https://www.mytechblog.net/wp-content/uploads/2020/10/real-debrid-logo.jpg",
+            "description": "",
+            "type": ""
+        },
+        {
+            "name": "Reset Premiumize.me", 
+            "url": "plugin://script.module.resolveurl/?mode=reset_pm",
+            "icon": "https://play-lh.googleusercontent.com/LCdGKehB8Cqa36eh0hQwy3CIWMI4bzSB9SUrAKmRQaXkZsFUNdcxuBgKM7nmBUyIVg",
+            "fanart": "https://play-lh.googleusercontent.com/LCdGKehB8Cqa36eh0hQwy3CIWMI4bzSB9SUrAKmRQaXkZsFUNdcxuBgKM7nmBUyIVg",
+            "description": "",
+            "type": ""
+        },
+        {
+            "name": "Reset AllDebrid",
+            "url": "plugin://script.module.resolveurl/?mode=reset_ad",
+            "icon": "http://4.bp.blogspot.com/-D-mA8RDa9KI/U11fxrpEUHI/AAAAAAAAAYY/uxM3YucdoeI/s1600/alldebrid.jpg",
+            "fanart": "http://4.bp.blogspot.com/-D-mA8RDa9KI/U11fxrpEUHI/AAAAAAAAAYY/uxM3YucdoeI/s1600/alldebrid.jpg",
+            "description": "",
+            "type": ""
+        },
+        {
+            "name": "Reset Debrid-Link.fr", 
+            "url": "plugin://script.module.resolveurl/?mode=reset_dl",
+            "icon": "https://cdn.debrid-link.com/img/cover.png",
+            "fanart": "https://cdn.debrid-link.com/img/cover.png",
+            "description": "",
+            "type": ""
+        },
+        {
+            "name": "Reset Link Snappy",
+            "url": "plugin://script.module.resolveurl/?mode=reset_ls",
+            "icon": "https://multihoster.org/wp-content/uploads/2018/10/logo-3.png",
+            "fanart": "https://multihoster.org/wp-content/uploads/2018/10/logo-3.png",
+            "description": "",
+            "type": ""
+        }
+    ]
+}

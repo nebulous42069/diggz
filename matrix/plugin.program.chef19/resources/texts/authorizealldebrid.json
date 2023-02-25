@@ -1,0 +1,60 @@
+{
+    "items": [
+        {
+            "name": "Authorize ResolveURL AllDebrid",
+            "url": "RunPlugin(plugin://script.module.resolveurl/?mode=auth_ad)",
+            "icon": "http://4.bp.blogspot.com/-D-mA8RDa9KI/U11fxrpEUHI/AAAAAAAAAYY/uxM3YucdoeI/s1600/alldebrid.jpg",
+            "fanart": "http://4.bp.blogspot.com/-D-mA8RDa9KI/U11fxrpEUHI/AAAAAAAAAYY/uxM3YucdoeI/s1600/alldebrid.jpg",
+            "description": "",
+            "type": ""
+        },
+        {
+            "name": "Authorize Seren Alldebrid",
+            "url": "RunPlugin(plugin://plugin.video.seren/?action=authAllDebrid)",
+            "icon": "http://4.bp.blogspot.com/-D-mA8RDa9KI/U11fxrpEUHI/AAAAAAAAAYY/uxM3YucdoeI/s1600/alldebrid.jpg",
+            "fanart": "http://4.bp.blogspot.com/-D-mA8RDa9KI/U11fxrpEUHI/AAAAAAAAAYY/uxM3YucdoeI/s1600/alldebrid.jpg",
+            "description": "",
+            "type": ""
+        },
+        {
+            "name": "Authorize Umbrella Alldebrid",
+            "url": "RunPlugin(plugin://plugin.video.umbrella/?action=ad_Authorize)",
+            "icon": "http://4.bp.blogspot.com/-D-mA8RDa9KI/U11fxrpEUHI/AAAAAAAAAYY/uxM3YucdoeI/s1600/alldebrid.jpg",
+            "fanart": "http://4.bp.blogspot.com/-D-mA8RDa9KI/U11fxrpEUHI/AAAAAAAAAYY/uxM3YucdoeI/s1600/alldebrid.jpg",
+            "description": "",
+            "type": ""
+        },
+        {
+            "name": "Authorize FEN Alldebrid",
+            "url": "RunPlugin(plugin://plugin.video.fen/?mode=alldebrid.authenticate)",
+            "icon": "http://4.bp.blogspot.com/-D-mA8RDa9KI/U11fxrpEUHI/AAAAAAAAAYY/uxM3YucdoeI/s1600/alldebrid.jpg",
+            "fanart": "http://4.bp.blogspot.com/-D-mA8RDa9KI/U11fxrpEUHI/AAAAAAAAAYY/uxM3YucdoeI/s1600/alldebrid.jpg",
+            "description": "",
+            "type": ""
+        },
+        {
+            "name": "Revoke ResolveURL AllDebrid",
+            "url": "RunPlugin(plugin://script.module.resolveurl/?mode=reset_ad)",
+            "icon": "http://4.bp.blogspot.com/-D-mA8RDa9KI/U11fxrpEUHI/AAAAAAAAAYY/uxM3YucdoeI/s1600/alldebrid.jpg",
+            "fanart": "http://4.bp.blogspot.com/-D-mA8RDa9KI/U11fxrpEUHI/AAAAAAAAAYY/uxM3YucdoeI/s1600/alldebrid.jpg",
+            "description": "",
+            "type": ""
+        },		
+        {
+            "name": "Revoke FEN AllDebrid",
+            "url": "RunPlugin(plugin://plugin.video.fen/?mode=alldebrid.revoke_authentication)",
+            "icon": "http://4.bp.blogspot.com/-D-mA8RDa9KI/U11fxrpEUHI/AAAAAAAAAYY/uxM3YucdoeI/s1600/alldebrid.jpg",
+            "fanart": "http://4.bp.blogspot.com/-D-mA8RDa9KI/U11fxrpEUHI/AAAAAAAAAYY/uxM3YucdoeI/s1600/alldebrid.jpg",
+            "description": "",
+            "type": ""
+        },		
+        {
+            "name": "Revoke Umbrella AllDebrid",
+            "url": "RunPlugin(plugin://plugin.video.umbrella/?action=ad_Revoke)",
+            "icon": "http://4.bp.blogspot.com/-D-mA8RDa9KI/U11fxrpEUHI/AAAAAAAAAYY/uxM3YucdoeI/s1600/alldebrid.jpg",
+            "fanart": "http://4.bp.blogspot.com/-D-mA8RDa9KI/U11fxrpEUHI/AAAAAAAAAYY/uxM3YucdoeI/s1600/alldebrid.jpg",
+            "description": "",
+            "type": ""
+        }
+    ]
+}

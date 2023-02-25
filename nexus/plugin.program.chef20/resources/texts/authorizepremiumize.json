@@ -1,0 +1,69 @@
+{
+    "items": [
+        {
+            "name": "Authorize ResolveURL Premiumize.me",
+            "url": "RunPlugin(plugin://script.module.resolveurl/?mode=auth_pm)",
+            "icon": "https://play-lh.googleusercontent.com/LCdGKehB8Cqa36eh0hQwy3CIWMI4bzSB9SUrAKmRQaXkZsFUNdcxuBgKM7nmBUyIVg",
+            "fanart": "https://play-lh.googleusercontent.com/LCdGKehB8Cqa36eh0hQwy3CIWMI4bzSB9SUrAKmRQaXkZsFUNdcxuBgKM7nmBUyIVg",
+            "description": "",
+            "type": ""
+        },
+        {
+            "name": "Authorize Premiumizer Cloud",
+            "url": "RunPlugin(plugin://plugin.video.premiumizerx/?action=authPremiumize)",
+            "icon": "https://play-lh.googleusercontent.com/LCdGKehB8Cqa36eh0hQwy3CIWMI4bzSB9SUrAKmRQaXkZsFUNdcxuBgKM7nmBUyIVg",
+            "fanart": "https://play-lh.googleusercontent.com/LCdGKehB8Cqa36eh0hQwy3CIWMI4bzSB9SUrAKmRQaXkZsFUNdcxuBgKM7nmBUyIVg",
+            "description": "",
+            "type": ""
+        },
+        {
+            "name": "Authorize Seren Premiumize",
+            "url": "RunPlugin(plugin://plugin.video.seren/?action=authPremiumize)",
+            "icon": "https://play-lh.googleusercontent.com/LCdGKehB8Cqa36eh0hQwy3CIWMI4bzSB9SUrAKmRQaXkZsFUNdcxuBgKM7nmBUyIVg",
+            "fanart": "https://play-lh.googleusercontent.com/LCdGKehB8Cqa36eh0hQwy3CIWMI4bzSB9SUrAKmRQaXkZsFUNdcxuBgKM7nmBUyIVg",
+            "description": "",
+            "type": ""
+        },
+        {
+            "name": "Authorize Umbrella Premiumize",
+            "url": "RunPlugin(plugin://plugin.video.umbrella/?action=pm_Authorize)",
+            "icon": "https://play-lh.googleusercontent.com/LCdGKehB8Cqa36eh0hQwy3CIWMI4bzSB9SUrAKmRQaXkZsFUNdcxuBgKM7nmBUyIVg",
+            "fanart": "https://play-lh.googleusercontent.com/LCdGKehB8Cqa36eh0hQwy3CIWMI4bzSB9SUrAKmRQaXkZsFUNdcxuBgKM7nmBUyIVg",
+            "description": "",
+            "type": ""
+        },
+        {
+            "name": "Authorize FEN Premiumize",
+            "url": "RunPlugin(plugin://plugin.video.fen/?mode=premiumize.authenticate)",
+            "icon": "https://play-lh.googleusercontent.com/LCdGKehB8Cqa36eh0hQwy3CIWMI4bzSB9SUrAKmRQaXkZsFUNdcxuBgKM7nmBUyIVg",
+            "fanart": "https://play-lh.googleusercontent.com/LCdGKehB8Cqa36eh0hQwy3CIWMI4bzSB9SUrAKmRQaXkZsFUNdcxuBgKM7nmBUyIVg",
+            "description": "",
+            "type": ""
+        },
+        {
+            "name": "Revoke ResolveURL Premiumize.me", 
+            "url": "RunPlugin(plugin://script.module.resolveurl/?mode=reset_pm)",
+            "icon": "https://play-lh.googleusercontent.com/LCdGKehB8Cqa36eh0hQwy3CIWMI4bzSB9SUrAKmRQaXkZsFUNdcxuBgKM7nmBUyIVg",
+            "fanart": "https://play-lh.googleusercontent.com/LCdGKehB8Cqa36eh0hQwy3CIWMI4bzSB9SUrAKmRQaXkZsFUNdcxuBgKM7nmBUyIVg",
+            "description": "",
+            "type": ""
+        },		
+        {
+            "name": "Revoke Umbrella Premiumize.me", 
+            "url": "RunPlugin(plugin://plugin.video.umbrella/?action=pm_Revoke)",
+            "icon": "https://play-lh.googleusercontent.com/LCdGKehB8Cqa36eh0hQwy3CIWMI4bzSB9SUrAKmRQaXkZsFUNdcxuBgKM7nmBUyIVg",
+            "fanart": "https://play-lh.googleusercontent.com/LCdGKehB8Cqa36eh0hQwy3CIWMI4bzSB9SUrAKmRQaXkZsFUNdcxuBgKM7nmBUyIVg",
+            "description": "",
+            "type": ""
+        },
+        {
+            "name": "Revoke FEN Premiumize.me", 
+            "url": "RunPlugin(plugin://plugin.video.fen/?mode=premiumize.revoke_authentication)",
+            "icon": "https://play-lh.googleusercontent.com/LCdGKehB8Cqa36eh0hQwy3CIWMI4bzSB9SUrAKmRQaXkZsFUNdcxuBgKM7nmBUyIVg",
+            "fanart": "https://play-lh.googleusercontent.com/LCdGKehB8Cqa36eh0hQwy3CIWMI4bzSB9SUrAKmRQaXkZsFUNdcxuBgKM7nmBUyIVg",
+            "description": "",
+            "type": ""
+        }		
+
+    ]
+}

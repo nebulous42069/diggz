@@ -1,0 +1,108 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: en\n"
+
+msgctxt "#31000"
+msgid "Main"
+msgstr "Main"
+
+msgctxt "#31001"
+msgid "Setup IPTV Simple"
+msgstr "Setup IPTV Simple"
+
+msgctxt "#31002"
+msgid "Select Color For Icons"
+msgstr "Select Color For Icons"
+
+msgctxt "#31010"
+msgid "White"
+msgstr "White"
+
+msgctxt "#31011"
+msgid "Black"
+msgstr "Black"
+
+msgctxt "#31012"
+msgid "Gradient"
+msgstr "Gradient"
+
+msgctxt "#32000"
+msgid "123TV"
+msgstr "123TV"
+
+msgctxt "#32001"
+msgid "Custom Decryption Server"
+msgstr "Custom Decryption Server"
+
+msgctxt "#32002"
+msgid "Custom Decryption Server URL"
+msgstr "Custom Decryption Server URL"
+
+msgctxt "#34000"
+msgid "Credits"
+msgstr "Credits"
+
+msgctxt "#34001"
+msgid "Open Credits Menu"
+msgstr "Open Credits Menu"
+
+msgctxt "#35000"
+msgid "Playlist"
+msgstr "Playlist"
+
+msgctxt "#35001"
+msgid "CZ / SK"
+msgstr "CZ / SK"
+
+msgctxt "#35002"
+msgid "US"
+msgstr "US"
+
+msgctxt "#35003"
+msgid "UK"
+msgstr "UK"
+
+msgctxt "#35010"
+msgid "Force update playlist"
+msgstr "Force update playlist"
+
+msgctxt "#30000"
+msgid "Login"
+msgstr "Login"
+
+msgctxt "#30001"
+msgid "Username"
+msgstr "Username"
+
+msgctxt "#30002"
+msgid "Password"
+msgstr "Password"
+
+msgctxt "#30003"
+msgid "Login"
+msgstr "Login"
+
+msgctxt "#30004"
+msgid "Key"
+msgstr "Key"
+
+msgctxt "#36000"
+msgid "EPG"
+msgstr "EPG"
+
+msgctxt "#36001"
+msgid "EPG Enabled"
+msgstr "EPG Enabled"
+
+msgctxt "#36002"
+msgid "CZSK EPG"
+msgstr "CZSK EPG"
+
+msgctxt "#36003"
+msgid "US EPG"
+msgstr "US EPG"
+
+msgctxt "#36004"
+msgid "Force update EPG"
+msgstr "Force update EPG"

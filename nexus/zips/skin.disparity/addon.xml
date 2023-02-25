@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="skin.disparity" version="421.19.0.1" name="[B][COLOR gold]Disparity[/COLOR][/B]   (Low Power) (NO MOUSE/TOUCH)" provider-name="sualfred, Diggz">
+	<requires>
+		<import addon="xbmc.gui" version="5.16.0"/>
+		<import addon="plugin.program.autocompletion" version="1.0.1"/>
+		<import addon="script.skinshortcuts" version="1.0.17"/>
+	</requires>
+	<extension point="xbmc.gui.skin" debugging="false">
+		<res width="1920" height="1080" aspect="16:9" default="true" folder="xml" />
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en_GB">Disparity skin</summary>
+		<description lang="en_GB">Disparity is setup for speed.</description>
+		<platform>all</platform>
+
+		<assets>
+			<icon>resources/icon.png</icon>
+			<fanart>resources/fanart.jpg</fanart>
+			<screenshot>resources/screenshot-01.jpg</screenshot>
+		</assets>
+	</extension>
+</addon>

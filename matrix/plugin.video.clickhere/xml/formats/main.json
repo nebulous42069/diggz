@@ -1,0 +1,39 @@
+{
+    "items": [
+        {
+            "type": "dir",
+            "title": "Movies",
+            "link": "file://formats/movies.xml"
+        },
+        {
+            "type": "dir",
+            "title": "TV",
+            "link": "file://formats/tv.xml"
+        },
+        {
+            "type": "dir",
+            "title": "Lists",
+            "link": "file://formats/lists.xml"
+        },
+        {
+            "type": "dir",
+            "title": "Actors",
+            "link": "file://formats/actors.xml"
+        },
+        {
+            "type": "dir",
+            "title": "Music",
+            "link": "file://formats/music.xml"
+        },
+        {
+            "type": "dir",
+            "title": "Search Trakt",
+            "trakt": "search"
+        },
+        {
+            "type": "dir",
+            "title": "Search TMDB",
+            "tmdb": "search"
+        }
+    ]
+}

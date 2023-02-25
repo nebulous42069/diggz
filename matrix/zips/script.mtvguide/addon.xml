@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon
+    id="script.mtvguide"
+    name="m-TVGuide [COLOR gold][B]EPG[/B][/COLOR]"
+    version="420.9.9.628"
+    provider-name="mariusz89b">
+  <requires>
+    <import addon="xbmc.addon" version="17.0.0"/>
+	<import addon="script.module.inputstreamhelper" version="0.5.9"/>
+	<import addon="script.module.simplejson" version="3.16.1"/>
+	<import addon="script.module.requests" version="2.22.0"/>
+	<import addon="script.module.dateutil" version="2.8.1"/>
+	<import addon="script.module.beautifulsoup4" version="4.6.2"/>
+	<import addon="script.module.routing" version="0.2.3"/>
+	<import addon="script.module.iso8601" version="0.1.12"/>
+	<import addon="script.module.pytz" version="2014.2"/>
+	<import addon="script.module.six" version="1.13.0"/>
+	<import addon="script.module.future" version="0.17.1"/>
+	<import addon="script.module.urllib3" version="1.25.6"/>
+  </requires>
+  <extension point="xbmc.python.script" library="addon.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.service" library="serverHTTP.py"/>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">m-TVGuide EPG</summary>
+	<description lang="da_DK">Elektronisk programguide til Kodi.</description>
+    <description lang="de_DE">Elektronischer Programmführer für Kodi.</description>
+	<description lang="en_GB">Electronic program guide for Kodi.</description>
+	<description lang="fr_FR">Guide électronique des programmes pour Kodi.</description>
+	<description lang="hr_HR">Elektronički programski vodič za Kodi.</description>
+	<description lang="nl_NL">Elektronische programmagids voor Kodi.</description>
+	<description lang="nb_NO">Elektronisk programguide for Kodi.</description>
+	<description lang="pl_PL">Elektroniczny program telewizyjny dla Kodi.</description>
+	<description lang="sv_SE">Elektronisk programguide för Kodi.</description>
+	<disclaimer lang="en_GB">This add-on is unoffical and is not endorsed or supported by any of the services provided in any way. Any trademarks used belong to their owning companies and organisations.</disclaimer>
+    <disclaimer lang="pl_PL">Wtyczka nie jest oficjalna koncesjonowanego dostawy, oraz nie jest przez niego zatwierdzona i wspierana. Wszelkie użyte znaki handlowe należą do firm i organizacji podmiotu koncesjonowanego.</disclaimer>
+	<language>dk de en fr hr nl no pl se</language>
+	<platform>all</platform>
+    <license>GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007 and MIT LICENSE.</license>
+    <forum>https://github.com/Mariusz89B/script.mtvguide/discussions</forum>
+	<website>https://github.com/Mariusz89B/script.mtvguide</website>
+    <source>m-TVGuide © 2013 - 2022</source>
+    <news>v9.9.628 (2022-08-28)
+- Fixed prog +/- channel switch.
+- Bug fixes.
+
+v9.9.627 (2022-08-23)
+- Fixed timebar update.
+- Fixed Telia Play and CMore catchup session timeout.
+- Fixed catchup return while playing.
+- Bug fixes.
+
+v9.9.626 (2022-08-14)
+- Fixed recording naming issues.
+- Fixed dialog loop on catchup wrong type.
+
+v9.9.625 (2022-07-15)
+- Updated translations.
+- Improved configuration tutorial.
+
+v9.9.624 (2022-07-11)
+- Fixed show Video OSD on touch tap.
+- Fixed recording filename input return action.
+- Bug fixes.
+
+v9.9.623 (2022-07-10)
+- Fixed recording filename match.
+
+v9.9.622 (2022-07-10)
+- Hotfix.
+
+v9.9.621 (2022-07-09)
+- Bug fixes.
+- Fixed memory leaks.
+
+v9.9.620 (2022-07-08)
+- Added filename input for downloads and recordings.
+- Other improvements.
+- Bug fixes.
+
+v9.9.619 (2022-07-07)
+- Added overview guide window shourtcut.
+- Database optimizations.
+
+v9.9.618 (2022-07-02)
+- Hotfix.
+
+v9.9.617 (2022-07-02)
+- Added overview guide window during playback.
+- Fixed mktime overflow error.
+- Optimized performance.
+
+v9.9.616 (2022-06-25)
+- Fixed cached playlists channel mismatching.
+
+v9.9.615 (2022-06-20)
+- Bug fixes.
+- Fixed categories sortings.
+- Fixed playlist channel matching.
+- Optimized performance.
+
+v9.9.614 (2022-06-16)
+- Fixed service PlayerPL login.
+- Added option to manually assign adult and vod EPG URL.
+- Other fixes.
+
+v9.9.613 (2022-06-11)
+- Fixed playlists load error.
+
+v9.9.612 (2022-06-10)
+- Hotfix.
+
+v9.9.611 (2022-06-06)
+- Fixed login for services C More and Telia Play.
+
+v9.9.610 (2022-06-05)
+- Hotfix.
+
+v9.9.609 (2022-06-05)
+- Fixed exception error while adding missing channels.
+- Fixed grouping error.
+- Fixed login for services C More and Telia Play.
+
+v9.9.608 (2022-05-26)
+- Hotfix.
+
+v9.9.607 (2022-05-26)
+- Updated translations.
+- Bug fixes.
+
+v9.9.606 (2022-05-22)
+- Optimized performance.
+- Bug fixes.
+
+v9.9.605 (2022-05-09)
+- Fixed channel listing for service CMore.
+- Bug fixes.
+
+v9.9.604 (2022-05-05)
+- Added support for TheMovieDb extended information.
+- Fixed service CMore.
+
+v9.9.603 (2022-04-24)
+- Fixed service Polsat GO.
+- Updated translations.
+
+v9.9.602 (2022-04-22)
+- Fixed channel access for service Polsat GO BOX.
+- Other improvements.
+
+v9.9.601 (2022-04-18)
+- Bug fixes.
+- Other improvements.
+
+v9.9.6 (2022-04-15)
+- Hotfix.
+
+v9.9.5 (2022-04-13)
+- Added catchup for service TVPGO.
+- Fixed service PlayerPL parsing error.
+- Fixed encodings.
+- Optimized performance.
+- Added playlist caching.
+- Fixed local timezone.
+- Bug fixes.
+
+v9.9.4 (2022-03-02)
+- Fixed error while using record services.
+- Fixed encoding issues Python 2.7.
+
+v9.9.3 (2022-02-27)
+- Optimized performance.
+
+v9.9.2 (2022-02-16)
+- Updated service TVP GO.
+- Updated headers.
+- Bug fixes.
+
+v9.9.1 (2022-02-13)
+- Fixed crash while downloading on CoreELEC and LibreELEC OS.
+- Other improvements.
+
+v9.9.0 (2022-02-12)
+- Fixed RSS feed.
+
+v9.8.9 (2022-02-11)
+- Added option to adjust to local time, for universal timezone. 
+- Added Debug mode.
+- Add channel to group shortcut.
+- Optimized performance.
+
+v9.8.8 (2022-01-24)
+- Bug fixes.
+
+v9.8.7 (2022-01-12)
+- Added InputStream Adaptive shortcut in settings.
+- Optimized performance.
+
+v9.8.6 (2022-01-04)
+- Fixed EPG table refresh on record completion.
+- Fixed service Polsat GO access groups.
+- Added WP Pilot DRM support.
+- Bug fixes.
+
+v9.8.5 (2021-12-12)
+- Added .xz file support.
+- Bug fixes.
+
+v9.8.4 (2021-12-07)
+- Fixed add channel error.
+
+v9.8.3 (2021-12-06)
+- Fixed service Telia Play catchup.
+- Bug fixes.
+
+v9.8.2 (2021-11-28)
+- Added built-in addon browser.
+- Bug fixes.
+
+v9.8.1 (2021-11-16)
+- Fixed service Polsat GO and Polsat GO Box.
+
+v9.8.0 (2021-11-12)
+- Hotfix.
+
+v9.7.9 (2021-11-10)
+- Fixed caching playlists.
+
+v9.7.8 (2021-11-09)
+- Updated EPG parsing.
+- Fixed download notification error.
+- Improved overall channel matching.
+- Optimizations.
+
+v9.7.7 (2021-11-04)
+- Updated default User-Agent request header.
+- Updated regex channel matching.
+- Added possibility to modify local basemap.
+- Bug fixes.
+
+v9.7.6 (2021-11-03)
+- Hotfix.
+
+v9.7.5 (2021-11-02)
+- Bug fixes.
+
+v9.7.4 (2021-11-01)
+- Added setting for EPG list sorting.
+- Fixed tvg-id recognition.
+
+v9.7.3 (2021-11-01)
+- Updated basemaps.
+
+v9.7.2 (2021-10-29)
+- Updated language files.
+
+v9.7.1 (2021-10-29)
+- Updated basemaps.
+
+v9.7.0 (2021-10-28)
+- Fixed encoding issues Python 2.7.
+- Bug fixes.
+
+v9.6.9 (2021-10-27)
+- Added replace country code setting.
+- Fixed caching playlists.
+
+v9.6.8 (2021-10-26)
+- Fixed database issues Python 2.7.
+
+v9.6.7 (2021-10-25)
+- Added Content-Type headers for EPG filetype recognition.
+
+v9.6.6 (2021-10-25)
+- Added database Write-Ahead Logging (WAL) setting.
+- Improved channel parsing.
+- Improved performance.
+- Fixed playlist stream redirect.
+
+v9.6.5 (2021-10-19)
+- Added urllib3 module.
+- Rebuilded EPG menu selection and group categories.
+- Improved performance.
+
+v9.6.4 (2021-10-10)
+- Hotfix.
+
+v9.6.3 (2021-10-08)
+- Improved country prefix recognition for group categories.
+- Added max number of devices information dialog for Polsat GO services.
+- Bug fixes.
+
+v9.6.2 (2021-10-03)
+- Added EPG channel stream recognition.
+- Added setting for EPG interval update.
+- Fixed service Telewizja Polska.
+- Fixed login to service PlayerPL, Polsat GO, Polsat GO Box.
+- Bug fixes.
+
+v9.6.1 (2021-09-17)
+- Fixed configuration tutorial.
+- Fixed login to Polsat GO on Kodi v18.9.
+
+v9.6.0 (2021-09-15)
+- Fixed service PlayerPL.
+- Fixed playback error in service Nc+ GO.
+- Fixed encoding issues Python 2.7.
+
+v9.5.9 (2021-09-15)
+- Fixed skin update loop error.
+- Fixed Polsat GO login error.
+- Fixed PlayerPL login renewal request.
+
+v9.5.8 (2021-09-13)
+- Changes to the tv service and playlist menus.
+- Fixed skin update loop error.
+
+v9.5.7 (2021-09-12)
+- Fixed encoding issues Python 2.7.
+
+v9.5.6 (2021-09-11)
+- Improved channel recognition.
+
+v9.5.5 (2021-09-10)
+- Fixed encoding issues Python 2.7.
+- Fixed control buttons.
+
+v9.5.4 (2021-09-08)
+- Fixed login Polsat GO Box.
+- Improved touch gestures.
+
+v9.5.3 (2021-09-06)
+- Added service Polsat GO Box.
+- Added touch gestures.
+- Fixed removing controls, that caused Kodi to crash.
+
+v9.5.2 (2021-09-04)
+- Fixed play timeshift buffer.
+- Bug fixes.
+
+v9.5.1 (2021-09-03)
+- Fixed disappearing timebar.
+- Fixed service WP Pilot.
+- Updated serivce Telia Play.
+
+v9.5.0 (2021-09-02)
+- Fixed skin category error.
+
+v9.4.9 (2021-09-01)
+- Added service Polsat GO.
+- Performance improvements.
+
+v9.4.8 (2021-08-22)
+- Fixed VideoOSD.
+- Bug fixes.
+
+v9.4.7 (2021-08-16)
+- Fixed timebar flickering.
+- Fixed login for service WP Pilot.
+
+v9.4.6 (2021-08-10)
+- Fixed login for service WP Pilot.
+- Added tutorial query for catchup setting.
+- Added clearEpg function fix.
+
+v9.4.5 (2021-08-03)
+- Fixed login for service WP Pilot.
+- Added setting to only load pre-defined channel groups, reduced loading for large playlists.
+- Timebar fixes.
+
+v9.4.4 (2021-07-31)
+- Timebar fixes.
+- Added service Telewizja Polska.
+
+v9.4.3 (2021-07-20)
+- Updated set keys setting.
+- Bug fixes.
+
+v9.4.2 (2021-07-08)
+- Updated contextmenu and sidemenu.
+- Updated skin selection setting.
+
+v9.4.1 (2021-07-06)
+- Updated catchup channel recognition.
+
+v9.4.0 (2021-06-27)
+- Fixed timebar flickering.
+- Updated translations.
+
+v9.3.9 (2021-06-21)
+- Added improved channel recognition.
+- Updated basemap.
+
+v9.3.8 (2021-06-09)
+- Added option to detect alternative channel names.
+
+v9.3.7 (2021-06-04)
+- Fixed running .mpd protocol with inputstream helper. 
+
+v9.3.6 (2021-06-03)
+- Added parental guidance icon in vosd
+- Performance improvements.
+- Bug fixes.
+
+v9.3.5 (2021-05-31)
+- Updated program category algorithm.
+- Bug fixes.
+
+v9.3.4 (2021-05-23)
+- Fixed catchup function.
+
+v9.3.3 (2021-05-22)
+- Optimizations.
+- Bug fixes.
+
+v9.3.2 (2021-05-19)
+- Fixed memoryerror while using fast epg parser.
+- Performance improvements.
+- Bug fixes.
+
+v9.3.1 (2021-05-12)
+- Added option to append channel without epg to list.
+- Fixed parsing issue.
+- Added record and play function.
+- Added setting to keep running playback, recording and 
+download services in background on add-on exit.
+
+v9.3.0 (2021-04-13)
+- Fixed recording service WP Pilot.
+- Added timeshift function for service Telia Play.
+- Fixed decoding issue.
+- Fixed reset button in download menu.
+- Added download speed indicator.
+- Bug fixes.
+
+v9.2.9 (2021-04-05)
+- Performance improvements.
+- Fixed fading icons.
+- Added new download menu.
+- Added option to cache playlist.
+- Bug fixes.
+
+v9.2.8 (2021-02-27)
+- Fix for service Telia Play.
+- Response status code corrected.
+
+v9.2.7 (2021-02-26)
+- Fix for service Cyfrowy Polsat GO.
+- Fix for service Nc+ GO.
+
+v9.2.6 (2021-02-24)
+- Query format string fixes.
+- Added Cloudflare bypasser.
+
+v9.2.5 (2021-02-22)
+- Optimizations.
+- Fixed translations.
+
+v9.2.4 (2021-02-02)
+- Added possibility to schedule multiple downloads.
+- Fix for download time offset setting.
+- Fix for downloading program parts.
+- Added new region catagory select option.
+- Added automatic recognition for M3U streams missing a country code. 
+- Fix for User-Agent setting.
+- Added a notification window with information about reason for broken streams.
+- Fixed Python 3 translation error that was corrupting the database.
+
+v9.2.3 (2021-01-25)
+- Adjusted checkLogin in Telia Play service.
+
+v9.2.2 (2021-01-21)
+- Added service PlayerPL.
+- Added User-Agent setting for playlists.
+- Fix for service Ipla.
+- Fixed timestamp with refresh token for service Telia Play.
+- Fixed flickering timebar background.
+- Other improvements.
+
+v9.2.1 (2021-01-14)
+- Fix for service WP Pilot.
+- Added the ability to manually enter cookies for the WP Pilot service.
+- LoadExtraBaseMap not necessary to start the add-on.
+
+v9.2.0 (2020-12-31)
+- Fix for service Ipla, added missing channels.
+- Fix encoding utf-8.
+
+v9.1.9 (2020-10-31)
+- Fixed timestamp with refresh token for service Telia Play.
+
+v9.1.8 (2020-10-26)
+- Fix for service Cyfrowy Polsat GO.
+- Fix for service Telia Play.
+- Added a timestamp with refresh token for service Telia Play.
+- Changes to python API, added xbmc.LOGINFO.
+
+v9.1.7 (2020-08-10)
+- Fix downloading programmes on Android systems. 
+
+v9.1.6 (2020-08-08)
+- Fixed system time during playback.
+- Bug fixes.
+
+v9.1.5 (2020-08-04)
+- Bug fixes.
+
+v9.1.4 (2020-07-29)
+- Rebuilded timeshift function.
+- Added progress and file size notification for downloads.
+- Fix for service C More.
+- Bug fixes.
+
+v9.1.3 (2020-07-09)
+- Bug fixes.
+
+v9.1.2 (2020-07-07)
+- Added option to disable font installation.
+- Changes in parsing program images.
+
+v9.1.1 (2020-07-05)
+- Bug fixes.
+
+v9.1.0 (2020-07-04)
+- Added Pause / Resume button for video OSD.
+- Added refresh token for Telia Play service.
+- Bug fixes.
+- Added backup for Kodi skin fonts.
+
+v9.0.10 (2020-07-02)
+- Font install fix.
+
+v9.0.9 (2020-07-01)
+- Font install fix.
+- Reminders encryption fix.
+- Added correct encryption for epg .gz file format.
+- Skins license added.
+
+v9.0.8 (2020-06-29)
+- Fix adding channels.
+
+v9.0.7 (2020-06-28)
+- Small fixes.
+
+v9.0.6 (2020-06-28)
+- Fix for service Cyforwy Polsat GO.
+
+v9.0.5 (2020-06-28)
+- Small fixes.
+
+v9.0.4 (2020-06-27)
+- Login fix for WP Pilot serivce.
+- Timeshift fix.
+
+v9.0.3 (2020-06-26)
+- Login fix for WP Pilot serivce.
+- Add certificate for Telia Play service.
+
+v9.0.2 (2020-06-25)
+- Fix adding channels.
+- Fix decoding paths.
+
+v9.0.0 (2020-06-21)
+- Archive support.
+- Download finished archive programs.
+- Font pack installation.
+- Add stream to a channel available in EPG.
+
+</news>
+    <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+        <screenshot>resources/screenshots/screenshot-01.jpg</screenshot>
+		<screenshot>resources/screenshots/screenshot-02.jpg</screenshot>
+		<screenshot>resources/screenshots/screenshot-03.jpg</screenshot>
+    </assets>
+  </extension>
+</addon>

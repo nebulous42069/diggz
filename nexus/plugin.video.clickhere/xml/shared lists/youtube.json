@@ -1,0 +1,14 @@
+{
+    "items": [
+        {
+            "type": "item",
+            "title": "Test Youtube LINK",
+            "link": "https://www.youtube.com/embed/BsnkVrhNiyM"            
+        },      
+        {
+            "type": "item",
+            "title": "Test Youtube PLUGIN",
+            "link": "plugin://plugin.video.youtube/play/?video_id=BsnkVrhNiyM"            
+        }    
+    ]
+}

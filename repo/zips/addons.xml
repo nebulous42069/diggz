@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<addons><addon id="repository.diggz" name="Diggz Repository" provider-name="Diggz" version="13">
+    <extension name="Diggz Repository" point="xbmc.addon.repository">
+        <dir maxversion="19.9.9" minversion="19.0.0">
+            <info compressed="false">https://raw.githubusercontent.com/nebulous42069/Nexus/master/matrix/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/nebulous42069/Nexus/master/matrix/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/nebulous42069/Nexus/master/matrix/zips/</datadir>
+        </dir>
+        <dir maxversion="20.9.9" minversion="20.0.0">
+            <info compressed="false">https://raw.githubusercontent.com/nebulous42069/Nexus/master/nexus/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/nebulous42069/Nexus/master/nexus/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/nebulous42069/Nexus/master/nexus/zips/</datadir>
+        </dir>	
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>Diggz Repository</summary>
+        <description>Diggz Kodi Repository.</description>
+        <disclaimer />
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+        </assets>
+    </extension>
+</addon></addons>

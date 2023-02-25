@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map id="base_srb" version="1.0" strm="">	
+	<channel id="AMC SRB"									title="(?=AMC(\s*HD)?(\s*ex(\s*)?(\s*\-)?Yu|UK|US)$)" strm=""/>
+	<channel id="AXN SRB"									title="(?=AXN(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="AXN Spin SRB"								title="(?=AXN\s*Spin(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Al Jazeera Balkans SRB"					title="(?=(A1)?Al\s*Jazeera\s*Balkan(s)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Animal Planet SRB"							title="(?=Animal\s*Planet(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Arena Sport 1 SRB"							title="(?=Arena\s*Sport(\s*1)?(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Arena Sport 2 SRB"							title="(?=Arena\s*Sport\s*2(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Arena Sport 3 SRB"							title="(?=Arena\s*Sport\s*3(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Arena Sport 4 SRB"							title="(?=Arena\s*Sport\s*4(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Arena Sport 5 SRB"							title="(?=Arena\s*Sport\s*5(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Baby TV SRB"								title="(?=Baby(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Bloomberg SRB"								title="(?=Bloomberg(\s*TV)?(\s*HD)?(\s*ex(\s*)?(\s*\-)?Yu|UK|US)$)" strm=""/>
+	<channel id="Boomerang SRB"								title="(?=Boomerang(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="CBS Reality SRB"							title="(?=CBS\s*Reality(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="CNN SRB SRB"								title="(?=CNN(\s*HD)?(\s*ex(\s*)?(\s*\-)?Yu|UK|US)$)" strm=""/>
+	<channel id="Cartoon Network SRB"						title="(?=Cartoon\s*Network(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Cinemania SRB"								title="(?=Cinemania(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Cinemax 2 SRB"								title="(?=Cinemax\s*2(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Cinemax SRB"								title="(?=Cinemax(\s*1)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Cinestar Action &amp; Thriller SRB"		title="(?=Cinestar\s*Action(\s*and|&amp;)?(\s*Thriller)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Cinestar Premiere 1 SRB"					title="(?=Cinestar\s*Premiere(\s*1)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Cinestar Premiere 2 SRB"					title="(?=Cinestar\s*Premiere\s*2(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Cinestar TV SRB"							title="(?=Cinestar(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Comedy Central Extra SRB"					title="(?=Comedy\s*Central\s*Extra(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="DM SAT SRB"								title="(?=DM\s*SAT(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Da Vinci Learning SRB"						title="(?=Da\s*Vinci(\s*Learning)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Deutsche Welle SRB"						title="(?=(DW|Deutsche\s*Welle)(\s*HD)?(\s*ex(\s*)?(\s*\-)?Yu|DE)$)" strm=""/>
+	<channel id="Discovery Channel SRB"						title="(?=Discovery(\s*Channel)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Discovery Science SRB"						title="(?=Discovery\s*Science(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Discovery World SRB"						title="(?=Discovery\s*World(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Disney Channel SRB"						title="(?=Disney\s*Channel(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Disney Junior SRB"							title="(?=Disney\s*Junior(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Disney XD SRB"								title="(?=Disney\*XD(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Duck TV SRB"								title="(?=Duck(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="E! Entertainment SRB"						title="(?=E(!)?(\s*Entertainment)?(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Euronews SRB"								title="(?=Euronews(\s*HD)?(\s*ex(\s*)?(\s*\-)?Yu|UK|DE)$)" strm=""/>
+	<channel id="Eurosport 1 SRB"							title="(?=Eurosport(\s*1)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Eurosport 2 SRB"							title="(?=Eurosport\s*2(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="FTV SRB"									title="(?=(F|Fashion)(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Fight Channel SRB"							title="(?=Fight\s*Channel(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Fight Network SRB"							title="(?=Fight\s*Network(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Filmbox Arthouse SRB"						title="(?=Filmbox\s*Art\s*house(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Filmbox Extra SRB"							title="(?=Filmbox(\s*Extra|Xtra)(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Filmbox Plus SRB"							title="(?=Filmbox\s*Plus(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Filmbox Premium SRB"						title="(?=Filmbox\s*Premium(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="H2 SRB"									title="(?=(H|History)\s*2(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="HBO 2 SRB"									title="(?=HBO\s*2(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="HBO 3 SRB"									title="(?=HBO\s*3(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="HBO SRB"									title="(?=HBO(\s*1)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Happy TV SRB"								title="(?=Happy(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="History Channel SRB"						title="(?=(H|History)(\s*Channel)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Investigation Discovery SRB"				title="(?=(DISCOVERY\s*)?(INVESTIGATION|ID)(\s*DISCOVERY)?(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Jim Jam SRB"								title="(?=Jim\s*Jam(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Kitchen HD SRB"							title="(?=Kitchen(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Lov i Ribolov SRB"							title="(?=Lov\s*i\s*Ribolov(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="MTS TV Promo SRB"							title="(?=MTS(\s*TV)?\s*Promo(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="MTV Base SRB"								title="(?=MTV\s*Base(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="MTV Classic SRB"							title="(?=MTV\s*Classic(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="MTV Dance SRB"								title="(?=MTV\s*Dance(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="MTV Hits SRB"								title="(?=MTV\s*Hits(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="MTV Live HD SRB"							title="(?=MTV\s*Live(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="MTV Music SRB"								title="(?=MTV\s*Music(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="MTV Rocks SRB"								title="(?=MTV\s*Rocks(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="MTV SRB"									title="(?=MTV(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Mezzo SRB"									title="(?=Mezzo(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="MiniMax SRB"								title="(?=MiniMax(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="N1 SRB"									title="(?=N\s*1(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="NOVA TV SRB"								title="(?=NOVA(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Nat Geo Wild SRB"							title="(?=(Nat|National)\s*(Geo|Geographic)\s*Wild(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="National Geographic SRB"					title="(?=National\s*Geographic(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Nick Jr. SRB"								title="(?=Nick(elodeon)?\s*(Jr|JUNIOR)(\.)?(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Nickelodeon SRB"							title="(?=Nickelodeon(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="O2.TV SRB"									title="(?=O2(\.)?(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="PINK SRB"									title="(?=PINK(\s*1)?(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="PRVA MAX SRB"								title="(?=PRVA\s*MAX(\s*1)?(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Pink 2 SRB"								title="(?=PINK\s*2(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Pink 3 SRB"								title="(?=PINK\s*3(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Pink Action SRB"							title="(?=Pink\s*Action(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Pink Classic SRB"							title="(?=Pink\s*Classic(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Pink Comedy SRB"							title="(?=Pink\s*Comedy(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Pink Crime &amp; Mystery SRB"				title="(?=Pink\s*Crime(\s*TV)?(\s*&amp;)?(\s*Mystery)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Pink Extra SRB"							title="(?=Pink\s*Extra(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Pink Family SRB"							title="(?=Pink\s*Family(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Pink Fashion SRB"							title="(?=Pink\s*Fashion(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Pink Film SRB"								title="(?=Pink\s*Film(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Pink Horror SRB"							title="(?=Pink\s*Horror(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Pink Kuvar SRB"							title="(?=Pink\s*Kuvar(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Pink Movies SRB"							title="(?=Pink\s*Movies(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Pink Parada SRB"							title="(?=Pink\s*Parada(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Pink Pedia SRB"							title="(?=Pink\s*Pedia(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Pink Plus SRB"								title="(?=Pink\s*Plus(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Pink Premium SRB"							title="(?=Pink\s*Premium(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Pink Reality SRB"							title="(?=Pink\s*Reality(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Pink Romance SRB"							title="(?=Pink\s*Romance(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Pink Serije SRB"							title="(?=Pink\s*Serije(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Pink Show SRB"								title="(?=Pink\s*Show(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Pink Soap SRB"								title="(?=Pink\s*Soap(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Pink Style SRB"							title="(?=Pink\s*Style(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Pink Thriller SRB"							title="(?=Pink(\s*Thriller|Thriler)(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Pink Western SRB"							title="(?=Pink\s*Western(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Pink World Cinema SRB"						title="(?=Pink\s*World\s*Cinema(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Pink Zabava SRB"							title="(?=Pink\s*Zabava(\s*TV)?(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="RT SRB"									title="(?=(RT|Russia)(\s*Today)?(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="RTCG SAT SRB"								title="(?=RTCG\s*SAT(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="RTCG1 SRB"									title="(?=RTCG(\s*1)?(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="RTCG2 SRB"									title="(?=RTCG\s*2(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="RTL SRB"									title="(?=RTL(\s*1)?(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="RTS 1 SRB"									title="(?=RTS\s*1(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="RTS 2 SRB"									title="(?=RTS\s*2(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="RTS 3 SRB"									title="(?=RTS\s*3(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="RTS HD SRB"								title="(?=RTS(\s*Satelit)?(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="RTV 1 SRB"									title="(?=RTV(\s*1)?(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="RTV 2 SRB"									title="(?=RTV\s*2(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Studio B SRB"								title="(?=Studio\s*B(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Super Kids SRB"							title="(?=Super\s*Kids(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="TLC SRB"									title="(?=TLC(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="TV K::CN Music 2 SRB"						title="(?=(TV\s*)?K.*CN(\s*Music)?\s*2(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="TV K::CN SRB"								title="(?=(TV\s*)?K.*CN(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="TV K::CN Svet Plus 3 SRB"					title="(?=(TV\s*)?K.*CN(\s*Svet)?(\s*Plus)?\s*3(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="TV KC::N SRB"								title="(?=(TV)?\s*KC(\s*\:\:)?\s*N(\s*1)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Top Music SRB"								title="(?=Top\s*Musid(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Trace Urban SRB"							title="(?=Trace\s*Urban(\s*HD)?(\s*ex(\s*)?(\s*\-)?Yu|FR)$)" strm=""/>
+	<channel id="Travel Channel SRB"						title="(?=Travel\s*Channel(\s*HD)?(\s*ex(\s*)?(\s*\-)?Yu|UK)$)" strm=""/>
+	<channel id="Ultra TV SRB"								title="(?=(Mini)?Ultra(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="VH-1 SRB"									title="(?=VH1(\s*TV)?(\s*HD)?(\s*ex(\s*)?(\s*\-)?Yu|UK|US)$)" strm=""/>
+	<channel id="VH1 Classic SRB"							title="(?=VH1\s*Classic(\s*TV)?(\s*HD)?(\s*ex(\s*)?(\s*\-)?Yu|UK|US)$)" strm=""/>
+	<channel id="VIVA SRB"									title="(?=VIVA(\s*HD)?(\s*ex(\s*)?(\s*\-)?Yu|UK)$)" strm=""/>
+	<channel id="VOX SRB"									title="(?=VOX(\s*TV)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Viasat Explore SRB"						title="(?=Viasat\s*Explore(r)?(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Viasat History SRB"						title="(?=Viasat\s*History(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="Viasat Nature SRB"							title="(?=Viasat\s*Nature(\s*HD)?\s*ex(\s*)?(\s*\-)?(Yu|SRB)$)" strm=""/>
+	<channel id="ZDF SRB"									title="(?=ZDF(\s*TV)?(\s*HD)?(\s*ex(\s*)?(\s*\-)?Yu|DE)$)" strm=""/>
+	
+	<category name="Movie" 									tags="Televizijski film|Spielfilm|Kratkometražni film|Muzika|Ljubavni|Film Katastrofe|Porodični|Triler|Kriminalistički|Vestern|Akcija|Avantura|Drama|Film|Horror|Komedija|Kriminal|Movie|Romantika|Triler Avant|Triler Avantura|Triler Dok|Triler Dokumentaran|Triler Dram|Triler Drama|Triler Fant|Triler Hor|Triler Horror|Triler Krim|Triler Kriminal|Triler Rat|Triler Roman|Triler Romantika"/>
+	<category name="Series" 								tags="Tv-serijali|Serie|Series|Serija|Sapun|Serijski Film|Sf|Telenovela|TV-serije"/>
+	<category name="Information" 							tags="Debate|Vesti|Informacija|Informativno Politički Program|Magacin|News|Show Magacin|Vijesti|Info|Magazin|Magazine|Nachrichten|News|Rasprava|Razgovori"/>
+	<category name="Entertainment" 							tags="Zabavni program|Unterhaltung|Talks|Talk-show|Talk show|Entertainment|Mjuz|Show|Show Glazba|Glazba|Glazbeni Program|Informativno Zabavni Program|Melodija|Reality Program|Reality Show|Show Zabava|Zabava|Zabavni Program|Music|Muzika"/>
+	<category name="Document" 								tags="Bioskopski film|Biografski|Culture|Dokument|Dokumentarni|Documentary|Dokumentaran|Dokumentarni Film|Edukacija|Povesni|Rat|Znanstveno Popularni Program|Iz kulture"/>
+	<category name="Kids" 									tags="Children|Dečiji|Animirani|Animacija|Dječ|Dječji Program|Emisija za decu|Tinejdž"/>
+	<category name="Sport" 									tags="Wrestling|Vaterpolo|Tenis|Akrobatsko skijanje|Alpsko skijanje|Biatlon|Biciklizam|Bilijar|Bob|Boks|Brzo klizanje|Ekstremni sportovi|Fudbal|Fun-sports|Gimnastika|Hokej na ledu|Sport|Sports|Sportski Program|Judo|Klasično skijanje|Košarka|Lakoatletika|Martial arts|Military sports|Motorne utrke|Odbojka|Ragbi|Rukomet|Sanjkanje|Soccer|Sporstke vesti"/>
+	<category name="Interactive Entertainment" 				tags="Televizijski tečaj|Zdravlje i medicina|Health|Gesundheit + Medizin|Kulinar|Kultur|Kulturno Umjetnički Program|Lajfstajl|Lifestyle|Obraz|Pol|Pov|Program Za Slobodno Vrijeme|Reality Kulinar|Religijski Program|Talk Show Kulinar|Vjera|Nature + Travels|Nepoznati|Other|Priroda i putovanja|TV-production"/>
+</map>

@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window type="dialog">
+	<allowoverlay>no</allowoverlay>
+	<defaultcontrol always="true">100</defaultcontrol>
+	<aspectratio>scale</aspectratio>
+	<coordinates>
+		<system>1</system><posx>0</posx><posy>0</posy>
+	</coordinates>
+	<controls>
+		
+	<!-- Middle menu -->
+	<control type="group">
+		<animation type="WindowOpen" reversible="false">
+			<effect type="zoom" start="80" end="100" center="50%,50%" delay="160" tween="back" time="240" />
+			<effect type="fade" delay="160" end="100" time="240" />
+		</animation>
+		<animation type="WindowClose" reversible="false">
+			<effect type="zoom" start="100" end="80" center="50%,50%" easing="in" tween="back" time="240" />
+			<effect type="fade" start="100" end="0" time="240" />
+		</animation>
+	
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>100%</width>
+			<height>100%</height>
+			<texture colordiffuse="9F000000">../../skin.default/media/osd/white.png</texture>
+			<animation type="WindowOpen" reversible="false">
+				<effect type="zoom" start="100" end="100" center="960,540" delay="160" tween="back" time="240" />
+				<effect type="fade" delay="160" end="100" time="240" />
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="zoom" start="100" end="100" center="960,540" easing="in" tween="back" time="240" />
+				<effect type="fade" start="100" end="0" time="240" />
+			</animation>
+		</control>
+		
+		<control type="button" id="1000">
+			<description>Close Window button</description>
+			<posx>1170</posx>
+			<posy>150</posy>
+			<width>48</width>
+			<height>48</height>
+			<onclick></onclick>
+			<onclick></onclick>
+			<texturefocus colordiffuse="EEFFFFFF">../../skin.default/media/dialogs/close.png</texturefocus>
+			<texturenofocus colordiffuse="EEFFFFFF">../../skin.default/media/dialogs/mk_logo.png</texturenofocus>
+			<animation effect="fade" time="200">VisibleChange</animation>
+			<visible>hidden</visible>
+		</control>
+		
+		<control type="button" id="4976">
+			<description>Background</description>
+			<posx>520</posx>
+			<posy>0</posy>
+			<width>1400</width>
+			<height>100%</height>
+			<texturefocus></texturefocus>
+			<texturenofocus></texturenofocus>
+		</control>
+		
+		<control type="button" id="4977">
+			<description>Background</description>
+            <posx>9999</posx>
+            <posy>9999</posy>
+			<onfocus>Action(Back)</onfocus>
+		</control>
+
+		<control type="button" id="4000">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>0</width>
+			<height>0</height>
+			<visible>hidden</visible>
+		</control>
+		
+		<control type="button" id="4006"> 
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>0</width>
+			<height>0</height>
+			<visible>hidden</visible>
+		</control>
+		
+		<control type="image" id="4100">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>0</width>
+			<height>0</height>
+			<visible>hidden</visible>
+		</control>
+		<control type="label" id="4101">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>0</width>
+			<height>0</height>
+			<visible>hidden</visible>
+		</control>
+		
+		<control type="label" id="4102">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>0</width>
+			<height>0</height>
+			<visible>hidden</visible>
+		</control>
+		
+		<control type="label" id="4103">
+			<posx>10</posx>
+			<posy>10</posy>
+			<width>100</width>
+			<height>100</height>
+			<visible>hidden</visible>
+		</control>
+	</control>
+		
+		<!-- Left menu -->
+		<control type="group">
+			<animation type="WindowOpen">
+				<effect type="fade" end="100" time="200" />
+				<effect type="fade" start="0" end="100" time="300" tween="sine" easing="out" />
+				<effect type="slide" start="-320" end="0" time="400" tween="cubic" easing="out" />
+			</animation>
+			<animation type="WindowClose">
+				<effect type="fade" start="100" end="0" time="200" />
+				<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
+				<effect type="slide" start="0" end="-320" time="300" tween="cubic" easing="out" />
+			</animation>
+		
+		<control type="group">
+			<posx>-520</posx>
+			<posy>0</posy>
+			<width>100%</width>
+			<height>100%</height>
+			<animation effect="slide" start="0" end="520" time="400" tween="cubic" easing="out">WindowOpen</animation>
+			<animation effect="slide" start="520" end="0" time="400" tween="cubic" easing="in">WindowClose</animation>
+		
+		<control type="image">
+			<description>Background</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>520</width>
+			<height>100%</height>
+			<texture border="0,0,52,0">../../skin.default/media/dialogs/panel-mediamenu.png</texture>
+		</control>
+	
+		<control type="group" id="60520">
+			<top>50</top>
+			<height>50</height>
+			
+			<control type="label">
+				<width>470</width>
+				<textoffsetx>20</textoffsetx>
+				<textoffsety>15</textoffsety>
+				<height>60</height>
+				<radioposx>300</radioposx>
+				<font>font25_title</font>
+				<aligny>top</aligny>
+				<textcolor>button_focus</textcolor>
+				<label>$ADDON[script.mtvguide 68008]</label>
+			</control>
+			
+			<control type="label">
+				<width>470</width>
+				<textoffsetx>20</textoffsetx>
+				<textoffsety>15</textoffsety>
+				<height>50</height>
+				<font>font12</font>
+				<align>right</align>
+				<aligny>top</aligny>
+				<textcolor>FFA0A0A0</textcolor>
+				<label>$ADDON[script.mtvguide 30307]</label>
+				<visible>Control.HasFocus(100)</visible>
+			</control>
+			<control type="label">
+				<width>470</width>
+				<textoffsetx>20</textoffsetx>
+				<textoffsety>15</textoffsety>
+				<height>50</height>
+				<font>font12</font>
+				<align>right</align>
+				<aligny>top</aligny>
+				<textcolor>FFA0A0A0</textcolor>
+				<label>$ADDON[script.mtvguide 30337]</label>
+				<visible>Control.HasFocus(101)</visible>
+			</control>
+			<control type="label">
+				<width>470</width>
+				<textoffsetx>20</textoffsetx>
+				<textoffsety>15</textoffsety>
+				<height>50</height>
+				<font>font12</font>
+				<align>right</align>
+				<aligny>top</aligny>
+				<textcolor>FFA0A0A0</textcolor>
+				<label>$ADDON[script.mtvguide 90002]</label>
+				<visible>Control.HasFocus(4013)</visible>
+			</control>
+		</control>
+	
+		<!-- Buttons top -->
+		<control type="group" id="60560">
+		<top>100</top>
+			<height>95</height>
+			<control type="grouplist" id="6056">
+				<orientation>horizontal</orientation>
+				<itemgap>-18</itemgap>
+				<left>0</left>
+				<height>120</height>
+				<onleft>6056</onleft>
+				<onup>4016</onup>
+				<ondown>6051</ondown>
+				<width>1000</width>
+				
+				<control type="radiobutton" id="100">
+					<width>92</width>
+					<height>92</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font></font>
+					<texturefocus colordiffuse="button_focus">../../skin.default/media/dialogs/roundbutton-fo.png</texturefocus>
+					<texturenofocus />
+					<radioposx>26</radioposx>
+					<radioposy>0</radioposy>
+					<radiowidth>40</radiowidth>
+					<radioheight>40</radioheight>
+					<textureradioonfocus>icons/submenu/channels.png</textureradioonfocus>
+					<textureradioonnofocus>icons/submenu/channels.png</textureradioonnofocus>
+					<textureradioofffocus>icons/submenu/channels.png</textureradioofffocus>
+					<textureradiooffnofocus>icons/submenu/channels.png</textureradiooffnofocus>
+					<textureradiooffdisabled colordiffuse="button_focus">icons/submenu/channels.png</textureradiooffdisabled>
+					<onclick></onclick>
+					<ondown>4012</ondown>
+				</control>
+
+				<control type="radiobutton" id="101">
+					<width>92</width>
+					<height>92</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font></font>
+					<texturefocus colordiffuse="button_focus">../../skin.default/media/dialogs/roundbutton-fo.png</texturefocus>
+					<texturenofocus />
+					<radioposx>26</radioposx>
+					<radioposy>0</radioposy>
+					<radiowidth>40</radiowidth>
+					<radioheight>40</radioheight>
+					<textureradioonfocus>icons/submenu/recordings.png</textureradioonfocus>
+					<textureradioonnofocus>icons/submenu/recordings.png</textureradioonnofocus>
+					<textureradioofffocus>icons/submenu/recordings.png</textureradioofffocus>
+					<textureradiooffnofocus>icons/submenu/recordings.png</textureradiooffnofocus>
+					<textureradiooffdisabled colordiffuse="button_focus">icons/submenu/recordings.png</textureradiooffdisabled>
+					<onclick>SendClick(4006)</onclick>
+					<ondown>4012</ondown>
+				</control>
+				
+				<control type="radiobutton" id="4013">
+					<width>92</width>
+					<height>92</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font></font>
+					<texturefocus colordiffuse="button_focus">../../skin.default/media/dialogs/roundbutton-fo.png</texturefocus>
+					<texturenofocus />
+					<radioposx>26</radioposx>
+					<radioposy>0</radioposy>
+					<radiowidth>40</radiowidth>
+					<radioheight>40</radioheight>
+					<textureradioonfocus>../../skin.default/media/dialogs/info.png</textureradioonfocus>
+					<textureradioonnofocus>../../skin.default/media/dialogs/info.png</textureradioonnofocus>
+					<textureradioofffocus>../../skin.default/media/dialogs/info.png</textureradioofffocus>
+					<textureradiooffnofocus>../../skin.default/media/dialogs/info.png</textureradiooffnofocus>
+					<textureradiooffdisabled colordiffuse="button_focus">../../skin.default/media/dialogs/info.png</textureradiooffdisabled>
+					<onclick></onclick>
+					<ondown>4012</ondown>
+				</control>	
+			</control>
+		</control>
+		
+		<control type="label" id="200">
+			<top>225</top>
+			<width>470</width>
+			<textoffsetx>20</textoffsetx>
+			<textoffsety>15</textoffsety>
+			<height>60</height>
+			<radioposx>300</radioposx>
+			<font>font25_title</font>
+			<aligny>top</aligny>
+			<textcolor>button_focus</textcolor>
+			<label>$ADDON[script.mtvguide 68009]</label>
+		</control>
+		
+				<!-- Set favorites -->
+		<control type="button" id="4012"> 
+			<posx>0</posx>
+			<posy>285</posy>
+			<width>470</width>
+			<height>70</height>
+			<onup>60560</onup>
+			<ondown>7004</ondown>
+			<onleft>4977</onleft>
+			<onright>4977</onright>
+			<align>left</align>
+			<aligny>center</aligny>
+			<font>font13</font>
+			<textcolor>FFFFFFFF</textcolor>
+			<focusedcolor>FFFFFFFF</focusedcolor>
+			<textoffsetx>20</textoffsetx>
+			<label>$ADDON[script.mtvguide 30992]</label>
+			<label2>[B]$ADDON[script.mtvguide 30984][/B]</label2>
+			<texturefocus colordiffuse="button_focus" border="5">../../skin.default/media/osd/grey.png</texturefocus>
+			<texturenofocus></texturenofocus>
+		</control>
+		
+		<control type="label">
+			<top>465</top>
+			<width>470</width>
+			<textoffsetx>20</textoffsetx>
+			<textoffsety>15</textoffsety>
+			<height>60</height>
+			<radioposx>300</radioposx>
+			<font>font25_title</font>
+			<aligny>top</aligny>
+			<textcolor>button_focus</textcolor>
+			<label>EPG</label>
+		</control>
+		
+				<!-- Add channel -->
+		<control type="button" id="4015"> 
+			<posx>0</posx>
+			<posy>525</posy>
+			<width>470</width>
+			<height>70</height>
+			<onup>7004</onup>
+			<ondown>4016</ondown>
+			<onleft>4977</onleft>
+			<onright>4977</onright>
+			<align>left</align>
+			<aligny>center</aligny>
+			<font>font13</font>
+			<textcolor>FFFFFFFF</textcolor>
+			<focusedcolor>FFFFFFFF</focusedcolor>
+			<textoffsetx>20</textoffsetx>
+			<label>$ADDON[script.mtvguide 70117]</label>
+			<label2>[B]$ADDON[script.mtvguide 70116][/B]</label2>
+			<texturefocus colordiffuse="button_focus" border="5">../../skin.default/media/osd/grey.png</texturefocus>
+			<texturenofocus></texturenofocus>
+		</control>
+		
+		
+				<!-- Remove channel -->
+		<control type="button" id="4016"> 
+			<posx>0</posx>
+			<posy>605</posy>
+			<width>470</width>
+			<height>70</height>
+			<onup>4015</onup>
+			<ondown>60560</ondown>
+			<onleft>4977</onleft>
+			<onright>4977</onright>
+			<align>left</align>
+			<aligny>center</aligny>
+			<font>font13</font>
+			<textcolor>FFFFFFFF</textcolor>
+			<focusedcolor>FFFFFFFF</focusedcolor>
+			<textoffsetx>20</textoffsetx>
+			<label2>[B]$ADDON[script.mtvguide 70125][/B]</label2>
+			<texturefocus colordiffuse="button_focus" border="5">../../skin.default/media/osd/grey.png</texturefocus>
+			<texturenofocus></texturenofocus>
+		</control>
+		
+		<control type="wraplist" id="7004">
+            <description>Categories</description>
+            <posx>0</posx>
+			<posy>355</posy>
+            <width>470</width>
+            <height>70</height>
+            <visible>true</visible>
+            <onup>4012</onup>
+			<ondown>4015</ondown>
+            <viewtype label="3D list">wraplist</viewtype>
+            <orientation>horizontal</orientation>
+
+            <itemlayout width="470" height="70">
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>470</width>
+                    <height>70</height>
+                    <visible>true</visible>
+                </control>
+                <control type="label">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>470</width>
+                    <height>70</height>
+                    <font>font13</font>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <selectedcolor>button_focus</selectedcolor>
+					<label>[B]$INFO[ListItem.Label][/B]</label>
+                </control>
+            </itemlayout>
+            <focusedlayout height="70" width="470">
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>470</width>
+                    <height>70</height>
+                    <visible>true</visible>
+                </control>
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>470</width>
+                    <height>70</height>
+                    <texture colordiffuse="button_focus" border="5">../../skin.default/media/osd/grey.png</texture>
+                    <visible>Control.HasFocus(7004)</visible>
+                </control>
+                <control type="label">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>470</width>
+                    <height>70</height>
+                    <font>font13</font>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <selectedcolor>button_focus</selectedcolor>
+                    <label>[B]$INFO[ListItem.Label][/B]</label>
+                </control>
+                <control type="label">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>470</width>
+                    <height>70</height>
+                    <font>font13</font>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <selectedcolor>button_focus</selectedcolor>
+                    <label>[B]$INFO[ListItem.Label][/B]</label>
+                    <visible>Control.HasFocus(7004)</visible>
+                </control>
+				 <control type="image">
+                    <posx>10</posx>
+                    <posy>15</posy>
+                    <width>40</width>
+					<height>40</height>
+                    <aligny>center</aligny>
+                    <texture>tvguide-channel-leftarrow.png</texture>
+                </control>
+				<control type="image">
+                    <posx>420</posx>
+                    <posy>15</posy>
+                    <width>40</width>
+					<height>40</height>
+                    <aligny>center</aligny>
+                    <texture flipx="true">tvguide-channel-leftarrow.png</texture>
+                </control>
+            </focusedlayout>
+			</control>
+        </control>
+		</control>
+	</controls>
+</window>

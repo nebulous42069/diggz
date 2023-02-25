@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<shortcuts>
+	<shortcut>
+		<label>Disparity Settings</label>
+		<label2/>
+		<icon>&#xf493;</icon>
+		<thumb/>
+		<action>ActivateWindow(settings)</action>
+	</shortcut>
+	<shortcut>
+		<label>Power Menu</label>
+		<label2/>
+		<icon>&#xf493;</icon>
+		<thumb/>
+		<action>ActivateWindow(shutdownmenu)</action>
+	</shortcut>
+</shortcuts>

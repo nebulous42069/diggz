@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<shortcuts>
+	<shortcut>
+		<defaultID>embuary_tvshowhub_tvshows</defaultID>
+		<label>Kodi TV Show Library</label>
+		<label2/>
+		<icon/>
+		<thumb/>
+		<action>ActivateWindow(videos,videodb://tvshows/titles/?force_root=$INFO[System.Time(mm)]$INFO[System.Time(ss)],return)</action>
+	</shortcut>
+	<shortcut>
+		<defaultID>embuary_moviehub_movies</defaultID>
+		<label>Kodi Movie Library</label>
+		<label2/>
+		<icon/>
+		<thumb/>
+		<action>ActivateWindow(videos,library://video/movies/titles.xml/,return)</action>
+	</shortcut>
+	<shortcut>
+		<defaultID>embuary_tvshowhub_nextaired</defaultID>
+		<label>Kodi Next Airing TV</label>
+		<label2/>
+		<icon/>
+		<thumb/>
+		<action>ActivateWindow(1132)</action>
+	</shortcut>
+	<shortcut>
+		<defaultID>embuary_moviehub_movies</defaultID>
+		<label>Set Custom</label>
+		<label2/>
+		<icon/>
+		<thumb/>
+		<action>ActivateWindow(videos,library://video/movies/titles.xml/,return)</action>
+	</shortcut>
+		<shortcut>
+		<defaultID>embuary_moviehub_movies</defaultID>
+		<label>Set Custom</label>
+		<label2/>
+		<icon/>
+		<thumb/>
+		<action>ActivateWindow(videos,library://video/movies/titles.xml/,return)</action>
+	</shortcut>
+		<shortcut>
+		<defaultID>embuary_moviehub_movies</defaultID>
+		<label>Set Custom</label>
+		<label2/>
+		<icon/>
+		<thumb/>
+		<action>ActivateWindow(videos,library://video/movies/titles.xml/,return)</action>
+	</shortcut>
+		<shortcut>
+		<defaultID>embuary_moviehub_movies</defaultID>
+		<label>Set Custom</label>
+		<label2/>
+		<icon/>
+		<thumb/>
+		<action>ActivateWindow(videos,library://video/movies/titles.xml/,return)</action>
+	</shortcut>
+	<shortcut>
+		<defaultID>embuary_moviehub_movies</defaultID>
+		<label>Set Custom</label>
+		<label2/>
+		<icon/>
+		<thumb/>
+		<action>ActivateWindow(videos,library://video/movies/titles.xml/,return)</action>
+	</shortcut>
+		<shortcut>
+		<defaultID>embuary_moviehub_movies</defaultID>
+		<label>Set Custom</label>
+		<label2/>
+		<icon/>
+		<thumb/>
+		<action>ActivateWindow(videos,library://video/movies/titles.xml/,return)</action>
+	</shortcut>
+		<shortcut>
+		<defaultID>embuary_moviehub_movies</defaultID>
+		<label>Set Custom</label>
+		<label2/>
+		<icon/>
+		<thumb/>
+		<action>ActivateWindow(videos,library://video/movies/titles.xml/,return)</action>
+	</shortcut>
+		<shortcut>
+		<defaultID>embuary_moviehub_movies</defaultID>
+		<label>Set Custom</label>
+		<label2/>
+		<icon/>
+		<thumb/>
+		<action>ActivateWindow(videos,library://video/movies/titles.xml/,return)</action>
+	</shortcut>
+	<shortcut>
+		<defaultID>embuary_moviehub_movies</defaultID>
+		<label>Set Custom</label>
+		<label2/>
+		<icon/>
+		<thumb/>
+		<action>ActivateWindow(videos,library://video/movies/titles.xml/,return)</action>
+	</shortcut>
+		<shortcut>
+		<defaultID>embuary_moviehub_movies</defaultID>
+		<label>Set Custom</label>
+		<label2/>
+		<icon/>
+		<thumb/>
+		<action>ActivateWindow(videos,library://video/movies/titles.xml/,return)</action>
+	</shortcut>
+		<shortcut>
+		<defaultID>embuary_moviehub_movies</defaultID>
+		<label>Set Custom</label>
+		<label2/>
+		<icon/>
+		<thumb/>
+		<action>ActivateWindow(videos,library://video/movies/titles.xml/,return)</action>
+	</shortcut>
+		<shortcut>
+		<defaultID>embuary_moviehub_movies</defaultID>
+		<label>Set Custom</label>
+		<label2/>
+		<icon/>
+		<thumb/>
+		<action>ActivateWindow(videos,library://video/movies/titles.xml/,return)</action>
+	</shortcut>
+	<shortcut>
+		<defaultID>embuary_moviehub_movies</defaultID>
+		<label>Set Custom</label>
+		<label2/>
+		<icon/>
+		<thumb/>
+		<action>ActivateWindow(videos,library://video/movies/titles.xml/,return)</action>
+	</shortcut>
+		<shortcut>
+		<defaultID>embuary_moviehub_movies</defaultID>
+		<label>Set Custom</label>
+		<label2/>
+		<icon/>
+		<thumb/>
+		<action>ActivateWindow(videos,library://video/movies/titles.xml/,return)</action>
+	</shortcut>
+		<shortcut>
+		<defaultID>embuary_moviehub_movies</defaultID>
+		<label>Set Custom</label>
+		<label2/>
+		<icon/>
+		<thumb/>
+		<action>ActivateWindow(videos,library://video/movies/titles.xml/,return)</action>
+	</shortcut>
+		<shortcut>
+		<defaultID>embuary_moviehub_movies</defaultID>
+		<label>Set Custom</label>
+		<label2/>
+		<icon/>
+		<thumb/>
+		<action>ActivateWindow(videos,library://video/movies/titles.xml/,return)</action>
+	</shortcut>
+</shortcuts>

@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map id="base_uk" version="1.0" strm="">	
+	<channel id="3e UK" 									title="(?=3e(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="4Music UK" 								title="(?=4\s*Music(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="4Seven UK" 								title="(?=4\s*Seven(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="5STAR UK" 									title="(?=5\s*STAR((\s*TV)?\s*HD)?(\s*UK|US)$)" strm=""/>
+<!--<channel id="5Spike UK" 								title="(?=5\s*Spike(\s*TV)?(\s*HD)?(\s*UK|US)$)" strm=""/>-->
+	<channel id="5USA UK" 									title="(?=5\s*USA(\s*TV)?(\s*HD)?(\s*UK|US)$)" strm=""/>
+	<channel id="AIT International UK" 						title="(?=AIT(\s*International)?(\s*TV)?(\s*HD)?(\s*UK|AF|AFR)$)" strm=""/>
+	<channel id="Al Jazeera UK" 							title="(?=(Aljazeera|Al\s*Jazeera)(\s*English)?(\s*TV)?(\s*HD)?(\s*UK|AF|AFR)$)" strm=""/>
+	<channel id="Alibi UK" 									title="(?=Alibi(\s*Ireland)?(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Animal Planet HD UK" 						title="(?=Animal\s*Planet\s*HD(\s*UK)$)" strm=""/>
+	<channel id="Animal Planet UK" 							title="(?=Animal\s*Planet(\s*UK)$)" strm=""/>
+	<channel id="At the Races UK" 							title="(?=At(\s*The)?\s*Races(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="BBC Alba UK" 								title="(?=BBC\s*Alba(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="BBC News UK" 								title="(?=BBC\s*News(\s*Channel)?(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="BBC Parliament UK" 						title="(?=BBC\s*Parliament(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="BBC1 East Midlands UK" 					title="(?=BBC\s*(One|1)\s*(E|East)\s*(Midlands|Mid)(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="BBC1 East UK" 								title="(?=BBC\s*(One|1)\s*(E|East)(\s*E)?(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="BBC1 HD UK" 								title="(?=BBC\s*(One|1)\s*HD(\s*UK)$)" strm=""/>
+	<channel id="BBC1 London UK" 							title="(?=BBC\s*(One|1)\s*London(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="BBC1 Midlands UK" 							title="(?=BBC\s*(One|1)\s*(W|West)?\s*(Midlands|Mid)(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="BBC1 N East UK" 							title="(?=BBC\s*(One|1)\s*(N|North|)\s*(E|East)?(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="BBC1 N Ireland UK" 						title="(?=BBC\s*(One|1)\s*(NI|N|North|Northern)(\s*Ireland)?(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="BBC1 N West UK" 							title="(?=BBC\s*(One|1)\s*(N|North)\s*(W|West)(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="BBC1 S East UK" 							title="(?=BBC\s*(One|1)\s*(S|South)\s*(E|East)(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="BBC1 S West UK" 							title="(?=BBC\s*(One|1)\s*(S|South)\s*(W|West)(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="BBC1 Scotland UK" 							title="(?=BBC\s*(One|1)\s*Scotland(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="BBC1 South UK" 							title="(?=BBC\s*(One|1)\s*(S|South)(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="BBC1 UK" 									title="(?=BBC\s*(One|1)(\s*UK)$)" strm=""/>
+	<channel id="BBC1 Wales UK" 							title="(?=BBC\s*(One|1)\s*Wales(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="BBC1 West UK" 								title="(?=BBC\s*(One|1)\s*(W|West)(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="BBC1 Yorkshire UK" 						title="(?=BBC\s*(One|1)\s*(Yorkshire|Yorks)(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="BBC1 Yorkshire and Lincolnshire UK" 		title="(?=BBC\s*(One|1)\s*Yorkshire(\s*&amp;|and)\s*(Lincs|Lincolnshire)(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="BBC2 East Midlands UK" 					title="(?=BBC\s*(Two|2)\s*(E|East)\s*Midlands(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="BBC2 East UK" 								title="(?=BBC\s*(Two|2)\s*(E|East)(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="BBC2 HD UK" 								title="(?=BBC\s*(Two|2)\s*HD(\s*UK)$)" strm=""/>
+	<channel id="BBC2 London UK" 							title="(?=BBC\s*(Two|2)\s*London(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="BBC2 Midlands UK" 							title="(?=BBC\s*(Two|2)\s*Midlands(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="BBC2 N East UK" 							title="(?=BBC\s*(Two|2)\s*(N|North)\s*(E|East)(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="BBC2 N Ireland UK" 						title="(?=BBC\s*(Two|2)\s*(NI|N|North|Northern)(\s*Ireland)?(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="BBC2 N West UK" 							title="(?=BBC\s*(Two|2)\s*(N|North)\s*(W|West)(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="BBC2 S East UK" 							title="(?=BBC\s*(Two|2)\s*(S|South)\s*(E|East)(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="BBC2 S West UK" 							title="(?=BBC\s*(Two|2)\s*(S|South)\s*(W|West)(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="BBC2 Scotland UK" 							title="(?=BBC\s*(Two|2)\s*Scotland(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="BBC2 South UK" 							title="(?=BBC\s*(Two|2)\s*(S|South)(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="BBC2 UK" 									title="(?=BBC\s*(Two|2)(\s*England)?(\s*UK)$)" strm=""/>
+	<channel id="BBC2 Wales UK" 							title="(?=BBC\s*(Two|2)\s*Wales(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="BBC2 West UK" 								title="(?=BBC\s*(Two|2)\s*(W|West)(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="BBC4 HD UK" 								title="(?=BBC\s*(Four|4)\s*HD(\s*UK)$)" strm=""/>
+	<channel id="BBC4 UK" 									title="(?=BBC\s*(Four|4)(\s*UK)$)" strm=""/>
+	<channel id="BET UK" 									title="(?=BET(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Baby TV UK" 								title="(?=Baby(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Bloomberg TV UK" 							title="(?=Bloomberg(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Boomerang UK" 								title="(?=Boomerang(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Box Hits UK" 								title="(?=(The)?\s*Box\s*Hits(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="BT Sport 1 HD UK" 							title="(?=BT\s*Sport(s)?(\s*1)?\s*HD(\s*TV)?(\s*UK)$)" strm=""/>
+	<channel id="BT Sport 1 UK" 							title="(?=BT\s*Sport(s)?(\s*1)?(\s*TV)?(\s*UK)$)" strm=""/>
+	<channel id="BT Sport 2 HD UK" 							title="(?=BT\s*Sport(s)?\s*2\s*HD(\s*TV)?(\s*UK)$)" strm=""/>
+	<channel id="BT Sport 2 UK" 							title="(?=BT\s*Sport(s)?\s*2(\s*TV)?(\s*UK)$)" strm=""/>
+	<channel id="BT Sport 3 HD UK" 							title="(?=BT\s*Sport(s)?\s*3\s*HD(\s*TV)?(\s*UK)$)" strm=""/>
+	<channel id="BT Sport 3 UK" 							title="(?=BT\s*Sport(s)?\s*3(\s*TV)?(\s*UK)$)" strm=""/>
+	<channel id="BT Sport 4K UHD UK" 						title="(?=BT\s*Sport(s)?\s*4(\s*K)?(\s*UHD)?(\s*HD)?(\s*TV)?(\s*UK)$)" strm=""/>
+	<channel id="BT Sport X1 UK" 							title="(?=BT\s*Sport(s)?\s*(X|Extra)(\s*1)?(\s*HD)?(\s*TV)?(\s*UK)$)" strm=""/>
+	<channel id="BT Sport X2 UK" 							title="(?=BT\s*Sport(s)?\s*(X|Extra)\s*2(\s*HD)?(\s*TV)?(\s*UK)$)" strm=""/>
+	<channel id="BT Sport X3 UK" 							title="(?=BT\s*Sport(s)?\s*(X|Extra)\s*3(\s*HD)?(\s*TV)?(\s*UK)$)" strm=""/>
+	<channel id="BT Sport X4 UK" 							title="(?=BT\s*Sport(s)?\s*(X|Extra)\s*4(\s*HD)?(\s*TV)?(\s*UK)$)" strm=""/>
+	<channel id="BT Sport X5 UK" 							title="(?=BT\s*Sport(s)?\s*(X|Extra)\s*5(\s*HD)?(\s*TV)?(\s*UK)$)" strm=""/>
+	<channel id="BT Sport X6 UK" 							title="(?=BT\s*Sport(s)?\s*(X|Extra)\s*6(\s*HD)?(\s*TV)?(\s*UK)$)" strm=""/>
+	<channel id="CBBC UK" 									title="(?=CBBC(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="CBS Action UK" 							title="(?=CBS\s*Action(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="CBS Drama UK" 								title="(?=CBS\s*Drama(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="CBS Reality UK" 							title="(?=CBS\s*Reality(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="CBeebies UK" 								title="(?=CBeebies(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="CI HD UK" 									title="(?=(CI|Criminal|Crime)(\s*\+|Plus)?(\s*Investigation)?\s*HD(\s*UK)$)" strm=""/>
+	<channel id="CI UK" 									title="(?=(CI|Criminal|Crime)(\s*\+|Plus)?(\s*Investigation)?(\s*UK)$)" strm=""/>
+	<channel id="CITV UK" 									title="(?=CI\s*TV(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="CNBC UK" 									title="(?=CNBC(\s*TV)?(\s*HD)?(\s*UK)?(\s*US)?$)" strm=""/>
+	<channel id="CNN UK" 									title="(?=CNN(\s*TV)?(\s*HD)?(\s*UK)?(\s*US)?$)" strm=""/>
+<!--<channel id="Capital TV UK" 							title="(?=Capital(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>-->
+	<channel id="Cartoon Network HD UK" 					title="(?=Cartoon\s*Network(\s*TV)?\s*HD(\s*UK)$)" strm=""/>
+	<channel id="Cartoon Network UK" 						title="(?=Cartoon\s*Network(\s*TV)?(\s*UK)$)" strm=""/>
+	<channel id="Cartoonito UK" 							title="(?=Cartoonito(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Challenge UK" 								title="(?=Challenge(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Channel 4 HD UK" 							title="(?=Channel\s*4(\s*London)?\s*HD(\s*UK)$)" strm=""/>
+	<channel id="Channel 4 UK" 								title="(?=Channel\s*4(\s*London)?(\s*UK)$)" strm=""/>
+	<channel id="Channel 5 HD UK" 							title="(?=Channel\s*5(\s*TV)?\s*HD(\s*UK)$)" strm=""/>
+	<channel id="Channel 5 UK" 								title="(?=Channel\s*5(\s*UK)$)" strm=""/>
+	<channel id="Chart Show TV UK" 							title="(?=Chart\s*Show(\s*Hits)?(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Chelsea TV UK" 							title="(?=Chelsea(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Clubland TV UK" 							title="(?=Clubland(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Comedy Central Extra UK" 					title="(?=Comedy\s*Central\s*(Extra|Xtra)(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Comedy Central HD UK" 						title="(?=Comedy\s*Central\s*HD(\s*UK)$)" strm=""/>
+	<channel id="Comedy Central UK" 						title="(?=Comedy\s*Central(\s*UK)$)" strm=""/>
+	<channel id="Community Channel UK" 						title="(?=Community\s*Channel(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Create and Craft UK" 						title="(?=Create(\s*&amp;|and)\s*Craft(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="DMAX UK" 									title="(?=D\s*MAX(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Dave UK" 									title="(?=Dave(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Dave ja vu UK" 							title="(?=Dave\s*ja\s*vu(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Discovery Channel UK" 						title="(?=(Discovery|Disc.)(\s*Channel)?(\s*UK)$)" strm=""/>
+	<channel id="Discovery Channel HD UK" 					title="(?=(Discovery|Disc.)(\s*Channel)?\s*HD(\s*UK)$)" strm=""/>
+	<channel id="Discovery History UK" 						title="(?=(Discovery\s*History)(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Discovery Home &amp; Health UK" 			title="(?=(Discovery\s*Home)(\s*&amp;)?\s*(Health)?(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Discovery Science UK" 						title="(?=(Discovery|Disc.)\s*Science(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Discovery Shed UK" 						title="(?=(Discovery|Disc.)\s*Shed(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Discovery Turbo UK" 						title="(?=(Discovery|Disc.)\s*Turbo(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Disney Channel HD UK" 						title="(?=Disney\s*Channel(\s*TV)?\s*HD(\s*UK)$)" strm=""/>
+	<channel id="Disney Channel UK" 						title="(?=Disney\s*Channel(\s*TV)?(\s*UK)$)" strm=""/>
+	<channel id="Disney Junior UK" 							title="(?=Disney\s*Junior(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Disney XD HD UK" 							title="(?=Disney\s*XD(\s*TV)?\s*HD(\s*UK)$)" strm=""/>
+	<channel id="Disney XD UK" 								title="(?=Disney\s*XD(\s*TV)?(\s*UK)$)" strm=""/>
+	<channel id="Drama UK" 									title="(?=Drama(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="E! HD UK" 									title="(?=E(!)?(\s*Entertainment)?\s*HD(\s*TV)?(\s*UK)$)" strm=""/>
+	<channel id="E! UK" 									title="(?=E(!)?(\s*Entertainment)?(\s*TV)?(\s*UK)$)" strm=""/>
+	<channel id="E4 HD UK" 									title="(?=E\s*4(\s*TV)?\s*HD(\s*UK)$)" strm=""/>
+	<channel id="E4 UK" 									title="(?=E\s*4(\s*TV)?(\s*UK)$)" strm=""/>
+	<channel id="ESPN UK" 									title="(?=(BT\s*Sport)?(s)?\s*ESPN\s*(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Eden HD UK" 								title="(?=Eden(\s*TV)?\s*HD(\s*UK)$)" strm=""/>
+	<channel id="Eden UK" 									title="(?=Eden(\s*TV)?(\s*UK)$)" strm=""/>
+	<channel id="Eir Sports 1 UK" 							title="(?=Eir\s*Sport(s)?\s*1(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Eir Sports 2 UK" 							title="(?=Eir\s*Sport(s)?\s*2(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Euronews UK" 								title="(?=Euronews(\s*TV)?(\s*HD)?(\s*UK|US|FR|DE)$)" strm=""/>
+	<channel id="Eurosport 1 HD UK" 						title="(?=Euro\s*sport(\s*1)?(\s*TV)?\s*HD(\s*UK)$)" strm=""/>
+	<channel id="Eurosport 1 UK" 							title="(?=Euro\s*sport(\s*1)?(\s*TV)?(\s*UK)$)" strm=""/>
+	<channel id="Eurosport 2 HD UK" 						title="(?=Euro\s*sport(\s*2)?(\s*TV)?\s*HD(\s*UK)$)" strm=""/>
+	<channel id="Eurosport 2 UK" 							title="(?=Euro\s*sport(\s*2)?(\s*TV)?(\s*UK)$)" strm=""/>
+<!--<channel id="Extreme Sports UK" 						title="(?=Extreme\s*Sports(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>-->
+	<channel id="FOX HD UK" 								title="(?=FOX\s*HD(\s*UK)$)" strm=""/>
+	<channel id="FOX UK" 									title="(?=FOX(\s*TV)?(\s*UK)$)" strm=""/>
+	<channel id="FRANCE 24 UK" 								title="(?=FRANCE\s*24(\s*TV)?(\s*HD)?(\s*UK|FR)$)" strm=""/>
+	<channel id="FRANCE 24 UK" 								title="(?=FRANCE\s*24(\s*TV)?(\s*HD)?(\s*UK|FR)$)" strm=""/>
+	<channel id="Film4 UK" 									title="(?=Film\s*4(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Flava UK" 									title="(?=Flava(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Food Network UK" 							title="(?=Food\s*Network(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Forces TV UK" 								title="(?=Forces(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="GOLD UK" 									title="(?=GOLD(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Gems TV UK" 								title="(?=Gems(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Good Food UK" 								title="(?=Good\s*Food(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="H2 UK" 									title="(?=(H|History)\s*2(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="HISTORY HD UK" 							title="(?=(H|History)(\s*TV)?\s*HD(\s*UK)$)" strm=""/>
+	<channel id="HISTORY UK" 								title="(?=(H|History)(\s*TV)?(\s*UK)$)" strm=""/>
+	<channel id="Heart TV UK" 								title="(?=Heart(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Heat TV UK" 								title="(?=Heat(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Home UK" 									title="(?=Home(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Horror Channel UK" 						title="(?=Horror\s*Channel(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Horse &amp; Country UK" 					title="(?=Horse(\s*&amp;)?\s*Country(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="ITV Anglia UK" 							title="(?=ITV\s*Anglia(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="ITV Border UK" 							title="(?=ITV\s*Border(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="ITV Central UK" 							title="(?=ITV\s*Central(\s*West)?(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="ITV Channel TV UK" 						title="(?=ITV\s*Channel(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="ITV Cymru Wales UK" 						title="(?=ITV\s*Cymru(s*Wales)?(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="ITV Encore HD UK" 							title="(?=ITV\s*Encore\s*HD(\s*UK)$)" strm=""/>
+	<channel id="ITV Encore UK" 							title="(?=ITV\s*Encore(\s*UK)$)" strm=""/>
+	<channel id="ITV Granada UK" 							title="(?=ITV\s*Granada(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="ITV HD UK" 								title="(?=ITV\s*(One|1)?\s*HD(\s*UK)$)" strm=""/>
+	<channel id="ITV London UK" 							title="(?=ITV\s*London(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="ITV Meridian UK" 							title="(?=ITV\s*Meridian(\s*South)?(\s*East)?(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="ITV Tyne Tees UK" 							title="(?=ITV\s*Tyne(\s*Tees)?(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="ITV UK" 									title="(?=ITV\s*(One|1)?(\s*UK)$)" strm=""/>
+	<channel id="ITV West Country UK" 						title="(?=ITV\s*West|Westcountry(\s*Country)?(\s*South)?(\s*West)?(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>  
+	<channel id="ITV Yorkshire UK" 							title="(?=ITV\s*Yorkshire(\s*West)?(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="ITV2 HD UK" 								title="(?=ITV\s*(Two|2)\s*HD(\s*UK)$)" strm=""/>
+	<channel id="ITV2 UK" 									title="(?=ITV\s*(Two|2)(\s*UK)$)" strm=""/>
+	<channel id="ITV3 HD UK" 								title="(?=ITV\s*(Three|3)\s*HD(\s*UK)$)" strm=""/>
+	<channel id="ITV3 UK" 									title="(?=ITV\s*(Three|3)(\s*UK)$)" strm=""/>
+	<channel id="ITV4 HD UK" 								title="(?=ITV\s*(Four|4)\s*HD(\s*UK)$)" strm=""/>
+	<channel id="ITV4 UK" 									title="(?=ITV\s*(Four|4)(\s*UK)$)" strm=""/>
+	<channel id="ITVBe UK" 									title="(?=ITV\s*Be(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Ideal World UK" 							title="(?=Ideal\s*World(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Investigation Discovery UK" 				title="(?=(Investigation|ID)(\s*Discovery)?(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Kerrang! TV UK" 							title="(?=Kerrang(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Kiss TV UK" 								title="(?=Kiss(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="LFCTV HD UK" 								title="(?=(Liverpool|LFC)(\s*FC)?(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="MGM Channel UK" 							title="(?=MGM(\s*Channel)?(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="MTV Base UK" 								title="(?=MTV\s*Base(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="MTV Dance UK" 								title="(?=MTV\s*Dance(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="MTV HD UK" 								title="(?=MTV\s*HD(\s*UK)$)" strm=""/>
+	<channel id="MTV Hits UK" 								title="(?=MTV\s*Hits(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="MTV Live HD UK" 							title="(?=MTV\s*Live\s*HD(\s*TV)?(\s*UK)$)" strm=""/>
+	<channel id="MTV Live UK" 								title="(?=MTV\s*Live(\s*TV)?(\s*UK)$)" strm=""/>
+	<channel id="MTV Music UK" 								title="(?=MTV\s*Music(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="MTV Rocks UK" 								title="(?=MTV\s*Rocks(\s*TV)?(\s*HD)?(\s*UK)?(\s*US)?$)" strm=""/>
+	<channel id="MTV UK" 									title="(?=MTV(\s*UK)$)" strm=""/>
+	<channel id="MUTV" 										title="(?=(Manchester\s*United|MU)(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Magic TV UK" 								title="(?=Magic(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="More4 UK" 									title="(?=More\s*4(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Motorsport.tv UK" 							title="(?=(Motorsport.tv|Motors)(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Movies 24 UK" 								title="(?=Movies\s*24(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Movies4Men UK" 							title="(?=Movies\s*4\s*Men(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="My5 UK" 									title="(?=My\s*5(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="NHK World UK" 								title="(?=NHK\s*World(\s*TV)?(\s*HD)?(\s*UK|US|JP)$)" strm=""/>
+	<channel id="Nat Geo Wild HD UK" 						title="(?=(Nat|National)(\s*Geo|Geographic)\s*Wild\s*HD(\s*UK)$)" strm=""/>
+	<channel id="Nat Geo Wild UK" 							title="(?=(Nat|National)(\s*Geo|Geographic)\s*Wild(\s*UK)$)" strm=""/>
+	<channel id="National Geographic HD UK" 				title="(?=National\s*Geographic(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="National Geographic UK" 					title="(?=National\s*Geographic(\s*UK)$)" strm=""/>
+	<channel id="Nick Jr Two UK" 							title="(?=Nick\s*(Jr|Jr.)\s*(Two|Too|2)(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Nick Jr UK" 								title="(?=Nick\s*(Jr|Jr.)(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Nick at Nite UK" 							title="(?=Nick\s*at\s*Nite(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Nickelodeon HD UK" 						title="(?=(Nick|Nickelodeon)(\s*TV)?\s*HD(\s*UK)$)" strm=""/>
+	<channel id="Nickelodeon UK" 							title="(?=(Nick|Nickelodeon)(\s*TV)?(\s*UK)$)" strm=""/>
+	<channel id="Nicktoons UK" 								title="(?=(Nicktoons|Nick\s*Toons)(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="PBS America UK" 							title="(?=PBS\s*America(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Pick UK" 									title="(?=Pick(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Pop Girl UK" 								title="(?=Pop\s*Girl(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Pop Max UK" 								title="(?=(Kix|Pop\s*Max)(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Pop UK" 									title="(?=Pop(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Premier Sports UK" 						title="(?=Premier\s*Sport(s)?(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="QUEST UK" 									title="(?=QUEST(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="QVC UK" 									title="(?=QVC(\s*TV)?(\s*HD)?(\s*UK|DE)$)" strm=""/>
+	<channel id="RT UK" 									title="(?=RT(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="RTÉ One UK" 								title="(?=RT.?\s*One(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="RTÉ Two UK" 								title="(?=RT.?(\s*Two|2)(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="RTÉ News Now UK" 							title="(?=RT.?\s*News\s*Now(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Racing UK" 								title="(?=Racing(\s*UK)?(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Real Lives UK" 							title="(?=Real\s*Lives(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Really UK" 								title="(?=Really(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="S4C UK" 									title="(?=S4C(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Scuzz UK" 									title="(?=Scuzz(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+<!--<channel id="Showcase UK" 								title="(?=(Showtime)?\s*Showcase(\s*TV)?(\s*HD)?(\s*UK|US)$)" strm=""/>-->
+	<channel id="Sky 1 HD UK" 								title="(?=Sky\s*(1|ONE)?\s*HD(\s*UK)$)" strm=""/>
+	<channel id="Sky 1 UK" 									title="(?=Sky\s*(1|ONE)?(\s*UK)$)" strm=""/>
+	<channel id="Sky 2 UK" 									title="(?=Sky\s*2(\s*UK)$)" strm=""/>
+	<channel id="Sky Arts UK" 								title="(?=Sky\s*Arts(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Sky Atlantic UK" 							title="(?=Sky\s*Atlantic(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Sky Cinema Action UK" 						title="(?=Sky\s*Cinema\s*Action(\s*&amp;)?(\s*Adventure)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Sky Cinema Comedy UK" 						title="(?=Sky\s*Cinema\s*Comedy(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Sky Cinema Crime UK" 						title="(?=Sky\s*Cinema(\s*Crime)?(\s*&amp;)?(\s*Thriller)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Sky Cinema Disney UK"						title="(?=Sky\s*Cinema\s*Disney(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Sky Cinema Drama UK" 						title="(?=Sky\s*Cinema\s*Drama(\s*&amp;)?(\s*Romance)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Sky Cinema Family UK" 						title="(?=Sky\s*Cinema\s*Family(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Sky Cinema Greats UK" 						title="(?=Sky\s*Cinema\s*Greats(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Sky Cinema Hits UK" 						title="(?=Sky\s*Cinema\s*Hits(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Sky Cinema Premiere UK" 					title="(?=Sky\s*Cinema\s*Premiere(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Sky Cinema Sci-Fi UK" 						title="(?=Sky\s*Cinema\s*Sci(-|\s*)Fi(\s*&amp;)?(\s*Horror)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Sky Living HD UK" 							title="(?=Sky\s*Living\s*HD(\s*UK)$)" strm=""/>
+	<channel id="Sky Living UK" 							title="(?=Sky\s*Living(\s*UK)$)" strm=""/>
+	<channel id="Sky News HD UK" 							title="(?=Sky\s*News(\s*TV)?\s*HD(\s*UK)$)" strm=""/>
+	<channel id="Sky News UK" 								title="(?=Sky\s*News(\s*TV)?(\s*UK)$)" strm=""/>
+	<channel id="Sky Sports Action UK" 						title="(?=Sky\s*Sport(s)?\s*Action(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Sky Sports Arena UK" 						title="(?=Sky\s*Sport(s)?\s*Arena(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Sky Sports Cricket UK" 					title="(?=Sky\s*Sport(s)?\s*Cricket(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Sky Sports F1 UK" 							title="(?=Sky\s*Sport(s)?\s*F1(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Sky Sports Football UK" 					title="(?=Sky\s*Sport(s)?\s*Football(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Sky Sports Golf UK" 						title="(?=Sky\s*Sport(s)?\s*Golf(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Sky Sports Main Event UK" 					title="(?=Sky\s*Sport(s)?\s*Main\s*Event(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Sky Sports Mix UK" 						title="(?=Sky\s*Sport(s)?\s*Mix(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Sky Sports News UK" 						title="(?=Sky\s*Sport(s)?\s*News(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Sky Sports Premier League UK" 				title="(?=Sky\s*Sport(s)?\s*Premier\s*League(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Sony Channel UK" 							title="(?=Sony(\s*Channel)?(\s*Max)?\s*(\s*TV)?(\s*HD)?(\s*UK|IN)$)" strm=""/>
+<!--<channel id="Starz TV UK" 								title="(?=Starz(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>-->
+	<channel id="Syfy HD UK" 								title="(?=Syfy\s*HD(\s*UK)$)" strm=""/>
+	<channel id="Syfy UK" 									title="(?=Syfy(\s*TV)?(\s*UK)$)" strm=""/>
+	<channel id="TCM UK" 									title="(?=TCM(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="TG4 UK" 									title="(?=TG4(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="TLC HD UK" 								title="(?=TLC\s*HD(\s*UK)$)" strm=""/>
+	<channel id="TLC UK" 									title="(?=TLC(\s*UK)$)" strm=""/>
+	<channel id="TV3 UK" 									title="(?=TV3(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="The Africa Channel UK" 					title="(?=(The)?\s*Africa(n)(\s*Channel)?(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="The Box UK" 								title="(?=(The)?\s*Box(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="The Box Upfront UK" 						title="(?=(The)?(\s*Box)?(\s*Upfront)?(\s*Hip)?(\s*Hop)?(\s*&amp;)?(\s*R)?(\s*&amp;)?(\s*B)?(\s*Music)?(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="The Vault UK" 								title="(?=(The)?\s*Vault(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Tiny Pop UK" 								title="(?=Tiny\s*Pop(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Travel Channel UK" 						title="(?=Travel\s*Channel(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="True Entertainment UK" 					title="(?=True\s*Entertainment(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="True Movies 1 UK" 							title="(?=True\s*Movies(\s*1)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="True Movies 2 UK" 							title="(?=True\s*Movies\s*2(\s*HD)?(\s*UK)$)" strm=""/>
+<!--<channel id="Universal Channel HD UK" 					title="(?=Universal(\s*Channel)?(\s*TV)?\s*HD(\s*UK|US|PL)$)" strm=""/>
+	<channel id="Universal Channel UK" 						title="(?=Universal(\s*Channel)?(\s*TV)?\s*(\s*UK|US|PL)$)" strm=""/>-->
+	<channel id="Universal TV HD UK" 						title="(?=Universal(\s*Channel)?(\s*TV)?\s*HD\s*(\s*UK|US|PL)$)" strm=""/>
+	<channel id="Universal TV UK" 							title="(?=Universal(\s*Channel)?(\s*TV)?\s*(\s*UK|US|PL)$)" strm=""/>
+	<channel id="VH1 UK" 									title="(?=VH1(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="VIVA UK" 									title="(?=VIVA(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="Vintage TV UK" 							title="(?=Vintage(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+<!--<channel id="Vox Africa UK" 							title="(?=Vox\s*(Africa|Afrique)(\s*TV)?(\s*HD)?(\s*UK|AF|AFR)$)" strm=""/>-->
+	<channel id="W UK" 										title="(?=W(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	<channel id="YESTERDAY UK" 								title="(?=YESTERDAY(\s*TV)?(\s*HD)?(\s*UK)$)" strm=""/>
+	
+	<category name="Movie" 									tags="Film|Movies"/>
+	<category name="Series" 								tags="Comedy|Drama|Series|Sitcom"/>
+	<category name="Information" 							tags="Current Affairs|News|News &amp; Documentaries"/>
+	<category name="Entertainment" 							tags="Entertainment|Property|Reality|Soap"/>
+	<category name="Document" 								tags="Documentary|Education|History|Nature|Science"/>
+	<category name="Kids" 									tags="Children|Childrens"/>
+	<category name="Sport" 									tags="Sport|Sports"/>
+	<category name="Interactive Entertainment" 				tags="Arts|Food|Lifestyle|Music|Music &amp; Radio|Specialist"/>
+</map>

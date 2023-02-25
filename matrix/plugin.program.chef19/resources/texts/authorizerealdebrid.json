@@ -1,0 +1,76 @@
+{
+    "items": [
+        {
+            "name": "Authorize ResolveURL Real-Debrid",
+            "url": "RunPlugin(plugin://script.module.resolveurl/?mode=auth_rd)",
+            "icon": "https://kodiapps.com/sharex/dllhost_2020-02-05_12-07-32.jpg",
+            "fanart": "https://kodiapps.com/sharex/dllhost_2020-02-05_12-07-32.jpg",
+            "description": "",
+            "type": ""
+        },
+        {
+            "name": "Authorize Realizer Cloud",
+            "url": "RunPlugin(plugin://plugin.video.realizerx/?action=authRealdebrid)",
+            "icon": "https://kodiapps.com/sharex/dllhost_2020-02-05_12-07-32.jpg",
+            "fanart": "https://kodiapps.com/sharex/dllhost_2020-02-05_12-07-32.jpg",
+            "description": "",
+            "type": ""
+        },
+        {
+            "name": "Authorize Seren Real Debrid",
+            "url": "RunPlugin(plugin://plugin.video.seren/?action=authRealDebrid)",
+            "icon": "https://kodiapps.com/sharex/dllhost_2020-02-05_12-07-32.jpg",
+            "fanart": "https://kodiapps.com/sharex/dllhost_2020-02-05_12-07-32.jpg",
+            "description": "",
+            "type": ""
+        },		
+        {
+            "name": "Authorize Umbrella Real Debrid",
+            "url": "RunPlugin(plugin://plugin.video.umbrella/?action=rd_Authorize)",
+            "icon": "https://kodiapps.com/sharex/dllhost_2020-02-05_12-07-32.jpg",
+            "fanart": "https://kodiapps.com/sharex/dllhost_2020-02-05_12-07-32.jpg",
+            "description": "",
+            "type": ""
+        },
+        {
+            "name": "Authorize FEN Real Debrid",
+            "url": "RunPlugin(plugin://plugin.video.fen/?mode=real_debrid.authenticate)",
+            "icon": "https://kodiapps.com/sharex/dllhost_2020-02-05_12-07-32.jpg",
+            "fanart": "https://kodiapps.com/sharex/dllhost_2020-02-05_12-07-32.jpg",
+            "description": "",
+            "type": ""
+        },
+        {
+            "name": "Revoke ResolveURL Real-Debrid",
+            "url": "RunPlugin(plugin://script.module.resolveurl/?mode=reset_rd)",
+            "icon": "https://kodiapps.com/sharex/dllhost_2020-02-05_12-07-32.jpg",
+            "fanart": "https://kodiapps.com/sharex/dllhost_2020-02-05_12-07-32.jpg",
+            "description": "",
+            "type": ""
+        },		
+        {
+            "name": "Revoke Umbrella Real-Debrid",
+            "url": "RunPlugin(plugin://plugin.video.umbrella/?action=rd_Revoke)",
+            "icon": "https://kodiapps.com/sharex/dllhost_2020-02-05_12-07-32.jpg",
+            "fanart": "https://kodiapps.com/sharex/dllhost_2020-02-05_12-07-32.jpg",
+            "description": "",
+            "type": ""
+        },
+        {
+            "name": "Revoke FEN Real-Debrid",
+            "url": "RunPlugin(plugin://plugin.video.fen/?mode=real_debrid.revoke_authentication)",
+            "icon": "https://kodiapps.com/sharex/dllhost_2020-02-05_12-07-32.jpg",
+            "fanart": "https://kodiapps.com/sharex/dllhost_2020-02-05_12-07-32.jpg",
+            "description": "",
+            "type": ""
+        },
+        {
+            "name": "Check If your VPN is compatible with Real Debrid",
+            "url": "ActivateWindow(10001,plugin://script.RealDebrid.vpn/,return)",
+            "icon": "https://kodiapps.com/sharex/dllhost_2020-02-05_12-07-32.jpg",
+            "fanart": "https://kodiapps.com/sharex/dllhost_2020-02-05_12-07-32.jpg",
+            "description": "",
+            "type": ""
+        }		
+    ]
+}

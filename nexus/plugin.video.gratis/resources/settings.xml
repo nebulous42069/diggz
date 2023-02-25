@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<settings version="1">
+	<section id="settings" label="" help="">
+		<category id="general.settings" label="30000" help="">
+			<group id="1" label="14260">
+				<setting id="debug" label="30001" type="boolean" help="">
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+			</group>
+		</category>
+	</section>
+</settings>

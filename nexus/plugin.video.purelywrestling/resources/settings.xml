@@ -1,0 +1,9 @@
+<settings>
+	<category label="Purely Wrestling Settings">
+		<setting type="lsep" label="Resolver" />
+		<setting label="Resolveurl settings" type="action" option="close" action="RunPlugin(plugin://plugin.video.purelywrestling/?action=urlresolverSettings)" />
+		<setting type="lsep" label="Cache" />
+		<setting label="Clear Cache" type="action" action="RunPlugin(plugin://plugin.video.purelywrestling/?action=clearCache)" />
+	</category>
+</settings>
+

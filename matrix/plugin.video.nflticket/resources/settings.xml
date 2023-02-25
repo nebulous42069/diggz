@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+
+    <category label="NFL Sunday Ticket">
+    
+        <setting label="Credentials:" type="lsep"/>
+        <setting id="username"  type="text" label="E-mail" default="" />
+        <setting id="password"  type="text" label="Password" option="hidden"  default="" />
+        
+    </category>
+	<setting id="devid" value="" default=''/>
+	<setting id="kuks" value="" default=''/>
+	<setting id="sessionId" value="" default=''/>
+	
+</settings>

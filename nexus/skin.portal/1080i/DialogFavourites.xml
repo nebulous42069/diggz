@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">450</defaultcontrol>
+	<controls>
+		<include>DefaultBackground</include>
+		<include content="BackgroundOverlay">
+			<param name="parentid" value="450"/>
+		</include>
+		<include>Time</include>
+		<control type="group">
+			<include>OpenClose</include>
+			
+			<include condition="Skin.HasSetting(Favourites.AlternateLayout)">AlternateFavouritesLayout</include>
+			<include condition="!Skin.HasSetting(Favourites.AlternateLayout)">StandardFavouritesLayout</include>
+			
+		</control>
+	</controls>
+</window>

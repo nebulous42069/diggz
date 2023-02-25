@@ -1,0 +1,17 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: en\n"
+
+msgctxt "#31000"
+msgid "Main"
+msgstr "Main"
+
+msgctxt "#30001"
+msgid "Username"
+msgstr "Username"
+
+msgctxt "#30002"
+msgid "Password"
+msgstr "Password"
+
