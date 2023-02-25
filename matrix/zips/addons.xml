@@ -23,7 +23,7 @@
             </item>
         </menu>
     </extension>
-    <extension library="service.py" point="xbmc.service" />
+    <extension point="xbmc.service" library="service.py" />
     <extension point="kodi.addon.metadata">
         <summary lang="en">Play a movie or show trailer from the context menu in the library.</summary>
         <description lang="en">Adds a context menu entry for movies or shows that have a trailer in the database. Choose windowed or fullscreen play in the settings.</description>
@@ -40,12 +40,12 @@
         </assets>
         <news />
     </extension>
-</addon><addon id="plugin.audio.addict" name="AudioAddict" provider-name="Samuel Sapalski (@leas), Fritz Capell (capellf@gmail.com)" version="420.0.8.1">
+</addon><addon id="plugin.audio.addict" name="AudioAddict" version="420.0.8.1" provider-name="Samuel Sapalski (@leas), Fritz Capell (capellf@gmail.com)">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.requests" version="2.12.4" />
     </requires>
-    <extension library="addon.py" point="xbmc.python.pluginsource">
+    <extension point="xbmc.python.pluginsource" library="addon.py">
         <provides>audio</provides>
     </extension>
     <extension point="xbmc.addon.metadata">
@@ -60,11 +60,11 @@
              <icon>icon.png</icon>
         </assets>
     </extension>
-</addon><addon id="plugin.audio.dashradio" name="Dash Radio" provider-name="Diggz" version="420.3">
+</addon><addon id="plugin.audio.dashradio" name="Dash Radio" version="420.3" provider-name="Diggz">
 <requires>
   <import addon="xbmc.python" version="3.0.0" />
 </requires>
-<extension library="main.py" point="xbmc.python.pluginsource">
+<extension point="xbmc.python.pluginsource" library="main.py">
   <provides>audio</provides>
 </extension>
 <extension point="xbmc.addon.metadata">
@@ -78,13 +78,13 @@
             <fanart>fanart.jpg</fanart>
      </assets>	
     </extension>
-</addon><addon id="plugin.audio.datpiff" name="datPiff" provider-name="mfd" version="2.0.0">
+</addon><addon id="plugin.audio.datpiff" name="datPiff" version="2.0.0" provider-name="mfd">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.beautifulsoup4" version="4.9.3" />
 		<import addon="script.module.requests" version="2.22.0" />
 	</requires>
-	<extension library="datpiff.py" point="xbmc.python.pluginsource">
+	<extension point="xbmc.python.pluginsource" library="datpiff.py">
 		<provides>audio</provides>
 	</extension>
 	<extension point="xbmc.addon.metadata">
@@ -102,11 +102,11 @@
 			<fanart>resources/fanart.jpg</fanart>
     	</assets>
 	</extension>
-</addon><addon id="plugin.audio.mixcloud" name="Mixcloud" provider-name="jackyNIX" version="420.3.0.2">
+</addon><addon id="plugin.audio.mixcloud" name="Mixcloud" version="420.3.0.2" provider-name="jackyNIX">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
   </requires>
-  <extension library="addon.py" point="xbmc.python.pluginsource">
+  <extension point="xbmc.python.pluginsource" library="addon.py">
      <provides>audio</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
@@ -134,15 +134,15 @@
     </assets>
     <reuselanguageinvoker>true</reuselanguageinvoker>
   </extension>
-</addon><addon id="plugin.program.autocompletion" name="AutoCompletion for virtual keyboard" provider-name="Philipp Temminghoff (phil65), sualfred, xulek, finkleandeinhorn" version="2.1.2">
+</addon><addon id="plugin.program.autocompletion" name="AutoCompletion for virtual keyboard" version="2.1.2" provider-name="Philipp Temminghoff (phil65), sualfred, xulek, finkleandeinhorn">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.autocompletion" version="2.0.3" />
     </requires>
-    <extension library="default.py" point="xbmc.python.script">
+    <extension point="xbmc.python.script" library="default.py">
         <provides>executable</provides>
     </extension>
-    <extension library="plugin.py" point="xbmc.python.pluginsource" />
+    <extension point="xbmc.python.pluginsource" library="plugin.py" />
 
     <extension point="xbmc.addon.metadata">
         <summary lang="en_GB">AutoCompletion for the virtual keyboard (needs skin support)</summary>
@@ -159,15 +159,15 @@
             <screenshot>resources/screenshot-03.jpg</screenshot>
         </assets>
     </extension>
-</addon><addon id="plugin.program.chef19" name="Chef Matrix Wizard" provider-name="Slam, BYB, Sarge, Diggz" version="451">
+</addon><addon id="plugin.program.chef19" name="Chef Matrix Wizard" version="451" provider-name="Slam, BYB, Sarge, Diggz">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
 		<import addon="script.module.requests" optional="true" />
 	</requires>
-	<extension library="addon.py" point="xbmc.python.pluginsource">
+	<extension point="xbmc.python.pluginsource" library="addon.py">
 		<provides>executable</provides>
 	</extension>
-	<extension library="service.py" point="xbmc.service" />
+	<extension point="xbmc.service" library="service.py" />
 	<extension point="xbmc.addon.metadata">
 		<summary lang="en_GB">Simple 19 Wizard is a lightweight template for installing builds on Kodi 19 Matrix. Has some code from Aftermath Wizard by Surfacingx. Skin Switch by OpenELEQ. Base code by BYB. Credits to them and all others who contributed. Please report any bugs to @slamious on Telegram/Twitter.</summary>
 		<description lang="en_GB">Kodi 19 Wizard</description>
@@ -193,7 +193,7 @@
 				<screenshot />
 		</assets>
 	</extension>
-</addon><addon id="plugin.program.das" name="Diggz Advanced Settings" provider-name="Diggz" version="3">
+</addon><addon id="plugin.program.das" name="Diggz Advanced Settings" version="3" provider-name="Diggz">
   <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.six" />
@@ -203,10 +203,10 @@
 		<import addon="inputstream.adaptive" />
 		<import addon="inputstream.ffmpegdirect" />			
   </requires>
-  <extension library="default.py" point="xbmc.python.pluginsource">
+  <extension point="xbmc.python.pluginsource" library="default.py">
     <provides>executable</provides>
   </extension>
-  <extension library="startup.py" point="xbmc.service" start="startup" />
+  <extension point="xbmc.service" library="startup.py" start="startup" />
     <extension point="xbmc.addon.metadata">
         <summary lang="en">A simple tool to adjust advanced settings</summary>
         <description lang="en">A simple tool to adjust advanced settings</description>
@@ -218,11 +218,11 @@
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
-</addon><addon id="plugin.program.diggzbackgrounds" name="Diggz Wallpaper Packs" provider-name="Diggz" version="420.19">
+</addon><addon id="plugin.program.diggzbackgrounds" name="Diggz Wallpaper Packs" version="420.19" provider-name="Diggz">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
   </requires>
-  <extension library="default.py" point="xbmc.python.pluginsource">
+  <extension point="xbmc.python.pluginsource" library="default.py">
     <provides>executable</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
@@ -234,11 +234,11 @@
     </assets>
     <platform>all</platform>
   </extension>
-</addon><addon id="plugin.program.orderfavourites" name="Order Favourites" provider-name="doko" version="1.2.1">
+</addon><addon id="plugin.program.orderfavourites" name="Order Favourites" version="1.2.1" provider-name="doko">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
   </requires>
-  <extension library="default.py" point="xbmc.python.pluginsource">
+  <extension point="xbmc.python.pluginsource" library="default.py">
     <provides>executable</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
@@ -277,11 +277,11 @@ Use this to organize your Favourites.
     </description>
     <platform>all</platform>
   </extension>
-</addon><addon id="plugin.program.quickfix" name="Quick Fixes" provider-name="Diggz" version="2">
+</addon><addon id="plugin.program.quickfix" name="Quick Fixes" version="2" provider-name="Diggz">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
 	</requires>
-	<extension library="addon.py" point="xbmc.python.pluginsource">
+	<extension point="xbmc.python.pluginsource" library="addon.py">
 		<provides>executable</provides>
 	</extension>
 	
@@ -304,11 +304,11 @@ Use this to organize your Favourites.
 				<screenshot />
 		</assets>
 	</extension>
-</addon><addon id="plugin.program.skins" name="Diggz Skin Updater" provider-name="Diggz" version="2">
+</addon><addon id="plugin.program.skins" name="Diggz Skin Updater" version="2" provider-name="Diggz">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
 	</requires>
-	<extension library="addon.py" point="xbmc.python.pluginsource">
+	<extension point="xbmc.python.pluginsource" library="addon.py">
 		<provides>executable</provides>
 	</extension>
 	
@@ -331,12 +331,12 @@ Use this to organize your Favourites.
 				<screenshot />
 		</assets>
 	</extension>
-</addon><addon id="plugin.video.adultseverywhere" name="[COLOR coral][B]Adults Everywhere[/B][/COLOR]" provider-name="AceTorr" version="0.0.2">
+</addon><addon id="plugin.video.adultseverywhere" name="[COLOR coral][B]Adults Everywhere[/B][/COLOR]" version="0.0.2" provider-name="AceTorr">
   <requires>
    <import addon="script.module.six" />
    <import addon="script.module.requests" /> 
   </requires>
-  <extension library="default.py" point="xbmc.python.pluginsource">
+  <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>video</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
@@ -348,14 +348,14 @@ Use this to organize your Favourites.
         <fanart>fanart.jpg</fanart>
     </assets>
   </extension>
-</addon><addon id="plugin.video.bnwmovie19" name="Black and White Movies" provider-name="Anonymous" version="420.1.0">
+</addon><addon id="plugin.video.bnwmovie19" name="Black and White Movies" version="420.1.0" provider-name="Anonymous">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
     <import addon="script.module.requests" />
     <import addon="script.module.unidecode" />
     <import addon="script.module.inputstreamhelper" />
   </requires>
-  <extension library="default.py" point="xbmc.python.pluginsource">
+  <extension point="xbmc.python.pluginsource" library="default.py">
     <provides>video</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
@@ -368,14 +368,14 @@ Use this to organize your Favourites.
 		<fanart>fanart.jpg</fanart>
   </assets>
   </extension>
-</addon><addon id="plugin.video.buffstreams" name="Buff Streams" provider-name="Demonstratorz" version="0.0.4">
+</addon><addon id="plugin.video.buffstreams" name="Buff Streams" version="0.0.4" provider-name="Demonstratorz">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
     <import addon="script.module.requests" />
     <import addon="script.module.beautifulsoup4" />
     <import addon="plugin.video.youtube" />
   </requires>
-  <extension library="default.py" point="xbmc.python.pluginsource">
+  <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>video</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
@@ -384,14 +384,14 @@ Use this to organize your Favourites.
     <description lang="en" />
      <platform>all</platform>
   </extension>
-</addon><addon id="plugin.video.carbon-tv" name="CarbonTV" provider-name="MetalChris" version="2022.12.23">
+</addon><addon id="plugin.video.carbon-tv" name="CarbonTV" version="2022.12.23" provider-name="MetalChris">
   <requires>
     
     <import addon="script.module.beautifulsoup4" version="4.3.2" />
     <import addon="script.module.html5lib" version="0.999.0" />
     <import addon="script.module.requests" version="2.9.1" />
   </requires>
-  <extension library="addon.py" point="xbmc.python.pluginsource">
+  <extension point="xbmc.python.pluginsource" library="addon.py">
     <provides>video</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
@@ -418,11 +418,11 @@ Use this to organize your Favourites.
         <screenshot>resources/media/screenshot021.png</screenshot>
     </assets>
   </extension>
-</addon><addon id="plugin.video.chaturbate" name="Chaturbate" provider-name="LivingOn,HSK Fix" version="2.4.3">
+</addon><addon id="plugin.video.chaturbate" name="Chaturbate" version="2.4.3" provider-name="LivingOn,HSK Fix">
   <requires>
-    <import addon="xbmc.python" targetversion="3.0.0" version="3.0.0" />
+    <import addon="xbmc.python" version="3.0.0" targetversion="3.0.0" />
   </requires>
-  <extension library="addon.py" point="xbmc.python.pluginsource">
+  <extension point="xbmc.python.pluginsource" library="addon.py">
         <provides>video</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
@@ -447,7 +447,7 @@ Use this to organize your Favourites.
 		<screenshot />
 	</assets>
   </extension>
-</addon><addon id="plugin.video.clickhere" name="  [B][COLOR white]Click Here[/COLOR][/B]" provider-name="Diamond Build" version="1.4">
+</addon><addon id="plugin.video.clickhere" name="  [B][COLOR white]Click Here[/COLOR][/B]" version="1.4" provider-name="Diamond Build">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
     <import addon="script.module.requests" />
@@ -456,7 +456,7 @@ Use this to organize your Favourites.
     <import addon="script.module.inputstreamhelper" />
     <import addon="script.module.resolveurl" />
   </requires>
-  <extension library="default.py" point="xbmc.python.pluginsource">
+  <extension point="xbmc.python.pluginsource" library="default.py">
     <provides>video</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
@@ -470,14 +470,14 @@ Use this to organize your Favourites.
 		<fanart>fanart.jpg</fanart>
   </assets>
   </extension>
-</addon><addon id="plugin.video.daddylive" name="Daddylive" provider-name="mbebe" version="2.1">
+</addon><addon id="plugin.video.daddylive" name="Daddylive" version="2.1" provider-name="mbebe">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.requests" />
         <import addon="script.module.inputstreamhelper" />
         <import addon="script.module.six" />
     </requires>
-    <extension library="addon.py" point="xbmc.python.pluginsource">
+    <extension point="xbmc.python.pluginsource" library="addon.py">
         <provides>video</provides>
     </extension>
     <extension point="xbmc.addon.metadata">
@@ -498,14 +498,14 @@ Use this to organize your Favourites.
         </assets>
     </extension>
     
-</addon><addon id="plugin.video.dartstreams" name="dartstreams" provider-name="lg" version="1.0.0">
+</addon><addon id="plugin.video.dartstreams" name="dartstreams" version="1.0.0" provider-name="lg">
     <requires>
         <import addon="script.module.requests" />
         <import addon="script.module.inputstreamhelper" />
         <import addon="service.cronxbmc" optional="true" />
         <import addon="script.module.future" />
     </requires>
-    <extension library="addon.py" point="xbmc.python.pluginsource">
+    <extension point="xbmc.python.pluginsource" library="addon.py">
         <provides>video</provides>
     </extension>
  	<extension point="xbmc.addon.metadata">
@@ -545,14 +545,14 @@ Use this to organize your Favourites.
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
-</addon><addon id="plugin.video.fullmatchtv" name="Full Match TV" provider-name="Demonstratorz" version="0.0.2">
+</addon><addon id="plugin.video.fullmatchtv" name="Full Match TV" version="0.0.2" provider-name="Demonstratorz">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
     <import addon="script.module.requests" />
     <import addon="script.module.beautifulsoup4" />
     <import addon="plugin.video.youtube" />
   </requires>
-  <extension library="default.py" point="xbmc.python.pluginsource">
+  <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>video</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
@@ -561,14 +561,14 @@ Use this to organize your Favourites.
     <description lang="en" />
      <platform>all</platform>
   </extension>
-</addon><addon id="plugin.video.gratis" name="Gratis" provider-name="Jon Bovi" version="0.1.8">
+</addon><addon id="plugin.video.gratis" name="Gratis" version="0.1.8" provider-name="Jon Bovi">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
 		<import addon="script.module.requests" />
 		<import addon="script.module.resolveurl" />
 		<import addon="script.module.beautifulsoup4" />
 	</requires>
-	<extension library="default.py" point="xbmc.python.pluginsource">
+	<extension point="xbmc.python.pluginsource" library="default.py">
 		<provides>video</provides>
 	</extension>
 	<extension point="xbmc.addon.metadata">
@@ -583,13 +583,13 @@ Use this to organize your Favourites.
 			<fanart>fanart.jpg</fanart>
 		</assets>
 	</extension>
-</addon><addon id="plugin.video.hunt-channel" name="Hunt Channel" provider-name="MetalChris" version="2021.09.26">
+</addon><addon id="plugin.video.hunt-channel" name="Hunt Channel" version="2021.09.26" provider-name="MetalChris">
   <requires>
     
     <import addon="script.module.beautifulsoup4" version="4.3.2" />
     <import addon="script.module.html5lib" version="0.999.0" />
   </requires>
-  <extension library="addon.py" point="xbmc.python.pluginsource">
+  <extension point="xbmc.python.pluginsource" library="addon.py">
     <provides>video</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
@@ -609,8 +609,8 @@ Use this to organize your Favourites.
         <fanart>resources/Media/fanart.jpg</fanart>
     </assets>
   </extension>
-</addon><addon id="plugin.video.iptvxc" name="[B][COLOR red]XCUI Streams[/B][/COLOR]" provider-name="[B][COLOR orange]Fire TV Guru[/B][/COLOR]" version="3.1.5">
-  <extension library="default.py" point="xbmc.python.pluginsource">
+</addon><addon id="plugin.video.iptvxc" name="[B][COLOR red]XCUI Streams[/B][/COLOR]" version="3.1.5" provider-name="[B][COLOR orange]Fire TV Guru[/B][/COLOR]">
+  <extension point="xbmc.python.pluginsource" library="default.py">
 		<provides>video</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
@@ -623,12 +623,12 @@ Use this to organize your Favourites.
 		<fanart>fanart.jpg</fanart>
 	</assets>
   </extension>
-</addon><addon id="plugin.video.kodikaraoke" name="Kodi Karaoke Free" provider-name="Kodi Karaoke" version="420.1.0.0">
+</addon><addon id="plugin.video.kodikaraoke" name="Kodi Karaoke Free" version="420.1.0.0" provider-name="Kodi Karaoke">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
     <import addon="plugin.video.youtube" version="0.0.1" />
   </requires>
-  <extension library="default.py" point="xbmc.python.pluginsource">
+  <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>video</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
@@ -639,12 +639,12 @@ Use this to organize your Favourites.
         <icon>icon.png</icon>
     </assets>
   </extension>
-</addon><addon id="plugin.video.latinohd" name="Latin TV" provider-name="mbebe" version="1.0.1">
+</addon><addon id="plugin.video.latinohd" name="Latin TV" version="1.0.1" provider-name="mbebe">
     <requires>
         <import addon="script.module.requests" />
         <import addon="script.module.six" />
     </requires>
-    <extension library="main.py" point="xbmc.python.pluginsource">
+    <extension point="xbmc.python.pluginsource" library="main.py">
         <provides>video</provides>
     </extension>
     <extension point="xbmc.addon.metadata">
@@ -660,12 +660,12 @@ Use this to organize your Favourites.
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
-</addon><addon id="plugin.video.megaiptv" name="[COLOR aqua]Mega IPTV[/COLOR]" provider-name="G-Man" version="1.0.1">
+</addon><addon id="plugin.video.megaiptv" name="[COLOR aqua]Mega IPTV[/COLOR]" version="1.0.1" provider-name="G-Man">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
 		<import addon="script.module.requests" />
 	</requires>
-	<extension library="addon.py" point="xbmc.python.pluginsource">
+	<extension point="xbmc.python.pluginsource" library="addon.py">
 		<provides>video</provides>
 	</extension>
 	<extension point="xbmc.addon.metadata">
@@ -687,7 +687,7 @@ Use this to organize your Favourites.
 			<screenshot />
 		</assets>
 	</extension>
-</addon><addon id="plugin.video.mlbtv" name="MLB.TV®" provider-name="eracknaphobia" version="2022.10.9+matrix.1">
+</addon><addon id="plugin.video.mlbtv" name="MLB.TV®" version="2022.10.9+matrix.1" provider-name="eracknaphobia">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.pytz" />
@@ -697,10 +697,10 @@ Use this to organize your Favourites.
         <import addon="script.module.kodi-six" />
         <import addon="script.module.dateutil" />
     </requires>
-    <extension library="main.py" point="xbmc.python.pluginsource">
+    <extension point="xbmc.python.pluginsource" library="main.py">
         <provides>video</provides>
     </extension>
-    <extension library="service.py" point="xbmc.service" />
+    <extension point="xbmc.service" library="service.py" />
     <extension point="xbmc.addon.metadata">
         <platform>all</platform>
         <summary lang="en_GB">Watch live and archived games
@@ -730,7 +730,7 @@ Use this to organize your Favourites.
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
-</addon><addon id="plugin.video.mlbtv2" name="MLB.TV 2" provider-name="eracknaphobia" version="2020.10.8+matrix.1">
+</addon><addon id="plugin.video.mlbtv2" name="MLB.TV 2" version="2020.10.8+matrix.1" provider-name="eracknaphobia">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.pytz" />
@@ -739,7 +739,7 @@ Use this to organize your Favourites.
         <import addon="inputstream.adaptive" optional="true" />
         <import addon="script.module.kodi-six" />
     </requires>
-    <extension library="main.py" point="xbmc.python.pluginsource">
+    <extension point="xbmc.python.pluginsource" library="main.py">
         <provides>video</provides>
     </extension>
     <extension point="xbmc.addon.metadata">
@@ -765,12 +765,12 @@ Use this to organize your Favourites.
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
-</addon><addon id="plugin.video.neo.tv" name="[B][COLOR red]neo[/COLOR][COLOR orange]tv [/COLOR][/B]" provider-name="neo.tv" version="1.1.5+matrix">
+</addon><addon id="plugin.video.neo.tv" version="1.1.5+matrix" name="[B][COLOR red]neo[/COLOR][COLOR orange]tv [/COLOR][/B]" provider-name="neo.tv">
 <requires>
 		<import addon="script.module.six" />
 		<import addon="script.module.kodi-six" />
 		<import addon="script.module.requests" optional="true" />
-		<import addon="script.module.websocket" optional="true" version="0.50.0" />
+		<import addon="script.module.websocket" version="0.50.0" optional="true" />
 		<import addon="script.module.youtube.dl" optional="true" />
 		<import addon="plugin.video.youtube" optional="true" />
 		<import addon="script.module.dateutil" optional="true" />
@@ -780,7 +780,7 @@ Use this to organize your Favourites.
 		<import addon="script.module.inputstreamhelper" optional="true" />
 		<import addon="script.module.slproxy" optional="true" />
 	</requires>
-  <extension library="default.py" point="xbmc.python.pluginsource">
+  <extension point="xbmc.python.pluginsource" library="default.py">
     <provides>video</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
@@ -799,13 +799,13 @@ Use this to organize your Favourites.
     <screenshot>resources/screenshots/.jpg</screenshot>
 </assets>
   </extension>
-</addon><addon id="plugin.video.nflticket" name="NFL Sunday Ticket" provider-name="mr.x" version="0.0.1">
+</addon><addon id="plugin.video.nflticket" name="NFL Sunday Ticket" version="0.0.1" provider-name="mr.x">
     <requires>
         <import addon="script.module.requests" />
         <import addon="script.module.six" />
         <import addon="script.module.xmltodict" />
     </requires>
-    <extension library="main.py" point="xbmc.python.pluginsource">
+    <extension point="xbmc.python.pluginsource" library="main.py">
         <provides>video</provides>
     </extension>
     <extension point="xbmc.addon.metadata">
@@ -821,17 +821,17 @@ Use this to organize your Favourites.
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
-</addon><addon id="plugin.video.nhlstreams" name="NHL Streams" provider-name="mbebe" version="0.3">
+</addon><addon id="plugin.video.nhlstreams" name="NHL Streams" version="0.3" provider-name="mbebe">
     <requires>
         <import addon="script.module.requests" />
         <import addon="script.module.six" />
         <import addon="script.module.iso8601" version="0.1.11" />
         <import addon="script.module.inputstreamhelper" />
     </requires>
-    <extension library="main.py" point="xbmc.python.pluginsource">
+    <extension point="xbmc.python.pluginsource" library="main.py">
         <provides>video</provides>
     </extension>
-    <extension library="service_entry.py" point="xbmc.service" />
+    <extension point="xbmc.service" library="service_entry.py" />
     <extension point="xbmc.addon.metadata">
         <description lang="en" />
         <disclaimer lang="en" />    
@@ -845,11 +845,11 @@ Use this to organize your Favourites.
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
-</addon><addon id="plugin.video.pantydropper" name="pantydropper" provider-name="me" version="1.0.2">
+</addon><addon id="plugin.video.pantydropper" name="pantydropper" version="1.0.2" provider-name="me">
 	<requires>
 		<import addon="script.module.audrey" />
 	</requires>
-	<extension library="default.py" point="xbmc.python.pluginsource">
+	<extension point="xbmc.python.pluginsource" library="default.py">
 		<provides>video</provides>
 	</extension>
 	<extension point="xbmc.addon.metadata">
@@ -863,7 +863,7 @@ Use this to organize your Favourites.
 		<fanart>fanart.jpg</fanart>
 	</assets>
 	</extension>
-</addon><addon id="plugin.video.parrottv" name="[COLOR cyan]Falcon[/COLOR]" provider-name="[COLOR cyan]Parrot[/COLOR] [COLOR yellow]Developers[/COLOR]" version="2.1.1">
+</addon><addon id="plugin.video.parrottv" version="2.1.1" name="[COLOR cyan]Falcon[/COLOR]" provider-name="[COLOR cyan]Parrot[/COLOR] [COLOR yellow]Developers[/COLOR]">
   <requires>
     <import addon="script.module.requests" version="2.18.4" />
     <import addon="script.module.beautifulsoup4" version="4.5.0" />
@@ -875,10 +875,10 @@ Use this to organize your Favourites.
     <import addon="script.module.inputstreamhelper" />
     <import addon="inputstream.adaptive" />
   </requires>
-  <extension library="addon.py" point="xbmc.python.pluginsource">
+  <extension point="xbmc.python.pluginsource" library="addon.py">
     <provides>video</provides>
   </extension>
-  <extension library="service.py" point="xbmc.service" />
+  <extension point="xbmc.service" library="service.py" />
   <extension point="xbmc.addon.metadata">
     <summary>[COLOR red]Invite-only TV[/COLOR]</summary>
     
@@ -889,7 +889,7 @@ Use this to organize your Favourites.
       <fanart>fanart.jpg</fanart> 
     </assets>
   </extension>
-</addon><addon id="plugin.video.premiumizerx" name="Premiumizer (py3)" provider-name="aenema" version="2022.12.21">
+</addon><addon id="plugin.video.premiumizerx" version="2022.12.21" name="Premiumizer (py3)" provider-name="aenema">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
 		<import addon="script.module.beautifulsoup4" />
@@ -897,10 +897,10 @@ Use this to organize your Favourites.
 		
 		
 	</requires>
-	<extension library="main.py" point="xbmc.python.pluginsource">
+	<extension point="xbmc.python.pluginsource" library="main.py">
 		<provides>video</provides>
 	</extension>
-	<extension library="service.py" point="xbmc.service" start="startup" />
+	<extension point="xbmc.service" library="service.py" start="startup" />
 	<extension point="kodi.context.item">
 		<menu id="kodi.core.main">
 			<menu>
@@ -938,13 +938,13 @@ Use this to organize your Favourites.
 		</assets>
 		<news>-</news>
 	</extension>
-</addon><addon id="plugin.video.prowrestling" name="Watch Pro Wrestling" provider-name="G-Man" version="1.0.0">
+</addon><addon id="plugin.video.prowrestling" name="Watch Pro Wrestling" version="1.0.0" provider-name="G-Man">
     <requires>
         <import addon="script.module.requests" />
         <import addon="script.module.six" />
         <import addon="script.module.resolveurl" version="5.0.00" />
     </requires>
-    <extension library="main.py" point="xbmc.python.pluginsource">
+    <extension point="xbmc.python.pluginsource" library="main.py">
         <provides>video</provides>
     </extension>
     <extension point="xbmc.addon.metadata">
@@ -960,7 +960,7 @@ Use this to organize your Favourites.
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
-</addon><addon id="plugin.video.purelywrestling" name="Purely Wrestling" provider-name="The Crew" version="420.1.0.2">
+</addon><addon id="plugin.video.purelywrestling" name="Purely Wrestling" version="420.1.0.2" provider-name="The Crew">
 	<requires>
 		<import addon="script.module.pyxbmct" />
 		<import addon="script.module.resolveurl" />
@@ -969,7 +969,7 @@ Use this to organize your Favourites.
 		<import addon="script.module.requests" />
 		<import addon="script.module.simplejson" />
 	</requires>
-	<extension library="purely.py" point="xbmc.python.pluginsource">
+	<extension point="xbmc.python.pluginsource" library="purely.py">
 		<provides>video</provides>
 	</extension>
 	<extension point="xbmc.addon.metadata">
@@ -986,7 +986,7 @@ Use this to organize your Favourites.
 		<forum />
 		<website />
 	</extension>
-</addon><addon id="plugin.video.realizerx" name="Realizer (py3)" provider-name="aenema" version="2022.12.16">
+</addon><addon id="plugin.video.realizerx" version="2022.12.16" name="Realizer (py3)" provider-name="aenema">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
 		<import addon="script.module.beautifulsoup4" />
@@ -994,10 +994,10 @@ Use this to organize your Favourites.
 		
 		
 	</requires>
-	<extension library="main.py" point="xbmc.python.pluginsource">
+	<extension point="xbmc.python.pluginsource" library="main.py">
 		<provides>video</provides>
 	</extension>
-	<extension library="service.py" point="xbmc.service" start="startup" />
+	<extension point="xbmc.service" library="service.py" start="startup" />
 	
 
 	<extension point="xbmc.addon.metadata">
@@ -1016,14 +1016,14 @@ Use this to organize your Favourites.
 		</assets>
 		<news>-</news>
 	</extension>
-</addon><addon id="plugin.video.showtime" name="Showtime" provider-name="mbebe" version="1.3">
+</addon><addon id="plugin.video.showtime" name="Showtime" version="1.3" provider-name="mbebe">
     <requires>
         <import addon="script.module.routing" />
         <import addon="script.module.requests" />
         <import addon="script.module.iso8601" version="0.1.11" />
         <import addon="script.module.inputstreamhelper" version="0.3.3" />
     </requires>
-    <extension library="main.py" point="xbmc.python.pluginsource">
+    <extension point="xbmc.python.pluginsource" library="main.py">
         <provides>video</provides>
     </extension>
 
@@ -1040,14 +1040,14 @@ Use this to organize your Favourites.
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
-</addon><addon id="plugin.video.shudder" name="Shudder" provider-name="mbebe" version="1.1">
+</addon><addon id="plugin.video.shudder" name="Shudder" version="1.1" provider-name="mbebe">
     <requires>
         <import addon="script.module.routing" />
         <import addon="script.module.requests" />
         <import addon="script.module.iso8601" version="0.1.11" />
         <import addon="script.module.inputstreamhelper" version="0.3.3" />
     </requires>
-    <extension library="main.py" point="xbmc.python.pluginsource">
+    <extension point="xbmc.python.pluginsource" library="main.py">
         <provides>video</provides>
     </extension>
 
@@ -1064,7 +1064,7 @@ Use this to organize your Favourites.
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
-</addon><addon id="plugin.video.sling" name="Sling 1" provider-name="d21spike, eracknaphobia" version="2022.1.24">
+</addon><addon id="plugin.video.sling" version="2022.1.24" name="Sling 1" provider-name="d21spike, eracknaphobia">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.requests" />
@@ -1074,10 +1074,10 @@ Use this to organize your Favourites.
         <import addon="script.module.pytz" />
         <import addon="script.module.kodi-six" />
     </requires>
-    <extension library="default.py" point="xbmc.python.pluginsource">
+    <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>video</provides>
     </extension>
-    <extension library="service.py" point="xbmc.service" start="startup" />
+    <extension point="xbmc.service" library="service.py" start="startup" />
     <extension point="xbmc.addon.metadata">
         <description lang="en_GB">A database driven SlingTV Kodi add-on. Providing many of the offered features/services you've come to expect from the official SlingTV interface. Choose anything from Live Channels, to On Demand, to binge watching shows. It's all there.</description>
         <platform>all</platform>
@@ -1096,7 +1096,7 @@ Use this to organize your Favourites.
             <screenshot>resources/images/screenshot05.png</screenshot>
         </assets>
     </extension>
-</addon><addon id="plugin.video.sling2" name="Sling 2" provider-name="d21spike, eracknaphobia" version="2022.1.24">
+</addon><addon id="plugin.video.sling2" version="2022.1.24" name="Sling 2" provider-name="d21spike, eracknaphobia">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.requests" />
@@ -1106,10 +1106,10 @@ Use this to organize your Favourites.
         <import addon="script.module.pytz" />
         <import addon="script.module.kodi-six" />
     </requires>
-    <extension library="default.py" point="xbmc.python.pluginsource">
+    <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>video</provides>
     </extension>
-    <extension library="service.py" point="xbmc.service" start="startup" />
+    <extension point="xbmc.service" library="service.py" start="startup" />
     <extension point="xbmc.addon.metadata">
         <description lang="en_GB">A database driven SlingTV Kodi add-on. Providing many of the offered features/services you've come to expect from the official SlingTV interface. Choose anything from Live Channels, to On Demand, to binge watching shows. It's all there.</description>
         <platform>all</platform>
@@ -1128,14 +1128,14 @@ Use this to organize your Favourites.
             <screenshot>resources/images/screenshot05.png</screenshot>
         </assets>
     </extension>
-</addon><addon id="plugin.video.stadium" name="Stadium" provider-name="MetalChris" version="2022.12.23">
+</addon><addon id="plugin.video.stadium" name="Stadium" version="2022.12.23" provider-name="MetalChris">
   <requires>
     
     <import addon="script.module.beautifulsoup4" version="4.3.2" />
     <import addon="script.module.html5lib" version="0.999.0" />
     <import addon="script.module.mechanize" version="0.2.6" />
   </requires>
-  <extension library="addon.py" point="xbmc.python.pluginsource">
+  <extension point="xbmc.python.pluginsource" library="addon.py">
     <provides>video</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
@@ -1177,7 +1177,7 @@ Use this to organize your Favourites.
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
-</addon><addon id="plugin.video.ustvgo" name="ustvgo" provider-name="lg" version="1.0.9">
+</addon><addon id="plugin.video.ustvgo" name="ustvgo" version="1.0.9" provider-name="lg">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.requests" />
@@ -1186,7 +1186,7 @@ Use this to organize your Favourites.
         <import addon="script.module.future" />
 		<import addon="script.module.six" />
     </requires>
-    <extension library="addon.py" point="xbmc.python.pluginsource">
+    <extension point="xbmc.python.pluginsource" library="addon.py">
         <provides>video</provides>
     </extension>
  	<extension point="xbmc.addon.metadata">
@@ -1207,7 +1207,7 @@ Use this to organize your Favourites.
         </assets>
         <reuselanguageinvoker>true</reuselanguageinvoker>
     </extension>
-</addon><addon id="plugin.video.vidembed" name="[COLOR cyan]Vidembed[/COLOR].[COLOR yellow]io[/COLOR]" provider-name="[COLOR cyan]Parrot[/COLOR] [COLOR yellow]Developers[/COLOR]" version="1.1.1">
+</addon><addon id="plugin.video.vidembed" version="1.1.1" name="[COLOR cyan]Vidembed[/COLOR].[COLOR yellow]io[/COLOR]" provider-name="[COLOR cyan]Parrot[/COLOR] [COLOR yellow]Developers[/COLOR]">
 <requires>
   <import addon="xbmc.python" version="3.0.0" />
   <import addon="script.module.requests" version="2.25.1" />
@@ -1216,7 +1216,7 @@ Use this to organize your Favourites.
   <import addon="script.module.parrot" version="1.0.0" />
   <import addon="script.module.routing" />
 </requires>
-<extension library="addon.py" point="xbmc.python.pluginsource">
+<extension point="xbmc.python.pluginsource" library="addon.py">
   <provides>video</provides>
 </extension>
 <extension point="xbmc.addon.metadata">
@@ -1227,16 +1227,16 @@ Use this to organize your Favourites.
     <fanart>fanart.jpg</fanart> 
   </assets>
 </extension>
-</addon><addon id="plugin.video.vix" name="Vix" provider-name="mbebe" version="0.5">
+</addon><addon id="plugin.video.vix" name="Vix" version="0.5" provider-name="mbebe">
     <requires>
         <import addon="script.module.requests" />
         <import addon="script.module.six" />
         <import addon="script.module.inputstreamhelper" version="0.3.3" />
     </requires>
-    <extension library="main.py" point="xbmc.python.pluginsource">
+    <extension point="xbmc.python.pluginsource" library="main.py">
         <provides>video</provides>
     </extension>
-    <extension library="service_entry.py" point="xbmc.service" />
+    <extension point="xbmc.service" library="service_entry.py" />
     <extension point="xbmc.addon.metadata">
         <description lang="en" />
         <disclaimer lang="en">https://github.com/mbebe/blomqvist</disclaimer>    
@@ -1250,10 +1250,10 @@ Use this to organize your Favourites.
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
-</addon><addon id="script.RealDebrid.vpn" name="RealDebrid VPN info" provider-name="peno" version="1.3.1">
+</addon><addon id="script.RealDebrid.vpn" name="RealDebrid VPN info" version="1.3.1" provider-name="peno">
 	<requires>
 	</requires>
-	<extension library="addon.py" point="xbmc.python.pluginsource">
+	<extension point="xbmc.python.pluginsource" library="addon.py">
 		<provides>executable</provides>
 	</extension>
 	<extension point="xbmc.addon.metadata">
@@ -1267,7 +1267,7 @@ Use this to organize your Favourites.
     			<fanart>fanart.png</fanart>
   		</assets>
         </extension>
-</addon><addon id="script.autoruns" name="Autoruns" provider-name="fight night, Jon Bovi" version="6">
+</addon><addon id="script.autoruns" name="Autoruns" version="6" provider-name="fight night, Jon Bovi">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.six" />
@@ -1285,10 +1285,10 @@ Use this to organize your Favourites.
 		<import addon="resource.images.recordlabels.white" version="0.0.1" />
         <import addon="script.colorbox" version="2.0.8" />		
     </requires>
-    <extension library="default.py" point="xbmc.python.pluginsource">
+    <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>executable</provides>
     </extension>
-    <extension library="service.py" point="xbmc.service" />
+    <extension point="xbmc.service" library="service.py" />
     <extension point="xbmc.addon.metadata">
         <platform>all</platform>
 		<source>https://github.com/fightnight/fightnight-addons/tree/master/script.autoruns</source>
@@ -1302,12 +1302,12 @@ Use this to organize your Favourites.
 				<icon>icon.png</icon>
 		</assets>
     </extension>
-</addon><addon id="script.colorbox" name="colorbox Script" provider-name="BADMS, Angelinas" version="3.0.0">
+</addon><addon id="script.colorbox" name="colorbox Script" version="3.0.0" provider-name="BADMS, Angelinas">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
 		<import addon="script.module.simplejson" version="2.0.10" />
 	</requires>
-    <extension library="default.py" point="xbmc.python.script">
+    <extension point="xbmc.python.script" library="default.py">
         <provides>executable</provides>
     </extension>
 	<extension point="xbmc.addon.metadata">
@@ -1324,11 +1324,11 @@ Use this to organize your Favourites.
 			<screenshot>resources/fanart.jpg</screenshot>
 		</assets>
 	</extension>
-</addon><addon id="script.diggzskins" name="Diggz Skin Switcher" provider-name="Diggz, Big thanks to FTV GURU!!" version="421.22">
+</addon><addon id="script.diggzskins" name="Diggz Skin Switcher" version="421.22" provider-name="Diggz, Big thanks to FTV GURU!!">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
   </requires>
-  <extension library="addon.py" point="xbmc.python.pluginsource">
+  <extension point="xbmc.python.pluginsource" library="addon.py">
         <provides>executable</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
@@ -1340,11 +1340,11 @@ Use this to organize your Favourites.
     <platform>all</platform>
     <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
   </extension>
-</addon><addon id="script.diggzwiki" name="Diggz Wiki" provider-name="Diggz" version="420">
+</addon><addon id="script.diggzwiki" name="Diggz Wiki" version="420" provider-name="Diggz">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
   </requires>
-  <extension library="addon.py" point="xbmc.python.script">
+  <extension point="xbmc.python.script" library="addon.py">
     <provides>executable</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
@@ -1356,14 +1356,14 @@ Use this to organize your Favourites.
 	<icon>icon.png</icon>
     </assets>
   </extension>
-</addon><addon id="script.module.audrey" name="Audrey" provider-name="ptom, Jon Bovi bones mod" version="1.0.0">
+</addon><addon id="script.module.audrey" name="Audrey" version="1.0.0" provider-name="ptom, Jon Bovi bones mod">
 	<requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.resolveurl" />
         <import addon="script.module.requests" />
         <import addon="plugin.video.youtube" />
     </requires>
-    <extension library="lib" point="xbmc.python.module" />
+    <extension point="xbmc.python.module" library="lib" />
     <extension point="xbmc.addon.metadata">
         <platform>all</platform>
         <summary lang="en">Audrey - JSON file to Addon</summary>
@@ -1379,11 +1379,11 @@ Use this to organize your Favourites.
 				<fanart>fanart.jpg</fanart>
 		</assets>
     </extension>
-</addon><addon id="script.module.parrot" name="Parrot Utils" provider-name="Parrot Developers" version="1.1.0">
+</addon><addon id="script.module.parrot" name="Parrot Utils" version="1.1.0" provider-name="Parrot Developers">
   <requires>		
     <import addon="script.module.requests" version="2.18.4" />
   </requires>
-  <extension library="lib" point="xbmc.python.module" />
+  <extension point="xbmc.python.module" library="lib" />
   <extension point="xbmc.addon.metadata">
     <summary>Utilities for Parrot TV addons.</summary>
     <description>Utilities for Parrot TV addons.</description>
@@ -1392,18 +1392,18 @@ Use this to organize your Favourites.
       <icon>icon.png</icon>
     </assets>
   </extension>
-</addon><addon id="script.module.pvr.artwork" name="PVR Artwork Module" provider-name="PvD" version="2.1.4">
+</addon><addon id="script.module.pvr.artwork" name="PVR Artwork Module" version="2.1.4" provider-name="PvD">
     <requires>
 	    <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.simplecache" version="2.0.2" />
         <import addon="script.module.requests" version="2.22.0+matrix" />
     </requires>
-    <extension library="lib" point="xbmc.python.module" />
-    <extension library="service.py" point="xbmc.python.script" />
-    <extension library="main.py" point="xbmc.service" />
-    <extension library="addevent.py" point="kodi.context.item">
+    <extension point="xbmc.python.module" library="lib" />
+    <extension point="xbmc.python.script" library="service.py" />
+    <extension point="xbmc.service" library="main.py" />
+    <extension point="kodi.context.item" library="addevent.py">
             <menu id="kodi.core.main">
-                <item args="call_contextmenu" library="service.py">
+                <item library="service.py" args="call_contextmenu">
                     <label>32065</label>
                     <visible>System.HasAddon(script.module.pvr.artwork) + Skin.HasSetting(Skin_enablePvrArtwork) + [Window.IsActive(MyPVRChannels.xml) | Window.IsActive(MyPVRGuide.xml) | Window.IsActive(MyPVRRecordings.xml) | Window.IsActive(MyPVRTimers.xml) | Window.IsActive(MyPVRSearch.xml)]</visible>
                 </item>
@@ -1422,7 +1422,7 @@ Use this to organize your Favourites.
 			<fanart />
 		</assets>
     </extension>
-</addon><addon id="script.module.requests" name="requests" provider-name="Python Software Foundation" version="2.27.1+matrix.1">
+</addon><addon id="script.module.requests" name="requests" version="2.27.1+matrix.1" provider-name="Python Software Foundation">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
     <import addon="script.module.certifi" version="2022.5.18+matrix.1" />
@@ -1430,7 +1430,7 @@ Use this to organize your Favourites.
     <import addon="script.module.idna" version="3.3.0+matrix.1" />
     <import addon="script.module.urllib3" version="1.26.9+matrix.1" />
   </requires>
-  <extension library="lib" point="xbmc.python.module" />
+  <extension point="xbmc.python.module" library="lib" />
   <extension point="xbmc.addon.metadata">
     <summary lang="en_GB">Requests is an elegant and simple HTTP library for Python, built for human beings.</summary>
     <description lang="en_GB">Requests is an elegant and simple HTTP library for Python, built for human beings.</description>
@@ -1442,11 +1442,11 @@ Use this to organize your Favourites.
       <icon>resources/icon.png</icon>
     </assets>
   </extension>
-</addon><addon id="script.module.six" name="six" provider-name="gutworth" version="1.15.0+matrix.1">
+</addon><addon id="script.module.six" name="six" version="1.15.0+matrix.1" provider-name="gutworth">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
   </requires>
-  <extension library="lib" point="xbmc.python.module" />
+  <extension point="xbmc.python.module" library="lib" />
   <extension point="xbmc.addon.metadata">
     <summary lang="en_GB">Python 2 and 3 compatibility utilities.</summary>
     <description lang="en_GB">Six is a Python 2 and 3 compatibility library. It provides utility functions for smoothing over the differences between the Python versions with the goal of writing Python code that is compatible on both Python versions. See the documentation for more information on what is provided.</description>
@@ -1464,7 +1464,7 @@ Use this to organize your Favourites.
     <import addon="script.module.requests" version="2.22.0" />
     <import addon="inputstream.adaptive" version="2.6.0" />
   </requires>
-  <extension library="lib" point="xbmc.python.module" />
+  <extension point="xbmc.python.module" library="lib" />
   <extension point="xbmc.addon.metadata">
         <description lang="en_GB">t1m Library Routines</description>
         <summary lang="en_GB">t1m Library Routines</summary>
@@ -1479,13 +1479,13 @@ Use this to organize your Favourites.
             <icon>resources/icon.png</icon>
         </assets>
    </extension>
-</addon><addon id="script.moviequiz" name="Movie Quiz" provider-name="twinther, seveerekaj" version="2.0.0">
+</addon><addon id="script.moviequiz" name="Movie Quiz" version="2.0.0" provider-name="twinther, seveerekaj">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.buggalo" version="1.2.0" />
-        <import addon="script.module.web-pdb" optional="true" version="1.5.6" />
+        <import addon="script.module.web-pdb" version="1.5.6" optional="true" />
     </requires>
-    <extension library="addon.py" point="xbmc.python.script" />
+    <extension point="xbmc.python.script" library="addon.py" />
     <extension point="xbmc.addon.metadata">
         <summary lang="be_BY">Movie and TV Shows Quiz</summary>
         <summary lang="da_DK">Quiz om Film og TV-serier</summary>
@@ -1532,7 +1532,7 @@ Use this to organize your Favourites.
             <icon>resources/media/images/icon.png</icon>
         </assets>
     </extension>
-</addon><addon id="script.mtvguide" name="m-TVGuide [COLOR gold][B]EPG[/B][/COLOR]" provider-name="mariusz89b" version="420.9.9.628">
+</addon><addon id="script.mtvguide" name="m-TVGuide [COLOR gold][B]EPG[/B][/COLOR]" version="420.9.9.628" provider-name="mariusz89b">
   <requires>
     <import addon="xbmc.addon" version="17.0.0" />
 	<import addon="script.module.inputstreamhelper" version="0.5.9" />
@@ -1547,10 +1547,10 @@ Use this to organize your Favourites.
 	<import addon="script.module.future" version="0.17.1" />
 	<import addon="script.module.urllib3" version="1.25.6" />
   </requires>
-  <extension library="addon.py" point="xbmc.python.script">
+  <extension point="xbmc.python.script" library="addon.py">
     <provides>video</provides>
   </extension>
-  <extension library="serverHTTP.py" point="xbmc.service" />
+  <extension point="xbmc.service" library="serverHTTP.py" />
   <extension point="xbmc.addon.metadata">
     <summary lang="en_GB">m-TVGuide EPG</summary>
 	<description lang="da_DK">Elektronisk programguide til Kodi.</description>
@@ -2105,14 +2105,14 @@ v9.0.0 (2020-06-21)
 		<screenshot>resources/screenshots/screenshot-03.jpg</screenshot>
     </assets>
   </extension>
-</addon><addon id="script.skin.helper.backgrounds" name="Skin Helper Service Backgrounds" provider-name="marcelveldt and others" version="1.0.36">
+</addon><addon id="script.skin.helper.backgrounds" name="Skin Helper Service Backgrounds" version="1.0.36" provider-name="marcelveldt and others">
 	<requires>
         <import addon="script.module.simplecache" version="1.0.0" />
         <import addon="script.module.metadatautils" version="1.0.31" />
 	</requires>
 
-    <extension library="default.py" point="xbmc.python.library" />
-    <extension library="service.py" point="xbmc.service" start="login" />
+    <extension point="xbmc.python.library" library="default.py" />
+    <extension point="xbmc.service" library="service.py" start="login" />
 
 	<extension point="xbmc.addon.metadata">
 		<summary lang="en">Helper service for Kodi skins providing rotating backgrounds</summary>
@@ -2128,12 +2128,12 @@ v9.0.0 (2020-06-21)
 		<website />
 		<source>https://github.com/kodi-community-addons/script.skin.helper.backgrounds</source>
 	</extension>
-</addon><addon id="script.skin.helper.colorpicker" name="Skin Helper Service ColorPicker" provider-name="sualfred,marcelveldt" version="420.2.0.1">
+</addon><addon id="script.skin.helper.colorpicker" name="Skin Helper Service ColorPicker" version="420.2.0.1" provider-name="sualfred,marcelveldt">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
 		<import addon="script.module.pil" version="1.1.7" />
 	</requires>
-	<extension library="default.py" point="xbmc.python.library" />
+	<extension point="xbmc.python.library" library="default.py" />
 	<extension point="xbmc.addon.metadata">
 		<summary lang="en_GB">Colorpicker for Kodi Skins. Part of Skin Helper Suite</summary>
 		<description lang="en_GB">Colorpicker for Kodi Skins. Part of Skin Helper Suite</description>
@@ -2146,13 +2146,13 @@ v9.0.0 (2020-06-21)
 			<fanart>resources/fanart.jpg</fanart>
 		</assets>
 	</extension>
-</addon><addon id="script.texturemaker" name="Texture Maker" provider-name="jurialmunkey" version="0.2.8">
+</addon><addon id="script.texturemaker" version="0.2.8" name="Texture Maker" provider-name="jurialmunkey">
 <requires>
   <import addon="xbmc.python" version="3.0.0" />
   <import addon="script.module.pil" version="1.1.7" />
 </requires>
-<extension library="script.py" point="xbmc.python.script" />
-<extension library="plugin.py" point="xbmc.python.pluginsource">
+<extension point="xbmc.python.script" library="script.py" />
+<extension point="xbmc.python.pluginsource" library="plugin.py">
   <provides>image</provides>
 </extension>
 <extension point="xbmc.addon.metadata">
@@ -2165,15 +2165,15 @@ v9.0.0 (2020-06-21)
     <fanart>fanart.jpg</fanart>
   </assets>
 </extension>
-</addon><addon id="script.tv.show.next.aired" name="TV Show - Next Aired" provider-name="WayneD,marcelveldt and others" version="8.0.3">
+</addon><addon id="script.tv.show.next.aired" name="TV Show - Next Aired" version="8.0.3" provider-name="WayneD,marcelveldt and others">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.thetvdb" version="1.0.32" />
 	</requires>
-	<extension library="default.py" point="xbmc.python.script">
+	<extension point="xbmc.python.script" library="default.py">
 		<provides>executable</provides>
 	</extension>
-	<extension library="service.py" point="xbmc.service" start="login" />
+	<extension point="xbmc.service" library="service.py" start="login" />
 	<extension point="xbmc.addon.metadata">
 		<summary lang="bg">Информация за предстоящите ТВ сериали.</summary>
 		<summary lang="ca">Agafar informació de les sèries de TV que es retransmetran pròximament.</summary>
@@ -2238,11 +2238,11 @@ v9.0.0 (2020-06-21)
 		<website>http://github.com/marcelveldt/script.tv.show.next.aired</website>
 		<source>https://github.com/marcelveldt/script.tv.show.next.aired.git</source>
 	</extension>
-</addon><addon id="service.blackbarsremover" name="Black Bars Remover" provider-name="milaq" version="3.0.0">
+</addon><addon id="service.blackbarsremover" name="Black Bars Remover" version="3.0.0" provider-name="milaq">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
     </requires>
-    <extension library="service.py" point="xbmc.service" />
+    <extension point="xbmc.service" library="service.py" />
     <extension point="xbmc.addon.metadata">
         <summary lang="en_gb">Automatically fit video to screen</summary>
         <description lang="en_gb">Automatically adjusts the zoomlevel to eliminate black bars in videos. This addon also respects Kodi's "minimise black bars" setting.</description>
@@ -2259,7 +2259,7 @@ v9.0.0 (2020-06-21)
             <screenshot />
         </assets>
     </extension>
-</addon><addon id="skin.aeon.nox.silvo" name="Planet Diggz" provider-name="SiLVO" version="420.8.0.1">
+</addon><addon id="skin.aeon.nox.silvo" version="420.8.0.1" name="Planet Diggz" provider-name="SiLVO">
 	<requires>
 		<import addon="xbmc.gui" version="5.15.0" />
 		<import addon="script.skinshortcuts" version="1.0.10" />
@@ -2267,8 +2267,8 @@ v9.0.0 (2020-06-21)
 		<import addon="resource.images.studios.white" version="0.0.1" />
 		<import addon="resource.images.recordlabels.white" version="0.0.1" />
 	</requires>
-	<extension debugging="false" point="xbmc.gui.skin">
-		<res aspect="16:9" default="true" folder="16x9" height="1080" width="1920" />
+	<extension point="xbmc.gui.skin" debugging="false">
+		<res width="1920" height="1080" aspect="16:9" default="true" folder="16x9" />
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<summary lang="af_ZA">Geskep deur BigNoid, Modded deur SiLVO, en Widgets deur Mr. V</summary>
@@ -2388,7 +2388,7 @@ v9.0.0 (2020-06-21)
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
-</addon><addon id="skin.auraflix" name="DiggzFlix" provider-name="skyfsza,inb4after,SerpentDrago" version="1.1.9">
+</addon><addon id="skin.auraflix" version="1.1.9" name="DiggzFlix" provider-name="skyfsza,inb4after,SerpentDrago">
     <requires>
         <import addon="xbmc.gui" version="5.15.0" />
         <import addon="script.skin.helper.service" version="1.1.24" />
@@ -2402,8 +2402,8 @@ v9.0.0 (2020-06-21)
         <import addon="resource.images.moviegenreicons.transparent" version="0.0.6" />
         <import addon="script.colorbox" version="2.0.8" />
     </requires>
-    <extension debugging="false" defaultthemename="Textures.xbt" effectslowdown="1" point="xbmc.gui.skin">
-        <res aspect="16:9" default="true" folder="1080i" height="1080" width="1920" />
+    <extension point="xbmc.gui.skin" defaultthemename="Textures.xbt" debugging="false" effectslowdown="1">
+        <res width="1920" height="1080" aspect="16:9" default="true" folder="1080i" />
     </extension>
     <extension point="xbmc.addon.metadata">
         <summary lang="en">Matrix / Kodi 19 Version of Auramod </summary>
@@ -2636,14 +2636,14 @@ v9.0.0 (2020-06-21)
             -Various changes so skin would install on Matrix
         </news>
     </extension>
-</addon><addon id="skin.disparity" name="Diggz Disparity" provider-name="sualfred, Diggz" version="421.19.0.1">
+</addon><addon id="skin.disparity" version="421.19.0.1" name="Diggz Disparity" provider-name="sualfred, Diggz">
 	<requires>
 		<import addon="xbmc.gui" version="5.15.0" />
 		<import addon="plugin.program.autocompletion" version="1.0.1" />
 		<import addon="script.skinshortcuts" version="1.0.17" />
 	</requires>
-	<extension debugging="false" point="xbmc.gui.skin">
-		<res aspect="16:9" default="true" folder="xml" height="1080" width="1920" />
+	<extension point="xbmc.gui.skin" debugging="false">
+		<res width="1920" height="1080" aspect="16:9" default="true" folder="xml" />
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<summary lang="en_GB">Disparity skin</summary>
@@ -2656,7 +2656,7 @@ v9.0.0 (2020-06-21)
 			<screenshot>resources/screenshot-01.jpg</screenshot>
 		</assets>
 	</extension>
-</addon><addon id="skin.eminence.2.fen" name="Fentastic" provider-name="Diggz" version="999.3.0.4">
+</addon><addon id="skin.eminence.2.fen" version="999.3.0.4" name="Fentastic" provider-name="Diggz">
     <requires>
         <import addon="xbmc.gui" version="5.15.0" />
 		<import addon="script.skinshortcuts" version="1.0.17" />
@@ -2665,8 +2665,8 @@ v9.0.0 (2020-06-21)
 		<import addon="script.skin.helper.colorpicker" version="1.0.12" />
         <import addon="script.image.resource.select" version="0.0.5" />	
     </requires>
-    <extension debugging="false" effectslowdown="1.00" point="xbmc.gui.skin">
-        <res aspect="16:9" default="true" folder="16x9" height="1080" width="1920" />
+    <extension point="xbmc.gui.skin" effectslowdown="1.00" debugging="false">
+        <res width="1920" height="1080" aspect="16:9" default="true" folder="16x9" />
     </extension>
     <extension point="xbmc.addon.metadata">
         <platform>all</platform>
@@ -2680,7 +2680,7 @@ v9.0.0 (2020-06-21)
 		<news> 
 		</news>
 	</extension>
-</addon><addon id="skin.eminence.2.mod" name="Diggz Eminence" provider-name="Diggz" version="997.3.0.4">
+</addon><addon id="skin.eminence.2.mod" version="997.3.0.4" name="Diggz Eminence" provider-name="Diggz">
     <requires>
         <import addon="xbmc.gui" version="5.15.0" />
         <import addon="script.skinshortcuts" version="1.0.0" />
@@ -2688,8 +2688,8 @@ v9.0.0 (2020-06-21)
         <import addon="script.image.resource.select" version="0.0.5" />
         <import addon="resource.images.weatherfanart.single" version="0.0.6" />		
     </requires>
-    <extension debugging="false" effectslowdown="1.00" point="xbmc.gui.skin">
-        <res aspect="16:9" default="true" folder="16x9" height="1080" width="1920" />
+    <extension point="xbmc.gui.skin" effectslowdown="1.00" debugging="false">
+        <res width="1920" height="1080" aspect="16:9" default="true" folder="16x9" />
     </extension>
     <extension point="xbmc.addon.metadata">
         <platform>all</platform>
@@ -2703,7 +2703,7 @@ v9.0.0 (2020-06-21)
 		<news> 
 		</news>
 	</extension>
-</addon><addon id="skin.phenomenal.h" name="Phenomenal" provider-name="Tomer, Diggz" version="422">
+</addon><addon id="skin.phenomenal.h" name="Phenomenal" version="422" provider-name="Tomer, Diggz">
 	<requires>
 		<import addon="xbmc.gui" version="5.15.0" />
 		<import addon="script.skin.helper.service" version="1.0.0" />
@@ -2717,8 +2717,8 @@ v9.0.0 (2020-06-21)
 		<import addon="resource.images.weatherfanart.single" version="0.0.6" />
 		<import addon="resource.images.moviegenreicons.arctic.zephyr" version="0.0.1" />
 	</requires>
-	<extension debugging="false" defaultthemename="Textures.xbt" effectslowdown="1" point="xbmc.gui.skin">
-		<res aspect="16:9" default="true" folder="1080p" height="1080" width="1920" />
+	<extension point="xbmc.gui.skin" defaultthemename="Textures.xbt" effectslowdown="1" debugging="false">
+		<res width="1920" height="1080" aspect="16:9" default="true" folder="1080p" />
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<summary lang="en">Phenomenal - Perfection Made Simple</summary>
@@ -2733,15 +2733,15 @@ v9.0.0 (2020-06-21)
 		v420 Update for Kodi 19 Matrix
 		</news>
 	</extension>
-</addon><addon id="skin.portal" name="Diggz Portal" provider-name="bsoriano, Jester, Joethepartylion, Pecinko" version="420.3.4.29">
+</addon><addon id="skin.portal" version="420.3.4.29" name="Diggz Portal" provider-name="bsoriano, Jester, Joethepartylion, Pecinko">
     <requires>
         <import addon="xbmc.gui" version="5.15.0" />
         <import addon="script.favourites" version="7.1.1" />
         <import addon="resource.uisounds.amber" version="1.0.0" />
         <import addon="script.skinshortcuts" version="1.0.17" />
     </requires>
-    <extension debugging="false" point="xbmc.gui.skin">
-        <res aspect="16:9" default="true" folder="1080i" height="1080" width="1920" />
+    <extension point="xbmc.gui.skin" debugging="false">
+        <res width="1920" height="1080" aspect="16:9" default="true" folder="1080i" />
     </extension>
     <extension point="xbmc.addon.metadata">
         <platform>all</platform>
@@ -2822,14 +2822,14 @@ v9.0.0 (2020-06-21)
         <description lang="pt_BR">Diggz Portal. Built for speed and great for low end devices</description>
         <description lang="pt_PT">Diggz Portal. Built for speed and great for low end devices</description>
     </extension>
-</addon><addon id="skin.xenonlite" name="Xenon Light" provider-name="Helly,bsoriano" version="4.1.5">
+</addon><addon id="skin.xenonlite" version="4.1.5" name="Xenon Light" provider-name="Helly,bsoriano">
   <requires>
     <import addon="xbmc.gui" version="5.15.0" />
 	<import addon="script.favourites" version="8.1.2" />
 	<import addon="script.image.resource.select" version="3.0.2" />	
   </requires>
-  <extension debugging="false" effectslowdown=".5" point="xbmc.gui.skin">
-    <res aspect="16:9" default="true" folder="xml" height="1080" width="1920" />
+  <extension point="xbmc.gui.skin" debugging="false" effectslowdown=".5">
+    <res width="1920" height="1080" aspect="16:9" default="true" folder="xml" />
   </extension>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">eXtended MOD of Confluence skin originally by Jezz_X and CCM by Mudislander.</summary>
@@ -2851,14 +2851,14 @@ v9.0.0 (2020-06-21)
     </assets>
     <news>See changelog for latest changes</news>
   </extension>
-</addon><addon id="skin.xenonx" name="Xenon" provider-name="Helly,bsoriano" version="4.1.5">
+</addon><addon id="skin.xenonx" version="4.1.5" name="Xenon" provider-name="Helly,bsoriano">
   <requires>
     <import addon="xbmc.gui" version="5.15.0" />
 	<import addon="script.favourites" version="8.1.2" />
 	<import addon="script.image.resource.select" version="3.0.2" />	
   </requires>
-  <extension debugging="false" effectslowdown=".5" point="xbmc.gui.skin">
-    <res aspect="16:9" default="true" folder="xml" height="1080" width="1920" />
+  <extension point="xbmc.gui.skin" debugging="false" effectslowdown=".5">
+    <res width="1920" height="1080" aspect="16:9" default="true" folder="xml" />
   </extension>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">eXtended MOD of Confluence skin originally by Jezz_X and CCM by Mudislander.</summary>
