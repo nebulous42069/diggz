@@ -277,7 +277,7 @@ Use this to organize your Favourites.
     </description>
     <platform>all</platform>
   </extension>
-</addon><addon id="plugin.program.quickfix" name="Quick Fixes" version="2" provider-name="Diggz">
+</addon><addon id="plugin.program.quickfix" name="Quick Fixes" version="4" provider-name="Diggz">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
 	</requires>

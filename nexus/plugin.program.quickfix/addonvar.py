@@ -7,7 +7,7 @@ from urllib.parse import parse_qs
 addon_id = xbmcaddon.Addon().getAddonInfo('id')
 
 '''#####-----Build File-----#####'''
-buildfile = 'https://raw.githubusercontent.com/nebulous42069/main/master/Fixes/Fixes.xml'
+buildfile = 'https://diggz1.me/Fixes/Fixes.xml'
 
 '''#####-----Notifications File-----#####'''
 notify_url  = 'http://'
