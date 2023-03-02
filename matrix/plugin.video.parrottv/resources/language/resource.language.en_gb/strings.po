@@ -51,17 +51,39 @@ msgctxt "#35000"
 msgid "Playlist"
 msgstr "Playlist"
 
-msgctxt "#35001"
+msgctxt "#30201"
 msgid "CZ / SK"
 msgstr "CZ / SK"
 
-msgctxt "#35002"
+msgctxt "#30202"
 msgid "US"
 msgstr "US"
 
-msgctxt "#35003"
+msgctxt "#30203"
 msgid "UK"
 msgstr "UK"
+
+
+
+msgctxt "#35001"
+msgid "CZ / SK Channels"
+msgstr "CZ / SK Channels"
+
+msgctxt "#35002"
+msgid "US Channels"
+msgstr "US Channels"
+
+msgctxt "#35003"
+msgid "UK Channels"
+msgstr "UK Channels"
+
+msgctxt "#35004"
+msgid "US Regional Channels"
+msgstr "US Regional Channels"
+
+msgctxt "#35005"
+msgid "US Local Channels"
+msgstr "US Local Channels"
 
 msgctxt "#35010"
 msgid "Force update playlist"

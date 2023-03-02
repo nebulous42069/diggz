@@ -142,6 +142,10 @@
         <property name="FullscreenWidgetAutoLimit" tag="property" attribute="name|widgetStyle" value="Big Square">5</property>
         <property name="FullscreenWidgetAutoLimit" tag="property" attribute="name|widgetStyle" value="Big Landscape">3</property>
         <property name="FullscreenWidgetAutoLimit" tag="property" attribute="name|widgetStyle" value="Banner">1</property>
+        <property name="FullscreenWidgetAutoLimit" tag="property" attribute="name|widgetStyle" value="Lovefilm">5</property>
+        <property name="FullscreenWidgetAutoLimit" tag="property" attribute="name|widgetStyle" value="Feature Poster">5</property>
+        <property name="FullscreenWidgetAutoLimit" tag="property" attribute="name|widgetStyle" value="Feature Landscape">2</property>
+        <property name="FullscreenWidgetAutoLimit" tag="property" attribute="name|widgetStyle" value="Feature Banner">1</property>
         <property name="FullscreenWidgetAutoLimit">7</property>
 
         <property name="isSubmenuBumper" tag="property" attribute="name|widgetPath.SubmenuBumper">True</property>
@@ -199,6 +203,8 @@
                     <onup>SetFocus(300)</onup>
                     <ondown condition="Skin.HasSetting(Home.VerticalMenu)">SetFocus(300)</ondown>
 
+                    <ondown condition="!Skin.HasSetting(Home.VerticalMenu) + $SKINSHORTCUTS[isWidgetEndRowAction]">SetProperty(CustomHubHeader,$INFO[Container(300).ListItem.Label],Home)</ondown>
+                    <ondown condition="!Skin.HasSetting(Home.VerticalMenu) + $SKINSHORTCUTS[isWidgetEndRowAction]">SetProperty(submenuVisibility,$INFO[Container(300).ListItem.Property(submenuVisibility)],Home)</ondown>
                     <ondown condition="!Skin.HasSetting(Home.VerticalMenu) + $SKINSHORTCUTS[isWidgetEndRowAction]">$SKINSHORTCUTS[widgetEndRowAction]</ondown>
                     <ondown condition="!Skin.HasSetting(Home.VerticalMenu) + ![$SKINSHORTCUTS[isWidgetEndRowAction]]">ClearProperty(330_FocusBounce,Home)</ondown>
                     <ondown condition="!Skin.HasSetting(Home.VerticalMenu) + ![$SKINSHORTCUTS[isWidgetEndRowAction]] + !String.IsEqual(Window.Property(Slide.WidgetInfoStyle),Full)">SetFocus(330)</ondown>
@@ -536,6 +542,10 @@
             <property name="widgetAutoLimit" tag="property" attribute="name|widgetAspect" value="Big Square">5</property>
             <property name="widgetAutoLimit" tag="property" attribute="name|widgetAspect" value="Big Landscape">3</property>
             <property name="widgetAutoLimit" tag="property" attribute="name|widgetAspect" value="Banner">1</property>
+            <property name="widgetAutoLimit" tag="property" attribute="name|widgetAspect" value="Lovefilm">5</property>
+            <property name="widgetAutoLimit" tag="property" attribute="name|widgetAspect" value="Feature Poster">5</property>
+            <property name="widgetAutoLimit" tag="property" attribute="name|widgetAspect" value="Feature Landscape">2</property>
+            <property name="widgetAutoLimit" tag="property" attribute="name|widgetAspect" value="Feature Banner">1</property>
             <property name="widgetAutoLimit">7</property>
 
             <property name="widgetLimitNumber" tag="property" attribute="name|widgetLimit" value="$NUMBER[10]">10</property>
@@ -556,16 +566,17 @@
             <property name="widgetInclude">Widget_Poster</property>
 
             <!-- Details -->
-            <property name="widgetDetailed" tag="property" attribute="name|list" value="Submenu">true</property>
             <property name="widgetDetailed" tag="property" attribute="name|widgetAspect" value="Button">true</property>
             <property name="widgetDetailed" tag="property" attribute="name|widgetAspect" value="Apps">true</property>
+            <property name="widgetDetailed" tag="property" attribute="name|widgetAspect" value="Text">false</property>
+            <property name="widgetDetailed" tag="property" attribute="name|list" value="Submenu">true</property>
             <property name="widgetDetailed">false</property>
 
             <!-- Style -->
-            <property name="widgetStyle" tag="property" attribute="name|list" value="Submenu">List_Button_Row</property>
             <property name="widgetStyle" tag="property" attribute="name|widgetAspect" value="Button">List_Button_Row</property>
             <property name="widgetStyle" tag="property" attribute="name|widgetAspect" value="Apps">List_Apps_Row</property>
             <property name="widgetStyle" tag="property" attribute="name|widgetAspect" value="Text">List_Button_Row</property>
+            <property name="widgetStyle" tag="property" attribute="name|list" value="Submenu">List_Button_Row</property>
             <property name="widgetStyle" tag="property" attribute="name|widgetAspect" value="Square">List_Square_Row</property>
             <property name="widgetStyle" tag="property" attribute="name|widgetAspect" value="Landscape">List_Landscape_Row</property>
             <property name="widgetStyle" tag="property" attribute="name|widgetAspect" value="Big Square">List_BigSquare_Row</property>
@@ -602,6 +613,10 @@
             <!-- IsSubmenu -->
             <property name="isSubmenu" tag="property" attribute="name|list" value="Submenu">True</property>
             <property name="isSubmenu">False</property>
+
+            <!-- IsSubmenu -->
+            <property name="isStacked" tag="property" attribute="name|list" value="Stacked">True</property>
+            <property name="isStacked">False</property>
 
             <!-- IsVisible -->
             <property name="isVisible" tag="property" attribute="name|list" value="Fullscreen">False</property>
@@ -659,27 +674,33 @@
                     <param name="spacerid" value="$PYTHON[int(mainmenuid) * 1000 + 800 + int(id)]" />
                     <param name="buttonid" value="$PYTHON[(int(mainmenuid) * 1000 + int(id)) * 100]" />
                     <param name="label" value="$SKINSHORTCUTS[widgetName]" />
+                    <param name="usealtlabel" value="$SKINSHORTCUTS[isStacked]" />
+                    <param name="altlabel">$INFO[Container($PYTHON[int(mainmenuid) * 1000 + 600 + int(id) - 1]).ListItem.Label]</param>
                     <param name="usewidgetlabel" value="$SKINSHORTCUTS[widgetLabelName]" />
                     <param name="include" value="$SKINSHORTCUTS[widgetStyle]" />
-                    <param name="visible" value="[[$SKINSHORTCUTS[isVisible]] + String.IsEqual(Container(300).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])]" />
+                    <param name="visible" value="[[$SKINSHORTCUTS[isVisible]] + String.IsEqual(Container(300).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + [![$SKINSHORTCUTS[isStacked]] | [!Integer.IsEqual(Container($PYTHON[int(mainmenuid) * 1000 + 600 + int(id) - 1]).NumItems,0) + Container($PYTHON[int(mainmenuid) * 1000 + 600 + int(id) - 1]).ListItem.IsFolder]]]" />
                     <param name="infowidget" value="$SKINSHORTCUTS[isInfo]" />
                     <param name="infowidget_full" value="$SKINSHORTCUTS[isInfoFull]" />
-                    <param name="busy_visible" value="Integer.IsEqual(Container($PYTHON[int(mainmenuid) * 1000 + 600 + int(id)]).NumItems,0)" />
+                    <param name="busy_visible" value="Integer.IsEqual(Container($PYTHON[int(mainmenuid) * 1000 + 600 + int(id)]).NumItems,0) | [$SKINSHORTCUTS[isStacked] + Container($PYTHON[int(mainmenuid) * 1000 + 600 + int(id)]).IsUpdating]" />
                     <param name="detailed">$SKINSHORTCUTS[widgetDetailed]</param>
                     <param name="oversized">$SKINSHORTCUTS[isOversize]</param>
-                    <include content="Object_ContentDynamic" condition="!$SKINSHORTCUTS[isAutoLimit] + !$SKINSHORTCUTS[isSubmenu]">
+                    <include content="Widget_ContentDynamic" condition="!$SKINSHORTCUTS[isSubmenu] + !$SKINSHORTCUTS[isStacked]">
                         <param name="sortby">$SKINSHORTCUTS[widgetSortby]</param>
                         <param name="sortorder">$SKINSHORTCUTS[widgetSortorder]</param>
                         <param name="target">$SKINSHORTCUTS[widgetTarget]</param>
                         <param name="limit">$SKINSHORTCUTS[widgetLimit]</param>
+                        <param name="autolimit">$SKINSHORTCUTS[widgetAutoLimit]</param>
+                        <param name="is_autolimit">$SKINSHORTCUTS[isAutoLimit]</param>
                         <param name="content">$SKINSHORTCUTS[widgetPath]</param>
                     </include>
-                    <include content="Object_ContentDynamic" condition="$SKINSHORTCUTS[isAutoLimit] + !$SKINSHORTCUTS[isSubmenu]">
+                    <include content="Widget_ContentDynamic" condition="!$SKINSHORTCUTS[isSubmenu] + $SKINSHORTCUTS[isStacked]">
                         <param name="sortby">$SKINSHORTCUTS[widgetSortby]</param>
                         <param name="sortorder">$SKINSHORTCUTS[widgetSortorder]</param>
                         <param name="target">$SKINSHORTCUTS[widgetTarget]</param>
-                        <param name="limit">$SKINSHORTCUTS[widgetAutoLimit]</param>
-                        <param name="content">$SKINSHORTCUTS[widgetPath]</param>
+                        <param name="limit">$SKINSHORTCUTS[widgetLimit]</param>
+                        <param name="autolimit">$SKINSHORTCUTS[widgetAutoLimit]</param>
+                        <param name="is_autolimit">$SKINSHORTCUTS[isAutoLimit]</param>
+                        <param name="content">$INFO[Container($PYTHON[int(mainmenuid) * 1000 + 600 + int(id) - 1]).ListItem.FolderPath]</param>
                     </include>
                     <include content="Defs_AutoScroll" condition="$SKINSHORTCUTS[isAutoScroll] + !$SKINSHORTCUTS[isSubmenu]">
                         <param name="condition" value="!Control.HasFocus($PYTHON[int(mainmenuid) * 1000 + 600 + int(id)])" />
@@ -690,6 +711,11 @@
                         <param name="onclick">ActivateWindow($SKINSHORTCUTS[widgetTarget],$SKINSHORTCUTS[widgetPath],return)</param>
                         <param name="visible">Integer.IsEqual(Container($PYTHON[int(mainmenuid) * 1000 + 600 + int(id)]).NumItems,$SKINSHORTCUTS[widgetLimit]) | Integer.IsEqual(Container($PYTHON[int(mainmenuid) * 1000 + 600 + int(id)]).NumItems,$PYTHON[int(widgetLimitNumber) + 1])</param>
                     </include>
+
+                    <include content="Object_ContentItem" condition="$SKINSHORTCUTS[isStacked] + !$SKINSHORTCUTS[isSubmenu]">
+                        <param name="visible">Integer.IsEqual(Container($PYTHON[int(mainmenuid) * 1000 + 600 + int(id) - 1]).NumItems,0) | String.IsEmpty(Container($PYTHON[int(mainmenuid) * 1000 + 600 + int(id) - 1]).ListItem.FolderPath)</param>
+                    </include>
+
                     <include content="Object_ContentInclude" condition="$SKINSHORTCUTS[isSubmenu]">
                         <param name="include">skinshortcuts-group-$SKINSHORTCUTS[submenuVisibility]</param>
                     </include>
@@ -1084,6 +1110,17 @@
         </controls>
     </other>
 
+    <other include="textmenu">
+        <property name="includeCondition" tag="visible" />
+        <property name="includeCondition">True</property>
+        <property name="label" tag="label" />
+        <controls>
+            <include content="Home_Horz_Menubar_Text_Button" condition="$SKINSHORTCUTS[includeCondition]">
+                <param name="label">$SKINSHORTCUTS[label]</param>
+            </include>
+        </controls>
+    </other>
+
     <other include="menubar">
         <property name="submenuVisibility" tag="property" attribute="name|submenuVisibility"/>
         <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[1]">1</property>
@@ -1316,8 +1353,13 @@
 
             <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-Hulu">plugin://slyguy.hulu/?_=search&amp;query=</property>
             <property name="widgetPath2" tag="property" attribute="name|list" value="DefaultSearch-Hulu">/</property>
+
             <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-DisneyPlus">plugin://slyguy.disney.plus/?_=search&amp;query=</property>
             <property name="widgetPath2" tag="property" attribute="name|list" value="DefaultSearch-DisneyPlus">/</property>
+
+            <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-HBOMax">plugin://slyguy.hbo.max/?_=search&amp;query=</property>
+            <property name="widgetPath2" tag="property" attribute="name|list" value="DefaultSearch-HBOMax">/</property>
+
             <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-Addons">addons://search/</property>
             <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-SpotifyArtists">plugin://plugin.audio.spotify/?action=search_artists&amp;artistid=</property>
             <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-SpotifyAlbums">plugin://plugin.audio.spotify/?action=search_albums&amp;albumid=</property>
@@ -1366,6 +1408,10 @@
             <property name="widgetAutoLimit" tag="property" attribute="name|widgetAspect" value="Big Square">5</property>
             <property name="widgetAutoLimit" tag="property" attribute="name|widgetAspect" value="Big Landscape">3</property>
             <property name="widgetAutoLimit" tag="property" attribute="name|widgetAspect" value="Banner">1</property>
+            <property name="widgetAutoLimit" tag="property" attribute="name|widgetAspect" value="Lovefilm">5</property>
+            <property name="widgetAutoLimit" tag="property" attribute="name|widgetAspect" value="Feature Poster">5</property>
+            <property name="widgetAutoLimit" tag="property" attribute="name|widgetAspect" value="Feature Landscape">2</property>
+            <property name="widgetAutoLimit" tag="property" attribute="name|widgetAspect" value="Feature Banner">1</property>
             <property name="widgetAutoLimit">7</property>
 
             <property name="widgetShowMore" tag="property" attribute="name|widgetLimit" value="Auto">false</property>

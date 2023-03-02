@@ -2,7 +2,7 @@
 <addon
     id="skin.eminence.2.mod"
     version="997.3.0.4"
-    name="Diggz Eminence"
+    name="[B][COLOR gold]Eminence[/COLOR][/B]  (Mid Power)"
     provider-name="Diggz">
     <requires>
         <import addon="xbmc.gui" version="5.15.0"/>

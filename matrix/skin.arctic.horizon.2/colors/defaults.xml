@@ -24,22 +24,22 @@
     <color name="main_logo">ffb3b3b3</color>
 
     <!-- Dialogs -->
-    <color name="dialog_bg_100">FFcccccc</color>
-    <color name="dialog_bg_90">e7cccccc</color>
-    <color name="dialog_bg_80">cdcccccc</color>
-    <color name="dialog_bg_70">B3cccccc</color>
-    <color name="dialog_bg_60">9acccccc</color>
-    <color name="dialog_bg_30">4Dcccccc</color>
-    <color name="dialog_bg_12">1Fcccccc</color>
+    <color name="dialog_bg_100">FF212125</color>
+    <color name="dialog_bg_80">e7212125</color>
+    <color name="dialog_bg_90">cd212125</color>
+    <color name="dialog_bg_70">B3212125</color>
+    <color name="dialog_bg_60">9a212125</color>
+    <color name="dialog_bg_30">4D212125</color>
+    <color name="dialog_bg_12">1F212125</color>
 
-    <color name="dialog_fg_100">FF0f0f0f</color>
-    <color name="dialog_fg_90">e70f0f0f</color>
-    <color name="dialog_fg_80">cd0f0f0f</color>
-    <color name="dialog_fg_70">B30f0f0f</color>
-    <color name="dialog_fg_60">9a0f0f0f</color>
-    <color name="dialog_fg_30">4D0f0f0f</color>
-    <color name="dialog_fg_12">1F0f0f0f</color>
-    <color name="dialog_panel">120f0f0f</color>
+    <color name="dialog_fg_100">FFededed</color>
+    <color name="dialog_fg_90">e7ededed</color>
+    <color name="dialog_fg_80">cdededed</color>
+    <color name="dialog_fg_70">B3ededed</color>
+    <color name="dialog_fg_60">9aededed</color>
+    <color name="dialog_fg_30">4Dededed</color>
+    <color name="dialog_fg_12">1Fededed</color>
+    <color name="dialog_panel">08ededed</color>
 
     <!-- Panels -->
     <color name="panel_bg">c5000000</color>
@@ -54,13 +54,13 @@
 
     <!-- Overlay -->
     <color name="overlay_soft">0cffffff</color>
-    <color name="overlay_hard">19ffffff</color>
+    <color name="overlay_hard">12ffffff</color>
     <color name="overlay_line">1affffff</color>
 
     <!-- Shadow -->
-    <color name="shadow_flat">1affffff</color>
-    <color name="shadow_line">1f0f0f0f</color>
-    <color name="shadow_soft">1a000000</color>
+    <color name="shadow_flat">1Fededed</color>
+    <color name="shadow_line">12ededed</color>
+    <color name="shadow_soft">33000000</color>
     <color name="shadow_hard">80000000</color>
     <color name="shadow_menu">40000000</color>
 

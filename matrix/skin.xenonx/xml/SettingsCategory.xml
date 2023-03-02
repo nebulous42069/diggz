@@ -258,6 +258,19 @@
             <textcolor>grey</textcolor>
             <shadowcolor>black</shadowcolor>
         </control>
+		<control type="colorbutton" id="15">
+			<description>Default ColorButton</description>
+			<left>0</left>
+			<top>0</top>
+			<height>48</height>
+			<aligny>center</aligny>
+			<font>Regular21</font>
+			<textcolor>grey2</textcolor>
+			<focusedcolor>white</focusedcolor>
+			<invalidcolor>invalid</invalidcolor>
+			<texturefocus border="4">MenuItemFO.png</texturefocus>
+			<texturenofocus border="2"></texturenofocus>
+		</control>		
         <control type="label" id="2">
             <description>Fake Label so we can pass it value down to the one below</description>
             <left>0</left>

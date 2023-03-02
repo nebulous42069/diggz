@@ -15,14 +15,75 @@
     <include name="Home_Horz_Furniture_TopLeft">
         <include content="Home_Base_Furniture_TopLeft">
             <visible>!$EXP[Exp_HomeBarVisible]</visible>
+            <visible>!Skin.HasSetting(Home.CleanWidgets) | Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) | String.IsEqual(Window.Property(Slide.WidgetInfoStyle),Full) | !Control.IsVisible(398)</visible>
         </include>
     </include>
     <include name="Home_Vert_Furniture_TopLeft">
         <include content="Home_Base_Furniture_TopLeft">
             <visible>![Control.HasFocus(300) | Control.HasFocus(399) | ControlGroup(303).HasFocus() | Control.HasFocus(302) | Control.HasFocus(304) | Control.HasFocus(305) | Window.Next(1114)] | Skin.HasSetting(Home.DisableSearchMenu)</visible>
+            <visible>!Skin.HasSetting(Home.CleanWidgets) | Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301) | String.IsEqual(Window.Property(Slide.WidgetInfoStyle),Full) | !Control.IsVisible(398)</visible>
         </include>
     </include>
 
+
+    <!-- Menufade -->
+    <include name="Home_Widgets_Fade">
+        <control type="group">
+            <animation effect="fade" reversible="false" start="0" end="100" time="400">WindowOpen</animation>
+            <animation effect="fade" reversible="false" start="100" end="0" time="400">WindowClose</animation>
+            <control type="image">
+                <animation effect="fade" reversible="false" start="0" end="100" time="400">Visible</animation>
+                <animation effect="fade" reversible="false" start="100" end="0" time="400">Hidden</animation>
+                <include>skinshortcuts-template-wallfade-top-visible</include>
+                <visible>!String.IsEqual(Window.Property(Slide.WidgetInfoStyle),Full)</visible>
+                <visible>!$EXP[Exp_InfoDialogs]</visible>
+                <visible>!$EXP[Exp_RecommendationDialogs]</visible>
+                <height>200</height>
+                <top>0</top>
+                <texture>common/dim-top-bezier.png</texture>
+            </control>
+
+            <control type="group">
+                <centertop>70</centertop>
+                <height>140</height>
+                <visible>!$EXP[Exp_InfoDialogs]</visible>
+                <visible>!$EXP[Exp_RecommendationDialogs]</visible>
+                <visible>!Control.HasFocus(399) + !Control.HasFocus(300) + !Control.HasFocus(302)</visible>
+                <animation effect="fade" reversible="false" start="0" end="100" time="400">Visible</animation>
+                <animation effect="fade" reversible="false" start="100" end="0" time="400">Hidden</animation>
+                <include content="Object_NavButton">
+                    <param name="id">320</param>
+                    <param name="flipy">false</param>
+                </include>
+            </control>
+
+            <control type="group">
+                <animation effect="fade" reversible="false" start="0" end="100" time="400">Visible</animation>
+                <animation effect="fade" reversible="false" start="100" end="0" delay="0" time="400">Hidden</animation>
+                <include>skinshortcuts-template-wallfade-bottom-visible</include>
+                <visible>!$EXP[Exp_InfoDialogs]</visible>
+                <visible>!$EXP[Exp_RecommendationDialogs]</visible>
+                <control type="image">
+                    <height>120</height>
+                    <bottom>0</bottom>
+                    <texture flipy="true">common/dim-top-bezier.png</texture>
+                    <visible>!String.IsEqual(Window.Property(Slide.WidgetInfoStyle),Full) | !Skin.HasSetting(Widgets.ExpandedFooter)</visible>
+                    <animation effect="fade" reversible="false" start="0" end="100" time="400" delay="0">Visible</animation>
+                    <animation effect="fade" reversible="false" start="100" end="0" delay="0" time="400">Hidden</animation>
+                </control>
+                <control type="group">
+                    <centerbottom>70</centerbottom>
+                    <height>140</height>
+                    <include content="Object_NavButton">
+                        <param name="id">320</param>
+                        <param name="flipy">true</param>
+                    </include>
+                </control>
+            </control>
+
+
+        </control>
+    </include>
 
     <!-- Menubar Horz -->
     <include name="Home_Horz_Menubar">
@@ -68,7 +129,7 @@
                 <onclick>ClearProperty(MenuSelect)</onclick>
                 <include>skinshortcuts-template-menubar</include>
             </include>
-            <include content="Object_Control" condition="!Skin.HasSetting(Home.DisableSearchMenu)">
+            <include content="Object_Control" condition="!Skin.HasSetting(Home.DisableSearchMenu) + !Skin.HasSetting(Home.TextMenu)">
                 <param name="control">image</param>
                 <left>20</left>
                 <width>80</width>
@@ -78,7 +139,7 @@
                 <bordersize>4</bordersize>
                 <texture colordiffuse="main_fg_70">special://skin/extras/icons/search.png</texture>
             </include>
-            <include content="Object_MenuBar_List">
+            <include content="Object_MenuBar_List" condition="!Skin.HasSetting(Home.TextMenu)">
                 <param name="id" value="300" />
                 <param name="color_nf" value="main_fg" />
                 <param name="altfocus" value="Control.HasFocus(399)" />
@@ -90,7 +151,96 @@
                 <include>skinshortcuts-template-menubar</include>
                 <content><include>skinshortcuts-mainmenu</include></content>
             </include>
+            <include condition="Skin.HasSetting(Home.TextMenu)">Home_Horz_Menubar_Text</include>
         </include>
+    </include>
+
+    <include name="Home_Horz_Menubar_Text">
+        <include content="Object_Hidden_List">
+            <param name="id" value="300" />
+            <onfocus condition="String.IsEmpty(Window.Property(MenuSelect))">SetFocus(399)</onfocus>
+            <onfocus condition="String.IsEmpty(Window.Property(MenuSelect))">SetProperty(TMDbHelper.WidgetContainer,301)</onfocus>
+            <include>skinshortcuts-template-menubar</include>
+            <content><include>skinshortcuts-mainmenu</include></content>
+        </include>
+
+        <!-- Need icon for bumper -->
+        <control type="image">
+            <left>20</left>
+            <width>80</width>
+            <height>60</height>
+            <centertop>50%</centertop>
+            <aspectratio>keep</aspectratio>
+            <bordersize>0</bordersize>
+            <texture colordiffuse="main_fg_70">special://skin/extras/icons/home.png</texture>
+            <visible>Skin.HasSetting(Home.DisableSearchMenu) + !Control.HasFocus(302)</visible>
+        </control>
+        <control type="image">
+            <left>20</left>
+            <width>80</width>
+            <height>60</height>
+            <centertop>50%</centertop>
+            <aspectratio>keep</aspectratio>
+            <bordersize>4</bordersize>
+            <texture colordiffuse="main_fg_70">special://skin/extras/icons/search.png</texture>
+            <visible>!Skin.HasSetting(Home.DisableSearchMenu) + !Control.HasFocus(302)</visible>
+        </control>
+        <control type="image">
+            <left>20</left>
+            <width>80</width>
+            <height>60</height>
+            <centertop>50%</centertop>
+            <aspectratio>keep</aspectratio>
+            <bordersize>4</bordersize>
+            <texture colordiffuse="main_fg_70">$INFO[Container(300).ListITem.Icon]</texture>
+            <visible>Control.HasFocus(302)</visible>
+        </control>
+
+        <control type="grouplist">
+            <height>256</height>
+            <centertop>20</centertop>
+            <left>80</left>
+            <orientation>horizontal</orientation>
+            <itemgap>-80</itemgap>
+            <include>skinshortcuts-template-menubar</include>
+            <onfocus>SetFocus(399)</onfocus>
+            <include>skinshortcuts-template-textmenu</include>
+        </control>
+    </include>
+
+    <include name="Home_Horz_Menubar_Text_Button">
+        <control type="togglebutton">
+            <texturefocus />
+            <texturenofocus />
+            <alttexturefocus border="80">special://profile/addon_data/script.texturemaker/ArcticHorizon/menumain_h.png</alttexturefocus>
+            <alttexturenofocus border="80">special://profile/addon_data/script.texturemaker/ArcticHorizon/menumain_h.png</alttexturenofocus>
+            <usealttexture>String.IsEqual(Container(300).ListItem.Label,$PARAM[label]) + !Control.HasFocus(302)</usealttexture>
+            <visible>Control.HasFocus(300) | Control.HasFocus(399)</visible>
+            <height>256</height>
+            <width>auto</width>
+            <label>$PARAM[label]</label>
+            <altlabel>[COLOR=$VAR[ColorSelected]]$PARAM[label][/COLOR]</altlabel>
+            <textoffsetx>80</textoffsetx>
+            <font>font_main_bold</font>
+            <textcolor>main_fg_70</textcolor>
+            <aligny>center</aligny>
+        </control>
+        <control type="togglebutton">
+            <texturefocus />
+            <texturenofocus />
+            <alttexturefocus border="80" colordiffuse="dialog_bg_100">common/menumain.png</alttexturefocus>
+            <alttexturenofocus border="80" colordiffuse="dialog_bg_100">common/menumain.png</alttexturenofocus>
+            <usealttexture>String.IsEqual(Container(300).ListItem.Label,$PARAM[label]) + !Control.HasFocus(302)</usealttexture>
+            <visible>![Control.HasFocus(300) | Control.HasFocus(399)]</visible>
+            <height>256</height>
+            <width>auto</width>
+            <label>$PARAM[label]</label>
+            <altlabel>[COLOR=dialog_fg_70]$PARAM[label][/COLOR]</altlabel>
+            <textoffsetx>80</textoffsetx>
+            <font>font_main_bold</font>
+            <textcolor>main_fg_70</textcolor>
+            <aligny>center</aligny>
+        </control>
     </include>
 
 
@@ -468,10 +618,10 @@
             <param name="usegrouplist" value="false" />
             <param name="nib_pos" value="420" />
             <param name="useanimation" value="false" />
-            <include content="Object_Left" condition="Skin.HasSetting(Home.DisableSearchMenu)">
+            <include content="Object_Left" condition="Skin.HasSetting(Home.DisableSearchMenu) | Skin.HasSetting(Home.TextMenu)">
                 <param name="left">40</param>
             </include>
-            <include content="Object_Left" condition="!Skin.HasSetting(Home.DisableSearchMenu)">
+            <include content="Object_Left" condition="!Skin.HasSetting(Home.DisableSearchMenu) + !Skin.HasSetting(Home.TextMenu)">
                 <param name="left">140</param>
             </include>
             <animation effect="slide" start="0" end="100" condition="Container(300).Position(1)">Conditional</animation>

@@ -131,8 +131,8 @@
 					</control>
 					<control type="grouplist">
 						<visible>ListItem.IsCollection</visible>
-						<animation effect="slide" end="0,110" condition="!System.HasAddon(script.skin.info.service)">Conditional</animation>
-						<animation effect="fade" time="250" condition="System.HasAddon(script.skin.info.service)">Visible</animation>
+						<animation effect="slide" end="0,110" condition="!System.AddonIsEnabled(script.skin.info.service)">Conditional</animation>
+						<animation effect="fade" time="250" condition="System.AddonIsEnabled(script.skin.info.service)">Visible</animation>
 						<control type="label">
 							<label>[COLOR $VAR[ThemeLabelColor]]$LOCALIZE[342]:[/COLOR] $INFO[Container(4500).NumItems]</label>
 							<width>570</width>
@@ -540,7 +540,7 @@
 				<param name="width">770</param>
 			</include>
 		</itemlayout>
-		<focusedlayout height="82" width="806" condition="[!Skin.HasSetting(rightlistalternate) + Container.Content(movies)]">
+		<focusedlayout height="82" width="806" condition="[!Skin.HasSetting(rightlistalternate) + Container.Content(movies)]" infoupdate="5000">
 			<control type="image">
 				<include>RightListFocusedHighLightContent</include>
 				<include>VisibleFadeAnimation</include>
@@ -549,7 +549,7 @@
 				<param name="width">700</param>
 			</include>
 		</focusedlayout>
-		<focusedlayout height="82" width="806" condition="[Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + !Skin.HasSetting(rightlistalternatetv)">
+		<focusedlayout height="82" width="806" condition="[Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + !Skin.HasSetting(rightlistalternatetv)" infoupdate="5000">
 			<control type="image">
 				<include>RightListFocusedHighLightContent</include>
 				<include>VisibleFadeAnimation</include>
@@ -561,13 +561,13 @@
 				</include>
 			</control>
 		</focusedlayout>
-		<focusedlayout height="82" width="806" condition="[Skin.HasSetting(rightlistalternate) + Container.Content(movies)]">
+		<focusedlayout height="82" width="806" condition="[Skin.HasSetting(rightlistalternate) + Container.Content(movies)]" infoupdate="5000">
 			<include content="RightListFocusedLayout">
 				<param name="width">770</param>
 				<param name="labelColor">$VAR[ThemeLabelColor]</param>
 			</include>
 		</focusedlayout>
-		<focusedlayout height="82" width="806" condition="[Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + Skin.HasSetting(rightlistalternatetv)">
+		<focusedlayout height="82" width="806" condition="[Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + Skin.HasSetting(rightlistalternatetv)" infoupdate="5000">
 			<include content="RightListFocusedLayout">
 				<param name="width">770</param>
 				<param name="labelColor">$VAR[ThemeLabelColor]</param>
@@ -618,7 +618,7 @@
 					<label>$VAR[RightListSubLabelVar]</label>
 					<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(506)">Conditional</animation>
 					<animation effect="slide" end="-155" time="0" condition="!String.IsEmpty(ListItem.UserRating) + Window.IsActive(music)">Conditional</animation>
-					<visible>!ListItem.IsCollection + !Container.Content(seasons)</visible>
+					<visible>!ListItem.IsCollection + !Container.Content(seasons) + !String.IsEqual(ListItem.DBTYPE,season)</visible>
 				</control>
 				<control type="image">
 					<left>662</left>

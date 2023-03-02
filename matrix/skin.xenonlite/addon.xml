@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon
   id="skin.xenonlite"
-  version="4.1.5"
-  name="Xenon Light"
+  version="5"
+  name="[B][COLOR gold]Xenon Light[/COLOR][/B]  (Low Power)"
   provider-name="Helly,bsoriano">
   <requires>
     <import addon="xbmc.gui" version="5.15.0"/>

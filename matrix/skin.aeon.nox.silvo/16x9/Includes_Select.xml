@@ -306,7 +306,7 @@
 					<label></label>
 					<onclick>SendClick(2000,8)</onclick>
 					<ondown>9000</ondown>
-					<visible>Control.IsVisible(8)</visible>
+					<visible>Control.IsVisible(8) + String.IsEqual(Window.Property(groupname),mainmenu)</visible>
 				</control>
 				<control type="button" id="95">
 					<description>Manual button</description>
@@ -537,6 +537,11 @@
 			<description>Controller settings button</description>
 			<label>$LOCALIZE[35234]</label>
 			<onclick>ActivateWindow(GameControllers)</onclick>
+		</item>
+		<item>
+			<description>Controller port config</description>
+			<label>$LOCALIZE[35110]</label>
+			<onclick>ActivateWindow(GamePorts)</onclick>
 		</item>
 		<item>
 			<description>Advanced settings</description>
@@ -950,7 +955,7 @@
 		<item>
 			<label>$LOCALIZE[31023]</label>
 			<onclick>Dialog.Close(1129)</onclick>
-			<onclick>Skin.SetImage(CustomDefaultBackground.path,special://skin/backgrounds)</onclick>
+			<onclick>Skin.SetImage(CustomDefaultBackground.path,special://skin/extras/backgrounds)</onclick>
 		</item>
 		<item>
 			<label>$LOCALIZE[31022]</label>
@@ -978,13 +983,13 @@
 			<label>$LOCALIZE[31065]</label>
 			<onclick>Dialog.Close(1129)</onclick>
 			<onclick>Skin.SetString(Viz.Background,2)</onclick>
-			<visible>System.HasAddon(script.grab.fanart)</visible>
+			<visible>System.AddonIsEnabled(script.grab.fanart)</visible>
 		</item>
 		<item>
 			<label>$LOCALIZE[31550]</label>
 			<onclick>Dialog.Close(1129)</onclick>
 			<onclick>Skin.SetString(Viz.Background,8)</onclick>
-			<visible>!System.HasAddon(script.grab.fanart)</visible>
+			<visible>!System.AddonIsEnabled(script.grab.fanart)</visible>
 		</item>
 		<item>
 			<label fallback="31059">$INFO[System.AddonTitle(script.artistslideshow)]</label>
@@ -1001,7 +1006,7 @@
 			<label>$ADDON[script.skinshortcuts 32051]</label>
 			<onclick>Dialog.Close(1129)</onclick>
 			<onclick>Skin.SetString(Viz.Background,5)</onclick>
-			<onclick>Skin.SetImage(CustomMusicBackground.path,special://skin/backgrounds)</onclick>
+			<onclick>Skin.SetImage(CustomMusicBackground.path,special://skin/extras/backgrounds)</onclick>
 		</item>
 		<item>
 			<label>$ADDON[script.skinshortcuts 32052]</label>
@@ -1047,62 +1052,62 @@
 		<item>
 			<label>$LOCALIZE[13113]</label>
 			<onclick>Dialog.Close(1129)</onclick>
-			<onclick>Skin.Reset(SkinInfo.AutoCloseVideoOSD)</onclick>
+			<onclick>Skin.Reset(AutoCloseVideoOSD)</onclick>
 		</item>
 		<item>
 			<label>5 $LOCALIZE[31090]</label>
 			<onclick>Dialog.Close(1129)</onclick>
-			<onclick>Skin.SetString(SkinInfo.AutoCloseVideoOSD,5)</onclick>
+			<onclick>Skin.SetString(AutoCloseVideoOSD,5)</onclick>
 		</item>
 		<item>
 			<label>6 $LOCALIZE[31090]</label>
 			<onclick>Dialog.Close(1129)</onclick>
-			<onclick>Skin.SetString(SkinInfo.AutoCloseVideoOSD,6)</onclick>
+			<onclick>Skin.SetString(AutoCloseVideoOSD,6)</onclick>
 		</item>
 		<item>
 			<label>7 $LOCALIZE[31090]</label>
 			<onclick>Dialog.Close(1129)</onclick>
-			<onclick>Skin.Reset(SkinInfo.AutoCloseVideoOSD)</onclick>
+			<onclick>Skin.SetString(AutoCloseVideoOSD,7)</onclick>
 		</item>
 		<item>
 			<label>8 $LOCALIZE[31090]</label>
 			<onclick>Dialog.Close(1129)</onclick>
-			<onclick>Skin.SetString(SkinInfo.AutoCloseVideoOSD,8)</onclick>
+			<onclick>Skin.SetString(AutoCloseVideoOSD,8)</onclick>
 		</item>
 		<item>
 			<label>9 $LOCALIZE[31090]</label>
 			<onclick>Dialog.Close(1129)</onclick>
-			<onclick>Skin.SetString(SkinInfo.AutoCloseVideoOSD,9)</onclick>
+			<onclick>Skin.SetString(AutoCloseVideoOSD,9)</onclick>
 		</item>
 		<item>
 			<label>10 $LOCALIZE[31090]</label>
 			<onclick>Dialog.Close(1129)</onclick>
-			<onclick>Skin.SetString(SkinInfo.AutoCloseVideoOSD,10)</onclick>
+			<onclick>Skin.SetString(AutoCloseVideoOSD,10)</onclick>
 		</item>
 		<item>
 			<label>15 $LOCALIZE[31090]</label>
 			<onclick>Dialog.Close(1129)</onclick>
-			<onclick>Skin.SetString(SkinInfo.AutoCloseVideoOSD,15)</onclick>
+			<onclick>Skin.SetString(AutoCloseVideoOSD,15)</onclick>
 		</item>
 		<item>
 			<label>20 $LOCALIZE[31090]</label>
 			<onclick>Dialog.Close(1129)</onclick>
-			<onclick>Skin.SetString(SkinInfo.AutoCloseVideoOSD,20)</onclick>
+			<onclick>Skin.SetString(AutoCloseVideoOSD,20)</onclick>
 		</item>
 		<item>
 			<label>30 $LOCALIZE[31090]</label>
 			<onclick>Dialog.Close(1129)</onclick>
-			<onclick>Skin.SetString(SkinInfo.AutoCloseVideoOSD,30)</onclick>
+			<onclick>Skin.SetString(AutoCloseVideoOSD,30)</onclick>
 		</item>
 		<item>
 			<label>60 $LOCALIZE[31090]</label>
 			<onclick>Dialog.Close(1129)</onclick>
-			<onclick>Skin.SetString(SkinInfo.AutoCloseVideoOSD,60)</onclick>
+			<onclick>Skin.SetString(AutoCloseVideoOSD,60)</onclick>
 		</item>
 		<item>
 			<label>90 $LOCALIZE[31090]</label>
 			<onclick>Dialog.Close(1129)</onclick>
-			<onclick>Skin.SetString(SkinInfo.AutoCloseVideoOSD,90)</onclick>
+			<onclick>Skin.SetString(AutoCloseVideoOSD,90)</onclick>
 		</item>
 	</include>
 	<!-- Custom Confirm -->

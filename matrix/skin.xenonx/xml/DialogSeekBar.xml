@@ -2,7 +2,7 @@
 <window>
     <defaultcontrol>1</defaultcontrol>
     <!-- This is the original Confluence popup seek bar, so only show it if that setting is active -->
-	<visible>[!Skin.HasSetting(HidePopupSeekBar) + !Skin.HasSetting(MinimumPopUpSeekBar)] + [Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | Player.ShowTime | Player.IsTempo | !String.IsEmpty(Player.SeekNumeric)]</visible>
+	<visible>[!Skin.HasSetting(HidePopupSeekBar) + !Skin.HasSetting(MinimumPopUpSeekBar)] + [Player.Seeking | Player.HasPerformedSeek(3) | Player.Paused | Player.Forwarding | Player.Rewinding | Player.ShowTime | Player.IsTempo | !String.IsEmpty(Player.SeekNumeric)]</visible>
 	<visible>!Player.HasGame</visible>
     <visible>!Player.FrameAdvance</visible>
 	<animation effect="fade" start="0" end="100" time="150">WindowOpen</animation>
@@ -404,7 +404,7 @@
 			            <lefttexture>white.png</lefttexture>
 			            <midtexture colordiffuse="FFFF0000">white.png</midtexture>
 			            <righttexture>white.png</righttexture>
-			            <info>Player.Cutlist</info>
+			            <info>Player.Cuts</info>
 			        </control>
 			        <control type="ranges">
     			        <left>30</left>

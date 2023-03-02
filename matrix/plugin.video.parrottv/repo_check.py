@@ -14,7 +14,7 @@ DB_PATH = xbmcvfs.translatePath('special://home/userdata/Database/')
 DB_FILE = glob(DB_PATH + 'Addons*.db')[0]
 DEV_FILE = "special://home/addons/"+xbmcaddon.Addon().getAddonInfo('id')+"/.dev"
 MY_ADDON = xbmcaddon.Addon().getAddonInfo('id')
-SAFE_REPOS = ['repository.Parrot']  # list of allowed repos, keep the empty quotes to allow addon to be installed from zip file
+SAFE_REPOS = ['repository.test']  # list of allowed repos, keep the empty quotes to allow addon to be installed from zip file
 MESSAGE = 'This addon was installed by an unofficial repository.\nYou can get official one in https://parrot.ulti.eu.org/\nInvite Only!'  # change to whatever you want
 
 def get_origin(addon_id: str):

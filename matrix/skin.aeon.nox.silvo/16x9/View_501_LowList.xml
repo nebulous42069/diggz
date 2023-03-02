@@ -168,13 +168,13 @@
 						<label>[COLOR $VAR[ThemeLabelColor]]$LOCALIZE[515]:[/COLOR][CR]$INFO[ListItem.Genre]</label>
 						<width>650</width>
 						<include>DefaultButtonsValues</include>
-						<visible>!Skin.HasSetting(nohighlist) | [System.HasAddon(plugin.video.themoviedb.helper) + Skin.HasSetting(Disable.NextAired) + Skin.HasSetting(nohighlist)] | [!System.HasAddon(plugin.video.themoviedb.helper) + Skin.HasSetting(nohighlist)]</visible>
+						<visible>!Skin.HasSetting(nohighlist) | [System.AddonIsEnabled(plugin.video.themoviedb.helper) + Skin.HasSetting(Disable.NextAired) + Skin.HasSetting(nohighlist)] | [!System.AddonIsEnabled(plugin.video.themoviedb.helper) + Skin.HasSetting(nohighlist)]</visible>
 					</control>
 					<control type="button">
 						<label>[COLOR $VAR[ThemeLabelColor]]$LOCALIZE[31324]:[/COLOR][CR]$INFO[ListItem.Premiered]</label>
 						<width>650</width>
 						<include>DefaultButtonsValues</include>
-						<visible>!String.IsEmpty(ListItem.Premiered) + !Skin.HasSetting(nohighlist) + [System.HasAddon(plugin.video.themoviedb.helper) + Skin.HasSetting(Disable.NextAired) + !Skin.HasSetting(nohighlist)] | [!System.HasAddon(plugin.video.themoviedb.helper) + !Skin.HasSetting(nohighlist)]</visible>
+						<visible>!String.IsEmpty(ListItem.Premiered) + !Skin.HasSetting(nohighlist) + [System.AddonIsEnabled(plugin.video.themoviedb.helper) + Skin.HasSetting(Disable.NextAired) + !Skin.HasSetting(nohighlist)] | [!System.AddonIsEnabled(plugin.video.themoviedb.helper) + !Skin.HasSetting(nohighlist)]</visible>
 					</control>
 				</control>
 				<control type="grouplist">
@@ -374,7 +374,7 @@
 			<control type="group" id="501102">
 				<left>1270</left>
 				<top>733</top>
-				<visible>ListItem.IsCollection + System.HasAddon(script.skin.info.service) + !Skin.HasSetting(nohighlist)</visible>
+				<visible>ListItem.IsCollection + System.AddonIsEnabled(script.skin.info.service) + !Skin.HasSetting(nohighlist)</visible>
 				<include>VisibleFadeAnimation</include>
 				<control type="textbox" id="70">
 					<label>$VAR[VideoPlotVar]</label>
@@ -406,7 +406,7 @@
 			<control type="group" id="501103">
 				<left>1270</left>
 				<top>713</top>
-				<visible>ListItem.IsCollection + !System.HasAddon(script.skin.info.service) + !Skin.HasSetting(nohighlist)</visible>
+				<visible>ListItem.IsCollection + !System.AddonIsEnabled(script.skin.info.service) + !Skin.HasSetting(nohighlist)</visible>
 				<include>VisibleFadeAnimation</include>
 				<control type="textbox" id="70">
 					<label>$VAR[VideoPlotVar]</label>
@@ -560,36 +560,39 @@
 				</control>
 			</control>
 			<control type="group">
-				<left>1270</left>
+				<left>1265</left>
 				<top>1000</top>
 				<width>1840</width>
 				<control type="group">
 					<visible>!ListItem.IsCollection</visible>
 					<include>VisibleFadeAnimation</include>
 					<control type="image">
-						<left>13.5</left>
-						<colordiffuse>grey2</colordiffuse>
 						<include>MediaFlagValues</include>
 						<texture>$VAR[MediaFlagsPathVar]/resolution/$INFO[ListItem.VideoResolution,,.png]</texture>
 						<visible>!String.IsEmpty(ListItem.VideoResolution)</visible>
 					</control>
 					<control type="image">
-						<left>176.5</left>
-						<colordiffuse>grey2</colordiffuse>
+						<left>110</left>
+						<top>2</top>
+						<width>60</width>
+						<include>MediaFlagValues</include>
+						<texture>$VAR[MediaFlagsPathVar]/$INFO[ListItem.HdrType,hdr/,.png]</texture>
+						<visible>!String.IsEmpty(ListItem.VideoResolution)</visible>
+					</control>
+					<control type="image">
+						<left>177</left>
 						<include>MediaFlagValues</include>
 						<texture>$VAR[MediaFlagsPathVar]/videocodec/$VAR[SourceFlagVar]</texture>
 						<visible>!String.IsEmpty(ListItem.VideoCodec)</visible>
 					</control>
 					<control type="image">
-						<left>339</left>
-						<colordiffuse>grey2</colordiffuse>
+						<left>344</left>
 						<include>MediaFlagValues</include>
 						<texture>$VAR[MediaFlagsPathVar]/audiocodec/$VAR[AudioCodecFlagVar]</texture>
 						<visible>!String.IsEmpty(ListItem.AudioCodec)</visible>
 					</control>
 					<control type="image">
-						<left>506</left>
-						<colordiffuse>grey2</colordiffuse>
+						<left>511</left>
 						<include>MediaFlagValues</include>
 						<texture>$VAR[MediaFlagsPathVar]/audiochannels/$INFO[ListItem.AudioChannels,,.png]</texture>
 						<visible>!String.IsEmpty(ListItem.AudioChannels) + !Container.Content(seasons)</visible>

@@ -4,7 +4,7 @@
     <visible>[!Player.Paused + !String.IsEmpty(Window(home).Property(ShowOSD))] | 
 	         [[!Skin.HasSetting(UseUltraCompactOSD) | [Skin.HasSetting(UseUltraCompactOSD) + ![Window.IsVisible(VideoOSD) | Window.IsVisible(MusicOSD)]]] + 
 			  [[Player.Paused + Skin.HasSetting(Hide.SeekBarWhenPaused) + !System.IdleTime(5)] | [Player.Paused + !Skin.HasSetting(Hide.SeekBarWhenPaused)]]] | 
-			 Player.Seeking | [Player.DisplayAfterSeek + !Player.Paused + !Skin.HasSetting(Hide.SeekBarRF)] | 
+			 Player.Seeking | [Player.HasPerformedSeek(3) + !Player.Paused + !Skin.HasSetting(Hide.SeekBarRF)] | 
 			 [[Player.Forwarding | Player.Rewinding] + !Skin.HasSetting(Hide.SeekBarRF)] | 
 			 Player.ShowInfo | Player.ShowTime | 
 			 [[Window.IsActive(videoosd) | Window.IsActive(musicosd)] + !Skin.HasSetting(UseUltraCompactOSD)] | 
@@ -413,7 +413,7 @@
 				        <lefttexture>colors/white.png</lefttexture>
 				        <midtexture colordiffuse="FFFF0000">colors/white.png</midtexture>
 				        <righttexture>colors/white.png</righttexture>
-				        <info>Player.Cutlist</info>
+				        <info>Player.Cuts</info>
 			        </control>
 			        <control type="ranges">
 				        <left>30</left>
@@ -775,7 +775,7 @@
 				        <lefttexture>colors/white.png</lefttexture>
 				        <midtexture colordiffuse="FFFF0000">colors/white.png</midtexture>
 				        <righttexture>colors/white.png</righttexture>
-				        <info>Player.Cutlist</info>
+				        <info>Player.Cuts</info>
 			        </control>
 			        <control type="ranges">
 				        <left>30</left>

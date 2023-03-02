@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon
   id="skin.xenonx"
-  version="4.1.5"
-  name="Xenon"
+  version="5"
+  name="[B][COLOR gold]Xenon[/COLOR][/B]  (Mid Power)"
   provider-name="Helly,bsoriano">
   <requires>
     <import addon="xbmc.gui" version="5.15.0"/>

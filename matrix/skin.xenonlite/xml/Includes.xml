@@ -520,12 +520,12 @@
     </variable>
     <variable name="SeekLabel">
         <value condition="Player.IsTempo">$LOCALIZE[31047] [COLOR=grey] $INFO[Player.PlaySpeed][/COLOR]</value>
-        <value condition="Player.Playing + !Player.Seeking + !Player.DisplayAfterSeek">$LOCALIZE[31042]</value>
+        <value condition="Player.Playing + !Player.Seeking + !Player.HasPerformedSeek(3)">$LOCALIZE[31042]</value>
         <value condition="[Player.Paused + !Player.Caching] + !Player.Seeking">$LOCALIZE[31043]</value>
         <value condition="[Player.Paused + Player.Caching] + !Player.Seeking">$LOCALIZE[15107] $INFO[Player.CacheLevel]%</value>
         <value condition="!String.IsEmpty(Player.SeekStepSize) + ![player.forwarding | player.rewinding]">$LOCALIZE[31046][COLOR=grey] $INFO[Player.SeekStepSize][/COLOR]</value>
-        <value condition="Player.DisplayAfterSeek + ![player.forwarding | player.rewinding | Player.Paused]">$LOCALIZE[31042][COLOR=grey] $INFO[Player.SeekOffset][/COLOR]</value>
-        <value condition="!Player.DisplayAfterSeek + Player.Seeking">$LOCALIZE[31046]</value>
+        <value condition="Player.HasPerformedSeek(3) + ![player.forwarding | player.rewinding | Player.Paused]">$LOCALIZE[31042][COLOR=grey] $INFO[Player.SeekOffset][/COLOR]</value>
+        <value condition="!Player.HasPerformedSeek(3) + Player.Seeking">$LOCALIZE[31046]</value>
         <value condition="Player.Forwarding">$LOCALIZE[31044]</value>
         <value condition="Player.Rewinding">$LOCALIZE[31045]</value>
         <value condition="Player.Paused">$LOCALIZE[31043]</value>
@@ -648,6 +648,16 @@
             </focusedlayout>
         </control>
     </include>
+	<include name="BehindDialogDarkBackgroundDarker">
+		<control type="image">
+			<left>0</left>
+			<top>0</top>
+			<width>1920</width>
+			<height>1080</height>
+			<texture>_added_img/100x100_black.png</texture>
+			<animation effect="fade" end="96" time="0" condition="true">Conditional</animation>
+		</control>
+	</include>	
     <include name="DialogBackgroundCommons">
         <control type="image">
             <description>background image</description>
@@ -1722,7 +1732,7 @@
                 <font>font11</font>
                 <textcolor>blue</textcolor>
                 <shadowcolor>black</shadowcolor>
-                <label>Xenon Light Matrix</label>
+                <label>Xenon Nexus</label>
                 <include>Window_OpenClose_Animation</include>
                 <animation effect="slide" start="0,0" end="-60,0" time="75" condition="Player.Muted">conditional</animation>
                 <animation effect="slide" start="0,0" end="-120,0" time="0" condition="![Window.IsVisible(AddonSettings) | Window.IsVisible(SelectDialog) | Window.IsVisible(VisualisationPresetList) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVROSDGuide) | Window.IsVisible(1105)]+system.getbool(input.enablemouse)+Window.IsVisible(MusicOSD)">conditional</animation>
@@ -3381,8 +3391,8 @@
                     <focusedcolor>white</focusedcolor>
                     <align>center</align>
                     <textwidth>435</textwidth>
-                    <onclick condition="!Skin.HasSetting(MinimizeOnExit)">ActivateWindow(10001,&quot;plugin://plugin.program.chef19/?description=Force%20Close%20Kodi&amp;fanart=C%3a%5cUsers%5cjeddi%5cAppData%5cRoaming%5cKodi%5caddons%5cplugin.program.chef19%5cresources%5cfanart.jpg&amp;icon=C%3a%5cUsers%5cjeddi%5cAppData%5cRoaming%5cKodi%5caddons%5cplugin.program.chef19%5cresources%5cicon.png&amp;mode=18&amp;name=Force%20Close&amp;name2&amp;url&amp;version&quot;,return)</onclick>
-                    <onclick condition="Skin.HasSetting(MinimizeOnExit)">ActivateWindow(10001,&quot;plugin://plugin.program.chef19/?description=Force%20Close%20Kodi&amp;fanart=C%3a%5cUsers%5cjeddi%5cAppData%5cRoaming%5cKodi%5caddons%5cplugin.program.chef19%5cresources%5cfanart.jpg&amp;icon=C%3a%5cUsers%5cjeddi%5cAppData%5cRoaming%5cKodi%5caddons%5cplugin.program.chef19%5cresources%5cicon.png&amp;mode=18&amp;name=Force%20Close&amp;name2&amp;url&amp;version&quot;,return)</onclick>
+                    <onclick condition="!Skin.HasSetting(MinimizeOnExit)">ActivateWindow(10001,&quot;plugin://plugin.program.chef20/?description=Force%20Close%20Kodi&amp;fanart=C%3a%5cUsers%5cjeddi%5cAppData%5cRoaming%5cKodi%5caddons%5cplugin.program.chef20%5cresources%5cfanart.jpg&amp;icon=C%3a%5cUsers%5cjeddi%5cAppData%5cRoaming%5cKodi%5caddons%5cplugin.program.chef20%5cresources%5cicon.png&amp;mode=18&amp;name=Force%20Close&amp;name2&amp;url&amp;version&quot;,return)</onclick>
+                    <onclick condition="Skin.HasSetting(MinimizeOnExit)">ActivateWindow(10001,&quot;plugin://plugin.program.chef20/?description=Force%20Close%20Kodi&amp;fanart=C%3a%5cUsers%5cjeddi%5cAppData%5cRoaming%5cKodi%5caddons%5cplugin.program.chef20%5cresources%5cfanart.jpg&amp;icon=C%3a%5cUsers%5cjeddi%5cAppData%5cRoaming%5cKodi%5caddons%5cplugin.program.chef20%5cresources%5cicon.png&amp;mode=18&amp;name=Force%20Close&amp;name2&amp;url&amp;version&quot;,return)</onclick>
                     <pulseonselect>no</pulseonselect>
                     <font>font13</font>
                     <label>Force Close Kodi</label>

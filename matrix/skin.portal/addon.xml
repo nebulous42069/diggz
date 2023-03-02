@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.portal" version="420.3.4.29" name="Diggz Portal" provider-name="bsoriano, Jester, Joethepartylion, Pecinko">
+<addon id="skin.portal" version="420.3.4.29" name="[B][COLOR gold]Portal[/COLOR][/B]   (Low Power) (NO MOUSE/TOUCH)" provider-name="bsoriano, Jester, Joethepartylion, Pecinko">
     <requires>
         <import addon="xbmc.gui" version="5.15.0"/>
         <import addon="script.favourites" version="7.1.1"/>

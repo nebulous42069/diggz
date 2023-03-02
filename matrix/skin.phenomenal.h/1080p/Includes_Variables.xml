@@ -329,10 +329,10 @@
 
 	<variable name="DialogSeekBarLabel">
 		<value condition="!String.IsEmpty(Player.SeekStepSize) + ![player.forwarding | player.rewinding]">[B]$INFO[Player.SeekStepSize][/B]</value>
-		<!-- <value condition="Player.DisplayAfterSeek + ![player.forwarding | player.rewinding]">[B]$INFO[Player.SeekOffset][/B]</value> -->
-		<value condition="Player.Playing + !Player.Seeking + !Player.DisplayAfterSeek">[B]$LOCALIZE[31042][/B]</value>
-		<value condition="[Player.Paused + !Player.Caching] + !Player.Seeking + !Player.DisplayAfterSeek">[B]$LOCALIZE[112][/B]</value>
-		<value condition="[Player.Paused + Player.Caching] + !Player.Seeking + !Player.DisplayAfterSeek">[B]$LOCALIZE[15107] $INFO[Player.CacheLevel]%[/B]</value>
+		<!-- <value condition="Player.HasPerformedSeek(3) + ![player.forwarding | player.rewinding]">[B]$INFO[Player.SeekOffset][/B]</value> -->
+		<value condition="Player.Playing + !Player.Seeking + !Player.HasPerformedSeek(3)">[B]$LOCALIZE[31042][/B]</value>
+		<value condition="[Player.Paused + !Player.Caching] + !Player.Seeking + !Player.HasPerformedSeek(3)">[B]$LOCALIZE[112][/B]</value>
+		<value condition="[Player.Paused + Player.Caching] + !Player.Seeking + !Player.HasPerformedSeek(3)">[B]$LOCALIZE[15107] $INFO[Player.CacheLevel]%[/B]</value>
 		<value condition="Player.Paused">[B]$LOCALIZE[112][/B]</value>
 		<value condition="Player.Seeking">[B]$LOCALIZE[773] $INFO[Player.SeekOffset][/B]</value>
 		<value condition="Player.Rewinding2x + !Player.Seeking">[B]$LOCALIZE[31045] x2[/B]</value>
@@ -345,7 +345,7 @@
 		<value condition="Player.Forwarding8x + !Player.Seeking">[B]$LOCALIZE[31044] x8[/B]</value>
 		<value condition="Player.Forwarding16x + !Player.Seeking">[B]$LOCALIZE[31044] x16[/B]</value>
 		<value condition="Player.Forwarding32x + !Player.Seeking">[B]$LOCALIZE[31044] x32[/B]</value>
-		<value condition="Player.DisplayAfterSeek + !Player.Seeking">[B]$INFO[Player.SeekOffset][/B]</value>
+		<value condition="Player.HasPerformedSeek(3) + !Player.Seeking">[B]$INFO[Player.SeekOffset][/B]</value>
 	</variable>
 	<variable name="shortcuts_bgpath">
 		<value condition="!String.IsEmpty(Container(211).ListItem.Property(backgroundName))">$INFO[Container(211).ListItem.Property(backgroundName)]</value>

@@ -7,19 +7,21 @@
         <setting label="31002" type="select" id="selectColor" lvalues="31010|31011|31012" />
     </category>
     <category label="35000"> <!-- Playlist -->
+        <setting label="30201" type="lsep"/>
         <setting label="35001" type="bool" id="CSEnabled" default="false"/>
 
-        <!--
-        <setting id="CSKey" type="text" label="30004">
-            <dependencies>
-                <dependency type="enable" setting="CSEnabled" operator="is">true</dependency>
-            </dependencies>
-        </setting>
-        -->
         
-
+        <setting label="30202" type="lsep"/>
         <setting label="35002" type="bool" id="USEnabled" default="true"/>
+        <setting label="35005" type="bool" id="USLocalEnabled" default="false"/>
+        <setting label="35004" type="bool" id="USRegionalEnabled" default="true"/>
+
+
+
+        <setting label="30203" type="lsep"/>
         <setting label="35003" type="bool" id="UKEnabled" default="false"/>
+ 
+        <setting label="35000" type="lsep"/>
         <setting label="35010" type="action" action="RunPlugin(plugin://plugin.video.parrottv/regenM3U)"/>
     </category>
     <!--
@@ -30,10 +32,6 @@
         <setting label="36004" type="action" action="RunPlugin(plugin://plugin.video.parrottv/regenEPG)"/>
     </category>
     -->
-    <category label="32000"> <!-- 123TV -->
-        <setting label="32001" type="bool" id="123TVcustomDecryptionServer" default="false"/>
-        <setting label="32002" type="text" id="123TVcustomDecryptionServerURL" default=""/>
-    </category>
     <category label="34000"> <!-- Credits -->
         <setting label="34001" type="action" action="RunPlugin(plugin://plugin.video.parrottv/Credits)"/>
     </category>

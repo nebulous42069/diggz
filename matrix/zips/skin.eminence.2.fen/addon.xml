@@ -2,13 +2,12 @@
 <addon
     id="skin.eminence.2.fen"
     version="999.3.0.4"
-    name="Fentastic"
+    name="[B][COLOR gold]Fentastic[/COLOR][/B]  (Mid Power)"
     provider-name="Diggz">
     <requires>
         <import addon="xbmc.gui" version="5.15.0"/>
 		<import addon="script.skinshortcuts" version="1.0.17"/>
 		<import addon="script.skin.helper.service" version="1.0.0"/>
-        <import addon="script.skin.helper.widgets" version="1.0.0"/>
 		<import addon="script.skin.helper.colorpicker" version="1.0.12"/>
         <import addon="script.image.resource.select" version="0.0.5"/>	
     </requires>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.disparity" version="421.19.0.1" name="Diggz Disparity" provider-name="sualfred, Diggz">
+<addon id="skin.disparity" version="421.19.0.1" name="[B][COLOR gold]Disparity[/COLOR][/B]   (Low Power) (NO MOUSE/TOUCH)" provider-name="sualfred, Diggz">
 	<requires>
 		<import addon="xbmc.gui" version="5.15.0"/>
 		<import addon="plugin.program.autocompletion" version="1.0.1"/>

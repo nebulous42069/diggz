@@ -1864,3 +1864,38 @@ msgstr ""
 msgctxt "#31370"
 msgid "Press left from home menu"
 msgstr ""
+
+#: /shortcuts/overrides.xml
+msgctxt "#31371"
+msgid "Stacked - Displays folder of item focused in widget above"
+msgstr ""
+
+#: /shortcuts/overrides.xml
+msgctxt "#31372"
+msgid "Stacked"
+msgstr ""
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31373"
+msgid "Classification"
+msgstr ""
+
+#: /shortcuts/overrides.xml
+msgctxt "#31374"
+msgid "Favourites dialog"
+msgstr ""
+
+#: /shortcuts/overrides.xml
+msgctxt "#31375"
+msgid "Favourites browser"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31376"
+msgid "Default menu position (starts at 0)"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31377"
+msgid "Standard widgets have header furniture and navigation hints"
+msgstr ""

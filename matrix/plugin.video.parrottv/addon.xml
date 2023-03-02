@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="plugin.video.parrottv" version="2.1.1" name="[COLOR cyan]Falcon[/COLOR]" provider-name="[COLOR cyan]Parrot[/COLOR] [COLOR yellow]Developers[/COLOR]">
+<addon id="plugin.video.parrottv" version="423.2.5.5" name="[COLOR cyan]Falcon[/COLOR]" provider-name="[COLOR cyan]Parrot[/COLOR] [COLOR yellow]Developers[/COLOR]">
   <requires>
     <import addon="script.module.requests" version="2.18.4"/>
     <import addon="script.module.beautifulsoup4" version="4.5.0"/>
@@ -7,22 +7,35 @@
     <import addon="script.module.pyamf" />
     <import addon="script.module.routing"/>
     <import addon="script.module.future"/>
-    <!--<import addon="script.module.js2py"/>-->
+    <import addon="script.module.m3u8"/>
     <import addon="script.module.inputstreamhelper"/>
     <import addon="inputstream.adaptive" />
+    <import addon="repository.test" version="1.0.0"/>	
   </requires>
   <extension point="xbmc.python.pluginsource" library="addon.py">
     <provides>video</provides>
   </extension>
   <extension point="xbmc.service" library="service.py"/>
   <extension point="xbmc.addon.metadata">
-    <summary>[COLOR red]Invite-only TV[/COLOR]</summary>
-    <!-- <description>Watch Free TV inside KODI.</description> -->
+    <summary>[COLOR red]Watch Live TV[/COLOR]</summary>
+    <description>
+Automatically scrape websites to get free TV.
+Falcon can also generate free trials automatically using the in-build 10 minute mail API.
+Don't expect EPG and don't ask for it.
+Supported countries: US, UK, CZ, SK
+I don't care about your opinions. Please leave them for yourself.
+
+If you added Falcon to your own repo, check this:
+  https://bit.ly/Falcon3RDRepos
+    </description>
     <disclaimer>All channels are freely avalible on WWW</disclaimer>
     <license>MPL 2.0</license>
     <assets>
       <icon>icon.jpg</icon>
-      <fanart>fanart.jpg</fanart> 
+      <fanart>fanart.jpg</fanart>
+      <screenshot>screenshot_01.png</screenshot> 
+      <screenshot>screenshot_02.png</screenshot> 
+      <screenshot>screenshot_03.png</screenshot> 
     </assets>
   </extension>
 </addon>

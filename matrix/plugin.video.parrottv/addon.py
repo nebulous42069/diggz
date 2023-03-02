@@ -10,6 +10,7 @@ import xbmc
 import xbmcaddon
 import json as j
 import requests
+import time
 import hashlib
 import datetime
 import m3u
@@ -18,7 +19,9 @@ import base64
 from kodiez import KodiEZ
 from routing import Plugin
 from imgs import getIMG
+from verify import login, getUsername, getPassword, authAddonID, offlineMode
 from resources.utils.common import randString, getAllowed, getPISCTimeShift
+from resources.utils.recording import addRecording, getCurrentlyRecording, removeRecording, getRecordings, RECORDINGS_FOLDER, record
 try: from urllib.parse import urlencode, urlparse
 except ImportError: from urllib import urlencode, urlparse
 from ResolveURL import resolve
@@ -55,7 +58,7 @@ def addDir(name, genre, icon, url, showPlot=True):
     list_item.setArt({'thumb': icon, 'icon': icon, 'fanart': 'https://cdn.wallpapersafari.com/14/97/Bir3IC.jpg'})
     xbmcplugin.addDirectoryItem(plugin.handle, url, list_item, True)
 
-def addChannel(name, icon, url, id, showAddToPlaylist=True, removeFromPlaylistID = ""):
+def addChannel(name, icon, url, id, showAddToPlaylist=True, removeFromPlaylistID = "", isRecording=False):
     showAddToPlaylist = False # TODO: Remove when custom playlist will be fixed
     headers = Firefox().headers
     icon += '|' + urlencode(headers)
@@ -73,6 +76,10 @@ def addChannel(name, icon, url, id, showAddToPlaylist=True, removeFromPlaylistID
             contextMenuItems.append(('Add to playlist', 'RunPlugin(plugin://plugin.video.parrottv/customAdd/{})'.format(args)))
         if removeFromPlaylistID != "":
             contextMenuItems.append(('Remove from playlist', 'RunPlugin(plugin://plugin.video.parrottv/customRemove/{})'.format(removeFromPlaylistID)))
+        
+        if isRecording == False:
+            contextMenuItems.append(('Record', 'RunPlugin(plugin://plugin.video.parrottv/record/{})'.format(id)))
+
         list_item.addContextMenuItems(contextMenuItems)
     xbmcplugin.addDirectoryItem(plugin.handle, url, list_item, False)
 
@@ -82,9 +89,13 @@ def addChannel(name, icon, url, id, showAddToPlaylist=True, removeFromPlaylistID
 def root():
     xbmcplugin.setContent(plugin.handle, 'Home')
     xbmcplugin.setPluginCategory(plugin.handle, "Home")
+    if not os.path.exists(xbmcvfs.translatePath(_PLAYLIST)): genPlaylist(); xbmc.executebuiltin("Container.Refresh")
+    addDir(f'[B][COLOR green]Welcome back, {getUsername()}[/COLOR][/B]', '', getIMG('user', color), "{}/user".format(_URL), True)
     addDir('[COLOR gold]Search[/COLOR]', '', getIMG('search', color), "{}/search".format(_URL), True)
-    addDir('[COLOR gold]Channels[/COLOR]', '', getIMG('list', color), "{}/channels".format(_URL), True)
-    addDir('[COLOR gold]Countries[/COLOR]', '', getIMG('grid', color), "{}/categories".format(_URL), True)
+    addDir('[COLOR gold]TV Channels[/COLOR]', '', getIMG('list', color), "{}/channels".format(_URL), True)
+    #addDir('[COLOR gold]VOD[/COLOR]', '', getIMG('list', color), "{}/vod".format(_URL), True)
+    #addDir('[COLOR gold]Countries[/COLOR]', '', getIMG('grid', color), "{}/categories".format(_URL), True)
+    addDir('[COLOR gold]DVR[/COLOR]', '', getIMG('dvr', color), "{}/recordings".format(_URL), True)
     #addDir('[COLOR gold]My Playlist[/COLOR]', '', getIMG('pencilWithWrench', color), "{}/custom".format(_URL), True)
     xbmcplugin.endOfDirectory(plugin.handle)
 
@@ -102,6 +113,24 @@ def user():
     addDir(f'[COLOR gold]Setup IPTV Simple Client[/COLOR]', '', getIMG('user', color), "{}/ISS".format(_URL), True)
     xbmcplugin.endOfDirectory(plugin.handle)
 
+@plugin.route('/recordings')
+def recordings_():
+    xbmcplugin.setContent(plugin.handle, 'Recordings')
+    xbmcplugin.setPluginCategory(plugin.handle, "Recordings")
+    for k, v in getRecordings().items():
+        if v["done"]:
+            icon = ""
+            contextMenuItems = []
+            list_item = xbmcgui.ListItem(label=v["name"])
+            list_item.setInfo('video', {'title': v["name"],'genre': '','plot': v["name"],'mediatype': 'video'})
+            list_item.setProperty('IsPlayable', 'true')
+            #list_item.setArt({'thumb': icon, 'icon': icon, 'fanart': 'https://cdn.wallpapersafari.com/14/97/Bir3IC.jpg'})
+            contextMenuItems.append(('Remove Recording', 'RunPlugin(plugin://plugin.video.parrottv/removeRecording/{})'.format(k)))
+            list_item.addContextMenuItems(contextMenuItems)
+            xbmcplugin.addDirectoryItem(plugin.handle, f"http://127.0.0.1:24569/recordedFile.m3u8?id={k}&filename=playlist.m3u8", list_item, False)
+    xbmcplugin.endOfDirectory(plugin.handle)
+
+
 @plugin.route('/search')
 def search():
     xbmcplugin.setContent(plugin.handle, 'Search')
@@ -109,9 +138,21 @@ def search():
     query = _KODIEZ.inpt("Enter search query:", False)
     if query:
         names, logos, urls, groups, ids = m3u.parse("names,logos,urls,groups,ids")
+        try: epg = requests.get("https://EPGNow.parrotdevelopers.repl.co/guide.json", timeout=30).json()
+        except: epg = {}
+        recording = getCurrentlyRecording()
         for name, logo, url, group, id in zip(names, logos, urls, groups, ids):
             if query.lower() in name.lower():
-                addChannel(f"[COLOR gold]{group}: {name}[/COLOR]", logo, url, id)
+                name = f"[COLOR gold][B]{name}[/B][/COLOR]"
+                if id in epg:
+                    start = datetime.datetime.fromtimestamp(epg[id]["start"])
+                    stop = datetime.datetime.fromtimestamp(epg[id]["stop"])
+                    color = "gray"
+                    if url.split("/")[-1] in recording:
+                        color = "red"
+                    name += f"\n[COLOR {color}]●[/COLOR] {epg[id]['title']} | {start.strftime('%H:%M')} - {stop.strftime('%H:%M')}"
+                addChannel(f"{name}", logo, url, id, isRecording=url.split("/")[-1] in recording)
+
         xbmcplugin.endOfDirectory(plugin.handle)
     else:
         xbmcgui.Dialog().ok(_ADDON_NAME, 'No search query entered.')
@@ -124,12 +165,18 @@ def channels():
     names, logos, urls, ids = m3u.parse("names,logos,urls,ids")
     try: epg = requests.get("https://EPGNow.parrotdevelopers.repl.co/guide.json", timeout=30).json()
     except: epg = {}
+    recording = getCurrentlyRecording()
     for name, logo, url, id in zip(names, logos, urls, ids):
         name = f"[COLOR gold][B]{name}[/B][/COLOR]"
         if id in epg:
-            name += f"\n[COLOR red]●[/COLOR] {epg[id]['title']}"
+            start = datetime.datetime.fromtimestamp(epg[id]["start"])
+            stop = datetime.datetime.fromtimestamp(epg[id]["stop"])
+            color = "gray"
+            if url.split("/")[-1] in recording:
+                color = "red"
+            name += f"\n[COLOR {color}]●[/COLOR] {epg[id]['title']} | {start.strftime('%H:%M')} - {stop.strftime('%H:%M')}"
         
-        addChannel(f"{name}", logo, url, id)
+        addChannel(f"{name}", logo, url, id, isRecording=url.split("/")[-1] in recording)
     xbmcplugin.endOfDirectory(plugin.handle)
 
 @plugin.route('/categories/')
@@ -151,15 +198,83 @@ def category(category):
     names, logos, urls, groups, ids = m3u.parse("names,logos,urls,groups,ids")
     try: epg = requests.get("https://EPGNow.parrotdevelopers.repl.co/guide.json", timeout=30).json()
     except: epg = {}
+    recording = getCurrentlyRecording()
     for name, logo, url, group, id in zip(names, logos, urls, groups, ids):
         if group != category:
             continue
 
         name = f"[COLOR gold][B]{name}[/B][/COLOR]"
         if id in epg:
-            name += f"\n[COLOR red]●[/COLOR] {epg[id]['title']}"
-            addChannel(f"{name}", logo, url, id)
+            start = datetime.datetime.fromtimestamp(epg[id]["start"])
+            stop = datetime.datetime.fromtimestamp(epg[id]["stop"])
+            color = "gray"
+            if url.split("/")[-1] in recording:
+                color = "red"
+            name += f"\n[COLOR {color}]●[/COLOR] {epg[id]['title']} | {start.strftime('%H:%M')} - {stop.strftime('%H:%M')}"
+            addChannel(f"{name}", logo, url, id, isRecording=url.split("/")[-1] in recording)
     xbmcplugin.endOfDirectory(plugin.handle)
+
+
+@plugin.route('/record/<id>')
+def record_(id):
+    return
+    channels = j.loads(open(os.path.join(xbmcvfs.translatePath(_USERDATA), "channels.json"), 'r', encoding='utf-8').read())
+    names = []
+    modules, chs = [], []
+    for key, value in channels[id]["sources"].items():
+        if not value["disabled"]:
+            names.append(value["name"])
+            modules.append(value["module"])
+            chs.append(value["channel"])
+    
+    select = 0
+    if len(names) == 0:
+        xbmcgui.Dialog().ok("Error", "No available sources")
+        return
+    if len(names) > 1:
+        select = xbmcgui.Dialog().select("Select source", names)
+        if select == -1: exit()
+    
+    module, stream = modules[select], chs[select]
+    tvgID = channels[id]["tvg-id"]
+    epg = requests.get("https://EPGNow.parrotdevelopers.repl.co/guide.json", timeout=30).json()
+    epgNow = {
+        "title": f"Unknown - {channels[id]['name']} - {datetime.datetime.now().strftime('%Y/%m/%d %H:%M:%S')}",
+        "start": 0,
+        "stop": 1 * 60 * 60
+    }
+    if tvgID in epg:
+        epgNow = epg[tvgID]
+
+    rmf = resolve(
+        module=module,
+        channel=stream,
+        data_folder=xbmcvfs.translatePath(_USERDATA + "/ResolveURL_data"),
+        data_file=xbmcvfs.translatePath(_USERDATA + "/ResolveURL_data.json"),
+        server_port=23569
+    )
+    recordingID = randString(15)
+    finishes = (epgNow["stop"] - int(time.time())) + 10 * 60
+    addRecording(epgNow["title"], recordingID, id)
+
+
+    record(
+        rmf.url,
+        rmf.headers,
+        320,
+        os.path.join(xbmcvfs.translatePath(_USERDATA), "recordings", recordingID),
+        recordingID
+    )
+
+    #command = createCommand(
+    #    rmf.url,
+    #    rmf.headers,
+    #    finishes,
+    #    os.path.join(xbmcvfs.translatePath(_USERDATA), "recordings", f"{recordingID}.mp4")
+    #)
+    xbmc.executebuiltin("Container.Refresh")
+    #subprocess.call(command, shell=True)
+    
 
 @plugin.route('/play/<id>')
 def play(id):
@@ -200,13 +315,22 @@ def play(id):
             module=module,
             channel=stream,
             data_folder=xbmcvfs.translatePath(_USERDATA + "/ResolveURL_data"),
-            data_file=xbmcvfs.translatePath(_USERDATA + "/ResolveURL_data.json")
+            data_file=xbmcvfs.translatePath(_USERDATA + "/ResolveURL_data.json"),
+            server_port=23569,
+            progress_dialog=xbmcgui.DialogProgress
         )
         hlsurl, headers = rmf.url, rmf.headers
-        
+
     li = xbmcgui.ListItem(path=hlsurl+'|'+urlencode(headers))
     li.setContentLookup(False)
     xbmcplugin.setResolvedUrl(plugin.handle, True, li)
+
+
+@plugin.route('/removeRecording/<idRecording>')
+def removeRecording_(idRecording):
+    removeRecording(idRecording)
+    xbmc.executebuiltin("Container.Refresh")
+
 
 """
 @plugin.route('/custom')
@@ -258,12 +382,15 @@ def iptvsimpleSetup():
     pisc.setSetting('m3uRefreshMode','1')
     pisc.setSetting('m3uRefreshIntervalMins','30')
     pisc.setSetting('startNum','1')
-    pisc.setSetting('epgUrl', 'https://falcon-epg.pages.dev/epg.xml.gz')
+    pisc.setSetting('epgUrl', base64.b64decode("aHR0cHM6Ly9wYXJyb3RkZXZlbG9wZXJzLmdpdGh1Yi5pby9FUEcvZXBnLnhtbC5neg==".encode()).decode())
     pisc.setSetting('epgCache', 'false')
     pisc.setSetting('epgTimeShift', getPISCTimeShift())
     xbmcgui.Dialog().notification(_ADDON_NAME, "IPTV Simple setup completed", xbmcgui.NOTIFICATION_INFO, 5000)
 
-
+@plugin.route('/EnterCreds')
+def EnterCreds():
+    xbmcaddon.Addon(authAddonID).openSettings()
+    return
 
 @plugin.route('/Credits')
 def credits():
@@ -278,17 +405,14 @@ def credits():
     xbmcgui.Dialog().textviewer("Credits", text)
 
 if __name__ == "__main__":
-                
     path = urlparse(sys.argv[0]).path
     logged = False
     if path in ["/", "/play", "/regenM3U"]:
-                        
-        if path in ["/", "/play"] : plugin.run(sys.argv)
-        elif path == "/regenM3U" : genPlaylist()
-                                      
+        logged = login()
+        if path in ["/", "/play"] and logged: plugin.run(sys.argv)
+        elif not logged: offlineMode()
         else: raise Exception("Error ID: 32")
         exit()
     if path == "/EnterCreds": EnterCreds(); exit()
     else: plugin.run(sys.argv)
-
         

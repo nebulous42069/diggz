@@ -157,8 +157,8 @@
 
     <include name="Items_DialogVideoInfo_MenuBar_PlayButton_Action_1191">
         <!-- Play Item -->
-        <onclick condition="!$EXP[Exp_InfoDialog_IsFolder] + !String.IsEmpty(ListItem.FileNameAndPath)">RunScript(plugin.video.themoviedb.helper,recommendations=onaction,window_id=1191,after=True,builtin='PlayMedia($ESCINFO[ListItem.FileNameAndPath])')</onclick>
-        <onclick condition="!$EXP[Exp_InfoDialog_IsFolder] + String.IsEmpty(ListItem.FileNameAndPath)">RunScript(plugin.video.themoviedb.helper,recommendations=onaction,window_id=1191,after=True,builtin='PlayMedia($ESCINFO[ListItem.FolderPath])')</onclick>
+        <onclick condition="!$EXP[Exp_InfoDialog_IsFolder] + !String.IsEmpty(ListItem.FileNameAndPath)">RunScript(plugin.video.themoviedb.helper,recommendations=onaction,window_id=1191,after=True,builtin='PlayMedia($ESCINFO[ListItem.FileNameAndPath],playlist_type_hint=1)')</onclick>
+        <onclick condition="!$EXP[Exp_InfoDialog_IsFolder] + String.IsEmpty(ListItem.FileNameAndPath)">RunScript(plugin.video.themoviedb.helper,recommendations=onaction,window_id=1191,after=True,builtin='PlayMedia($ESCINFO[ListItem.FolderPath],playlist_type_hint=1)')</onclick>
 
         <!-- Browse by updating Media Window -->
         <onclick condition="$EXP[Exp_InfoDialog_IsFolder] + Window.IsVisible(MyVideoNav.xml) + String.IsEmpty(ListItem.DBID)">RunScript(plugin.video.themoviedb.helper,recommendations=onaction,window_id=1191,after=True,builtin='Container.Update($ESCINFO[ListItem.FolderPath])')</onclick>
@@ -1261,33 +1261,40 @@
         <include content="Dialog_Settings_Button">
             <param name="id">8021</param>
             <param name="control">button</param>
+            <onclick>Skin.SetString(mpaa_country,Portugal)</onclick>
+            <onclick>Close</onclick>
+            <label>Portugal</label>
+        </include>
+        <include content="Dialog_Settings_Button">
+            <param name="id">8022</param>
+            <param name="control">button</param>
             <onclick>Skin.SetString(mpaa_country,Russia)</onclick>
             <onclick>Close</onclick>
             <label>Russia</label>
         </include>
         <include content="Dialog_Settings_Button">
-            <param name="id">8022</param>
+            <param name="id">8023</param>
             <param name="control">button</param>
             <onclick>Skin.SetString(mpaa_country,Schweiz)</onclick>
             <onclick>Close</onclick>
             <label>Schweiz</label>
         </include>
         <include content="Dialog_Settings_Button">
-            <param name="id">8023</param>
+            <param name="id">8024</param>
             <param name="control">button</param>
             <onclick>Skin.SetString(mpaa_country,Taiwan)</onclick>
             <onclick>Close</onclick>
             <label>Taiwan</label>
         </include>
         <include content="Dialog_Settings_Button">
-            <param name="id">8024</param>
+            <param name="id">8025</param>
             <param name="control">button</param>
             <onclick>Skin.SetString(mpaa_country,UK)</onclick>
             <onclick>Close</onclick>
             <label>UK</label>
         </include>
         <include content="Dialog_Settings_Button">
-            <param name="id">8025</param>
+            <param name="id">8026</param>
             <param name="control">button</param>
             <onclick>Skin.SetString(mpaa_country,Vietnam)</onclick>
             <onclick>Close</onclick>
@@ -1659,6 +1666,20 @@
             <onclick>Skin.ToggleSetting(Infoline.EnableGenre)</onclick>
             <selected>Skin.HasSetting(Infoline.EnableGenre)</selected>
             <label>$LOCALIZE[515]</label>
+        </include>
+        <include content="Dialog_Settings_Button">
+            <param name="id" value="8003" />
+            <param name="control" value="radiobutton" />
+            <onclick>Skin.ToggleSetting(Infoline.DisableMPAA)</onclick>
+            <selected>!Skin.HasSetting(Infoline.DisableMPAA)</selected>
+            <label>$LOCALIZE[31373] (MPAA)</label>
+        </include>
+        <include content="Dialog_Settings_Button">
+            <param name="id" value="8004" />
+            <param name="control" value="radiobutton" />
+            <onclick>Skin.ToggleSetting(Infoline.EnableDirector)</onclick>
+            <selected>Skin.HasSetting(Infoline.EnableDirector)</selected>
+            <label>$LOCALIZE[20339]</label>
         </include>
     </include>
 
@@ -2083,6 +2104,112 @@
             <property name="folderpath">plugin://plugin.video.themoviedb.helper/?info=random_anticipated&amp;tmdb_type=both&amp;fanarttv=false&amp;cacheonly=true</property>
             <onclick>ActivateWindow(videos,plugin://plugin.video.themoviedb.helper/?info=random_anticipated&amp;tmdb_type=both,return)</onclick>
         </item>
+    </include>
+
+    <include name="Items_DialogPreset_MenuStyles">
+        <include content="Dialog_Settings_Button" description="Classic">
+            <param name="id" value="9001" />
+            <param name="control">radiobutton</param>
+            <label>$LOCALIZE[31051]</label>
+            <onclick>Skin.Reset(Home.IconicMenu)</onclick>
+            <onclick>Skin.Reset(Home.VerticalMenu)</onclick>
+            <onclick>Skin.Reset(Home.TextMenu)</onclick>
+            <onclick>Close</onclick>
+            <onclick>ReloadSkin()</onclick>
+            <onclick>AlarmClock(refocus,SetFocus(1005),00:00,silent)</onclick>
+            <selected>!Skin.HasSetting(Home.IconicMenu) + !Skin.HasSetting(Home.TextMenu) + !Skin.HasSetting(Home.VerticalMenu)</selected>
+        </include>
+        <include content="Dialog_Settings_Button" description="Iconic">
+            <param name="id" value="9002" />
+            <param name="control">radiobutton</param>
+            <label>$LOCALIZE[536]</label>
+            <onclick>Skin.SetBool(Home.IconicMenu)</onclick>
+            <onclick>Skin.Reset(Home.VerticalMenu)</onclick>
+            <onclick>Skin.Reset(Home.TextMenu)</onclick>
+            <onclick>Close</onclick>
+            <onclick>ReloadSkin()</onclick>
+            <onclick>AlarmClock(refocus,SetFocus(1005),00:00,silent)</onclick>
+            <selected>Skin.HasSetting(Home.IconicMenu) + !Skin.HasSetting(Home.TextMenu) + !Skin.HasSetting(Home.VerticalMenu)</selected>
+        </include>
+        <include content="Dialog_Settings_Button" description="Text">
+            <param name="id" value="9003" />
+            <param name="control">radiobutton</param>
+            <label>$LOCALIZE[31013]</label>
+            <onclick>Skin.Reset(Home.IconicMenu)</onclick>
+            <onclick>Skin.Reset(Home.VerticalMenu)</onclick>
+            <onclick>Skin.SetBool(Home.TextMenu)</onclick>
+            <onclick>Close</onclick>
+            <onclick>ReloadSkin()</onclick>
+            <onclick>AlarmClock(refocus,SetFocus(1005),00:00,silent)</onclick>
+            <selected>Skin.HasSetting(Home.TextMenu) + !Skin.HasSetting(Home.VerticalMenu)</selected>
+        </include>
+        <include content="Dialog_Settings_Button" description="Vertical">
+            <param name="id" value="9004" />
+            <param name="control">radiobutton</param>
+            <label>$LOCALIZE[31163]</label>
+            <onclick>Skin.Reset(Home.IconicMenu)</onclick>
+            <onclick>Skin.SetBool(Home.VerticalMenu)</onclick>
+            <onclick>Skin.Reset(Home.TextMenu)</onclick>
+            <onclick>Close</onclick>
+            <onclick>ReloadSkin()</onclick>
+            <onclick>AlarmClock(refocus,SetFocus(1005),00:00,silent)</onclick>
+            <selected>Skin.HasSetting(Home.VerticalMenu)</selected>
+        </include>
+    </include>
+
+
+    <include name="Items_DialogPreset_Colors">
+        <include content="Dialog_Settings_Button">
+            <param name="id" value="9001" />
+            <param name="control">radiobutton</param>
+            <label>$LOCALIZE[31138]</label>
+            <onclick>Skin.Reset(focuscolor.name)</onclick>
+            <onclick>Skin.Reset(gradientcolor.name)</onclick>
+            <onclick>Skin.Reset(EnableMonochromeHighlight)</onclick>
+            <onclick>Skin.Reset(InvertSelectedText)</onclick>
+            <include>Action_BuildTextures_Onclick_Preset</include>
+            <selected>String.IsEmpty(Skin.String(focuscolor.name)) + String.IsEmpty(Skin.String(gradientcolor.name)) + !Skin.HasSetting(EnableMonochromeHighlight) + !Skin.HasSetting(InvertSelectedText)</selected>
+        </include>
+        <include content="Dialog_Settings_Button">
+            <param name="id" value="9002" />
+            <param name="control">radiobutton</param>
+            <label>$LOCALIZE[31139]</label>
+            <onclick>Skin.SetString(focuscolor.name,fff4511e)</onclick>
+            <onclick>Skin.SetString(gradientcolor.name,ffe91e63)</onclick>
+            <onclick>Skin.Reset(EnableMonochromeHighlight)</onclick>
+            <onclick>Skin.Reset(InvertSelectedText)</onclick>
+            <include>Action_BuildTextures_Onclick_Preset</include>
+            <selected>String.IsEqual(Skin.String(focuscolor.name),fff4511e) + String.IsEqual(Skin.String(gradientcolor.name),ffe91e63) + !Skin.HasSetting(EnableMonochromeHighlight) + !Skin.HasSetting(InvertSelectedText)</selected>
+        </include>
+        <include content="Dialog_Settings_Button">
+            <param name="id" value="9003" />
+            <param name="control">radiobutton</param>
+            <label>$LOCALIZE[31140]</label>
+            <onclick>Skin.SetString(focuscolor.name,ffe91e63)</onclick>
+            <onclick>Skin.SetString(gradientcolor.name,ffb635e5)</onclick>
+            <onclick>Skin.Reset(EnableMonochromeHighlight)</onclick>
+            <onclick>Skin.Reset(InvertSelectedText)</onclick>
+            <include>Action_BuildTextures_Onclick_Preset</include>
+            <selected>String.IsEqual(Skin.String(focuscolor.name),ffe91e63) + String.IsEqual(Skin.String(gradientcolor.name),ffb635e5) + !Skin.HasSetting(EnableMonochromeHighlight) + !Skin.HasSetting(InvertSelectedText)</selected>
+        </include>
+        <include content="Dialog_Settings_Button">
+            <param name="id" value="9004" />
+            <param name="control">radiobutton</param>
+            <label>$LOCALIZE[31141]</label>
+            <onclick>Skin.SetString(focuscolor.name,ffffffff)</onclick>
+            <onclick>Skin.SetString(gradientcolor.name,ffffffff)</onclick>
+            <onclick>Skin.Reset(EnableMonochromeHighlight)</onclick>
+            <onclick>Skin.SetBool(InvertSelectedText)</onclick>
+            <include>Action_BuildTextures_Onclick_Preset</include>
+            <selected>String.IsEqual(Skin.String(focuscolor.name),ffffffff) + String.IsEqual(Skin.String(gradientcolor.name),ffffffff) + !Skin.HasSetting(EnableMonochromeHighlight) + Skin.HasSetting(InvertSelectedText)</selected>
+        </include>
+        <include content="Dialog_Settings_Button">
+            <param name="id" value="9005" />
+            <param name="control" value="radiobutton" />
+            <label>$LOCALIZE[31203]</label>
+            <onclick>ActivateWindow(1111)</onclick>
+            <selected>![String.IsEmpty(Skin.String(focuscolor.name)) + String.IsEmpty(Skin.String(gradientcolor.name)) + !Skin.HasSetting(EnableMonochromeHighlight) + !Skin.HasSetting(InvertSelectedText)] + ![String.IsEqual(Skin.String(focuscolor.name),fff4511e) + String.IsEqual(Skin.String(gradientcolor.name),ffe91e63) + !Skin.HasSetting(EnableMonochromeHighlight) + !Skin.HasSetting(InvertSelectedText)] + ![String.IsEqual(Skin.String(focuscolor.name),ffe91e63) + String.IsEqual(Skin.String(gradientcolor.name),ffb635e5) + !Skin.HasSetting(EnableMonochromeHighlight) + !Skin.HasSetting(InvertSelectedText)] + ![String.IsEqual(Skin.String(focuscolor.name),ffffffff) + String.IsEqual(Skin.String(gradientcolor.name),ffffffff) + !Skin.HasSetting(EnableMonochromeHighlight) + Skin.HasSetting(InvertSelectedText)]</selected>
+        </include>
     </include>
 
 </includes>

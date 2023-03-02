@@ -134,31 +134,6 @@
     </assets>
     <reuselanguageinvoker>true</reuselanguageinvoker>
   </extension>
-</addon><addon id="plugin.program.autocompletion" name="AutoCompletion for virtual keyboard" version="2.1.2" provider-name="Philipp Temminghoff (phil65), sualfred, xulek, finkleandeinhorn">
-    <requires>
-        <import addon="xbmc.python" version="3.0.0" />
-        <import addon="script.module.autocompletion" version="2.0.3" />
-    </requires>
-    <extension point="xbmc.python.script" library="default.py">
-        <provides>executable</provides>
-    </extension>
-    <extension point="xbmc.python.pluginsource" library="plugin.py" />
-
-    <extension point="xbmc.addon.metadata">
-        <summary lang="en_GB">AutoCompletion for the virtual keyboard (needs skin support)</summary>
-        <description lang="en_GB">AutoCompletion for the virtual keyboard (needs skin support)</description>
-        <summary lang="es_ES">Autocompletar para el teclado virtual (necesita soporte de skin)</summary>
-        <description lang="es_ES">Autocompletar para el teclado virtual (necesita soporte de skin)</description>
-        <platform>all</platform>
-        <license>GPL-2.0-or-later</license>
-        <source>https://github.com/finkleandeinhorn/plugin.program.autocompletion</source>
-        <assets>
-            <icon>resources/icon.png</icon>
-            <screenshot>resources/screenshot-01.jpg</screenshot>
-            <screenshot>resources/screenshot-02.jpg</screenshot>
-            <screenshot>resources/screenshot-03.jpg</screenshot>
-        </assets>
-    </extension>
 </addon><addon id="plugin.program.chef19" name="Chef Matrix Wizard" version="451" provider-name="Slam, BYB, Sarge, Diggz">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
@@ -418,6 +393,36 @@ Use this to organize your Favourites.
         <screenshot>resources/media/screenshot021.png</screenshot>
     </assets>
   </extension>
+</addon><addon id="plugin.video.cb19" version="1.0.0" name="CB19" provider-name="aitschti">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0" />
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="addon.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.python.library" library="resources/lib/helperscript.py" />
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <news>
+All changes on GitHub: https://github.com/aitschti/plugin.video.cb19
+        </news>
+        <assets>
+            <icon>resources/icon.png</icon>
+            <fanart>resources/fanart.png</fanart>
+        </assets>
+        <source />
+        <license>GPL-3.0</license>
+        <forum />
+        <website />
+        <email>last5mins@yandex.com</email>
+        <summary lang="en_GB">Chaturbate for Kodi 19/20</summary>
+        <summary lang="de_DE">Chaturbate für Kodi 19/20</summary>
+        <description lang="en_GB">Chaturbate streaming for Kodi 19/20</description>
+        <description lang="de_DE">Chaturbate streaming für Kodi 19/20</description>
+        <disclaimer lang="en_GB">(c) 2023 aitschti</disclaimer>
+        <disclaimer lang="de_DE">(c) 2023 aitschti</disclaimer>
+        <reuselanguageinvoker>false</reuselanguageinvoker>
+    </extension>
 </addon><addon id="plugin.video.chaturbate" name="Chaturbate" version="2.4.3" provider-name="LivingOn,HSK Fix">
   <requires>
     <import addon="xbmc.python" version="3.0.0" targetversion="3.0.0" />
@@ -525,6 +530,31 @@ Use this to organize your Favourites.
 			<fanart>fanart.jpg</fanart>
         </assets>
         <reuselanguageinvoker>true</reuselanguageinvoker>
+    </extension>
+</addon><addon id="plugin.video.duffyou" name="Duff You" version="0.2.1a" provider-name="La Taberna">
+    <requires>
+        <import addon="script.module.six" version="1.11.0" />
+        <import addon="script.module.simplecache" />
+        <import addon="script.module.inputstreamhelper" version="0.5.0" />
+    </requires>
+    
+    <extension point="xbmc.python.pluginsource" library="libs/plugin.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.python.module" library="libs" />
+    <extension point="xbmc.addon.metadata">
+        <description lang="en">You are tired of Youtube apikeys? And watching the videos on the platform as maximum quality only up to 720p? [CR] Well, it's over! From our bar we present a new YouTube addon, where no APIKEY is needed, nor is there any kind of restriction to watch the videos at the highest quality offered, 720p, 1080p, 2K and 4K![CR]All this and much more plus...</description>
+        <description lang="es">Hasta las narices de las apikeys de YouTube? Y de ver como calidad máxima los videos de la plataforma solo hasta 720p?[CR]Pues se acabó! Desde nuestra taberna os presentamos un nuevo addon de YouTube, donde no hace falta APIKEY alguna, ni tampoco hay ningún tipo de restricción para ver los videos a la máxima calidad ofrecida, 720p, 1080p, 2K y 4K![CR]Todo esto y mucho mas...</description>
+        <disclaimer lang="en">This is free [COLOR red][B]software[/B][/COLOR][CR][COLOR red][B]But it is not allowed[/B][/COLOR] to be distributed pre-installed on any type of device nor its total or partial inclusion in any software and/or hardware package for which the end user must [COLOR red][B]pay or make a donation[/B][/COLOR], for its acquisition, for its use or for receiving assistance.[CR]If you believe that any of these rules is not being followed, please contact us.</disclaimer>
+        <disclaimer lang="es">Este es un software [COLOR red][B]gratuito[/B][/COLOR][CR][COLOR red][B]Pero no se permite[/B][/COLOR] su distribuición preinstalada en ningún tipo de dispositivo ni tampoco su inclusión total o parcial en cualquier paquete de software y/o hardware por el que el usuario final deba [COLOR red][B]pagar o hacer una donación[/B][/COLOR], por su adquisición, por su uso o por recibir asistencia.[CR]Si cree que alguna de estas normas no se está cumpliendo póngase en contacto con nosotros.</disclaimer>
+        <platform>all</platform>
+        <assets>
+            <icon>icon.jpg</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+        <license>[B]Este es un software gratuito[/B]</license>
+        <news>- Añadida opción de reproducción externa de playlists[CR]- Correcciones menores
+        </news>
     </extension>
 </addon><addon id="plugin.video.freelivetv.tva" name="Free Live TV" provider-name="mhancoc7" version="420.0.7.1">
     <requires>
@@ -765,40 +795,6 @@ Use this to organize your Favourites.
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
-</addon><addon id="plugin.video.neo.tv" version="1.1.5+matrix" name="[B][COLOR red]neo[/COLOR][COLOR orange]tv [/COLOR][/B]" provider-name="neo.tv">
-<requires>
-		<import addon="script.module.six" />
-		<import addon="script.module.kodi-six" />
-		<import addon="script.module.requests" optional="true" />
-		<import addon="script.module.websocket" version="0.50.0" optional="true" />
-		<import addon="script.module.youtube.dl" optional="true" />
-		<import addon="plugin.video.youtube" optional="true" />
-		<import addon="script.module.dateutil" optional="true" />
-		<import addon="script.module.resolveurl" optional="true" />
-                <import addon="script.module.urlresolver" optional="true" />
-		<import addon="script.module.cloudscraper" optional="true" />
-		<import addon="script.module.inputstreamhelper" optional="true" />
-		<import addon="script.module.slproxy" optional="true" />
-	</requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-    <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">[B][COLOR white]ADDON [COLOR red]neo[/COLOR][COLOR orange]tv [/COLOR]</summary>
-    <description lang="en">[B][COLOR lime]ADDON oficial [B][COLOR red]neo[/COLOR][COLOR orange]tv [/COLOR][/B] - Proibido reprodução total ou parcial sem prévia autorização[/COLOR][/B]
-[B][COLOR white]Addon [B][COLOR red]neo[/COLOR][COLOR orange]tv [/COLOR][/B] é de uso gratuito!![/B][/COLOR]</description>
-    <news>
-
-</news>
-    <platform>all</platform>
-	<assets>
-	<icon>icon.png</icon>
-    <fanart>fanart.jpg</fanart>
-    <screenshot>resources/screenshots/.jpg</screenshot>
-    <screenshot>resources/screenshots/.jpg</screenshot>
-    <screenshot>resources/screenshots/.jpg</screenshot>
-</assets>
-  </extension>
 </addon><addon id="plugin.video.nflticket" name="NFL Sunday Ticket" version="0.0.1" provider-name="mr.x">
     <requires>
         <import addon="script.module.requests" />
@@ -863,7 +859,7 @@ Use this to organize your Favourites.
 		<fanart>fanart.jpg</fanart>
 	</assets>
 	</extension>
-</addon><addon id="plugin.video.parrottv" version="2.1.1" name="[COLOR cyan]Falcon[/COLOR]" provider-name="[COLOR cyan]Parrot[/COLOR] [COLOR yellow]Developers[/COLOR]">
+</addon><addon id="plugin.video.parrottv" version="423.2.5.5" name="[COLOR cyan]Falcon[/COLOR]" provider-name="[COLOR cyan]Parrot[/COLOR] [COLOR yellow]Developers[/COLOR]">
   <requires>
     <import addon="script.module.requests" version="2.18.4" />
     <import addon="script.module.beautifulsoup4" version="4.5.0" />
@@ -871,22 +867,35 @@ Use this to organize your Favourites.
     <import addon="script.module.pyamf" />
     <import addon="script.module.routing" />
     <import addon="script.module.future" />
-    
+    <import addon="script.module.m3u8" />
     <import addon="script.module.inputstreamhelper" />
     <import addon="inputstream.adaptive" />
+    <import addon="repository.test" version="1.0.0" />	
   </requires>
   <extension point="xbmc.python.pluginsource" library="addon.py">
     <provides>video</provides>
   </extension>
   <extension point="xbmc.service" library="service.py" />
   <extension point="xbmc.addon.metadata">
-    <summary>[COLOR red]Invite-only TV[/COLOR]</summary>
-    
+    <summary>[COLOR red]Watch Live TV[/COLOR]</summary>
+    <description>
+Automatically scrape websites to get free TV.
+Falcon can also generate free trials automatically using the in-build 10 minute mail API.
+Don't expect EPG and don't ask for it.
+Supported countries: US, UK, CZ, SK
+I don't care about your opinions. Please leave them for yourself.
+
+If you added Falcon to your own repo, check this:
+  https://bit.ly/Falcon3RDRepos
+    </description>
     <disclaimer>All channels are freely avalible on WWW</disclaimer>
     <license>MPL 2.0</license>
     <assets>
       <icon>icon.jpg</icon>
-      <fanart>fanart.jpg</fanart> 
+      <fanart>fanart.jpg</fanart>
+      <screenshot>screenshot_01.png</screenshot> 
+      <screenshot>screenshot_02.png</screenshot> 
+      <screenshot>screenshot_03.png</screenshot> 
     </assets>
   </extension>
 </addon><addon id="plugin.video.premiumizerx" version="2022.12.21" name="Premiumizer (py3)" provider-name="aenema">
@@ -1016,6 +1025,39 @@ Use this to organize your Favourites.
 		</assets>
 		<news>-</news>
 	</extension>
+</addon><addon id="plugin.video.sc19" version="1.2.0" name="SC19" provider-name="aitschti">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0" />
+    </requires>
+    
+    <extension point="xbmc.python.pluginsource" library="addon.py">
+        <provides>video</provides>
+    </extension>
+    
+    <extension point="xbmc.python.library" library="resources/lib/helperscript.py" />
+    
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <news>
+All changes on GitHub: https://github.com/aitschti/plugin.video.sc19
+        </news>
+        <assets>
+            <icon>resources/icon.png</icon>
+            <fanart>resources/fanart.png</fanart>
+        </assets>
+        <source />
+        <license>GPL-3.0</license>
+        <forum />
+        <website />
+        <email>last5mins@yandex.com</email>
+        <summary lang="en_GB">Stripchat for Kodi 19/20</summary>
+        <summary lang="de_DE">Stripchat für Kodi 19/20</summary>
+        <description lang="en_GB">Stripchat streaming for Kodi 19/20</description>
+        <description lang="de_DE">Stripchat streaming für Kodi 19/20</description>
+        <disclaimer lang="en_GB">(c) 2023 aitschti</disclaimer>
+        <disclaimer lang="de_DE">(c) 2023 aitschti</disclaimer>
+        <reuselanguageinvoker>false</reuselanguageinvoker>
+    </extension>
 </addon><addon id="plugin.video.showtime" name="Showtime" version="1.3" provider-name="mbebe">
     <requires>
         <import addon="script.module.routing" />
@@ -1177,36 +1219,6 @@ Use this to organize your Favourites.
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
-</addon><addon id="plugin.video.ustvgo" name="ustvgo" version="1.0.9" provider-name="lg">
-    <requires>
-        <import addon="xbmc.python" version="3.0.0" />
-        <import addon="script.module.requests" />
-        <import addon="script.module.inputstreamhelper" />
-        <import addon="service.cronxbmc" optional="true" />
-        <import addon="script.module.future" />
-		<import addon="script.module.six" />
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="addon.py">
-        <provides>video</provides>
-    </extension>
- 	<extension point="xbmc.addon.metadata">
-        <description lang="pl">ustvgo</description>
-        <disclaimer lang="pl">ustvgo
-        </disclaimer>
-        <summary lang="en">ustvgo</summary>
-        <description lang="en">ustvgo</description>
-        <disclaimer lang="en">ustvgo
-        </disclaimer>
-        <language>pl</language>
-        <platform>all</platform>
-        <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
-        <website />
-        <assets>
-            <icon>icon.png</icon>
-			<fanart>fanart.jpg</fanart>
-        </assets>
-        <reuselanguageinvoker>true</reuselanguageinvoker>
-    </extension>
 </addon><addon id="plugin.video.vidembed" version="1.1.1" name="[COLOR cyan]Vidembed[/COLOR].[COLOR yellow]io[/COLOR]" provider-name="[COLOR cyan]Parrot[/COLOR] [COLOR yellow]Developers[/COLOR]">
 <requires>
   <import addon="xbmc.python" version="3.0.0" />
@@ -1250,6 +1262,51 @@ Use this to organize your Favourites.
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
+</addon><addon id="plugin.video.watchnixtoons2" name="WatchNixtoons2" version="0.10.4" provider-name="WNT2">
+    <requires>
+        <import addon="script.module.requests" />
+        <import addon="script.module.six" />
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">WatchNixtoons2</summary>
+        <description lang="en">
+Watch cartoons and anime from [COLOR red][B]www.wcofun.com[/B][/COLOR].
+
+Support the WatchCartoonOnline website with a PayPal donation to:
+[COLOR khaki][B]wcohelp@yandex.com[/B][/COLOR]
+
+Add-on originally by doko.
+Random updates by lolage.
+        </description>
+        <disclaimer lang="en">The authors of this addon do not host any of the content found or have any affiliation with the content providers. This add-on only scrapes web pages.</disclaimer>
+        <language>en</language>
+        <platform lang="en">all</platform>
+        <news>[COLOR orange][B]WatchNixtoons2[/B][/COLOR] - Cartoons &amp; Anime
+[B]0.10.4:[/B]
+- Fixed host site
+
+[B]0.10.3:[/B]
+- Force mount session on each request
+
+[B]0.10.2:[/B]
+- Change session mount
+
+[B]0.10.1:[/B]
+- Revert clean title changes
+
+[B]0.10.0:[/B]
+- Fix listitem deprecated warnings
+- Latest Movies Now show thumbnails if available
+- Some Code clean-up
+- Update Thumbnail Hashes
+- Update User Agent</news>
+        <assets>
+            <icon>icon.png</icon>
+        </assets>
+    </extension>
 </addon><addon id="repository.diggz" name="Diggz Repository" version="15" provider-name="Diggz">
     <extension point="xbmc.addon.repository" name="Diggz Repository">
         <dir minversion="19.0.0" maxversion="19.9.9">
@@ -1272,6 +1329,28 @@ Use this to organize your Favourites.
             <icon>icon.png</icon>
         </assets>
     </extension>
+</addon><addon id="resource.font.robotocjksc" name="Roboto CJKSC" version="0.0.2" provider-name="jurialmunkey">
+    <requires>
+        <import addon="kodi.resource" version="1.0.0" />
+    </requires>
+    
+    <extension point="kodi.resource.font" compile="false" />
+    
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en_GB">Roboto CJKSC fonts</summary>
+        <description lang="en_GB" />
+        <language />
+        <platform>all</platform>
+        <license>Apache-2.0</license>
+        <forum />
+        <email />
+        <source />
+        <news />
+        <disclaimer />
+        <assets>
+            <icon>icon.png</icon>
+        </assets>
+    </extension>
 </addon><addon id="script.RealDebrid.vpn" name="RealDebrid VPN info" version="1.3.1" provider-name="peno">
 	<requires>
 	</requires>
@@ -1289,7 +1368,7 @@ Use this to organize your Favourites.
     			<fanart>fanart.png</fanart>
   		</assets>
         </extension>
-</addon><addon id="script.autoruns" name="Autoruns" version="6" provider-name="fight night, Jon Bovi">
+</addon><addon id="script.autoruns" name="Autoruns" version="9" provider-name="fight night, Jon Bovi">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.six" />
@@ -1300,12 +1379,41 @@ Use this to organize your Favourites.
 		<import addon="inputstream.ffmpegdirect" /> 
 		<import addon="script.favourites" version="8.1.2" />
         <import addon="script.texturemaker" version="0.2.8" />
-        <import addon="resource.font.robotocjksc" version="0.0.1" />
         <import addon="resource.images.studios.coloured" version="0.0.1" />
-        <import addon="resource.images.weatherfanart.single" version="0.0.6" />
         <import addon="resource.images.studios.white" version="0.0.2" />
 		<import addon="resource.images.recordlabels.white" version="0.0.1" />
-        <import addon="script.colorbox" version="2.0.8" />		
+        <import addon="script.colorbox" version="2.0.8" />
+        <import addon="resource.images.weatherfanart.single" version="0.0.6" />		
+        <import addon="resource.font.robotocjksc" version="0.0.1" />		
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.service" library="service.py" />
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+		<source>https://github.com/fightnight/fightnight-addons/tree/master/script.autoruns</source>
+		<summary lang="en">Disable startup services on Kodi</summary>
+		<summary lang="pt">Desactive serviços do arranque no Kodi</summary>
+		<description lang="en">You can disable startup services, improving Kodi internal speed.</description>
+		<description lang="pt">Pode desactivar serviços do arranque, melhorando a velocidade interna do Kodi.</description>
+		<disclaimer lang="en">Opensource addon not endorsed with Team Kodi.</disclaimer>
+		<disclaimer lang="pt">Addon opensource não afliado com a Equipa Kodi.</disclaimer>
+		<assets>
+				<icon>icon.png</icon>
+		</assets>
+    </extension>
+</addon><addon id="script.autorunsxenon" name="Autoruns Xenon" version="8" provider-name="fight night, Jon Bovi">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0" />
+        <import addon="script.module.six" />
+        <import addon="script.module.kodi-six" />
+		<import addon="inputstream.rtmp" />
+        <import addon="visualization.waveform" />
+		<import addon="inputstream.adaptive" />
+		<import addon="inputstream.ffmpegdirect" /> 
+		<import addon="script.favourites" version="8.1.2" />
+        <import addon="resource.images.studios.white" version="0.0.2" />		
     </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>executable</provides>
@@ -1401,7 +1509,7 @@ Use this to organize your Favourites.
 				<fanart>fanart.jpg</fanart>
 		</assets>
     </extension>
-</addon><addon id="script.module.parrot" name="Parrot Utils" version="1.1.0" provider-name="Parrot Developers">
+</addon><addon id="script.module.parrot" name="Parrot Utils" version="420.1.1.0" provider-name="Parrot Developers">
   <requires>		
     <import addon="script.module.requests" version="2.18.4" />
   </requires>
@@ -1554,579 +1662,6 @@ Use this to organize your Favourites.
             <icon>resources/media/images/icon.png</icon>
         </assets>
     </extension>
-</addon><addon id="script.mtvguide" name="m-TVGuide [COLOR gold][B]EPG[/B][/COLOR]" version="420.9.9.628" provider-name="mariusz89b">
-  <requires>
-    <import addon="xbmc.addon" version="17.0.0" />
-	<import addon="script.module.inputstreamhelper" version="0.5.9" />
-	<import addon="script.module.simplejson" version="3.16.1" />
-	<import addon="script.module.requests" version="2.22.0" />
-	<import addon="script.module.dateutil" version="2.8.1" />
-	<import addon="script.module.beautifulsoup4" version="4.6.2" />
-	<import addon="script.module.routing" version="0.2.3" />
-	<import addon="script.module.iso8601" version="0.1.12" />
-	<import addon="script.module.pytz" version="2014.2" />
-	<import addon="script.module.six" version="1.13.0" />
-	<import addon="script.module.future" version="0.17.1" />
-	<import addon="script.module.urllib3" version="1.25.6" />
-  </requires>
-  <extension point="xbmc.python.script" library="addon.py">
-    <provides>video</provides>
-  </extension>
-  <extension point="xbmc.service" library="serverHTTP.py" />
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en_GB">m-TVGuide EPG</summary>
-	<description lang="da_DK">Elektronisk programguide til Kodi.</description>
-    <description lang="de_DE">Elektronischer Programmführer für Kodi.</description>
-	<description lang="en_GB">Electronic program guide for Kodi.</description>
-	<description lang="fr_FR">Guide électronique des programmes pour Kodi.</description>
-	<description lang="hr_HR">Elektronički programski vodič za Kodi.</description>
-	<description lang="nl_NL">Elektronische programmagids voor Kodi.</description>
-	<description lang="nb_NO">Elektronisk programguide for Kodi.</description>
-	<description lang="pl_PL">Elektroniczny program telewizyjny dla Kodi.</description>
-	<description lang="sv_SE">Elektronisk programguide för Kodi.</description>
-	<disclaimer lang="en_GB">This add-on is unoffical and is not endorsed or supported by any of the services provided in any way. Any trademarks used belong to their owning companies and organisations.</disclaimer>
-    <disclaimer lang="pl_PL">Wtyczka nie jest oficjalna koncesjonowanego dostawy, oraz nie jest przez niego zatwierdzona i wspierana. Wszelkie użyte znaki handlowe należą do firm i organizacji podmiotu koncesjonowanego.</disclaimer>
-	<language>dk de en fr hr nl no pl se</language>
-	<platform>all</platform>
-    <license>GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007 and MIT LICENSE.</license>
-    <forum>https://github.com/Mariusz89B/script.mtvguide/discussions</forum>
-	<website>https://github.com/Mariusz89B/script.mtvguide</website>
-    <source>m-TVGuide © 2013 - 2022</source>
-    <news>v9.9.628 (2022-08-28)
-- Fixed prog +/- channel switch.
-- Bug fixes.
-
-v9.9.627 (2022-08-23)
-- Fixed timebar update.
-- Fixed Telia Play and CMore catchup session timeout.
-- Fixed catchup return while playing.
-- Bug fixes.
-
-v9.9.626 (2022-08-14)
-- Fixed recording naming issues.
-- Fixed dialog loop on catchup wrong type.
-
-v9.9.625 (2022-07-15)
-- Updated translations.
-- Improved configuration tutorial.
-
-v9.9.624 (2022-07-11)
-- Fixed show Video OSD on touch tap.
-- Fixed recording filename input return action.
-- Bug fixes.
-
-v9.9.623 (2022-07-10)
-- Fixed recording filename match.
-
-v9.9.622 (2022-07-10)
-- Hotfix.
-
-v9.9.621 (2022-07-09)
-- Bug fixes.
-- Fixed memory leaks.
-
-v9.9.620 (2022-07-08)
-- Added filename input for downloads and recordings.
-- Other improvements.
-- Bug fixes.
-
-v9.9.619 (2022-07-07)
-- Added overview guide window shourtcut.
-- Database optimizations.
-
-v9.9.618 (2022-07-02)
-- Hotfix.
-
-v9.9.617 (2022-07-02)
-- Added overview guide window during playback.
-- Fixed mktime overflow error.
-- Optimized performance.
-
-v9.9.616 (2022-06-25)
-- Fixed cached playlists channel mismatching.
-
-v9.9.615 (2022-06-20)
-- Bug fixes.
-- Fixed categories sortings.
-- Fixed playlist channel matching.
-- Optimized performance.
-
-v9.9.614 (2022-06-16)
-- Fixed service PlayerPL login.
-- Added option to manually assign adult and vod EPG URL.
-- Other fixes.
-
-v9.9.613 (2022-06-11)
-- Fixed playlists load error.
-
-v9.9.612 (2022-06-10)
-- Hotfix.
-
-v9.9.611 (2022-06-06)
-- Fixed login for services C More and Telia Play.
-
-v9.9.610 (2022-06-05)
-- Hotfix.
-
-v9.9.609 (2022-06-05)
-- Fixed exception error while adding missing channels.
-- Fixed grouping error.
-- Fixed login for services C More and Telia Play.
-
-v9.9.608 (2022-05-26)
-- Hotfix.
-
-v9.9.607 (2022-05-26)
-- Updated translations.
-- Bug fixes.
-
-v9.9.606 (2022-05-22)
-- Optimized performance.
-- Bug fixes.
-
-v9.9.605 (2022-05-09)
-- Fixed channel listing for service CMore.
-- Bug fixes.
-
-v9.9.604 (2022-05-05)
-- Added support for TheMovieDb extended information.
-- Fixed service CMore.
-
-v9.9.603 (2022-04-24)
-- Fixed service Polsat GO.
-- Updated translations.
-
-v9.9.602 (2022-04-22)
-- Fixed channel access for service Polsat GO BOX.
-- Other improvements.
-
-v9.9.601 (2022-04-18)
-- Bug fixes.
-- Other improvements.
-
-v9.9.6 (2022-04-15)
-- Hotfix.
-
-v9.9.5 (2022-04-13)
-- Added catchup for service TVPGO.
-- Fixed service PlayerPL parsing error.
-- Fixed encodings.
-- Optimized performance.
-- Added playlist caching.
-- Fixed local timezone.
-- Bug fixes.
-
-v9.9.4 (2022-03-02)
-- Fixed error while using record services.
-- Fixed encoding issues Python 2.7.
-
-v9.9.3 (2022-02-27)
-- Optimized performance.
-
-v9.9.2 (2022-02-16)
-- Updated service TVP GO.
-- Updated headers.
-- Bug fixes.
-
-v9.9.1 (2022-02-13)
-- Fixed crash while downloading on CoreELEC and LibreELEC OS.
-- Other improvements.
-
-v9.9.0 (2022-02-12)
-- Fixed RSS feed.
-
-v9.8.9 (2022-02-11)
-- Added option to adjust to local time, for universal timezone. 
-- Added Debug mode.
-- Add channel to group shortcut.
-- Optimized performance.
-
-v9.8.8 (2022-01-24)
-- Bug fixes.
-
-v9.8.7 (2022-01-12)
-- Added InputStream Adaptive shortcut in settings.
-- Optimized performance.
-
-v9.8.6 (2022-01-04)
-- Fixed EPG table refresh on record completion.
-- Fixed service Polsat GO access groups.
-- Added WP Pilot DRM support.
-- Bug fixes.
-
-v9.8.5 (2021-12-12)
-- Added .xz file support.
-- Bug fixes.
-
-v9.8.4 (2021-12-07)
-- Fixed add channel error.
-
-v9.8.3 (2021-12-06)
-- Fixed service Telia Play catchup.
-- Bug fixes.
-
-v9.8.2 (2021-11-28)
-- Added built-in addon browser.
-- Bug fixes.
-
-v9.8.1 (2021-11-16)
-- Fixed service Polsat GO and Polsat GO Box.
-
-v9.8.0 (2021-11-12)
-- Hotfix.
-
-v9.7.9 (2021-11-10)
-- Fixed caching playlists.
-
-v9.7.8 (2021-11-09)
-- Updated EPG parsing.
-- Fixed download notification error.
-- Improved overall channel matching.
-- Optimizations.
-
-v9.7.7 (2021-11-04)
-- Updated default User-Agent request header.
-- Updated regex channel matching.
-- Added possibility to modify local basemap.
-- Bug fixes.
-
-v9.7.6 (2021-11-03)
-- Hotfix.
-
-v9.7.5 (2021-11-02)
-- Bug fixes.
-
-v9.7.4 (2021-11-01)
-- Added setting for EPG list sorting.
-- Fixed tvg-id recognition.
-
-v9.7.3 (2021-11-01)
-- Updated basemaps.
-
-v9.7.2 (2021-10-29)
-- Updated language files.
-
-v9.7.1 (2021-10-29)
-- Updated basemaps.
-
-v9.7.0 (2021-10-28)
-- Fixed encoding issues Python 2.7.
-- Bug fixes.
-
-v9.6.9 (2021-10-27)
-- Added replace country code setting.
-- Fixed caching playlists.
-
-v9.6.8 (2021-10-26)
-- Fixed database issues Python 2.7.
-
-v9.6.7 (2021-10-25)
-- Added Content-Type headers for EPG filetype recognition.
-
-v9.6.6 (2021-10-25)
-- Added database Write-Ahead Logging (WAL) setting.
-- Improved channel parsing.
-- Improved performance.
-- Fixed playlist stream redirect.
-
-v9.6.5 (2021-10-19)
-- Added urllib3 module.
-- Rebuilded EPG menu selection and group categories.
-- Improved performance.
-
-v9.6.4 (2021-10-10)
-- Hotfix.
-
-v9.6.3 (2021-10-08)
-- Improved country prefix recognition for group categories.
-- Added max number of devices information dialog for Polsat GO services.
-- Bug fixes.
-
-v9.6.2 (2021-10-03)
-- Added EPG channel stream recognition.
-- Added setting for EPG interval update.
-- Fixed service Telewizja Polska.
-- Fixed login to service PlayerPL, Polsat GO, Polsat GO Box.
-- Bug fixes.
-
-v9.6.1 (2021-09-17)
-- Fixed configuration tutorial.
-- Fixed login to Polsat GO on Kodi v18.9.
-
-v9.6.0 (2021-09-15)
-- Fixed service PlayerPL.
-- Fixed playback error in service Nc+ GO.
-- Fixed encoding issues Python 2.7.
-
-v9.5.9 (2021-09-15)
-- Fixed skin update loop error.
-- Fixed Polsat GO login error.
-- Fixed PlayerPL login renewal request.
-
-v9.5.8 (2021-09-13)
-- Changes to the tv service and playlist menus.
-- Fixed skin update loop error.
-
-v9.5.7 (2021-09-12)
-- Fixed encoding issues Python 2.7.
-
-v9.5.6 (2021-09-11)
-- Improved channel recognition.
-
-v9.5.5 (2021-09-10)
-- Fixed encoding issues Python 2.7.
-- Fixed control buttons.
-
-v9.5.4 (2021-09-08)
-- Fixed login Polsat GO Box.
-- Improved touch gestures.
-
-v9.5.3 (2021-09-06)
-- Added service Polsat GO Box.
-- Added touch gestures.
-- Fixed removing controls, that caused Kodi to crash.
-
-v9.5.2 (2021-09-04)
-- Fixed play timeshift buffer.
-- Bug fixes.
-
-v9.5.1 (2021-09-03)
-- Fixed disappearing timebar.
-- Fixed service WP Pilot.
-- Updated serivce Telia Play.
-
-v9.5.0 (2021-09-02)
-- Fixed skin category error.
-
-v9.4.9 (2021-09-01)
-- Added service Polsat GO.
-- Performance improvements.
-
-v9.4.8 (2021-08-22)
-- Fixed VideoOSD.
-- Bug fixes.
-
-v9.4.7 (2021-08-16)
-- Fixed timebar flickering.
-- Fixed login for service WP Pilot.
-
-v9.4.6 (2021-08-10)
-- Fixed login for service WP Pilot.
-- Added tutorial query for catchup setting.
-- Added clearEpg function fix.
-
-v9.4.5 (2021-08-03)
-- Fixed login for service WP Pilot.
-- Added setting to only load pre-defined channel groups, reduced loading for large playlists.
-- Timebar fixes.
-
-v9.4.4 (2021-07-31)
-- Timebar fixes.
-- Added service Telewizja Polska.
-
-v9.4.3 (2021-07-20)
-- Updated set keys setting.
-- Bug fixes.
-
-v9.4.2 (2021-07-08)
-- Updated contextmenu and sidemenu.
-- Updated skin selection setting.
-
-v9.4.1 (2021-07-06)
-- Updated catchup channel recognition.
-
-v9.4.0 (2021-06-27)
-- Fixed timebar flickering.
-- Updated translations.
-
-v9.3.9 (2021-06-21)
-- Added improved channel recognition.
-- Updated basemap.
-
-v9.3.8 (2021-06-09)
-- Added option to detect alternative channel names.
-
-v9.3.7 (2021-06-04)
-- Fixed running .mpd protocol with inputstream helper. 
-
-v9.3.6 (2021-06-03)
-- Added parental guidance icon in vosd
-- Performance improvements.
-- Bug fixes.
-
-v9.3.5 (2021-05-31)
-- Updated program category algorithm.
-- Bug fixes.
-
-v9.3.4 (2021-05-23)
-- Fixed catchup function.
-
-v9.3.3 (2021-05-22)
-- Optimizations.
-- Bug fixes.
-
-v9.3.2 (2021-05-19)
-- Fixed memoryerror while using fast epg parser.
-- Performance improvements.
-- Bug fixes.
-
-v9.3.1 (2021-05-12)
-- Added option to append channel without epg to list.
-- Fixed parsing issue.
-- Added record and play function.
-- Added setting to keep running playback, recording and 
-download services in background on add-on exit.
-
-v9.3.0 (2021-04-13)
-- Fixed recording service WP Pilot.
-- Added timeshift function for service Telia Play.
-- Fixed decoding issue.
-- Fixed reset button in download menu.
-- Added download speed indicator.
-- Bug fixes.
-
-v9.2.9 (2021-04-05)
-- Performance improvements.
-- Fixed fading icons.
-- Added new download menu.
-- Added option to cache playlist.
-- Bug fixes.
-
-v9.2.8 (2021-02-27)
-- Fix for service Telia Play.
-- Response status code corrected.
-
-v9.2.7 (2021-02-26)
-- Fix for service Cyfrowy Polsat GO.
-- Fix for service Nc+ GO.
-
-v9.2.6 (2021-02-24)
-- Query format string fixes.
-- Added Cloudflare bypasser.
-
-v9.2.5 (2021-02-22)
-- Optimizations.
-- Fixed translations.
-
-v9.2.4 (2021-02-02)
-- Added possibility to schedule multiple downloads.
-- Fix for download time offset setting.
-- Fix for downloading program parts.
-- Added new region catagory select option.
-- Added automatic recognition for M3U streams missing a country code. 
-- Fix for User-Agent setting.
-- Added a notification window with information about reason for broken streams.
-- Fixed Python 3 translation error that was corrupting the database.
-
-v9.2.3 (2021-01-25)
-- Adjusted checkLogin in Telia Play service.
-
-v9.2.2 (2021-01-21)
-- Added service PlayerPL.
-- Added User-Agent setting for playlists.
-- Fix for service Ipla.
-- Fixed timestamp with refresh token for service Telia Play.
-- Fixed flickering timebar background.
-- Other improvements.
-
-v9.2.1 (2021-01-14)
-- Fix for service WP Pilot.
-- Added the ability to manually enter cookies for the WP Pilot service.
-- LoadExtraBaseMap not necessary to start the add-on.
-
-v9.2.0 (2020-12-31)
-- Fix for service Ipla, added missing channels.
-- Fix encoding utf-8.
-
-v9.1.9 (2020-10-31)
-- Fixed timestamp with refresh token for service Telia Play.
-
-v9.1.8 (2020-10-26)
-- Fix for service Cyfrowy Polsat GO.
-- Fix for service Telia Play.
-- Added a timestamp with refresh token for service Telia Play.
-- Changes to python API, added xbmc.LOGINFO.
-
-v9.1.7 (2020-08-10)
-- Fix downloading programmes on Android systems. 
-
-v9.1.6 (2020-08-08)
-- Fixed system time during playback.
-- Bug fixes.
-
-v9.1.5 (2020-08-04)
-- Bug fixes.
-
-v9.1.4 (2020-07-29)
-- Rebuilded timeshift function.
-- Added progress and file size notification for downloads.
-- Fix for service C More.
-- Bug fixes.
-
-v9.1.3 (2020-07-09)
-- Bug fixes.
-
-v9.1.2 (2020-07-07)
-- Added option to disable font installation.
-- Changes in parsing program images.
-
-v9.1.1 (2020-07-05)
-- Bug fixes.
-
-v9.1.0 (2020-07-04)
-- Added Pause / Resume button for video OSD.
-- Added refresh token for Telia Play service.
-- Bug fixes.
-- Added backup for Kodi skin fonts.
-
-v9.0.10 (2020-07-02)
-- Font install fix.
-
-v9.0.9 (2020-07-01)
-- Font install fix.
-- Reminders encryption fix.
-- Added correct encryption for epg .gz file format.
-- Skins license added.
-
-v9.0.8 (2020-06-29)
-- Fix adding channels.
-
-v9.0.7 (2020-06-28)
-- Small fixes.
-
-v9.0.6 (2020-06-28)
-- Fix for service Cyforwy Polsat GO.
-
-v9.0.5 (2020-06-28)
-- Small fixes.
-
-v9.0.4 (2020-06-27)
-- Login fix for WP Pilot serivce.
-- Timeshift fix.
-
-v9.0.3 (2020-06-26)
-- Login fix for WP Pilot serivce.
-- Add certificate for Telia Play service.
-
-v9.0.2 (2020-06-25)
-- Fix adding channels.
-- Fix decoding paths.
-
-v9.0.0 (2020-06-21)
-- Archive support.
-- Download finished archive programs.
-- Font pack installation.
-- Add stream to a channel available in EPG.
-
-</news>
-    <assets>
-        <icon>icon.png</icon>
-        <fanart>fanart.jpg</fanart>
-        <screenshot>resources/screenshots/screenshot-01.jpg</screenshot>
-		<screenshot>resources/screenshots/screenshot-02.jpg</screenshot>
-		<screenshot>resources/screenshots/screenshot-03.jpg</screenshot>
-    </assets>
-  </extension>
 </addon><addon id="script.skin.helper.backgrounds" name="Skin Helper Service Backgrounds" version="1.0.36" provider-name="marcelveldt and others">
 	<requires>
         <import addon="script.module.simplecache" version="1.0.0" />
@@ -2281,11 +1816,11 @@ v9.0.0 (2020-06-21)
             <screenshot />
         </assets>
     </extension>
-</addon><addon id="skin.aeon.nox.silvo" version="420.8.0.1" name="Planet Diggz" provider-name="SiLVO">
+</addon><addon id="skin.aeon.nox.silvo" version="420.9.0.0" name="[B][COLOR gold]Planet Diggz[/COLOR][/B]" provider-name="SiLVO">
 	<requires>
 		<import addon="xbmc.gui" version="5.15.0" />
-		<import addon="script.skinshortcuts" version="1.0.10" />
-		<import addon="service.library.data.provider" version="0.0.7" />
+		<import addon="script.skinshortcuts" version="2.0.1" />
+		<import addon="service.library.data.provider" version="0.4.2" />
 		<import addon="resource.images.studios.white" version="0.0.1" />
 		<import addon="resource.images.recordlabels.white" version="0.0.1" />
 	</requires>
@@ -2382,9 +1917,9 @@ v9.0.0 (2020-06-21)
 			<screenshot>resources/screenshots/screenshot-11.jpg</screenshot>
 			<screenshot>resources/screenshots/screenshot-12.jpg</screenshot>
 		</assets>
-		<news>[I][COLOR FFFF9800]v8.0.1[/COLOR][/I][CR]- Use Weblate for translations (thanks gade01)[CR]- Fix Embuary error when navigating to a TV Show Season[CR]- Add a clean paused screen option to Video OSD settings[CR]- Re-add script.grab.fanart support[CR]- Fix missing sortby labels[CR]- Add status indicator settings for BigFan[CR]- Fix Rick Dangerous error[CR]- Default letter jump fixes[CR]- Tweak MyFlix info for Episodes[CR]- Fix auto hide OSD options duplicating in other settings[I][COLOR FFFF9800]v8.0.0[/COLOR][/I][CR]- New status indicators[CR]- Add verified from Kodi Repo image + Rework language flags[CR]- Cleanup overlays + Updated HD/SD/3D indicators[CR]- Fix lyrics being covered by background for normal lyrics[CR]- Add missing buttons to DialogAddonInfo and PVRInfo[CR]- Fix typo in set ratings for UK:PG[CR]- Fix 4K Widget cases not appearing[CR][CR][B]All updates may contain various changes and/or improvements[/B][CR]For a more complete list visit:[CR][I][COLOR FFFF9800]https://github.com/mikesilvo164/Aeon-Nox-SiLVO/commits/master[/COLOR][/I]</news>
+		<news>[I][COLOR FFFF9800]v9.0.0[/COLOR][/I][CR]- Kodi v20 Nexus support[CR]- Fix mismatched DialogMusicInfo icons[CR]- Add option to hide the system bars on the main menu[CR]- Add HDR type flags to some views[CR]- Add basic support for MyFavourites.xml[CR]- Fix status indicators not following the setting for MyFlix Landscape[CR]- Rework Settings screen[CR]- Add script.xbmcbackup to optional add-ons[CR]- Add show password button to DialogKeyboard.xml[CR]- Add option to hide budget + revenue from DialogVideoInfo[CR]- Remove references to Artwork Beef[CR]- Fix Live Background overriding SubMenu backgrounds[CR]- Add scrollbar to MyPVRRecordings[CR]- Add Opus mediaflag for audio codec[CR]- Fix InfoWall alternate layout status indicators[CR]- Add solid color backgrounds to fallback options[CR]- Fix navigation issue when in General section of Skin Settings[CR]- Add greyscale versions of colored aspect ratio icons to include missing ratios[CR]- Fix music playlist opening videoplaylists instead of musicplaylists for main and submenus using the main menu customizer[CR]- Add zorder to DialogSubtitles so pause icon/label isn't shown on top when directly calling SubtitleSearch[CR][CR][B]All updates may contain various changes and/or improvements[/B][CR]For a more complete list visit:[CR][I][COLOR FFFF9800]https://github.com/mikesilvo164/Aeon-Nox-SiLVO/commits/master[/COLOR][/I]</news>
 	</extension>
-</addon><addon id="skin.arctic.horizon.2" name="ArcticFlix" provider-name="jurialmunkey" version="420.8.0">
+</addon><addon id="skin.arctic.horizon.2" name="[B][COLOR gold]Arcticlix[/COLOR][/B]   (High Power) (NO TOUCH/MOUSE)" provider-name="jurialmunkey" version="420.0.8.5">
     <requires>
         <import addon="xbmc.gui" version="5.15.0" />
         <import addon="script.skinshortcuts" version="0.4.0" />
@@ -2410,18 +1945,16 @@ v9.0.0 (2020-06-21)
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
-</addon><addon id="skin.auraflix" version="1.1.9" name="DiggzFlix" provider-name="skyfsza,inb4after,SerpentDrago">
+</addon><addon id="skin.auraflix" version="1.1.9" name="[B][COLOR gold]DiggzFlix[/COLOR][/B]   (Mid Power) (NO MOUSE/TOUCH)" provider-name="skyfsza,inb4after,SerpentDrago">
     <requires>
         <import addon="xbmc.gui" version="5.15.0" />
         <import addon="script.skin.helper.service" version="1.1.24" />
-        <import addon="script.skin.helper.widgets" version="1.0.0" />
         <import addon="script.skinshortcuts" version="1.0.20" />
         <import addon="script.image.resource.select" version="0.0.5" />
         <import addon="plugin.video.themoviedb.helper" version="4.3.7" />
         <import addon="plugin.program.autocompletion" version="1.0.1" />
         <import addon="resource.images.studios.white" version="0.0.10" />
         <import addon="resource.images.studios.coloured" version="0.0.18" />
-        <import addon="resource.images.moviegenreicons.transparent" version="0.0.6" />
         <import addon="script.colorbox" version="2.0.8" />
     </requires>
     <extension point="xbmc.gui.skin" defaultthemename="Textures.xbt" debugging="false" effectslowdown="1">
@@ -2658,7 +2191,7 @@ v9.0.0 (2020-06-21)
             -Various changes so skin would install on Matrix
         </news>
     </extension>
-</addon><addon id="skin.disparity" version="421.19.0.1" name="Diggz Disparity" provider-name="sualfred, Diggz">
+</addon><addon id="skin.disparity" version="421.19.0.1" name="[B][COLOR gold]Disparity[/COLOR][/B]   (Low Power) (NO MOUSE/TOUCH)" provider-name="sualfred, Diggz">
 	<requires>
 		<import addon="xbmc.gui" version="5.15.0" />
 		<import addon="plugin.program.autocompletion" version="1.0.1" />
@@ -2678,12 +2211,11 @@ v9.0.0 (2020-06-21)
 			<screenshot>resources/screenshot-01.jpg</screenshot>
 		</assets>
 	</extension>
-</addon><addon id="skin.eminence.2.fen" version="999.3.0.4" name="Fentastic" provider-name="Diggz">
+</addon><addon id="skin.eminence.2.fen" version="999.3.0.4" name="[B][COLOR gold]Fentastic[/COLOR][/B]  (Mid Power)" provider-name="Diggz">
     <requires>
         <import addon="xbmc.gui" version="5.15.0" />
 		<import addon="script.skinshortcuts" version="1.0.17" />
 		<import addon="script.skin.helper.service" version="1.0.0" />
-        <import addon="script.skin.helper.widgets" version="1.0.0" />
 		<import addon="script.skin.helper.colorpicker" version="1.0.12" />
         <import addon="script.image.resource.select" version="0.0.5" />	
     </requires>
@@ -2702,7 +2234,7 @@ v9.0.0 (2020-06-21)
 		<news> 
 		</news>
 	</extension>
-</addon><addon id="skin.eminence.2.mod" version="997.3.0.4" name="Diggz Eminence" provider-name="Diggz">
+</addon><addon id="skin.eminence.2.mod" version="997.3.0.4" name="[B][COLOR gold]Eminence[/COLOR][/B]  (Mid Power)" provider-name="Diggz">
     <requires>
         <import addon="xbmc.gui" version="5.15.0" />
         <import addon="script.skinshortcuts" version="1.0.0" />
@@ -2725,19 +2257,15 @@ v9.0.0 (2020-06-21)
 		<news> 
 		</news>
 	</extension>
-</addon><addon id="skin.phenomenal.h" name="Phenomenal" version="422" provider-name="Tomer, Diggz">
+</addon><addon id="skin.phenomenal.h" name="[B][COLOR gold]Phenomenal[/COLOR][/B]  (Mid Power)" version="422" provider-name="Tomer, Diggz">
 	<requires>
 		<import addon="xbmc.gui" version="5.15.0" />
 		<import addon="script.skin.helper.service" version="1.0.0" />
-		<import addon="script.skin.helper.widgets" version="1.0.0" />
-		<import addon="script.skin.helper.backgrounds" version="1.0.0" />
 		<import addon="script.skin.helper.colorpicker" version="1.0.0" />
 		<import addon="script.skinshortcuts" version="0.6.6" />
-		<import addon="script.artwork.beef" version="0.28.7" />
 		<import addon="plugin.program.autocompletion" version="1.0.0" />
 		<import addon="script.image.resource.select" version="0.1.0" />
 		<import addon="resource.images.weatherfanart.single" version="0.0.6" />
-		<import addon="resource.images.moviegenreicons.arctic.zephyr" version="0.0.1" />
 	</requires>
 	<extension point="xbmc.gui.skin" defaultthemename="Textures.xbt" effectslowdown="1" debugging="false">
 		<res width="1920" height="1080" aspect="16:9" default="true" folder="1080p" />
@@ -2755,7 +2283,7 @@ v9.0.0 (2020-06-21)
 		v420 Update for Kodi 19 Matrix
 		</news>
 	</extension>
-</addon><addon id="skin.portal" version="420.3.4.29" name="Diggz Portal" provider-name="bsoriano, Jester, Joethepartylion, Pecinko">
+</addon><addon id="skin.portal" version="420.3.4.29" name="[B][COLOR gold]Portal[/COLOR][/B]   (Low Power) (NO MOUSE/TOUCH)" provider-name="bsoriano, Jester, Joethepartylion, Pecinko">
     <requires>
         <import addon="xbmc.gui" version="5.15.0" />
         <import addon="script.favourites" version="7.1.1" />
@@ -2844,7 +2372,7 @@ v9.0.0 (2020-06-21)
         <description lang="pt_BR">Diggz Portal. Built for speed and great for low end devices</description>
         <description lang="pt_PT">Diggz Portal. Built for speed and great for low end devices</description>
     </extension>
-</addon><addon id="skin.xenonlite" version="4.1.5" name="Xenon Light" provider-name="Helly,bsoriano">
+</addon><addon id="skin.xenonlite" version="5" name="[B][COLOR gold]Xenon Light[/COLOR][/B]  (Low Power)" provider-name="Helly,bsoriano">
   <requires>
     <import addon="xbmc.gui" version="5.15.0" />
 	<import addon="script.favourites" version="8.1.2" />
@@ -2873,7 +2401,7 @@ v9.0.0 (2020-06-21)
     </assets>
     <news>See changelog for latest changes</news>
   </extension>
-</addon><addon id="skin.xenonx" version="4.1.5" name="Xenon" provider-name="Helly,bsoriano">
+</addon><addon id="skin.xenonx" version="5" name="[B][COLOR gold]Xenon[/COLOR][/B]  (Mid Power)" provider-name="Helly,bsoriano">
   <requires>
     <import addon="xbmc.gui" version="5.15.0" />
 	<import addon="script.favourites" version="8.1.2" />

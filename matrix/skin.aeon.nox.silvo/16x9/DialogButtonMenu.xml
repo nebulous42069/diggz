@@ -18,21 +18,6 @@
 				<texture border="30,20,30,2">dialog_top2.png</texture>
 			</control>
 			<control type="button" id="2">
-				<description>Force Close</description>
-				<width>510</width>
-				<height>60</height>
-				<textcolor>grey2</textcolor>
-				<focusedcolor>white</focusedcolor>
-				<textwidth>435</textwidth>
-				<textoffsetx>45</textoffsetx>
-				<texturefocus colordiffuse="$VAR[HighlightBarColor]" border="35,2,35,2">button_shutdown_focus.png</texturefocus>
-				<texturenofocus border="35,2,35,2">button_shutdown_nofocus.png</texturenofocus>
-				<onclick>ActivateWindow(10001,&quot;plugin://plugin.program.chef19/?description=Force%20Close%20Kodi&amp;fanart=C%3a%5cUsers%5cjeddi%5cAppData%5cRoaming%5cKodi%5caddons%5cplugin.program.chef19%5cresources%5cfanart.jpg&amp;icon=C%3a%5cUsers%5cjeddi%5cAppData%5cRoaming%5cKodi%5caddons%5cplugin.program.chef19%5cresources%5cicon.png&amp;mode=18&amp;name=Force%20Close&amp;name2&amp;url&amp;version&quot;,return)</onclick>
-				<font>font14</font>
-				<label>Force Close</label>
-				<visible>System.ShowExitButton</visible>
-			</control>			
-			<control type="button" id="3">
 				<description>Exit button</description>
 				<width>510</width>
 				<height>60</height>
@@ -42,12 +27,12 @@
 				<textoffsetx>45</textoffsetx>
 				<texturefocus colordiffuse="$VAR[HighlightBarColor]" border="35,2,35,2">button_shutdown_focus.png</texturefocus>
 				<texturenofocus border="35,2,35,2">button_shutdown_nofocus.png</texturenofocus>
-				<onclick>Quit()</onclick>
+				<onclick>ActivateWindow(10001,&quot;plugin://plugin.program.chef20/?description=%5bB%5d%5bCOLOR%20snow%5dForce%20Close%20Kodi%5b%2fCOLOR%5d%5b%2fB%5d&amp;fanart=C%3a%5cUsers%5cjeddi%5cAppData%5cRoaming%5cKodi%5caddons%5cplugin.program.chef20%5cresources%5cfanart.jpg&amp;icon=C%3a%5cUsers%5cjeddi%5cAppData%5cRoaming%5cKodi%5caddons%5cplugin.program.chef20%5cresources%5cicon.png&amp;mode=18&amp;name=%5bB%5d%5bCOLOR%20snow%5dForce%20Close%5b%2fCOLOR%5d%5b%2fB%5d&amp;name2&amp;url&amp;version&quot;,return)</onclick>
 				<font>font14</font>
 				<label>13012</label>
 				<visible>System.ShowExitButton</visible>
-			</control>			
-			<control type="button" id="4">
+			</control>
+			<control type="button" id="3">
 				<description>Shutdown button</description>
 				<width>510</width>
 				<height>60</height>
@@ -62,7 +47,7 @@
 				<font>font14</font>
 				<label>13016</label>
 			</control>
-			<control type="button" id="5">
+			<control type="button" id="4">
 				<description>Custom Shutdown Timer</description>
 				<width>510</width>
 				<height>60</height>
@@ -78,7 +63,7 @@
 				<visible>!System.HasAlarm(shutdowntimer)</visible>
 				<visible>System.CanPowerDown | System.CanSuspend | System.CanHibernate</visible>
 			</control>
-			<control type="button" id="6">
+			<control type="button" id="5">
 				<description>Cancel Shutdown Timer</description>
 				<width>510</width>
 				<height>60</height>
@@ -93,7 +78,7 @@
 				<label>$LOCALIZE[20151]$INFO[System.Alarmpos, (,)]</label>
 				<visible>System.HasAlarm(shutdowntimer)</visible>
 			</control>
-			<control type="button" id="7">
+			<control type="button" id="6">
 				<description>Suspend button</description>
 				<width>510</width>
 				<height>60</height>
@@ -108,7 +93,7 @@
 				<font>font14</font>
 				<label>13011</label>
 			</control>
-			<control type="button" id="8">
+			<control type="button" id="7">
 				<description>Hibernate button</description>
 				<width>510</width>
 				<height>60</height>
@@ -123,7 +108,7 @@
 				<font>font14</font>
 				<label>13010</label>
 			</control>
-			<control type="button" id="9">
+			<control type="button" id="8">
 				<description>Reboot to Android button</description>
 				<width>510</width>
 				<height>60</height>
@@ -139,7 +124,7 @@
 				<font>font14</font>
 				<label>$LOCALIZE[31576]</label>
 			</control>
-			<control type="button" id="10">
+			<control type="button" id="9">
 				<description>Reboot button</description>
 				<width>510</width>
 				<height>60</height>
@@ -154,7 +139,7 @@
 				<font>font14</font>
 				<label>13013</label>
 			</control>
-			<control type="button" id="11">
+			<control type="button" id="10">
 				<description>Logoff button</description>
 				<width>510</width>
 				<height>60</height>
@@ -171,7 +156,7 @@
 				<visible>System.HasLoginScreen | Integer.IsGreater(System.ProfileCount,1)</visible>
 				<visible>System.Loggedon</visible>
 			</control>
-			<control type="togglebutton" id="12">
+			<control type="togglebutton" id="11">
 				<description>Master mode button</description>
 				<width>510</width>
 				<height>60</height>
@@ -189,7 +174,7 @@
 				<onclick>Mastermode</onclick>
 				<visible>System.HasLocks</visible>
 			</control>
-			<control type="button" id="13">
+			<control type="button" id="12">
 				<description>Inhibit idle shutdown</description>
 				<width>510</width>
 				<height>60</height>
@@ -204,7 +189,7 @@
 				<label>13017</label>
 				<visible>System.HasShutdown +!System.IsInhibit</visible>
 			</control>
-			<control type="button" id="14">
+			<control type="button" id="13">
 				<description>Allow idle shutdown</description>
 				<width>510</width>
 				<height>60</height>
@@ -219,7 +204,7 @@
 				<label>13018</label>
 				<visible>System.HasShutdown + System.IsInhibit</visible>
 			</control>
-			<control type="button" id="15">
+			<control type="button" id="14">
 				<description>Settings</description>
 				<width>510</width>
 				<height>60</height>
@@ -234,7 +219,7 @@
 				<font>font14</font>
 				<label>$LOCALIZE[5]</label>
 			</control>
-			<control type="button" id="16">
+			<control type="button" id="15">
 				<description>Skin Settings</description>
 				<width>510</width>
 				<height>60</height>
@@ -249,7 +234,7 @@
 				<font>font14</font>
 				<label>20077</label>
 			</control>
-			<control type="button" id="17">
+			<control type="button" id="16">
 				<description>Favorites</description>
 				<width>510</width>
 				<height>60</height>
@@ -259,11 +244,11 @@
 				<textoffsetx>45</textoffsetx>
 				<texturefocus colordiffuse="$VAR[HighlightBarColor]" border="35,2,35,2">button_shutdown_focus.png</texturefocus>
 				<texturenofocus border="35,2,35,2">button_shutdown_nofocus.png</texturenofocus>
-				<onclick>ActivateWindow(favourites)</onclick>
+				<onclick>ActivateWindow(favouritesbrowser)</onclick>
 				<font>font14</font>
 				<label>1036</label>
 			</control>
-			<control type="button" id="18">
+			<control type="button" id="17">
 				<description>Reload Skin button</description>
 				<width>510</width>
 				<height>60</height>
@@ -278,7 +263,7 @@
 				<font>font14</font>
 				<label>20183</label>
 			</control>
-			<control type="image" id="19">
+			<control type="image" id="18">
 				<width>510</width>
 				<height>34</height>
 				<texture border="30,2,30,20">dialog_bottom2.png</texture>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<visible>Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding</visible>
+	<visible>Player.Seeking | Player.HasPerformedSeek(3) | Player.Paused | Player.Forwarding | Player.Rewinding</visible>
 	<controls>
 		<control type="group">
 			<visible>Window.IsVisible(fullscreenvideo) | Window.IsVisible(musicosd)</visible>

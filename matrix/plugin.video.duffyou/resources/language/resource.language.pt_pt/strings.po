@@ -1,0 +1,790 @@
+# Kodi Media Center language file
+# Addon Name: Duff You
+# Addon id: plugin.video.duffyou
+# Addon Provider: La Taberna
+msgid ""
+msgstr ""
+"Project-Id-Version: XBMC-Addons\n"
+"Report-Msgid-Bugs-To: La Taberna\n"
+"POT-Creation-Date: 2021-12-05 16:24+0000\n"
+"PO-Revision-Date: 2022-01-18 18:03+0000\n"
+"Last-Translator: La Taberna\n"
+"Language-Team: La Taberna\n"
+"Language: pt_pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.8\n"
+
+msgctxt "#30000"
+msgid "General"
+msgstr "em geral"
+
+msgctxt "#30001"
+msgid "Search Options"
+msgstr "Opções de pesquisa"
+
+msgctxt "#30002"
+msgid "Subtitles"
+msgstr "Legenda"
+
+msgctxt "#30003"
+msgid "Downloads"
+msgstr "Baixar"
+
+msgctxt "#30010"
+msgid "Upload date"
+msgstr "data de upload"
+
+msgctxt "#30012"
+msgid "Duration"
+msgstr "Duração"
+
+msgctxt "#30013"
+msgid "Sort by"
+msgstr "Organizar por"
+
+msgctxt "#30014"
+msgid "All"
+msgstr "Todo mundo"
+
+msgctxt "#30015"
+msgid "Last hour"
+msgstr "Última hora"
+
+msgctxt "#30016"
+msgid "Today"
+msgstr "Hoje"
+
+msgctxt "#30017"
+msgid "This week"
+msgstr "Esta semana"
+
+msgctxt "#30018"
+msgid "This month"
+msgstr "Este mês"
+
+msgctxt "#30019"
+msgid "This year"
+msgstr "Este ano"
+
+msgctxt "#30024"
+msgid "Short"
+msgstr "Baixo"
+
+msgctxt "#30025"
+msgid "Long"
+msgstr "Grande"
+
+msgctxt "#30026"
+msgid "Relevance"
+msgstr "Relevância"
+
+msgctxt "#30027"
+msgid "Score"
+msgstr "Pontuação"
+
+msgctxt "#30028"
+msgid "Most Viewed"
+msgstr "Mais visto"
+
+msgctxt "#30029"
+msgid "Video quality"
+msgstr "Qualidade de vídeo"
+
+msgctxt "#30030"
+msgid "Low"
+msgstr "Descer"
+
+msgctxt "#30031"
+msgid "Medium"
+msgstr "Metade"
+
+msgctxt "#30032"
+msgid "High"
+msgstr "Alto"
+
+msgctxt "#30033"
+msgid "Dash/HLS"
+msgstr "Dash/HLS"
+
+msgctxt "#30034"
+msgid "Always ask"
+msgstr "Sempre pergunte"
+
+msgctxt "#30035"
+msgid "Region"
+msgstr "Região"
+
+msgctxt "#30036"
+msgid "None (Audio only)"
+msgstr "Nenhum (apenas áudio)"
+
+msgctxt "#30100"
+msgid "Default folder"
+msgstr "Pasta padrão"
+
+msgctxt "#30101"
+msgid "Record"
+msgstr "Registro"
+
+msgctxt "#30102"
+msgid "[B]Settings[/B][CR][CR]Changes search options and other parameters."
+msgstr "[B]Configurações[/B][CR][CR]Altera as opções de pesquisa e outros parâmetros."
+
+msgctxt "#30103"
+msgid "[B]Favorite Live[/B][CR][CR]Browse your favorite live shows."
+msgstr "[B]Favorite Direct[/B][CR][CR]Navegue pelos seus programas diretos favoritos."
+
+msgctxt "#30104"
+msgid "Download"
+msgstr "Download"
+
+msgctxt "#30105"
+msgid "New folder..."
+msgstr "Nova pasta..."
+
+msgctxt "#30106"
+msgid "Settings"
+msgstr "Configuração"
+
+msgctxt "#30107"
+msgid "Choose where to save the video"
+msgstr "Escolha onde salvar o vídeo"
+
+msgctxt "#30108"
+msgid "Preferred Lists"
+msgstr "Listas preferidas"
+
+msgctxt "#30109"
+msgid "Search"
+msgstr "Olhe para"
+
+msgctxt "#30110"
+msgid "[B]My Preferred[/B][CR][CR]Browse your preferred videos, lists and channels."
+msgstr "[B]Meus favoritos[/B][CR][CR] Navegue pelos seus vídeos, listas e canais favoritos."
+
+msgctxt "#30111"
+msgid "Preferred Lives"
+msgstr "Direct Preferred"
+
+msgctxt "#30113"
+msgid "[B]Search Playlists[/B][CR][CR]Search for [B]%s[/B] among playlists."
+msgstr "[B]Pesquisar listas de reprodução[/B][CR][CR] Pesquisa[B]%s [/B] entre as listas de reprodução."
+
+msgctxt "#30114"
+msgid "[B]Search[/B][CR][CR]Search for a video, a live, a playlist or a channel."
+msgstr "[B]Pesquisar[/B][CR][CR]Pesquisar um vídeo, um direto, uma lista de reprodução ou um canal."
+
+msgctxt "#30115"
+msgid "[B]New Search[/B]"
+msgstr "[B]Nova Pesquisa[/B]"
+
+msgctxt "#30116"
+msgid "[B]Playlists from this channel[/B]"
+msgstr "[B]Playlists deste canal[/B]"
+
+msgctxt "#30117"
+msgid "Next page..."
+msgstr "Próxima página..."
+
+msgctxt "#30118"
+msgid "Enter a name for the New Folder"
+msgstr "Digite um nome para a nova pasta"
+
+msgctxt "#30119"
+msgid "Preferred Channels"
+msgstr "Canais preferidos"
+
+msgctxt "#30120"
+msgid "[B]Search Live[/B][CR][CR]Search[B]%s[/B] live."
+msgstr "[B]Pesquisa ao vivo[/B][CR][CR]Pesquisa[B]%s [/B]ao vivo."
+
+msgctxt "#30121"
+msgid "Video not available"
+msgstr "Vídeo não disponível"
+
+msgctxt "#30122"
+msgid "Select a quality/resolution"
+msgstr "Selecione uma qualidade / resolução"
+
+msgctxt "#30123"
+msgid "Preferred Videos"
+msgstr "Vídeos favoritos"
+
+msgctxt "#30124"
+msgid "Delete from preferred"
+msgstr "Apagar dos favoritos"
+
+msgctxt "#30125"
+msgid "Delete from History"
+msgstr "Apagar da História"
+
+msgctxt "#30126"
+msgid "[B]Search Channels[/B][CR][CR]Search [B]%s[/B] on channels."
+msgstr "[B]Pesquisar canais[/B][CR][CR]Pesquisar[B]%s [/B]entre os canais."
+
+msgctxt "#30127"
+msgid "[B]Channels[/B]"
+msgstr "[B]Canais[/B]"
+
+msgctxt "#30128"
+msgid "Trends"
+msgstr "Tendências"
+
+msgctxt "#30129"
+msgid "Solving %s ..."
+msgstr "Resolvendo %s ..."
+
+msgctxt "#30130"
+msgid "Popular"
+msgstr "Popular"
+
+msgctxt "#30131"
+msgid "[B]Trends[/B][CR][CR]Trends on YouTube."
+msgstr "[B]Tendências[/B][CR][CR]Tendências no YouTube."
+
+msgctxt "#30132"
+msgid "[B]Preferred Lists[/B][CR][CR] Browse your preferred lists."
+msgstr "[B]Listas preferidas[/B][CR][CR]Navegue por suas listas favoritas."
+
+msgctxt "#30133"
+msgid "[B]Popular[/B][CR][CR]The most popular videos at the moment."
+msgstr "[B]Popular[/B][CR][CR]Os vídeos mais populares no momento."
+
+msgctxt "#30134"
+msgid "My Preferred"
+msgstr "Meus favoritos"
+
+msgctxt "#30135"
+msgid "[B]Live[/B]"
+msgstr "[B]Ao vivo[/B]"
+
+msgctxt "#30136"
+msgid "[B]Preferred Videos[/B][CR][CR]Browse your preferred videos."
+msgstr "[B]Vídeos favoritos[/B][CR][CR]Navegue pelos seus vídeos favoritos."
+
+msgctxt "#30137"
+msgid " (Max Resolution %sp)"
+msgstr " (Resolução máx. %sp)"
+
+msgctxt "#30138"
+msgid "[B]Preferred Channels[/B][CR][CR] Browse your preferred channels."
+msgstr "[B]Canais favoritos[/B][CR][CR] Navegue pelos seus canais favoritos."
+
+msgctxt "#30139"
+msgid "Saving in preferred ..."
+msgstr "Salvando nos favoritos ..."
+
+msgctxt "#30140"
+msgid "[B]Playlists[/B]"
+msgstr "[B]Listas de reprodução[/B]"
+
+msgctxt "#30141"
+msgid "[B]History[/B][CR][CR]Browse your last viewed videos."
+msgstr "[B]Histórico[/B][CR][CR]Navegue pelos últimos vídeos vistos."
+
+msgctxt "#30142"
+msgid "Delete all Preferred channels"
+msgstr "Excluir todos os canais preferidos"
+
+msgctxt "#30143"
+msgid "Delete all Preferred videos"
+msgstr "Excluir todos os vídeos favoritos"
+
+msgctxt "#30144"
+msgid "Delete all Preferred lists"
+msgstr "Limpar todas as listas preferidas"
+
+msgctxt "#30145"
+msgid "Delete all Preferred direct"
+msgstr "Excluir todas as preferências diretas"
+
+msgctxt "#30146"
+msgid "Clear search history"
+msgstr "Limpar histórico de pesquisa"
+
+msgctxt "#30147"
+msgid "Clear watch history"
+msgstr "Limpar histórico de exibição"
+
+msgctxt "#30148"
+msgid "Video not available for download"
+msgstr "Vídeo não disponível para download"
+
+msgctxt "#30149"
+msgid "You must indicate a folder for downloads in settings"
+msgstr "Você deve indicar uma pasta para downloads nas configurações"
+
+msgctxt "#30150"
+msgid "Download failed"
+msgstr "Falha no Download"
+
+msgctxt "#30151"
+msgid "Download completed"
+msgstr "Transferência concluída"
+
+msgctxt "#30152"
+msgid "Go to channel %s"
+msgstr "Vá para o canal %s"
+
+msgctxt "#30153"
+msgid "Save to Preferred"
+msgstr "Salvar nos favoritos"
+
+msgctxt "#30154"
+msgid "Downloading"
+msgstr "Baixando"
+
+msgctxt "#30155"
+msgid "Download folder"
+msgstr "Pasta de download"
+
+msgctxt "#30156"
+msgid "Get all available subtitles"
+msgstr "Obtenha todas as legendas disponíveis"
+
+msgctxt "#30157"
+msgid "There are no results for the search with the current parameters.[CR]Enter configuration to modify them"
+msgstr "Não há resultados para a pesquisa com os parâmetros atuais.[CR]Entre na configuração para modificá-los"
+
+msgctxt "#30158"
+msgid "There are no more results for the search with the current parameters.[CR]Enter configuration to modify them"
+msgstr "Não há mais resultados para a pesquisa com os parâmetros atuais.[CR]Entre na configuração para modificá-los"
+
+msgctxt "#30159"
+msgid "Play this Playlist"
+msgstr "Tocar esta lista de reprodução"
+
+msgctxt "#30160"
+msgid "Empty listing"
+msgstr "Lista vazia"
+
+msgctxt "#30200"
+msgid "Germany"
+msgstr "Alemanha"
+
+msgctxt "#30201"
+msgid "Saudi Arabia"
+msgstr "Arábia Saudita"
+
+msgctxt "#30202"
+msgid "Algeria"
+msgstr "Argélia"
+
+msgctxt "#30203"
+msgid "Argentina"
+msgstr "Argentina"
+
+msgctxt "#30204"
+msgid "Australia"
+msgstr "Austrália"
+
+msgctxt "#30205"
+msgid "Austria"
+msgstr "Áustria"
+
+msgctxt "#30206"
+msgid "Azerbaijan"
+msgstr "Azerbaijão"
+
+msgctxt "#30207"
+msgid "Bahrain"
+msgstr "Bahrain"
+
+msgctxt "#30208"
+msgid "Bangladesh"
+msgstr "Bangladesh"
+
+msgctxt "#30209"
+msgid "Belgium"
+msgstr "Bélgica"
+
+msgctxt "#30210"
+msgid "Belarus"
+msgstr "Bielo-Rússia"
+
+msgctxt "#30211"
+msgid "Bolivia"
+msgstr "Bolívia"
+
+msgctxt "#30212"
+msgid "Bosnia and Herzegovina"
+msgstr "Bósnia e Herzegovina"
+
+msgctxt "#30213"
+msgid "Brazil"
+msgstr "Brasil"
+
+msgctxt "#30214"
+msgid "Bulgaria"
+msgstr "Bulgária"
+
+msgctxt "#30215"
+msgid "Canada"
+msgstr "Canadá"
+
+msgctxt "#30216"
+msgid "chili"
+msgstr "Pimenta"
+
+msgctxt "#30217"
+msgid "Cyprus"
+msgstr "Chipre"
+
+msgctxt "#30218"
+msgid "Colombia"
+msgstr "Colômbia"
+
+msgctxt "#30219"
+msgid "South Korea"
+msgstr "Coreia do Sul"
+
+msgctxt "#30220"
+msgid "Costa Rica"
+msgstr "Costa Rica"
+
+msgctxt "#30221"
+msgid "Croatia"
+msgstr "Croácia"
+
+msgctxt "#30222"
+msgid "Denmark"
+msgstr "Dinamarca"
+
+msgctxt "#30223"
+msgid "Ecuador"
+msgstr "Equador"
+
+msgctxt "#30224"
+msgid "Egypt"
+msgstr "Egito"
+
+msgctxt "#30225"
+msgid "The Libano"
+msgstr "O libano"
+
+msgctxt "#30226"
+msgid "The Savior"
+msgstr "O salvador"
+
+msgctxt "#30227"
+msgid "United Arab Emirates"
+msgstr "Emirados Árabes Unidos"
+
+msgctxt "#30228"
+msgid "Slovakia"
+msgstr "Eslováquia"
+
+msgctxt "#30229"
+msgid "Slovenia"
+msgstr "Eslovênia"
+
+msgctxt "#30230"
+msgid "Spain"
+msgstr "Espanha"
+
+msgctxt "#30231"
+msgid "USA"
+msgstr "Estados Unidos"
+
+msgctxt "#30232"
+msgid "Estonia"
+msgstr "Estônia"
+
+msgctxt "#30233"
+msgid "Philippines"
+msgstr "Filipinas"
+
+msgctxt "#30234"
+msgid "Finland"
+msgstr "Finlândia"
+
+msgctxt "#30235"
+msgid "France"
+msgstr "França"
+
+msgctxt "#30236"
+msgid "Georgia"
+msgstr "Georgia"
+
+msgctxt "#30237"
+msgid "Ghana"
+msgstr "Gana"
+
+msgctxt "#30238"
+msgid "Greece"
+msgstr "Grécia"
+
+msgctxt "#30239"
+msgid "Guatemala"
+msgstr "Guatemala"
+
+msgctxt "#30240"
+msgid "Holland"
+msgstr "Holanda"
+
+msgctxt "#30241"
+msgid "Honduras"
+msgstr "Honduras"
+
+msgctxt "#30242"
+msgid "Hong Kong"
+msgstr "Hong Kong"
+
+msgctxt "#30243"
+msgid "Hungary"
+msgstr "Hungria"
+
+msgctxt "#30244"
+msgid "Indonesia"
+msgstr "Indonésia"
+
+msgctxt "#30245"
+msgid "Iraq"
+msgstr "Iraque"
+
+msgctxt "#30246"
+msgid "Ireland"
+msgstr "Irlanda"
+
+msgctxt "#30247"
+msgid "Iceland"
+msgstr "Islândia"
+
+msgctxt "#30248"
+msgid "Israel"
+msgstr "Israel"
+
+msgctxt "#30249"
+msgid "Italy"
+msgstr "Itália"
+
+msgctxt "#30250"
+msgid "Jamaica"
+msgstr "Jamaica"
+
+msgctxt "#30251"
+msgid "Japan"
+msgstr "Japão"
+
+msgctxt "#30252"
+msgid "Jordan"
+msgstr "Jordânia"
+
+msgctxt "#30253"
+msgid "Kazakhstan"
+msgstr "Cazaquistão"
+
+msgctxt "#30254"
+msgid "Kenya"
+msgstr "Quênia"
+
+msgctxt "#30255"
+msgid "Kuwait"
+msgstr "Kuwait"
+
+msgctxt "#30256"
+msgid "India"
+msgstr "A Índia"
+
+msgctxt "#30257"
+msgid "Latvia"
+msgstr "Letônia"
+
+msgctxt "#30258"
+msgid "Libya"
+msgstr "Líbia"
+
+msgctxt "#30259"
+msgid "Liechtenstein"
+msgstr "Liechtenstein"
+
+msgctxt "#30260"
+msgid "Lithuania"
+msgstr "Lituânia"
+
+msgctxt "#30261"
+msgid "Luxembourg"
+msgstr "Luxemburgo"
+
+msgctxt "#30262"
+msgid "North macedonia"
+msgstr "Macedônia do norte"
+
+msgctxt "#30263"
+msgid "Malaysia"
+msgstr "Malásia"
+
+msgctxt "#30264"
+msgid "malt"
+msgstr "malte"
+
+msgctxt "#30265"
+msgid "Morocco"
+msgstr "Marrocos"
+
+msgctxt "#30266"
+msgid "Mexico"
+msgstr "México"
+
+msgctxt "#30267"
+msgid "Montenegro"
+msgstr "Montenegro"
+
+msgctxt "#30268"
+msgid "Nepal"
+msgstr "Nepal"
+
+msgctxt "#30269"
+msgid "Nicaragua"
+msgstr "Nicarágua"
+
+msgctxt "#30270"
+msgid "Nigeria"
+msgstr "Nigéria"
+
+msgctxt "#30271"
+msgid "Norway"
+msgstr "Noruega"
+
+msgctxt "#30272"
+msgid "New Zealand"
+msgstr "Nova Zelândia"
+
+msgctxt "#30273"
+msgid "Oman"
+msgstr "Omã"
+
+msgctxt "#30274"
+msgid "Pakistan"
+msgstr "Paquistão"
+
+msgctxt "#30275"
+msgid "Panama"
+msgstr "Panamá"
+
+msgctxt "#30276"
+msgid "Papua New Guinea"
+msgstr "Papua Nova Guiné"
+
+msgctxt "#30277"
+msgid "Paraguay"
+msgstr "Paraguai"
+
+msgctxt "#30278"
+msgid "Peru"
+msgstr "Peru"
+
+msgctxt "#30279"
+msgid "Poland"
+msgstr "Polônia"
+
+msgctxt "#30280"
+msgid "Portugal"
+msgstr "Portugal"
+
+msgctxt "#30281"
+msgid "Puerto Rico"
+msgstr "Porto Rico"
+
+msgctxt "#30282"
+msgid "Qatar"
+msgstr "Catar"
+
+msgctxt "#30283"
+msgid "United Kingdom"
+msgstr "Reino Unido"
+
+msgctxt "#30284"
+msgid "Dominican Republic"
+msgstr "República Dominicana"
+
+msgctxt "#30285"
+msgid "Czech Republic"
+msgstr "Republica Checa"
+
+msgctxt "#30286"
+msgid "Romania"
+msgstr "Romênia"
+
+msgctxt "#30287"
+msgid "Russia"
+msgstr "Rússia"
+
+msgctxt "#30288"
+msgid "Senegal"
+msgstr "Senegal"
+
+msgctxt "#30289"
+msgid "Serbia"
+msgstr "Sérvia"
+
+msgctxt "#30290"
+msgid "Singapore"
+msgstr "Cingapura"
+
+msgctxt "#30291"
+msgid "Sri Lanka"
+msgstr "Sri Lanka"
+
+msgctxt "#30292"
+msgid "South Africa"
+msgstr "África do Sul"
+
+msgctxt "#30293"
+msgid "Sweden"
+msgstr "Suécia"
+
+msgctxt "#30294"
+msgid "Switzerland"
+msgstr "Suíça"
+
+msgctxt "#30295"
+msgid "Thailand"
+msgstr "Tailândia"
+
+msgctxt "#30296"
+msgid "Taiwan"
+msgstr "Taiwan"
+
+msgctxt "#30297"
+msgid "Tanzania"
+msgstr "Tanzânia"
+
+msgctxt "#30298"
+msgid "Tunisia"
+msgstr "Tunísia"
+
+msgctxt "#30299"
+msgid "Turkey"
+msgstr "Turquia"
+
+msgctxt "#30300"
+msgid "Ukraine"
+msgstr "Ucrânia"
+
+msgctxt "#30301"
+msgid "Uganda"
+msgstr "Uganda"
+
+msgctxt "#30302"
+msgid "Uruguay"
+msgstr "Uruguai"
+
+msgctxt "#30303"
+msgid "Venezuela"
+msgstr "Venezuela"
+
+msgctxt "#30304"
+msgid "Vietnam"
+msgstr "Vietnã"
+
+msgctxt "#30305"
+msgid "Yemen"
+msgstr "Iémen"
+
+msgctxt "#30306"
+msgid "Zimbabwe"
+msgstr "Zimbábue"

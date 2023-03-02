@@ -605,7 +605,7 @@
 	    <control type="group" id="1">
             <depth>DepthOSD</depth>
             <visible>!String.IsEqual(Player.Filenameandpath,Skin.String(KodiIntroVideo))</visible>
-            <visible>Player.ShowInfo | Window.IsActive(VideoOSD) | Window.IsActive(MusicOSD) | [Skin.HasSetting(StandardSeekBar) + [Player.Seeking | Player.DisplayAfterSeek | Player.Forwarding | Player.Rewinding | Player.ShowTime | Player.IsTempo | !String.IsEmpty(Player.SeekNumeric)]] | 
+            <visible>Player.ShowInfo | Window.IsActive(VideoOSD) | Window.IsActive(MusicOSD) | [Skin.HasSetting(StandardSeekBar) + [Player.Seeking | Player.HasPerformedSeek(3) | Player.Forwarding | Player.Rewinding | Player.ShowTime | Player.IsTempo | !String.IsEmpty(Player.SeekNumeric)]] | 
 			         [Player.Paused + Skin.HasSetting(ShowSeekBarPaused)]</visible>
             <visible>![Window.IsVisible(SliderDialog) |Window.IsVisible(osdvideosettings) | Window.IsVisible(osdaudiosettings) | Window.IsVisible(videobookmarks) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVROSDGuide)]</visible>
             <animation effect="fade" time="200">VisibleChange</animation>
@@ -794,7 +794,7 @@
 			            <lefttexture>white.png</lefttexture>
 			            <midtexture colordiffuse="FFFF0000">white.png</midtexture>
 			            <righttexture>white.png</righttexture>
-			            <info>Player.Cutlist</info>
+			            <info>Player.Cuts</info>
 			        </control>
 			        <control type="ranges" id="1">
 			            <left>150</left>
@@ -1222,7 +1222,7 @@
 			            <lefttexture>white.png</lefttexture>
 			            <midtexture colordiffuse="FFFF0000">white.png</midtexture>
 			            <righttexture>white.png</righttexture>
-			            <info>Player.Cutlist</info>
+			            <info>Player.Cuts</info>
 			        </control>
 			        <control type="ranges" id="1">
 			            <left>150</left>
@@ -1488,7 +1488,7 @@
             <depth>DepthOSD</depth>
             <visible>!String.IsEqual(Player.Filenameandpath,Skin.String(KodiIntroVideo))</visible>
             <visible>Skin.HasSetting(MinimumPopUpSeekBar)</visible> 
-			<visible>[Player.Paused | Player.Seeking | Player.DisplayAfterSeek | Player.Forwarding | Player.Rewinding | Player.ShowTime | Player.IsTempo | !String.IsEmpty(Player.SeekNumeric)]</visible>
+			<visible>[Player.Paused | Player.Seeking | Player.HasPerformedSeek(3) | Player.Forwarding | Player.Rewinding | Player.ShowTime | Player.IsTempo | !String.IsEmpty(Player.SeekNumeric)]</visible>
             <visible>![Window.IsVisible(SliderDialog) |Window.IsVisible(osdvideosettings) | Window.IsVisible(osdaudiosettings) | Window.IsVisible(videobookmarks) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVROSDGuide)]</visible>
             <animation effect="fade" time="200">VisibleChange</animation>
             <control type="image" id="1">
@@ -1713,7 +1713,7 @@
             <depth>DepthOSD</depth>
             <visible>!String.IsEqual(Player.Filenameandpath,Skin.String(KodiIntroVideo))</visible>
             <visible>[!Skin.HasSetting(MinimumPopUpSeekBar) + Skin.HasSetting(HidePopupSeekBar) + !Skin.HasSetting(StandardSeekBar)]</visible> 
-			 <visible>[[Player.Paused + !Skin.HasSetting(ShowSeekBarPaused)] | Player.Seeking | Player.DisplayAfterSeek | Player.Forwarding | Player.Rewinding | Player.ShowTime | Player.IsTempo | !String.IsEmpty(Player.SeekNumeric)]</visible>
+			 <visible>[[Player.Paused + !Skin.HasSetting(ShowSeekBarPaused)] | Player.Seeking | Player.HasPerformedSeek(3) | Player.Forwarding | Player.Rewinding | Player.ShowTime | Player.IsTempo | !String.IsEmpty(Player.SeekNumeric)]</visible>
             <visible>![Window.IsVisible(SliderDialog) |Window.IsVisible(osdvideosettings) | Window.IsVisible(osdaudiosettings) | Window.IsVisible(videobookmarks) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVROSDGuide)]</visible>
             <animation effect="fade" time="200">VisibleChange</animation>
             <control type="image" id="1">
@@ -2068,7 +2068,7 @@
 			            <lefttexture>white.png</lefttexture>
 			            <midtexture colordiffuse="FFFF0000">white.png</midtexture>
 			            <righttexture>white.png</righttexture>
-			            <info>Player.Cutlist</info>
+			            <info>Player.Cuts</info>
 			        </control>
 			        <control type="ranges" id="1">
 			            <left>30</left>

@@ -200,7 +200,7 @@
                 <textcolor>grey</textcolor>
                 <scroll>true</scroll>
                 <visible>[Skin.String(MusicOSDInfo,permanent) | MusicPlayer.HasNext] + !Window.IsVisible(MusicOSD) + !Window.IsVisible(script-XBMC_Lyrics-main.xml)</visible>
-                <visible>!Skin.HasSetting(HidePopUpSeekBar) | [Skin.HasSetting(HidePopUpSeekBar) + ![Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding]]</visible>
+                <visible>!Skin.HasSetting(HidePopUpSeekBar) | [Skin.HasSetting(HidePopUpSeekBar) + ![Player.Seeking | Player.HasPerformedSeek(3) | Player.Paused | Player.Forwarding | Player.Rewinding]]</visible>
                 <visible>Skin.HasSetting(HideNextSongsInfo) + !Skin.String(MusicOSDInfo,never)</visible>
                 <animation effect="fade" time="150">VisibleChange</animation>
             </control>
@@ -221,7 +221,7 @@
                 <shadowcolor>black</shadowcolor>
                 <animation effect="fade" time="150">VisibleChange</animation>
                 <visible>[Skin.String(MusicOSDInfo,permanent) | MusicPlayer.HasNext] + !Window.IsVisible(MusicOSD) + !Window.IsVisible(script-XBMC_Lyrics-main.xml)</visible>
-                <visible>!Skin.HasSetting(HidePopUpSeekBar)|[Skin.HasSetting(HidePopUpSeekBar) + ![Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding]]</visible>
+                <visible>!Skin.HasSetting(HidePopUpSeekBar)|[Skin.HasSetting(HidePopUpSeekBar) + ![Player.Seeking | Player.HasPerformedSeek(3) | Player.Paused | Player.Forwarding | Player.Rewinding]]</visible>
                 <visible>!Skin.HasSetting(HideNextSongsInfo)</visible>
                 <visible>!Skin.String(MusicOSDInfo,never)</visible>
             </control>

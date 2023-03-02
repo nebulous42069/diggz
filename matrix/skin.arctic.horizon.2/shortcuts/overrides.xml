@@ -34,6 +34,8 @@
     <shortcut label="$LOCALIZE[31161]" type="571" grouping="common" thumbnail="special://skin/extras/icons/tvguide.png" icon="special://skin/extras/icons/tvguide.png">ActivateWindow(1117)</shortcut>
     <shortcut label="$LOCALIZE[20183]" type="571" grouping="commands" thumbnail="special://skin/extras/icons/update.png" icon="special://skin/extras/icons/update.png">ReloadSkin()</shortcut>
     <shortcut label="RebootFromNand" type="571" grouping="commands" thumbnail="special://skin/extras/icons/power.png" icon="special://skin/extras/icons/power.png" condition="System.Platform.Linux">RebootToAndroid</shortcut>
+    <shortcut label="$LOCALIZE[31374]" type="571" grouping="common" thumbnail="special://skin/extras/icons/favourites.png" icon="special://skin/extras/icons/favourites.png">ActivateWindow(1145)</shortcut>
+    <shortcut label="$LOCALIZE[31375]" type="571" grouping="common" thumbnail="special://skin/extras/icons/favourites2.png" icon="special://skin/extras/icons/favourites2.png">ActivateWindow(favouritesbrowser)</shortcut>
 
     <!-- Default Submenu Bumpers -->
     <propertydefault labelID="movies" property="widgetPath.SubmenuBumper">Submenu</propertydefault>
@@ -338,6 +340,7 @@
         <node label="$LOCALIZE[1036]">
             <content>favourite</content>
         </node>
+        <shortcut widget="Stacked" label="$LOCALIZE[31371]">Stacked</shortcut>
     </widget-groupings>
 
 
@@ -418,6 +421,7 @@
         <shortcut label="Netflix" type="571" icon="special://skin/extras/icons/netflix.png">DefaultSearch-Netflix</shortcut>
         <shortcut label="Hulu" type="571" icon="special://skin/extras/icons/hulu.png">DefaultSearch-Hulu</shortcut>
         <shortcut label="Disney+" type="571" icon="special://skin/extras/icons/disneyplus.png">DefaultSearch-DisneyPlus</shortcut>
+        <shortcut label="HBO Max" type="571" icon="special://skin/extras/icons/hbomax.png">DefaultSearch-HBOMax</shortcut>
         <shortcut label="Spotify Artists" type="571" icon="special://skin/extras/icons/spotify.png">DefaultSearch-SpotifyArtists</shortcut>
         <shortcut label="Spotify Albums" type="571" icon="special://skin/extras/icons/spotify.png">DefaultSearch-SpotifyAlbums</shortcut>
         <shortcut label="Spotify Songs" type="571" icon="special://skin/extras/icons/spotify.png">DefaultSearch-SpotifySongs</shortcut>
