@@ -1732,7 +1732,7 @@
                 <font>font11</font>
                 <textcolor>blue</textcolor>
                 <shadowcolor>black</shadowcolor>
-                <label>Xenon Nexus</label>
+                <label>Xenon Matrix</label>
                 <include>Window_OpenClose_Animation</include>
                 <animation effect="slide" start="0,0" end="-60,0" time="75" condition="Player.Muted">conditional</animation>
                 <animation effect="slide" start="0,0" end="-120,0" time="0" condition="![Window.IsVisible(AddonSettings) | Window.IsVisible(SelectDialog) | Window.IsVisible(VisualisationPresetList) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVROSDGuide) | Window.IsVisible(1105)]+system.getbool(input.enablemouse)+Window.IsVisible(MusicOSD)">conditional</animation>
@@ -3391,8 +3391,8 @@
                     <focusedcolor>white</focusedcolor>
                     <align>center</align>
                     <textwidth>435</textwidth>
-                    <onclick condition="!Skin.HasSetting(MinimizeOnExit)">ActivateWindow(10001,&quot;plugin://plugin.program.chef20/?description=Force%20Close%20Kodi&amp;fanart=C%3a%5cUsers%5cjeddi%5cAppData%5cRoaming%5cKodi%5caddons%5cplugin.program.chef20%5cresources%5cfanart.jpg&amp;icon=C%3a%5cUsers%5cjeddi%5cAppData%5cRoaming%5cKodi%5caddons%5cplugin.program.chef20%5cresources%5cicon.png&amp;mode=18&amp;name=Force%20Close&amp;name2&amp;url&amp;version&quot;,return)</onclick>
-                    <onclick condition="Skin.HasSetting(MinimizeOnExit)">ActivateWindow(10001,&quot;plugin://plugin.program.chef20/?description=Force%20Close%20Kodi&amp;fanart=C%3a%5cUsers%5cjeddi%5cAppData%5cRoaming%5cKodi%5caddons%5cplugin.program.chef20%5cresources%5cfanart.jpg&amp;icon=C%3a%5cUsers%5cjeddi%5cAppData%5cRoaming%5cKodi%5caddons%5cplugin.program.chef20%5cresources%5cicon.png&amp;mode=18&amp;name=Force%20Close&amp;name2&amp;url&amp;version&quot;,return)</onclick>
+                    <onclick condition="!Skin.HasSetting(MinimizeOnExit)">ActivateWindow(10001,&quot;plugin://plugin.program.chef19/?description=Force%20Close%20Kodi&amp;fanart=C%3a%5cUsers%5cjeddi%5cAppData%5cRoaming%5cKodi%5caddons%5cplugin.program.chef19%5cresources%5cfanart.jpg&amp;icon=C%3a%5cUsers%5cjeddi%5cAppData%5cRoaming%5cKodi%5caddons%5cplugin.program.chef19%5cresources%5cicon.png&amp;mode=18&amp;name=Force%20Close&amp;name2&amp;url&amp;version&quot;,return)</onclick>
+                    <onclick condition="Skin.HasSetting(MinimizeOnExit)">ActivateWindow(10001,&quot;plugin://plugin.program.chef19/?description=Force%20Close%20Kodi&amp;fanart=C%3a%5cUsers%5cjeddi%5cAppData%5cRoaming%5cKodi%5caddons%5cplugin.program.chef19%5cresources%5cfanart.jpg&amp;icon=C%3a%5cUsers%5cjeddi%5cAppData%5cRoaming%5cKodi%5caddons%5cplugin.program.chef19%5cresources%5cicon.png&amp;mode=18&amp;name=Force%20Close&amp;name2&amp;url&amp;version&quot;,return)</onclick>
                     <pulseonselect>no</pulseonselect>
                     <font>font13</font>
                     <label>Force Close Kodi</label>

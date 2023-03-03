@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="repository.test" name="test" provider-name="test" version="1.2">
+	<extension point="xbmc.addon.repository" name="test" >
+		<dir>
+        <info compressed="false">https://raw.githubusercontent.com/Wilson-Magic/repository.wilson-magic/master/zips/addons.xml</info>
+		<checksum>https://raw.githubusercontent.com/Wilson-Magic/repository.wilson-magic/master/zips/addons.xml.md5</checksum>
+		<datadir zip="true">https://raw.githubusercontent.com/Wilson-Magic/repository.wilson-magic/master/zips</datadir>
+        </dir>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">test</summary>
+		<description lang="en">test</description>
+		<platform>all</platform>
+		<license>MIT</license>
+		<disclaimer lang="en">Kodi Addon Repository.</disclaimer>
+		<assets>
+			<icon>icon.jpg</icon>
+			<fanart>fanart.jpg</fanart>
+		</assets>
+	</extension>
+</addon>
