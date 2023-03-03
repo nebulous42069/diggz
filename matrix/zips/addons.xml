@@ -1329,6 +1329,25 @@ Random updates by lolage.
             <icon>icon.png</icon>
         </assets>
     </extension>
+</addon><addon id="repository.test" name="test" provider-name="test" version="1.2">
+	<extension point="xbmc.addon.repository" name="test">
+		<dir>
+        <info compressed="false">https://raw.githubusercontent.com/Wilson-Magic/repository.wilson-magic/master/zips/addons.xml</info>
+		<checksum>https://raw.githubusercontent.com/Wilson-Magic/repository.wilson-magic/master/zips/addons.xml.md5</checksum>
+		<datadir zip="true">https://raw.githubusercontent.com/Wilson-Magic/repository.wilson-magic/master/zips</datadir>
+        </dir>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">test</summary>
+		<description lang="en">test</description>
+		<platform>all</platform>
+		<license>MIT</license>
+		<disclaimer lang="en">Kodi Addon Repository.</disclaimer>
+		<assets>
+			<icon>icon.jpg</icon>
+			<fanart>fanart.jpg</fanart>
+		</assets>
+	</extension>
 </addon><addon id="resource.font.robotocjksc" name="Roboto CJKSC" version="0.0.2" provider-name="jurialmunkey">
     <requires>
         <import addon="kodi.resource" version="1.0.0" />
@@ -2257,7 +2276,7 @@ Random updates by lolage.
 		<news> 
 		</news>
 	</extension>
-</addon><addon id="skin.phenomenal.h" name="[B][COLOR gold]Phenomenal[/COLOR][/B]  (Mid Power)" version="422" provider-name="Tomer, Diggz">
+</addon><addon id="skin.phenomenal.h" name="[B][COLOR gold]Phenomenal[/COLOR][/B]  (Mid Power)" version="423" provider-name="Tomer, Diggz">
 	<requires>
 		<import addon="xbmc.gui" version="5.15.0" />
 		<import addon="script.skin.helper.service" version="1.0.0" />
@@ -2372,7 +2391,7 @@ Random updates by lolage.
         <description lang="pt_BR">Diggz Portal. Built for speed and great for low end devices</description>
         <description lang="pt_PT">Diggz Portal. Built for speed and great for low end devices</description>
     </extension>
-</addon><addon id="skin.xenonlite" version="5" name="[B][COLOR gold]Xenon Light[/COLOR][/B]  (Low Power)" provider-name="Helly,bsoriano">
+</addon><addon id="skin.xenonlite" version="5.1" name="[B][COLOR gold]Xenon Light[/COLOR][/B]  (Low Power)" provider-name="Helly,bsoriano">
   <requires>
     <import addon="xbmc.gui" version="5.15.0" />
 	<import addon="script.favourites" version="8.1.2" />
@@ -2401,7 +2420,7 @@ Random updates by lolage.
     </assets>
     <news>See changelog for latest changes</news>
   </extension>
-</addon><addon id="skin.xenonx" version="5" name="[B][COLOR gold]Xenon[/COLOR][/B]  (Mid Power)" provider-name="Helly,bsoriano">
+</addon><addon id="skin.xenonx" version="5.1" name="[B][COLOR gold]Xenon[/COLOR][/B]  (Mid Power)" provider-name="Helly,bsoriano">
   <requires>
     <import addon="xbmc.gui" version="5.15.0" />
 	<import addon="script.favourites" version="8.1.2" />
