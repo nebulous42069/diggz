@@ -170,31 +170,6 @@
 				<screenshot />
 		</assets>
 	</extension>
-</addon><addon id="plugin.program.das" name="Diggz Advanced Settings" version="3" provider-name="Diggz">
-  <requires>
-        <import addon="xbmc.python" version="3.0.0" />
-        <import addon="script.module.six" />
-        <import addon="script.module.kodi-six" />
-		<import addon="inputstream.rtmp" />
-        <import addon="visualization.waveform" />
-		<import addon="inputstream.adaptive" />
-		<import addon="inputstream.ffmpegdirect" />			
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-    <provides>executable</provides>
-  </extension>
-  <extension point="xbmc.service" library="startup.py" start="startup" />
-    <extension point="xbmc.addon.metadata">
-        <summary lang="en">A simple tool to adjust advanced settings</summary>
-        <description lang="en">A simple tool to adjust advanced settings</description>
-        <platform>all</platform>
-        <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
-        <disclaimer lang="en">The author of this addon do not host any of the content which is found and have no affiliation with any of the content providers. This addon simply searches websites for content. Use at your own risk!</disclaimer>
-        <assets>
-            <icon>icon.png</icon>
-            <fanart>fanart.jpg</fanart>
-        </assets>
-    </extension>
 </addon><addon id="plugin.program.diggzbackgrounds" name="Diggz Wallpaper Packs" version="420.19" provider-name="Diggz">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
@@ -209,49 +184,6 @@
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
     </assets>
-    <platform>all</platform>
-  </extension>
-</addon><addon id="plugin.program.orderfavourites" name="Order Favourites" version="1.2.1" provider-name="doko">
-  <requires>
-    <import addon="xbmc.python" version="3.0.0" />
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-    <provides>executable</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <news>
-[COLOR lavender][B]Order Favourites[/B][/COLOR]
-[B]1.2.1:[/B]
-- Experimental Matrix version now available.
-
-[B]1.2.0:[/B]
-- Fixed a case when the add-on failed to read the favourites file because of Unicode strings.
-(Thanks to [I]msauers[/I] for the report.)
-- Changed the label and description of the 'Restart...' button to 'Restore...', which is
-clearer.
-
-[B]1.1.1:[/B]
-- Added menu items for a more traditional add-on UX.
-- Improved the profile reloading process.
-
-[B]1.1.0:[/B]
-- Improved the profile reloading process, it was crashing on Kodi 17.6.
-
-[B]1.0.4:[/B]
-- Safer handling of unicode text.
-- Optimizations, simplified the code even more.
-
-[B]1.0.3:[/B]
-- Added a proper custom dialog interface.
-- Greatly simplified the code, much faster to use.
-
-[B]1.0.2:[/B]
-- Fix for when the favorite item has unicode text.
-    </news>
-    <description lang="en">
-Lets you reorder the entries in your Favourites.
-Use this to organize your Favourites.
-    </description>
     <platform>all</platform>
   </extension>
 </addon><addon id="plugin.program.quickfix" name="Quick Fixes" version="4" provider-name="Diggz">
@@ -421,6 +353,36 @@ All changes on GitHub: https://github.com/aitschti/plugin.video.cb19
         <summary lang="de_DE">Chaturbate für Kodi 19/20</summary>
         <description lang="en_GB">Chaturbate streaming for Kodi 19/20</description>
         <description lang="de_DE">Chaturbate streaming für Kodi 19/20</description>
+        <disclaimer lang="en_GB">(c) 2023 aitschti</disclaimer>
+        <disclaimer lang="de_DE">(c) 2023 aitschti</disclaimer>
+        <reuselanguageinvoker>false</reuselanguageinvoker>
+    </extension>
+</addon><addon id="plugin.video.cb20" version="1.1.0" name="CB20" provider-name="aitschti">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0" />
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="addon.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.python.library" library="resources/lib/helperscript.py" />
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <news>
+All changes on GitHub: https://github.com/aitschti/plugin.video.cb20
+        </news>
+        <assets>
+            <icon>resources/icon.png</icon>
+            <fanart>resources/fanart.png</fanart>
+        </assets>
+        <source />
+        <license>GPL-3.0</license>
+        <forum />
+        <website />
+        <email>last5mins@yandex.com</email>
+        <summary lang="en_GB">Chaturbate for Kodi 20</summary>
+        <summary lang="de_DE">Chaturbate für Kodi 20</summary>
+        <description lang="en_GB">Chaturbate streaming for Kodi 20</description>
+        <description lang="de_DE">Chaturbate streaming für Kodi 20</description>
         <disclaimer lang="en_GB">(c) 2023 aitschti</disclaimer>
         <disclaimer lang="de_DE">(c) 2023 aitschti</disclaimer>
         <reuselanguageinvoker>false</reuselanguageinvoker>
@@ -1189,36 +1151,6 @@ All changes on GitHub: https://github.com/aitschti/plugin.video.sc19
             <screenshot>resources/images/screenshot05.png</screenshot>
         </assets>
     </extension>
-</addon><addon id="plugin.video.stadium" name="Stadium" version="2022.12.23" provider-name="MetalChris">
-  <requires>
-    
-    <import addon="script.module.beautifulsoup4" version="4.3.2" />
-    <import addon="script.module.html5lib" version="0.999.0" />
-    <import addon="script.module.mechanize" version="0.2.6" />
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="addon.py">
-    <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">Watch exclusive live games and events, extensive highlights, classic games, and original programming.</summary>
-    <description lang="en">Stadium was formed when Campus Insiders, 120 Sports and American Sports Network combined forces to create a multi-platform sports network that brings together exclusive live games and events, extensive highlights, classic games, original programming, and daily live studio programming. *Matrix Version*</description>
-    <disclaimer lang="en">No support at TVAddons.  For support go to forum.kodi.tv or my github site.  Please always provide a full, unedited debug log when requesting support.</disclaimer>
-    <language />
-    <platform>all</platform>
-    <license>GPL(v2) or Later</license>
-    <forum>https://forum.kodi.tv/showthread.php?tid=299122</forum>
-    <website>http://watchstadium.com</website>
-    <email />
-    <source />
-    <news>Version 2021.10.09 - Update for Matrix</news>
-    <assets>
-        <icon>resources/media/icon.png</icon>
-        <fanart>resources/media/fanart.jpg</fanart>
-        <screenshot>resources/media/screenshot008.png</screenshot>
-        <screenshot>resources/media/screenshot010.png</screenshot>
-        <screenshot>resources/media/screenshot011.png</screenshot>
-    </assets>
-  </extension>
 </addon><addon id="plugin.video.tubi.m7" name="Tubi" provider-name="mhancoc7" version="420.0.2.0">
     <requires>
         <import addon="script.module.m7lib" version="0.1.0" />
@@ -1238,26 +1170,6 @@ All changes on GitHub: https://github.com/aitschti/plugin.video.sc19
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
-</addon><addon id="plugin.video.vidembed" version="1.1.1" name="[COLOR cyan]Vidembed[/COLOR].[COLOR yellow]io[/COLOR]" provider-name="[COLOR cyan]Parrot[/COLOR] [COLOR yellow]Developers[/COLOR]">
-<requires>
-  <import addon="xbmc.python" version="3.0.0" />
-  <import addon="script.module.requests" version="2.25.1" />
-  <import addon="script.module.beautifulsoup4" version="2.9.9" />
-  <import addon="script.module.resolveurl" version="5.1.00" />
-  <import addon="script.module.parrot" version="1.0.0" />
-  <import addon="script.module.routing" />
-</requires>
-<extension point="xbmc.python.pluginsource" library="addon.py">
-  <provides>video</provides>
-</extension>
-<extension point="xbmc.addon.metadata">
-  <summary>Watch movies and series from vidembed.io</summary>
-  <disclaimer>I'm not affiliated with vidembed.io.</disclaimer>
-  <assets>
-    <icon>icon.jpg</icon>
-    <fanart>fanart.jpg</fanart> 
-  </assets>
-</extension>
 </addon><addon id="plugin.video.vix" name="Vix" version="0.5" provider-name="mbebe">
     <requires>
         <import addon="script.module.requests" />
