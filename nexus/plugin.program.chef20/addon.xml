@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.program.chef20" name="Chef Nexus Wizard" version="454" provider-name="Slam, BYB, Sarge, Diggz">
+<addon id="plugin.program.chef20" name="Chef Nexus Wizard" version="455" provider-name="Slam, BYB, Sarge, Diggz">
 	<requires>
 		<import addon="xbmc.python" version="3.0.1"/>
 		<import addon="script.module.myaccts" version="99.1.1"/>

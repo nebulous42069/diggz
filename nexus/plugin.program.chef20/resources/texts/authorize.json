@@ -41,7 +41,7 @@
             },
             {
                 "name": "Revoke All Real Debrid Data",
-                "url": "RunScript(script.module.myaccts, action=realdebridRevoke)"
+                "url": "PlayMedia(plugin://script.module.myauth/?mode=addondebrid_rd&name=all)"
             },						
             {
                 "name": "Check If your VPN is compatible with Real Debrid",
@@ -70,7 +70,7 @@
             },
             {
                 "name": "Revoke All Premiumize Debrid Data",
-                "url": "RunScript(script.module.myaccts, action=premiumizeRevoke)"
+                "url": "PlayMedia(plugin://script.module.myauth/?mode=addondebrid_pm&name=all)"
             }			
         ]
     },
@@ -95,7 +95,7 @@
             },
             {
                 "name": "Revoke All Debrid Debrid Data",
-                "url": "RunScript(script.module.myaccts, action=alldebridRevoke)"
+                "url": "PlayMedia(plugin://script.module.myauth/?mode=addondebrid_ad&name=all)"
             }			
         ]
     },
