@@ -475,34 +475,6 @@ All changes on GitHub: https://github.com/aitschti/plugin.video.cb19
 		<fanart>fanart.jpg</fanart>
   </assets>
   </extension>
-</addon><addon id="plugin.video.daddylive" name="Daddylive" version="2.1" provider-name="mbebe">
-    <requires>
-        <import addon="xbmc.python" version="3.0.0" />
-        <import addon="script.module.requests" />
-        <import addon="script.module.inputstreamhelper" />
-        <import addon="script.module.six" />
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="addon.py">
-        <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-        <description lang="pl">1.2</description>
-        <disclaimer lang="pl">test
-        </disclaimer>
-        <summary lang="en">Live TV and Sports</summary>
-        <description lang="en">Live TV and Sports</description>
-        <disclaimer lang="en">test
-        </disclaimer>
-        <language>pl</language>
-        <platform>all</platform>
-        <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
-        <website />
-        <assets>
-            <icon>icon.png</icon>
-            <fanart>fanart.jpg</fanart>
-        </assets>
-    </extension>
-    
 </addon><addon id="plugin.video.dartstreams" name="dartstreams" version="1.0.0" provider-name="lg">
     <requires>
         <import addon="script.module.requests" />
@@ -578,6 +550,33 @@ All changes on GitHub: https://github.com/aitschti/plugin.video.cb19
 		<fanart>fanart.jpg</fanart>
   </assets>
   </extension>
+</addon><addon id="plugin.video.fluxus" name="Fluxus IPTV" version="0.0.7" provider-name="X">
+	<requires>
+		<import addon="xbmc.python" version="3.0.0" />
+		<import addon="script.module.requests" />
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="addon.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en" />
+		<description lang="en" />
+		<platform>all</platform>
+		<language>en</language>
+		<license>GPL-2.0-or-later</license>
+		<forum />
+		<website /> 
+		<email />
+		<source />
+		<news>v0.0.5 - Fixed myFavourites. v0.0.4 - fixed an error loading certain lists. v0.0.3 - Major upgrade!!! Fixed missing links, added Search, added Favourites, added Recently Played, added a link checker to prevent crashing on certain dead links v0.0.1 - Kodi 19</news>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+			<banner />
+			<clearlogo />
+			<screenshot />
+		</assets>
+	</extension>
 </addon><addon id="plugin.video.freelivetv.tva" name="Free Live TV" provider-name="mhancoc7" version="420.0.7.1">
     <requires>
         <import addon="script.module.m7lib" version="0.1.0" />
@@ -613,12 +612,14 @@ All changes on GitHub: https://github.com/aitschti/plugin.video.cb19
     <description lang="en" />
      <platform>all</platform>
   </extension>
-</addon><addon id="plugin.video.gratis" name="Gratis" version="0.1.8" provider-name="Jon Bovi">
+</addon><addon id="plugin.video.gratis" name="Gratis" version="1.1.2" provider-name="Jon Bovi">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
 		<import addon="script.module.requests" />
 		<import addon="script.module.resolveurl" />
 		<import addon="script.module.beautifulsoup4" />
+		<import addon="inputstream.adaptive" />
+		<import addon="plugin.video.youtube" />
 	</requires>
 	<extension point="xbmc.python.pluginsource" library="default.py">
 		<provides>video</provides>

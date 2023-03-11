@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.fluxus" name="Fluxus IPTV" version="0.0.7" provider-name="X">
+	<requires>
+		<import addon="xbmc.python" version="3.0.0"/>
+		<import addon="script.module.requests"/>
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="addon.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en"></summary>
+		<description lang="en"></description>
+		<platform>all</platform>
+		<language>en</language>
+		<license>GPL-2.0-or-later</license>
+		<forum></forum>
+		<website></website> 
+		<email></email>
+		<source></source>
+		<news>v0.0.5 - Fixed myFavourites. v0.0.4 - fixed an error loading certain lists. v0.0.3 - Major upgrade!!! Fixed missing links, added Search, added Favourites, added Recently Played, added a link checker to prevent crashing on certain dead links v0.0.1 - Kodi 19</news>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+			<banner></banner>
+			<clearlogo></clearlogo>
+			<screenshot></screenshot>
+		</assets>
+	</extension>
+</addon>

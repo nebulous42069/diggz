@@ -1,50 +1,127 @@
 {
+    "Step 1-Install The Debrid Addons You Use": {
+        "icon": "https://kodiapps.com/sharex/dllhost_2020-02-05_12-07-32.jpg",
+        "items": [
+            {
+                "name": "Install FEN",
+                "url": "installaddon(plugin.video.fen)"
+            },
+            {
+                "name": "Install Seren",
+                "url": "installaddon(plugin.video.seren)"
+            },
+            {
+                "name": "Install Umbrella",
+                "url": "installaddon(plugin.video.umbrella)"
+            },
+            {
+                "name": "Install Ezra",
+                "url": "installaddon(plugin.video.ezra)"
+            }
+        ]
+    },	
     "Authorize Real Debrid": {
         "icon": "https://kodiapps.com/sharex/dllhost_2020-02-05_12-07-32.jpg",
         "items": [
             {
-                "name": "Authorize ResolveURL Real-Debrid",
-                "url": "RunPlugin(plugin://script.module.resolveurl/?mode=auth_rd)"
+                "name": "Authorize Real-Debrid For All Addons",
+                "url": "RunScript(script.module.myaccts, action=realdebridAuth)"
             },
             {
-                "name": "Authorize Realizer Cloud",
-                "url": "RunPlugin(plugin://plugin.video.realizerx/?action=authRealdebrid)"
+                "name": "View Your Debrid Account",
+                "url": "RunScript(script.module.myaccts, action=realdebridAcct)"
             },
             {
-                "name": "Authorize Seren Real Debrid",
-                "url": "RunPlugin(plugin://plugin.video.seren/?action=authRealDebrid)"
+                "name": "View Your Saved Data",
+                "url": "ActivateWindow(10001,plugin://script.module.myauth/?mode=realdebrid,return)"
             },
             {
-                "name": "Authorize Umbrella Real Debrid",
-                "url": "RunPlugin(plugin://plugin.video.umbrella/?action=rd_Authorize)"
+                "name": "Re-sync real-debrid data with all add-ons",
+                "url": "RunScript(script.module.myaccts, action=realdebridSync)"
             },
             {
-                "name": "Authorize FEN Real Debrid",
-                "url": "RunPlugin(plugin://plugin.video.fen/?mode=real_debrid.authenticate)"
-            },
-			{
-                "name": "Authorize EZRA Real Debrid",
-                "url": "RunScript(script.module.myaccounts, action=realdebridAuth)"
-            },
-            {
-                "name": "Revoke ResolveURL Real-Debrid",
-                "url": "RunPlugin(plugin://script.module.resolveurl/?mode=reset_rd)"
-            },
-            {
-                "name": "Revoke Umbrella Real-Debrid",
-                "url": "RunPlugin(plugin://plugin.video.umbrella/?action=rd_Revoke)"
-            },
-            {
-                "name": "Revoke FEN Real-Debrid",
-                "url": "RunPlugin(plugin://plugin.video.fen/?mode=real_debrid.revoke_authentication)"
-            },
-			{
-                "name": "Revoke EZRA Real-Debrid",
-                "url": "RunScript(script.module.myaccounts, action=realdebridRevoke)"
-            },
+                "name": "Revoke All Real Debrid Data",
+                "url": "RunScript(script.module.myaccts, action=realdebridRevoke)"
+            },						
             {
                 "name": "Check If your VPN is compatible with Real Debrid",
                 "url": "ActivateWindow(10001,plugin://script.RealDebrid.vpn/,return)"
+            }
+        ]
+    },	
+    "Authorize Premiumize": {
+        "icon": "https://play-lh.googleusercontent.com/LCdGKehB8Cqa36eh0hQwy3CIWMI4bzSB9SUrAKmRQaXkZsFUNdcxuBgKM7nmBUyIVg",
+        "items": [
+            {
+                "name": "Authorize Premiumize For All Addons",
+                "url": "RunScript(script.module.myaccts, action=premiumizeAuth)"
+            },
+            {
+                "name": "View Your Premiumize Account",
+                "url": "RunScript(script.module.myaccts, action=premiumizeAcct)"
+            },			
+            {
+                "name": "View Your Saved Data",
+                "url": "ActivateWindow(10001,plugin://script.module.myauth/?mode=realdebrid,return)"
+            },
+            {
+                "name": "Re-sync premiumize data with all add-ons",
+                "url": "RunScript(script.module.myaccts, action=premiumizeSync)"
+            },
+            {
+                "name": "Revoke All Premiumize Debrid Data",
+                "url": "RunScript(script.module.myaccts, action=premiumizeRevoke)"
+            }			
+        ]
+    },
+    "Authorize All Debrid": {
+        "icon": "http://4.bp.blogspot.com/-D-mA8RDa9KI/U11fxrpEUHI/AAAAAAAAAYY/uxM3YucdoeI/s1600/alldebrid.jpg",
+        "items": [
+            {
+                "name": "Authorize All Debrid For All Addons",
+                "url": "RunScript(script.module.myaccts, action=alldebridAuth)"
+            },
+            {
+                "name": "View Your All Debrid Account",
+                "url": "RunScript(script.module.myaccts, action=alldebridAcct)"
+            },			
+            {
+                "name": "View Your All Debrid Saved Data",
+                "url": "ActivateWindow(10001,plugin://script.module.myauth/?mode=realdebrid,return)"
+            },
+            {
+                "name": "Re-sync All Debrid data with all add-ons",
+                "url": "RunScript(script.module.myaccts, action=alldebridSync)"
+            },
+            {
+                "name": "Revoke All Debrid Debrid Data",
+                "url": "RunScript(script.module.myaccts, action=alldebridRevoke)"
+            }			
+        ]
+    },
+    "Authorize Link Snappy": {
+        "icon": "https://multihoster.org/wp-content/uploads/2018/10/logo-3.png",
+        "items": [
+            {
+                "name": "Authorize ResolveURL Link Snappy",
+                "url": "RunPlugin(plugin://script.module.resolveurl/?mode=auth_ls)"
+            },
+            {
+                "name": "Revoke ResolveURL Link Snappy",
+                "url": "RunPlugin(plugin://script.module.resolveurl/?mode=reset_ls)"
+            }
+        ]
+    },
+    "Authorize Debrid Link": {
+        "icon": "https://cdn.debrid-link.com/img/cover.png",
+        "items": [
+            {
+                "name": "Authorize ResolveURL Debrid-Link.fr",
+                "url": "RunPlugin(plugin://script.module.resolveurl/?mode=auth_dl)"
+            },
+            {
+                "name": "Revoke ResolveURL Debrid-Link.fr",
+                "url": "RunPlugin(plugin://script.module.resolveurl/?mode=reset_dl)"
             }
         ]
     },
@@ -104,10 +181,6 @@
                 "url": "RunPlugin(plugin://plugin.video.asgard?mode=157&url=False)"
             },
             {
-                "name": "Authorize Kodiverse Trakt",
-                "url": "RunPlugin(plugin://plugin.video.KodiVerse?mode=157&url=False)"
-            },
-            {
                 "name": "Authorize The Chains Trakt",
                 "url": "RunPlugin(plugin://plugin.video.thechains?mode=157&url=False)"
             },
@@ -160,117 +233,5 @@
                 "url": "RunPlugin(plugin://plugin.video.fen/?mode=trakt.trakt_revoke_authentication)"
             }
         ]
-    },
-    "Authorize Premiumize": {
-        "icon": "https://play-lh.googleusercontent.com/LCdGKehB8Cqa36eh0hQwy3CIWMI4bzSB9SUrAKmRQaXkZsFUNdcxuBgKM7nmBUyIVg",
-        "items": [
-            {
-                "name": "Authorize ResolveURL Premiumize.me",
-                "url": "RunPlugin(plugin://script.module.resolveurl/?mode=auth_pm)"
-            },
-            {
-                "name": "Authorize Premiumizer Cloud",
-                "url": "RunPlugin(plugin://plugin.video.premiumizerx/?action=authPremiumize)"
-            },
-            {
-                "name": "Authorize Seren Premiumize",
-                "url": "RunPlugin(plugin://plugin.video.seren/?action=authPremiumize)"
-            },
-            {
-                "name": "Authorize Umbrella Premiumize",
-                "url": "RunPlugin(plugin://plugin.video.umbrella/?action=pm_Authorize)"
-            },
-            {
-                "name": "Authorize FEN Premiumize",
-                "url": "RunPlugin(plugin://plugin.video.fen/?mode=premiumize.authenticate)"
-            },
-			{
-                "name": "Authorize EZRA Premiumize",
-                "url": "RunScript(script.module.myaccounts, action=premiumizeAuth)"
-            },
-            {
-                "name": "Revoke ResolveURL Premiumize.me",
-                "url": "RunPlugin(plugin://script.module.resolveurl/?mode=reset_pm)"
-            },
-            {
-                "name": "Revoke Umbrella Premiumize.me",
-                "url": "RunPlugin(plugin://plugin.video.umbrella/?action=pm_Revoke)"
-            },
-			{
-                "name": "Revoke EZRA Premiumize.me",
-                "url": "RunScript(script.module.myaccounts, action=premiumizeRevoke)"
-            },
-            {
-                "name": "Revoke FEN Premiumize.me",
-                "url": "RunPlugin(plugin://plugin.video.fen/?mode=premiumize.revoke_authentication)"
-            }
-        ]
-    },
-    "Authorize All Debrid": {
-        "icon": "http://4.bp.blogspot.com/-D-mA8RDa9KI/U11fxrpEUHI/AAAAAAAAAYY/uxM3YucdoeI/s1600/alldebrid.jpg",
-        "items": [
-            {
-                "name": "Authorize ResolveURL AllDebrid",
-                "url": "RunPlugin(plugin://script.module.resolveurl/?mode=auth_ad)"
-            },
-            {
-                "name": "Authorize Seren Alldebrid",
-                "url": "RunPlugin(plugin://plugin.video.seren/?action=authAllDebrid)"
-            },
-            {
-                "name": "Authorize Umbrella Alldebrid",
-                "url": "RunPlugin(plugin://plugin.video.umbrella/?action=ad_Authorize)"
-            },
-            {
-                "name": "Authorize FEN Alldebrid",
-                "url": "RunPlugin(plugin://plugin.video.fen/?mode=alldebrid.authenticate)"
-            },
-			{
-                "name": "Authorize EZRA Alldebrid",
-                "url": "RunScript(script.module.myaccounts, action=alldebridAuth)"
-            },
-            {
-                "name": "Revoke ResolveURL AllDebrid",
-                "url": "RunPlugin(plugin://script.module.resolveurl/?mode=reset_ad)"
-            },
-            {
-                "name": "Revoke FEN AllDebrid",
-                "url": "RunPlugin(plugin://plugin.video.fen/?mode=alldebrid.revoke_authentication)"
-            },
-			{
-                "name": "Revoke EZRA AllDebrid",
-                "url": "RunScript(script.module.myaccounts, action=alldebridRevoke)"
-            },
-            {
-                "name": "Revoke Umbrella AllDebrid",
-                "url": "RunPlugin(plugin://plugin.video.umbrella/?action=ad_Revoke)"
-            }
-        ]
-    },
-    "Authorize Link Snappy": {
-        "icon": "https://multihoster.org/wp-content/uploads/2018/10/logo-3.png",
-        "items": [
-            {
-                "name": "Authorize ResolveURL Link Snappy",
-                "url": "RunPlugin(plugin://script.module.resolveurl/?mode=auth_ls)"
-            },
-            {
-                "name": "Revoke ResolveURL Link Snappy",
-                "url": "RunPlugin(plugin://script.module.resolveurl/?mode=reset_ls)"
-            }
-        ]
-    },
-    "Authorize Debrid Link": {
-        "icon": "https://cdn.debrid-link.com/img/cover.png",
-        "items": [
-            {
-                "name": "Authorize ResolveURL Debrid-Link.fr",
-                "url": "RunPlugin(plugin://script.module.resolveurl/?mode=auth_dl)"
-            },
-            {
-                "name": "Revoke ResolveURL Debrid-Link.fr",
-                "url": "RunPlugin(plugin://script.module.resolveurl/?mode=reset_dl)"
-            }
-        ]
-    }
+    }	
 }

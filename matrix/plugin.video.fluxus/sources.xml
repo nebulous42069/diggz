@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<sources>
+	<source>
+		<url>https://bitbucket.org/!api/2.0/snippets/fluxustv/KpaEKX/e5b158cbb964a9ca8b478a07e0e726154c948981/files/FTV-ENG</url>
+		<name>English</name>
+		<icon></icon>
+	</source>
+	<source>
+		<url>https://bitbucket.org/!api/2.0/snippets/fluxustv/zXx7KB/794c6bf68209f580dddc7bdcb53e2230c7b25375/files/FTV-ESP</url>
+		<name>Espanol</name>
+		<icon></icon>
+	</source>
+	<source>
+		<url>https://bitbucket.org/!api/2.0/snippets/fluxustv/dxj7nE/3c42cf361bd66fc127a9364fdb931e4b81d4e65a/files/FTV-ARA</url>
+		<name>Arabic</name>
+		<icon></icon>
+	</source>
+</sources>

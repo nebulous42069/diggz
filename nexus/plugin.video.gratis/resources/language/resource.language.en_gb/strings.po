@@ -1,6 +1,6 @@
 # XBMC Media Center language file
-# Addon Name: The Latest
-# Addon id: plugin.video.thelatest
+# Addon Name: Gratis
+# Addon id: plugin.video.gratis
 # Addon Provider: Jon Bovi
 msgid ""
 msgstr ""

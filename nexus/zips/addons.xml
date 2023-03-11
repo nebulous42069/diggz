@@ -134,9 +134,11 @@
     </assets>
     <reuselanguageinvoker>true</reuselanguageinvoker>
   </extension>
-</addon><addon id="plugin.program.chef20" name="Chef Nexus Wizard" version="453" provider-name="Slam, BYB, Sarge, Diggz">
+</addon><addon id="plugin.program.chef20" name="Chef Nexus Wizard" version="454" provider-name="Slam, BYB, Sarge, Diggz">
 	<requires>
 		<import addon="xbmc.python" version="3.0.1" />
+		<import addon="script.module.myaccts" version="99.1.1" />
+		<import addon="script.module.myauth" version="99.0.1" />		
 		<import addon="script.module.requests" optional="true" />
 	</requires>
 	<extension point="xbmc.python.pluginsource" library="addon.py">
@@ -439,34 +441,6 @@ All changes on GitHub: https://github.com/aitschti/plugin.video.cb20
 		<fanart>fanart.jpg</fanart>
   </assets>
   </extension>
-</addon><addon id="plugin.video.daddylive" name="Daddylive" version="2.1" provider-name="mbebe">
-    <requires>
-        <import addon="xbmc.python" version="3.0.0" />
-        <import addon="script.module.requests" />
-        <import addon="script.module.inputstreamhelper" />
-        <import addon="script.module.six" />
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="addon.py">
-        <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-        <description lang="pl">1.2</description>
-        <disclaimer lang="pl">test
-        </disclaimer>
-        <summary lang="en">Live TV and Sports</summary>
-        <description lang="en">Live TV and Sports</description>
-        <disclaimer lang="en">test
-        </disclaimer>
-        <language>pl</language>
-        <platform>all</platform>
-        <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
-        <website />
-        <assets>
-            <icon>icon.png</icon>
-            <fanart>fanart.jpg</fanart>
-        </assets>
-    </extension>
-    
 </addon><addon id="plugin.video.dartstreams" name="dartstreams" version="1.0.0" provider-name="lg">
     <requires>
         <import addon="script.module.requests" />
@@ -542,6 +516,33 @@ All changes on GitHub: https://github.com/aitschti/plugin.video.cb20
 		<fanart>fanart.jpg</fanart>
   </assets>
   </extension>
+</addon><addon id="plugin.video.fluxus" name="Fluxus IPTV" version="0.0.7" provider-name="X">
+	<requires>
+		<import addon="xbmc.python" version="3.0.0" />
+		<import addon="script.module.requests" />
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="addon.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en" />
+		<description lang="en" />
+		<platform>all</platform>
+		<language>en</language>
+		<license>GPL-2.0-or-later</license>
+		<forum />
+		<website /> 
+		<email />
+		<source />
+		<news>v0.0.5 - Fixed myFavourites. v0.0.4 - fixed an error loading certain lists. v0.0.3 - Major upgrade!!! Fixed missing links, added Search, added Favourites, added Recently Played, added a link checker to prevent crashing on certain dead links v0.0.1 - Kodi 19</news>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+			<banner />
+			<clearlogo />
+			<screenshot />
+		</assets>
+	</extension>
 </addon><addon id="plugin.video.freelivetv.tva" name="Free Live TV" provider-name="mhancoc7" version="420.0.7.1">
     <requires>
         <import addon="script.module.m7lib" version="0.1.0" />
@@ -577,12 +578,14 @@ All changes on GitHub: https://github.com/aitschti/plugin.video.cb20
     <description lang="en" />
      <platform>all</platform>
   </extension>
-</addon><addon id="plugin.video.gratis" name="Gratis" version="0.1.8" provider-name="Jon Bovi">
+</addon><addon id="plugin.video.gratis" name="Gratis" version="1.1.2" provider-name="Jon Bovi">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
 		<import addon="script.module.requests" />
 		<import addon="script.module.resolveurl" />
 		<import addon="script.module.beautifulsoup4" />
+		<import addon="inputstream.adaptive" />
+		<import addon="plugin.video.youtube" />
 	</requires>
 	<extension point="xbmc.python.pluginsource" library="default.py">
 		<provides>video</provides>
@@ -1260,25 +1263,6 @@ Random updates by lolage.
             <icon>icon.png</icon>
         </assets>
     </extension>
-</addon><addon id="repository.test" name="test" provider-name="test" version="1.2">
-	<extension point="xbmc.addon.repository" name="test">
-		<dir>
-        <info compressed="false">https://raw.githubusercontent.com/Wilson-Magic/repository.wilson-magic/master/zips/addons.xml</info>
-		<checksum>https://raw.githubusercontent.com/Wilson-Magic/repository.wilson-magic/master/zips/addons.xml.md5</checksum>
-		<datadir zip="true">https://raw.githubusercontent.com/Wilson-Magic/repository.wilson-magic/master/zips</datadir>
-        </dir>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en">test</summary>
-		<description lang="en">test</description>
-		<platform>all</platform>
-		<license>MIT</license>
-		<disclaimer lang="en">Kodi Addon Repository.</disclaimer>
-		<assets>
-			<icon>icon.jpg</icon>
-			<fanart>fanart.jpg</fanart>
-		</assets>
-	</extension>
 </addon><addon id="resource.font.robotocjksc" name="Roboto CJKSC" version="0.0.2" provider-name="jurialmunkey">
     <requires>
         <import addon="kodi.resource" version="1.0.0" />
@@ -1458,6 +1442,39 @@ Random updates by lolage.
 				<icon>icon.png</icon>
 				<fanart>fanart.jpg</fanart>
 		</assets>
+    </extension>
+</addon><addon id="script.module.myaccts" version="99.1.1" name="Debrid Manager" provider-name="Zaxxon709, Ezra Hubbard">
+	<requires>
+		<import addon="xbmc.python" version="3.0.0" />
+		<import addon="script.module.requests" version="2.19.1" />
+            <import addon="script.module.myauth" version="99.0.1" />
+	</requires>
+	<extension point="xbmc.service" library="lib/startup.py" start="startup" />
+	<extension point="xbmc.python.script" library="lib/default.py">
+		<provides>executable</provides>
+	</extension>
+	<extension point="xbmc.python.module" library="lib" />
+	<extension point="xbmc.addon.metadata">
+		<reuselanguageinvoker>false</reuselanguageinvoker>
+		<summary lang="en">Accounts Module</summary>
+		<description>Single placeholder for your debrid accounts</description>
+		<platform>all</platform>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+		<disclaimer lang="en">The author is not responsible for the use of this addon. [CR]The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation.[CR]This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.</disclaimer>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.png</fanart>
+		</assets>
+	</extension>
+</addon><addon id="script.module.myauth" name="myauthact" version="99.0.1" provider-name="Zaxxon709">
+    <extension point="xbmc.python.pluginsource" library="default.py">
+    <extension point="xbmc.addon.metadata">
+    </extension>
+        <summary lang="en">Authorize Debrid Accounts</summary>
+        <description lang="en">Debrid Accounts Manager</description>
+        <platform>all</platform>
+        <reuselanguageinvoker>false</reuselanguageinvoker>
+        <source>https://</source>
     </extension>
 </addon><addon id="script.module.pvr.artwork" name="PVR Artwork Module" version="2.1.4" provider-name="PvD">
     <requires>
