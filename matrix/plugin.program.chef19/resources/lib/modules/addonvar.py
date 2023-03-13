@@ -5,6 +5,8 @@ import xbmcgui
 import os
 import base64
 from datetime import datetime
+from .colors import colors
+
 
 addon_id = xbmcaddon.Addon().getAddonInfo('id')
 addon           = xbmcaddon.Addon(addon_id)
@@ -43,13 +45,10 @@ sleep = xbmc.sleep
 build_file = os.path.join(addon_profile,'buildmenu.json')
 notify_file = os.path.join(addon_profile,'notify.txt')
 texts_path = os.path.join(resources, 'texts/')
-authorizetrakt = texts_path + 'authorizetrakt.json'
-authorizerealdebrid = texts_path + 'authorizerealdebrid.json'
-authorizepremiumize = texts_path + 'authorizepremiumize.json'
-authorizelinksnappy = texts_path + 'authorizelinksnappy.json'
-authorizedebridlink = texts_path + 'authorizedebridlink.json'
-authorizealldebrid = texts_path + 'authorizealldebrid.json'
+authorize = texts_path + 'authorize.json'
 installed_date = str(datetime.now())[:-7]
+color1 = colors.color_text1
+color2 = colors.color_text2
 
 def isBase64(s):
     try:

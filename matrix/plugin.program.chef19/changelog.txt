@@ -1,3 +1,7 @@
+3.0.2 - Added speedtest, various bugfixes
+
+3.0.0 - Added backup/restore functionality for trakt/debrid accounts. Updated debrid/trakt authorization section. Restore of gui/skin settings has been added. Updated Advancedsettings configs. Updated wizard artwork. Added user edited color options for menus. Fixed wizard writing over itself during build installs. Edited fresh start to keep wizard/dependencies. Removed double ok dialog during build installs. Numerous other small fixes throughout. 
+
 2.1.8 - Added logviewer to maintenance. 
 
 2.1.7 - Fixed issue with binary installs failing. Updated Advancedsettings configs. Added notification at start of backups. 

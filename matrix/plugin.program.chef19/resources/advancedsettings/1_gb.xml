@@ -9,5 +9,4 @@
     <curllowspeedtime>20</curllowspeedtime>
     <curlretries>10</curlretries>
   </network>
-<splash>false</splash>
 </advancedsettings>

@@ -1,15 +1,16 @@
 import xbmc
 import xbmcplugin
-import xbmcaddon
 import sys
 import os
 from .params import Params
 from .utils import play_video
-from .menus import main_menu, build_menu, submenu_maintenance, submenu_logins, authorizerealdebrid_menu, authorizetrakt_menu, authorizepremiumize_menu, authorizelinksnappy_menu, authorizedebridlink_menu, authorizealldebrid_menu, backup_restore
-from .build_install import main
+from .menus import main_menu, build_menu, submenu_maintenance, backup_restore, restore_gui_skin
+from .authorize import authorize_menu, authorize_submenu
+from .build_install import build_install
 from .maintenance import fresh_start, clear_packages, clear_thumbnails, advanced_settings
 from .whitelist import get_whitelist
 from .addonvar import addon
+from .save_data import restore_gui, restore_skin
 from .backup_restore import backup_build, restore_menu, restore_build, get_backup_folder, reset_backup_folder
 
 handle = int(sys.argv[1])
@@ -39,7 +40,7 @@ def router(paramstring):
         play_video(name, url, icon, description)
     
     elif mode == 3:
-        main(name, name2, version, url)
+        build_install(name, name2, version, url)
     
     elif mode == 4:
         fresh_start(standalone=True)
@@ -47,9 +48,6 @@ def router(paramstring):
     elif mode == 5:
         submenu_maintenance()
     
-    elif mode == 51:
-        submenu_logins()    
-        
     elif mode == 6:
         clear_packages()
     
@@ -61,12 +59,9 @@ def router(paramstring):
     
     elif mode == 9:
         addon.openSettings()
-        
-    elif mode == 19:
-        authorizetrakt_menu()        
     
     elif mode == 10:
-        authorizerealdebrid_menu()
+        authorize_menu()
     
     elif mode == 11:
         get_whitelist()
@@ -91,6 +86,15 @@ def router(paramstring):
     
     elif mode == 18:
         os._exit(1)
+
+    elif mode == 19:
+        restore_gui_skin()
+
+    elif mode == 20:
+        restore_gui()
+
+    elif mode == 21:
+        restore_skin()
     
     elif mode == 24:
         xbmc.executebuiltin(url)
@@ -98,23 +102,17 @@ def router(paramstring):
     elif mode == 25:
         from .quick_log import log_viewer
         log_viewer()
-        
-    elif mode == 20:
-        authorizepremiumize_menu()
-
-    elif mode == 21:
-        authorizelinksnappy_menu()  
-
-    elif mode == 22:
-        authorizedebridlink_menu()
-
-    elif mode == 23:
-        authorizealldebrid_menu()        
+    
+    elif mode == 26:
+        authorize_submenu(name2, icon)
+    
+    elif mode == 27:
+        from .speedtester.addon import run
+        run()
     
     elif mode == 100:
         from resources.lib.GUIcontrol import notify
-        d=notify.notify('notify.xml', xbmcaddon.Addon().getAddonInfo('path'), 'Default', '720p')
-        d.doModal()
-        del d
+        message = notify.get_notify()[1]
+        notify.notification(message)
         
     xbmcplugin.endOfDirectory(handle)

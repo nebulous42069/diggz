@@ -5,7 +5,7 @@ import os
 import zipfile
 from zipfile import ZipFile
 from pathlib import Path
-from .addonvar import home, addon_profile, addon_path, setting, setting_set, translatePath, xbmcPath, addon_id, dp, local_string, addon_icon, addon_fanart
+from .addonvar import home, addon_profile, addon_path, setting, setting_set, translatePath, xbmcPath, addon_id, dp, local_string, addon_name, addon_icon, addon_fanart
 from .utils import add_dir
 
 p = Path(home)
@@ -21,7 +21,7 @@ compression = zipfile.ZIP_DEFLATED
 def log(_text, _var):
     xbmc.log(f'{_text} = {str(_var)}', xbmc.LOGINFO)
 
-excludes = [p / 'addons/packages', p / 'addons/temp', p / 'userdata/Thumbnails', p / 'userdata/Database/Textures13.db']
+excludes = [p / 'addons/packages', p / 'addons/temp', p / 'userdata/Thumbnails', p / 'userdata/Database/Textures13.db', p / wizard_path]
 
 def from_keyboard():
     kb = xbmc.Keyboard('', 'Enter Backup Name', False)
@@ -46,7 +46,7 @@ def backup_build():
     userdata_dirs, userdata_files = ([x for x in userdata.iterdir() if x.is_dir() and x not in excludes]), ([x for x in userdata.iterdir() if x.is_file() and x not in excludes])
     
     zip_file = ZipFile(backup_name, 'w')
-    xbmcgui.Dialog().notification('Backup', 'Backup in progress, please wait!',xbmcgui.NOTIFICATION_INFO, 3000)
+    xbmcgui.Dialog().notification(addon_name, 'Backup in progress, please wait!', addon_icon, 3000)
     for x in sorted(addons_dirs):
         for z in sorted([y for y in x.rglob('*') if y not in excludes]):
             if '__pycache__' not in str(z):

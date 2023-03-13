@@ -1,0 +1,31 @@
+[B]Version 0.2.0[/B]
+- Updated for Kodi 19
+
+[B]Version 0.1.9[/B]
+- Added Patreon info
+
+[B]Version 0.1.8[/B]
+- Fixed exception issue
+
+[B]Version 0.1.7[/B]
+- Fixed exception issue
+
+[B]Version 0.1.6[/B]
+- Fixed issue with geo location being blocked by ad-blocking services. It will fallback to US if it is blocked
+
+[B]Version 0.1.5[/B]
+- Added Search
+
+[B]Version 0.1.4[/B]
+- Removed unused import
+- Update import for python 2/3 support
+- Removed bare exception
+
+[B]Version 0.1.3[/B]
+- Updated to work with changes in m7lib
+
+[B]Version 0.1.2[/B]
+- Updated to use m7lib for playback
+
+[B]Version 0.1.1[/B]
+- Initial version

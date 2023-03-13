@@ -1,7 +1,7 @@
 # Kodi Media Center language file
-# Addon Name: Simple 19 Wizard
+# Addon Name: Simple Wizard
 # Addon id: plugin.program.simple19wizard
-# Addon Provider: Slam, BYB
+# Addon Provider: Slam, Sarge, BYB
 msgid ""
 msgstr ""
 "Project-Id-Version: Kodi Addons\n"
@@ -32,7 +32,7 @@ msgid "Maintenance Tools"
 msgstr ""
 
 msgctxt "#30003"
-msgid "Clear all the data in your current setup except items in your save list."
+msgid "Clear all the data in your current setup. This action cannot be undone."
 msgstr ""
 
 msgctxt "#30004"
@@ -124,11 +124,11 @@ msgid "Advanced Settings"
 msgstr ""
 
 msgctxt "#30026"
-msgid "Authorize Real Debrid"
+msgid "Authorize Debrid and Trakt"
 msgstr ""
 
 msgctxt "#30027"
-msgid "Authorize Trakt"
+msgid "Authorize Services"
 msgstr ""
 
 msgctxt "#30028"
@@ -280,23 +280,99 @@ msgid "Edit Whitelist"
 msgstr ""
 
 msgctxt "#30065"
-msgid "Authorize Premiumize"
+msgid ""
 msgstr ""
 
-msgctxt "#30066"
-msgid "Authorize AllDebrid"
+msgctxt "#30950"
+msgid "[B]Run Speedtest[/B]"
 msgstr ""
 
-msgctxt "#30067"
-msgid "Authorize Link Snappy"
+msgctxt "#30951"
+msgid "[B]Close[/B]"
 msgstr ""
 
-msgctxt "#30068"
-msgid "Authorize Debrid-Link"
+msgctxt "#30960"
+msgid "[B]Running Speed Test add-on[/B]"
 msgstr ""
 
-msgctxt "#30069"
-msgid "Debrid And Trakt Logins"
+msgctxt "#30961"
+msgid "Retrieving speedtest.net configuration"
+msgstr ""
+
+msgctxt "#30962"
+msgid "Retrieving speedtest.net server list"
+msgstr ""
+
+msgctxt "#30963"
+msgid "Testing from {isp} ({ip})"
+msgstr ""
+
+msgctxt "#30964"
+msgid "Selecting best server based on latency"
+msgstr ""
+
+msgctxt "#30965"
+msgid "Hosted by: {sponsor}"
+msgstr ""
+
+msgctxt "#30966"
+msgid "Host server: {host}"
+msgstr ""
+
+msgctxt "#30967"
+msgid "City, State: {name}"
+msgstr ""
+
+msgctxt "#30968"
+msgid "Country: {country}"
+msgstr ""
+
+msgctxt "#30969"
+msgid "Distance: {d:0.2f} km"
+msgstr ""
+
+msgctxt "#30970"
+msgid "Ping: {latency} ms"
+msgstr ""
+
+msgctxt "#30971"
+msgid "Testing download speed..."
+msgstr ""
+
+msgctxt "#30972"
+msgid "Download speed: {speed:0.2f} Mbps"
+msgstr ""
+
+msgctxt "#30973"
+msgid "Testing upload speed..."
+msgstr ""
+
+msgctxt "#30974"
+msgid "Upload speed: {speed:0.2f} Mbps"
+msgstr ""
+
+msgctxt "#30980"
+msgid "[B]Recommended download speed for video streaming:[/B]"
+msgstr ""
+
+msgctxt "#30981"
+msgid "- 3 to 5 Mbps for viewing SD-quality 480p video"
+msgstr ""
+
+msgctxt "#30982"
+msgid "- 5 to 10 Mbps for viewing HD-quality 720p video"
+msgstr ""
+
+msgctxt "#30983"
+msgid "- 10+ Mbps for the best 1080p or Live TV experience"
+msgstr ""
+
+msgctxt "#30984"
+msgid "- 25 to 50+ Mbps for 4K streaming"
+msgstr ""
+
+msgctxt "#30985"
+msgid "[I]Reported speeds may be due to the limitations of the device.[/I]"
 msgstr ""
 
 ######-----Settings-----#####

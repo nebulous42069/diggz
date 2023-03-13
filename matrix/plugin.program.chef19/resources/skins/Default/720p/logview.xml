@@ -12,10 +12,10 @@
 			<description>Image</description>
 			<width>1100</width>
 			<height>600</height>
-			<texture>blacked.png</texture>
-			<colordiffuse>blue</colordiffuse>
+			<texture>background.png</texture>
+			<colordiffuse></colordiffuse>
 			<bordertexture border="2" colordiffuse="black">white.png</bordertexture>
-			<bordersize>5</bordersize>
+			<bordersize>10</bordersize>
 		</control>
 		
 		<control type="button" id="302">
@@ -24,8 +24,8 @@
 			<description>Close</description>
 			<width>75</width>
 			<height>37</height>
-			<texturefocus colordiffuse="deepskyblue">close2.png</texturefocus>
-            <texturenofocus colordiffuse="grey">close2.png</texturenofocus>
+			<texturefocus colordiffuse="deepskyblue">close.png</texturefocus>
+            <texturenofocus colordiffuse="grey">close.png</texturenofocus>
 			<bordersize>5</bordersize>
 			<onleft>301</onleft>
       <onright>301</onright>

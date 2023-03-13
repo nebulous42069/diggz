@@ -104,6 +104,10 @@
         "setting": "savedata",
         "path": "data_path"
     },
+
+
+
+
     "script.trakt": {
         "name": "Trakt",
         "setting": "savedata",
@@ -146,6 +150,14 @@
     },
     "plugin.video.aliunde19": {
         "name": "Aliunde",
+        "setting": "savedata",
+        "path": "data_path"
+    },
+
+
+
+    "plugin.video.imdb.trailers": {
+        "name": "IMDb Trailers",
         "setting": "savedata",
         "path": "data_path"
     },

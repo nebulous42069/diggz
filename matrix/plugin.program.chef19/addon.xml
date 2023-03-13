@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.program.chef19" name="Chef Matrix Wizard" version="451" provider-name="Slam, BYB, Sarge, Diggz">
+<addon id="plugin.program.chef19" name="Chef Matrix Wizard" version="455" provider-name="Slam, BYB, Sarge, Diggz">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0"/>
+		<import addon="script.module.myaccts" version="99.1.1"/>
+		<import addon="script.module.myauth" version="99.0.1"/>		
 		<import addon="script.module.requests" optional="true" />
 	</requires>
 	<extension point="xbmc.python.pluginsource" library="addon.py">

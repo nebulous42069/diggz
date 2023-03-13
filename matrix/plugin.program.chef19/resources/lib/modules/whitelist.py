@@ -4,6 +4,7 @@ import xbmcvfs
 import json
 import xbmcgui
 from uservar import excludes
+from .addonvar import addon_id
 
 translatePath = xbmcvfs.translatePath
 addon_id = xbmcaddon.Addon().getAddonInfo('id')
@@ -14,6 +15,8 @@ addons_path = translatePath(translatePath('special://home/addons'))
 file_path = addon_data + 'whitelist.json'
 dialog = xbmcgui.Dialog()
 
+EXCLUDES_BASIC = excludes + [addon_id, 'kodi.log', 'Addons33.db', 'packages', 'backups']
+EXCLUDES_FRESH = [addon_id, 'Addons33.db', 'kodi.log', 'script.module.certifi', 'script.module.chardet', 'script.module.idna', 'script.module.requests', 'script.module.urllib3']
 
 def get_whitelist():
     dirs, files = xbmcvfs.listdir(addons_path)
@@ -60,4 +63,4 @@ def add_whitelist(_excludes):
         return _excludes
     else:
         return _excludes
-EXCLUDES = add_whitelist(excludes)
+EXCLUDES_INSTALL = add_whitelist(EXCLUDES_BASIC)

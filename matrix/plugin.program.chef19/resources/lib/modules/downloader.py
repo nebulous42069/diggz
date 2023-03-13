@@ -61,7 +61,7 @@ class Downloader:
         if length:
             size = 0
             if meth in ['session', 'requests']:
-                for chunk in response.iter_content(chunk_size=max(1000000,500000)):
+                for chunk in response.iter_content(chunk_size=1000000):
                     size += len(chunk)
                     size2 = int(size/1000000)
                     tempzip.write(chunk)
@@ -71,7 +71,8 @@ class Downloader:
                         cancelled = True
                         break
             elif meth in 'urllib':
-                blocksize = max(int(length)/512, 1000000)
+                blocksize = 1000000
+                #blocksize = max(int(length)/512, 1000000)
                 while True:
                     buf = response.read(blocksize)
                     if not buf:
@@ -87,7 +88,7 @@ class Downloader:
                 
         else:
             dp.update(50, 'Downloading your build...')
-            blocksize = max(1000000, 500000)
+            blocksize = 1000000
             for chunk in response.iter_content(blocksize):
                 if dp.iscanceled():
                     cancelled = True
@@ -98,7 +99,7 @@ class Downloader:
             os.unlink(zippath)
             dialog = xbmcgui.Dialog()
             dialog.ok('Cancelled', 'Download Cancelled')
-            return
+            quit()
         if length:
             dp.update(100, 'Downloading your build...Done!' + '\n' + str(size2) + '/' + str(length2) + 'MB')
         else:

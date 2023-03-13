@@ -12,73 +12,31 @@
 			<description>Image</description>
 			<width>1100</width>
 			<height>600</height>
-			<texture>blacked.png</texture>
-			<bordertexture border="2" colordiffuse="white">white.png</bordertexture>
+			<texture>background.png</texture>
+			<colordiffuse></colordiffuse>
+			<bordertexture border="2" colordiffuse="black">white.png</bordertexture>
 			<bordersize>10</bordersize>
 		</control>
-			<control type="image">
-			<left>11</left>
-			<top>11</top>
-			<description>Team</description>
-			<width>391</width>
-			<height>100</height>
-			<texture>team.png</texture>
-			<!-- <bordersize>5</bordersize> -->
-		</control>
-		<control type="textbox">
-			<description>text</description>
-			<top>11</top>
-			<left>13</left>
-			<width>388</width>
-			<height>100</height>
-			<label>By Slam & BYB</label> 			#Add your team name here
-			<font>font60</font>
-			<align>center</align>
-			<aligny>center</aligny>
-			<textcolor>white</textcolor>
-			<shadowcolor>black</shadowcolor>
-		</control>
-		<control type="image">
-			<left>5</left>
-			<top>107</top>
-			<description>Icon</description>
-			<width>405</width>
-			<height>395</height>
-			<texture>test.png</texture> 			#Add you icon here
-			<bordersize>5</bordersize>
-		</control>
+		
 		<control type="button" id="302">
-			<left>12</left>
-			<top>498</top>
+			<left>990</left>
+			<top>540</top>
 			<description>Close</description>
-			<width>390</width>
-			<height>92</height>
-			<texturefocus colordiffuse="white">close.png</texturefocus>
+			<width>75</width>
+			<height>37</height>
+			<texturefocus colordiffuse="deepskyblue">close.png</texturefocus>
             <texturenofocus colordiffuse="grey">close.png</texturenofocus>
 			<bordersize>5</bordersize>
 			<onleft>301</onleft>
       <onright>301</onright>
 		</control>
-<!-- 		<control type="textbox">
-			<description>text</description>
-			<top>550</top>
-			<left>680</left>
-			<width>850</width>
-			<height>550</height>
-			<label>Press Back to Close</label>
-			<font>font30_title</font>
-			<align>left</align>
-			<aligny></aligny>
-			<textcolor>white</textcolor>
-			<shadowcolor>black</shadowcolor>
-		</control> -->
 		<control type="textbox" id = "300">
 			<description>text</description>
-			<top>11</top>
-			<left>425</left>
-			<width>650</width>
-			<height>550</height>
-			<font>font52_title</font>
+			<top>30</top>
+			<left>50</left>
+			<width>1000</width>
+			<height>490</height>
+			<font>font13</font>
 			<align>left</align>
 			<aligny>center</aligny>
 			<textcolor>white</textcolor>

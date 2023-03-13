@@ -5,10 +5,8 @@ import xbmc
 import xbmcaddon
 import xbmcgui
 from .skinSwitch import swapSkins
-from .save_data import save_backup_restore
-from .utils import log
 from .addonvar import currSkin, user_path, db_path, addon_name, textures_db, advancedsettings_folder, advancedsettings_xml, dialog, dp, xbmcPath, packages, setting_set, addon_icon, local_string, addons_db
-from .whitelist import EXCLUDES
+from .whitelist import EXCLUDES_INSTALL, EXCLUDES_FRESH
 
 def purge_db(db):
     if os.path.exists(db):
@@ -51,7 +49,7 @@ def clear_thumbnails():
     xbmcgui.Dialog().ok(addon_name, local_string(30037))  # Thumbnails Deleted
 
 def advanced_settings():
-    selection = xbmcgui.Dialog().select(local_string(30038), ['1GB (1st - 3rd gen, Lite Firestick)','1.5GB (4k Firestick)','2GB (Firebox, Cube, Shield Tube, Firestick Max)','3GB (Nvidia Shield Pro & More)','4GB & Above Devices',local_string(30039)])  # Select Ram Size, Delete
+    selection = xbmcgui.Dialog().select(local_string(30038), ['1GB Devices (E.g. 1st-3rd gen Firestick/Firestick Lite)','1.5GB Devices (E.g. 4k Firestick)','2GB+ Devices (E.g. Shield Pro/Shield Tube/FireTV Cube)','Default (Reset to Default)',local_string(30039)])  # Select Ram Size, Delete
     if selection==0:
         xml = os.path.join(advancedsettings_folder, '1_gb.xml')
     elif selection==1:
@@ -59,10 +57,7 @@ def advanced_settings():
     elif selection==2:
         xml = os.path.join(advancedsettings_folder, '2_gb.xml')
     elif selection==3:
-        xml = os.path.join(advancedsettings_folder, '3_gb.xml')
-    elif selection==4:
-        xml = os.path.join(advancedsettings_folder,'4_gb.xml')
-    elif selection==5:
+        xml = os.path.join(advancedsettings_folder, 'default.xml')
         if os.path.exists(advancedsettings_xml):
             os.unlink(advancedsettings_xml)
         xbmc.sleep(1000)
@@ -78,35 +73,36 @@ def advanced_settings():
     os._exit(1)
 
 def fresh_start(standalone=False):
-        if not currSkin() in ['skin.estuary']:
-            swapSkins('skin.estuary')
-            x = 0
-            xbmc.sleep(100)
-            while not xbmc.getCondVisibility("Window.isVisible(yesnodialog)") and x < 150:
-                x += 1
-                xbmc.sleep(100)
-                xbmc.executebuiltin('SendAction(Select)')
-            if xbmc.getCondVisibility("Window.isVisible(yesnodialog)"):
-                xbmc.executebuiltin('SendClick(11)')
-            else: 
-                xbmc.log('Fresh Install: Skin Swap Timed Out!', xbmc.LOGINFO)
-                return False
-            xbmc.sleep(100)
-        if not currSkin() in ['skin.estuary']:
-            xbmc.log('Fresh Install: Skin Swap failed.', xbmc.LOGINFO)
-            return
-        if standalone is True:
-            save_backup_restore('backup')
-            
-        dp.create(addon_name, local_string(30043))  # Deleting files and folders...
+    if standalone:
+        yesFresh = dialog.yesno(local_string(30012), local_string(30042), nolabel=local_string(30032), yeslabel=local_string(30012))  # Are you sure?
+        if not yesFresh:
+            quit()
+    if not currSkin() in ['skin.estuary']:
+        swapSkins('skin.estuary')
+        x = 0
         xbmc.sleep(100)
-        dp.update(30, local_string(30043))
+        while not xbmc.getCondVisibility("Window.isVisible(yesnodialog)") and x < 150:
+            x += 1
+            xbmc.sleep(100)
+            xbmc.executebuiltin('SendAction(Select)')
+        if xbmc.getCondVisibility("Window.isVisible(yesnodialog)"):
+            xbmc.executebuiltin('SendClick(11)')
+        else: 
+            xbmc.log('Fresh Install: Skin Swap Timed Out!', xbmc.LOGINFO)
+            return False
         xbmc.sleep(100)
+    if not currSkin() in ['skin.estuary']:
+        xbmc.log('Fresh Install: Skin Swap failed.', xbmc.LOGINFO)
+        return
+    dp.create(addon_name, local_string(30043))  # Deleting files and folders...
+    xbmc.sleep(100)
+    dp.update(30, local_string(30043))
+    xbmc.sleep(100)
+    if standalone:
         for root, dirs, files in os.walk(xbmcPath, topdown=True):
-            dirs[:] = [d for d in dirs if d not in EXCLUDES]
+            dirs[:] = [d for d in dirs if d not in EXCLUDES_FRESH]
             for name in files:
-                if name not in EXCLUDES:
-                    log('name', name)
+                if name not in EXCLUDES_FRESH:
                     try:
                         os.remove(os.path.join(root, name))
                     except:
@@ -114,29 +110,56 @@ def fresh_start(standalone=False):
         dp.update(60, local_string(30043))
         xbmc.sleep(100)    
         for root, dirs, files in os.walk(xbmcPath,topdown=True):
-            dirs[:] = [d for d in dirs if d not in EXCLUDES]
+            dirs[:] = [d for d in dirs if d not in EXCLUDES_FRESH]
             for name in dirs:
                 if name not in ['addons', 'userdata', 'Database', 'addon_data', 'backups', 'temp']:
                     try:
                         shutil.rmtree(os.path.join(root,name),ignore_errors=True, onerror=None)
                     except:
                         xbmc.log('Unable to delete ' + name, xbmc.LOGINFO)
+
+    if not standalone:                
+        for root, dirs, files in os.walk(xbmcPath, topdown=True):
+            dirs[:] = [d for d in dirs if d not in EXCLUDES_INSTALL]
+            for name in files:
+                if name not in EXCLUDES_INSTALL:
+                    try:
+                        os.remove(os.path.join(root, name))
+                    except:
+                        xbmc.log('Unable to delete ' + name, xbmc.LOGINFO)
         dp.update(60, local_string(30043))
-        xbmc.sleep(100)
-        if not os.path.exists(packages):
-            os.mkdir(packages)
-        dp.update(100, local_string(30044))  # Done Deleting Files
-        xbmc.sleep(1000)
-        if standalone is True:
-            save_backup_restore('restore')
-            setting_set('firstrun', 'true')
-            setting_set('buildname', 'No Build Installed')
-            setting_set('buildversion', '0')
-            truncate_tables()
-            dialog.ok(addon_name, local_string(30045))  # Fresh Start Complete
-            os._exit(1)
-        else:
-            return
+        xbmc.sleep(100)    
+        for root, dirs, files in os.walk(xbmcPath,topdown=True):
+            dirs[:] = [d for d in dirs if d not in EXCLUDES_INSTALL]
+            for name in dirs:
+                if name not in ['addons', 'userdata', 'Database', 'addon_data', 'backups', 'temp']:
+                    try:
+                        shutil.rmtree(os.path.join(root,name),ignore_errors=True, onerror=None)
+                    except:
+                        xbmc.log('Unable to delete ' + name, xbmc.LOGINFO)
+    dp.update(60, local_string(30043))
+    xbmc.sleep(100)
+    if not os.path.exists(packages):
+        os.mkdir(packages)
+    dp.update(100, local_string(30044))  # Done Deleting Files
+    xbmc.sleep(1000)
+    if standalone is True:
+        setting_set('firstrun', 'true')
+        setting_set('buildname', 'No Build Installed')
+        setting_set('buildversion', '0')
+        truncate_tables()
+        dialog.ok(addon_name, local_string(30045))  # Fresh Start Complete
+        os._exit(1)
+    else:
+        return
+
+def clean_backups():
+    for filename in os.listdir(packages):
+        file_path = os.path.join(packages, filename)
+        try:
+            os.unlink(file_path)
+        except OSError:
+            shutil.rmtree(file_path)
 
 def clear_packages():
     file_count = len([name for name in os.listdir(packages)])

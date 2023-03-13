@@ -11,7 +11,7 @@ from .build_install import restore_binary, binaries_path
 
 current_build = setting('buildname')
 try:
-    current_version = setting('buildversion')
+    current_version = float(setting('buildversion')) 
 except:
     current_version = 0.0
 
@@ -31,52 +31,19 @@ class Startup:
            except:
                return
            version = 0.0
-           
            try:
                builds = json.loads(response)['builds']
                for build in builds:
                        if build.get('name') == current_build:
-                           version = str(build.get('version'))
+                           version = float(build.get('version'))
                            break
            except:
                builds = ET.fromstring(response)
                for tag in builds.findall('build'):
                        if tag.find('name').text == current_build:
-                           version = str(tag.find('version').text)
+                           version = float(tag.find('version').text)
                            break
-           
-           # 3 decimal fix
-           
-           current_bump = 0
-           version_bump = 0
-           update = False
-           
-           try:
-               current = str(current_version)
-               version = str(version)
-               c_splitted = current.split('.')
-               v_splitted = version.split('.')
-        
-               if '.' in current:
-                   current = float(f'{c_splitted[0]}.{c_splitted[1]}')
-                   if len(c_splitted) == 3:
-                       current_bump = int(c_splitted[2])
-               if '.' in version:
-                   version = float(f'{v_splitted[0]}.{v_splitted[1]}')
-                   if len(v_splitted) == 3:
-                       version_bump = int(v_splitted[2])
-               if float(version) > float(current):
-                   update = True
-               elif float(version) == float(current) and version_bump > current_bump:
-                   update = True
-               else:
-                   update = False
-           
-           except ValueError as e:
-               print(f'Invalid Version Number. It must be numeric and no more than 3 decimals. Error Details - {e}')
-               update = False
-           
-           if update and setting('update_passed') != 'true':
+           if version > current_version and setting('update_passed') != 'true':
                update_available = xbmcgui.Dialog().yesnocustom(addon_name, local_string(30047) + ' ' + current_build +' ' + local_string(30048) + '\n' + local_string(30049) + ' ' + str(current_version) + '\n' + local_string(30050) + ' ' + str(version) + '\n' + local_string(30051), 'Remind Later')
                if update_available == 1:
                    xbmc.executebuiltin(f'ActivateWindow(10001, "plugin://{addon_id}/?mode=1",return)')
@@ -113,7 +80,7 @@ class Startup:
         else:
             setting_set('savedata','false')
             
-        if 'Youtube API Keys' in save_items:
+        if 'YouTube API Keys' in save_items:
             setting_set('saveyoutube','true')
         else:
             setting_set('saveyoutube','false')
@@ -136,43 +103,31 @@ class Startup:
         setting_set('firstrunSave', 'true')
 
     def notify_check(self):
-        notify_version = self.get_notifyversion()    
-        if not setting('firstrunNotify')=='true' or notify_version > int(setting('notifyversion')):
-            self.notification()
-            
-    def notification(self):
-        from resources.lib.GUIcontrol import notify
-        d=notify.notify('notify.xml', xbmcaddon.Addon().getAddonInfo('path'), 'Default', '720p')
-        d.doModal()
-        del d
-        setting_set('firstrunNotify', 'true')
-        setting_set('notifyversion', str(self.get_notifyversion()))
+        from ..GUIcontrol import notify
+        info = notify.get_notify()
+        current_notify = int(setting('notifyversion'))
+        notify_version = info[0]
+        message = info[1]
+        if not setting('firstrunNotify')=='true' or notify_version > current_notify:
+            notify.notification(message)
+            setting_set('firstrunNotify', 'true')
+            setting_set('notifyversion', str(notify_version))  
     
-    def get_notifyversion(self):
-        try:
-            response = self.get_page(notify_url).decode('utf-8')
-        except:
-            return
-        try:
-            split_response = response.split('|||')
-            return int(split_response[0])    
-        except:
-            return False    
-
     def run_startup(self):
-        if binaries_path.exists():
-            restore_binary()
-        if setting('autoclearpackages')=='true':
-            xbmc.sleep(2000)
-            clear_packages()
-        
         if not setting('firstrunSave')=='true':
             xbmc.sleep(2000)
-        
-        self.notify_check()
-        self.check_updates()
-        
         if setting('firstrun') == 'true':
             from resources.lib.modules.addons_enable import enable_addons
+            from .save_data import backup_gui_skin
             enable_addons()
-        setting_set('firstrun', 'false')
+            backup_gui_skin()
+            setting_set('firstrun', 'false')
+        else:
+            if setting('autoclearpackages')=='true':
+                clear_packages()
+            xbmc.sleep(1000)
+            self.notify_check()
+            xbmc.sleep(3000)      #Delay Build Update Notification
+            self.check_updates()
+        if binaries_path.exists():
+            restore_binary()
