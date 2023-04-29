@@ -697,7 +697,7 @@ All changes on GitHub: https://github.com/aitschti/plugin.video.cb20
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
-</addon><addon id="plugin.video.megaiptv" name="[COLOR aqua]Mega IPTV[/COLOR]" version="1.0.1" provider-name="G-Man">
+</addon><addon id="plugin.video.megaiptv" name="[COLOR aqua]Mega IPTV[/COLOR]" version="1.1.0" provider-name="G-Man">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
 		<import addon="script.module.requests" />
@@ -707,21 +707,12 @@ All changes on GitHub: https://github.com/aitschti/plugin.video.cb20
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<summary lang="en">Live IPTV World-Wide</summary>
-		<description lang="en">An IPTV Channel Add-on with listings from IPTV.org and Fluxus IPTV </description>
+		<description lang="en">An IPTV Channel Add-on with listings from Fluxus IPTV</description>
 		<platform>all</platform>
 		<language>en</language>
 		<license>GPL-2.0-or-later</license>
-		<forum />
-		<website /> 
-		<email />
-		<source />
-		<news />
 		<assets>
 			<icon>icon.png</icon>
-			<fanart>fanart.jpg</fanart>
-			<banner />
-			<clearlogo />
-			<screenshot />
 		</assets>
 	</extension>
 </addon><addon id="plugin.video.mlbtv" name="MLB.TV®" version="2022.10.9+matrix.1" provider-name="eracknaphobia">
@@ -1516,7 +1507,7 @@ Random updates by lolage.
 				<fanart>fanart.jpg</fanart>
 		</assets>
     </extension>
-</addon><addon id="script.module.maxql" name="maxql" version="99.0.3" provider-name="Zaxxon709">
+</addon><addon id="script.module.maxql" name="maxql" version="100.0.3" provider-name="Zaxxon709">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
 	</requires>

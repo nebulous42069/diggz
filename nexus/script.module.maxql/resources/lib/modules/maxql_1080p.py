@@ -231,31 +231,11 @@ def scrubs():
         addon = xbmcaddon.Addon("plugin.video.scrubsv2")
         addon.setSetting("quality.max", res)
 
-def hdicon():
-	fedit = xbmcvfs.translatePath('special://userdata/library/video/movies/hd_4k.xml')
-	f = open(fedit,'r')
-	filedata = f.read()
-	f.close()
-	playlist = "hd.png"
-	newdata = filedata.replace("4k.png",playlist)
-	f = open(fedit,'w')
-	f.write(newdata)
-	f.close()
-
-def hdcategory():
-	fedit = xbmcvfs.translatePath('special://userdata/library/video/movies/hd_4k.xml')
-	f = open(fedit,'r')
-	filedata = f.read()
-	f.close()
-	playlist = "hd-releases-in-the-last-90-days"
-	newdata = filedata.replace("4k-releases-in-the-last-365-days",playlist)
-	f = open(fedit,'w')
-	f.write(newdata)
-	f.close()
 
 def hd_maxset_1080p():
         seren()
         fen()
+        pov()
         ezra()
         ghost()
         shadow()
@@ -274,8 +254,6 @@ def hd_maxset_1080p():
         moria()
         thepromise()
         scrubs()
-        hdcategory()
-        hdicon()
         xbmc.executebuiltin('dialog.close(all)')
         xbmc.executebuiltin('ActivateWindow(home)')
         xbmcgui.Dialog().ok('1080P Quality Conversion', 'To save changes you now need to force close Kodi, Press OK to force close Kodi')
