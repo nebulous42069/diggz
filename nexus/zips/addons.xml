@@ -2471,7 +2471,7 @@ v1.0.1 (2019-08-06)
     </assets>
     <news>See changelog for latest changes</news>
   </extension>
-</addon><addon id="skin.xenox" version="9.0.01" name="[B][COLOR gold]XeNoX[/COLOR][/B]  (High Power)" provider-name="SiLVO">
+</addon><addon id="skin.xenox" version="9.0.02" name="[B][COLOR gold]XeNoX[/COLOR][/B]  (High Power)" provider-name="SiLVO">
 	<requires>
 		<import addon="xbmc.gui" version="5.16.0" />
 		<import addon="script.skinshortcuts" version="2.0.1" />
