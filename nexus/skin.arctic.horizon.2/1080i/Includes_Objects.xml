@@ -143,6 +143,51 @@
         </definition>
     </include>
 
+
+    <include name="Object_RatingOverlay_Position_Thin">
+        <left>30</left>
+        <centertop>0</centertop>
+    </include>
+    <include name="Object_RatingOverlay_Position_Bold">
+        <left>20</left>
+        <top>20</top>
+    </include>
+    <include name="_Object_RatingOverlay">
+        <control type="group">
+            <include condition="Skin.HasSetting(SelectBox.Thin)">Object_RatingOverlay_Position_Thin</include>
+            <include condition="!Skin.HasSetting(SelectBox.Thin)">Object_RatingOverlay_Position_Bold</include>
+            <width>36</width>
+            <height>36</height>
+            <visible>!String.IsEmpty(ListItem.Rating)</visible>
+            <control type="image">
+                <bordersize>-4</bordersize>
+                <texture colordiffuse="main_bg_100">common/circle.png</texture>
+            </control>
+            <control type="image">
+                <bordersize>-14</bordersize>
+                <texture colordiffuse="main_fg_30">progress/circle/p100.png</texture>
+            </control>
+            <control type="image">
+                <bordersize>-14</bordersize>
+                <texture colordiffuse="$VAR[ColorWatchedProgress]">$VAR[Defs_Progress_Rating,progress/circle/p,.png]</texture>
+            </control>
+            <control type="image">
+                <bordersize>2</bordersize>
+                <texture colordiffuse="main_bg_100">common/circle.png</texture>
+            </control>
+            <control type="label">
+                <label>$INFO[ListItem.Rating]</label>
+                <align>center</align>
+                <font>font_hint</font>
+                <textcolor>panel_fg_100</textcolor>
+                <bottom>2</bottom>
+            </control>
+        </control>
+    </include>
+    <include name="Object_RatingOverlay">
+        <include condition="Skin.HasSetting(Indicator.Ratings)">_Object_RatingOverlay</include>
+    </include>
+
     <include name="Object_StarRating">
         <param name="selected" default="false" />
         <definition>
@@ -1372,6 +1417,7 @@
         <param name="color_nf" default="dialog_fg" />
         <param name="color_bg" default="dialog_bg_100" />
         <param name="altfocus" default="false" />
+        <param name="solidfocus">true</param>
         <param name="iconic">[Skin.HasSetting(Home.IconicMenu)]</param>
         <definition>
             <control type="$PARAM[control]" id="$PARAM[id]">
@@ -1463,6 +1509,17 @@
                     <control type="group">
                         <left>40</left>
                         <right>-20</right>
+                        <visible>![$PARAM[solidfocus]]</visible>
+                        <include content="Object_MenuBar_Item">
+                            <param name="color_bg" value="main_fg_12" />
+                            <param name="color_fg" value="main_fg_90" />
+                            <param name="font" value="$PARAM[font]" />
+                        </include>
+                    </control>
+                    <control type="group">
+                        <left>40</left>
+                        <right>-20</right>
+                        <visible>$PARAM[solidfocus]</visible>
                         <include content="Object_MenuBar_Item">
                             <param name="color_bg" value="$PARAM[color_bg]" />
                             <param name="color_fg" value="$PARAM[color]_70" />
@@ -1867,6 +1924,7 @@
         <param name="focusbounce" default="false" />
         <param name="shadow" default="true" />
         <param name="indicator_reposition">false</param>
+        <param name="indicator_visible">true</param>
         <definition>
             <control type="group">
                 <nested />
@@ -1889,6 +1947,7 @@
                     <include content="Object_Left" condition="$PARAM[indicator_reposition]">
                         <param name="left">$PARAM[indicator_left]</param>
                     </include>
+                    <visible>$PARAM[indicator_visible]</visible>
                 </include>
             </control>
         </definition>

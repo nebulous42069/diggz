@@ -15,37 +15,6 @@ from resources.libs.common import directory
 from resources.libs.common.config import CONFIG
 
 
-def trakt_menu():
-    from resources.libs import traktit
-
-    for trakt in traktit.ORDER:
-        if xbmc.getCondVisibility('System.HasAddon({0})'.format(traktit.TRAKTID[trakt]['plugin'])):
-            name = traktit.TRAKTID[trakt]['name']
-            path = traktit.TRAKTID[trakt]['path']
-            saved = traktit.TRAKTID[trakt]['saved']
-            file = traktit.TRAKTID[trakt]['file']
-            user = CONFIG.get_setting(saved)
-            auser = traktit.trakt_user(trakt)
-            icon = traktit.TRAKTID[trakt]['icon'] if os.path.exists(path) else CONFIG.ICONTRAKT
-            fanart = traktit.TRAKTID[trakt]['fanart'] if os.path.exists(path) else CONFIG.ADDON_FANART
-            menu = create_addon_data_menu('Trakt', trakt)
-            menu2 = create_save_data_menu('Trakt', trakt)
-            menu.append((CONFIG.THEME2.format('{0} Settings'.format(name)), 'RunPlugin(plugin://{0}/?mode=opensettings&name={1}&url=trakt)'.format(CONFIG.ADDON_ID, trakt)))
-
-            directory.add_file('{0}'.format(name), {'mode': 'opentraktsettings', 'name': trakt}, icon=icon, fanart=fanart, themeit=CONFIG.THEME3)
-            
-            if not os.path.exists(path):
-                directory.add_file('[COLOR red]Addon Data: Not Installed[/COLOR]', icon=icon, fanart=fanart, menu=menu)
-            elif not auser:
-                directory.add_file('[COLOR red]Addon Data: Not Authorised[/COLOR]', {'mode': 'authtrakt', 'name': trakt}, icon=icon, fanart=fanart, menu=menu)
-            else:
-                directory.add_file('[COLOR springgreen]Addon Data: {0}[/COLOR]'.format(auser), {'mode': 'authtrakt', 'name': trakt}, icon=icon, fanart=fanart, menu=menu)
-
-
-    directory.add_separator(icon=icon, themeit=CONFIG.THEME3)
-    directory.add_file('Revoke All Trakt Data', {'mode': 'addontrakt', 'name': 'all'}, icon=CONFIG.ICONTRAKT, themeit=CONFIG.THEME3)
-
-
 def debrid_menu():
     from resources.libs import debridit_rd
 

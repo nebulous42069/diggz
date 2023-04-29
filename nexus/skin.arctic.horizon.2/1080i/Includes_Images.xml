@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
+    <variable name="Image_HDR_Codec">
+        <value condition="String.IsEqual(ListItem.HdrType,dolbyvision)">other/dolbyvision.png</value>
+        <value condition="String.IsEqual(ListItem.HdrType,hdr10)">other/hdr10.png</value>
+        <value condition="String.IsEqual(ListItem.HdrType,hlg)">other/hlg.png</value>
+        <value>other/HDR.png</value>
+    </variable>
+
+    <variable name="Image_OSD_HDR_Codec">
+        <value condition="String.IsEqual(ListItem.HdrType,dolbyvision)">other/dolbyvision.png</value>
+        <value condition="String.IsEqual(ListItem.HdrType,hdr10)">other/hdr10.png</value>
+        <value condition="String.IsEqual(ListItem.HdrType,hlg)">other/hlg.png</value>
+        <value>other/HDR.png</value>
+    </variable>
+
+    <variable name="Image_Background_Floor">
+        <value condition="Skin.String(BackgroundStyle,Fanart)">background/combined_fanart.png</value>
+        <value condition="Skin.String(BackgroundStyle,Blur)">background/combined_flixart.png</value>
+        <value>background/combined_stretch.png</value>
+    </variable>
+
     <variable name="Image_SimpleBackground">
         <value condition="!String.IsEmpty(Skin.String(Background.Image))">$INFO[Skin.String(Background.Image)]</value>
         <value>background/blur2.png</value>
@@ -80,13 +100,15 @@
     </variable>
 
     <variable name="Image_GenreIcon">
+        <value condition="!String.IsEmpty(Skin.String(CustomGenreIconLocation))">$INFO[Skin.String(CustomGenreIconLocation)]$INFO[ListItem.Label,,.png]</value>
         <value condition="System.HasAddon(resource.images.moviegenreicons.horizon)">$INFO[ListItem.Label,resource://resource.images.moviegenreicons.horizon/,.png]</value>
         <value condition="System.HasAddon(resource.images.moviegenreicons.transparent)">$INFO[ListItem.Label,resource://resource.images.moviegenreicons.transparent/,.png]</value>
     </variable>
 
-    <variable name="Image_GenreIconPath">
-        <value condition="System.HasAddon(resource.images.moviegenreicons.horizon)">resource://resource.images.moviegenreicons.horizon/</value>
-        <value condition="System.HasAddon(resource.images.moviegenreicons.transparent)">resource://resource.images.moviegenreicons.transparent/</value>
+    <variable name="Image_GenreIcon_Path">
+        <value condition="!String.IsEmpty(Skin.String(CustomGenreIconLocation))">$INFO[Skin.String(CustomGenreIconLocation)]</value>
+        <value condition="System.HasAddon(resource.images.moviegenreicons.horizon)">resource.images.moviegenreicons.horizon</value>
+        <value condition="System.HasAddon(resource.images.moviegenreicons.transparent)">resource.images.moviegenreicons.transparent</value>
     </variable>
 
     <variable name="Image_FullscreenWidget_Artwork">

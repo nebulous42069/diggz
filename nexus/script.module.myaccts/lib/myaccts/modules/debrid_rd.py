@@ -82,6 +82,29 @@ def fenrd_auth():
                 addon.setSetting("rd.secret", your_secret)
 
 
+#POV RD
+def povrd_auth():
+        
+        debrid_addon = xbmcvfs.translatePath('special://home/addons/plugin.video.pov/')   
+        debrid_file = xbmcvfs.translatePath('special://userdata/addon_data/plugin.video.pov/settings.xml')
+        
+        if xbmcvfs.exists(debrid_addon) and xbmcvfs.exists(debrid_file):
+
+                myaccts = xbmcaddon.Addon("script.module.myaccts")
+                your_username = myaccts.getSetting("realdebrid.username")
+                your_token = myaccts.getSetting("realdebrid.token")
+                your_client_id = myaccts.getSetting("realdebrid.client_id")
+                your_refresh = myaccts.getSetting("realdebrid.refresh")
+                your_secret = myaccts.getSetting("realdebrid.secret")
+                
+                addon = xbmcaddon.Addon("plugin.video.pov")
+                addon.setSetting("rd.username", your_username)
+                addon.setSetting("rd.token", your_token)
+                addon.setSetting("rd.client_id", your_client_id)
+                addon.setSetting("rd.refresh", your_refresh)
+                addon.setSetting("rd.secret", your_secret)
+
+
 #Umbrella RD
 def umbrd_auth():
         
@@ -166,11 +189,11 @@ def ghostrd_auth():
                 addon.setSetting("debrid_use_ad", ad_use)
 
 
-#Genocide RD
-def genociderd_auth():
+#Unleashed RD
+def unleashedrd_auth():
         
-        debrid_addon = xbmcvfs.translatePath('special://home/addons/plugin.video.Genocide/')      
-        debrid_file = xbmcvfs.translatePath('special://userdata/addon_data/plugin.video.Genocide/settings.xml')
+        debrid_addon = xbmcvfs.translatePath('special://home/addons/plugin.video.unleashed/')      
+        debrid_file = xbmcvfs.translatePath('special://userdata/addon_data/plugin.video.unleashed/settings.xml')
         
         if xbmcvfs.exists(debrid_addon) and xbmcvfs.exists(debrid_file):
 
@@ -181,7 +204,7 @@ def genociderd_auth():
                 your_refresh = myaccts.getSetting("realdebrid.refresh")
                 your_secret = myaccts.getSetting("realdebrid.secret")
                 
-                addon = xbmcaddon.Addon("plugin.video.Genocide")
+                addon = xbmcaddon.Addon("plugin.video.unleashed")
                 addon.setSetting("rd.auth", your_token)
                 addon.setSetting("rd.client_id", your_client_id)
                 addon.setSetting("rd.refresh", your_refresh)
@@ -366,56 +389,6 @@ def metvrd_auth():
                 addon.setSetting("debrid_select", d_select)
 
 
-#KodiVerse RD
-def kverserd_auth():
-        
-        debrid_addon = xbmcvfs.translatePath('special://home/addons/plugin.video.KodiVerse/')       
-        debrid_file = xbmcvfs.translatePath('special://userdata/addon_data/plugin.video.KodiVerse/settings.xml')
-        
-        if xbmcvfs.exists(debrid_addon) and xbmcvfs.exists(debrid_file):
-
-                myaccts = xbmcaddon.Addon("script.module.myaccts")
-                your_username = myaccts.getSetting("realdebrid.username")
-                your_token = myaccts.getSetting("realdebrid.token")
-                your_client_id = myaccts.getSetting("realdebrid.client_id")
-                your_refresh = myaccts.getSetting("realdebrid.refresh")
-                your_secret = myaccts.getSetting("realdebrid.secret")
-                
-                addon = xbmcaddon.Addon("plugin.video.KodiVerse")
-                addon.setSetting("rd.auth", your_token)
-                addon.setSetting("rd.client_id", your_client_id)
-                addon.setSetting("rd.refresh", your_refresh)
-                addon.setSetting("rd.secret", your_secret)
-
-                d_select = ("0")
-                addon.setSetting("debrid_select", d_select)
-
-
-#4K RD
-def fourkrd_auth():
-        
-        debrid_addon = xbmcvfs.translatePath('special://home/addons/plugin.video.4k/')       
-        debrid_file = xbmcvfs.translatePath('special://userdata/addon_data/plugin.video.4k/settings.xml')
-        
-        if xbmcvfs.exists(debrid_addon) and xbmcvfs.exists(debrid_file):
-
-                myaccts = xbmcaddon.Addon("script.module.myaccts")
-                your_username = myaccts.getSetting("realdebrid.username")
-                your_token = myaccts.getSetting("realdebrid.token")
-                your_client_id = myaccts.getSetting("realdebrid.client_id")
-                your_refresh = myaccts.getSetting("realdebrid.refresh")
-                your_secret = myaccts.getSetting("realdebrid.secret")
-                
-                addon = xbmcaddon.Addon("plugin.video.4k")
-                addon.setSetting("rd.auth", your_token)
-                addon.setSetting("rd.client_id", your_client_id)
-                addon.setSetting("rd.refresh", your_refresh)
-                addon.setSetting("rd.secret", your_secret)
-
-                d_select = ("0")
-                addon.setSetting("debrid_select", d_select)
-                
-
 #ResolveURL RD
 def rurlrd_auth():
         
@@ -486,10 +459,11 @@ def debrid_auth_rd(): #Auth All Supported Addons
         serenrd_auth()
         ezrard_auth()
         fenrd_auth()
+        povrd_auth()
         umbrd_auth()
         shadowrd_auth()
         ghostrd_auth()
-        genociderd_auth()
+        unleashedrd_auth()
         chainsrd_auth()
         moriard_auth()
         baserd_auth()
@@ -497,8 +471,6 @@ def debrid_auth_rd(): #Auth All Supported Addons
         mdrd_auth()
         asgardrd_auth()
         metvrd_auth()
-        kverserd_auth()
-        fourkrd_auth()
         rurlrd_auth()
         myaccountsrd_auth()
         realizer_auth()

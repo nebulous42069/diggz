@@ -1205,6 +1205,7 @@
                         <param name="indicator">true</param>
                         <param name="focusbounce">true</param>
                     </include>
+                    <include>Object_RatingOverlay</include>
                 </control>
             </control>
         </definition>
@@ -1250,6 +1251,7 @@
                         <param name="indicator">true</param>
                         <param name="focusbounce">false</param>
                     </include>
+                    <include>Object_RatingOverlay</include>
                 </control>
             </control>
         </definition>
@@ -1407,6 +1409,7 @@
                         <param name="indicator">$PARAM[indicator]</param>
                         <param name="focusbounce">true</param>
                     </include>
+                    <include condition="$PARAM[fg_layer]">Object_RatingOverlay</include>
                 </control>
             </control>
         </definition>
@@ -1444,8 +1447,8 @@
                 <textcolor>main_fg_70</textcolor>
                 <font>font_mini_plot</font>
                 <align>left</align>
-                <include content="Object_AutoScroll" condition="!$PARAM[selected]">
-                    <param name="autoscroll">false</param>
+                <include content="Defs_AutoScroll_TextBox">
+                    <param name="condition">$PARAM[selected]</param>
                 </include>
             </control>
         </control>
@@ -1837,7 +1840,9 @@
                     <left>35</left>
                     <right>35</right>
                     <align>left</align>
-                    <autoscroll delay="6000" time="3000" repeat="10000">$PARAM[selected]</autoscroll>
+                    <include content="Defs_AutoScroll_TextBox">
+                        <param name="condition">$PARAM[selected]</param>
+                    </include>
                 </include>
                 <include content="Object_SelectBox" condition="$PARAM[selected]">
                     <param name="indicator">false</param>
@@ -2029,6 +2034,7 @@
                         <param name="selected">$PARAM[selected]</param>
                         <param name="shadow">false</param>
                         <param name="gradient_fade">16</param>
+                        <visible>!$EXP[Exp_IsPVRItem]</visible>
                     </include>
                     <include condition="$PARAM[variation] + !$PARAM[selected]">Object_Indicator</include>
                 </control>
@@ -2052,6 +2058,7 @@
                     <param name="indicator">$PARAM[variation]</param>
                     <param name="focusbounce">true</param>
                 </include>
+                <include>Object_RatingOverlay</include>
             </control>
         </definition>
     </include>
@@ -2108,6 +2115,7 @@
                     <param name="indicator">false</param>
                     <param name="focusbounce">true</param>
                 </include>
+                <include>Object_RatingOverlay</include>
             </control>
         </definition>
     </include>
@@ -2152,6 +2160,7 @@
                         <param name="selected">$PARAM[selected]</param>
                         <param name="shadow">false</param>
                         <param name="gradient_fade">23</param>
+                        <visible>!$EXP[Exp_IsPVRItem]</visible>
                     </include>
                 </control>
                 <control type="group">
@@ -2193,6 +2202,7 @@
                         <param name="indicator">false</param>
                         <param name="focusbounce">true</param>
                     </include>
+                    <include>Object_RatingOverlay</include>
                 </include>
             </control>
         </definition>

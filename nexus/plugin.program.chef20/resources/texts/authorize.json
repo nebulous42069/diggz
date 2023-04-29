@@ -17,7 +17,11 @@
             {
                 "name": "Install Ezra",
                 "url": "installaddon(plugin.video.ezra)"
-            }
+            },
+            {
+                "name": "Install POV",
+                "url": "installaddon(plugin.video.pov)"
+            }			
         ]
     },	
     "Authorize Real Debrid": {
@@ -28,25 +32,25 @@
                 "url": "RunScript(script.module.myaccts, action=realdebridAuth)"
             },
             {
-                "name": "View Your Debrid Account",
+                "name": "Re-sync real-debrid data with all add-ons",
+                "url": "RunScript(script.module.myaccts, action=realdebridSync)"
+            },
+            {
+                "name": "View Your Debrid Account Status",
                 "url": "RunScript(script.module.myaccts, action=realdebridAcct)"
             },
             {
                 "name": "View Your Saved Data",
                 "url": "ActivateWindow(10001,plugin://script.module.myauth/?mode=realdebrid,return)"
-            },
+            },									
             {
-                "name": "Re-sync real-debrid data with all add-ons",
-                "url": "RunScript(script.module.myaccts, action=realdebridSync)"
+                "name": "Check If your VPN is compatible with Real Debrid",
+                "url": "ActivateWindow(10001,plugin://script.RealDebrid.vpn/,return)"
             },
             {
                 "name": "Revoke All Real Debrid Data",
                 "url": "PlayMedia(plugin://script.module.myauth/?mode=addondebrid_rd&name=all)"
-            },						
-            {
-                "name": "Check If your VPN is compatible with Real Debrid",
-                "url": "ActivateWindow(10001,plugin://script.RealDebrid.vpn/,return)"
-            }
+            }			
         ]
     },	
     "Authorize Premiumize": {

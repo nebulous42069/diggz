@@ -64,6 +64,23 @@ def fenpm_auth():
                 addon.setSetting("pm.token", your_token)
 
 
+#POV PM
+def povpm_auth():
+
+        debrid_addon = xbmcvfs.translatePath('special://home/addons/plugin.video.pov/')   
+        debrid_file = xbmcvfs.translatePath('special://userdata/addon_data/plugin.video.pov/settings.xml')
+        
+        if xbmcvfs.exists(debrid_addon) and xbmcvfs.exists(debrid_file):
+
+                myaccts = xbmcaddon.Addon("script.module.myaccts")
+                your_username = myaccts.getSetting("premiumize.username")
+                your_token = myaccts.getSetting("premiumize.token")
+                
+                addon = xbmcaddon.Addon("plugin.video.pov")
+                addon.setSetting("pm.account_id", your_username)
+                addon.setSetting("pm.token", your_token)
+                
+
 #Umbrella PM
 def umbpm_auth():
 
@@ -131,11 +148,11 @@ def ghostpm_auth():
                 addon.setSetting("debrid_use_ad", ad_use)
 
 
-#Genocide PM
-def genocidepm_auth():
+#Unleashed PM
+def unleashedpm_auth():
 
-        debrid_addon = xbmcvfs.translatePath('special://home/addons/plugin.video.Genocide/')      
-        debrid_file = xbmcvfs.translatePath('special://userdata/addon_data/plugin.video.Genocide/settings.xml')
+        debrid_addon = xbmcvfs.translatePath('special://home/addons/plugin.video.unleashed/')      
+        debrid_file = xbmcvfs.translatePath('special://userdata/addon_data/plugin.video.unleashed/settings.xml')
         
         if xbmcvfs.exists(debrid_addon) and xbmcvfs.exists(debrid_file):
 
@@ -143,7 +160,7 @@ def genocidepm_auth():
                 your_username = myaccts.getSetting("premiumize.username")
                 your_token = myaccts.getSetting("premiumize.token")
                 
-                addon = xbmcaddon.Addon("plugin.video.Genocide")
+                addon = xbmcaddon.Addon("plugin.video.unleashed")
                 addon.setSetting("premiumize.token", your_token)
 
                 d_select = ("1")
@@ -283,44 +300,6 @@ def metvpm_auth():
                 addon.setSetting("debrid_select", d_select)
 
 
-#KodiVerse PM
-def kversepm_auth():
-
-        debrid_addon = xbmcvfs.translatePath('special://home/addons/plugin.video.KodiVerse/')       
-        debrid_file = xbmcvfs.translatePath('special://userdata/addon_data/plugin.video.KodiVerse/settings.xml')
-        
-        if xbmcvfs.exists(debrid_addon) and xbmcvfs.exists(debrid_file):
-
-                myaccts = xbmcaddon.Addon("script.module.myaccts")
-                your_username = myaccts.getSetting("premiumize.username")
-                your_token = myaccts.getSetting("premiumize.token")
-                
-                addon = xbmcaddon.Addon("plugin.video.KodiVerse")
-                addon.setSetting("premiumize.token", your_token)
-
-                d_select = ("1")
-                addon.setSetting("debrid_select", d_select)
-
-
-#4K PM
-def fourkpm_auth():
-
-        debrid_addon = xbmcvfs.translatePath('special://home/addons/plugin.video.4k/')       
-        debrid_file = xbmcvfs.translatePath('special://userdata/addon_data/plugin.video.4k/settings.xml')
-        
-        if xbmcvfs.exists(debrid_addon) and xbmcvfs.exists(debrid_file):
-
-                myaccts = xbmcaddon.Addon("script.module.myaccts")
-                your_username = myaccts.getSetting("premiumize.username")
-                your_token = myaccts.getSetting("premiumize.token")
-                
-                addon = xbmcaddon.Addon("plugin.video.4k")
-                addon.setSetting("premiumize.token", your_token)
-
-                d_select = ("1")
-                addon.setSetting("debrid_select", d_select)
-                
-
 #ResolveURL PM
 def rurlpm_auth():
 
@@ -361,8 +340,8 @@ def myaccountspm_auth():
 #Premiumizer PM
 def premiumizer_auth():
 
-        debrid_addon = xbmcvfs.translatePath('special://home/addons/plugin.video.premiumizer/')        
-        debrid_file = xbmcvfs.translatePath('special://userdata/addon_data/plugin.video.premiumizer/settings.xml')
+        debrid_addon = xbmcvfs.translatePath('special://home/addons/plugin.video.premiumizerx/')        
+        debrid_file = xbmcvfs.translatePath('special://userdata/addon_data/plugin.video.premiumizerx/settings.xml')
         
         if xbmcvfs.exists(debrid_addon) and xbmcvfs.exists(debrid_file):
 
@@ -370,7 +349,7 @@ def premiumizer_auth():
                 your_username = myaccts.getSetting("premiumize.username")
                 your_token = myaccts.getSetting("premiumize.token")
                 
-                addon = xbmcaddon.Addon("plugin.video.premiumizer")
+                addon = xbmcaddon.Addon("plugin.video.premiumizerx")
                 addon.setSetting("premiumize.token", your_token)
 
 
@@ -380,10 +359,11 @@ def debrid_auth_pm(): #Auth All Supported Addons
         serenpm_auth()
         ezrapm_auth()
         fenpm_auth()
+        povpm_auth()
         umbpm_auth()
         shadowpm_auth()
         ghostpm_auth()
-        genocidepm_auth()
+        unleashedpm_auth()
         chainspm_auth()
         moriapm_auth()
         basepm_auth()
@@ -391,8 +371,6 @@ def debrid_auth_pm(): #Auth All Supported Addons
         mdpm_auth()
         asgardpm_auth()
         metvpm_auth()
-        kversepm_auth()
-        fourkpm_auth()
         rurlpm_auth()
         myaccountspm_auth()
         premiumizer_auth()

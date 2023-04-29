@@ -92,13 +92,25 @@
             "plugins": "52"
         },
         "tvshows": {
-            "rule": "Container.Content(tvshows)",
+            "rule": "!String.IsEqual(Container.Property(param.info),episode_groups) + Container.Content(tvshows)",
             "viewtypes": ["51", "510", "512", "511", "517", "57", "570", "572", "52", "520", "521", "527", "550", "551", "552", "557", "558", "58",  "580", "581", "522"],
             "library": "52",
             "plugins": "52"
         },
+        "episode-groups-tvshows": {
+            "rule": "String.IsEqual(Container.Property(param.info),episode_groups) + Container.Content(tvshows)",
+            "viewtypes": ["51", "510", "512", "511", "517", "57", "570", "572", "52", "520", "521", "527", "550", "551", "552", "557", "558", "58",  "580", "581", "522"],
+            "library": "51",
+            "plugins": "51"
+        },
         "seasons": {
-            "rule": "Container.Content(seasons)",
+            "rule": "!String.IsEqual(Container.Property(param.info),episode_group_seasons) + Container.Content(seasons)",
+            "viewtypes": ["512", "511", "517", "57", "570", "572", "52", "520", "521", "527", "550", "551", "552", "557", "558", "58",  "580", "581"],
+            "library": "512",
+            "plugins": "512"
+        },
+        "episode-groups-seasons": {
+            "rule": "String.IsEqual(Container.Property(param.info),episode_group_seasons) + Container.Content(seasons)",
             "viewtypes": ["512", "511", "517", "57", "570", "572", "52", "520", "521", "527", "550", "551", "552", "557", "558", "58",  "580", "581"],
             "library": "512",
             "plugins": "512"
@@ -223,8 +235,20 @@
             "library": "50",
             "plugins": "50"
         },
+        "games": {
+            "rule": "Container.Content(games)",
+            "viewtypes": ["50", "500", "502", "501", "508", "551", "552", "557", "540", "54"],
+            "library": "50",
+            "plugins": "50"
+        },
+        "none-games": {
+            "rule": "Window.IsVisible(MyGames.xml) + Container.Content()",
+            "viewtypes": ["50", "500", "502", "501", "508", "551", "552", "557", "540", "54"],
+            "library": "50",
+            "plugins": "50"
+        },
         "none": {
-            "rule": "Container.Content()",
+            "rule": "!Window.IsVisible(MyGames.xml) + Container.Content()",
             "viewtypes": ["50", "500", "502", "501", "508", "551", "552", "557", "540", "54"],
             "library": "50",
             "plugins": "50"

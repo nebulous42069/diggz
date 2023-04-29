@@ -209,11 +209,7 @@
         <param name="toggle" default="false" />
         <definition>
             <control type="group">
-                <visible>!Window.IsVisible(DialogSettings.xml)</visible>
-                <visible>Control.HasFocus($PARAM[buttonid]) | Control.HasFocus($PARAM[id])</visible>
                 <include>Animation_SlideIn_Dialog</include>
-                <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,0) | Container($PARAM[id]).IsUpdating</visible>
-                <animation effect="fade" start="100" end="0" condition="Integer.IsEqual(Container($PARAM[id]).NumItems,0)">Conditional</animation>
                 <right>40</right>
                 <width>$PARAM[width]</width>
                 <bottom>200</bottom>
@@ -288,8 +284,27 @@
                     <width>16</width>
                     <texture colordiffuse="dialog_bg_100" flipy="true">arrows/arrow-menu-up.png</texture>
                 </control>
+                <nested />
             </control>
         </definition>
+    </include>
+
+    <include name="OSD_Stream_Selector_Loading">
+        <control type="group">
+            <bottom>20</bottom>
+            <left>40</left>
+            <height>80</height>
+            <control type="label">
+                <textcolor>dialog_fg_70</textcolor>
+                <label>$LOCALIZE[31023]...</label>
+                <visible>Container(9000).IsUpdating + Integer.IsEqual(Container(9000).NumItems,0)</visible>
+            </control>
+            <control type="label">
+                <textcolor>dialog_fg_70</textcolor>
+                <label>$LOCALIZE[31379]</label>
+                <visible>!Container(9000).IsUpdating + Integer.IsEqual(Container(9000).NumItems,0)</visible>
+            </control>
+        </control>
     </include>
 
     <include name="OSD_Button_HintLabel">
@@ -477,14 +492,15 @@
             <visible>Player.HasMedia</visible>
             <animation effect="fade" start="100" end="0" condition="!Player.Seeking" reversible="false" delay="300" time="0">Conditional</animation>
             <animation effect="fade" start="0" end="100" condition="Player.Seeking" reversible="false" time="0">Conditional</animation>
-            <width>1760</width>
+            <left>-40</left>
+            <right>-40</right>
             <height>112</height>
             <centertop>50%</centertop>
 
             <texturebg colordiffuse="00ffffff">progress/slider_bg.png</texturebg>
             <righttexture colordiffuse="panel_fg_100">progress/slider_nib.png</righttexture>
-            <lefttexture colordiffuse="00ffffff">progress/progress-left.png</lefttexture>
-            <midtexture colordiffuse="00ffffff">progress/progress-end.png</midtexture>
+            <lefttexture />
+            <midtexture />
             <visible>Player.SeekEnabled + !Pvr.IsPlayingTv + !Player.ChannelPreviewActive</visible>
         </control>
 
@@ -507,7 +523,7 @@
             <visible>Player.HasMedia</visible>
             <animation effect="fade" start="100" end="0" condition="!Player.Seeking" reversible="false" delay="300" time="0">Conditional</animation>
             <animation effect="fade" start="0" end="100" condition="Player.Seeking" reversible="false" time="0">Conditional</animation>
-            <width>1760</width>
+            <width>100%</width>
             <height>112</height>
             <centertop>50%</centertop>
             <info>Player.Progress</info>
@@ -615,11 +631,11 @@
                 <!-- HDR -->
                 <include content="Info_Codecs_MonoIcon">
                     <param name="colordiffuse">panel_fg_100</param>
-                    <param name="icon">other/HDR.png</param>
+                    <param name="icon">$VAR[Image_OSD_HDR_Codec]</param>
                     <param name="basewidth">48</param>
                     <param name="iconwidth">80</param>
                     <param name="iconheight">56</param>
-                    <param name="visible">String.Contains(VideoPlayer.FileNameAndPath,HDR)</param>
+                    <param name="visible">!String.IsEmpty(VideoPlayer.HdrType)</param>
                 </include>
 
             </control>
@@ -780,7 +796,7 @@
                     <height>24</height>
                     <width>24</width>
                     <animation effect="slide" end="52" condition="$PARAM[istempo] + String.IsEqual(Player.PlaySpeed,0.90)">Conditional</animation>
-                    <animation effect="slide" end="104" condition="$PARAM[istempo] + String.IsEqual(Player.PlaySpeed,1.00) | String.IsEqual(Player.PlaySpeed,0.00)">Conditional</animation>
+                    <animation effect="slide" end="104" condition="$PARAM[istempo] + [String.IsEqual(Player.PlaySpeed,1.00) | String.IsEqual(Player.PlaySpeed,0.00)]">Conditional</animation>
                     <animation effect="slide" end="156" condition="$PARAM[istempo] + String.IsEqual(Player.PlaySpeed,1.10)">Conditional</animation>
                     <animation effect="slide" end="208" condition="$PARAM[istempo] + String.IsEqual(Player.PlaySpeed,1.20)">Conditional</animation>
                     <animation effect="slide" end="260" condition="$PARAM[istempo] + String.IsEqual(Player.PlaySpeed,1.30)">Conditional</animation>
@@ -823,7 +839,7 @@
 
     <include name="OSD_PVRChannelSwitch">
         <control type="group">
-            <visible>Player.ShowInfo</visible>
+            <visible>Player.ShowInfo | Window.IsVisible(DialogFullScreenInfo.xml)</visible>
             <visible>!Window.IsVisible(videoosd)</visible>
             <animation type="Visible" reversible="false">
                 <effect type="fade" start="0" end="100" time="300" delay="300"/>
@@ -855,37 +871,6 @@
                         <aspectratio scalediffuse="false">scale</aspectratio>
                         <visible>!String.IsEmpty(Pvr.EPGEventIcon)</visible>
                     </control>
-                    <!-- <control type="image">
-                        <texture border="12" colordiffuse="bbffffff">diffuse/poster_fade.png</texture>
-                    </control>
-                    <control type="label">
-                        <font>font_tiny_bold</font>
-                        <textcolor>panel_fg_90</textcolor>
-                        <label>$INFO[VideoPlayer.ChannelName]</label>
-                        <shadowcolor>shadow_hard</shadowcolor>
-                        <height>20</height>
-                        <top>20</top>
-                        <textoffsetx>20</textoffsetx>
-                        <selectedcolor>panel_fg_90</selectedcolor>
-                    </control>
-                    <control type="label">
-                        <font>font_tiny_bold</font>
-                        <textcolor>panel_fg_90</textcolor>
-                        <label>$INFO[VideoPlayer.Season,S,]$INFO[VideoPlayer.Episode,E, ]$INFO[VideoPlayer.Title]</label>
-                        <height>20</height>
-                        <bottom>50</bottom>
-                        <textoffsetx>20</textoffsetx>
-                        <selectedcolor>panel_fg_90</selectedcolor>
-                    </control>
-                    <control type="label">
-                        <font>font_tiny</font>
-                        <textcolor>panel_fg_70</textcolor>
-                        <label>$INFO[VideoPlayer.StartTime]$INFO[VideoPlayer.EndTime, - ,]</label>
-                        <height>20</height>
-                        <bottom>20</bottom>
-                        <textoffsetx>20</textoffsetx>
-                        <selectedcolor>panel_fg_90</selectedcolor>
-                    </control> -->
                     <control type="progress">
                         <texturebg>pvr/progress-episode-b.png</texturebg>
                         <lefttexture colordiffuse="panel_fg_30">pvr/progress-episode-l.png</lefttexture>
@@ -991,9 +976,23 @@
                     <height>320</height>
                     <bottom>view_top</bottom>
                     <left>view_pad</left>
+
                     <control type="group">
                         <animation effect="zoom" start="0,0,320,320" end="0,-360,460,460" time="400" tween="cubic" easing="out" reversible="false" condition="[Window.IsVisible(script-cu-lrclyrics-main.xml) | [!String.IsEmpty(Window(Home).Property(OSDArtistDetails)) + !Window.IsVisible(1142)]]">Conditional</animation>
                         <animation effect="zoom" end="0,0,320,320" start="0,-360,460,460" time="400" tween="cubic" easing="out" reversible="false" condition="![Window.IsVisible(script-cu-lrclyrics-main.xml) | [!String.IsEmpty(Window(Home).Property(OSDArtistDetails)) + !Window.IsVisible(1142)]]">Conditional</animation>
+
+                        <control type="image">
+                            <bottom>50%</bottom>
+                            <width>320</width>
+                            <height>320</height>
+                            <bordersize>20</bordersize>
+                            <texture background="true">$INFO[Player.Art(album.discart)]</texture>
+                            <animation effect="rotate" condition="!Player.Paused + ![Window.IsVisible(script-cu-lrclyrics-main.xml) | [!String.IsEmpty(Window(Home).Property(OSDArtistDetails)) + !Window.IsVisible(1142)]]" start="0" end="360" loop="true" time="50000" center="auto" reversible="false">Conditional</animation>
+                            <visible>![Window.IsVisible(script-cu-lrclyrics-main.xml) | [!String.IsEmpty(Window(Home).Property(OSDArtistDetails)) + !Window.IsVisible(1142)]]</visible>
+                            <animation effect="slide" start="0" end="0,160" time="400" tween="cubic" easing="out" reversible="false">Hidden</animation>
+                            <animation effect="slide" end="0" start="0,160" time="400" tween="cubic" easing="out" reversible="false">Visible</animation>
+                        </control>
+
                         <include content="Object_BigPoster">
                             <param name="diffuse">diffuse/square_w440_h440.png</param>
                             <param name="icon">$INFO[Player.Icon]</param>

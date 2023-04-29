@@ -63,6 +63,23 @@ def fenad_auth():
                 addon.setSetting("ad.token", your_token)
 
 
+#POV AD
+def povad_auth():
+
+        debrid_addon = xbmcvfs.translatePath('special://home/addons/plugin.video.pov/')        
+        debrid_file = xbmcvfs.translatePath('special://userdata/addon_data/plugin.video.pov/settings.xml')
+        
+        if xbmcvfs.exists(debrid_addon) and xbmcvfs.exists(debrid_file):
+
+                myaccts = xbmcaddon.Addon("script.module.myaccts")
+                your_username = myaccts.getSetting("alldebrid.username")
+                your_token = myaccts.getSetting("alldebrid.token")
+                
+                addon = xbmcaddon.Addon("plugin.video.pov")
+                addon.setSetting("ad.account_id", your_username)
+                addon.setSetting("ad.token", your_token)
+                
+
 #Umbrella AD
 def umbad_auth():
 
@@ -132,11 +149,11 @@ def ghostad_auth():
                 addon.setSetting("debrid_use_ad", ad_use)
 
 
-#Genocide AD
-def genocidead_auth():
+#Unleashed AD
+def unleashedad_auth():
 
-        debrid_addon = xbmcvfs.translatePath('special://home/addons/plugin.video.Genocide/')        
-        debrid_file = xbmcvfs.translatePath('special://userdata/addon_data/plugin.video.Genocide/settings.xml')
+        debrid_addon = xbmcvfs.translatePath('special://home/addons/plugin.video.unleashed/')        
+        debrid_file = xbmcvfs.translatePath('special://userdata/addon_data/plugin.video.unleashed/settings.xml')
         
         if xbmcvfs.exists(debrid_addon) and xbmcvfs.exists(debrid_file):
 
@@ -144,7 +161,7 @@ def genocidead_auth():
                 your_username = myaccts.getSetting("alldebrid.username")
                 your_token = myaccts.getSetting("alldebrid.token")
                 
-                addon = xbmcaddon.Addon("plugin.video.Genocide")
+                addon = xbmcaddon.Addon("plugin.video.unleashed")
                 addon.setSetting("alldebrid.username", your_username)
                 addon.setSetting("alldebrid.token", your_token)
 
@@ -292,46 +309,6 @@ def metvad_auth():
                 addon.setSetting("debrid_select", d_select)
 
 
-#KodiVerse AD
-def kversead_auth():
-
-        debrid_addon = xbmcvfs.translatePath('special://home/addons/plugin.video.KodiVerse/')        
-        debrid_file = xbmcvfs.translatePath('special://userdata/addon_data/plugin.video.KodiVerse/settings.xml')
-        
-        if xbmcvfs.exists(debrid_addon) and xbmcvfs.exists(debrid_file):
-
-                myaccts = xbmcaddon.Addon("script.module.myaccts")
-                your_username = myaccts.getSetting("alldebrid.username")
-                your_token = myaccts.getSetting("alldebrid.token")
-                
-                addon = xbmcaddon.Addon("plugin.video.KodiVerse")
-                addon.setSetting("alldebrid.username", your_username)
-                addon.setSetting("alldebrid.token", your_token)
-
-                d_select = ("2")
-                addon.setSetting("debrid_select", d_select)
-
-
-#4K AD
-def fourkad_auth():
-
-        debrid_addon = xbmcvfs.translatePath('special://home/addons/plugin.video.4k/')        
-        debrid_file = xbmcvfs.translatePath('special://userdata/addon_data/plugin.video.4k/settings.xml')
-        
-        if xbmcvfs.exists(debrid_addon) and xbmcvfs.exists(debrid_file):
-
-                myaccts = xbmcaddon.Addon("script.module.myaccts")
-                your_username = myaccts.getSetting("alldebrid.username")
-                your_token = myaccts.getSetting("alldebrid.token")
-                
-                addon = xbmcaddon.Addon("plugin.video.4k")
-                addon.setSetting("alldebrid.username", your_username)
-                addon.setSetting("alldebrid.token", your_token)
-
-                d_select = ("2")
-                addon.setSetting("debrid_select", d_select)
-                
-
 #ResolveURL AD
 def rurlad_auth():
 
@@ -375,10 +352,11 @@ def debrid_auth_ad(): #Auth All Supported Addons
         serenad_auth()
         ezraad_auth()
         fenad_auth()
+        povad_auth()
         umbad_auth()
         shadowad_auth()
         ghostad_auth()
-        genocidead_auth()
+        unleashedad_auth()
         chainsad_auth()
         moriaad_auth()
         basead_auth()
@@ -386,7 +364,5 @@ def debrid_auth_ad(): #Auth All Supported Addons
         mdad_auth()
         asgardad_auth()
         metvad_auth()
-        kversead_auth()
-        fourkad_auth()
         rurlad_auth()
         myaccountsad_auth()

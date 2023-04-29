@@ -34,8 +34,9 @@
 	</category>
 	<category label="Manage Data">
 		<setting type="lsep" label="Manage Your Debrid Accounts" />
-		<setting type="action" label="View Your Debrid Data" option="close" action="ActivateWindow(10001,plugin://script.module.myauth/?mode=realdebrid,return)" visible="true" />
-		<setting type="action" label="Revoke All Debrid Data" option="close" action="PlayMedia(plugin://script.module.myauth/?mode=addondebrid&name=all)" visible="true" />
+		<setting type="action" label="Real-Debrid Data" option="close" action="ActivateWindow(10001,plugin://script.module.myauth/?mode=realdebrid,return)" visible="true" />
+		<setting type="action" label="Premiumize Data" option="close" action="ActivateWindow(10001,plugin://script.module.myauth/?mode=premiumize,return)" visible="true" />
+		<setting type="action" label="All-Debrid Data" option="close" action="ActivateWindow(10001,plugin://script.module.myauth/?mode=alldebrid,return)" visible="true" />
 		<setting type="lsep" label="Re-Sync Your Debrid Data" />
 		<setting id="realdebrid.token" label="40079" type="text" default="" visible="false" />
 		<setting id="realdebrid.username" label="Real-Debrid Account Active" type="text" default="" visible="!eq(-1,)" enable="false" />

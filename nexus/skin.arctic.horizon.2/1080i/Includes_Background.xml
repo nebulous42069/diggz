@@ -138,7 +138,7 @@
                         <!-- Bottom -->
                         <control type="image">
                             <fadetime>600</fadetime>
-                            <bottom>0</bottom>
+                            <height>$PARAM[flixart_size_h]</height>
                             <top>$PARAM[flixart_size_h]</top>
                             <texture background="true" flipx="true" flipy="true">$VAR[Image_Background_Blur]</texture>
                         </control>
@@ -157,7 +157,7 @@
                         <!-- Bottom -->
                         <control type="image">
                             <fadetime>600</fadetime>
-                            <bottom>0</bottom>
+                            <height>$PARAM[flixart_size_h]</height>
                             <top>$PARAM[flixart_size_h]</top>
                             <texture background="true" flipx="false" flipy="true">$VAR[Image_Background_Blur]</texture>
                         </control>
@@ -291,16 +291,10 @@
                 <include condition="System.HasAddon(resource.images.arctic.waves)">Background_BusyLoader</include>
                 <nested />
             </include>
-            <include content="Object_Control" condition="Skin.String(BackgroundStyle,Fanart)">
-                <param name="control">image</param>
-                <texture colordiffuse="$VAR[Background_Main_ColorDiffuse]">background/combined_fanart.png</texture>
+            <control type="image">
+                <texture colordiffuse="$VAR[Background_Main_ColorDiffuse]">$VAR[Image_Background_Floor]</texture>
                 <include>Animation_Background_FadeInOut</include>
-            </include>
-            <include content="Object_Control" condition="!Skin.String(BackgroundStyle,Fanart)">
-                <param name="control">image</param>
-                <texture colordiffuse="$VAR[Background_Main_ColorDiffuse]">background/combined_flixart.png</texture>
-                <include>Animation_Background_FadeInOut</include>
-            </include>
+            </control>
         </definition>
     </include>
 

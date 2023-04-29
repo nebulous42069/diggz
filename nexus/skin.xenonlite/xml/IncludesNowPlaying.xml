@@ -214,8 +214,8 @@
 	<include name="NowPlayingVideo">
 	    <control type="group">
             <depth>DepthMenu</depth>
-            <left>0</left>
-            <top>75</top>
+            <left>85</left>
+            <top>108</top>
             <visible>Player.HasVideo + !Skin.HasSetting(HideNowPlayingInfo)</visible>
             <include>VisibleFadeEffect</include>
             <include>Window_OpenClose_Animation</include>
@@ -227,9 +227,9 @@
                 <control type="image">
                     <description>Cover image</description>
                     <left>30</left>
-                    <top>68</top>
-                    <width>225</width>
-                    <height>450</height>
+                    <top>330</top>
+                    <width>175</width>
+                    <height>175</height>
                     <aspectratio aligny="bottom">keep</aspectratio>
                     <texture fallback="DefaultVideoCover.png">$VAR[StreamingVideoIcon]</texture>
                     <bordertexture border="8">ThumbBorder.png</bordertexture>
@@ -237,7 +237,7 @@
                 </control>
                 <control type="label">
                     <description>Title label</description>
-                    <left>285</left>
+                    <left>190</left>
                     <top>428</top>
                     <height>45</height>
                     <width>1500</width>
@@ -250,7 +250,7 @@
                 </control>
                 <control type="label">
                     <description>Time Label</description>
-                    <left>285</left>
+                    <left>190</left>
                     <top>465</top>
                     <height>45</height>
                     <width>450</width>
@@ -447,7 +447,7 @@
             <depth>DepthMenu-</depth>
             <description>Controls for currently playing media</description>
             <left>818r</left>
-            <top>555</top>
+            <top>570</top>
             <animation effect="slide" start="0,0" end="0,-45" time="0" condition="!String.IsEmpty(Skin.String(MenuLAF))">Conditional</animation>
             <animation effect="slide" start="0,0" end="0,240" time="0" condition="Skin.HasSetting(LowerMainMenuBar)">Conditional</animation>
             <animation effect="slide" start="0,0" end="-150,0" time="225" condition="!Player.HasMedia + Skin.HasSetting(EnableHomeStats)">conditional</animation>
