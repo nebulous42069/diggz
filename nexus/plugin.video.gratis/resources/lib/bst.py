@@ -179,7 +179,9 @@ def runner(p: dict):
     if page: page = int(page)
     
     if mode == 'bst_new_shows':
-        bshows1(new_shows)
+        if url == '':
+            url = new_shows
+        bshows1(url)
     
     elif mode == 'bst_series':
         bshows_series(most_popular)
