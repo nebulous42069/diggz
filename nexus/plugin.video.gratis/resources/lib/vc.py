@@ -51,7 +51,6 @@ class VC(Myaddon):
 
     def get_links(self, _url):
         soup = self.get_soup(_url)
-        xbmc.log(f'soup= {soup.prettify}', xbmc.LOGINFO)
         description = soup.find(class_ = 'content-more-js')
         if description:
             description = description.text.strip()
@@ -84,16 +83,24 @@ class VC(Myaddon):
     
     def get_links_list(self, _soup):
         try:
+            iframes = _soup.find_all('iframe')
             links = _soup.find_all(class_ = 'linkserver')
         except AttributeError as e:
             return print(e)
+        _filter = ['Main Server', 'Streamhide', 'Xstreamcdn']
         item_list = []
+        for iframe in iframes:
+            _link = iframe.get('src')
+            if _link:
+                _links2 = [_link.split('/')[2].split('.')[0].capitalize(), _link]
+                if _links2 not in item_list:
+                    item_list.append(_links2)
         for link in links:
-            x = link.text.lower()
-            if 'dood' in x or 'mixdrop' in x or 'streamsb' in x:
-                links2 = []
-                links2.append(link.text)
-                links2.append(link['data-video'].split('?')[0])
+            links2 = []
+            label = link.text
+            if not label in _filter:
+                links2.append(label.capitalize())
+                links2.append(link['data-video'].replace('moonmov.pro', 'filemoon.sx'))
                 if links2 not in item_list:
                     item_list.append(links2)
         return item_list
@@ -225,7 +232,6 @@ def search(_url, page, icon, description):
             _url = search_url + quote(query)
     else:
         page = int(page) + 1
-    vc.log(f'_url= {_url}')
     main = vc.get_main(_url)
     if len(main) >= 1:
         for item in main:
@@ -256,7 +262,6 @@ def season_menu(url):
 
 def links_page(title, _url, iconimage):
     xbmcplugin.setPluginCategory(int(sys.argv[1]), title)
-    #xbmc.log(f'_url= {_url}', xbmc.LOGINFO)
     links = vc.get_links(_url)
     desc = links[-1]
     from .player2 import Player
