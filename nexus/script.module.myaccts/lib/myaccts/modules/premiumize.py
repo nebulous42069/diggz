@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 """
-	My Accounts
+	Account Manager
 """
 import xbmc
 import requests
 from myaccts.modules import control
 from myaccts.modules import log_utils
 
-CLIENT_ID = '776741998' # used to auth
+CLIENT_ID = '621824280' # used to auth
 BaseUrl = 'https://www.premiumize.me/api'
 account_info_url = '%s/account/info' % BaseUrl
 pm_icon = control.joinPath(control.artPath(), 'premiumize.png')
@@ -62,8 +62,8 @@ class Premiumize:
 			token_ttl -= int(token['interval'])
 		progressDialog.close()
 		if success:
-			control.notification_pm(title=40057, message=40081, icon=pm_icon)
-
+                        control.notification_pm(title=40057, message=40081, icon=pm_icon) #Authorization complete. Start sync process
+	
 	def poll_token(self, device_code):
 		data = {'client_id': CLIENT_ID, 'code': device_code, 'grant_type': 'device_code'}
 		token = requests.post('https://www.premiumize.me/token', data=data, timeout=15).json()

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 '''
-	My Accounts
+	Account Manager
 '''
 
 from myaccts.modules import control

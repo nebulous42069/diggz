@@ -31,7 +31,7 @@ ORDER = ['serenad',
 
 DEBRIDID = {
     'serenad': {
-        'name'     : 'Seren AD',
+        'name'     : 'Seren',
         'plugin'   : 'plugin.video.seren',
         'saved'    : 'serenad',
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.seren'),
@@ -43,7 +43,7 @@ DEBRIDID = {
         'data'     : ['alldebrid.enabled', 'alldebrid.username', 'alldebrid.token'],
         'activate' : 'Addon.OpenSettings(plugin.video.seren)'},
     'ezraad': {
-        'name'     : 'Ezra AD',
+        'name'     : 'Ezra',
         'plugin'   : 'plugin.video.ezra',
         'saved'    : 'ezraad',
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.ezra'),
@@ -55,7 +55,7 @@ DEBRIDID = {
         'data'     : ['ad.account_id', 'ad.token'],
         'activate' : 'Addon.OpenSettings(plugin.video.ezra)'},
     'fenad': {
-        'name'     : 'Fen AD',
+        'name'     : 'Fen',
         'plugin'   : 'plugin.video.fen',
         'saved'    : 'fenad',
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.fen'),
@@ -67,7 +67,7 @@ DEBRIDID = {
         'data'     : ['ad.token', 'ad.enabled', 'ad.account_id'],
         'activate' : 'Addon.OpenSettings(plugin.video.fen)'},
     'povad': {
-        'name'     : 'POV AD',
+        'name'     : 'POV',
         'plugin'   : 'plugin.video.pov',
         'saved'    : 'povad',
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.pov'),
@@ -79,7 +79,7 @@ DEBRIDID = {
         'data'     : ['ad.token', 'ad.enabled', 'ad.account_id'],
         'activate' : 'Addon.OpenSettings(plugin.video.pov)'},
     'umbad': {
-        'name'     : 'Umbrella AD',
+        'name'     : 'Umbrella',
         'plugin'   : 'plugin.video.umbrella',
         'saved'    : 'umbad',
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.umbrella'),
@@ -91,7 +91,7 @@ DEBRIDID = {
         'data'     : ['alldebridusername', 'alldebridtoken'],
         'activate' : 'Addon.OpenSettings(plugin.video.umbrella)'},
     'shadowad': {
-        'name'     : 'Shadow AD',
+        'name'     : 'Shadow',
         'plugin'   : 'plugin.video.shadow',
         'saved'    : 'shadowad',
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.shadow'),
@@ -103,7 +103,7 @@ DEBRIDID = {
         'data'     : ['alldebrid.username', 'alldebrid.token', 'debrid_select'],
         'activate' : 'Addon.OpenSettings(plugin.video.shadow)'},
     'ghostad': {
-        'name'     : 'Ghost AD',
+        'name'     : 'Ghost',
         'plugin'   : 'plugin.video.ghost',
         'saved'    : 'ghostad',
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.ghost'),
@@ -115,7 +115,7 @@ DEBRIDID = {
         'data'     : ['alldebrid.username', 'alldebrid.token', 'debrid_select'],
         'activate' : 'Addon.OpenSettings(plugin.video.ghost)'},
     'unleashedad': {
-        'name'     : 'Unleashed AD',
+        'name'     : 'Unleashed',
         'plugin'   : 'plugin.video.unleashed',
         'saved'    : 'unleashedad',
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.unleashed'),
@@ -127,7 +127,7 @@ DEBRIDID = {
         'data'     : ['alldebrid.username', 'alldebrid.token', 'debrid_select'],
         'activate' : 'Addon.OpenSettings(plugin.video.unleashed)'},
     'chainsad': {
-        'name'     : 'Chains Lite AD',
+        'name'     : 'Chains Reaction',
         'plugin'   : 'plugin.video.thechains',
         'saved'    : 'chainsad',
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.thechains'),
@@ -139,7 +139,7 @@ DEBRIDID = {
         'data'     : ['alldebrid.username', 'alldebrid.token', 'debrid_select'],
         'activate' : 'Addon.OpenSettings(plugin.video.thechains)'},
     'base19ad': {
-        'name'     : 'Base 19 AD',
+        'name'     : 'Base 19',
         'plugin'   : 'plugin.video.base19',
         'saved'    : 'base19',
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.base19'),
@@ -151,7 +151,7 @@ DEBRIDID = {
         'data'     : ['alldebrid.username', 'alldebrid.token', 'debrid_select'],
         'activate' : 'Addon.OpenSettings(plugin.video.base19)'},
     'twistedad': {
-        'name'     : 'Twisted AD',
+        'name'     : 'Twisted',
         'plugin'   : 'plugin.video.twisted',
         'saved'    : 'twistedad',
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.twisted'),
@@ -163,7 +163,7 @@ DEBRIDID = {
         'data'     : ['alldebrid.username', 'alldebrid.token', 'debrid_select'],
         'activate' : 'Addon.OpenSettings(plugin.video.twisted)'},
     'mdad': {
-        'name'     : 'Magic Dragon AD',
+        'name'     : 'Magic Dragon',
         'plugin'   : 'plugin.video.magicdragon',
         'saved'    : 'mdad',
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.magicdragon'),
@@ -175,7 +175,7 @@ DEBRIDID = {
         'data'     : ['alldebrid.username', 'alldebrid.token', 'debrid_select'],
         'activate' : 'Addon.OpenSettings(plugin.video.magicdragon)'},
     'asgardad': {
-        'name'     : 'Asgard AD',
+        'name'     : 'Asgard',
         'plugin'   : 'plugin.video.asgard',
         'saved'    : 'asgardad',
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.asgard'),
@@ -187,7 +187,7 @@ DEBRIDID = {
         'data'     : ['alldebrid.username', 'alldebrid.token', 'debrid_select'],
         'activate' : 'Addon.OpenSettings(plugin.video.asgard)'},
     'metvad': {
-        'name'     : 'M.E.T.V AD',
+        'name'     : 'M.E.T.V',
         'plugin'   : 'plugin.video.metv19',
         'saved'    : 'metvad',
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.metv19'),
@@ -199,7 +199,7 @@ DEBRIDID = {
         'data'     : ['alldebrid.username', 'alldebrid.token', 'debrid_select'],
         'activate' : 'Addon.OpenSettings(plugin.video.metv19)'},
    'myactad': {
-        'name'     : 'My Accounts AD',
+        'name'     : 'My Accounts',
         'plugin'   : 'script.module.myaccounts',
         'saved'    : 'myactad',
         'path'     : os.path.join(CONFIG.ADDONS, 'script.module.myaccounts'),
@@ -211,7 +211,7 @@ DEBRIDID = {
         'data'     : ['alldebrid.token', 'alldebrid.username'],
         'activate' : 'Addon.OpenSettings(script.module.myaccounts)'},
    'mactad': {
-        'name'     : 'Debrid Manager AD',
+        'name'     : 'Account Manager',
         'plugin'   : 'script.module.myaccts',
         'saved'    : 'myactad',
         'path'     : os.path.join(CONFIG.ADDONS, 'script.module.myaccts'),
@@ -223,7 +223,7 @@ DEBRIDID = {
         'data'     : ['alldebrid.token', 'alldebrid.username'],
         'activate' : 'Addon.OpenSettings(script.module.myaccts)'},
     'rurlad': {
-        'name'     : 'ResolveURL AD',
+        'name'     : 'ResolveURL',
         'plugin'   : 'script.module.resolveurl',
         'saved'    : 'rurlad',
         'path'     : os.path.join(CONFIG.ADDONS, 'script.module.resolveurl'),

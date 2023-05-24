@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.program.chef20" name="Chef Nexus Wizard" version="457" provider-name="Slam, BYB, Sarge, Diggz">
+<addon id="plugin.program.chef20" name="Chef Nexus Wizard" version="458" provider-name="Slam, BYB, Sarge, Diggz">
 	<requires>
 		<import addon="xbmc.python" version="3.0.1"/>
 		<import addon="script.module.myaccts" version="1.0"/>
@@ -9,7 +9,7 @@
 	<extension point="xbmc.python.pluginsource" library="addon.py">
 		<provides>executable</provides>
 	</extension>
-	<extension point="xbmc.service" library="service.py" />
+	<!--<extension point="xbmc.service" library="service.py" />-->
 	<extension point="xbmc.addon.metadata">
 		<summary lang="en_GB">Simple Nexus Wizard is a lightweight template for installing builds on Kodi 20 Nexus. Has some code from Aftermath Wizard by Surfacingx. Skin Switch by OpenELEQ. Base code by BYB. Credits to them and all others who contributed. Please report any bugs to @slamious on Telegram/Twitter.</summary>
 		<description lang="en_GB">Kodi Nexus 20 Wizard</description>

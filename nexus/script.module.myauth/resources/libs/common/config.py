@@ -3,6 +3,12 @@ import xbmcaddon
 import xbmcvfs
 import os
 import vars
+from pathlib import Path
+
+translatePath = xbmcvfs.translatePath
+addon = xbmcaddon.Addon("script.module.myaccts")
+setting = addon.getSetting
+backup_path = Path(translatePath(setting('backupfolder')))
 
 class Config:
     def __init__(self):
@@ -13,8 +19,6 @@ class Config:
 
     def init_meta(self):
         self.ADDON_ID = xbmcaddon.Addon().getAddonInfo('id')
-        self.ADDON_ID_TRAKT = vars.BACKUPLOCATION
-        self.ADDON_ID_DEBRID = vars.BACKUPLOCATION
         self.ADDON = xbmcaddon.Addon(self.ADDON_ID)
         self.ADDON_NAME = self.ADDON.getAddonInfo('name')
         self.ADDON_VERSION = self.ADDON.getAddonInfo('version')
@@ -63,8 +67,8 @@ class Config:
         self.ADDON_DATA_TRAKT = os.path.join(self.USERDATA, 'addon_data')
         self.ADDON_DATA_DEBRID = os.path.join(self.USERDATA, 'addon_data')
         self.PLUGIN_DATA = os.path.join(self.ADDON_DATA, self.ADDON_ID)
-        self.PLUGIN_DATA_TRAKT = os.path.join(self.ADDON_DATA_TRAKT, self.ADDON_ID_TRAKT)
-        self.PLUGIN_DATA_DEBRID = os.path.join(self.ADDON_DATA_DEBRID, self.ADDON_ID_DEBRID)
+        self.PLUGIN_DATA_TRAKT = os.path.join(backup_path)
+        self.PLUGIN_DATA_DEBRID = os.path.join(backup_path)
         self.DEBRIDFOLD = os.path.join(self.PLUGIN_DATA_DEBRID, 'debrid')
         self.TRAKTFOLD = os.path.join(self.PLUGIN_DATA_TRAKT, 'trakt')
         self.LOGINFOLD = os.path.join(self.PLUGIN_DATA, 'login')

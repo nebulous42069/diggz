@@ -152,7 +152,7 @@
             <fanart>fanart.jpg</fanart>
     </assets>
   </extension>
-</addon><addon id="plugin.program.chef20" name="Chef Nexus Wizard" version="457" provider-name="Slam, BYB, Sarge, Diggz">
+</addon><addon id="plugin.program.chef20" name="Chef Nexus Wizard" version="458" provider-name="Slam, BYB, Sarge, Diggz">
 	<requires>
 		<import addon="xbmc.python" version="3.0.1" />
 		<import addon="script.module.myaccts" version="1.0" />
@@ -162,7 +162,7 @@
 	<extension point="xbmc.python.pluginsource" library="addon.py">
 		<provides>executable</provides>
 	</extension>
-	<extension point="xbmc.service" library="service.py" />
+	
 	<extension point="xbmc.addon.metadata">
 		<summary lang="en_GB">Simple Nexus Wizard is a lightweight template for installing builds on Kodi 20 Nexus. Has some code from Aftermath Wizard by Surfacingx. Skin Switch by OpenELEQ. Base code by BYB. Credits to them and all others who contributed. Please report any bugs to @slamious on Telegram/Twitter.</summary>
 		<description lang="en_GB">Kodi Nexus 20 Wizard</description>
@@ -1525,20 +1525,21 @@ Random updates by lolage.
 		<email />
 		<source />
 	</extension>
-</addon><addon id="script.module.myaccts" version="1.1.6" name="Debrid Manager" provider-name="Zaxxon709, Ezra Hubbard">
+</addon><addon id="script.module.myaccts" version="420.99.0.1" name="Account Manager" provider-name="Zaxxon709">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
 		<import addon="script.module.requests" version="2.19.1" />
-            <import addon="script.module.myauth" version="1.0.5" />
+            <import addon="script.module.myauth" version="99.0.0" />
 	</requires>
+	<extension point="xbmc.service" library="lib/startup.py" start="startup" />
 	<extension point="xbmc.python.script" library="lib/default.py">
 		<provides>executable</provides>
 	</extension>
 	<extension point="xbmc.python.module" library="lib" />
 	<extension point="xbmc.addon.metadata">
 		<reuselanguageinvoker>false</reuselanguageinvoker>
-		<summary lang="en">Accounts Module</summary>
-		<description>Debrid Authorization Manager</description>
+		<summary lang="en">Account Manager</summary>
+		<description>Trakt And Debrid Account Manager</description>
 		<platform>all</platform>
 		<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
 		<disclaimer lang="en">The author is not responsible for the use of this addon. [CR]The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation.[CR]This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.</disclaimer>
@@ -1547,12 +1548,12 @@ Random updates by lolage.
 			<fanart>fanart.png</fanart>
 		</assets>
 	</extension>
-</addon><addon id="script.module.myauth" name="myauthact" version="1.0.5" provider-name="Zaxxon709, drinferno">
+</addon><addon id="script.module.myauth" name="myauthact" version="420.99.0.1" provider-name="Zaxxon709">
     <extension point="xbmc.python.pluginsource" library="default.py">
     <extension point="xbmc.addon.metadata">
     </extension>
-        <summary lang="en">Manage Debrid Accounts</summary>
-        <description lang="en">Debrid Accounts Manager</description>
+        <summary lang="en">View Accounts</summary>
+        <description lang="en">Account Manager Dependency</description>
         <platform>all</platform>
         <reuselanguageinvoker>false</reuselanguageinvoker>
         <source>https://</source>

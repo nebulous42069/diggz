@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-	My Accounts
+	Account Manager
 """
 
 import json
@@ -108,7 +108,7 @@ class RealDebrid:
 				break
 			self.auth_loop()
 		if self.secret:
-			if self.get_token(): control.notification_rd(title=40058, message=40081, icon=rd_icon)
+			if self.get_token(): control.notification_rd(title=40058, message=40081, icon=rd_icon) #Authorization complete. Start sync process
 			else: return control.okDialog(title='default', message=control.lang(40019))
 
 	def account_info(self):

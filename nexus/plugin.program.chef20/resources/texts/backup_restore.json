@@ -14,11 +14,6 @@
         "setting": "savedata",
         "path": "data_path"
     },
-    "script.trakt": {
-        "name": "Trakt",
-        "setting": "savedata",
-        "path": "data_path"
-    },
     "plugin.video.youtube": {
         "name": "YouTube",
         "setting": "saveyoutube",

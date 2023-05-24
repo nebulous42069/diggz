@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-	My Accounts
+	Account Manager
 """
 
 import requests
@@ -8,7 +8,7 @@ from myaccts.modules import control
 from myaccts.modules import log_utils
 
 base_url = 'https://api.alldebrid.com/v4/'
-user_agent = 'My%20Accounts%20for%20Kodi'
+user_agent = 'Account%20Manager%20for%20Kodi'
 ad_icon = control.joinPath(control.artPath(), 'alldebrid.png')
 
 class AllDebrid:
@@ -67,7 +67,7 @@ class AllDebrid:
 		control.sleep(2000)
 		account_info = self.account_info()
 		control.setSetting('alldebrid.username', str(account_info['user']['username']))
-		control.notification_ad(title=40059, message=40081, icon=ad_icon)
+		control.notification_ad(title=40059, message=40081, icon=ad_icon) #Authorization complete. Start sync process
 
 	def revoke(self):
 		try:

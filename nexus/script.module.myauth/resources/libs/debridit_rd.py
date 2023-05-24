@@ -31,7 +31,7 @@ ORDER = ['serenrd',
 
 DEBRIDID = {
     'serenrd': {
-        'name'     : 'Seren RD',
+        'name'     : 'Seren',
         'plugin'   : 'plugin.video.seren',
         'saved'    : 'serenrd',
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.seren'),
@@ -43,7 +43,7 @@ DEBRIDID = {
         'data'     : ['rd.auth', 'rd.client_id', 'rd.expiry', 'rd.refresh', 'rd.secret', 'rd.username', 'realdebrid.enabled'],
         'activate' : 'Addon.OpenSettings(plugin.video.seren)'},
     'ezrard': {
-        'name'     : 'Ezra RD',
+        'name'     : 'Ezra',
         'plugin'   : 'plugin.video.ezra',
         'saved'    : 'ezrard',
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.ezra'),
@@ -55,7 +55,7 @@ DEBRIDID = {
         'data'     : ['rd.username', 'rd.token', 'rd.client_id', 'rd.refresh', 'rd.secret','rd.enabled'],
         'activate' : 'Addon.OpenSettings(plugin.video.ezra)'},
     'fenrd': {
-        'name'     : 'Fen RD',
+        'name'     : 'Fen',
         'plugin'   : 'plugin.video.fen',
         'saved'    : 'fenrd',
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.fen'),
@@ -67,7 +67,7 @@ DEBRIDID = {
         'data'     : ['rd.client_id', 'rd.refresh', 'rd.secret', 'rd.token', 'rd.account_id', 'rd.enabled'],
         'activate' : 'Addon.OpenSettings(plugin.video.fen)'},
     'povrd': {
-        'name'     : 'POV RD',
+        'name'     : 'POV',
         'plugin'   : 'plugin.video.pov',
         'saved'    : 'povrd',
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.pov'),
@@ -79,7 +79,7 @@ DEBRIDID = {
         'data'     : ['rd.client_id', 'rd.refresh', 'rd.secret', 'rd.token', 'rd.account_id', 'rd.enabled'],
         'activate' : 'Addon.OpenSettings(plugin.video.pov)'},
     'umbrd': {
-        'name'     : 'Umbrella RD',
+        'name'     : 'Umbrella',
         'plugin'   : 'plugin.video.umbrella',
         'saved'    : 'umbrd',
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.umbrella'),
@@ -91,7 +91,7 @@ DEBRIDID = {
         'data'     : ['realdebridusername', 'realdebridtoken', 'realdebrid.clientid', 'realdebridsecret', 'realdebridrefresh', 'realdebrid.enable'],
         'activate' : 'Addon.OpenSettings(plugin.video.umbrella)'},
     'shadowrd': {
-        'name'     : 'Shadow RD',
+        'name'     : 'Shadow',
         'plugin'   : 'plugin.video.shadow',
         'saved'    : 'shadowrd',
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.shadow'),
@@ -103,7 +103,7 @@ DEBRIDID = {
         'data'     : ['rd.expiry', 'rd.auth', 'rd.client_id', 'rd.refresh', 'rd.secret', 'debrid_select'],
         'activate' : 'Addon.OpenSettings(plugin.video.shadow)'},
     'ghostrd': {
-        'name'     : 'Ghost RD',
+        'name'     : 'Ghost',
         'plugin'   : 'plugin.video.ghost',
         'saved'    : 'ghostrd',
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.ghost'),
@@ -115,7 +115,7 @@ DEBRIDID = {
         'data'     : ['rd.expiry', 'rd.auth', 'rd.client_id', 'rd.refresh', 'rd.secret', 'debrid_select'],
         'activate' : 'Addon.OpenSettings(plugin.video.ghost)'},
     'unleashedrd': {
-        'name'     : 'Unleashed RD',
+        'name'     : 'Unleashed',
         'plugin'   : 'plugin.video.unleashed',
         'saved'    : 'unleashedrd',
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.unleashed'),
@@ -127,7 +127,7 @@ DEBRIDID = {
         'data'     : ['rd.expiry', 'rd.auth', 'rd.client_id', 'rd.refresh', 'rd.secret', 'debrid_select'],
         'activate' : 'Addon.OpenSettings(plugin.video.unleashed)'},
     'chainsrd': {
-        'name'     : 'Chains Lite RD',
+        'name'     : 'Chains Reaction',
         'plugin'   : 'plugin.video.thechains',
         'saved'    : 'chainsrd',
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.thechains'),
@@ -139,7 +139,7 @@ DEBRIDID = {
         'data'     : ['rd.expiry', 'rd.auth', 'rd.client_id', 'rd.refresh', 'rd.secret', 'debrid_select'],
         'activate' : 'Addon.OpenSettings(plugin.video.thechains)'},
     'base19rd': {
-        'name'     : 'Base 19 RD',
+        'name'     : 'Base 19',
         'plugin'   : 'plugin.video.base19',
         'saved'    : 'base19rd',
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.base19'),
@@ -151,7 +151,7 @@ DEBRIDID = {
         'data'     : ['rd.expiry', 'rd.auth', 'rd.client_id', 'rd.refresh', 'rd.secret', 'debrid_select'],
         'activate' : 'Addon.OpenSettings(plugin.video.base19)'},
     'twistedrd': {
-        'name'     : 'Twisted RD',
+        'name'     : 'Twisted',
         'plugin'   : 'plugin.video.twisted',
         'saved'    : 'twistedrd',
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.twisted'),
@@ -163,7 +163,7 @@ DEBRIDID = {
         'data'     : ['rd.expiry', 'rd.auth', 'rd.client_id', 'rd.refresh', 'rd.secret', 'debrid_select'],
         'activate' : 'Addon.OpenSettings(plugin.video.twisted)'},
     'mdrd': {
-        'name'     : 'Magic Dragon RD',
+        'name'     : 'Magic Dragon',
         'plugin'   : 'plugin.video.magicdragon',
         'saved'    : 'mdrd',
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.magicdragon'),
@@ -175,7 +175,7 @@ DEBRIDID = {
         'data'     : ['rd.expiry', 'rd.auth', 'rd.client_id', 'rd.refresh', 'rd.secret', 'debrid_select'],
         'activate' : 'Addon.OpenSettings(plugin.video.magicdragon)'},
     'asgardrd': {
-        'name'     : 'Asgard RD',
+        'name'     : 'Asgard',
         'plugin'   : 'plugin.video.asgard',
         'saved'    : 'asgardrd',
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.asgard'),
@@ -187,7 +187,7 @@ DEBRIDID = {
         'data'     : ['rd.expiry', 'rd.auth', 'rd.client_id', 'rd.refresh', 'rd.secret', 'debrid_select'],
         'activate' : 'Addon.OpenSettings(plugin.video.asgard)'},
     'metvrd': {
-        'name'     : 'M.E.T.V RD',
+        'name'     : 'M.E.T.V',
         'plugin'   : 'plugin.video.metv19',
         'saved'    : 'metvrd',
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.metv19'),
@@ -199,7 +199,7 @@ DEBRIDID = {
         'data'     : ['rd.expiry', 'rd.auth', 'rd.client_id', 'rd.refresh', 'rd.secret', 'debrid_select'],
         'activate' : 'Addon.OpenSettings(plugin.video.metv19)'},
     'myactrd': {
-        'name'     : 'My Accounts RD',
+        'name'     : 'My Accounts',
         'plugin'   : 'script.module.myaccounts',
         'saved'    : 'myactrd',
         'path'     : os.path.join(CONFIG.ADDONS, 'script.module.myaccounts'),
@@ -211,7 +211,7 @@ DEBRIDID = {
         'data'     : ['realdebrid.client_id', 'realdebrid.refresh', 'realdebrid.secret', 'realdebrid.token', 'realdebrid.username'],
         'activate' : 'Addon.OpenSettings(script.module.myaccounts)'},
     'mactrd': {
-        'name'     : 'Debrid Manager RD',
+        'name'     : 'Account Manager',
         'plugin'   : 'script.module.myaccts',
         'saved'    : 'myactrd',
         'path'     : os.path.join(CONFIG.ADDONS, 'script.module.myaccts'),
@@ -223,7 +223,7 @@ DEBRIDID = {
         'data'     : ['realdebrid.client_id', 'realdebrid.refresh', 'realdebrid.secret', 'realdebrid.token', 'realdebrid.username'],
         'activate' : 'Addon.OpenSettings(script.module.myaccts)'},
     'rurlrd': {
-        'name'     : 'ResolveURL RD',
+        'name'     : 'ResolveURL',
         'plugin'   : 'script.module.resolveurl',
         'saved'    : 'rurlrd',
         'path'     : os.path.join(CONFIG.ADDONS, 'script.module.resolveurl'),

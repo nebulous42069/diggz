@@ -5,10 +5,9 @@ import os
 ADDON_ID = xbmcaddon.Addon().getAddonInfo('id')
 PATH = xbmcaddon.Addon().getAddonInfo('path')
 ART = os.path.join(PATH, 'resources', 'media')
-BACKUPLOCATION = ''
 
-ADDONTITLE = 'Trakt & Debrid Account Manager'
-ICON709 = os.path.join(ART, 'keepdebrid.png')
+ADDONTITLE = 'Account Manager'
+ICON709 = os.path.join(ART, '709.png')
 ICONSAVE = os.path.join(ART, 'savedata.png')
 ICONTRAKT = os.path.join(ART, 'keeptrakt.png')
 ICONREAL = os.path.join(ART, 'keepdebrid.png')

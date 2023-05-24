@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-	My Accounts
+	Account Manager
 """
 
 import os.path
@@ -32,6 +32,7 @@ progress_line = '%s[CR]%s[CR]%s'
 rd_icon = joinPath(os.path.join(xbmcaddon.Addon('script.module.myaccts').getAddonInfo('path'), 'resources', 'icons'), 'realdebrid.png')
 pm_icon = joinPath(os.path.join(xbmcaddon.Addon('script.module.myaccts').getAddonInfo('path'), 'resources', 'icons'), 'premiumize.png')
 ad_icon = joinPath(os.path.join(xbmcaddon.Addon('script.module.myaccts').getAddonInfo('path'), 'resources', 'icons'), 'alldebrid.png')
+trakt_icon = joinPath(os.path.join(xbmcaddon.Addon('script.module.myaccts').getAddonInfo('path'), 'resources', 'icons'), 'trakt.png')
 
 def getKodiVersion():
 	return int(xbmc.getInfoLabel("System.BuildVersion")[:2])
@@ -110,11 +111,13 @@ def notification_rd(title=None, message=None, icon=None, time=3000, sound=False)
 	elif icon == 'ERROR': icon = xbmcgui.NOTIFICATION_ERROR
 	dialog.notification(heading, body, icon, time, sound=sound)
 	xbmc.sleep(5000)
-	notification('RealDebrid', 'Sync in progress, please wait!', icon=rd_icon)
+	notification('Real-Debrid', 'Sync in progress, please wait!', icon=rd_icon)
 	from myaccts.modules import debrid_rd
-	debrid_rd.debrid_auth_rd()
-	xbmc.sleep(2000)
-	notification('RealDebrid', 'Sync complete!', icon=rd_icon)
+	debrid_rd.debrid_auth_rd() #Sync all add-ons
+	xbmc.sleep(1000)
+	xbmc.executebuiltin('PlayMedia(plugin://script.module.myauth/?mode=savedebrid_rd&name=all)') #Save debrid data
+	xbmc.sleep(5000)
+	notification('Real-Debrid', 'Sync Complete!', icon=rd_icon)
 	
 def notification_pm(title=None, message=None, icon=None, time=3000, sound=False):
 	if title == 'default' or title is None: title = addonName()
@@ -130,9 +133,11 @@ def notification_pm(title=None, message=None, icon=None, time=3000, sound=False)
 	xbmc.sleep(5000)
 	notification('Premiumize', 'Sync in progress, please wait!', icon=pm_icon)
 	from myaccts.modules import debrid_pm
-	debrid_pm.debrid_auth_pm()
-	xbmc.sleep(2000)
-	notification('Premiumize', 'Sync complete!', icon=pm_icon)
+	debrid_pm.debrid_auth_pm() #Sync all add-ons
+	xbmc.sleep(1000)
+	xbmc.executebuiltin('PlayMedia(plugin://script.module.myauth/?mode=savedebrid_pm&name=all)') #Save debrid data
+	xbmc.sleep(5000)
+	notification('Premiumize', 'Sync Complete!', icon=pm_icon)
 
 def notification_ad(title=None, message=None, icon=None, time=3000, sound=False):
 	if title == 'default' or title is None: title = addonName()
@@ -146,10 +151,36 @@ def notification_ad(title=None, message=None, icon=None, time=3000, sound=False)
 	elif icon == 'ERROR': icon = xbmcgui.NOTIFICATION_ERROR
 	dialog.notification(heading, body, icon, time, sound=sound)
 	xbmc.sleep(5000)
+	notification('All-Debrid', 'Sync in progress, please wait!', icon=ad_icon)
 	from myaccts.modules import debrid_ad
-	debrid_ad.debrid_auth_ad()
+	debrid_ad.debrid_auth_ad() #Sync all add-ons
+	xbmc.sleep(1000)
+	xbmc.executebuiltin('PlayMedia(plugin://script.module.myauth/?mode=savedebrid_ad&name=all)') #Save debrid data
+	xbmc.sleep(5000)
+	notification('All-Debrid', 'Sync Complete!', icon=ad_icon)
+
+def notification_trakt(title=None, message=None, icon=None, time=3000, sound=False):
+	if title == 'default' or title is None: title = addonName()
+	if isinstance(title, int): heading = lang(title)
+	else: heading = str(title)
+	if isinstance(message, int): body = lang(message)
+	else: body = str(message)
+	if icon is None or icon == '' or icon == 'default': icon = addonIcon()
+	elif icon == 'INFO': icon = xbmcgui.NOTIFICATION_INFO
+	elif icon == 'WARNING': icon = xbmcgui.NOTIFICATION_WARNING
+	elif icon == 'ERROR': icon = xbmcgui.NOTIFICATION_ERROR
+	dialog.notification(heading, body, icon, time, sound=sound)
+	xbmc.sleep(5000)
+	notification('Trakt', 'Sync in progress, please wait!', icon=trakt_icon)
+	from myaccts.modules import trakt_sync
+	trakt_sync.sync_all() #Sync all add-ons
+	xbmc.sleep(1000)
+	xbmc.executebuiltin('PlayMedia(plugin://script.module.myauth/?mode=savetrakt&name=all)') #Save trakt data
+	xbmc.sleep(4000)
+	notification('Trakt', 'Sync Complete!', icon=trakt_icon)
 	xbmc.sleep(2000)
-	notification('AllDebrid', 'Sync complete!', icon=ad_icon)
+	xbmcgui.Dialog().ok('Account Manager', 'To save changes, please close Kodi, Press OK to force close Kodi')
+	os._exit(1)
 
 def yesnoDialog(line, heading=addonInfo('name'), nolabel='', yeslabel=''):
 	return dialog.yesno(heading, line, nolabel, yeslabel)
@@ -199,3 +230,13 @@ def refresh_debugReversed(): # called from service "onSettingsChanged" to clear 
 	if window.getProperty('myaccts.debug.reversed') != setting('debug.reversed'):
 		window.setProperty('myaccts.debug.reversed', setting('debug.reversed'))
 		execute('RunScript(script.module.myaccts, action=tools_clearLogFile)')
+
+def set_backup_folder(): #Set backup directory
+        dialog = xbmcgui.Dialog()
+        backup_location = dialog.browseSingle(0, 'Kodi', 'local', '', False, False)
+        setSetting('backupfolder', backup_location)
+        xbmcgui.Dialog().ok('Configure Backup', 'Backup Location Set')
+
+def reset_backup_folder(): #Re-set backup directory
+        setSetting('backupfolder', 'special://userdata/addon_data/script.module.myaccts')
+        xbmcgui.Dialog().ok('Configure Backup', 'Backup Location Set to Default')

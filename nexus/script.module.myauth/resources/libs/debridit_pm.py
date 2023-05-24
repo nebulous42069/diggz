@@ -32,7 +32,7 @@ ORDER = ['serenpm',
 
 DEBRIDID = {
     'serenpm': {
-        'name'     : 'Seren PM',
+        'name'     : 'Seren',
         'plugin'   : 'plugin.video.seren',
         'saved'    : 'serenpm',
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.seren'),
@@ -44,7 +44,7 @@ DEBRIDID = {
         'data'     : ['premiumize.enabled', 'premiumize.username', 'premiumize.token'],
         'activate' : 'Addon.OpenSettings(plugin.video.seren)'},
     'ezrapm': {
-        'name'     : 'Ezra PM',
+        'name'     : 'Ezra',
         'plugin'   : 'plugin.video.ezra',
         'saved'    : 'ezrapm',
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.ezra'),
@@ -56,7 +56,7 @@ DEBRIDID = {
         'data'     : ['pm.account_id', 'pm.token', 'pm.enabled'],
         'activate' : 'Addon.OpenSettings(plugin.video.ezra)'},
     'fenpm': {
-        'name'     : 'Fen PM',
+        'name'     : 'Fen',
         'plugin'   : 'plugin.video.fen',
         'saved'    : 'fenpm',
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.fen'),
@@ -68,7 +68,7 @@ DEBRIDID = {
         'data'     : ['pm.token', 'pm.account_id', 'pm.enabled'],
         'activate' : 'Addon.OpenSettings(plugin.video.fen)'},
     'povpm': {
-        'name'     : 'POV PM',
+        'name'     : 'POV',
         'plugin'   : 'plugin.video.pov',
         'saved'    : 'povpm',
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.pov'),
@@ -80,7 +80,7 @@ DEBRIDID = {
         'data'     : ['pm.token', 'pm.account_id', 'pm.enabled'],
         'activate' : 'Addon.OpenSettings(plugin.video.pov)'},
     'umbpm': {
-        'name'     : 'Umbrella PM',
+        'name'     : 'Umbrella',
         'plugin'   : 'plugin.video.umbrella',
         'saved'    : 'umbpm',
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.umbrella'),
@@ -92,7 +92,7 @@ DEBRIDID = {
         'data'     : ['premiumizeusername', 'premiumizetoken', 'premiumize.enable'],
         'activate' : 'Addon.OpenSettings(plugin.video.umbrella)'},
     'shadowpm': {
-        'name'     : 'Shadow PM',
+        'name'     : 'Shadow',
         'plugin'   : 'plugin.video.shadow',
         'saved'    : 'shadowpm',
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.shadow'),
@@ -104,7 +104,7 @@ DEBRIDID = {
         'data'     : ['premiumize.token', 'debrid_select'],
         'activate' : 'Addon.OpenSettings(plugin.video.shadow)'},
     'ghostpm': {
-        'name'     : 'Ghost PM',
+        'name'     : 'Ghost',
         'plugin'   : 'plugin.video.ghost',
         'saved'    : 'ghostpm',
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.ghost'),
@@ -116,7 +116,7 @@ DEBRIDID = {
         'data'     : ['premiumize.token', 'debrid_select'],
         'activate' : 'Addon.OpenSettings(plugin.video.ghost)'},
     'unleashedpm': {
-        'name'     : 'Unleashed PM',
+        'name'     : 'Unleashed',
         'plugin'   : 'plugin.video.unleashed',
         'saved'    : 'unleashedpm',
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.unleashed'),
@@ -128,7 +128,7 @@ DEBRIDID = {
         'data'     : ['premiumize.token', 'debrid_select'],
         'activate' : 'Addon.OpenSettings(plugin.video.unleashed)'},
     'chainspm': {
-        'name'     : 'Chains Lite PM',
+        'name'     : 'Chains Reaction',
         'plugin'   : 'plugin.video.thechains',
         'saved'    : 'chainspm',
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.thechains'),
@@ -140,7 +140,7 @@ DEBRIDID = {
         'data'     : ['premiumize.token', 'debrid_select'],
         'activate' : 'Addon.OpenSettings(plugin.video.thechains)'},
     'base19pm': {
-        'name'     : 'Base 19 PM',
+        'name'     : 'Base 19',
         'plugin'   : 'plugin.video.base19',
         'saved'    : 'base19pm',
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.base19'),
@@ -152,7 +152,7 @@ DEBRIDID = {
         'data'     : ['premiumize.token', 'debrid_select'],
         'activate' : 'Addon.OpenSettings(plugin.video.base19)'},
     'twistedpm': {
-        'name'     : 'Twisted PM',
+        'name'     : 'Twisted',
         'plugin'   : 'plugin.video.twisted',
         'saved'    : 'twistedpm',
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.twisted'),
@@ -164,7 +164,7 @@ DEBRIDID = {
         'data'     : ['premiumize.token', 'debrid_select'],
         'activate' : 'Addon.OpenSettings(plugin.video.twisted)'},
     'mdpm': {
-        'name'     : 'Magic Dragon PM',
+        'name'     : 'Magic Dragon',
         'plugin'   : 'plugin.video.magicdragon',
         'saved'    : 'mdpm',
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.magicdragon'),
@@ -176,7 +176,7 @@ DEBRIDID = {
         'data'     : ['premiumize.token', 'debrid_select'],
         'activate' : 'Addon.OpenSettings(plugin.video.magicdragon)'},
     'asgardpm': {
-        'name'     : 'Asgard PM',
+        'name'     : 'Asgard',
         'plugin'   : 'plugin.video.asgard',
         'saved'    : 'asgardpm',
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.asgard'),
@@ -188,7 +188,7 @@ DEBRIDID = {
         'data'     : ['premiumize.token', 'debrid_select'],
         'activate' : 'Addon.OpenSettings(plugin.video.asgard)'},
     'metvpm': {
-        'name'     : 'M.E.T.V PM',
+        'name'     : 'M.E.T.V',
         'plugin'   : 'plugin.video.metv19',
         'saved'    : 'metvpm',
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.metv19'),
@@ -200,7 +200,7 @@ DEBRIDID = {
         'data'     : ['premiumize.token', 'debrid_select'],
         'activate' : 'Addon.OpenSettings(plugin.video.metv19)'},
    'myactpm': {
-        'name'     : 'My Accounts PM',
+        'name'     : 'My Accounts',
         'plugin'   : 'script.module.myaccounts',
         'saved'    : 'myactpm',
         'path'     : os.path.join(CONFIG.ADDONS, 'script.module.myaccounts'),
@@ -212,7 +212,7 @@ DEBRIDID = {
         'data'     : ['premiumize.token', 'premiumize.username'],
         'activate' : 'Addon.OpenSettings(script.module.myaccounts)'},
    'mactpm': {
-        'name'     : 'Debrid Manager PM',
+        'name'     : 'Account Manager',
         'plugin'   : 'script.module.myaccts',
         'saved'    : 'myactpm',
         'path'     : os.path.join(CONFIG.ADDONS, 'script.module.myaccts'),
@@ -224,7 +224,7 @@ DEBRIDID = {
         'data'     : ['premiumize.token', 'premiumize.username'],
         'activate' : 'Addon.OpenSettings(script.module.myaccts)'},
     'rurlpm': {
-        'name'     : 'ResolveURL PM',
+        'name'     : 'ResolveURL',
         'plugin'   : 'script.module.resolveurl',
         'saved'    : 'rurlpm',
         'path'     : os.path.join(CONFIG.ADDONS, 'script.module.resolveurl'),

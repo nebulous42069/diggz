@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 '''
-	My Accounts
+	Account Manager
 '''
 
 import sys
@@ -10,15 +10,19 @@ import xbmcgui
 import xbmcaddon
 from urllib.parse import parse_qsl
 from myaccts.modules import control
+from myaccts.modules import var
 
 joinPath = os.path.join
 dialog = xbmcgui.Dialog()
 addon = xbmcaddon.Addon
 addonObject = addon('script.module.myaccts')
 addonInfo = addonObject.getAddonInfo
+
 rd_icon = joinPath(os.path.join(xbmcaddon.Addon('script.module.myaccts').getAddonInfo('path'), 'resources', 'icons'), 'realdebrid.png')
 pm_icon = joinPath(os.path.join(xbmcaddon.Addon('script.module.myaccts').getAddonInfo('path'), 'resources', 'icons'), 'premiumize.png')
 ad_icon = joinPath(os.path.join(xbmcaddon.Addon('script.module.myaccts').getAddonInfo('path'), 'resources', 'icons'), 'alldebrid.png')
+trakt_icon = joinPath(os.path.join(xbmcaddon.Addon('script.module.myaccts').getAddonInfo('path'), 'resources', 'icons'), 'trakt.png')
+
 
 def notification(title=None, message=None, icon=None, time=3000, sound=False):
 	if title == 'default' or title is None: title = addonName()
@@ -66,8 +70,20 @@ elif action == 'traktAuth':
 
 elif action == 'traktSync':
 	from myaccts.modules import trakt_sync
-	trakt_sync.trakt_auth()
-
+	trakt_sync.sync_all()
+	
+elif action == 'traktReSync':
+	from myaccts.modules import trakt_sync
+	trakt_sync.sync_all()
+	
+	if str(var.check_myaccts) != '':
+                notification('Account Manager', 'Sync Complete!', icon=trakt_icon)
+                xbmc.sleep(3000)
+                xbmcgui.Dialog().ok('Account Manager', 'To save changes, please close Kodi, Press OK to force close Kodi')
+                os._exit(1)
+	if str(var.check_myaccts) == '':
+                notification('Account Manager', 'Trakt NOT Authorized!', icon=trakt_icon)
+        
 elif action == 'traktRevoke':
 	from myaccts.modules import trakt
 	control.function_monitor(trakt.Trakt().revoke)
@@ -83,7 +99,15 @@ elif action == 'alldebridAuth':
 elif action == 'alldebridSync':
 	from myaccts.modules import debrid_ad
 	debrid_ad.debrid_auth_ad()
-	notification('AllDebrid', 'Sync Complete!', icon=pm_icon)
+
+elif action == 'alldebridReSync':
+	from myaccts.modules import debrid_ad
+	debrid_ad.debrid_auth_ad()
+	
+	if str(var.check_myaccts_ad) != '':
+                notification('Account Manager', 'Sync Complete!', icon=ad_icon)
+	if str(var.check_myaccts_ad) == '':
+                notification('Account Manager', 'All-Debrid NOT Authorized!', icon=ad_icon)
 
 elif action == 'alldebridRevoke':
 	from myaccts.modules import alldebrid
@@ -100,8 +124,16 @@ elif action == 'premiumizeAuth':
 elif action == 'premiumizeSync':
 	from myaccts.modules import debrid_pm
 	debrid_pm.debrid_auth_pm()
-	notification('Premiumize', 'Sync Complete!', icon=pm_icon)
 
+elif action == 'premiumizeReSync':
+	from myaccts.modules import debrid_pm
+	debrid_pm.debrid_auth_pm()
+
+	if str(var.check_myaccts_pm) != '':
+                notification('Account Manager', 'Sync Complete!', icon=pm_icon)
+	if str(var.check_myaccts_pm) == '':
+                notification('Account Manager', 'Premiumize NOT Authorized!', icon=pm_icon)
+	
 elif action == 'premiumizeRevoke':
 	from myaccts.modules import premiumize
 	control.function_monitor(premiumize.Premiumize().revoke)
@@ -117,8 +149,16 @@ elif action == 'realdebridAuth':
 elif action == 'realdebridSync':
 	from myaccts.modules import debrid_rd
 	debrid_rd.debrid_auth_rd()
-	notification('RealDebrid', 'Sync Complete!', icon=pm_icon)
 
+elif action == 'realdebridReSync':
+	from myaccts.modules import debrid_rd
+	debrid_rd.debrid_auth_rd()
+
+	if str(var.check_myaccts_rd) != '':
+                notification('Account Manager', 'Sync Complete!', icon=rd_icon)
+	if str(var.check_myaccts_rd) == '':
+                notification('Account Manager', 'Real-Debrid NOT Authorized!', icon=rd_icon)
+                
 elif action == 'realdebridRevoke':
 	from myaccts.modules import realdebrid
 	control.function_monitor(realdebrid.RealDebrid().revoke)
@@ -156,3 +196,11 @@ elif action == 'tools_viewLogFile':
 elif action == 'tools_uploadLogFile':
 	from myaccts.modules import log_utils
 	log_utils.upload_LogFile()
+
+elif action == 'SetBackupFolder':
+	from myaccts.modules import control
+	control.set_backup_folder()
+
+elif action == 'ResetBackupFolder':
+	from myaccts.modules import control
+	control.reset_backup_folder()

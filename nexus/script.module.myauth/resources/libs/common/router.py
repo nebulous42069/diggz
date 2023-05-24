@@ -2,6 +2,8 @@ import xbmc
 import xbmcaddon
 import xbmcgui
 import xbmcplugin
+import os.path
+import xbmcvfs
 import sys
 try:  # Python 3
     from urllib.parse import parse_qsl
@@ -11,6 +13,21 @@ from resources.libs.common.config import CONFIG
 from resources.libs.common import logging
 from resources.libs.common import tools
 from resources.libs.gui import menu
+
+addon = xbmcaddon.Addon
+addonObject = addon('script.module.myauth')
+addonInfo = addonObject.getAddonInfo
+getLangString = xbmcaddon.Addon().getLocalizedString
+condVisibility = xbmc.getCondVisibility
+execute = xbmc.executebuiltin
+monitor = xbmc.Monitor()
+transPath = xbmcvfs.translatePath
+joinPath = os.path.join
+
+rd_icon = joinPath(os.path.join(xbmcaddon.Addon('script.module.myaccts').getAddonInfo('path'), 'resources', 'icons'), 'realdebrid.png')
+pm_icon = joinPath(os.path.join(xbmcaddon.Addon('script.module.myaccts').getAddonInfo('path'), 'resources', 'icons'), 'premiumize.png')
+ad_icon = joinPath(os.path.join(xbmcaddon.Addon('script.module.myaccts').getAddonInfo('path'), 'resources', 'icons'), 'alldebrid.png')
+trakt_icon = joinPath(os.path.join(xbmcaddon.Addon('script.module.myaccts').getAddonInfo('path'), 'resources', 'icons'), 'trakt.png')
 
 class Router:
     def __init__(self):
@@ -42,7 +59,6 @@ class Router:
         if mode is None:
             self._finish(handle)
 
-
         elif mode == 'trakt':  # Trakt Manager Menu
             menu.trakt_menu()
             self._finish(handle)
@@ -64,18 +80,17 @@ class Router:
         elif mode == 'savetrakt':  # Save Trakt Data
             from resources.libs import traktit
             traktit.trakt_it('update', name)
-        elif mode == 'save_tmdbh':  # Save TMDBH Trakt Data
-            from resources.libs import tmdbh_trakt
-            tmdbh_trakt.trakt_it('update', name)
+        elif mode == 'savetrakt_myacct':  # Save Trakt Data via Myacct settings menu
+            from resources.libs import traktit
+            traktit.trakt_it('update', name)
+            xbmcgui.Dialog().notification('Account Manager', 'Trakt Backup Complete!', trakt_icon, 3000)
         elif mode == 'restoretrakt':  # Recover All Saved Trakt Data
             from resources.libs import traktit
-            traktit.trakt_it('restore', name)
-        elif mode == 'restore_tmdbh':  # Restore TMDBH Saved Trakt Data
-            from resources.libs import tmdbh_trakt
-            tmdbh_trakt.trakt_it('restore', name)
+            traktit.trakt_it_restore('restore', name)
+            xbmcgui.Dialog().notification('Account Manager', 'Trakt Data Restored!', trakt_icon, 3000)
         elif mode == 'addontrakt':  # Clear All Addon Trakt Data
             from resources.libs import traktit
-            traktit.trakt_it('clearaddon', name)
+            traktit.trakt_it_revoke('clearaddon', name)
         elif mode == 'cleartrakt':  # Clear All Saved Trakt Data
             from resources.libs import traktit
             traktit.clear_saved(name)
@@ -86,14 +101,25 @@ class Router:
         elif mode == 'updatetrakt':  # Update Saved Trakt Data
             from resources.libs import traktit
             traktit.auto_update('all')
-
+        elif mode == 'save_tmdbh':  # Save TMDBH Trakt Data
+            from resources.libs import tmdbh_trakt
+            tmdbh_trakt.trakt_it('update', name)
+        elif mode == 'restore_tmdbh':  # Restore TMDBH Saved Trakt Data
+            from resources.libs import tmdbh_trakt
+            tmdbh_trakt.trakt_it('restore', name)
+            
         # DEBRID MANAGER RD
         elif mode == 'savedebrid_rd':  # Save Debrid Data
             from resources.libs import debridit_rd
             debridit_rd.debrid_it('update', name)
+        elif mode == 'savedebrid_myacct':  # Save Debrid Datavia Myacct settings menu
+            from resources.libs import debridit_rd
+            debridit_rd.debrid_it('update', name)
+            xbmcgui.Dialog().notification('Account Manager', 'Real-Debrid Backup Complete!', rd_icon, 3000)
         elif mode == 'restoredebrid_rd':  # Recover All Saved Debrid Data
             from resources.libs import debridit_rd
             debridit_rd.debrid_it('restore', name)
+            xbmcgui.Dialog().notification('Account Manager', 'Real-Debrid Data Restored!', rd_icon, 3000)
         elif mode == 'addondebrid_rd':  # Clear All Addon Debrid Data
             from resources.libs import debridit_rd
             debridit_rd.debrid_it('clearaddon', name)
@@ -112,9 +138,14 @@ class Router:
         elif mode == 'savedebrid_pm':  # Save Debrid Data
             from resources.libs import debridit_pm
             debridit_pm.debrid_it('update', name)
+        elif mode == 'savedebrid_myacct':  # Save Debrid Data via Myacct settings menu
+            from resources.libs import debridit_pm
+            debridit_pm.debrid_it('update', name)
+            xbmcgui.Dialog().notification('Account Manager', 'Premiumize Backup Complete!', pm_icon, 3000)
         elif mode == 'restoredebrid_pm':  # Recover All Saved Debrid Data
             from resources.libs import debridit_pm
             debridit_pm.debrid_it('restore', name)
+            xbmcgui.Dialog().notification('Account Manager', 'Premiumize Data Restored!', pm_icon, 3000)
         elif mode == 'addondebrid_pm':  # Clear All Addon Debrid Data
             from resources.libs import debridit_pm
             debridit_pm.debrid_it('clearaddon', name)
@@ -133,9 +164,14 @@ class Router:
         elif mode == 'savedebrid_ad':  # Save Debrid Data
             from resources.libs import debridit_ad
             debridit_ad.debrid_it('update', name)
+        elif mode == 'savedebrid_myacct':  # Save Debrid Data via Myacct settings menu
+            from resources.libs import debridit_ad
+            debridit_ad.debrid_it('update', name)
+            xbmcgui.Dialog().notification('Account Manager', 'All-Debrid Backup Complete!', ad_icon, 3000)
         elif mode == 'restoredebrid_ad':  # Recover All Saved Debrid Data
             from resources.libs import debridit_ad
             debridit_ad.debrid_it('restore', name)
+            xbmcgui.Dialog().notification('Account Manager', 'All-Debrid Data Restored!', ad_icon, 3000)
         elif mode == 'addondebrid_ad':  # Clear All Addon Debrid Data
             from resources.libs import debridit_ad
             debridit_ad.debrid_it('clearaddon', name)

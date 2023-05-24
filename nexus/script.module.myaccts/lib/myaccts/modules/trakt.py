@@ -1,14 +1,16 @@
 # -*- coding: utf-8 -*-
 """
-	My Accounts
+	Account Manager
 """
-
+import xbmc
 import requests
 import time
 from myaccts.modules import control
 from myaccts.modules import log_utils
-
-trakt_icon = control.joinPath(control.artPath(), 'trakt.png')
+import xbmcaddon
+import os
+joinPath = os.path.join
+trakt_icon = joinPath(os.path.join(xbmcaddon.Addon('script.module.myaccts').getAddonInfo('path'), 'resources', 'icons'), 'trakt.png')
 
 class Trakt():
 	def __init__(self):
@@ -144,7 +146,7 @@ class Trakt():
 					user = self.call("users/me", with_auth=True)
 					control.setSetting('trakt.username', str(user['username']))
 				except: pass
-				control.notification(message=40074, icon=trakt_icon)
+				control.notification_trakt(message=40074, icon=trakt_icon) #Authorization complete. Start sync process
 				return True
 			control.notification(message=40075, icon=trakt_icon)
 			return False
@@ -160,7 +162,6 @@ class Trakt():
 		control.setSetting('trakt.token', '')
 		control.setSetting('trakt.refresh', '')
 		control.dialog.ok(control.lang(32315), control.lang(32314))
-
 	def account_info(self):
 		response = self.call("users/me", with_auth=True)
 		return response
@@ -212,12 +213,12 @@ class Trakt():
 			log_utils.error()
 			return
 	def traktClientID(self):
-		traktId = 'e3a8d1c673dfecb7f669b23ecbf77c75fcfd24d3e8c3dbc7f79ed995262fa1db'
+		traktId = '4a479b95c8224999eef8d418cfe6c7a4389e2837441672c48c9c8168ea42a407'
 		if (control.setting('trakt.client.id') != '' or control.setting('trakt.client.id') is not None) and control.setting('traktuserkey.enabled') == 'true':
 			traktId = control.setting('trakt.client.id')
 		return traktId
 	def traktClientSecret(self):
-		traktSecret = '73bee6aeee29cb75db4d8771458a440017f7cfe842e85f457ed9d81f7910b349'
+		traktSecret = '89d8f8f71b312985a9e1f91e9eb426e23050102734bb1fa36ec76cdc74452ab6'
 		if (control.setting('trakt.client.secret') != '' or control.setting('trakt.client.secret') is not None) and control.setting('traktuserkey.enabled') == 'true':
 			traktSecret = control.setting('trakt.client.secret')
 		return traktSecret
