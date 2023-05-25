@@ -465,14 +465,18 @@ def download_tv_test(meta_info, filename):
 			break
 	episode_name_flag = False
 	if str(meta_info['episode_name']).lower() in filename or str(meta_info['clean_episode_name']).lower() in filename:
-		episode_name_flag = True
+		if meta_info['episode_name'] in meta_info['alternate_titles']:
+			episode_name_flag = False
+		else:
+			episode_name_flag = True
 
 	if episode_name_flag == False:
 		name_word_list = meta_info['clean_episode_name'].split(' ')
+		show_title_split = str(meta_info['show_title']).lower().split(' ')
 		word_count = 0
 		total_word_count = 0
 		for i in name_word_list:
-			if str(i) in filename and len(i) > 3:
+			if str(i) in filename and len(i) > 3 and not str(i) in show_title_split:
 				word_count = word_count + 1
 			if len(i) > 3:
 				total_word_count = total_word_count + 1
@@ -489,7 +493,7 @@ def download_tv_test(meta_info, filename):
 		for xi in meta_info['season_ep_titles']:
 			clean_episode_name = regex.sub(' ', xi.replace('\'s','s').replace('&','and')).replace('  ',' ').lower()
 			clean_episode_name = str(clean_episode_name).lower().replace('part ii','').replace('part 1','').replace('part 2','').replace('part i','').strip()
-			if str(xi).lower() in filename or str(clean_episode_name).lower() in filename:
+			if not xi in meta_info['alternate_titles'] and (str(xi).lower() in filename or str(clean_episode_name).lower() in filename):
 				episode_list_flag = False
 				break
 
@@ -561,9 +565,13 @@ def download_tv_test(meta_info, filename):
 			if episode_list_flag == True and season_list_flag == True and (show_title_flag == True or alternate_titles_flag == True):
 				part1_part2_match_flag = True
 	
-	if episode_name_flag == True and part1_part2_match_flag == True and (show_title_flag == False and alternate_titles_flag == False) and episode_list_flag == False:
+	if episode_name_flag == True and part1_part2_match_flag == True and (show_title_flag == False and alternate_titles_flag == False):
 		episode_name_flag = False
-	
+		if episode_list_flag == True:
+			episode_list_flag = False
+		if season_list_flag == True:
+			season_list_flag = False
+
 	if episode_list_flag2 == True and episode_list_flag == False:
 		if part1_part2_match_flag == True and episode_name_flag == True:
 			episode_list_flag == True
@@ -573,9 +581,9 @@ def download_tv_test(meta_info, filename):
 			season_list_flag = False
 
 	meta_info_flags = {'x265_match_pass': x265_match_pass,'alternate_titles_flag': alternate_titles_flag,'episode_list_flag': episode_list_flag,'season_list_flag': season_list_flag,'episode_name_flag': episode_name_flag,'show_title_flag': show_title_flag,'part1_part2_match_flag': part1_part2_match_flag}
-	#if show_title_flag == True or alternate_titles_flag == True:
-	#	print_log(filename, meta_info)
-	#	print_log(filename, meta_info_flags)
+	if show_title_flag == True or alternate_titles_flag == True:
+		print_log(filename, meta_info)
+		print_log(filename, meta_info_flags)
 	return meta_info_flags
 
 def get_next_ep_details(show_title, show_curr_season, show_curr_episode, tmdb):
@@ -1142,7 +1150,7 @@ def next_ep_play(show_title, show_season, show_episode, tmdb):
 						PTN_season = show_season
 						PTN_title = show_title
 						PTN_res = ''
-						print_log(str('[' + str(PTN_size) + '][' + str(PTN_title) + '][' + str(PTN_season) + '][' + str(PTN_episode) + '][' + str(PTN_res) + '][' + str(PTN_download) + ']'),'download_found===>OPENINFO')
+						print_log(str('[' + str(PTN_size) + '][' + str(PTN_title) + '][' + str(PTN_season) + '][' + str(PTN_episode)+ '][' + str(episode_name) + '][' + str(PTN_res) + '][' + str(PTN_download) + ']'),'download_found===>OPENINFO')
 						break
 		if int(torrent_found) == 1 or int(download_found) == 1:
 			break
@@ -1257,7 +1265,8 @@ def next_ep_play(show_title, show_season, show_episode, tmdb):
 									headers=requests.head(PTN_download).headers
 									if str('attachment') in headers.get('Content-Disposition',''):
 										torrent_found = 1
-										print_log(str('[' + str(PTN_size) + '][' + str(PTN_title) + '][' + str(PTN_season) + '][' + str(PTN_episode) + '][' + str(PTN_res) + '][' + str(PTN_download) + ']'),'torrent_found===>OPENINFO')
+										print_log(str('[' + str(PTN_size) + '][' + str(PTN_title) + '][' + str(PTN_season) + '][' + str(PTN_episode)+ '][' + str(episode_name) + '][' + str(PTN_res) + '][' + str(PTN_download) + ']'),'torrent_found===>OPENINFO')
+										#print_log(str('[' + str(PTN_size) + '][' + str(PTN_title) + '][' + str(PTN_season) + '][' + str(PTN_episode) + '][' + str(PTN_res) + '][' + str(PTN_download) + ']'),'torrent_found===>OPENINFO')
 									else:
 										torrent_found = 0
 									if torrent_found == 1:
@@ -1297,7 +1306,7 @@ def next_ep_play(show_title, show_season, show_episode, tmdb):
 
 	con = db_connection()
 	cur = con.cursor()
-	sql_result1 = cur.execute("SELECT idepisode, * from files,episode,tvshow where episode.idfile = files.idfile and episode.idshow = tvshow.idshow and tvshow.c00 = '"+str(show_title)+"' and episode.c12 = '"+str(show_season)+"' and episode.c13 = '"+str(show_episode)+"' order by dateadded asc").fetchall()
+	sql_result1 = cur.execute("SELECT idepisode, * from files,episode,tvshow where episode.idfile = files.idfile and episode.idshow = tvshow.idshow and tvshow.c00 = '"+str(show_title).replace("'","''")+"' and episode.c12 = '"+str(show_season)+"' and episode.c13 = '"+str(show_episode)+"' order by dateadded asc").fetchall()
 	
 	#print_log(sql_result)
 	try: dbid = sql_result1[0][0]
@@ -1977,7 +1986,7 @@ def next_ep_play_movie(movie_year, movie_title, tmdb):
 	cur = con.cursor()
 	movie_title2 = movie_title.replace("'","''")
 	print_log(str(movie_title2),'===>OPENINFO')
-	sql_result1 = cur.execute("SELECT * from files,movie where movie.idfile = files.idfile and movie.c00 = '"+str(movie_title2)+"' order by dateadded asc").fetchall()
+	sql_result1 = cur.execute("SELECT * from files,movie where movie.idfile = files.idfile and movie.c00 = '"+str(movie_title2.replace("'","''"))+"' order by dateadded asc").fetchall()
 	
 	#print_log(sql_result)
 	try: dbid = sql_result1[0][0]

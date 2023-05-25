@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.megaiptv" name="[COLOR aqua]Mega IPTV[/COLOR]" version="1.1.0" provider-name="G-Man">
+<addon id="plugin.video.megaiptv" name="[COLOR aqua]Mega IPTV[/COLOR]" version="1.2.1" provider-name="G-Man">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0"/>
 		<import addon="script.module.requests"/>
@@ -9,10 +9,12 @@
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<summary lang="en">Live IPTV World-Wide</summary>
-		<description lang="en">An IPTV Channel Add-on with listings from Fluxus IPTV</description>
+		<description lang="en">An IPTV Multi Channel Add-on</description>
 		<platform>all</platform>
 		<language>en</language>
 		<license>GPL-2.0-or-later</license>
+		<source></source>
+		<news>1.2.0 Added new listings</news>
 		<assets>
 			<icon>icon.png</icon>
 		</assets>

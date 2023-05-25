@@ -3,7 +3,7 @@ import xbmcgui
 import xbmcaddon
 import xbmcvfs
 import os
-#import subprocess
+import shutil
 #import sys
 #from os.path import expanduser
 
@@ -87,6 +87,9 @@ def basedir_movies_path():
 
 def library_source_exists_tv():
     xml_file = xbmcvfs.translatePath('special://profile/sources.xml')
+    blank_sources_xml = xbmcvfs.translatePath(str(main_file_path()+'/blank_sources_xml'))
+    if xbmcvfs.exists(str(xml_file)) == False:
+        shutil.copyfile(blank_sources_xml, xml_file)
     #root_dir = xbmcaddon.Addon(addon_ID()).getSetting('library_folder')
     root_dir = str(basedir_tv_path())
     f = open(xml_file, "r")
@@ -97,6 +100,9 @@ def library_source_exists_tv():
 
 def library_source_exists_movies():
     xml_file = xbmcvfs.translatePath('special://profile/sources.xml')
+    blank_sources_xml = xbmcvfs.translatePath(str(main_file_path()+'/blank_sources_xml'))
+    if xbmcvfs.exists(str(xml_file)) == False:
+        shutil.copyfile(blank_sources_xml, xml_file)
     #root_dir = xbmcaddon.Addon(addon_ID()).getSetting('library_folder')
     root_dir = str(basedir_movies_path())
     f = open(xml_file, "r")
@@ -1117,7 +1123,8 @@ def trakt_watched_movies_full():
         return None
     import os
     if os.path.exists(Path(addonUserDataFolder + '/trakt_movies_watched.db')):
-        os.remove(Path(addonUserDataFolder + '/trakt_movies_watched.db'))
+        try: os.remove(Path(addonUserDataFolder + '/trakt_movies_watched.db'))
+        except PermissionError: return
 
     import sqlite3
     con = sqlite3.connect(str(Path(addonUserDataFolder + '/trakt_movies_watched.db')))
@@ -1160,7 +1167,8 @@ def trakt_watched_tv_shows_full():
         return
     import os
     if os.path.exists(Path(addonUserDataFolder + '/trakt_tv_watched.db')):
-        os.remove(Path(addonUserDataFolder + '/trakt_tv_watched.db'))
+        try: os.remove(Path(addonUserDataFolder + '/trakt_tv_watched.db'))
+        except PermissionError: return
 
     import sqlite3
     con = sqlite3.connect(str(Path(addonUserDataFolder + '/trakt_tv_watched.db')))

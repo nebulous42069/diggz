@@ -134,6 +134,27 @@
     </assets>
     <reuselanguageinvoker>true</reuselanguageinvoker>
   </extension>
+</addon><addon id="plugin.audio.mp3streams" name="MP3 Streams" version="2023.2.30" provider-name="Slam, Diggz|HSK-FIX">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0" />
+        <import addon="script.module.future" />
+        <import addon="script.module.mutagen" />
+        <import addon="script.module.requests" />
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>audio</provides>
+    </extension>
+    <extension point="xbmc.service" library="playerMP3.py" start="startup" />
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <summary>A music streaming Collection.</summary>
+        <description>Diggz MP3 Streams Kodi 19 conversion by Slam</description>
+        <news>2021.0.4 - Fixed Settings, 2021.0.3 - Bugfixes. Enjoy!</news>
+        <assets>
+            <icon>resources/icon.png</icon>
+            <fanart>resources/fanart.jpg</fanart>
+        </assets>
+    </extension>
 </addon><addon id="plugin.image.diggzwallpapers" name=" [COLOR blue] Diggz Wallpapers[/COLOR]" version="4" provider-name="FTG">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
@@ -459,7 +480,7 @@ All changes on GitHub: https://github.com/aitschti/plugin.video.cb20
 		<fanart>fanart.jpg</fanart>
   </assets>
   </extension>
-</addon><addon id="plugin.video.dartstreams" name="dartstreams" version="1.0.0" provider-name="lg">
+</addon><addon id="plugin.video.dartstreams" name="dartstreams" version="1.0.0a" provider-name="lg">
     <requires>
         <import addon="script.module.requests" />
         <import addon="script.module.inputstreamhelper" />
@@ -470,20 +491,19 @@ All changes on GitHub: https://github.com/aitschti/plugin.video.cb20
         <provides>video</provides>
     </extension>
  	<extension point="xbmc.addon.metadata">
-        <description lang="pl">Whatch Live and VOD</description>
-        <disclaimer lang="pl">Whatch Live and VOD
+        <description lang="pl">dartstreams</description>
+        <disclaimer lang="pl">dartstreams
         </disclaimer>
-        <summary lang="en">Whatch Live and VOD</summary>
-        <description lang="en">Whatch Live and VOD</description>
-        <disclaimer lang="en">Whatch Live and VOD
+        <summary lang="en">dartstreams</summary>
+        <description lang="en">dartstreams</description>
+        <disclaimer lang="en">dartstreams
         </disclaimer>
         <language>pl</language>
         <platform>all</platform>
         <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
         <website />
         <assets>
-            <icon>icon.png</icon>
-			<fanart>fanart.jpg</fanart>
+            <icon>ds_logo.png</icon>
         </assets>
         <reuselanguageinvoker>true</reuselanguageinvoker>
     </extension>
@@ -697,7 +717,7 @@ All changes on GitHub: https://github.com/aitschti/plugin.video.cb20
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
-</addon><addon id="plugin.video.megaiptv" name="[COLOR aqua]Mega IPTV[/COLOR]" version="1.1.0" provider-name="G-Man">
+</addon><addon id="plugin.video.megaiptv" name="[COLOR aqua]Mega IPTV[/COLOR]" version="1.2.1" provider-name="G-Man">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
 		<import addon="script.module.requests" />
@@ -707,10 +727,12 @@ All changes on GitHub: https://github.com/aitschti/plugin.video.cb20
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<summary lang="en">Live IPTV World-Wide</summary>
-		<description lang="en">An IPTV Channel Add-on with listings from Fluxus IPTV</description>
+		<description lang="en">An IPTV Multi Channel Add-on</description>
 		<platform>all</platform>
 		<language>en</language>
 		<license>GPL-2.0-or-later</license>
+		<source />
+		<news>1.2.0 Added new listings</news>
 		<assets>
 			<icon>icon.png</icon>
 		</assets>
@@ -1430,7 +1452,7 @@ Random updates by lolage.
 	<icon>icon.png</icon>
     </assets>
   </extension>
-</addon><addon id="script.extendedinfo" name="  [B][COLOR white]Extended Info-Diamond_MOD[/COLOR][/B]" version="420.7.56" provider-name="fryhenryj">
+</addon><addon id="script.extendedinfo" name="  [B][COLOR white]Extended Info-Diamond_MOD[/COLOR][/B]" version="420.7.60" provider-name="fryhenryj">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
 		<import addon="repository.jurialmunkey" version="2.2" optional="true" />

@@ -435,6 +435,10 @@ def start_info_actions(infos, params):
 			import json
 			xbmc.log(str('test_route')+'===>OPEN_INFO', level=xbmc.LOGINFO)
 			Utils.hide_busy()
+			from resources.lib import TheMovieDB
+			#response = TheMovieDB.get_tastedive_data(query=search_str, limit=limit, media_type=media_type)
+			response = TheMovieDB.get_tastedive_data_scrape(query='Alien³', year='1992', limit=50, media_type='movie')
+			xbmc.log(str(response)+'=System.HasMediaDVD===>OPENINFO', level=xbmc.LOGINFO)
 			return
 			#import json
 			#json_result_test = xbmc.executeJSONRPC('{"jsonrpc": "2.0","method": "Playlist.GetItems","params": {"properties": ["title", "file"],"playlistid": 1},"id": "1"}')

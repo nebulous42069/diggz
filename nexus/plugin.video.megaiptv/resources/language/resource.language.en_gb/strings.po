@@ -1,6 +1,6 @@
 # XBMC Media Center language file
-# Addon Name: Mega IPTV
-# Addon id: plugin.video.megaiptv
+# Addon Name: Fluxus IPTV
+# Addon id: plugin.video.fluxus
 # Addon Provider: X
 msgid ""
 msgstr ""
