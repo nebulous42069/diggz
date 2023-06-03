@@ -1185,6 +1185,33 @@ All changes on GitHub: https://github.com/aitschti/plugin.video.sc19
             <screenshot>resources/images/screenshot05.png</screenshot>
         </assets>
     </extension>
+</addon><addon id="plugin.video.tubitv" name="TubiTV" version="5.0.1" provider-name="Lunatixz">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0" />
+    <import addon="script.module.t1mlib" version="4.0.2" />
+    <import addon="script.module.requests" version="2.22.0" />
+    <import addon="inputstream.adaptive" version="2.6.0" />
+    <import addon="script.module.kodi-six" version="0.1.3.1" />
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+  </extension>
+  <extension point="xbmc.service" library="pseudotv_recommended.py" />
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">tubitv</summary>
+    <description lang="en_GB">Tubi TV has the largest library of FREE videos of hit and cult TV shows and films</description>
+    <disclaimer lang="en_GB">Feel free to use this script. For information visit the wiki.</disclaimer>
+    <platform>all</platform>
+    <language>en</language>
+    <license>GPL-2.0-or-later</license>
+    <forum>http://forum.kodi.tv/showthread.php?tid=</forum>
+    <website>http://www.tubitv.com/</website>
+    <news>v.5.0.1[CR]PseudoTV Live support</news>
+    <assets>
+        <icon>resources/images/icon.png</icon>
+        <fanart>resources/images/fanart.jpg</fanart>
+    </assets>
+  </extension>
 </addon><addon id="plugin.video.vix" name="Vix" version="0.5" provider-name="mbebe">
     <requires>
         <import addon="script.module.requests" />
@@ -1646,7 +1673,7 @@ Random updates by lolage.
       <icon>icon.png</icon>
     </assets>
   </extension>
-</addon><addon id="script.module.t1mlib" name="t1m Library Routines" provider-name="t1m" version="420.4.0.7">
+</addon><addon id="script.module.t1mlib" name="t1m Library Routines" provider-name="t1m" version="4.0.9">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
     <import addon="script.module.requests" version="2.22.0" />
@@ -1662,7 +1689,7 @@ Random updates by lolage.
         <forum>https://forum.kodi.tv/showthread.php?tid=247163</forum>
         <source>https://github.com/learningit/repo-scripts&gt;</source>
         <language>en</language>
-        <news>v4.0.7 - fix tv listings for live stream addons</news>
+        <news>v4.0.8 - fixes for Nexus</news>
         <assets>
             <icon>resources/icon.png</icon>
         </assets>
