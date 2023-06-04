@@ -31,7 +31,27 @@
                 "url": "installaddon(plugin.video.shadow)"
             },
             {
-                "name": "Install Scrubs (FREE)",
+                "name": "Install Ghost (DEBRID ONLY)",
+                "url": "installaddon(plugin.video.ghost)"
+            },
+            {
+                "name": "Install Unleashed (DEBRID ONLY)",
+                "url": "installaddon(plugin.video.unleashed)"
+            },
+            {
+                "name": "Install Base 19 (DEBRID ONLY)",
+                "url": "installaddon(plugin.video.base19)"
+            },
+            {
+                "name": "Install Realizer (DEBRID ONLY)",
+                "url": "installaddon(plugin.video.realizerx)"
+            },
+            {
+                "name": "Install Premiumizer (DEBRID ONLY)",
+                "url": "installaddon(plugin.video.premiumizerx)"
+            },
+            {
+                "name": "Install Scrubs V2 (FREE)",
                 "url": "installaddon(plugin.video.scrubsv2)"
             },
             {
@@ -43,178 +63,49 @@
                 "url": "installaddon(plugin.video.thecrew)"
             },
             {
-                "name": "Install Magic Dragon (FREE AND DEBRID)",
-                "url": "installaddon(plugin.video.magicdragon)"
+                "name": "Install Quicksilver (FREE AND DEBRID)",
+                "url": "installaddon(plugin.video.quicksilver)"
             },
             {
                 "name": "Install Shazam (FREE AND DEBRID)",
                 "url": "installaddon(plugin.video.shazam)"
             },
             {
-                "name": "Install Nightwing (FREE AND DEBRID)",
-                "url": "installaddon(plugin.video.nightwing)"
+                "name": "Install Magic Dragon (FREE AND DEBRID)",
+                "url": "installaddon(plugin.video.magicdragon)"
+            },
+            {
+                "name": "Install Asgard (FREE AND DEBRID)",
+                "url": "installaddon(plugin.video.asgard)"
             }
         ]
     },
-    "Trakt Manager": {
+    "Trakt And Debrid Account Manager": {
         "icon": "https://techwiser.com/wp-content/uploads/2020/09/trakt-logo.png",
         "items": [
             {
-                "name": "Recover All Trakt Logins From A Backup",
-                "url": "PlayMedia(plugin://script.module.myauth/?mode=restoretrakt&name=all)"
+                "name": "Open Account Manager",
+                "url": "addon.opensettings(script.module.accountmgr)"
             },
             {
-                "name": "Authorize Trakt For ALL Addons",
-                "url": "RunScript(script.module.myaccts, action=traktAuth)"
+                "name": "View Real Debrid logins",
+                "url": "ActivateWindow(10001,plugin://script.module.acctview/?mode=realdebrid,return)"
             },
             {
-                "name": "Re-Sync All Trakt Logins",
-                "url": "RunScript(script.module.myaccts, action=traktReSync)"
+                "name": "View Premiumize logins",
+                "url": "ActivateWindow(10001,plugin://script.module.acctview/?mode=premiumize,return)"
             },
             {
-                "name": "View Saved Trakt Logins",
-                "url": "ActivateWindow(10001,plugin://script.module.myauth/?mode=trakt,return)"
+                "name": "View All-Debrid Logins",
+                "url": "ActivateWindow(10001,plugin://script.module.acctview/?mode=alldebrid,return)"
             },
             {
-                "name": "Create A Backup Of ALL Trakt Logins",
-                "url": "PlayMedia(plugin://script.module.myauth/?mode=savetrakt_myacct&name=all)"
+                "name": "View Trakt Logins",
+                "url": "ActivateWindow(10001,plugin://script.module.acctview/?mode=trakt,return)"
             },
             {
-                "name": "Delete ALL Trakt Logins",
-                "url": "PlayMedia(plugin://script.module.myauth/?mode=addontrakt&name=all)"
-            }
-        ]
-    },
-    "Real Debrid Manager": {
-        "icon": "https://kodiapps.com/sharex/dllhost_2020-02-05_12-07-32.jpg",
-        "items": [
-            {
-                "name": "Recover All Real Debrid Logins From A Backup",
-                "url": "PlayMedia(plugin://script.module.myauth/?mode=restoredebrid_rd&name=all)"
-            },
-            {
-                "name": "Authorize Real-Debrid For All Addons",
-                "url": "RunScript(script.module.myaccts, action=realdebridAuth)"
-            },
-            {
-                "name": "Re-sync real-debrid data with all add-ons",
-                "url": "RunScript(script.module.myaccts, action=realdebridReSync)"
-            },
-            {
-                "name": "View Your Debrid Account Status",
-                "url": "RunScript(script.module.myaccts, action=realdebridAcct)"
-            },
-            {
-                "name": "View Your Saved Real Debrid Data",
-                "url": "ActivateWindow(10001,plugin://script.module.myauth/?mode=realdebrid,return)"
-            },
-            {
-                "name": "Check If your VPN is compatible with Real Debrid",
-                "url": "ActivateWindow(10001,plugin://script.RealDebrid.vpn/,return)"
-            },
-            {
-                "name": "Create A Backup Of All Real Debrid Logins",
-                "url": "PlayMedia(plugin://script.module.myauth/?mode=savedebrid_myacct&name=all)"
-            },
-            {
-                "name": "Check If your VPN is compatible with Real Debrid",
-                "url": "ActivateWindow(10001,plugin://script.RealDebrid.vpn/,return)"
-            },
-            {
-                "name": "Revoke All Real Debrid Data",
-                "url": "PlayMedia(plugin://script.module.myauth/?mode=addondebrid_rd&name=all)"
-            }
-        ]
-    },	
-    "Premiumize Manager": {
-        "icon": "https://play-lh.googleusercontent.com/LCdGKehB8Cqa36eh0hQwy3CIWMI4bzSB9SUrAKmRQaXkZsFUNdcxuBgKM7nmBUyIVg",
-        "items": [
-            {
-                "name": "Recover All Premiumize Logins From A Backup",
-                "url": "PlayMedia(plugin://script.module.myauth/?mode=restoredebrid_pm&name=all)"
-            },
-            {
-                "name": "Authorize Premiumize For All Addons",
-                "url": "RunScript(script.module.myaccts, action=premiumizeAuth)"
-            },
-            {
-                "name": "Re-sync premiumize data with all add-ons",
-                "url": "RunScript(script.module.myaccts, action=premiumizeReSync)"
-            },
-            {
-                "name": "View Your Premiumize Account",
-                "url": "RunScript(script.module.myaccts, action=premiumizeAcct)"
-            },
-            {
-                "name": "View Your Saved Data",
-                "url": "ActivateWindow(10001,plugin://script.module.myauth/?mode=premiumize,return)"
-            },
-            {
-                "name": "Create A Backup Of All Premiumize Logins",
-                "url": "PlayMedia(plugin://script.module.myauth/?mode=savedebrid_myacct&name=all)"
-            },
-            {
-                "name": "Revoke All Premiumize Debrid Data",
-                "url": "PlayMedia(plugin://script.module.myauth/?mode=addondebrid_pm&name=all)"
-            }
-        ]
-    },
-    "All Debrid Manager": {
-        "icon": "http://4.bp.blogspot.com/-D-mA8RDa9KI/U11fxrpEUHI/AAAAAAAAAYY/uxM3YucdoeI/s1600/alldebrid.jpg",
-        "items": [
-            {
-                "name": "Recover All ALL Debrid Logins From A Backup",
-                "url": "PlayMedia(plugin://script.module.myauth/?mode=restoredebrid_pm&name=all)"
-            },
-            {
-                "name": "Authorize All Debrid For All Addons",
-                "url": "RunScript(script.module.myaccts, action=alldebridAuth)"
-            },
-            {
-                "name": "Re-sync All Debrid data with all add-ons",
-                "url": "RunScript(script.module.myaccts, action=alldebridReSync)"
-            },
-            {
-                "name": "View Your All Debrid Account",
-                "url": "RunScript(script.module.myaccts, action=alldebridAcct)"
-            },
-            {
-                "name": "View Your All Debrid Saved Data",
-                "url": "ActivateWindow(10001,plugin://script.module.myauth/?mode=alldebrid,return)"
-            },
-            {
-                "name": "Create A Backup Of All Debrid Logins",
-                "url": "PlayMedia(plugin://script.module.myauth/?mode=savedebrid_myacct&name=all)"
-            },
-            {
-                "name": "Revoke All Debrid Debrid Data",
-                "url": "PlayMedia(plugin://script.module.myauth/?mode=addondebrid_ad&name=all)"
-            }
-        ]
-    },
-    "Link Snappy Manager": {
-        "icon": "https://multihoster.org/wp-content/uploads/2018/10/logo-3.png",
-        "items": [
-            {
-                "name": "Authorize ResolveURL Link Snappy",
-                "url": "RunPlugin(plugin://script.module.resolveurl/?mode=auth_ls)"
-            },
-            {
-                "name": "Revoke ResolveURL Link Snappy",
-                "url": "RunPlugin(plugin://script.module.resolveurl/?mode=reset_ls)"
-            }
-        ]
-    },
-    "Debrid Link Manager": {
-        "icon": "https://cdn.debrid-link.com/img/cover.png",
-        "items": [
-            {
-                "name": "Authorize ResolveURL Debrid-Link.fr",
-                "url": "RunPlugin(plugin://script.module.resolveurl/?mode=auth_dl)"
-            },
-            {
-                "name": "Revoke ResolveURL Debrid-Link.fr",
-                "url": "RunPlugin(plugin://script.module.resolveurl/?mode=reset_dl)"
+                "name": "Re-Sync All Accounts",
+                "url": "RunScript(script.module.accountmgr, action=ReSyncAll)"
             }
         ]
     }

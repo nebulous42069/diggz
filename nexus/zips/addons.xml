@@ -173,11 +173,11 @@
             <fanart>fanart.jpg</fanart>
     </assets>
   </extension>
-</addon><addon id="plugin.program.chef20" name="Chef Nexus Wizard" version="458" provider-name="Slam, BYB, Sarge, Diggz">
+</addon><addon id="plugin.program.chef20" name="Chef Nexus Wizard" version="459" provider-name="Slam, BYB, Sarge, Diggz">
 	<requires>
 		<import addon="xbmc.python" version="3.0.1" />
-		<import addon="script.module.myaccts" version="1.0" />
-		<import addon="script.module.myauth" version="1.0" />		
+		<import addon="script.module.accountmgr" version="1.0" />
+		<import addon="script.module.acctview" version="1.0" />
 		<import addon="script.module.requests" version="1.0" />
 	</requires>
 	<extension point="xbmc.python.pluginsource" library="addon.py">
@@ -318,168 +318,6 @@
 		<fanart>fanart.jpg</fanart>
   </assets>
   </extension>
-</addon><addon id="plugin.video.buffstreams" name="Buff Streams" version="0.0.4" provider-name="Demonstratorz">
-  <requires>
-    <import addon="xbmc.python" version="3.0.0" />
-    <import addon="script.module.requests" />
-    <import addon="script.module.beautifulsoup4" />
-    <import addon="plugin.video.youtube" />
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en" />
-    <language>en</language>
-    <description lang="en" />
-     <platform>all</platform>
-  </extension>
-</addon><addon id="plugin.video.carbon-tv" name="CarbonTV" version="2022.12.23" provider-name="MetalChris">
-  <requires>
-    
-    <import addon="script.module.beautifulsoup4" version="4.3.2" />
-    <import addon="script.module.html5lib" version="0.999.0" />
-    <import addon="script.module.requests" version="2.9.1" />
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="addon.py">
-    <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">CarbonTV</summary>
-    <description lang="en">Watch video clips and full episodes from CarbonTV, the premier online video destination for premium outdoor themed shows and engaging personalities.  *Matrix Version*</description>
-    <disclaimer lang="en">For support go to my github. No support without a full, unedited debug log.  No support at TVAddons or any other forum.</disclaimer>
-    <language>en</language>
-    <platform>all</platform>
-    <license>GPL(v2) or Later</license>
-    <forum>http://forum.kodi.tv/showthread.php?tid=267580</forum>
-    <website>http://www.carbontv.com</website>
-    <email />
-    <source>https://raw.githubusercontent.com/MetalChris/repository.metalchris/master/plugin.video.carbon-tv/addon.py</source>
-    <news>Version 2021.11.19 - Fix Log Level</news>
-    <assets>
-        <icon>resources/media/icon.png</icon>
-        <fanart>resources/media/fanart.jpg</fanart>
-        <screenshot>resources/media/screenshot011.png</screenshot>
-        <screenshot>resources/media/screenshot015.png</screenshot>
-        <screenshot>resources/media/screenshot016.png</screenshot>
-        <screenshot>resources/media/screenshot017.png</screenshot>
-        <screenshot>resources/media/screenshot019.png</screenshot>
-        <screenshot>resources/media/screenshot020.png</screenshot>
-        <screenshot>resources/media/screenshot021.png</screenshot>
-    </assets>
-  </extension>
-</addon><addon id="plugin.video.cb19" version="1.0.0" name="CB19" provider-name="aitschti">
-    <requires>
-        <import addon="xbmc.python" version="3.0.0" />
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="addon.py">
-        <provides>video</provides>
-    </extension>
-    <extension point="xbmc.python.library" library="resources/lib/helperscript.py" />
-    <extension point="xbmc.addon.metadata">
-        <platform>all</platform>
-        <news>
-All changes on GitHub: https://github.com/aitschti/plugin.video.cb19
-        </news>
-        <assets>
-            <icon>resources/icon.png</icon>
-            <fanart>resources/fanart.png</fanart>
-        </assets>
-        <source />
-        <license>GPL-3.0</license>
-        <forum />
-        <website />
-        <email>last5mins@yandex.com</email>
-        <summary lang="en_GB">Chaturbate for Kodi 19/20</summary>
-        <summary lang="de_DE">Chaturbate für Kodi 19/20</summary>
-        <description lang="en_GB">Chaturbate streaming for Kodi 19/20</description>
-        <description lang="de_DE">Chaturbate streaming für Kodi 19/20</description>
-        <disclaimer lang="en_GB">(c) 2023 aitschti</disclaimer>
-        <disclaimer lang="de_DE">(c) 2023 aitschti</disclaimer>
-        <reuselanguageinvoker>false</reuselanguageinvoker>
-    </extension>
-</addon><addon id="plugin.video.cb20" version="1.1.1" name="CB20" provider-name="aitschti">
-    <requires>
-        <import addon="xbmc.python" version="3.0.0" />
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="addon.py">
-        <provides>video</provides>
-    </extension>
-    <extension point="xbmc.python.library" library="resources/lib/helperscript.py" />
-    <extension point="xbmc.addon.metadata">
-        <platform>all</platform>
-        <news>
-All changes on GitHub: https://github.com/aitschti/plugin.video.cb20
-        </news>
-        <assets>
-            <icon>resources/icon.png</icon>
-            <fanart>resources/fanart.png</fanart>
-        </assets>
-        <source />
-        <license>GPL-3.0</license>
-        <forum />
-        <website />
-        <email>last5mins@yandex.com</email>
-        <summary lang="en_GB">Chaturbate for Kodi 20</summary>
-        <summary lang="de_DE">Chaturbate für Kodi 20</summary>
-        <description lang="en_GB">Chaturbate streaming for Kodi 20</description>
-        <description lang="de_DE">Chaturbate streaming für Kodi 20</description>
-        <disclaimer lang="en_GB">(c) 2023 aitschti</disclaimer>
-        <disclaimer lang="de_DE">(c) 2023 aitschti</disclaimer>
-        <reuselanguageinvoker>false</reuselanguageinvoker>
-    </extension>
-</addon><addon id="plugin.video.chaturbate" name="Chaturbate" version="2.4.3" provider-name="LivingOn,HSK Fix">
-  <requires>
-    <import addon="xbmc.python" version="3.0.0" targetversion="3.0.0" />
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="addon.py">
-        <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="de">Chaturbate</summary>
-    <description lang="de">Der Name sagt alles!</description>
-    <disclaimer lang="de">Diese Software steht unter der GNU General Public License version 2[CR][CR]Copyright (c) 2014-2017 by LivingOn &lt;LivingOn@xmail.net&gt;</disclaimer>
-    <description lang="en">The name says it all!</description>
-    <disclaimer lang="en">This software is licensed under the GNU General Public License version 2[CR][CR]Copyright (c) 2014-2017 by &lt;LivingOn@xmail.net&gt;</disclaimer>
-    <platform>all</platform>
-	<language />
-	<license />
-	<forum />
-	<website />
-	<email />
-	<source />
-	<news />
-	<assets>
-		<icon>resources/icon.png</icon>
-		<fanart>resources/fanart.jpg</fanart>
-		<banner />
-		<clearlogo />
-		<screenshot />
-	</assets>
-  </extension>
-</addon><addon id="plugin.video.clickhere" name="  [B][COLOR white]Click Here[/COLOR][/B]" version="1.4" provider-name="Diamond Build">
-  <requires>
-    <import addon="xbmc.python" version="3.0.0" />
-    <import addon="script.module.requests" />
-    <import addon="script.module.routing" />
-    <import addon="script.module.unidecode" />
-    <import addon="script.module.inputstreamhelper" />
-    <import addon="script.module.resolveurl" />
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-    <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <description lang="en">Click Here, Debrid Free, One Click Play</description>
-    <summary lang="en_GB">Click Here, Debrid Free, One Click Play</summary>
-    <platform>all</platform>
-    <language>en</language>
-    <license>GPL-2.0-or-later</license>
-	<assets>
-		<icon>icon.png</icon>
-		<fanart>fanart.jpg</fanart>
-  </assets>
-  </extension>
 </addon><addon id="plugin.video.dartstreams" name="dartstreams" version="1.0.0a" provider-name="lg">
     <requires>
         <import addon="script.module.requests" />
@@ -532,74 +370,6 @@ All changes on GitHub: https://github.com/aitschti/plugin.video.cb20
         <news>- Añadida opción de reproducción externa de playlists[CR]- Correcciones menores
         </news>
     </extension>
-</addon><addon id="plugin.video.essential" name="Essential" version="2.0.1" provider-name="Z3R0">
-  <requires>
-    <import addon="xbmc.python" version="3.0.0" />
-    <import addon="script.module.requests" />
-    <import addon="script.module.routing" />
-    <import addon="script.module.unidecode" />
-    <import addon="script.module.inputstreamhelper" />
-    <import addon="script.module.resolveurl" />
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-    <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en_GB">A library of every Essential Mix ever released.</summary>
-    <platform>all</platform>
-    <language>en</language>
-    <license>GPL-2.0-or-later</license>
-	<assets>
-		<icon>icon.png</icon>
-		<fanart>fanart.jpg</fanart>
-  </assets>
-  </extension>
-</addon><addon id="plugin.video.fluxus" name="Fluxus IPTV" version="0.0.7" provider-name="X">
-	<requires>
-		<import addon="xbmc.python" version="3.0.0" />
-		<import addon="script.module.requests" />
-	</requires>
-	<extension point="xbmc.python.pluginsource" library="addon.py">
-		<provides>video</provides>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en" />
-		<description lang="en" />
-		<platform>all</platform>
-		<language>en</language>
-		<license>GPL-2.0-or-later</license>
-		<forum />
-		<website /> 
-		<email />
-		<source />
-		<news>v0.0.5 - Fixed myFavourites. v0.0.4 - fixed an error loading certain lists. v0.0.3 - Major upgrade!!! Fixed missing links, added Search, added Favourites, added Recently Played, added a link checker to prevent crashing on certain dead links v0.0.1 - Kodi 19</news>
-		<assets>
-			<icon>icon.png</icon>
-			<fanart>fanart.jpg</fanart>
-			<banner />
-			<clearlogo />
-			<screenshot />
-		</assets>
-	</extension>
-</addon><addon id="plugin.video.freelivetv.tva" name="Free Live TV" provider-name="mhancoc7" version="420.0.7.1">
-    <requires>
-        <import addon="script.module.m7lib" version="0.1.0" />
-    </requires>
-    <extension library="default.py" point="xbmc.python.pluginsource">
-        <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-        <summary>Free Live TV</summary>
-        <description>Please support the continued development of Free Live TV by becoming a Patron [COLOR
-            lightskyblue]https://patreon.m7kodi.dev/[/COLOR]
-        </description>
-        <platform>all</platform>
-        <website>https://m7kodi.dev</website>
-        <assets>
-            <icon>icon.png</icon>
-            <fanart>fanart.jpg</fanart>
-        </assets>
-    </extension>
 </addon><addon id="plugin.video.fullmatchtv" name="Full Match TV" version="0.0.2" provider-name="Demonstratorz">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
@@ -616,56 +386,6 @@ All changes on GitHub: https://github.com/aitschti/plugin.video.cb20
     <description lang="en" />
      <platform>all</platform>
   </extension>
-</addon><addon id="plugin.video.gratis" name="Gratis" version="1.1.4" provider-name="Jon Bovi">
-	<requires>
-		<import addon="xbmc.python" version="3.0.0" />
-		<import addon="script.module.requests" />
-		<import addon="script.module.resolveurl" />
-		<import addon="script.module.beautifulsoup4" />
-		<import addon="inputstream.adaptive" />
-		<import addon="plugin.video.youtube" />
-	</requires>
-	<extension point="xbmc.python.pluginsource" library="default.py">
-		<provides>video</provides>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en_GB">Come here for the latest.</summary>
-		<description lang="en_GB">Merriam-Webster definition of GRATIS: without charge or recompense : FREE!!!</description>
-		<platform>all</platform>
-		<license>GPL-3.0-or-later</license>
-		<website />
-		<source />
-		<assets>
-			<icon>icon.png</icon>
-			<fanart>fanart.jpg</fanart>
-		</assets>
-	</extension>
-</addon><addon id="plugin.video.hunt-channel" name="Hunt Channel" version="2021.09.26" provider-name="MetalChris">
-  <requires>
-    
-    <import addon="script.module.beautifulsoup4" version="4.3.2" />
-    <import addon="script.module.html5lib" version="0.999.0" />
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="addon.py">
-    <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">Watch Live Programming from Hunt Channel</summary>
-    <description lang="en">Hunt Channel’s Mission is to provide Quality Outdoor Programming during PrimeTime.  *Matrix Version*</description>
-    <disclaimer lang="en">Support at forum.kodi.tv or my github only. No support without a full, unedited debug log.  No support at TVAddons or any other forum.</disclaimer>
-    <language />
-    <platform>all</platform>
-    <license>GPL(v2) or Later</license>
-    <forum>http://forum.kodi.tv/showthread.php?tid=276043</forum>
-    <website>http://www.huntchannel.tv</website>
-    <email />
-    <source />
-    <news>v.2021.09.26: Updates for Matrix</news>
-    <assets>
-        <icon>resources/Media/icon.png</icon>
-        <fanart>resources/Media/fanart.jpg</fanart>
-    </assets>
-  </extension>
 </addon><addon id="plugin.video.iptvxc" name="[B][COLOR red]XCUI Streams[/B][/COLOR]" version="3.1.5" provider-name="[B][COLOR orange]Fire TV Guru[/B][/COLOR]">
   <extension point="xbmc.python.pluginsource" library="default.py">
 		<provides>video</provides>
@@ -679,22 +399,6 @@ All changes on GitHub: https://github.com/aitschti/plugin.video.cb20
 		<icon>icon.png</icon>
 		<fanart>fanart.jpg</fanart>
 	</assets>
-  </extension>
-</addon><addon id="plugin.video.kodikaraoke" name="Kodi Karaoke Free" version="420.1.0.0" provider-name="Kodi Karaoke">
-  <requires>
-    <import addon="xbmc.python" version="3.0.0" />
-    <import addon="plugin.video.youtube" version="0.0.1" />
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">Search and Play Karaoke Videos for FREE</summary>
-    <description lang="en">Search and Play Karaoke Videos for FREE</description>
-    <platform>all</platform>
-    <assets>
-        <icon>icon.png</icon>
-    </assets>
   </extension>
 </addon><addon id="plugin.video.latinohd" name="Latin TV" version="1.0.1" provider-name="mbebe">
     <requires>
@@ -737,84 +441,6 @@ All changes on GitHub: https://github.com/aitschti/plugin.video.cb20
 			<icon>icon.png</icon>
 		</assets>
 	</extension>
-</addon><addon id="plugin.video.mlbtv" name="MLB.TV®" version="2022.10.9+matrix.1" provider-name="eracknaphobia">
-    <requires>
-        <import addon="xbmc.python" version="3.0.0" />
-        <import addon="script.module.pytz" />
-        <import addon="script.module.beautifulsoup4" />
-        <import addon="script.module.requests" />
-        <import addon="inputstream.adaptive" optional="true" />
-        <import addon="script.module.kodi-six" />
-        <import addon="script.module.dateutil" />
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="main.py">
-        <provides>video</provides>
-    </extension>
-    <extension point="xbmc.service" library="service.py" />
-    <extension point="xbmc.addon.metadata">
-        <platform>all</platform>
-        <summary lang="en_GB">Watch live and archived games
-        </summary>
-        <description lang="en_GB">Watch every out-of-market regular season game in the office or on the go. The #1 LIVE
-            Streaming Sports Service
-        </description>
-        <disclaimer lang="en_GB">Requires an MLB.tv account</disclaimer>
-        <news>
-            - auto skip: added option to skip to specific batter(s) or pitcher(s)
-            - fixed game changer display time bug for start time TBD games
-            - option to skip only commercial breaks
-            - tweaked idle time / specific player skipping
-            - added international blackout labels for postseason games
-            - removed unnecessary Big Inning checks
-            - removed non-playable WBC qualifier games from list
-            - added skip adjust start and end settings (recommend 7 and 5 for postseason so far)
-        </news>
-        <language>en</language>
-        <platform>all</platform>
-        <license>GPL-2.0-or-later</license>
-        <forum>https://forum.kodi.tv/showthread.php?tid=262745</forum>
-        <website>https://www.mlb.com/live-stream-games</website>
-        <source>https://github.com/eracknaphobia/plugin.video.mlbtv</source>
-        <assets>
-            <icon>icon.png</icon>
-            <fanart>fanart.jpg</fanart>
-        </assets>
-    </extension>
-</addon><addon id="plugin.video.mlbtv2" name="MLB.TV 2" version="2020.10.8+matrix.1" provider-name="eracknaphobia">
-    <requires>
-        <import addon="xbmc.python" version="3.0.0" />
-        <import addon="script.module.pytz" />
-        <import addon="script.module.beautifulsoup4" />
-        <import addon="script.module.requests" />
-        <import addon="inputstream.adaptive" optional="true" />
-        <import addon="script.module.kodi-six" />
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="main.py">
-        <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-        <platform>all</platform>
-        <summary lang="en_GB">Watch live and archived games
-        </summary>
-        <description lang="en_GB">Watch every out-of-market regular season game in the office or on the go. The #1 LIVE
-            Streaming Sports Service
-        </description>
-        <disclaimer lang="en_GB">Requires an MLB.tv account</disclaimer>
-        <news>
-            - Matrix compatibility updates
-            - Code clean up
-        </news>
-        <language>en</language>
-        <platform>all</platform>
-        <license>GPL-2.0-or-later</license>
-        <forum>https://forum.kodi.tv/showthread.php?tid=262745</forum>
-        <website>https://www.mlb.com/live-stream-games</website>
-        <source>https://github.com/eracknaphobia/plugin.video.mlbtv2</source>
-        <assets>
-            <icon>icon.png</icon>
-            <fanart>fanart.jpg</fanart>
-        </assets>
-    </extension>
 </addon><addon id="plugin.video.neo.tv" version="2.0.0+matrix" name="[B][COLOR white]NEO tv[/COLOR][/B]" provider-name="Neo.tv">
 <requires>
 		<import addon="script.module.six" />
@@ -849,28 +475,6 @@ All changes on GitHub: https://github.com/aitschti/plugin.video.cb20
     <screenshot>resources/screenshots/.jpg</screenshot>
 </assets>
   </extension>
-</addon><addon id="plugin.video.nflticket" name="NFL Sunday Ticket" version="0.0.1" provider-name="mr.x">
-    <requires>
-        <import addon="script.module.requests" />
-        <import addon="script.module.six" />
-        <import addon="script.module.xmltodict" />
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="main.py">
-        <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-        <description lang="en" />
-        <disclaimer lang="en">https://github.com/mbebe/blomqvist</disclaimer>	
-        <summary lang="en" />
-        <language>en</language>
-        <platform>all</platform>
-        <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
-        <website>https://github.com/mbebe/blomqvist</website>
-        <assets>
-            <icon>icon.png</icon>
-            <fanart>fanart.jpg</fanart>
-        </assets>
-    </extension>
 </addon><addon id="plugin.video.nhlstreams" name="NHL Streams" version="0.3" provider-name="mbebe">
     <requires>
         <import addon="script.module.requests" />
@@ -913,55 +517,6 @@ All changes on GitHub: https://github.com/aitschti/plugin.video.cb20
 		<fanart>fanart.jpg</fanart>
 	</assets>
 	</extension>
-</addon><addon id="plugin.video.premiumizerx" version="2022.12.21" name="Premiumizer (py3)" provider-name="aenema">
-	<requires>
-		<import addon="xbmc.python" version="3.0.0" />
-		<import addon="script.module.beautifulsoup4" />
-		<import addon="script.module.requests" />	
-		
-		
-	</requires>
-	<extension point="xbmc.python.pluginsource" library="main.py">
-		<provides>video</provides>
-	</extension>
-	<extension point="xbmc.service" library="service.py" start="startup" />
-	<extension point="kodi.context.item">
-		<menu id="kodi.core.main">
-			<menu>
-				
-				<label>[COLOR red]Premiumizer[/COLOR]</label>
-				<item library="context/updatecache.py">
-					<label>New Cloud Cache</label>
-					<visible>System.HasAddon(plugin.video.premiumizerx)</visible>
-				</item>
-				<item library="context/updatelibrary.py">
-					<label>Update Library</label>
-					<visible>System.HasAddon(plugin.video.premiumizerx)</visible>
-				</item>
-				<item library="context/contextTools.py">
-					<label>Settings</label>
-					<visible>System.HasAddon(plugin.video.premiumizerx)</visible>
-				</item>
-			</menu>
-		</menu>
-	</extension>	
-
-	<extension point="xbmc.addon.metadata">
-        <description>Premiumize Cloud Addon with a twist!
-		This addon is inteded for use with content that you currently own! The author does not host or distribute any of the content displayed by this addon. The author does not have any affiliation with the content provider.	
-		</description>
-	
-		<summary lang="en">premiumizer Cloud Addon</summary>
-		<platform>all</platform>
-		<forum>-</forum>
-		<website>http://premiumize.me</website>
-		<source>-</source>
-		<assets>
-			<icon>icon.png</icon>
-			<fanart>fanart.jpg</fanart>
-		</assets>
-		<news>-</news>
-	</extension>
 </addon><addon id="plugin.video.prowrestling" name="Watch Pro Wrestling" version="1.0.0" provider-name="G-Man">
     <requires>
         <import addon="script.module.requests" />
@@ -984,62 +539,6 @@ All changes on GitHub: https://github.com/aitschti/plugin.video.cb20
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
-</addon><addon id="plugin.video.purelywrestling" name="Purely Wrestling" version="420.1.0.2" provider-name="The Crew">
-	<requires>
-		<import addon="script.module.pyxbmct" />
-		<import addon="script.module.resolveurl" />
-		<import addon="script.module.six" />
-		<import addon="script.module.kodi-six" />
-		<import addon="script.module.requests" />
-		<import addon="script.module.simplejson" />
-	</requires>
-	<extension point="xbmc.python.pluginsource" library="purely.py">
-		<provides>video</provides>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-	<summary lang="en">Purely Wrestling</summary>
-	<description lang="en">Purely Wrestling</description>
-		<assets>
-			<icon>icon.png</icon>
-			<fanart>fanart.jpg</fanart>
-			<screenshot />
-			<screenshot />
-			<screenshot />
-		</assets>
-		<platform>all</platform>
-		<forum />
-		<website />
-	</extension>
-</addon><addon id="plugin.video.realizerx" version="2022.12.16" name="Realizer (py3)" provider-name="aenema">
-	<requires>
-		<import addon="xbmc.python" version="3.0.0" />
-		<import addon="script.module.beautifulsoup4" />
-		<import addon="script.module.requests" />	
-		
-		
-	</requires>
-	<extension point="xbmc.python.pluginsource" library="main.py">
-		<provides>video</provides>
-	</extension>
-	<extension point="xbmc.service" library="service.py" start="startup" />
-	
-
-	<extension point="xbmc.addon.metadata">
-        <description>Cloud Addon with a twist!
-		This addon is inteded for use with content that you currently own! The author does not host or distribute any of the content displayed by this addon. The author does not have any affiliation with the content provider.	
-		</description>
-	
-		<summary lang="en">Realizer Cloud Addon</summary>
-		<platform>all</platform>
-		<forum>-</forum>
-		<website />
-		<source>-</source>
-		<assets>
-			<icon>icon.png</icon>
-			<fanart>fanart.jpg</fanart>
-		</assets>
-		<news>-</news>
-	</extension>
 </addon><addon id="plugin.video.sc19" version="1.3.1" name="SC19" provider-name="aitschti">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
@@ -1153,36 +652,26 @@ All changes on GitHub: https://github.com/aitschti/plugin.video.sc19
             <screenshot>resources/images/screenshot05.png</screenshot>
         </assets>
     </extension>
-</addon><addon id="plugin.video.sling2" version="2022.1.24" name="Sling 2" provider-name="d21spike, eracknaphobia">
+</addon><addon id="plugin.video.thetvapp" name="The_TV_app" version="0.2" provider-name="xxxxxx">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.requests" />
-        <import addon="script.module.inputstreamhelper" />
-        <import addon="script.module.requests_oauthlib" />
-        <import addon="script.module.xmltodict" />
-        <import addon="script.module.pytz" />
-        <import addon="script.module.kodi-six" />
+        <import addon="script.module.six" />
     </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
+    <extension point="xbmc.python.pluginsource" library="main.py">
         <provides>video</provides>
     </extension>
-    <extension point="xbmc.service" library="service.py" start="startup" />
     <extension point="xbmc.addon.metadata">
-        <description lang="en_GB">A database driven SlingTV Kodi add-on. Providing many of the offered features/services you've come to expect from the official SlingTV interface. Choose anything from Live Channels, to On Demand, to binge watching shows. It's all there.</description>
+        <description lang="en">https://thetvapp.to</description>
+        <disclaimer lang="en">https://thetvapp.to</disclaimer>	
+        <summary lang="en">https://thetvapp.to</summary>
+        <language>en</language>
         <platform>all</platform>
-        <license>GNU GENERAL PUBLIC LICENSE. Version 3, June 2007</license>
-        <source>https://github.com/d21spike/plugin.video.sling2</source>
-        <website>https://www.Slingtv.com</website>
-        <news> </news>
-        <forum>https://forum.kodi.tv/showthread.php?tid=351048</forum>
+        <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+        <website>https://thetvapp.to</website>
         <assets>
-            <icon>resources/images/icon.png</icon>
-            <fanart>resources/images/fanart.jpg</fanart>
-            <screenshot>resources/images/screenshot01.png</screenshot>
-            <screenshot>resources/images/screenshot02.png</screenshot>
-            <screenshot>resources/images/screenshot03.png</screenshot>
-            <screenshot>resources/images/screenshot04.png</screenshot>
-            <screenshot>resources/images/screenshot05.png</screenshot>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
 </addon><addon id="plugin.video.tubitv" name="TubiTV" version="5.0.1" provider-name="Lunatixz">
@@ -1212,74 +701,6 @@ All changes on GitHub: https://github.com/aitschti/plugin.video.sc19
         <fanart>resources/images/fanart.jpg</fanart>
     </assets>
   </extension>
-</addon><addon id="plugin.video.vix" name="Vix" version="0.5" provider-name="mbebe">
-    <requires>
-        <import addon="script.module.requests" />
-        <import addon="script.module.six" />
-        <import addon="script.module.inputstreamhelper" version="0.3.3" />
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="main.py">
-        <provides>video</provides>
-    </extension>
-    <extension point="xbmc.service" library="service_entry.py" />
-    <extension point="xbmc.addon.metadata">
-        <description lang="en" />
-        <disclaimer lang="en">https://github.com/mbebe/blomqvist</disclaimer>    
-        <summary lang="en" />
-        <language>en</language>
-        <platform>all</platform>
-        <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
-        <website>https://github.com/mbebe/blomqvist</website>
-        <assets>
-            <icon>icon.png</icon>
-            <fanart>fanart.jpg</fanart>
-        </assets>
-    </extension>
-</addon><addon id="plugin.video.watchnixtoons2" name="WatchNixtoons2" version="0.10.4" provider-name="WNT2">
-    <requires>
-        <import addon="script.module.requests" />
-        <import addon="script.module.six" />
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-        <summary lang="en">WatchNixtoons2</summary>
-        <description lang="en">
-Watch cartoons and anime from [COLOR red][B]www.wcofun.com[/B][/COLOR].
-
-Support the WatchCartoonOnline website with a PayPal donation to:
-[COLOR khaki][B]wcohelp@yandex.com[/B][/COLOR]
-
-Add-on originally by doko.
-Random updates by lolage.
-        </description>
-        <disclaimer lang="en">The authors of this addon do not host any of the content found or have any affiliation with the content providers. This add-on only scrapes web pages.</disclaimer>
-        <language>en</language>
-        <platform lang="en">all</platform>
-        <news>[COLOR orange][B]WatchNixtoons2[/B][/COLOR] - Cartoons &amp; Anime
-[B]0.10.4:[/B]
-- Fixed host site
-
-[B]0.10.3:[/B]
-- Force mount session on each request
-
-[B]0.10.2:[/B]
-- Change session mount
-
-[B]0.10.1:[/B]
-- Revert clean title changes
-
-[B]0.10.0:[/B]
-- Fix listitem deprecated warnings
-- Latest Movies Now show thumbnails if available
-- Some Code clean-up
-- Update Thumbnail Hashes
-- Update User Agent</news>
-        <assets>
-            <icon>icon.png</icon>
-        </assets>
-    </extension>
 </addon><addon id="repository.diggz" name="Diggz Repository" version="15" provider-name="Diggz">
     <extension point="xbmc.addon.repository" name="Diggz Repository">
         <dir minversion="19.0.0" maxversion="19.9.9">
@@ -1533,6 +954,16 @@ Random updates by lolage.
 		6.2.0 - Added context menu force "player select" to the play button, available via "c" and long press "enter" button
 		</news>
 	</extension>
+</addon><addon id="script.module.acctview" name="acctviewer" version="420.2.0.8" provider-name="Zaxxon709">
+    <extension point="xbmc.python.pluginsource" library="default.py">
+    <extension point="xbmc.addon.metadata">
+    </extension>
+        <summary lang="en">View Accounts</summary>
+        <description lang="en">Account Manager Dependency</description>
+        <platform>all</platform>
+        <reuselanguageinvoker>false</reuselanguageinvoker>
+        <source>https://</source>
+    </extension>
 </addon><addon id="script.module.audrey" name="Audrey" version="1.0.0" provider-name="ptom, Jon Bovi bones mod">
 	<requires>
         <import addon="xbmc.python" version="3.0.0" />
@@ -1574,39 +1005,6 @@ Random updates by lolage.
 		<email />
 		<source />
 	</extension>
-</addon><addon id="script.module.myaccts" version="420.99.0.1" name="Account Manager" provider-name="Zaxxon709">
-	<requires>
-		<import addon="xbmc.python" version="3.0.0" />
-		<import addon="script.module.requests" version="2.19.1" />
-            <import addon="script.module.myauth" version="99.0.0" />
-	</requires>
-	<extension point="xbmc.service" library="lib/startup.py" start="startup" />
-	<extension point="xbmc.python.script" library="lib/default.py">
-		<provides>executable</provides>
-	</extension>
-	<extension point="xbmc.python.module" library="lib" />
-	<extension point="xbmc.addon.metadata">
-		<reuselanguageinvoker>false</reuselanguageinvoker>
-		<summary lang="en">Account Manager</summary>
-		<description>Trakt And Debrid Account Manager</description>
-		<platform>all</platform>
-		<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
-		<disclaimer lang="en">The author is not responsible for the use of this addon. [CR]The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation.[CR]This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.</disclaimer>
-		<assets>
-			<icon>icon.png</icon>
-			<fanart>fanart.png</fanart>
-		</assets>
-	</extension>
-</addon><addon id="script.module.myauth" name="myauthact" version="420.99.0.1" provider-name="Zaxxon709">
-    <extension point="xbmc.python.pluginsource" library="default.py">
-    <extension point="xbmc.addon.metadata">
-    </extension>
-        <summary lang="en">View Accounts</summary>
-        <description lang="en">Account Manager Dependency</description>
-        <platform>all</platform>
-        <reuselanguageinvoker>false</reuselanguageinvoker>
-        <source>https://</source>
-    </extension>
 </addon><addon id="script.module.pvr.artwork" name="PVR Artwork Module" version="2.1.4" provider-name="PvD">
     <requires>
 	    <import addon="xbmc.python" version="3.0.0" />
@@ -1997,28 +1395,6 @@ v1.0.0 - schumi2004,CaTz, Mafarricos
             <screenshot />
         </assets>
     </extension>
-</addon><addon id="service.library.data.provider" name="Library Data Provider" provider-name="BigNoid, SiLVO" version="0.4.2">
-	<requires>
-		<import addon="xbmc.python" version="3.0.0" />
-		<import addon="script.module.routing" version="0.1.0" />
-	</requires>
-	<extension point="xbmc.python.pluginsource" library="plugin.py">
-		<provides>video</provides>
-	</extension>
-	<extension library="service.py" point="xbmc.service" />
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en_GB">Browse movies and episodes in a variety of sorted playlists.</summary>
-		<description lang="en_GB">Plugin for skins to provide library data throughout the skin. It can also be used as standalone plugin to browse the playlists in the video library.</description>
-		<platform>all</platform>
-		<license>GPL-2.0-only</license>
-		<forum>https://forum.kodi.tv/showthread.php?tid=210063</forum>
-		<source>https://github.com/mikesilvo164/service.library.data.provider</source>
-		<news>Matrix fixes</news>
-		<assets>
-			<icon>resources/icon.png</icon>
-			<fanart>resources/fanart.jpg</fanart>
-		</assets>
-	</extension>
 </addon><addon id="skin.arctic.horizon.2" name="[B][COLOR gold]ArcticFlix[/COLOR][/B]   (High Power) (NO TOUCH/MOUSE)" provider-name="jurialmunkey" version="420.0.8.21">
     <requires>
         <import addon="xbmc.gui" version="5.15.0" />
