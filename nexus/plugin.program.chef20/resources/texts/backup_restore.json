@@ -9,8 +9,13 @@
         "setting": "saveadvanced",
         "path": "user_path"
     },
-    "script.module.myaccts": {
-        "name": "Debrid Manager",
+    "plugin.program.chef20": {
+        "name": "Chef Wizard",
+        "setting": "savedata",
+        "path": "data_path"
+    },
+    "script.module.accountmgr": {
+        "name": "Account Manager",
         "setting": "savedata",
         "path": "data_path"
     },
