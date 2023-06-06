@@ -19,7 +19,7 @@
 				<width>24</width>
 				<height>24</height>
 				<aspectratio>keep</aspectratio>
-				<texture flipx="true" colordiffuse="white">arrowright.png</texture>
+				<texture flipx="true" colordiffuse="white">arrowright.gif</texture>
 			</control>
 			<control type="image">
 				<left>64</left>
@@ -27,7 +27,7 @@
 				<width>24</width>
 				<height>24</height>
 				<aspectratio>keep</aspectratio>
-				<texture colordiffuse="white">arrowright.png</texture>
+				<texture colordiffuse="white">arrowright.gif</texture>
 			</control>
 			<control type="label">
 				<left>112</left>

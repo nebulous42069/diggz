@@ -70,8 +70,8 @@
 			<top>10</top>
 			<width>30</width>
 			<height>30</height>
-			<texturefocus flipx="true" colordiffuse="white">arrowright.png</texturefocus>
-			<texturenofocus flipx="true">arrowright.png</texturenofocus>
+			<texturefocus flipx="true" colordiffuse="white">arrowright.gif</texturefocus>
+			<texturenofocus flipx="true">arrowright.gif</texturenofocus>
 			<visible>Container(9010).HasPrevious</visible>
 			<onclick>Control.Move(9010,-1)</onclick>
 		</control>
@@ -80,8 +80,8 @@
 			<top>10</top>
 			<width>30</width>
 			<height>30</height>
-			<texturefocus colordiffuse="white">arrowright.png</texturefocus>
-			<texturenofocus>arrowright.png</texturenofocus>
+			<texturefocus colordiffuse="white">arrowright.gif</texturefocus>
+			<texturenofocus>arrowright.gif</texturenofocus>
 			<visible>Container(9010).HasNext</visible>
 			<onclick>Control.Move(9010,1)</onclick>
 		</control>

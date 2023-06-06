@@ -1791,7 +1791,7 @@ v1.0.0 - schumi2004,CaTz, Mafarricos
 		v420 Update for Kodi 19 Matrix
 		</news>
 	</extension>
-</addon><addon id="skin.planetdiggz" version="9.0.1" name="[B][COLOR gold]Planet Diggz[/COLOR][/B]  (Low Power)" provider-name="SiLVO">
+</addon><addon id="skin.planetdiggz" version="9.0.2" name="[B][COLOR gold]Planet Diggz[/COLOR][/B]  (Low Power)" provider-name="SiLVO">
 	<requires>
 		<import addon="xbmc.gui" version="5.16.0" />
 		<import addon="script.skinshortcuts" version="2.0.1" />
@@ -1952,7 +1952,7 @@ v1.0.0 - schumi2004,CaTz, Mafarricos
     </assets>
     <news>See changelog for latest changes</news>
   </extension>
-</addon><addon id="skin.xenox" version="9.0.02" name="[B][COLOR gold]XeNoX[/COLOR][/B]  (High Power)" provider-name="SiLVO">
+</addon><addon id="skin.xenox" version="9.0.03" name="[B][COLOR gold]XeNoX[/COLOR][/B]  (High Power)" provider-name="SiLVO">
 	<requires>
 		<import addon="xbmc.gui" version="5.16.0" />
 		<import addon="script.skinshortcuts" version="2.0.1" />
