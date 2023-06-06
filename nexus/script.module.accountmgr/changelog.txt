@@ -1,4 +1,8 @@
-2.2.1 - Added the option to view and manage data for multiple debrid accounts via one location. This should make it a little easier managing data for users with multiple debrid accounts. Removed Seren add-on due to increased Trakt API requests. Any add-on that supports custom keys has been updated to work accordingly. Added a changelog and Restore All Add-ons to Default option under 'Advanced' so users, if the wish to do so, can restore system to default settings prior to removing the add-on. This was already included in the revoke process but this makes it a little more clear. Bug fixes and clean up
+2.2.3 - Fixed a bug preventing sync of certian add-ons
+
+2.2.2 - Cleaned up backup/restore code adding some notifications so the user knows what is happening. Added a new menu item 'Information'. Bug fixes and clean up.
+
+2.2.1 - Added the option to view and manage data for multiple debrid accounts via one location. This should make it a little easier managing data for users with multiple debrid accounts. Removed Seren add-on due to increased Trakt API requests. Any add-on that supports custom keys has been updated to work accordingly. Added a changelog and Restore All Add-ons to Default option under 'Advanced' so users, if the wish to do so, can restore system to default settings prior to removing the add-on. This was already included in the revoke process but this makes it a little more clear. Bug fixes and clean up.
 
 2.2.0 - Added auto-sync services for both Trakt and Debrid. A section to change your backup directory has been added to the settings menu. Numerous changes and bug fixes from predecessor Debrid Manager.
 

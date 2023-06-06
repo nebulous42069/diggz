@@ -1,0 +1,40 @@
+Supported Debrid Addons:		Supported Trakt Addons:		
+1.  Seren					1.  TMDb Helper
+2.  Ezra					2.  Trakt Add-on
+3.  Fen					3.  Ezra
+4.  POV					4.  Fen
+5.  Umbrella				5.  POV
+6.  Shadow					6.  Umbrella
+7.  Ghost					7.  Homelander
+8.  Unleashed				8.  Chains Genocide
+9.  Chain Reaction			9.  The Crew
+10. Twisted					10. Shazam
+11. Base19					11. Nightwing
+12. Magic Dragon				12. The Promise
+13. Asgard					13. Quicksilver
+14. M.E.T.V					14. Alvin
+15. Premiumizer				15. Scrubs V2
+16. Realizer					16. Shadow
+17. My Accounts				17. Ghost
+18. ResolveURL				18. Unleashed
+						19. Chain Reaction
+						20. Magic Dragon
+						21. Asgard
+						22. My Accounts
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

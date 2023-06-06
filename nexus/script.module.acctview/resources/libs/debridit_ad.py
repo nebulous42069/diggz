@@ -46,7 +46,7 @@ DEBRIDID = {
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.seren'),
         'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.seren/resources/images', 'ico-seren-3.png'),
         'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.seren/resources/images', 'fanart-seren-3.png'),
-        'file'     : os.path.join(CONFIG.DEBRIDFOLD, 'seren_ad'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_AD, 'seren_ad'),
         'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.seren', 'settings.xml'),
         'default'  : 'alldebrid.apikey',
         'data'     : ['alldebrid.enabled', 'alldebrid.username', 'alldebrid.apikey'],
@@ -58,7 +58,7 @@ DEBRIDID = {
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.ezra'),
         'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.ezra', 'icon.png'),
         'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.ezra', 'fanart.png'),
-        'file'     : os.path.join(CONFIG.DEBRIDFOLD, 'ezra_ad'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_AD, 'ezra_ad'),
         'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.ezra', 'settings.xml'),
         'default'  : 'ad.token',
         'data'     : ['ad.account_id', 'ad.token'],
@@ -70,7 +70,7 @@ DEBRIDID = {
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.fen'),
         'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.fen/resources/media/', 'fen_icon.png'),
         'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.fen/resources/media/', 'fen_fanart.png'),
-        'file'     : os.path.join(CONFIG.DEBRIDFOLD, 'fen_ad'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_AD, 'fen_ad'),
         'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.fen', 'settings.xml'),
         'default'  : 'ad.token',
         'data'     : ['ad.token', 'ad.enabled', 'ad.account_id'],
@@ -82,7 +82,7 @@ DEBRIDID = {
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.pov'),
         'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.pov', 'icon.png'),
         'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.pov', 'fanart.png'),
-        'file'     : os.path.join(CONFIG.DEBRIDFOLD, 'pov_ad'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_AD, 'pov_ad'),
         'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.pov', 'settings.xml'),
         'default'  : 'ad.token',
         'data'     : ['ad.token', 'ad.enabled', 'ad.account_id'],
@@ -94,7 +94,7 @@ DEBRIDID = {
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.umbrella'),
         'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.umbrella', 'icon.png'),
         'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.umbrella', 'fanart.jpg'),
-        'file'     : os.path.join(CONFIG.DEBRIDFOLD, 'umb_ad'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_AD, 'umb_ad'),
         'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.umbrella', 'settings.xml'),
         'default'  : 'alldebridtoken',
         'data'     : ['alldebridusername', 'alldebridtoken'],
@@ -106,7 +106,7 @@ DEBRIDID = {
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.shadow'),
         'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.shadow', 'icon.png'),
         'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.shadow', 'fanart.jpg'),
-        'file'     : os.path.join(CONFIG.DEBRIDFOLD, 'shadow_ad'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_AD, 'shadow_ad'),
         'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.shadow', 'settings.xml'),
         'default'  : 'alldebrid.token',
         'data'     : ['alldebrid.username', 'alldebrid.token', 'debrid_select'],
@@ -118,7 +118,7 @@ DEBRIDID = {
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.ghost'),
         'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.ghost', 'icon.png'),
         'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.ghost', 'fanart.jpg'),
-        'file'     : os.path.join(CONFIG.DEBRIDFOLD, 'ghost_ad'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_AD, 'ghost_ad'),
         'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.ghost', 'settings.xml'),
         'default'  : 'alldebrid.token',
         'data'     : ['alldebrid.username', 'alldebrid.token', 'debrid_select'],
@@ -130,7 +130,7 @@ DEBRIDID = {
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.unleashed'),
         'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.unleashed', 'icon.png'),
         'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.unleashed', 'fanart.jpg'),
-        'file'     : os.path.join(CONFIG.DEBRIDFOLD, 'unleashed_ad'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_AD, 'unleashed_ad'),
         'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.unleashed', 'settings.xml'),
         'default'  : 'alldebrid.token',
         'data'     : ['alldebrid.username', 'alldebrid.token', 'debrid_select'],
@@ -142,7 +142,7 @@ DEBRIDID = {
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.thechains'),
         'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.thechains', 'icon.png'),
         'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.thechains', 'fanart.jpg'),
-        'file'     : os.path.join(CONFIG.DEBRIDFOLD, 'chains_ad'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_AD, 'chains_ad'),
         'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.thechains', 'settings.xml'),
         'default'  : 'alldebrid.token',
         'data'     : ['alldebrid.username', 'alldebrid.token', 'debrid_select'],
@@ -154,7 +154,7 @@ DEBRIDID = {
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.base19'),
         'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.base19', 'icon.png'),
         'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.base19', 'fanart.jpg'),
-        'file'     : os.path.join(CONFIG.DEBRIDFOLD, 'base19_ad'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_AD, 'base19_ad'),
         'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.base19', 'settings.xml'),
         'default'  : 'alldebrid.token',
         'data'     : ['alldebrid.username', 'alldebrid.token', 'debrid_select'],
@@ -166,7 +166,7 @@ DEBRIDID = {
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.twisted'),
         'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.twisted', 'icon.png'),
         'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.twisted', 'fanart.jpg'),
-        'file'     : os.path.join(CONFIG.DEBRIDFOLD, 'twisted_ad'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_AD, 'twisted_ad'),
         'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.twisted', 'settings.xml'),
         'default'  : 'alldebrid.token',
         'data'     : ['alldebrid.username', 'alldebrid.token', 'debrid_select'],
@@ -178,7 +178,7 @@ DEBRIDID = {
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.magicdragon'),
         'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.magicdragon', 'icon.png'),
         'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.magicdragon', 'fanart.jpg'),
-        'file'     : os.path.join(CONFIG.DEBRIDFOLD, 'md_ad'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_AD, 'md_ad'),
         'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.magicdragon', 'settings.xml'),
         'default'  : 'alldebrid.token',
         'data'     : ['alldebrid.username', 'alldebrid.token', 'debrid_select'],
@@ -190,7 +190,7 @@ DEBRIDID = {
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.asgard'),
         'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.asgard', 'icon.png'),
         'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.asgard', 'fanart.jpg'),
-        'file'     : os.path.join(CONFIG.DEBRIDFOLD, 'asgard_ad'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_AD, 'asgard_ad'),
         'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.asgard', 'settings.xml'),
         'default'  : 'alldebrid.token',
         'data'     : ['alldebrid.username', 'alldebrid.token', 'debrid_select'],
@@ -202,7 +202,7 @@ DEBRIDID = {
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.metv19'),
         'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.metv19', 'icon.png'),
         'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.metv19', 'fanart.jpg'),
-        'file'     : os.path.join(CONFIG.DEBRIDFOLD, 'metv_ad'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_AD, 'metv_ad'),
         'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.metv19', 'settings.xml'),
         'default'  : 'alldebrid.token',
         'data'     : ['alldebrid.username', 'alldebrid.token', 'debrid_select'],
@@ -214,7 +214,7 @@ DEBRIDID = {
         'path'     : os.path.join(CONFIG.ADDONS, 'script.module.myaccounts'),
         'icon'     : os.path.join(CONFIG.ADDONS, 'script.module.myaccounts', 'icon.png'),
         'fanart'   : os.path.join(CONFIG.ADDONS, 'script.module.myaccounts', 'fanart.png'),
-        'file'     : os.path.join(CONFIG.DEBRIDFOLD, 'myact_ad'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_AD, 'myact_ad'),
         'settings' : os.path.join(CONFIG.ADDON_DATA, 'script.module.myaccounts', 'settings.xml'),
         'default'  : 'alldebrid.token',
         'data'     : ['alldebrid.token', 'alldebrid.username'],
@@ -226,7 +226,7 @@ DEBRIDID = {
         'path'     : os.path.join(CONFIG.ADDONS, 'script.module.resolveurl'),
         'icon'     : os.path.join(CONFIG.ADDONS, 'script.module.resolveurl', 'icon.png'),
         'fanart'   : os.path.join(CONFIG.ADDONS, 'script.module.resolveurl', 'fanart.jpg'),
-        'file'     : os.path.join(CONFIG.DEBRIDFOLD, 'rurl_ad'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_AD, 'rurl_ad'),
         'settings' : os.path.join(CONFIG.ADDON_DATA, 'script.module.resolveurl', 'settings.xml'),
         'default'  : 'AllDebridResolver_token',
         'data'     : ['AllDebridResolver_client_id', 'AllDebridResolver_enabled', 'AllDebridResolver_login', 'AllDebridResolver_priority', 'AllDebridResolver_token', 'AllDebridResolver_torrents', 'AllDebridResolver_cached_only'],
@@ -238,7 +238,7 @@ DEBRIDID = {
         'path'     : os.path.join(CONFIG.ADDONS, 'script.module.accountmgr'),
         'icon'     : os.path.join(CONFIG.ADDONS, 'script.module.accountmgr', 'icon.png'),
         'fanart'   : os.path.join(CONFIG.ADDONS, 'script.module.accountmgr', 'fanart.png'),
-        'file'     : os.path.join(CONFIG.DEBRIDFOLD, 'acctmgr_ad'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_AD, 'acctmgr_ad'),
         'settings' : os.path.join(CONFIG.ADDON_DATA, 'script.module.accountmgr', 'settings.xml'),
         'default'  : 'alldebrid.username',
         'data'     : ['alldebrid.token', 'alldebrid.username'],
@@ -261,8 +261,8 @@ def debrid_user(who):
 def debrid_it(do, who):
     if not os.path.exists(CONFIG.ADDON_DATA):
         os.makedirs(CONFIG.ADDON_DATA)
-    if not os.path.exists(CONFIG.DEBRIDFOLD):
-        os.makedirs(CONFIG.DEBRIDFOLD)
+    if not os.path.exists(CONFIG.DEBRIDFOLD_AD):
+        os.makedirs(CONFIG.DEBRIDFOLD_AD)
     if who == 'all':
         for log in ORDER:
             if os.path.exists(DEBRIDID[log]['path']):
@@ -286,19 +286,6 @@ def debrid_it(do, who):
 
 
 def clear_saved(who, over=False):
-    if who == 'all':
-        for debrid in DEBRIDID:
-            clear_saved(debrid,  True)
-    elif DEBRIDID[who]:
-        file = DEBRIDID[who]['file']
-        if os.path.exists(file):
-            os.remove(file)
-            xbmcgui.Dialog().notification('Account Manager', 'Data Cleared!', amgr_icon, 3000)
-    if not over:
-        xbmc.executebuiltin('Container.Refresh()')
-
-
-def clear_all_saved(who, over=False):
     if who == 'all':
         for debrid in DEBRIDID:
             clear_saved(debrid,  True)

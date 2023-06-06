@@ -66,6 +66,9 @@ class Config:
         self.PLUGIN_DATA_TRAKT = os.path.join(backup_path)
         self.PLUGIN_DATA_DEBRID = os.path.join(backup_path)
         self.DEBRIDFOLD = os.path.join(self.PLUGIN_DATA_DEBRID, 'debrid')
+        self.DEBRIDFOLD_RD = os.path.join(self.PLUGIN_DATA_DEBRID, 'realdebrid')
+        self.DEBRIDFOLD_PM = os.path.join(self.PLUGIN_DATA_DEBRID, 'premiumize')
+        self.DEBRIDFOLD_AD = os.path.join(self.PLUGIN_DATA_DEBRID, 'alldebrid')
         self.TRAKTFOLD = os.path.join(self.PLUGIN_DATA_TRAKT, 'trakt')
         self.LOGINFOLD = os.path.join(self.PLUGIN_DATA, 'login')
 

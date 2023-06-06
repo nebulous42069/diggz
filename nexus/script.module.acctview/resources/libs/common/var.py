@@ -4,11 +4,19 @@ import xbmcgui
 import xbmcvfs
 import os
 
+addon_id = 'script.module.accountmgr'
+addon = xbmcaddon.Addon(addon_id)
+setting = addon.getSetting
+
 #Account Mananger API Keys
 client_am = f'4a479b95c8224999eef8d418cfe6c7a4389e2837441672c48c9c8168ea42a407'
 secret_am = f'89d8f8f71b312985a9e1f91e9eb426e23050102734bb1fa36ec76cdc74452ab6'
-std_client_am = f"'4a479b95c8224999eef8d418cfe6c7a4389e2837441672c48c9c8168ea42a407'"
-std_secret_am = f"'89d8f8f71b312985a9e1f91e9eb426e23050102734bb1fa36ec76cdc74452ab6'"
+
+#Account Mananger Check
+chk_accountmgr_tk = xbmcaddon.Addon('script.module.accountmgr').getSetting("trakt.token")
+chk_accountmgr_tk_rd = xbmcaddon.Addon('script.module.accountmgr').getSetting("realdebrid.token")
+chk_accountmgr_tk_pm = xbmcaddon.Addon('script.module.accountmgr').getSetting("premiumize.token")
+chk_accountmgr_tk_ad = xbmcaddon.Addon('script.module.accountmgr').getSetting("alldebrid.token")
 
 #Add-on Paths
 chk_seren = xbmcvfs.translatePath('special://home/addons/plugin.video.seren/')
@@ -43,47 +51,26 @@ chk_tmdbh = xbmcvfs.translatePath('special://home/addons/plugin.video.themoviedb
 chk_trakt = xbmcvfs.translatePath('special://home/addons/script.trakt/')
 
 #Add-on API Key Paths
-api_path_seren = xbmcvfs.translatePath('special://home/addons/plugin.video.seren/resources/lib/indexers/trakt.py')
-api_path_fen = xbmcvfs.translatePath('special://home/addons/plugin.video.fen/resources/lib/apis/trakt_api.py')
-api_path_pov = xbmcvfs.translatePath('special://home/addons/plugin.video.pov/resources/lib/apis/trakt_api.py')
-api_path_umb = xbmcvfs.translatePath('special://home/addons/plugin.video.umbrella/resources/lib/modules/trakt.py')
-api_path_home = xbmcvfs.translatePath('special://home/addons/plugin.video.homelander/resources/lib/modules/trakt.py')
-api_path_quick = xbmcvfs.translatePath('special://home/addons/plugin.video.quicksilver/resources/lib/modules/trakt.py')
-api_path_genocide = xbmcvfs.translatePath('special://home/addons/plugin.video.chainsgenocide/resources/lib/modules/trakt.py')
-api_path_crew = xbmcvfs.translatePath('special://home/addons/script.module.thecrew/lib/resources/lib/modules/trakt.py')
-api_path_shazam = xbmcvfs.translatePath('special://home/addons/plugin.video.shazam/resources/lib/modules/trakt.py')
-api_path_night = xbmcvfs.translatePath('special://home/addons/plugin.video.nightwing/resources/lib/modules/trakt.py')
-api_path_home = xbmcvfs.translatePath('special://home/addons/plugin.video.homelander/resources/lib/modules/trakt.py')
-api_path_promise = xbmcvfs.translatePath('special://home/addons/plugin.video.thepromise/resources/lib/modules/trakt.py')
-api_path_scrubs = xbmcvfs.translatePath('special://home/addons/plugin.video.scrubsv2/resources/lib/modules/trakt.py')
-api_path_alvin = xbmcvfs.translatePath('special://home/addons/plugin.video.alvin/resources/lib/modules/trakt.py')
-api_path_shadow = xbmcvfs.translatePath('special://home/addons/plugin.video.shadow/resources/modules/general.py')
-api_path_ghost = xbmcvfs.translatePath('special://home/addons/plugin.video.ghost/resources/modules/general.py')
-api_path_unleashed = xbmcvfs.translatePath('special://home/addons/plugin.video.unleashed/resources/modules/general.py')
-api_path_chains = xbmcvfs.translatePath('special://home/addons/plugin.video.thechains/resources/modules/general.py')
-api_path_md = xbmcvfs.translatePath('special://home/addons/plugin.video.magicdragon/resources/modules/general.py')
-api_path_asgard = xbmcvfs.translatePath('special://home/addons/plugin.video.asgard/resources/modules/general.py')
-api_path_myaccounts = xbmcvfs.translatePath('special://home/addons/script.module.myaccounts/lib/myaccounts/modules/trakt.py')
-api_path_tmdbh = xbmcvfs.translatePath('special://home/addons/plugin.video.themoviedb.helper/resources/tmdbhelper/lib/api/api_keys/trakt.py')
-api_path_trakt = xbmcvfs.translatePath('special://home/addons/script.trakt/resources/lib/traktapi.py')
+path_fen = xbmcvfs.translatePath('special://home/addons/plugin.video.fen/resources/lib/apis/trakt_api.py')
+path_pov = xbmcvfs.translatePath('special://home/addons/plugin.video.pov/resources/lib/apis/trakt_api.py')
+path_crew = xbmcvfs.translatePath('special://home/addons/script.module.thecrew/lib/resources/lib/modules/trakt.py')
+path_shadow = xbmcvfs.translatePath('special://home/addons/plugin.video.shadow/resources/modules/general.py')
+path_ghost = xbmcvfs.translatePath('special://home/addons/plugin.video.ghost/resources/modules/general.py')
+path_unleashed = xbmcvfs.translatePath('special://home/addons/plugin.video.unleashed/resources/modules/general.py')
+path_chains = xbmcvfs.translatePath('special://home/addons/plugin.video.thechains/resources/modules/general.py')
+path_md = xbmcvfs.translatePath('special://home/addons/plugin.video.magicdragon/resources/modules/general.py')
+path_asgard = xbmcvfs.translatePath('special://home/addons/plugin.video.asgard/resources/modules/general.py')
+path_myaccounts = xbmcvfs.translatePath('special://home/addons/script.module.myaccounts/lib/myaccounts/modules/trakt.py')
+path_tmdbh = xbmcvfs.translatePath('special://home/addons/plugin.video.themoviedb.helper/resources/tmdbhelper/lib/api/api_keys/trakt.py')
+path_trakt = xbmcvfs.translatePath('special://home/addons/script.trakt/resources/lib/traktapi.py')
 
 #Add-on API Keys
-std_client = f'api_keys.trakt_client_id'
-std_secret = f'api_keys.trakt_secret'
-seren_client = f'0c9a30819e4af6ffaf3b954cbeae9b54499088513863c03c02911de00ac2de79'
-seren_secret = f'bf02417f27b514cee6a8d135f2ddc261a15eecfb6ed6289c36239826dcdd1842'
 fen_client = f'645b0f46df29d27e63c4a8d5fff158edd0bef0a6a5d32fc12c1b82388be351af'
 fen_secret = f'422a282ef5fe4b5c47bc60425c009ac3047ebd10a7f6af790303875419f18f98'
 pov_client = f'd4161a7a106424551add171e5470112e4afdaf2438e6ef2fe0548edc75924868'
 pov_secret = f'b5fcd7cb5d9bb963784d11bbf8535bc0d25d46225016191eb48e50792d2155c0'
-umb_client = f'87e3f055fc4d8fcfd96e61a47463327ca877c51e8597b448e132611c5a677b13'
-umb_secret = f'4a1957a52d5feb98fafde53193e51f692fa9bdcd0cc13cf44a5e39975539edf0'
 crew_client = f'482f9db52ee2611099ce3aa1abf9b0f7ed893c6d3c6b5face95164eac7b01f71'
 crew_secret = f'80a2729728b53ba1cc38137b22f21f34d590edd35454466c4b8920956513d967'
-night_client = f'base64.b64decode("MjFiODhkNGRjZDU4ZjVlY2EzOTEyOGE3MzZkMjIxNmRhNTZiNTIxMTQ4MDUyNThjNGU5ZjlhNjNkOTgwMDcyMg==")'
-night_secret = f'base64.b64decode("MjM4OGIzMDdkZDFiYTU0NGQ2ZmEwZTFmNTcxNDczNWJkNTIwYzhmZTM4ZGYyMTEyZDg4ODg1MmJhODE1YWRlOQ==")'
-scrubs_client = f'63c53edc299b7a05cc6ea2272e8a84e13aade067c18a794362ab9a4a84eafb16'
-scrubs_secret = f'9163ebda9d33acd06c74d017e861404b7212ee34675e09e73365d7536b84eab6'
 shadow_client = f'8ed545c0b7f92cc26d1ecd6326995c6cf0053bd7596a98e962a472bee63274e6'
 shadow_secret = f'1ec4f37e5743e3086abace0c83444c25d9b655d1d77b793806b2c8205a510426'
 ghost_client = f'a4e716b4b22b62e59b9e09454435c8710b650b3143dcce553d252b6a66ba60c8'

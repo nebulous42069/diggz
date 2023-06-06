@@ -85,7 +85,7 @@ DEBRIDID = {
         'file'     : os.path.join(CONFIG.DEBRIDFOLD, 'pov_rd'),
         'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.fen', 'settings.xml'),
         'bk_settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.fen', 'settings.xml'),
-        'default_rd'  : 'rd.account_id',
+        'default_rd'  : 'rd.client_id',
         'default_pm'  : 'pm.account_id',
         'default_ad'  : 'ad.account_id',
         'data'     : [],
@@ -145,7 +145,9 @@ DEBRIDID = {
         'file'     : os.path.join(CONFIG.DEBRIDFOLD, 'unleashed_rd'),
         'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.unleashed', 'settings.xml'),
         'bk_settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.unleashed', 'settings.xml'),
-
+        'default_rd'  : 'rd.client_id',
+        'default_pm'  : 'premiumize.token',
+        'default_ad'  : 'alldebrid.username',
         'data'     : [],
         'activate' : 'Addon.OpenSettings(plugin.video.unleashed)'},
     'chains': {
@@ -353,11 +355,6 @@ def clear_saved(who, over=False):
         file = DEBRIDID[who]['file']
         if os.path.exists(file):
             os.remove(file)
-            logging.log_notify('[COLOR {0}]{1}[/COLOR]'.format(CONFIG.COLOR1, DEBRIDID[who]['name']),
-                               '[COLOR {0}]Debrid Info: Removed![/COLOR]'.format(CONFIG.COLOR2),
-                               2000,
-                               DEBRIDID[who]['icon'])
-        CONFIG.set_setting(DEBRIDID[who]['saved'], '')
     if not over:
         xbmc.executebuiltin('Container.Refresh()')
 

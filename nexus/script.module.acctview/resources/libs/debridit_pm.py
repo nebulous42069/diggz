@@ -47,7 +47,7 @@ DEBRIDID = {
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.seren'),
         'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.seren/resources/images', 'ico-seren-3.png'),
         'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.seren/resources/images', 'fanart-seren-3.png'),
-        'file'     : os.path.join(CONFIG.DEBRIDFOLD, 'seren_pm'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_PM, 'seren_pm'),
         'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.seren', 'settings.xml'),
         'default'  : 'premiumize.token',
         'data'     : ['premiumize.enabled', 'premiumize.username', 'premiumize.token'],
@@ -59,7 +59,7 @@ DEBRIDID = {
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.ezra'),
         'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.ezra', 'icon.png'),
         'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.ezra', 'fanart.png'),
-        'file'     : os.path.join(CONFIG.DEBRIDFOLD, 'ezra_pm'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_PM, 'ezra_pm'),
         'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.ezra', 'settings.xml'),
         'default'  : 'pm.token',
         'data'     : ['pm.account_id', 'pm.token', 'pm.enabled'],
@@ -71,7 +71,7 @@ DEBRIDID = {
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.fen'),
         'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.fen/resources/media/', 'fen_icon.png'),
         'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.fen/resources/media/', 'fen_fanart.png'),
-        'file'     : os.path.join(CONFIG.DEBRIDFOLD, 'fen_pm'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_PM, 'fen_pm'),
         'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.fen', 'settings.xml'),
         'default'  : 'pm.token',
         'data'     : ['pm.token', 'pm.account_id', 'pm.enabled'],
@@ -83,7 +83,7 @@ DEBRIDID = {
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.pov'),
         'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.pov', 'icon.png'),
         'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.pov', 'fanart.png'),
-        'file'     : os.path.join(CONFIG.DEBRIDFOLD, 'pov_pm'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_PM, 'pov_pm'),
         'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.pov', 'settings.xml'),
         'default'  : 'pm.token',
         'data'     : ['pm.token', 'pm.account_id', 'pm.enabled'],
@@ -95,7 +95,7 @@ DEBRIDID = {
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.umbrella'),
         'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.umbrella', 'icon.png'),
         'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.umbrella', 'fanart.jpg'),
-        'file'     : os.path.join(CONFIG.DEBRIDFOLD, 'umb_pm'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_PM, 'umb_pm'),
         'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.umbrella', 'settings.xml'),
         'default'  : 'premiumizetoken',
         'data'     : ['premiumizeusername', 'premiumizetoken', 'premiumize.enable'],
@@ -107,7 +107,7 @@ DEBRIDID = {
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.shadow'),
         'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.shadow', 'icon.png'),
         'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.shadow', 'fanart.jpg'),
-        'file'     : os.path.join(CONFIG.DEBRIDFOLD, 'shadow_pm'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_PM, 'shadow_pm'),
         'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.shadow', 'settings.xml'),
         'default'  : 'premiumize.token',
         'data'     : ['premiumize.token', 'debrid_select'],
@@ -119,7 +119,7 @@ DEBRIDID = {
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.ghost'),
         'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.ghost', 'icon.png'),
         'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.ghost', 'fanart.jpg'),
-        'file'     : os.path.join(CONFIG.DEBRIDFOLD, 'ghost_pm'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_PM, 'ghost_pm'),
         'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.ghost', 'settings.xml'),
         'default'  : 'premiumize.token',
         'data'     : ['premiumize.token', 'debrid_select'],
@@ -131,7 +131,7 @@ DEBRIDID = {
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.unleashed'),
         'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.unleashed', 'icon.png'),
         'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.unleashed', 'fanart.jpg'),
-        'file'     : os.path.join(CONFIG.DEBRIDFOLD, 'unleashed_pm'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_PM, 'unleashed_pm'),
         'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.unleashed', 'settings.xml'),
         'default'  : 'premiumize.token',
         'data'     : ['premiumize.token', 'debrid_select'],
@@ -143,7 +143,7 @@ DEBRIDID = {
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.thechains'),
         'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.thechains', 'icon.png'),
         'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.thechains', 'fanart.jpg'),
-        'file'     : os.path.join(CONFIG.DEBRIDFOLD, 'chains_pm'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_PM, 'chains_pm'),
         'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.thechains', 'settings.xml'),
         'default'  : 'premiumize.token',
         'data'     : ['premiumize.token', 'debrid_select'],
@@ -155,7 +155,7 @@ DEBRIDID = {
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.base19'),
         'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.base19', 'icon.png'),
         'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.base19', 'fanart.jpg'),
-        'file'     : os.path.join(CONFIG.DEBRIDFOLD, 'base19_pm'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_PM, 'base19_pm'),
         'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.base19', 'settings.xml'),
         'default'  : 'premiumize.token',
         'data'     : ['premiumize.token', 'debrid_select'],
@@ -167,7 +167,7 @@ DEBRIDID = {
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.twisted'),
         'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.twisted', 'icon.png'),
         'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.twisted', 'fanart.jpg'),
-        'file'     : os.path.join(CONFIG.DEBRIDFOLD, 'twisted_pm'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_PM, 'twisted_pm'),
         'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.twisted', 'settings.xml'),
         'default'  : 'premiumize.token',
         'data'     : ['premiumize.token', 'debrid_select'],
@@ -179,7 +179,7 @@ DEBRIDID = {
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.magicdragon'),
         'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.magicdragon', 'icon.png'),
         'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.magicdragon', 'fanart.jpg'),
-        'file'     : os.path.join(CONFIG.DEBRIDFOLD, 'md_pm'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_PM, 'md_pm'),
         'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.magicdragon', 'settings.xml'),
         'default'  : 'premiumize.token',
         'data'     : ['premiumize.token', 'debrid_select'],
@@ -191,7 +191,7 @@ DEBRIDID = {
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.asgard'),
         'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.asgard', 'icon.png'),
         'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.asgard', 'fanart.jpg'),
-        'file'     : os.path.join(CONFIG.DEBRIDFOLD, 'asgard_pm'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_PM, 'asgard_pm'),
         'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.asgard', 'settings.xml'),
         'default'  : 'premiumize.token',
         'data'     : ['premiumize.token', 'debrid_select'],
@@ -203,7 +203,7 @@ DEBRIDID = {
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.metv19'),
         'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.metv19', 'icon.png'),
         'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.metv19', 'fanart.jpg'),
-        'file'     : os.path.join(CONFIG.DEBRIDFOLD, 'metv_pm'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_PM, 'metv_pm'),
         'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.metv19', 'settings.xml'),
         'default'  : 'premiumize.token',
         'data'     : ['premiumize.token', 'debrid_select'],
@@ -215,7 +215,7 @@ DEBRIDID = {
         'path'     : os.path.join(CONFIG.ADDONS, 'script.module.myaccounts'),
         'icon'     : os.path.join(CONFIG.ADDONS, 'script.module.myaccounts', 'icon.png'),
         'fanart'   : os.path.join(CONFIG.ADDONS, 'script.module.myaccounts', 'fanart.png'),
-        'file'     : os.path.join(CONFIG.DEBRIDFOLD, 'myact_pm'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_PM, 'myact_pm'),
         'settings' : os.path.join(CONFIG.ADDON_DATA, 'script.module.myaccounts', 'settings.xml'),
         'default'  : 'premiumize.token',
         'data'     : ['premiumize.token', 'premiumize.username'],
@@ -227,7 +227,7 @@ DEBRIDID = {
         'path'     : os.path.join(CONFIG.ADDONS, 'script.module.resolveurl'),
         'icon'     : os.path.join(CONFIG.ADDONS, 'script.module.resolveurl', 'icon.png'),
         'fanart'   : os.path.join(CONFIG.ADDONS, 'script.module.resolveurl', 'fanart.jpg'),
-        'file'     : os.path.join(CONFIG.DEBRIDFOLD, 'rurl_pm'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_PM, 'rurl_pm'),
         'settings' : os.path.join(CONFIG.ADDON_DATA, 'script.module.resolveurl', 'settings.xml'),
         'default'  : 'PremiumizeMeResolver_token',
         'data'     : ['PremiumizeMeResolver_token', 'PremiumizeMeResolver_cached_only'],
@@ -239,7 +239,7 @@ DEBRIDID = {
 	'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.premiumizerx'),
 	'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.premiumizerx', 'icon.png'),
 	'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.premiumizerx', 'fanart.jpg'),
-	'file'     : os.path.join(CONFIG.DEBRIDFOLD, 'premiumizer_pm'),
+	'file'     : os.path.join(CONFIG.DEBRIDFOLD_PM, 'premiumizer_pm'),
 	'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.premiumizerx', 'settings.xml'),
 	'default'  : 'premiumize.token',
 	'data'     : ['premiumize.status', 'premiumize.token', 'premiumize.refresh'],
@@ -251,7 +251,7 @@ DEBRIDID = {
         'path'     : os.path.join(CONFIG.ADDONS, 'script.module.accountmgr'),
         'icon'     : os.path.join(CONFIG.ADDONS, 'script.module.accountmgr', 'icon.png'),
         'fanart'   : os.path.join(CONFIG.ADDONS, 'script.module.accountmgr', 'fanart.png'),
-        'file'     : os.path.join(CONFIG.DEBRIDFOLD, 'acctmgr_pm'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_PM, 'acctmgr_pm'),
         'settings' : os.path.join(CONFIG.ADDON_DATA, 'script.module.accountmgr', 'settings.xml'),
         'default'  : 'premiumize.username',
         'data'     : ['premiumize.token', 'premiumize.username'],
@@ -274,8 +274,8 @@ def debrid_user(who):
 def debrid_it(do, who):
     if not os.path.exists(CONFIG.ADDON_DATA):
         os.makedirs(CONFIG.ADDON_DATA)
-    if not os.path.exists(CONFIG.DEBRIDFOLD):
-        os.makedirs(CONFIG.DEBRIDFOLD)
+    if not os.path.exists(CONFIG.DEBRIDFOLD_PM):
+        os.makedirs(CONFIG.DEBRIDFOLD_PM)
     if who == 'all':
         for log in ORDER:
             if os.path.exists(DEBRIDID[log]['path']):
@@ -299,19 +299,6 @@ def debrid_it(do, who):
 
 
 def clear_saved(who, over=False):
-    if who == 'all':
-        for debrid in DEBRIDID:
-            clear_saved(debrid,  True)
-    elif DEBRIDID[who]:
-        file = DEBRIDID[who]['file']
-        if os.path.exists(file):
-            os.remove(file)
-            xbmcgui.Dialog().notification('Account Manager', 'Data Cleared!', amgr_icon, 3000)
-    if not over:
-        xbmc.executebuiltin('Container.Refresh()')
-
-
-def clear_all_saved(who, over=False):
     if who == 'all':
         for debrid in DEBRIDID:
             clear_saved(debrid,  True)

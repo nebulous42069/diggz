@@ -3,6 +3,7 @@ import xbmcaddon
 import xbmcgui
 import xbmcvfs
 import os
+
 addon_id = xbmcaddon.Addon().getAddonInfo('id')
 addon = xbmcaddon.Addon(addon_id)
 setting = addon.getSetting
@@ -77,25 +78,24 @@ chkset_twisted = xbmcvfs.translatePath('special://userdata/addon_data/plugin.vid
 chkset_metv = xbmcvfs.translatePath('special://userdata/addon_data/plugin.video.metv19/settings.xml')
 chkset_premiumizer= xbmcvfs.translatePath('special://userdata/addon_data/plugin.video.premiumizerx/settings.xml')
 chkset_realizer = xbmcvfs.translatePath('special://userdata/addon_data/plugin.video.realizerx/rdauth.json')
-chkset_rurl = xbmcvfs.translatePath('special://userdata/addon_data/plugin.video.ghost/settings.xml')
+chkset_rurl = xbmcvfs.translatePath('special://userdata/addon_data/script.module.resolveurl/settings.xml')
 chkset_myaccounts = xbmcvfs.translatePath('special://userdata/addon_data/script.module.myaccounts/settings.xml')
 chkset_tmdbh = xbmcvfs.translatePath('special://userdata/addon_data/plugin.video.themoviedb.helper/settings.xml')
 chkset_trakt = xbmcvfs.translatePath('special://userdata/addon_data/script.trakt/settings.xml')
 
 #Add-on API Key Paths
-api_path_seren = xbmcvfs.translatePath('special://home/addons/plugin.video.seren/resources/lib/indexers/trakt.py')
-api_path_fen = xbmcvfs.translatePath('special://home/addons/plugin.video.fen/resources/lib/apis/trakt_api.py')
-api_path_pov = xbmcvfs.translatePath('special://home/addons/plugin.video.pov/resources/lib/apis/trakt_api.py')
-api_path_crew = xbmcvfs.translatePath('special://home/addons/script.module.thecrew/lib/resources/lib/modules/trakt.py')
-api_path_shadow = xbmcvfs.translatePath('special://home/addons/plugin.video.shadow/resources/modules/general.py')
-api_path_ghost = xbmcvfs.translatePath('special://home/addons/plugin.video.ghost/resources/modules/general.py')
-api_path_unleashed = xbmcvfs.translatePath('special://home/addons/plugin.video.unleashed/resources/modules/general.py')
-api_path_chains = xbmcvfs.translatePath('special://home/addons/plugin.video.thechains/resources/modules/general.py')
-api_path_md = xbmcvfs.translatePath('special://home/addons/plugin.video.magicdragon/resources/modules/general.py')
-api_path_asgard = xbmcvfs.translatePath('special://home/addons/plugin.video.asgard/resources/modules/general.py')
-api_path_myaccounts = xbmcvfs.translatePath('special://home/addons/script.module.myaccounts/lib/myaccounts/modules/trakt.py')
-api_path_tmdbh = xbmcvfs.translatePath('special://home/addons/plugin.video.themoviedb.helper/resources/tmdbhelper/lib/api/api_keys/trakt.py')
-api_path_trakt = xbmcvfs.translatePath('special://home/addons/script.trakt/resources/lib/traktapi.py')
+path_fen = xbmcvfs.translatePath('special://home/addons/plugin.video.fen/resources/lib/apis/trakt_api.py')
+path_pov = xbmcvfs.translatePath('special://home/addons/plugin.video.pov/resources/lib/apis/trakt_api.py')
+path_crew = xbmcvfs.translatePath('special://home/addons/script.module.thecrew/lib/resources/lib/modules/trakt.py')
+path_shadow = xbmcvfs.translatePath('special://home/addons/plugin.video.shadow/resources/modules/general.py')
+path_ghost = xbmcvfs.translatePath('special://home/addons/plugin.video.ghost/resources/modules/general.py')
+path_unleashed = xbmcvfs.translatePath('special://home/addons/plugin.video.unleashed/resources/modules/general.py')
+path_chains = xbmcvfs.translatePath('special://home/addons/plugin.video.thechains/resources/modules/general.py')
+path_md = xbmcvfs.translatePath('special://home/addons/plugin.video.magicdragon/resources/modules/general.py')
+path_asgard = xbmcvfs.translatePath('special://home/addons/plugin.video.asgard/resources/modules/general.py')
+path_myaccounts = xbmcvfs.translatePath('special://home/addons/script.module.myaccounts/lib/myaccounts/modules/trakt.py')
+path_tmdbh = xbmcvfs.translatePath('special://home/addons/plugin.video.themoviedb.helper/resources/tmdbhelper/lib/api/api_keys/trakt.py')
+path_trakt = xbmcvfs.translatePath('special://home/addons/script.trakt/resources/lib/traktapi.py')
 
 #Add-on API Keys
 fen_client = f'645b0f46df29d27e63c4a8d5fff158edd0bef0a6a5d32fc12c1b82388be351af'

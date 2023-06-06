@@ -66,7 +66,7 @@
 		<setting type="action" label="Sync Add-ons" option="close" action="RunScript(script.module.accountmgr, action=alldebridReSync)"  visible="!eq(-2,)" />
 		<setting type="action" label="Revoke" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=addondebrid_ad&name=all)"  visible="!eq(-3,)" />
 	</category>
-	<category label="Backup & Recovery">
+	<category label="Backup & Restore">
 		<setting type="lsep" label="Backup/Restore Multiple Debrid Accounts" />
 		<setting type="action" label="Backup All Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=backupall&name=all)" visible="eq(-1,)" />
 		<setting type="action" label="Restore All Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=restoreall&name=all)" visible="eq(-2,)" />
@@ -103,6 +103,12 @@
 		<setting type="lsep" label="Backup Directory" />
 		<setting label="Current Backup Directory" type="folder" id="backupfolder" source="" option="writeable" default="special://userdata/addon_data/plugin.program.chef20/" enable="false" visible="eq(-2,)" />
 	</category>
+	<category label="Information">
+		<setting type="lsep" label="Supported Add-ons" />
+		<setting label="View Supported Add-ons" type="action" action="RunScript(script.module.accountmgr, action=ShowSupported)" />
+		<setting type="lsep" label="Changelog" />
+		<setting label="View Changelog" type="action" action="RunScript(script.module.accountmgr, action=ShowChangelog)" />
+	</category>
 	<category label="Advanced">
 		<setting type="lsep" label="Startup Services" />
       		<setting id="sync.service"  type="bool" label="Add-on Auto Sync Service" default="true"/>
@@ -112,7 +118,6 @@
 		<setting type="lsep" label="Restore All Add-ons To Default" />
 		<setting type="action" label="Restore Default Settings" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=wipeclean&name=all)" visible="eq(-1,)" />
 		<setting label="WARNING! Use only to restore system to default settings" type="text" visible="eq(-2,)" enable="false" />
-		<setting type="lsep" label="Changelog" />
-		<setting label="View Changelog" type="action" action="RunScript(script.module.accountmgr, action=ShowChangelog)" />
 	</category>
+
 </settings>

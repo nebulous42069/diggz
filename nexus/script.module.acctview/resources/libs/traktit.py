@@ -424,10 +424,10 @@ def trakt_it_restore(do, who):
     
 def clear_saved(who, over=False):
     if who == 'all':
-        for debrid in DEBRIDID:
-            clear_saved(debrid,  True)
-    elif DEBRIDID[who]:
-        file = DEBRIDID[who]['file']
+        for trakt in TRAKTID:
+            clear_saved(trakt,  True)
+    elif TRAKTID[who]:
+        file = TRAKTID[who]['file']
         if os.path.exists(file):
             os.remove(file)
             xbmcgui.Dialog().notification('Account Manager', 'Data Cleared!', amgr_icon, 3000)
@@ -437,10 +437,10 @@ def clear_saved(who, over=False):
 
 def clear_all_saved(who, over=False):
     if who == 'all':
-        for debrid in DEBRIDID:
-            clear_saved(debrid,  True)
-    elif DEBRIDID[who]:
-        file = DEBRIDID[who]['file']
+        for trakt in TRAKTID:
+            clear_saved(trakt,  True)
+    elif TRAKTID[who]:
+        file = TRAKTID[who]['file']
         if os.path.exists(file):
             os.remove(file)
     if not over:
@@ -601,121 +601,121 @@ def revoke_trakt(): #Restore default API keys to all add-ons
         
     if xbmcvfs.exists(var.chk_fen):
                         
-        f = open(var.api_path_fen,'r')
+        f = open(var.path_fen,'r')
         data = f.read()
         f.close()
         client = data.replace(var.client_am,var.fen_client).replace(var.secret_am,var.fen_secret)
-        f = open(var.api_path_fen,'w')
+        f = open(var.path_fen,'w')
         f.write(client)
         f.close()
 
     if xbmcvfs.exists(var.chk_pov):
 
-        f = open(var.api_path_pov,'r')
+        f = open(var.path_pov,'r')
         data = f.read()
         f.close()
         client = data.replace(var.client_am,var.pov_client).replace(var.secret_am,var.pov_secret)
-        f = open(var.api_path_pov,'w')
+        f = open(var.path_pov,'w')
         f.write(client)
         f.close()
         
     if xbmcvfs.exists(var.chk_crew):
 
-        f = open(var.api_path_crew,'r')
+        f = open(var.path_crew,'r')
         data = f.read()
         f.close()
         client = data.replace(var.client_am,var.crew_client).replace(var.secret_am,var.crew_secret)
-        f = open(var.api_path_crew,'w')
+        f = open(var.path_crew,'w')
         f.write(client)
         f.close()
 
     if xbmcvfs.exists(var.chk_shadow):
                         
-        f = open(var.api_path_shadow,'r')
+        f = open(var.path_shadow,'r')
         data = f.read()
         f.close()
         client = data.replace(var.client_am,var.shadow_client).replace(var.secret_am,var.shadow_secret)
-        f = open(var.api_path_shadow,'w')
+        f = open(var.path_shadow,'w')
         f.write(client)
         f.close()
 
     if xbmcvfs.exists(var.chk_ghost):
                         
-        f = open(var.api_path_ghost,'r')
+        f = open(var.path_ghost,'r')
         data = f.read()
         f.close()
         client = data.replace(var.client_am,var.ghost_client).replace(var.secret_am,var.ghost_secret)
-        f = open(var.api_path_ghost,'w')
+        f = open(var.path_ghost,'w')
         f.write(client)
         f.close()
         
     if xbmcvfs.exists(var.chk_unleashed):
                         
-        f = open(var.api_path_unleashed,'r')
+        f = open(var.path_unleashed,'r')
         data = f.read()
         f.close()
         client = data.replace(var.client_am,var.unleashed_client).replace(var.secret_am,var.unleashed_secret)
-        f = open(var.api_path_unleashed,'w')
+        f = open(var.path_unleashed,'w')
         f.write(client)
         f.close()
 
     if xbmcvfs.exists(var.chk_chains):
                         
-        f = open(var.api_path_chains,'r')
+        f = open(var.path_chains,'r')
         data = f.read()
         f.close()
         client = data.replace(var.client_am,var.chains_client).replace(var.secret_am,var.chains_secret)
-        f = open(var.api_path_chains,'w')
+        f = open(var.path_chains,'w')
         f.write(client)
         f.close()
 
     if xbmcvfs.exists(var.chk_md):
                        
-        f = open(var.api_path_md,'r')
+        f = open(var.path_md,'r')
         data = f.read()
         f.close()
         client = data.replace(var.client_am,var.md_client).replace(var.secret_am,var.md_secret)
-        f = open(var.api_path_md,'w')
+        f = open(var.path_md,'w')
         f.write(client)
         f.close()
 
     if xbmcvfs.exists(var.chk_asgard):
                         
-        f = open(var.api_path_asgard,'r')
+        f = open(var.path_asgard,'r')
         data = f.read()
         f.close()
         client = data.replace(var.client_am,var.asgard_client).replace(var.secret_am,var.asgard_secret)
-        f = open(var.api_path_asgard,'w')
+        f = open(var.path_asgard,'w')
         f.write(client)
         f.close()
         
     if xbmcvfs.exists(var.chk_myaccounts):
 
-        f = open(var.api_path_myaccounts,'r')
+        f = open(var.path_myaccounts,'r')
         data = f.read()
         f.close()
         client = data.replace(var.client_am,var.myacts_client).replace(var.secret_am,var.myacts_secret)
-        f = open(var.api_path_myaccounts,'w')
+        f = open(var.path_myaccounts,'w')
         f.write(client)
         f.close()
             
     if xbmcvfs.exists(var.chk_tmdbh):
                 
-        f = open(var.api_path_tmdbh,'r')
+        f = open(var.path_tmdbh,'r')
         data = f.read()
         f.close()
         client = data.replace(var.client_am,var.tmdbh_client).replace(var.secret_am,var.tmdbh_secret)
-        f = open(var.api_path_tmdbh,'w')
+        f = open(var.path_tmdbh,'w')
         f.write(client)
         f.close()
 
     if xbmcvfs.exists(var.chk_trakt):
                 
-        f = open(var.api_path_trakt,'r')
+        f = open(var.path_trakt,'r')
         data = f.read()
         f.close()
         client = data.replace(var.client_am,var.trakt_client).replace(var.secret_am,var.trakt_secret)
-        f = open(var.api_path_trakt,'w')
+        f = open(var.path_trakt,'w')
         f.write(client)
         f.close()
    
@@ -723,121 +723,121 @@ def restore_trakt(): #Restore API Keys to all add-ons
         
     if xbmcvfs.exists(var.chk_fen):
                         
-        f = open(var.api_path_fen,'r')
+        f = open(var.path_fen,'r')
         data = f.read()
         f.close()
         client = data.replace(var.fen_client,var.client_am).replace(var.fen_secret,var.secret_am)
-        f = open(var.api_path_fen,'w')
+        f = open(var.path_fen,'w')
         f.write(client)
         f.close()
 
     if xbmcvfs.exists(var.chk_pov):
 
-        f = open(var.api_path_pov,'r')
+        f = open(var.path_pov,'r')
         data = f.read()
         f.close()
         client = data.replace(var.pov_client,var.client_am).replace(var.pov_client,var.secret_am)
-        f = open(var.api_path_pov,'w')
+        f = open(var.path_pov,'w')
         f.write(client)
         f.close()
         
     if xbmcvfs.exists(var.chk_crew):
 
-        f = open(var.api_path_crew,'r')
+        f = open(var.path_crew,'r')
         data = f.read()
         f.close()
         client = data.replace(var.crew_client,var.client_am).replace(var.crew_client,var.secret_am)
-        f = open(var.api_path_crew,'w')
+        f = open(var.path_crew,'w')
         f.write(client)
         f.close()
 
     if xbmcvfs.exists(var.chk_shadow):
                         
-        f = open(var.api_path_shadow,'r')
+        f = open(var.path_shadow,'r')
         data = f.read()
         f.close()
         client = data.replace(var.shadow_client,var.client_am).replace(var.shadow_secret,var.secret_am)
-        f = open(var.api_path_shadow,'w')
+        f = open(var.path_shadow,'w')
         f.write(client)
         f.close()
 
     if xbmcvfs.exists(var.chk_ghost):
                         
-        f = open(var.api_path_ghost,'r')
+        f = open(var.path_ghost,'r')
         data = f.read()
         f.close()
         client = data.replace(var.ghost_client,var.client_am).replace(var.ghost_secret,var.secret_am)
-        f = open(var.api_path_ghost,'w')
+        f = open(var.path_ghost,'w')
         f.write(client)
         f.close()
         
     if xbmcvfs.exists(var.chk_unleashed):
                         
-        f = open(var.api_path_unleashed,'r')
+        f = open(var.path_unleashed,'r')
         data = f.read()
         f.close()
         client = data.replace(var.unleashed_client,var.client_am).replace(var.unleashed_secret,var.secret_am)
-        f = open(var.api_path_unleashed,'w')
+        f = open(var.path_unleashed,'w')
         f.write(client)
         f.close()
 
     if xbmcvfs.exists(var.chk_chains):
                         
-        f = open(var.api_path_chains,'r')
+        f = open(var.path_chains,'r')
         data = f.read()
         f.close()
         client = data.replace(var.chains_client,var.client_am).replace(var.chains_secret,var.secret_am)
-        f = open(var.api_path_chains,'w')
+        f = open(var.path_chains,'w')
         f.write(client)
         f.close()
 
     if xbmcvfs.exists(var.chk_md):
                        
-        f = open(var.api_path_md,'r')
+        f = open(var.path_md,'r')
         data = f.read()
         f.close()
         client = data.replace(var.md_client,var.client_am).replace(var.md_client,var.secret_am)
-        f = open(var.api_path_md,'w')
+        f = open(var.path_md,'w')
         f.write(client)
         f.close()
 
     if xbmcvfs.exists(var.chk_asgard):
                         
-        f = open(var.api_path_asgard,'r')
+        f = open(var.path_asgard,'r')
         data = f.read()
         f.close()
         client = data.replace(var.asgard_client,var.client_am).replace(var.asgard_secret,var.secret_am)
-        f = open(var.api_path_asgard,'w')
+        f = open(var.path_asgard,'w')
         f.write(client)
         f.close()
         
     if xbmcvfs.exists(var.chk_myaccounts):
 
-        f = open(var.api_path_myaccounts,'r')
+        f = open(var.path_myaccounts,'r')
         data = f.read()
         f.close()
         client = data.replace(var.myacts_client,var.client_am).replace(var.myacts_secret,var.secret_am)
-        f = open(var.api_path_myaccounts,'w')
+        f = open(var.path_myaccounts,'w')
         f.write(client)
         f.close()
             
     if xbmcvfs.exists(var.chk_tmdbh):
                 
-        f = open(var.api_path_tmdbh,'r')
+        f = open(var.path_tmdbh,'r')
         data = f.read()
         f.close()
         client = data.replace(var.tmdbh_client,var.client_am).replace(var.tmdbh_secret,var.secret_am)
-        f = open(var.api_path_tmdbh,'w')
+        f = open(var.path_tmdbh,'w')
         f.write(client)
         f.close()
 
     if xbmcvfs.exists(var.chk_trakt):
                 
-        f = open(var.api_path_trakt,'r')
+        f = open(var.path_trakt,'r')
         data = f.read()
         f.close()
         client = data.replace(var.trakt_client,var.client_am).replace(var.trakt_secret,var.secret_am)
-        f = open(var.api_path_trakt,'w')
+        f = open(var.path_trakt,'w')
         f.write(client)
         f.close()
    

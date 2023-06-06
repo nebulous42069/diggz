@@ -17,8 +17,8 @@
 				<control type="image">
 					<left>8</left>
 					<top>4</top>
-					<width>130</width>
-					<height>130</height>
+					<width>90</width>
+					<height>90</height>
 					<align>left</align>
 					<aligny>top</aligny>
 					<aspectratio aligny="top">keep</aspectratio>

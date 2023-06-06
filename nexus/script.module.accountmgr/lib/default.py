@@ -152,6 +152,10 @@ elif action == 'tmdbRevoke':
 	from accountmgr.modules import tmdb
 	control.function_monitor(tmdb.Auth().revoke_session_id)
 
+elif action == 'ShowSupported':
+	from accountmgr.modules import changelog
+	changelog.get_supported()
+	
 elif action == 'ShowChangelog':
 	from accountmgr.modules import changelog
 	changelog.get()
