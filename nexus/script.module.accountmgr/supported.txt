@@ -13,14 +13,16 @@ Supported Debrid Addons:		Supported Trakt Addons:
 12. Magic Dragon				12. The Promise
 13. Asgard					13. Quicksilver
 14. M.E.T.V					14. Alvin
-15. Premiumizer				15. Scrubs V2
-16. Realizer					16. Shadow
-17. My Accounts				17. Ghost
-18. ResolveURL				18. Unleashed
-						19. Chain Reaction
-						20. Magic Dragon
-						21. Asgard
-						22. My Accounts
+15. Premiumizer				15. Moria
+16. Realizer					16. Scrubs V2
+17. My Accounts				17. Shadow
+18. ResolveURL				18. Ghost
+						19. Base 19
+						20. Unleashed
+						21. Chain Reaction
+						22. Magic Dragon
+						23. Asgard
+						24. My Accounts
 
 
 

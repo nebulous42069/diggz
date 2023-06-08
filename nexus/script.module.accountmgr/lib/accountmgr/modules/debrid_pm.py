@@ -290,18 +290,18 @@ def chainspm_auth():
         except:
                 pass
 
-#Moria PM
-def moriapm_auth():
+#Twisted PM
+def twistedpm_auth():
         try:
-                if xbmcvfs.exists(var.chk_moria) and xbmcvfs.exists(var.chkset_moria):
-                        chk_auth_moria = xbmcaddon.Addon('plugin.video.moria').getSetting("premiumize.token")
-                        if not str(var.chk_accountmgr_tk_pm) == str(chk_auth_moria) or str(chk_auth_moria) == '':
+                if xbmcvfs.exists(var.chk_twisted) and xbmcvfs.exists(var.chkset_twisted):
+                        chk_auth_twisted = xbmcaddon.Addon('plugin.video.twisted').getSetting("premiumize.token")
+                        if not str(var.chk_accountmgr_tk_pm) == str(chk_auth_twisted) or str(chk_auth_twisted) == '':
                         
                                 accountmgr = xbmcaddon.Addon("script.module.accountmgr")
                                 your_username = accountmgr.getSetting("premiumize.username")
                                 your_token = accountmgr.getSetting("premiumize.token")
                         
-                                addon = xbmcaddon.Addon("plugin.video.moria")
+                                addon = xbmcaddon.Addon("plugin.video.twisted")
                                 addon.setSetting("premiumize.token", your_token)
 
                                 d_select = ("1")
@@ -321,25 +321,6 @@ def basepm_auth():
                                 your_token = accountmgr.getSetting("premiumize.token")
                         
                                 addon = xbmcaddon.Addon("plugin.video.base19")
-                                addon.setSetting("premiumize.token", your_token)
-
-                                d_select = ("1")
-                                addon.setSetting("debrid_select", d_select)
-        except:
-                pass
-
-#Twisted PM
-def twistedpm_auth():
-        try:
-                if xbmcvfs.exists(var.chk_twisted) and xbmcvfs.exists(var.chkset_twisted):
-                        chk_auth_twisted = xbmcaddon.Addon('plugin.video.twisted').getSetting("premiumize.token")
-                        if not str(var.chk_accountmgr_tk_pm) == str(chk_auth_twisted) or str(chk_auth_twisted) == '':
-                        
-                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
-                                your_username = accountmgr.getSetting("premiumize.username")
-                                your_token = accountmgr.getSetting("premiumize.token")
-                        
-                                addon = xbmcaddon.Addon("plugin.video.twisted")
                                 addon.setSetting("premiumize.token", your_token)
 
                                 d_select = ("1")
@@ -467,9 +448,8 @@ def debrid_auth_pm(): #Sync all add-ons
                 ghostpm_auth()
                 unleashedpm_auth()
                 chainspm_auth()
-                moriapm_auth()
-                basepm_auth()
                 twistedpm_auth()
+                basepm_auth()
                 mdpm_auth()
                 asgardpm_auth()
                 metvpm_auth()

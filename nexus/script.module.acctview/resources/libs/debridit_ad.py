@@ -30,13 +30,13 @@ ORDER = ['acctmgrad',
          'ghostad',
          'unleashedad',
          'chainsad',
-         'base19ad',
          'twistedad',
+         'base19ad',
          'mdad',
          'asgardad',
          'metvad',
          'myactad',
-         'rurlad',]
+         'rurlad']
 
 DEBRIDID = {
     'serenad': {
@@ -147,18 +147,6 @@ DEBRIDID = {
         'default'  : 'alldebrid.token',
         'data'     : ['alldebrid.username', 'alldebrid.token', 'debrid_select'],
         'activate' : 'Addon.OpenSettings(plugin.video.thechains)'},
-    'base19ad': {
-        'name'     : 'Base 19',
-        'plugin'   : 'plugin.video.base19',
-        'saved'    : 'base19',
-        'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.base19'),
-        'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.base19', 'icon.png'),
-        'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.base19', 'fanart.jpg'),
-        'file'     : os.path.join(CONFIG.DEBRIDFOLD_AD, 'base19_ad'),
-        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.base19', 'settings.xml'),
-        'default'  : 'alldebrid.token',
-        'data'     : ['alldebrid.username', 'alldebrid.token', 'debrid_select'],
-        'activate' : 'Addon.OpenSettings(plugin.video.base19)'},
     'twistedad': {
         'name'     : 'Twisted',
         'plugin'   : 'plugin.video.twisted',
@@ -171,6 +159,18 @@ DEBRIDID = {
         'default'  : 'alldebrid.token',
         'data'     : ['alldebrid.username', 'alldebrid.token', 'debrid_select'],
         'activate' : 'Addon.OpenSettings(plugin.video.twisted)'},
+    'base19ad': {
+        'name'     : 'Base 19',
+        'plugin'   : 'plugin.video.base19',
+        'saved'    : 'base19',
+        'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.base19'),
+        'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.base19', 'icon.png'),
+        'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.base19', 'fanart.jpg'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_AD, 'base19_ad'),
+        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.base19', 'settings.xml'),
+        'default'  : 'alldebrid.token',
+        'data'     : ['alldebrid.username', 'alldebrid.token', 'debrid_select'],
+        'activate' : 'Addon.OpenSettings(plugin.video.base19)'},
     'mdad': {
         'name'     : 'Magic Dragon',
         'plugin'   : 'plugin.video.magicdragon',

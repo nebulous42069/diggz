@@ -954,11 +954,11 @@ All changes on GitHub: https://github.com/aitschti/plugin.video.sc19
 		6.2.0 - Added context menu force "player select" to the play button, available via "c" and long press "enter" button
 		</news>
 	</extension>
-</addon><addon id="script.module.accountmgr" version="420.2.2.3" name="Account Manager" provider-name="Zaxxon709">
+</addon><addon id="script.module.accountmgr" version="420.2.2.4" name="Account Manager" provider-name="Zaxxon709">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
 		<import addon="script.module.requests" version="2.19.1" />
-            <import addon="script.module.acctview" version="2.0.0" />
+            	<import addon="script.module.acctview" version="2.0.0" />
 	</requires>
 	<extension point="xbmc.service" library="lib/startup.py" start="startup" />
 	<extension point="xbmc.python.script" library="lib/default.py">
@@ -977,7 +977,7 @@ All changes on GitHub: https://github.com/aitschti/plugin.video.sc19
 			<fanart>fanart.png</fanart>
 		</assets>
 	</extension>
-</addon><addon id="script.module.acctview" name="acctviewer" version="420.2.0.9" provider-name="Zaxxon709">
+</addon><addon id="script.module.acctview" name="acctviewer" version="420.2.1.0" provider-name="Zaxxon709">
     <extension point="xbmc.python.pluginsource" library="default.py">
     <extension point="xbmc.addon.metadata">
     </extension>

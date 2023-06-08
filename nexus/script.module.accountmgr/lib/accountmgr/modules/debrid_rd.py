@@ -337,12 +337,12 @@ def chainsrd_auth():
         except:
                 pass
 
-#Moria RD
-def moriard_auth():
+#Twisted RD
+def twistedrd_auth():
         try:
-                if xbmcvfs.exists(var.chk_moria) and xbmcvfs.exists(var.chkset_moria):
-                        chk_auth_moria = xbmcaddon.Addon('plugin.video.moria').getSetting("rd.auth")
-                        if not str(var.chk_accountmgr_tk_rd) == str(chk_auth_moria) or str(chk_auth_moria) == '':
+                if xbmcvfs.exists(var.chk_twisted) and xbmcvfs.exists(var.chkset_twisted):
+                        chk_auth_twisted = xbmcaddon.Addon('plugin.video.twisted').getSetting("rd.auth")
+                        if not str(var.chk_accountmgr_tk_rd) == str(chk_auth_twisted) or str(chk_auth_twisted) == '':
                                 
                                 accountmgr = xbmcaddon.Addon("script.module.accountmgr")
                                 your_username = accountmgr.getSetting("realdebrid.username")
@@ -351,7 +351,7 @@ def moriard_auth():
                                 your_refresh = accountmgr.getSetting("realdebrid.refresh")
                                 your_secret = accountmgr.getSetting("realdebrid.secret")
                         
-                                addon = xbmcaddon.Addon("plugin.video.moria")
+                                addon = xbmcaddon.Addon("plugin.video.twisted")
                                 addon.setSetting("rd.auth", your_token)
                                 addon.setSetting("rd.client_id", your_client_id)
                                 addon.setSetting("rd.refresh", your_refresh)
@@ -377,31 +377,6 @@ def baserd_auth():
                                 your_secret = accountmgr.getSetting("realdebrid.secret")
                         
                                 addon = xbmcaddon.Addon("plugin.video.base19")
-                                addon.setSetting("rd.auth", your_token)
-                                addon.setSetting("rd.client_id", your_client_id)
-                                addon.setSetting("rd.refresh", your_refresh)
-                                addon.setSetting("rd.secret", your_secret)
-
-                                d_select = ("0")
-                                addon.setSetting("debrid_select", d_select)
-        except:
-                pass
-
-#Twisted RD
-def twistedrd_auth():
-        try:
-                if xbmcvfs.exists(var.chk_twisted) and xbmcvfs.exists(var.chkset_twisted):
-                        chk_auth_twisted = xbmcaddon.Addon('plugin.video.twisted').getSetting("rd.auth")
-                        if not str(var.chk_accountmgr_tk_rd) == str(chk_auth_twisted) or str(chk_auth_twisted) == '':
-                                
-                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
-                                your_username = accountmgr.getSetting("realdebrid.username")
-                                your_token = accountmgr.getSetting("realdebrid.token")
-                                your_client_id = accountmgr.getSetting("realdebrid.client_id")
-                                your_refresh = accountmgr.getSetting("realdebrid.refresh")
-                                your_secret = accountmgr.getSetting("realdebrid.secret")
-                        
-                                addon = xbmcaddon.Addon("plugin.video.twisted")
                                 addon.setSetting("rd.auth", your_token)
                                 addon.setSetting("rd.client_id", your_client_id)
                                 addon.setSetting("rd.refresh", your_refresh)
@@ -560,9 +535,8 @@ def debrid_auth_rd(): #Sync all add-ons
                ghostrd_auth()
                unleashedrd_auth()
                chainsrd_auth()
-               moriard_auth()
-               baserd_auth()
                twistedrd_auth()
+               baserd_auth()
                mdrd_auth()
                asgardrd_auth()
                metvrd_auth()

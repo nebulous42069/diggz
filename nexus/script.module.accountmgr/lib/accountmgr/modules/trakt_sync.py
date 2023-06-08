@@ -35,7 +35,7 @@ def fen_trakt():
                                 addon.setSetting("trakt.expires", your_expires)
 
                                 addon.setSetting("trakt.indicators_active", 'true')
-                                addon.setSetting("watched.indicators", '1')
+                                addon.setSetting("watched_indicators", '1')
         except:
                 pass
 
@@ -302,32 +302,7 @@ def promise_trakt():
                                 addon.setSetting("trakt.client_secret", var.secret_am)
         except:
                 pass
-        
-#Scrubs V2
-def scrubs_trakt():
-        try:
-                if xbmcvfs.exists(var.chk_scrubs) and xbmcvfs.exists(var.chkset_scrubs):
-                        chk_auth_scrubs = xbmcaddon.Addon('plugin.video.scrubsv2').getSetting("trakt.token")
-                        if not str(var.chk_accountmgr_tk) == str(chk_auth_scrubs) or str(chk_auth_scrubs) == '':
-
-                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
-                                addon = xbmcaddon.Addon("plugin.video.scrubsv2")
-
-                                your_username = accountmgr.getSetting("trakt.username")
-                                addon.setSetting("trakt.user", your_username)
-
-                                your_token = accountmgr.getSetting("trakt.token")
-                                addon.setSetting("trakt.token", your_token)
-
-                                your_refresh = accountmgr.getSetting("trakt.refresh")
-                                addon.setSetting("trakt.refresh", your_refresh)
-
-                                addon.setSetting("trakt.authed", 'yes')
-                                addon.setSetting("trakt.client_id", var.client_am)
-                                addon.setSetting("trakt.client_secret", var.secret_am)
-        except:
-                pass
-        
+               
 #Alvin
 def alvin_trakt():
         try:
@@ -350,6 +325,62 @@ def alvin_trakt():
                                 addon.setSetting("trakt.authed", 'yes')
                                 addon.setSetting("trakt.client_id", var.client_am)
                                 addon.setSetting("trakt.client_secret", var.secret_am)
+        except:
+                pass
+
+#Moria
+def moria_trakt():
+        try:
+                if xbmcvfs.exists(var.chk_moria) and xbmcvfs.exists(var.chkset_moria):
+                        chk_auth_moria = xbmcaddon.Addon('plugin.video.moria').getSetting("trakt.token")
+                        if not str(var.chk_accountmgr_tk) == str(chk_auth_moria) or str(chk_auth_moria) == '':
+
+                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
+                                addon = xbmcaddon.Addon("plugin.video.moria")
+
+                                your_username = accountmgr.getSetting("trakt.username")
+                                addon.setSetting("trakt.user", your_username)
+
+                                your_token = accountmgr.getSetting("trakt.token")
+                                addon.setSetting("trakt.token", your_token)
+
+                                your_refresh = accountmgr.getSetting("trakt.refresh")
+                                addon.setSetting("trakt.refresh", your_refresh)
+
+                                addon.setSetting("trakt.authed", 'yes')
+                                addon.setSetting("trakt.client_id", var.client_am)
+                                addon.setSetting("trakt.client_secret", var.secret_am)
+        except:
+                pass
+
+#Scrubs V2
+def scrubs_trakt():
+        try:
+                if xbmcvfs.exists(var.chk_scrubs) and xbmcvfs.exists(var.chkset_scrubs):
+                        chk_auth_scrubs = xbmcaddon.Addon('plugin.video.scrubsv2').getSetting("trakt.token")
+                        if not str(var.chk_accountmgr_tk) == str(chk_auth_scrubs) or str(chk_auth_scrubs) == '':
+
+                                f = open(var.path_scrubs,'r')
+                                data = f.read()
+                                f.close()
+                                client = data.replace(var.scrubs_client,var.client_am).replace(var.scrubs_secret,var.secret_am)
+                                f = open(var.path_scrubs,'w')
+                                f.write(client)
+                                f.close()
+
+                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
+                                addon = xbmcaddon.Addon("plugin.video.scrubsv2")
+
+                                your_username = accountmgr.getSetting("trakt.username")
+                                addon.setSetting("trakt.user", your_username)
+
+                                your_token = accountmgr.getSetting("trakt.token")
+                                addon.setSetting("trakt.token", your_token)
+
+                                your_refresh = accountmgr.getSetting("trakt.refresh")
+                                addon.setSetting("trakt.refresh", your_refresh)
+
+                                addon.setSetting("trakt.authed", 'yes')
         except:
                 pass
         
@@ -399,6 +430,34 @@ def ghost_trakt():
 
                                 accountmgr = xbmcaddon.Addon("script.module.accountmgr")
                                 addon = xbmcaddon.Addon("plugin.video.ghost")
+
+                                your_token = accountmgr.getSetting("trakt.token")
+                                addon.setSetting("trakt_access_token", your_token)
+
+                                your_refresh = accountmgr.getSetting("trakt.refresh")
+                                addon.setSetting("trakt_refresh_token", your_refresh)
+
+                                your_expires = accountmgr.getSetting("trakt.expires")
+                                addon.setSetting("trakt_expires_at", your_expires)
+        except:
+                pass
+#Base 19
+def base_trakt():
+        try:
+                if xbmcvfs.exists(var.chk_base) and xbmcvfs.exists(var.chkset_base):
+                        chk_auth_base = xbmcaddon.Addon('plugin.video.base19').getSetting("trakt_access_token")
+                        if not str(var.chk_accountmgr_tk) == str(chk_auth_base) or str(chk_auth_base) == '':
+                                
+                                f = open(var.path_base,'r')
+                                data = f.read()
+                                f.close()
+                                client = data.replace(var.base_client,var.client_am).replace(var.base_secret,var.secret_am)
+                                f = open(var.path_base,'w')
+                                f.write(client)
+                                f.close()
+
+                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
+                                addon = xbmcaddon.Addon("plugin.video.base19")
 
                                 your_token = accountmgr.getSetting("trakt.token")
                                 addon.setSetting("trakt_access_token", your_token)
@@ -634,10 +693,12 @@ def sync_all(): #Sync all add-ons
                 shazam_trakt()
                 night_trakt()
                 promise_trakt()
-                scrubs_trakt()
                 alvin_trakt()
+                moria_trakt()
+                scrubs_trakt()
                 shadow_trakt()
                 ghost_trakt()
+                base_trakt()
                 unleashed_trakt()
                 chains_trakt()
                 md_trakt()

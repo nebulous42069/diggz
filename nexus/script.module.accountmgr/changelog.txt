@@ -1,3 +1,5 @@
+2.2.4 - Multiple small bugs fixed. This should be the final update unless any issues pop up.
+
 2.2.3 - Fixed a bug preventing sync of certian add-ons
 
 2.2.2 - Cleaned up backup/restore code adding some notifications so the user knows what is happening. Added a new menu item 'Information'. Bug fixes and clean up.

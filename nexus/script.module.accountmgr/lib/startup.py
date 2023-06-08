@@ -8,7 +8,7 @@ from accountmgr.modules import var
 
 timeout_start = time.time()
 timeout = 60*5
-        
+                                
 def startup_sync():
         try:
                 if str(var.chk_accountmgr_tk) != '': #Skip sync if Trakt is not authorized
@@ -101,6 +101,20 @@ def api_check():
                                         f.close()
                                         continue
 
+                if xbmcvfs.exists(var.chk_base) and xbmcvfs.exists(var.chkset_base) and str(var.chk_accountmgr_tk) != '':
+                        with open(var.path_base) as f:
+                                if var.chk_api in f.read():
+                                        pass
+                                else:
+                                        f = open(var.path_base,'r')
+                                        data = f.read()
+                                        f.close()
+                                        client = data.replace(var.base_client,var.client_am).replace(var.base_secret,var.secret_am)
+                                        f = open(var.path_base,'w')
+                                        f.write(client)
+                                        f.close()
+                                        continue
+
                 if xbmcvfs.exists(var.chk_unleashed) and xbmcvfs.exists(var.chkset_unleashed) and str(var.chk_accountmgr_tk) != '':
                         with open(var.path_unleashed) as f:
                                 if var.chk_api in f.read():
@@ -156,7 +170,21 @@ def api_check():
                                         f.write(client)
                                         f.close()
                                         continue
-                                        
+
+                if xbmcvfs.exists(var.chk_scrubs) and xbmcvfs.exists(var.chkset_scrubs) and str(var.chk_accountmgr_tk) != '':
+                        with open(var.path_scrubs) as f:
+                                if var.chk_api in f.read():
+                                        pass
+                                else:
+                                        f = open(var.path_scrubs,'r')
+                                        data = f.read()
+                                        f.close()
+                                        client = data.replace(var.scrubs_client,var.client_am).replace(var.scrubs_secret,var.secret_am)
+                                        f = open(var.path_scrubs,'w')
+                                        f.write(client)
+                                        f.close()
+                                        continue
+                                
                 if xbmcvfs.exists(var.chk_myaccounts) and xbmcvfs.exists(var.chkset_myaccounts) and str(var.chk_accountmgr_tk) != '':
                         with open(var.path_myaccounts) as f:
                                 if var.chk_api in f.read():

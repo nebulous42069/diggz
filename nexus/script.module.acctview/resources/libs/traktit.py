@@ -12,7 +12,7 @@ from resources.libs.common import tools
 from resources.libs.common import var
 
 
-ORDER = ['acctmgr', 'seren', 'ezra', 'fen', 'pov', 'umbrella', 'ghost', 'unleashed', 'chains', 'moria', 'base19', 'md', 'asgard', 'metv', 'homelander', 'quicksilver', 'genocide', 'shazam', 'thepromise', 'thecrew', 'nightwing', 'alvin', 'scrubs', 'tmdbhelper', 'myact', 'trakt',]
+ORDER = ['acctmgr', 'seren', 'ezra', 'fen', 'pov', 'umbrella', 'shadow', 'ghost', 'unleashed', 'chains', 'base19', 'md', 'asgard', 'homelander', 'quicksilver', 'genocide', 'shazam', 'thepromise', 'thecrew', 'nightwing', 'alvin', 'moria', 'scrubs', 'tmdbhelper', 'myact', 'trakt']
 
 TRAKTID = {
    'seren': {
@@ -75,6 +75,18 @@ TRAKTID = {
         'default'  : 'trakt.user.name',
         'data'     : ['trakt.clientid', 'trakt.clientsecret', 'trakt.user.token', 'trakt.user.name', 'trakt.token.expires', 'trakt.refreshtoken', 'trakt.isauthed'],
         'activate' : 'Addon.OpenSettings(plugin.video.umbrella)'},
+    'shadow': {
+        'name'     : 'Shadow',
+        'plugin'   : 'plugin.video.shadow',
+        'saved'    : 'shadow',
+        'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.shadow'),
+        'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.shadow', 'icon.png'),
+        'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.shadow', 'fanart.jpg'),
+        'file'     : os.path.join(CONFIG.TRAKTFOLD, 'shadow_trakt'),
+        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.shadow', 'settings.xml'),
+        'default'  : 'trakt_expires_at',
+        'data'     : ['trakt_expires_at', 'trakt_refresh_token', 'trakt_access_token'],
+        'activate' : 'Addon.OpenSettings(plugin.video.shadow)'},
     'ghost': {
         'name'     : 'Ghost',
         'plugin'   : 'plugin.video.ghost',
@@ -111,18 +123,6 @@ TRAKTID = {
         'default'  : 'trakt_expires_at',
         'data'     : ['trakt_expires_at', 'trakt_refresh_token', 'trakt_access_token'],
         'activate' : 'Addon.OpenSettings(plugin.video.thechains)'},
-   'moria': {
-        'name'     : 'Moria',
-        'plugin'   : 'plugin.video.moria',
-        'saved'    : 'moria',
-        'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.moria'),
-        'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.moria', 'icon.png'),
-        'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.moria', 'fanart.jpg'),
-        'file'     : os.path.join(CONFIG.TRAKTFOLD, 'moria_trakt'),
-        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.moria', 'settings.xml'),
-        'default'  : 'trakt.user',
-        'data'     : ['trakt.authed', 'trakt.user', 'trakt.token' 'trakt.refresh', 'trakt.client_id', 'trakt.client_secret'],
-        'activate' : 'Addon.OpenSettings(plugin.video.moria)'},
     'base19': {
         'name'     : 'Base 19',
         'plugin'   : 'plugin.video.base19',
@@ -159,18 +159,6 @@ TRAKTID = {
         'default'  : 'trakt_expires_at',
         'data'     : ['trakt_expires_at', 'trakt_refresh_token', 'trakt_access_token'],
         'activate' : 'Addon.OpenSettings(plugin.video.asgard)'},
-    'metv': {
-        'name'     : 'M.E.T.V',
-        'plugin'   : 'plugin.video.metv19',
-        'saved'    : 'metv',
-        'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.metv19'),
-        'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.metv19', 'icon.png'),
-        'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.metv19', 'fanart.jpg'),
-        'file'     : os.path.join(CONFIG.TRAKTFOLD, 'asgard_trakt'),
-        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.metv19', 'settings.xml'),
-        'default'  : 'trakt_expires_at',
-        'data'     : ['trakt_expires_at', 'trakt_refresh_token', 'trakt_access_token'],
-        'activate' : 'Addon.OpenSettings(plugin.video.metv19)'},
    'homelander': {
         'name'     : 'Homelander',
         'plugin'   : 'plugin.video.homelander',
@@ -267,6 +255,18 @@ TRAKTID = {
         'default'  : 'trakt.user',
         'data'     : ['trakt.client_id', 'trakt.client_secret', 'trakt.refresh', 'trakt.token', 'trakt.user'],
         'activate' : 'Addon.OpenSettings(plugin.video.alvin)'},
+   'moria': {
+        'name'     : 'Moria',
+        'plugin'   : 'plugin.video.moria',
+        'saved'    : 'moria',
+        'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.moria'),
+        'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.moria', 'icon.png'),
+        'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.moria', 'fanart.jpg'),
+        'file'     : os.path.join(CONFIG.TRAKTFOLD, 'moria_trakt'),
+        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.moria', 'settings.xml'),
+        'default'  : 'trakt.user',
+        'data'     : ['trakt.authed', 'trakt.user', 'trakt.token' 'trakt.refresh', 'trakt.client_id', 'trakt.client_secret'],
+        'activate' : 'Addon.OpenSettings(plugin.video.moria)'},
    'scrubs': {
         'name'     : 'Scrubs V2',
         'plugin'   : 'plugin.video.scrubsv2',
@@ -422,20 +422,8 @@ def trakt_it_restore(do, who):
             logging.log('[Trakt Data] Invalid Entry: {0}'.format(who), level=xbmc.LOGERROR)
     restore_trakt() #Restore API keys for all add-ons
     
+
 def clear_saved(who, over=False):
-    if who == 'all':
-        for trakt in TRAKTID:
-            clear_saved(trakt,  True)
-    elif TRAKTID[who]:
-        file = TRAKTID[who]['file']
-        if os.path.exists(file):
-            os.remove(file)
-            xbmcgui.Dialog().notification('Account Manager', 'Data Cleared!', amgr_icon, 3000)
-    if not over:
-        xbmc.executebuiltin('Container.Refresh()')
-
-
-def clear_all_saved(who, over=False):
     if who == 'all':
         for trakt in TRAKTID:
             clear_saved(trakt,  True)
@@ -648,6 +636,16 @@ def revoke_trakt(): #Restore default API keys to all add-ons
         f = open(var.path_ghost,'w')
         f.write(client)
         f.close()
+
+    if xbmcvfs.exists(var.chk_base):
+                        
+        f = open(var.path_base,'r')
+        data = f.read()
+        f.close()
+        client = data.replace(var.client_am,var.base_client).replace(var.secret_am,var.base_secret)
+        f = open(var.path_base,'w')
+        f.write(client)
+        f.close()
         
     if xbmcvfs.exists(var.chk_unleashed):
                         
@@ -686,6 +684,16 @@ def revoke_trakt(): #Restore default API keys to all add-ons
         f.close()
         client = data.replace(var.client_am,var.asgard_client).replace(var.secret_am,var.asgard_secret)
         f = open(var.path_asgard,'w')
+        f.write(client)
+        f.close()
+
+    if xbmcvfs.exists(var.chk_scrubs):
+                        
+        f = open(var.path_scrubs,'r')
+        data = f.read()
+        f.close()
+        client = data.replace(var.client_am,var.scrubs_client).replace(var.secret_am,var.scrubs_secret)
+        f = open(var.path_scrubs,'w')
         f.write(client)
         f.close()
         
@@ -770,6 +778,16 @@ def restore_trakt(): #Restore API Keys to all add-ons
         f = open(var.path_ghost,'w')
         f.write(client)
         f.close()
+
+    if xbmcvfs.exists(var.chk_base):
+                        
+        f = open(var.path_base,'r')
+        data = f.read()
+        f.close()
+        client = data.replace(var.base_client,var.client_am).replace(var.base_secret,var.secret_am)
+        f = open(var.path_base,'w')
+        f.write(client)
+        f.close()
         
     if xbmcvfs.exists(var.chk_unleashed):
                         
@@ -808,6 +826,16 @@ def restore_trakt(): #Restore API Keys to all add-ons
         f.close()
         client = data.replace(var.asgard_client,var.client_am).replace(var.asgard_secret,var.secret_am)
         f = open(var.path_asgard,'w')
+        f.write(client)
+        f.close()
+
+    if xbmcvfs.exists(var.chk_scrubs):
+                        
+        f = open(var.path_scrubs,'r')
+        data = f.read()
+        f.close()
+        client = data.replace(var.scrubs_client,var.client_am).replace(var.scrubs_secret,var.secret_am)
+        f = open(var.path_scrubs,'w')
         f.write(client)
         f.close()
         

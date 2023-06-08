@@ -114,7 +114,8 @@ class Router:
                 xbmcgui.Dialog().notification('Account Manager', 'No Trakt Data to Restore!', amgr_icon, 3000)
         elif mode == 'addontrakt':  # Clear All Addon Trakt Data
             from resources.libs import traktit
-            traktit.trakt_it_revoke('clearaddon', name)
+            traktit.trakt_it_revoke('wipeaddon', name)
+            xbmcgui.Dialog().notification('Account Manager', 'All Add-ons Revoked!', trakt_icon, 3000)
         elif mode == 'cleartrakt':  # Clear All Saved Trakt Data
             if xbmcvfs.exists(trakt_backup): # Skip clearing data if no Trakt folder present in backup folder
                 try:
@@ -161,7 +162,8 @@ class Router:
                 xbmcgui.Dialog().notification('Account Manager', 'No Real-Debrid Data to Restore!', amgr_icon, 3000)           
         elif mode == 'addondebrid_rd':  # Clear All Addon Debrid Data
             from resources.libs import debridit_rd
-            debridit_rd.debrid_it('clearaddon', name)
+            debridit_rd.debrid_it('wipeaddon', name)
+            xbmcgui.Dialog().notification('Account Manager', 'All Add-ons Revoked!', rd_icon, 3000)
         elif mode == 'cleardebrid_rd':  # Clear All Saved Debrid Data
             if xbmcvfs.exists(rd_backup): # Skip clearing data if no debrid folder present in backup folder
                 try:
@@ -208,7 +210,8 @@ class Router:
                 xbmcgui.Dialog().notification('Account Manager', 'No Premiumize Data to Restore!', amgr_icon, 3000)
         elif mode == 'addondebrid_pm':  # Clear All Addon Debrid Data
             from resources.libs import debridit_pm
-            debridit_pm.debrid_it('clearaddon', name)
+            debridit_pm.debrid_it('wipeaddon', name)
+            xbmcgui.Dialog().notification('Account Manager', 'All Add-ons Revoked!', pm_icon, 3000)
         elif mode == 'cleardebrid_pm':  # Clear All Saved Debrid Data
             if xbmcvfs.exists(pm_backup): # Skip clearing data if no debrid folder present in backup folder
                 try:
@@ -255,7 +258,8 @@ class Router:
                 xbmcgui.Dialog().notification('Account Manager', 'No All-Debrid Data to Restore!', amgr_icon, 3000)
         elif mode == 'addondebrid_ad':  # Clear All Addon Debrid Data
             from resources.libs import debridit_ad
-            debridit_ad.debrid_it('clearaddon', name)
+            debridit_ad.debrid_it('wipeaddon', name)
+            xbmcgui.Dialog().notification('Account Manager', 'All Add-ons Revoked!', ad_icon, 3000)
         elif mode == 'cleardebrid_ad':  # Clear All Saved Debrid Data
             if xbmcvfs.exists(ad_backup): # Skip clearing data if no debrid folder present in backup folder
                 try:
@@ -304,27 +308,36 @@ class Router:
         elif mode == 'restoreall':  # Recover All Saved Debrid Data
             if xbmcvfs.exists(rd_backup) or xbmcvfs.exists(pm_backup) or xbmcvfs.exists(ad_backup): # Skip restore if no debrid folder present in backup folder
                 try:
-                    path_rd = os.listdir(rd_backup)
-                    if len(path_rd) != 0: # Skip restore if no saved data in backup folder
-                        from resources.libs import debridit_rd
-                        debridit_rd.debrid_it('restore', name)
-                        xbmcgui.Dialog().notification('Account Manager', 'Real-Debrid Data Restored!', rd_icon, 3000)
+                    if xbmcvfs.exists(rd_backup): # Skip restore if no backup folder exists or it's empty
+                        path_rd = os.listdir(rd_backup)
+                        if len(path_rd) != 0: # Skip if backup directory is empty
+                            from resources.libs import debridit_rd
+                            debridit_rd.debrid_it('restore', name)
+                            xbmcgui.Dialog().notification('Account Manager', 'Real-Debrid Data Restored!', rd_icon, 3000)
+                        else:
+                            xbmcgui.Dialog().notification('Account Manager', 'No Real-Debrid Data Found!', rd_icon, 3000)
                     else:
-                        xbmcgui.Dialog().notification('Account Manager', 'No Real-Debrid Data to Restore!', amgr_icon, 3000)
-                    path_pm = os.listdir(pm_backup)
-                    if len(path_pm) != 0: # Skip restore if no saved data in backup folder
-                        from resources.libs import debridit_pm
-                        debridit_pm.debrid_it('restore', name)
-                        xbmcgui.Dialog().notification('Account Manager', 'Premiumize Data Restored!', pm_icon, 3000)
+                        xbmcgui.Dialog().notification('Account Manager', 'No Real-Debrid Data Found!', rd_icon, 3000)
+                    if xbmcvfs.exists(pm_backup): # Skip restore if no backup folder exists or it's empty
+                        path_pm = os.listdir(pm_backup)
+                        if len(path_pm) != 0: # Skip if backup directory is empty
+                            from resources.libs import debridit_pm
+                            debridit_pm.debrid_it('restore', name)
+                            xbmcgui.Dialog().notification('Account Manager', 'Premiumize Data Restored!', pm_icon, 3000)
+                        else:
+                            xbmcgui.Dialog().notification('Account Manager', 'No Premiumize Data Found!', pm_icon, 3000)
                     else:
-                        xbmcgui.Dialog().notification('Account Manager', 'No Premiumize Data to Restore!', amgr_icon, 3000)
-                    path_ad = os.listdir(ad_backup)
-                    if len(path_ad) != 0: # Skip restore if no saved data in backup folder
-                        from resources.libs import debridit_ad
-                        debridit_pm.debrid_it('restore', name)
-                        xbmcgui.Dialog().notification('Account Manager', 'All-Debrid Data Restored!', ad_icon, 3000)
+                        xbmcgui.Dialog().notification('Account Manager', 'No Premiumize Data Found!', pm_icon, 3000)
+                    if xbmcvfs.exists(ad_backup): # Skip restore if no backup folder exists or it's empty
+                        path_ad = os.listdir(ad_backup)
+                        if len(path_ad) != 0: # Skip if backup directory is empty
+                            from resources.libs import debridit_ad
+                            debridit_pm.debrid_it('restore', name)
+                            xbmcgui.Dialog().notification('Account Manager', 'All-Debrid Data Restored!', ad_icon, 3000)
+                        else:
+                            xbmcgui.Dialog().notification('Account Manager', 'No All-Debrid Data Found!', ad_icon, 3000)
                     else:
-                        xbmcgui.Dialog().notification('Account Manager', 'No All-Debrid Data to Restore!', amgr_icon, 3000)
+                        xbmcgui.Dialog().notification('Account Manager', 'No All-Debrid Data Found!', ad_icon, 3000)
                 except:
                     pass
             else:
@@ -333,28 +346,37 @@ class Router:
         #CLEAR ALL SAVED DATA FOR DEBRID ACCOUNTS
         elif mode == 'clearall':  # Clear All Saved Debrid Data
             if xbmcvfs.exists(rd_backup) or xbmcvfs.exists(pm_backup) or xbmcvfs.exists(ad_backup): # Skip clearing data if no debrid folder present in backup folder
-                try:
-                    path_rd = os.listdir(rd_backup)
-                    if len(path_rd) != 0: # Skip clearing data if no saved data in backup folder
-                        from resources.libs import debridit_rd
-                        debridit_rd.clear_saved(name)
-                        xbmcgui.Dialog().notification('Account Manager', 'Real-Debrid Data Cleared!', rd_icon, 3000)
+                try:     
+                    if xbmcvfs.exists(rd_backup): # Skip restore if no backup folder exists or it's empty
+                        path_rd = os.listdir(rd_backup)
+                        if len(path_rd) != 0: # Skip if backup directory is empty
+                            from resources.libs import debridit_rd
+                            debridit_rd.clear_saved(name)
+                            xbmcgui.Dialog().notification('Account Manager', 'Real-Debrid Data Cleared!', rd_icon, 3000)
+                        else:
+                            xbmcgui.Dialog().notification('Account Manager', 'No Real-Debrid Data to Clear!', rd_icon, 3000)
                     else:
-                        xbmcgui.Dialog().notification('Account Manager', 'No Real-Debrid Data to Clear!', amgr_icon, 3000)
-                    path_pm = os.listdir(pm_backup)
-                    if len(path_pm) != 0: # Skip clearing data if no saved data in backup folder
-                        from resources.libs import debridit_pm
-                        debridit_pm.clear_saved(name)
-                        xbmcgui.Dialog().notification('Account Manager', 'Premiumize Data Cleared!', pm_icon, 3000)
+                        xbmcgui.Dialog().notification('Account Manager', 'No Real-Debrid Data to Clear!', rd_icon, 3000)
+                    if xbmcvfs.exists(pm_backup): # Skip restore if no backup folder exists or it's empty
+                        path_pm = os.listdir(pm_backup)
+                        if len(path_pm) != 0: # Skip if backup directory is empty
+                            from resources.libs import debridit_pm
+                            debridit_pm.clear_saved(name)
+                            xbmcgui.Dialog().notification('Account Manager', 'Premiumize Data Cleared!', pm_icon, 3000)
+                        else:
+                            xbmcgui.Dialog().notification('Account Manager', 'No Premiumize Data to Clear!', pm_icon, 3000)
                     else:
-                        xbmcgui.Dialog().notification('Account Manager', 'No Premiumize Data to Clear!', amgr_icon, 3000)
-                    path_ad = os.listdir(ad_backup)
-                    if len(path_ad) != 0: # Skip clearing data if no saved data in backup folder
-                        from resources.libs import debridit_ad
-                        debridit_ad.clear_saved(name)
-                        xbmcgui.Dialog().notification('Account Manager', 'All-Debrid Data Cleared!', ad_icon, 3000)
+                        xbmcgui.Dialog().notification('Account Manager', 'No Premiumize Data to Clear!', pm_icon, 3000)
+                    if xbmcvfs.exists(ad_backup): # Skip restore if no backup folder exists or it's empty
+                        path_ad = os.listdir(ad_backup)
+                        if len(path_ad) != 0: # Skip if backup directory is empty
+                            from resources.libs import debridit_ad
+                            debridit_ad.clear_saved(name)
+                            xbmcgui.Dialog().notification('Account Manager', 'All-Debrid Data Cleared!', ad_icon, 3000)
+                        else:
+                            xbmcgui.Dialog().notification('Account Manager', 'No All-Debrid Data to Clear!', ad_icon, 3000)
                     else:
-                        xbmcgui.Dialog().notification('Account Manager', 'No All-Debrid Data to Clear!', amgr_icon, 3000)
+                        xbmcgui.Dialog().notification('Account Manager', 'No All-Debrid Data to Clear!', ad_icon, 3000)
                 except:
                     pass
             else:

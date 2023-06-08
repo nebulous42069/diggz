@@ -30,13 +30,13 @@ ORDER = ['acctmgrrd',
          'ghostrd',
          'unleashedrd',
          'chainsrd',
-         'base19rd',
          'twistedrd',
+         'base19rd',
          'mdrd',
          'asgardrd',
          'metvrd',
          'myactrd',
-         'rurlrd',]
+         'rurlrd']
 
 DEBRIDID = {
     'serenrd': {
@@ -83,7 +83,7 @@ DEBRIDID = {
         'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.pov', 'icon.png'),
         'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.pov', 'fanart.png'),
         'file'     : os.path.join(CONFIG.DEBRIDFOLD_RD, 'pov_rd'),
-        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.pov', 'settings.xml'),
+        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.fen', 'settings.xml'),
         'default'  : 'rd.client_id',
         'data'     : ['rd.client_id', 'rd.refresh', 'rd.secret', 'rd.token', 'rd.account_id', 'rd.enabled'],
         'activate' : 'Addon.OpenSettings(plugin.video.pov)'},
@@ -147,18 +147,6 @@ DEBRIDID = {
         'default'  : 'rd.client_id',
         'data'     : ['rd.expiry', 'rd.auth', 'rd.client_id', 'rd.refresh', 'rd.secret', 'debrid_select'],
         'activate' : 'Addon.OpenSettings(plugin.video.thechains)'},
-    'base19rd': {
-        'name'     : 'Base 19',
-        'plugin'   : 'plugin.video.base19',
-        'saved'    : 'base19rd',
-        'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.base19'),
-        'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.base19', 'icon.png'),
-        'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.base19', 'fanart.jpg'),
-        'file'     : os.path.join(CONFIG.DEBRIDFOLD_RD, 'base19_rd'),
-        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.base19', 'settings.xml'),
-        'default'  : 'rd.client_id',
-        'data'     : ['rd.expiry', 'rd.auth', 'rd.client_id', 'rd.refresh', 'rd.secret', 'debrid_select'],
-        'activate' : 'Addon.OpenSettings(plugin.video.base19)'},
     'twistedrd': {
         'name'     : 'Twisted',
         'plugin'   : 'plugin.video.twisted',
@@ -171,6 +159,18 @@ DEBRIDID = {
         'default'  : 'rd.client_id',
         'data'     : ['rd.expiry', 'rd.auth', 'rd.client_id', 'rd.refresh', 'rd.secret', 'debrid_select'],
         'activate' : 'Addon.OpenSettings(plugin.video.twisted)'},
+    'base19rd': {
+        'name'     : 'Base 19',
+        'plugin'   : 'plugin.video.base19',
+        'saved'    : 'base19rd',
+        'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.base19'),
+        'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.base19', 'icon.png'),
+        'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.base19', 'fanart.jpg'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_RD, 'base19_rd'),
+        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.base19', 'settings.xml'),
+        'default'  : 'rd.client_id',
+        'data'     : ['rd.expiry', 'rd.auth', 'rd.client_id', 'rd.refresh', 'rd.secret', 'debrid_select'],
+        'activate' : 'Addon.OpenSettings(plugin.video.base19)'},
     'mdrd': {
         'name'     : 'Magic Dragon',
         'plugin'   : 'plugin.video.magicdragon',

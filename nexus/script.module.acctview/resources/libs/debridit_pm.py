@@ -30,14 +30,14 @@ ORDER = ['acctmgrpm',
          'ghostpm',
          'unleashedpm',
          'chainspm',
-         'base19pm',
          'twistedpm',
+         'base19pm',
          'mdpm',
          'asgardpm',
          'metvpm',
          'myactpm',
          'rurlpm',
-         'premiumizer',]
+         'premiumizer']
 
 DEBRIDID = {
     'serenpm': {
@@ -148,18 +148,6 @@ DEBRIDID = {
         'default'  : 'premiumize.token',
         'data'     : ['premiumize.token', 'debrid_select'],
         'activate' : 'Addon.OpenSettings(plugin.video.thechains)'},
-    'base19pm': {
-        'name'     : 'Base 19',
-        'plugin'   : 'plugin.video.base19',
-        'saved'    : 'base19pm',
-        'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.base19'),
-        'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.base19', 'icon.png'),
-        'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.base19', 'fanart.jpg'),
-        'file'     : os.path.join(CONFIG.DEBRIDFOLD_PM, 'base19_pm'),
-        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.base19', 'settings.xml'),
-        'default'  : 'premiumize.token',
-        'data'     : ['premiumize.token', 'debrid_select'],
-        'activate' : 'Addon.OpenSettings(plugin.video.base19)'},
     'twistedpm': {
         'name'     : 'Twisted',
         'plugin'   : 'plugin.video.twisted',
@@ -172,6 +160,18 @@ DEBRIDID = {
         'default'  : 'premiumize.token',
         'data'     : ['premiumize.token', 'debrid_select'],
         'activate' : 'Addon.OpenSettings(plugin.video.twisted)'},
+    'base19pm': {
+        'name'     : 'Base 19',
+        'plugin'   : 'plugin.video.base19',
+        'saved'    : 'base19pm',
+        'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.base19'),
+        'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.base19', 'icon.png'),
+        'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.base19', 'fanart.jpg'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_PM, 'base19_pm'),
+        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.base19', 'settings.xml'),
+        'default'  : 'premiumize.token',
+        'data'     : ['premiumize.token', 'debrid_select'],
+        'activate' : 'Addon.OpenSettings(plugin.video.base19)'},
     'mdpm': {
         'name'     : 'Magic Dragon',
         'plugin'   : 'plugin.video.magicdragon',

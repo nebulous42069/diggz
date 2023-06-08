@@ -285,18 +285,18 @@ def chainsad_auth():
         except:
                 pass
 
-#Moria AD
-def moriaad_auth():
+#Twisted AD
+def twistedad_auth():
         try:
-                if xbmcvfs.exists(var.chk_moria) and xbmcvfs.exists(var.chkset_moria):
-                        chk_auth_moria = xbmcaddon.Addon('plugin.video.moria').getSetting("alldebrid.token")
-                        if not str(var.chk_accountmgr_tk_ad) == str(chk_auth_moria) or str(chk_auth_moria) == '':
+                if xbmcvfs.exists(var.chk_twisted) and xbmcvfs.exists(var.chkset_twisted):
+                        chk_auth_twisted = xbmcaddon.Addon('plugin.video.twisted').getSetting("alldebrid.token")
+                        if not str(var.chk_accountmgr_tk_ad) == str(chk_auth_twisted) or str(chk_auth_twisted) == '':
                                 
                                 accountmgr = xbmcaddon.Addon("script.module.accountmgr")
                                 your_username = accountmgr.getSetting("alldebrid.username")
                                 your_token = accountmgr.getSetting("alldebrid.token")
                         
-                                addon = xbmcaddon.Addon("plugin.video.moria")
+                                addon = xbmcaddon.Addon("plugin.video.twisted")
                                 addon.setSetting("alldebrid.username", your_username)
                                 addon.setSetting("alldebrid.token", your_token)
 
@@ -317,26 +317,6 @@ def basead_auth():
                                 your_token = accountmgr.getSetting("alldebrid.token")
                         
                                 addon = xbmcaddon.Addon("plugin.video.base19")
-                                addon.setSetting("alldebrid.username", your_username)
-                                addon.setSetting("alldebrid.token", your_token)
-
-                                d_select = ("2")
-                                addon.setSetting("debrid_select", d_select)
-        except:
-                pass
-
-#Twisted AD
-def twistedad_auth():
-        try:
-                if xbmcvfs.exists(var.chk_twisted) and xbmcvfs.exists(var.chkset_twisted):
-                        chk_auth_twisted = xbmcaddon.Addon('plugin.video.twisted').getSetting("alldebrid.token")
-                        if not str(var.chk_accountmgr_tk_ad) == str(chk_auth_twisted) or str(chk_auth_twisted) == '':
-                                
-                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
-                                your_username = accountmgr.getSetting("alldebrid.username")
-                                your_token = accountmgr.getSetting("alldebrid.token")
-                        
-                                addon = xbmcaddon.Addon("plugin.video.twisted")
                                 addon.setSetting("alldebrid.username", your_username)
                                 addon.setSetting("alldebrid.token", your_token)
 
@@ -452,9 +432,8 @@ def debrid_auth_ad(): #Sync all add-ons
                 ghostad_auth()
                 unleashedad_auth()
                 chainsad_auth()
-                moriaad_auth()
-                basead_auth()
                 twistedad_auth()
+                basead_auth()
                 mdad_auth()
                 asgardad_auth()
                 metvad_auth()
