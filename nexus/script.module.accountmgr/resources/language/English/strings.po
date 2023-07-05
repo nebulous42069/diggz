@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgctxt "#32072"
-msgid "A new verison of Ezscrapers is available from the repository. Please consider updating to v%s"
+msgid "Update Available! V%s"
 msgstr ""
 
 msgctxt "#32073"
@@ -45,7 +45,7 @@ msgid "Meta Accounts"
 msgstr ""
 
 msgctxt "#32311"
-msgid "[COLOR FFA0C12C] -- Help --[/COLOR]"
+msgid "[COLOR FFA0C12C] -- Sync Help --[/COLOR]"
 msgstr ""
 
 msgctxt "#32312"
@@ -443,3 +443,8 @@ msgstr ""
 msgctxt "#40090"
 msgid "Use Custom Trakt API Keys"
 msgstr ""
+
+msgctxt "#40091"
+msgid "[COLOR FFA0C12C] -- TMDb Help --[/COLOR]"
+msgstr ""
+

@@ -12,14 +12,6 @@ from resources.libs.common.config import CONFIG
 from resources.libs.common import logging
 from resources.libs.common import tools
 
-addon = xbmcaddon.Addon
-addonObject = addon('script.module.acctview')
-addonInfo = addonObject.getAddonInfo
-transPath = xbmcvfs.translatePath
-joinPath = os.path.join
-
-amgr_icon = joinPath(os.path.join(xbmcaddon.Addon('script.module.acctview').getAddonInfo('path'), 'resources', 'icons'), 'accountmgr.png')
-
 ORDER = ['acctmgrpm',
          'serenpm',
          'ezrapm',
@@ -35,7 +27,14 @@ ORDER = ['acctmgrpm',
          'mdpm',
          'asgardpm',
          'metvpm',
+         'aliundepm',
+         'patriotpm',
+         'adinapm',
+         'artemispm',
+         'dynapm',
+         'loonpm',
          'myactpm',
+         'yactpm',
          'rurlpm',
          'premiumizer']
 
@@ -47,7 +46,7 @@ DEBRIDID = {
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.seren'),
         'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.seren/resources/images', 'ico-seren-3.png'),
         'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.seren/resources/images', 'fanart-seren-3.png'),
-        'file'     : os.path.join(CONFIG.DEBRIDFOLD_PM, 'seren_pm'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_PM, 'seren_pm'), #Backup location
         'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.seren', 'settings.xml'),
         'default'  : 'premiumize.token',
         'data'     : ['premiumize.enabled', 'premiumize.username', 'premiumize.token'],
@@ -208,6 +207,78 @@ DEBRIDID = {
         'default'  : 'premiumize.token',
         'data'     : ['premiumize.token', 'debrid_select'],
         'activate' : 'Addon.OpenSettings(plugin.video.metv19)'},
+    'aliundepm': {
+        'name'     : 'Aliunde K19',
+        'plugin'   : 'plugin.video.aliundek19',
+        'saved'    : 'aliundepm',
+        'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.aliundek19'),
+        'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.aliundek19', 'icon.png'),
+        'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.aliundek19', 'fanart.jpg'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_PM, 'aliunde_pm'),
+        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.aliundek19', 'settings.xml'),
+        'default'  : 'premiumize.token',
+        'data'     : ['premiumize.token', 'debrid_select'],
+        'activate' : 'Addon.OpenSettings(plugin.video.aliunde)'},
+    'patriotpm': {
+        'name'     : 'Patriot',
+        'plugin'   : 'plugin.video.patriot',
+        'saved'    : 'patriotpm',
+        'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.patriot'),
+        'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.patriot', 'icon.png'),
+        'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.patriot', 'fanart.jpg'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_PM, 'patriot_pm'),
+        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.patriot', 'settings.xml'),
+        'default'  : 'premiumize.token',
+        'data'     : ['premiumize.token', 'debrid_select'],
+        'activate' : 'Addon.OpenSettings(plugin.video.patriot)'},
+    'adinapm': {
+        'name'     : 'Adina',
+        'plugin'   : 'plugin.video.adina',
+        'saved'    : 'adinapm',
+        'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.adina'),
+        'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.adina', 'icon.png'),
+        'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.adina', 'fanart.jpg'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_PM, 'adina_pm'),
+        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.adina', 'settings.xml'),
+        'default'  : 'pm.token',
+        'data'     : ['pm.account_id', 'pm.token'],
+        'activate' : 'Addon.OpenSettings(plugin.video.adina)'},
+    'artemispm': {
+        'name'     : 'Artemis',
+        'plugin'   : 'plugin.video.artemis',
+        'saved'    : 'artemispm',
+        'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.artemis'),
+        'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.artemis', 'icon.png'),
+        'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.artemis', 'fanart.jpg'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_PM, 'artemis_pm'),
+        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.artemis', 'settings.xml'),
+        'default'  : 'premiumize.token',
+        'data'     : ['premiumize.enabled', 'premiumize.username', 'premiumize.token'],
+        'activate' : 'Addon.OpenSettings(plugin.video.artemis)'},
+    'dynapm': {
+        'name'     : 'Dynasty',
+        'plugin'   : 'plugin.video.dynasty',
+        'saved'    : 'dynapm',
+        'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.dynasty'),
+        'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.dynasty', 'icon.png'),
+        'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.dynasty', 'fanart.jpg'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_PM, 'dyna_pm'),
+        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.dynasty', 'settings.xml'),
+        'default'  : 'premiumize.token',
+        'data'     : ['premiumize.enabled', 'premiumize.username', 'premiumize.token'],
+        'activate' : 'Addon.OpenSettings(plugin.video.dynasty)'},
+    'loonpm': {
+        'name'     : 'Loonatics Empire',
+        'plugin'   : 'plugin.video.le',
+        'saved'    : 'loonpm',
+        'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.le'),
+        'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.le', 'icon.png'),
+        'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.le', 'fanart.jpg'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_PM, 'loon_pm'),
+        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.le', 'settings.xml'),
+        'default'  : 'premiumize.token',
+        'data'     : ['premiumize.username', 'premiumize.token'],
+        'activate' : 'Addon.OpenSettings(plugin.video.le)'},
    'myactpm': {
         'name'     : 'My Accounts',
         'plugin'   : 'script.module.myaccounts',
@@ -220,6 +291,18 @@ DEBRIDID = {
         'default'  : 'premiumize.token',
         'data'     : ['premiumize.token', 'premiumize.username'],
         'activate' : 'Addon.OpenSettings(script.module.myaccounts)'},
+   'yactpm': {
+        'name'     : 'Your Accounts',
+        'plugin'   : 'script.module.youraccounts',
+        'saved'    : 'yactpm',
+        'path'     : os.path.join(CONFIG.ADDONS, 'script.module.youraccounts'),
+        'icon'     : os.path.join(CONFIG.ADDONS, 'script.module.youraccounts', 'icon.png'),
+        'fanart'   : os.path.join(CONFIG.ADDONS, 'script.module.youraccounts', 'fanart.png'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_PM, 'yact_pm'),
+        'settings' : os.path.join(CONFIG.ADDON_DATA, 'script.module.youraccounts', 'settings.xml'),
+        'default'  : 'premiumize.token',
+        'data'     : ['premiumize.token', 'premiumize.username'],
+        'activate' : 'Addon.OpenSettings(script.module.youraccounts)'},
     'rurlpm': {
         'name'     : 'ResolveURL',
         'plugin'   : 'script.module.resolveurl',

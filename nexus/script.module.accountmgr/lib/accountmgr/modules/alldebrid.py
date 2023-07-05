@@ -38,7 +38,7 @@ class AllDebrid:
 		response = response['data']
 		if 'error' in response:
 			self.token = 'failed'
-			return control.notification(title='default', message=40021, icon='default')
+			return control.notification(title='default', message=40021, icon=ad_icon)
 		if response['activated']:
 			try:
 				control.progressDialog.close()
@@ -46,7 +46,7 @@ class AllDebrid:
 				control.setSetting('alldebrid.token', self.token)
 			except:
 				self.token = 'failed'
-				return control.notification(title='default', message=40021, icon='default')
+				return control.notification(title='default', message=40021, icon=ad_icon)
 		return
 
 	def auth(self):

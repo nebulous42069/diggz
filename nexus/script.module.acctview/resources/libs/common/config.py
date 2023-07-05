@@ -2,6 +2,7 @@ import xbmc
 import xbmcaddon
 import xbmcvfs
 import os
+import os.path
 import vars
 from pathlib import Path
 
@@ -9,6 +10,12 @@ translatePath = xbmcvfs.translatePath
 addon = xbmcaddon.Addon("script.module.accountmgr")
 setting = addon.getSetting
 backup_path = Path(translatePath(setting('backupfolder')))
+
+addon_acctv = xbmcaddon.Addon
+addon_acctvObject = addon_acctv('script.module.acctview')
+addon_acctvInfo = addon_acctvObject.getAddonInfo
+getLangString = xbmcaddon.Addon().getLocalizedString
+joinPath = os.path.join
 
 class Config:
     def __init__(self):
@@ -24,6 +31,7 @@ class Config:
         self.ADDON_VERSION = self.ADDON.getAddonInfo('version')
         self.ADDON_PATH = self.ADDON.getAddonInfo('path')
         self.ADDON_ICON = self.ADDON.getAddonInfo('icon')
+        self.ADDON_SEP_ICON = joinPath(os.path.join(xbmcaddon.Addon('script.module.acctview').getAddonInfo('path'), 'resources', 'icons'), 'separator.png')
         self.ADDON_FANART = self.ADDON.getAddonInfo('fanart')
         self.KODIV = float(xbmc.getInfoLabel("System.BuildVersion")[:4])
         self.RAM = int(xbmc.getInfoLabel("System.Memory(total)")[:-2])
@@ -69,6 +77,8 @@ class Config:
         self.DEBRIDFOLD_RD = os.path.join(self.PLUGIN_DATA_DEBRID, 'realdebrid')
         self.DEBRIDFOLD_PM = os.path.join(self.PLUGIN_DATA_DEBRID, 'premiumize')
         self.DEBRIDFOLD_AD = os.path.join(self.PLUGIN_DATA_DEBRID, 'alldebrid')
+        self.NONDEBRIDFOLD = os.path.join(self.PLUGIN_DATA_DEBRID, 'nondebrid')
+        self.METAFOLD = os.path.join(self.PLUGIN_DATA_DEBRID, 'meta')
         self.TRAKTFOLD = os.path.join(self.PLUGIN_DATA_TRAKT, 'trakt')
         self.LOGINFOLD = os.path.join(self.PLUGIN_DATA, 'login')
 

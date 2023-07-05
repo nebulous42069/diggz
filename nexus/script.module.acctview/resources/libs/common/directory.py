@@ -18,7 +18,7 @@ def set_view():
         xbmc.executebuiltin("Container.SetViewMode({0})".format(view_type))
 
 
-def add_separator(middle='', fanart=CONFIG.ADDON_FANART, icon=CONFIG.ADDON_ICON, themeit=CONFIG.THEME3):
+def add_separator(middle='',icon=CONFIG.ADDON_SEP_ICON, description='View Your Authorizations'):
     if CONFIG.HIDESPACERS == 'No':
         char = CONFIG.SPACER
         ret = char * 40
@@ -27,7 +27,40 @@ def add_separator(middle='', fanart=CONFIG.ADDON_FANART, icon=CONFIG.ADDON_ICON,
             fluff = int((40 - len(middle)) / 2)
             ret = "{0}{1}{2}".format(ret[:fluff], middle, ret[:fluff + 2])
 
-        add_file(ret[:40], fanart=fanart, icon=icon, themeit=themeit)
+        add_file(ret[:40],icon=CONFIG.ADDON_SEP_ICON, description='View Your Authorizations')
+
+def add_separator_allaccts(middle='',icon=CONFIG.ADDON_SEP_ICON, description='View Your Real-Debrid, Premiumize, and All-Debrid Authorizations'):
+    if CONFIG.HIDESPACERS == 'No':
+        char = CONFIG.SPACER
+        ret = char * 40
+        if not middle == '':
+            middle = '[ {0} ]'.format(middle)
+            fluff = int((40 - len(middle)) / 2)
+            ret = "{0}{1}{2}".format(ret[:fluff], middle, ret[:fluff + 2])
+
+        add_file(ret[:40],icon=CONFIG.ADDON_SEP_ICON, description='View Your Real-Debrid, Premiumize, and All-Debrid Authorizations')
+
+def add_separator_meta(middle='',icon=CONFIG.ADDON_SEP_ICON, description='View Your Metadata Accounts'):
+    if CONFIG.HIDESPACERS == 'No':
+        char = CONFIG.SPACER
+        ret = char * 40
+        if not middle == '':
+            middle = '[ {0} ]'.format(middle)
+            fluff = int((40 - len(middle)) / 2)
+            ret = "{0}{1}{2}".format(ret[:fluff], middle, ret[:fluff + 2])
+
+        add_file(ret[:40],icon=CONFIG.ADDON_SEP_ICON, description='View Your Metadata Accounts')
+
+def add_separator_nondebrid(middle='',icon=CONFIG.ADDON_SEP_ICON, description='View Your Furk, Easynews, and FilePursuit Accounts'):
+    if CONFIG.HIDESPACERS == 'No':
+        char = CONFIG.SPACER
+        ret = char * 40
+        if not middle == '':
+            middle = '[ {0} ]'.format(middle)
+            fluff = int((40 - len(middle)) / 2)
+            ret = "{0}{1}{2}".format(ret[:fluff], middle, ret[:fluff + 2])
+
+        add_file(ret[:40],icon=CONFIG.ADDON_SEP_ICON, description='View Your Furk, Easynews, and FilePursuit Accounts')
 
 
 def add_file(display, params=None, menu=None, description=CONFIG.ADDONTITLE, overwrite=True,

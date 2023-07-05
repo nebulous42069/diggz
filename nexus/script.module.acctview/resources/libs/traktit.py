@@ -11,8 +11,7 @@ from resources.libs.common import logging
 from resources.libs.common import tools
 from resources.libs.common import var
 
-
-ORDER = ['acctmgr', 'seren', 'ezra', 'fen', 'pov', 'umbrella', 'shadow', 'ghost', 'unleashed', 'chains', 'base19', 'md', 'asgard', 'homelander', 'quicksilver', 'genocide', 'shazam', 'thepromise', 'thecrew', 'nightwing', 'alvin', 'moria', 'scrubs', 'tmdbhelper', 'myact', 'trakt']
+ORDER = ['acctmgr', 'seren', 'ezra', 'fen', 'pov', 'umbrella', 'shadow', 'ghost', 'unleashed', 'chains', 'base19', 'md', 'asgard', 'patriot', 'homelander', 'quicksilver', 'genocide', 'shazam', 'thepromise', 'thecrew', 'nightwing', 'alvin', 'moria', 'nine', 'scrubs', 'tmdbhelper', 'myact', 'trakt']
 
 TRAKTID = {
    'seren': {
@@ -73,7 +72,7 @@ TRAKTID = {
         'file'     : os.path.join(CONFIG.TRAKTFOLD, 'umbrella_trakt'),
         'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.umbrella', 'settings.xml'),
         'default'  : 'trakt.user.name',
-        'data'     : ['trakt.clientid', 'trakt.clientsecret', 'trakt.user.token', 'trakt.user.name', 'trakt.token.expires', 'trakt.refreshtoken', 'trakt.isauthed'],
+        'data'     : ['trakt.clientid', 'trakt.clientsecret', 'trakt.user.token', 'trakt.user.name', 'trakt.token.expires', 'trakt.refreshtoken', 'trakt.isauthed', 'traktuserkey.customenabled'],
         'activate' : 'Addon.OpenSettings(plugin.video.umbrella)'},
     'shadow': {
         'name'     : 'Shadow',
@@ -159,6 +158,18 @@ TRAKTID = {
         'default'  : 'trakt_expires_at',
         'data'     : ['trakt_expires_at', 'trakt_refresh_token', 'trakt_access_token'],
         'activate' : 'Addon.OpenSettings(plugin.video.asgard)'},
+    'patriot': {
+        'name'     : 'Patriot',
+        'plugin'   : 'plugin.video.patriot',
+        'saved'    : 'patriot',
+        'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.patriot'),
+        'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.patriot', 'icon.png'),
+        'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.patriot', 'fanart.jpg'),
+        'file'     : os.path.join(CONFIG.TRAKTFOLD, 'patriot_trakt'),
+        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.patriot', 'settings.xml'),
+        'default'  : 'trakt_expires_at',
+        'data'     : ['trakt_expires_at', 'trakt_refresh_token', 'trakt_access_token'],
+        'activate' : 'Addon.OpenSettings(plugin.video.patriot)'},
    'homelander': {
         'name'     : 'Homelander',
         'plugin'   : 'plugin.video.homelander',
@@ -267,6 +278,18 @@ TRAKTID = {
         'default'  : 'trakt.user',
         'data'     : ['trakt.authed', 'trakt.user', 'trakt.token' 'trakt.refresh', 'trakt.client_id', 'trakt.client_secret'],
         'activate' : 'Addon.OpenSettings(plugin.video.moria)'},
+   'nine': {
+        'name'     : 'Nine Lives',
+        'plugin'   : 'plugin.video.nine',
+        'saved'    : 'nine',
+        'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.nine'),
+        'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.nine', 'icon.png'),
+        'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.nine', 'fanart.jpg'),
+        'file'     : os.path.join(CONFIG.TRAKTFOLD, 'nine_trakt'),
+        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.nine', 'settings.xml'),
+        'default'  : 'trakt.user',
+        'data'     : ['trakt.authed', 'trakt.user', 'trakt.token' 'trakt.refresh', 'trakt.client_id', 'trakt.client_secret'],
+        'activate' : 'Addon.OpenSettings(plugin.video.nine)'},
    'scrubs': {
         'name'     : 'Scrubs V2',
         'plugin'   : 'plugin.video.scrubsv2',
@@ -325,7 +348,7 @@ TRAKTID = {
         'file'     : os.path.join(CONFIG.TRAKTFOLD, 'acctmgr_trakt'),
         'settings' : os.path.join(CONFIG.ADDON_DATA, 'script.module.accountmgr', 'settings.xml'),
         'default'  : 'trakt.username',
-        'data'     : ['trakt.client.id', 'trakt.client.secret', 'trakt.expires', 'trakt.refresh', 'trakt.token', 'trakt.username'],
+        'data'     : ['trakt.client.id','trakt.client.secret', 'traktuserkey.enabled', 'trakt.expires', 'trakt.refresh', 'trakt.token', 'trakt.username'],
         'activate' : 'Addon.OpenSettings(script.module.accountmgr)'}
 }
 
@@ -393,7 +416,6 @@ def trakt_it_revoke(do, who):
                 update_trakt(do, who)
         else:
             logging.log('[Trakt Data] Invalid Entry: {0}'.format(who), level=xbmc.LOGERROR)
-    revoke_trakt() #Restore default API keys for all add-ons
 
 def trakt_it_restore(do, who):
     if not os.path.exists(CONFIG.ADDON_DATA):
@@ -421,7 +443,7 @@ def trakt_it_restore(do, who):
         else:
             logging.log('[Trakt Data] Invalid Entry: {0}'.format(who), level=xbmc.LOGERROR)
     restore_trakt() #Restore API keys for all add-ons
-    
+
 
 def clear_saved(who, over=False):
     if who == 'all':
@@ -509,6 +531,7 @@ def update_trakt(do, who):
                 logging.log("[Trakt Data] Unable to Clear Addon {0} ({1})".format(who, str(e)), level=xbmc.LOGERROR)
     elif do == 'wipeaddon':
         logging.log('{0} SETTINGS: {1}'.format(name, settings))
+        revoke_trakt() #Restore default API keys for all add-ons
         if os.path.exists(settings):
             try:
                 tree = ElementTree.parse(settings)
@@ -687,6 +710,16 @@ def revoke_trakt(): #Restore default API keys to all add-ons
         f.write(client)
         f.close()
 
+    if xbmcvfs.exists(var.chk_patriot):
+                        
+        f = open(var.path_patriot,'r')
+        data = f.read()
+        f.close()
+        client = data.replace(var.client_am,var.patriot_client).replace(var.secret_am,var.patriot_secret)
+        f = open(var.path_patriot,'w')
+        f.write(client)
+        f.close()
+        
     if xbmcvfs.exists(var.chk_scrubs):
                         
         f = open(var.path_scrubs,'r')
@@ -829,6 +862,16 @@ def restore_trakt(): #Restore API Keys to all add-ons
         f.write(client)
         f.close()
 
+    if xbmcvfs.exists(var.chk_patriot):
+                        
+        f = open(var.path_patriot,'r')
+        data = f.read()
+        f.close()
+        client = data.replace(var.patriot_client,var.client_am).replace(var.patriot_secret,var.secret_am)
+        f = open(var.path_patriot,'w')
+        f.write(client)
+        f.close()
+        
     if xbmcvfs.exists(var.chk_scrubs):
                         
         f = open(var.path_scrubs,'r')

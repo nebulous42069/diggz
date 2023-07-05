@@ -3,10 +3,11 @@ import xbmcvfs
 import json
 from pathlib import Path
 from accountmgr.modules import control
-from accountmgr.modules import var
+from libs.common import var
 
-#Seren RD
-def serenrd_auth():
+class Auth:
+    def realdebrid_auth(self):
+    #Seren RD
         try:
                 if xbmcvfs.exists(var.chk_seren) and xbmcvfs.exists(var.chkset_seren): #Check that the addon is installed and settings.xml exists
                         chk_auth_seren = xbmcaddon.Addon('plugin.video.seren').getSetting("rd.auth")
@@ -52,8 +53,7 @@ def serenrd_auth():
         except:
                 pass
         
-#Ezra RD
-def ezrard_auth():
+    #Ezra RD
         try:
                 if xbmcvfs.exists(var.chk_ezra) and xbmcvfs.exists(var.chkset_ezra):
                         chk_auth_ezra = xbmcaddon.Addon('plugin.video.ezra').getSetting("rd.token")
@@ -94,8 +94,7 @@ def ezrard_auth():
         except:
                 pass
 
-#Fen RD
-def fenrd_auth():
+    #Fen RD
         try:
                 if xbmcvfs.exists(var.chk_fen) and xbmcvfs.exists(var.chkset_fen):
                         chk_auth_fen = xbmcaddon.Addon('plugin.video.fen').getSetting("rd.token")
@@ -136,8 +135,7 @@ def fenrd_auth():
         except:
                 pass
         
-#POV RD
-def povrd_auth():
+    #POV RD
         try:
                 if xbmcvfs.exists(var.chk_pov) and xbmcvfs.exists(var.chkset_pov):
                         chk_auth_pov = xbmcaddon.Addon('plugin.video.pov').getSetting("rd.token")
@@ -178,8 +176,7 @@ def povrd_auth():
         except:
                 pass
 
-#Umbrella RD
-def umbrd_auth():
+    #Umbrella RD
         try:
                 if xbmcvfs.exists(var.chk_umb) and xbmcvfs.exists(var.chkset_umb):
                         chk_auth_umb = xbmcaddon.Addon('plugin.video.umbrella').getSetting("realdebridtoken")
@@ -221,8 +218,7 @@ def umbrd_auth():
         except:
                 pass
 
-#Shadow RD
-def shadowrd_auth():
+    #Shadow RD
         try:
                 if xbmcvfs.exists(var.chk_shadow) and xbmcvfs.exists(var.chkset_shadow):
                         chk_auth_shadow = xbmcaddon.Addon('plugin.video.shadow').getSetting("rd.auth")
@@ -262,8 +258,7 @@ def shadowrd_auth():
         except:
                 pass
         
-#Ghost RD
-def ghostrd_auth():
+    #Ghost RD
         try:
                 if xbmcvfs.exists(var.chk_ghost) and xbmcvfs.exists(var.chkset_ghost):
                         chk_auth_ghost = xbmcaddon.Addon('plugin.video.ghost').getSetting("rd.auth")
@@ -287,8 +282,7 @@ def ghostrd_auth():
         except:
                 pass
 
-#Unleashed RD
-def unleashedrd_auth():
+    #Unleashed RD
         try:
                 if xbmcvfs.exists(var.chk_unleashed) and xbmcvfs.exists(var.chkset_unleashed):
                         chk_auth_unleashed = xbmcaddon.Addon('plugin.video.unleashed').getSetting("rd.auth")
@@ -312,8 +306,7 @@ def unleashedrd_auth():
         except:
                 pass
 
-#Chains RD
-def chainsrd_auth():
+    #Chains RD
         try:
                 if xbmcvfs.exists(var.chk_chains) and xbmcvfs.exists(var.chkset_chains):
                         chk_auth_chains = xbmcaddon.Addon('plugin.video.thechains').getSetting("rd.auth")
@@ -337,8 +330,7 @@ def chainsrd_auth():
         except:
                 pass
 
-#Twisted RD
-def twistedrd_auth():
+    #Twisted RD
         try:
                 if xbmcvfs.exists(var.chk_twisted) and xbmcvfs.exists(var.chkset_twisted):
                         chk_auth_twisted = xbmcaddon.Addon('plugin.video.twisted').getSetting("rd.auth")
@@ -362,8 +354,7 @@ def twistedrd_auth():
         except:
                 pass
 
-#Base 19 RD
-def baserd_auth():
+    #Base 19 RD
         try:
                 if xbmcvfs.exists(var.chk_base) and xbmcvfs.exists(var.chkset_base):
                         chk_auth_base = xbmcaddon.Addon('plugin.video.base19').getSetting("rd.auth")
@@ -387,8 +378,7 @@ def baserd_auth():
         except:
                 pass
 
-#Magic Dragon RD
-def mdrd_auth():
+    #Magic Dragon RD
         try:
                 if xbmcvfs.exists(var.chk_md) and xbmcvfs.exists(var.chkset_md):
                         chk_auth_md = xbmcaddon.Addon('plugin.video.magicdragon').getSetting("rd.auth")
@@ -412,8 +402,7 @@ def mdrd_auth():
         except:
                 pass
 
-#Asgard RD
-def asgardrd_auth():
+    #Asgard RD
         try:
                 if xbmcvfs.exists(var.chk_asgard) and xbmcvfs.exists(var.chkset_asgard):
                         chk_auth_asgard = xbmcaddon.Addon('plugin.video.asgard').getSetting("rd.auth")
@@ -437,8 +426,7 @@ def asgardrd_auth():
         except:
                 pass
 
-#M.E.T.V RD
-def metvrd_auth():
+    #M.E.T.V RD
         try:
                 if xbmcvfs.exists(var.chk_metv) and xbmcvfs.exists(var.chkset_metv):
                         chk_auth_metv = xbmcaddon.Addon('plugin.video.metv19').getSetting("rd.auth")
@@ -462,8 +450,198 @@ def metvrd_auth():
         except:
                 pass
 
-#ResolveURL RD
-def rurlrd_auth():
+    #Aliunde RD
+        try:
+                if xbmcvfs.exists(var.chk_aliunde) and xbmcvfs.exists(var.chkset_aliunde):
+                        chk_auth_aliunde = xbmcaddon.Addon('plugin.video.aliundek19').getSetting("rd.auth")
+                        chk_auth_aliunde_pm = xbmcaddon.Addon('plugin.video.aliundek19').getSetting("premiumize.token")
+                        chk_auth_aliunde_ad = xbmcaddon.Addon('plugin.video.aliundek19').getSetting("alldebrid.token")
+                        if not str(var.chk_accountmgr_tk_rd) == str(chk_auth_aliunde) or str(chk_auth_aliunde) == '':
+                                
+                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
+                                your_username = accountmgr.getSetting("realdebrid.username")
+                                your_token = accountmgr.getSetting("realdebrid.token")
+                                your_client_id = accountmgr.getSetting("realdebrid.client_id")
+                                your_refresh = accountmgr.getSetting("realdebrid.refresh")
+                                your_secret = accountmgr.getSetting("realdebrid.secret")
+                        
+                                addon = xbmcaddon.Addon("plugin.video.aliundek19")
+                                addon.setSetting("rd.auth", your_token)
+                                addon.setSetting("rd.client_id", your_client_id)
+                                addon.setSetting("rd.refresh", your_refresh)
+                                addon.setSetting("rd.secret", your_secret)
+
+                                rd_use = ("true")
+                                addon.setSetting("debrid_use_rd", rd_use)
+
+                                if str(chk_auth_shadow_pm) != '':
+                                        pm_use = ("true")
+                                        addon.setSetting("debrid_use_pm", pm_use)
+                                else:
+                                        pm_use = ("false")
+                                        addon.setSetting("debrid_use_pm", pm_use)
+                                        
+                                if str(chk_auth_shadow_ad) != '':
+                                        ad_use = ("true")
+                                        addon.setSetting("debrid_use_ad", ad_use)
+                                else:
+                                        ad_use = ("false")
+                                        addon.setSetting("debrid_use_ad", ad_use)
+        except:
+                pass
+
+    #Patriot RD
+        try:
+                if xbmcvfs.exists(var.chk_patriot) and xbmcvfs.exists(var.chkset_patriot):
+                        chk_auth_patriot = xbmcaddon.Addon('plugin.video.patriot').getSetting("rd.auth")
+                        if not str(var.chk_accountmgr_tk_rd) == str(chk_auth_patriot) or str(chk_auth_patriot) == '':
+                                
+                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
+                                your_username = accountmgr.getSetting("realdebrid.username")
+                                your_token = accountmgr.getSetting("realdebrid.token")
+                                your_client_id = accountmgr.getSetting("realdebrid.client_id")
+                                your_refresh = accountmgr.getSetting("realdebrid.refresh")
+                                your_secret = accountmgr.getSetting("realdebrid.secret")
+                        
+                                addon = xbmcaddon.Addon("plugin.video.patriot")
+                                addon.setSetting("rd.auth", your_token)
+                                addon.setSetting("rd.client_id", your_client_id)
+                                addon.setSetting("rd.refresh", your_refresh)
+                                addon.setSetting("rd.secret", your_secret)
+
+                                d_select = ("0")
+                                addon.setSetting("debrid_select", d_select)
+        except:
+                pass
+        
+    #Adina RD
+        try:
+                if xbmcvfs.exists(var.chk_adina) and xbmcvfs.exists(var.chkset_adina):
+                        chk_auth_adina = xbmcaddon.Addon('plugin.video.adina').getSetting("rd.token")
+                        if not str(var.chk_accountmgr_tk_rd) == str(chk_auth_adina) or str(chk_auth_adina) == '':
+                                
+                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
+                                your_username = accountmgr.getSetting("realdebrid.username")
+                                your_token = accountmgr.getSetting("realdebrid.token")
+                                your_client_id = accountmgr.getSetting("realdebrid.client_id")
+                                your_refresh = accountmgr.getSetting("realdebrid.refresh")
+                                your_secret = accountmgr.getSetting("realdebrid.secret")
+                        
+                                addon = xbmcaddon.Addon("plugin.video.adina")
+                                addon.setSetting("rd.username", your_username)
+                                addon.setSetting("rd.auth", your_token)
+                                addon.setSetting("rd.token", your_token)
+                                addon.setSetting("rd.client_id", your_client_id)
+                                addon.setSetting("rd.refresh", your_refresh)
+                                addon.setSetting("rd.secret", your_secret)
+        except:
+                pass
+        
+    #Artemis RD
+        try:
+                if xbmcvfs.exists(var.chk_artemis) and xbmcvfs.exists(var.chkset_artemis):
+                        chk_auth_artemis = xbmcaddon.Addon('plugin.video.artemis').getSetting("realdebrid.token")
+                        chk_auth_artemis_pm = xbmcaddon.Addon('plugin.video.artemis').getSetting("premiumize.token")
+                        chk_auth_artemis_ad = xbmcaddon.Addon('plugin.video.artemis').getSetting("alldebrid.token")
+                        if not str(var.chk_accountmgr_tk_rd) == str(chk_auth_artemis) or str(chk_auth_artemis) == '':
+                                
+                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
+                                your_username = accountmgr.getSetting("realdebrid.username")
+                                your_token = accountmgr.getSetting("realdebrid.token")
+                                your_client_id = accountmgr.getSetting("realdebrid.client_id")
+                                your_refresh = accountmgr.getSetting("realdebrid.refresh")
+                                your_secret = accountmgr.getSetting("realdebrid.secret")
+                        
+                                addon = xbmcaddon.Addon("plugin.video.artemis")
+                                addon.setSetting("realdebrid.username", your_username)
+                                addon.setSetting("realdebrid.token", your_token)
+                                addon.setSetting("realdebrid.client_id", your_client_id)
+                                addon.setSetting("realdebrid.refresh", your_refresh)
+                                addon.setSetting("realdebrid.secret", your_secret)
+
+                                enabled_rd = ("true")
+                                addon.setSetting("realdebrid.enabled", enabled_rd)
+
+                                if str(chk_auth_artemis_pm) != '':
+                                        enabled_pm = ("true")
+                                        addon.setSetting("premiumize.enabled", enabled_pm)
+                                else:
+                                        enabled_pm = ("false")
+                                        addon.setSetting("premiumize.enabled", enabled_pm)
+                        
+                                if str(chk_auth_artemis_ad) != '':
+                                        enabled_ad = ("true")
+                                        addon.setSetting("alldebrid.enabled", enabled_ad)
+                                else:
+                                        enabled_ad = ("false")
+                                        addon.setSetting("alldebrid.enabled", enabled_ad)
+        except:
+                pass
+        
+    #Dynasty RD
+        try:
+                if xbmcvfs.exists(var.chk_dyna) and xbmcvfs.exists(var.chkset_dyna):
+                        chk_auth_dyna = xbmcaddon.Addon('plugin.video.dynasty').getSetting("realdebrid.token")
+                        chk_auth_dyna_pm = xbmcaddon.Addon('plugin.video.dynasty').getSetting("premiumize.token")
+                        chk_auth_dyna_ad = xbmcaddon.Addon('plugin.video.dynasty').getSetting("alldebrid.token")
+                        if not str(var.chk_accountmgr_tk_rd) == str(chk_auth_dyna) or str(chk_auth_dyna) == '':
+                                
+                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
+                                your_username = accountmgr.getSetting("realdebrid.username")
+                                your_token = accountmgr.getSetting("realdebrid.token")
+                                your_client_id = accountmgr.getSetting("realdebrid.client_id")
+                                your_refresh = accountmgr.getSetting("realdebrid.refresh")
+                                your_secret = accountmgr.getSetting("realdebrid.secret")
+                        
+                                addon = xbmcaddon.Addon("plugin.video.dynasty")
+                                addon.setSetting("realdebrid.username", your_username)
+                                addon.setSetting("realdebrid.token", your_token)
+                                addon.setSetting("realdebrid.client_id", your_client_id)
+                                addon.setSetting("realdebrid.refresh", your_refresh)
+                                addon.setSetting("realdebrid.secret", your_secret)
+
+                                enabled_rd = ("true")
+                                addon.setSetting("realdebrid.enabled", enabled_rd)
+
+                                if str(chk_auth_dynasty_pm) != '':
+                                        enabled_pm = ("true")
+                                        addon.setSetting("premiumize.enabled", enabled_pm)
+                                else:
+                                        enabled_pm = ("false")
+                                        addon.setSetting("premiumize.enabled", enabled_pm)
+                        
+                                if str(chk_auth_dynasty_ad) != '':
+                                        enabled_ad = ("true")
+                                        addon.setSetting("alldebrid.enabled", enabled_ad)
+                                else:
+                                        enabled_ad = ("false")
+                                        addon.setSetting("alldebrid.enabled", enabled_ad)
+        except:
+                pass
+
+    #Loonatics Empire
+        try:
+                if xbmcvfs.exists(var.chk_loon) and xbmcvfs.exists(var.chkset_loon):
+                        chk_auth_loon = xbmcaddon.Addon('plugin.video.le').getSetting("realdebrid.token")
+                        if not str(var.chk_accountmgr_tk_rd) == str(chk_auth_loon) or str(chk_auth_loon) == '':
+                                
+                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
+                                your_username = accountmgr.getSetting("realdebrid.username")
+                                your_token = accountmgr.getSetting("realdebrid.token")
+                                your_client_id = accountmgr.getSetting("realdebrid.client_id")
+                                your_refresh = accountmgr.getSetting("realdebrid.refresh")
+                                your_secret = accountmgr.getSetting("realdebrid.secret")
+                        
+                                addon = xbmcaddon.Addon("plugin.video.le")
+                                addon.setSetting("realdebrid.username", your_username)
+                                addon.setSetting("realdebrid.token", your_token)
+                                addon.setSetting("realdebrid.client_id", your_client_id)
+                                addon.setSetting("realdebrid.refresh", your_refresh)
+                                addon.setSetting("realdebrid.secret", your_secret)
+        except:
+                pass
+        
+    #ResolveURL RD
         try:
                 if xbmcvfs.exists(var.chk_rurl) and xbmcvfs.exists(var.chkset_rurl):
                         chk_auth_rurl = xbmcaddon.Addon('script.module.resolveurl').getSetting("RealDebridResolver_token")
@@ -488,8 +666,7 @@ def rurlrd_auth():
         except:
                 pass
 
-#My Accounts RD
-def myaccountsrd_auth():
+    #My Accounts RD
         try:
                 if xbmcvfs.exists(var.chk_myaccounts) and xbmcvfs.exists(var.chkset_myaccounts):
                         chk_auth_myaccounts = xbmcaddon.Addon('script.module.myaccounts').getSetting("realdebrid.token")
@@ -511,8 +688,29 @@ def myaccountsrd_auth():
         except:
                 pass
         
-#Realizer RD
-def realizer_auth():
+    #Your Accounts RD
+        try:
+                if xbmcvfs.exists(var.chk_youraccounts) and xbmcvfs.exists(var.chkset_youraccounts):
+                        chk_auth_youraccounts = xbmcaddon.Addon('script.module.youraccounts').getSetting("realdebrid.token")
+                        if not str(var.chk_accountmgr_tk_rd) == str(chk_auth_youraccounts) or str(chk_auth_youraccounts) == '':
+                                
+                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
+                                your_username = accountmgr.getSetting("realdebrid.username")
+                                your_token = accountmgr.getSetting("realdebrid.token")
+                                your_client_id = accountmgr.getSetting("realdebrid.client_id")
+                                your_refresh = accountmgr.getSetting("realdebrid.refresh")
+                                your_secret = accountmgr.getSetting("realdebrid.secret")
+                        
+                                addon = xbmcaddon.Addon("script.module.youraccounts")
+                                addon.setSetting("realdebrid.username", your_username)
+                                addon.setSetting("realdebrid.token", your_token)
+                                addon.setSetting("realdebrid.client_id", your_client_id)
+                                addon.setSetting("realdebrid.refresh", your_refresh)
+                                addon.setSetting("realdebrid.secret", your_secret)
+        except:
+                pass
+        
+    #Realizer RD
         try:
                 if xbmcvfs.exists(var.chk_realizer) and xbmcvfs.exists(var.chkset_realizer):
 
@@ -524,22 +722,5 @@ def realizer_auth():
                                 json.dump(rdauth, debrid_write)
         except:
                 pass
-        
-def debrid_auth_rd(): #Sync all add-ons
-               serenrd_auth()
-               ezrard_auth()
-               fenrd_auth()
-               povrd_auth()
-               umbrd_auth()
-               shadowrd_auth()
-               ghostrd_auth()
-               unleashedrd_auth()
-               chainsrd_auth()
-               twistedrd_auth()
-               baserd_auth()
-               mdrd_auth()
-               asgardrd_auth()
-               metvrd_auth()
-               rurlrd_auth()
-               myaccountsrd_auth()
-               realizer_auth()
+    
+

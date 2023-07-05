@@ -67,7 +67,7 @@ class RealDebrid:
 			response = self._post(original_url, data)
 		elif 'error' in response:
 			response = json.loads(response)
-			control.notification(title='default', message=response.get('error'), icon='default')
+			control.notification(title='default', message=response.get('error'), icon=rd_icon)
 			return None
 		try:
 			return json.loads(response)

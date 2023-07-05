@@ -12,14 +12,6 @@ from resources.libs.common.config import CONFIG
 from resources.libs.common import logging
 from resources.libs.common import tools
 
-addon = xbmcaddon.Addon
-addonObject = addon('script.module.acctview')
-addonInfo = addonObject.getAddonInfo
-transPath = xbmcvfs.translatePath
-joinPath = os.path.join
-
-amgr_icon = joinPath(os.path.join(xbmcaddon.Addon('script.module.acctview').getAddonInfo('path'), 'resources', 'icons'), 'accountmgr.png')
-
 ORDER = ['acctmgrad',
          'serenad',
          'ezraad',
@@ -35,7 +27,14 @@ ORDER = ['acctmgrad',
          'mdad',
          'asgardad',
          'metvad',
+         'aliundead',
+         'patriotad',
+         'adinaad',
+         'artemisad',
+         'dynaad',
+         'loonad',
          'myactad',
+         'yactad',
          'rurlad']
 
 DEBRIDID = {
@@ -46,7 +45,7 @@ DEBRIDID = {
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.seren'),
         'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.seren/resources/images', 'ico-seren-3.png'),
         'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.seren/resources/images', 'fanart-seren-3.png'),
-        'file'     : os.path.join(CONFIG.DEBRIDFOLD_AD, 'seren_ad'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_AD, 'seren_ad'), #Backup location
         'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.seren', 'settings.xml'),
         'default'  : 'alldebrid.apikey',
         'data'     : ['alldebrid.enabled', 'alldebrid.username', 'alldebrid.apikey'],
@@ -207,6 +206,78 @@ DEBRIDID = {
         'default'  : 'alldebrid.token',
         'data'     : ['alldebrid.username', 'alldebrid.token', 'debrid_select'],
         'activate' : 'Addon.OpenSettings(plugin.video.metv19)'},
+    'aliundead': {
+        'name'     : 'Aliunde K19',
+        'plugin'   : 'plugin.video.aliundek19',
+        'saved'    : 'aliundead',
+        'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.aliundek19'),
+        'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.aliundek19', 'icon.png'),
+        'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.aliundek19', 'fanart.jpg'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_AD, 'aliunde_ad'),
+        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.aliundek19', 'settings.xml'),
+        'default'  : 'alldebrid.token',
+        'data'     : ['alldebrid.username', 'alldebrid.token', 'debrid_select'],
+        'activate' : 'Addon.OpenSettings(plugin.video.aliundek19)'},
+    'patriotad': {
+        'name'     : 'Patriot',
+        'plugin'   : 'plugin.video.patriot',
+        'saved'    : 'patriotad',
+        'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.patriot'),
+        'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.patriot', 'icon.png'),
+        'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.patriot', 'fanart.jpg'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_AD, 'patriot_ad'),
+        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.patriot', 'settings.xml'),
+        'default'  : 'alldebrid.token',
+        'data'     : ['alldebrid.username', 'alldebrid.token', 'debrid_select'],
+        'activate' : 'Addon.OpenSettings(plugin.video.patriot)'},
+    'adinaad': {
+        'name'     : 'Adina',
+        'plugin'   : 'plugin.video.adina',
+        'saved'    : 'adinaad',
+        'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.adina'),
+        'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.adina', 'icon.png'),
+        'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.adina', 'fanart.jpg'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_RD, 'adina_ad'),
+        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.adina', 'settings.xml'),
+        'default'  : 'ad.token',
+        'data'     : ['ad.account_id', 'ad.token'],
+        'activate' : 'Addon.OpenSettings(plugin.video.adina)'},
+    'artemisad': {
+        'name'     : 'Artemis',
+        'plugin'   : 'plugin.video.artemis',
+        'saved'    : 'artemisad',
+        'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.artemis'),
+        'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.artemis', 'icon.png'),
+        'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.artemis', 'fanart.jpg'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_RD, 'artemis_ad'),
+        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.artemis', 'settings.xml'),
+        'default'  : 'alldebrid.token',
+        'data'     : ['alldebrid.enabled', 'alldebrid.username', 'alldebrid.token'],
+        'activate' : 'Addon.OpenSettings(plugin.video.artemis)'},
+    'dynaad': {
+        'name'     : 'Dynasty',
+        'plugin'   : 'plugin.video.dynasty',
+        'saved'    : 'dynaad',
+        'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.dynasty'),
+        'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.dynasty', 'icon.png'),
+        'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.dynasty', 'fanart.jpg'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_RD, 'dyna_ad'),
+        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.dynasty', 'settings.xml'),
+        'default'  : 'alldebrid.token',
+        'data'     : ['alldebrid.enabled', 'alldebrid.username', 'alldebrid.token'],
+        'activate' : 'Addon.OpenSettings(plugin.video.dynasty)'},
+    'loonad': {
+        'name'     : 'Loonatics Empire',
+        'plugin'   : 'plugin.video.le',
+        'saved'    : 'loonad',
+        'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.le'),
+        'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.le', 'icon.png'),
+        'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.le', 'fanart.jpg'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_RD, 'loon_ad'),
+        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.le', 'settings.xml'),
+        'default'  : 'alldebrid.token',
+        'data'     : ['alldebrid.enabled', 'alldebrid.username', 'alldebrid.token'],
+        'activate' : 'Addon.OpenSettings(plugin.video.le)'},
    'myactad': {
         'name'     : 'My Accounts',
         'plugin'   : 'script.module.myaccounts',
@@ -219,6 +290,18 @@ DEBRIDID = {
         'default'  : 'alldebrid.token',
         'data'     : ['alldebrid.token', 'alldebrid.username'],
         'activate' : 'Addon.OpenSettings(script.module.myaccounts)'},
+   'yactad': {
+        'name'     : 'Your Accounts',
+        'plugin'   : 'script.module.youraccounts',
+        'saved'    : 'yactad',
+        'path'     : os.path.join(CONFIG.ADDONS, 'script.module.youraccounts'),
+        'icon'     : os.path.join(CONFIG.ADDONS, 'script.module.youraccounts', 'icon.png'),
+        'fanart'   : os.path.join(CONFIG.ADDONS, 'script.module.youraccounts', 'fanart.png'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_AD, 'yact_ad'),
+        'settings' : os.path.join(CONFIG.ADDON_DATA, 'script.module.youraccounts', 'settings.xml'),
+        'default'  : 'alldebrid.token',
+        'data'     : ['alldebrid.token', 'alldebrid.username'],
+        'activate' : 'Addon.OpenSettings(script.module.youraccounts)'},
     'rurlad': {
         'name'     : 'ResolveURL',
         'plugin'   : 'script.module.resolveurl',

@@ -12,14 +12,6 @@ from resources.libs.common.config import CONFIG
 from resources.libs.common import logging
 from resources.libs.common import tools
 
-addon = xbmcaddon.Addon
-addonObject = addon('script.module.acctview')
-addonInfo = addonObject.getAddonInfo
-transPath = xbmcvfs.translatePath
-joinPath = os.path.join
-
-amgr_icon = joinPath(os.path.join(xbmcaddon.Addon('script.module.acctview').getAddonInfo('path'), 'resources', 'icons'), 'accountmgr.png')
-
 ORDER = ['acctmgrrd',
          'serenrd',
          'ezrard',
@@ -35,7 +27,14 @@ ORDER = ['acctmgrrd',
          'mdrd',
          'asgardrd',
          'metvrd',
+         'aliunderd',
+         'patriotrd',
+         'adinard',
+         'artemisrd',
+         'dynard',
+         'loonrd',
          'myactrd',
+         'yactrd',
          'rurlrd']
 
 DEBRIDID = {
@@ -46,7 +45,7 @@ DEBRIDID = {
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.seren'),
         'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.seren/resources/images', 'ico-seren-3.png'),
         'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.seren/resources/images', 'fanart-seren-3.png'),
-        'file'     : os.path.join(CONFIG.DEBRIDFOLD_RD, 'seren_rd'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_RD, 'seren_rd'), #Backup location
         'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.seren', 'settings.xml'),
         'default'  : 'rd.client_id',
         'data'     : ['rd.auth', 'rd.client_id', 'rd.expiry', 'rd.refresh', 'rd.secret', 'rd.username', 'realdebrid.enabled'],
@@ -207,6 +206,78 @@ DEBRIDID = {
         'default'  : 'rd.client_id',
         'data'     : ['rd.expiry', 'rd.auth', 'rd.client_id', 'rd.refresh', 'rd.secret', 'debrid_select'],
         'activate' : 'Addon.OpenSettings(plugin.video.metv19)'},
+    'aliunderd': {
+        'name'     : 'Aliunde K19',
+        'plugin'   : 'plugin.video.aliundek19',
+        'saved'    : 'aliunderd',
+        'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.aliundek19'),
+        'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.aliundek19', 'icon.png'),
+        'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.aliundek19', 'fanart.jpg'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_RD, 'aliunde_rd'),
+        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.aliundek19', 'settings.xml'),
+        'default'  : 'rd.client_id',
+        'data'     : ['rd.expiry', 'rd.auth', 'rd.client_id', 'rd.refresh', 'rd.secret', 'debrid_select'],
+        'activate' : 'Addon.OpenSettings(plugin.video.aliunde)'},
+    'patriotrd': {
+        'name'     : 'Patriot',
+        'plugin'   : 'plugin.video.patriot',
+        'saved'    : 'patriotrd',
+        'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.patriot'),
+        'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.patriot', 'icon.png'),
+        'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.patriot', 'fanart.jpg'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_RD, 'patriot_rd'),
+        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.patriot', 'settings.xml'),
+        'default'  : 'rd.client_id',
+        'data'     : ['rd.expiry', 'rd.auth', 'rd.client_id', 'rd.refresh', 'rd.secret', 'debrid_select'],
+        'activate' : 'Addon.OpenSettings(plugin.video.patriot)'},
+    'adinard': {
+        'name'     : 'Adina',
+        'plugin'   : 'plugin.video.adina',
+        'saved'    : 'adinard',
+        'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.adina'),
+        'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.adina', 'icon.png'),
+        'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.adina', 'fanart.jpg'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_RD, 'adina_rd'),
+        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.adina', 'settings.xml'),
+        'default'  : 'rd.client_id',
+        'data'     : ['rd.username', 'rd.auth', 'rd.token', 'rd.client_id', 'rd.refresh', 'rd.secret'],
+        'activate' : 'Addon.OpenSettings(plugin.video.adina)'},
+    'artemisrd': {
+        'name'     : 'Artemis',
+        'plugin'   : 'plugin.video.artemis',
+        'saved'    : 'artemisrd',
+        'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.artemis'),
+        'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.artemis', 'icon.png'),
+        'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.artemis', 'fanart.jpg'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_RD, 'artemis_rd'),
+        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.artemis', 'settings.xml'),
+        'default'  : 'realdebrid.client_id',
+        'data'     : ['realdebrid.username', 'realdebrid.token', 'realdebrid.client_id', 'realdebrid.refresh', 'realdebrid.secret'],
+        'activate' : 'Addon.OpenSettings(plugin.video.artemis)'},
+    'dynard': {
+        'name'     : 'Dynasty',
+        'plugin'   : 'plugin.video.dynasty',
+        'saved'    : 'dynard',
+        'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.dynasty'),
+        'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.dynasty', 'icon.png'),
+        'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.dynasty', 'fanart.jpg'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_RD, 'dyna_rd'),
+        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.dynasty', 'settings.xml'),
+        'default'  : 'realdebrid.client_id',
+        'data'     : ['realdebrid.username', 'realdebrid.token', 'realdebrid.client_id', 'realdebrid.refresh', 'realdebrid.secret'],
+        'activate' : 'Addon.OpenSettings(plugin.video.dynasty)'},
+    'loonrd': {
+        'name'     : 'Loonatics Empire',
+        'plugin'   : 'plugin.video.le',
+        'saved'    : 'loonrd',
+        'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.le'),
+        'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.le', 'icon.png'),
+        'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.le', 'fanart.jpg'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_RD, 'loon_rd'),
+        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.le', 'settings.xml'),
+        'default'  : 'realdebrid.client_id',
+        'data'     : ['realdebrid.username', 'realdebrid.token', 'realdebrid.client_id', 'realdebrid.refresh', 'realdebrid.secret'],
+        'activate' : 'Addon.OpenSettings(plugin.video.le)'},
     'myactrd': {
         'name'     : 'My Accounts',
         'plugin'   : 'script.module.myaccounts',
@@ -219,6 +290,18 @@ DEBRIDID = {
         'default'  : 'realdebrid.client_id',
         'data'     : ['realdebrid.client_id', 'realdebrid.refresh', 'realdebrid.secret', 'realdebrid.token', 'realdebrid.username'],
         'activate' : 'Addon.OpenSettings(script.module.myaccounts)'},
+    'yactrd': {
+        'name'     : 'Your Accounts',
+        'plugin'   : 'script.module.youraccounts',
+        'saved'    : 'yactrd',
+        'path'     : os.path.join(CONFIG.ADDONS, 'script.module.youraccounts'),
+        'icon'     : os.path.join(CONFIG.ADDONS, 'script.module.youraccounts', 'icon.png'),
+        'fanart'   : os.path.join(CONFIG.ADDONS, 'script.module.youraccounts', 'fanart.png'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_RD, 'yact_rd'),
+        'settings' : os.path.join(CONFIG.ADDON_DATA, 'script.module.youraccounts', 'settings.xml'),
+        'default'  : 'realdebrid.client_id',
+        'data'     : ['realdebrid.client_id', 'realdebrid.refresh', 'realdebrid.secret', 'realdebrid.token', 'realdebrid.username'],
+        'activate' : 'Addon.OpenSettings(script.module.youraccounts)'},
     'rurlrd': {
         'name'     : 'ResolveURL',
         'plugin'   : 'script.module.resolveurl',

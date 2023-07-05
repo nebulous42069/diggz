@@ -27,7 +27,7 @@ class Premiumize:
 				if response.get('status') == 'success':
 					return response
 				if response.get('status') == 'error' and self.server_notifications:
-					control.notification(title='default', message=response.get('message'), icon='default')
+					control.notification(title='default', message=response.get('message'), icon=pm_icon)
 		except:
 			log_utils.error()
 		return response
@@ -39,7 +39,7 @@ class Premiumize:
 				if response.get('status') == 'success':
 					return response
 				if response.get('status') == 'error' and self.server_notifications:
-					control.notification(title='default', message=response.get('message'), icon='default')
+					control.notification(title='default', message=response.get('message'), icon=pm_icon)
 		except:
 			log_utils.error()
 		return response

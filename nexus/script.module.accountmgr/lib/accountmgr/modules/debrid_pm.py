@@ -2,10 +2,11 @@ import xbmc, xbmcaddon
 import xbmcvfs
 from pathlib import Path
 from accountmgr.modules import control
-from accountmgr.modules import var
+from libs.common import var
 
-#Seren PM
-def serenpm_auth():
+class Auth:
+    def premiumize_auth(self):
+    #Seren PM
         try:
                 if xbmcvfs.exists(var.chk_seren) and xbmcvfs.exists(var.chkset_seren): #Check that the addon is installed and settings.xml exists
                         chk_auth_seren = xbmcaddon.Addon('plugin.video.seren').getSetting("premiumize.token")
@@ -45,8 +46,7 @@ def serenpm_auth():
         except:
                 pass
 
-#Ezra PM
-def ezrapm_auth():
+    #Ezra PM
         try:
                 if xbmcvfs.exists(var.chk_ezra) and xbmcvfs.exists(var.chkset_ezra):
                         chk_auth_ezra = xbmcaddon.Addon('plugin.video.ezra').getSetting("pm.token")
@@ -81,8 +81,7 @@ def ezrapm_auth():
         except:
                 pass
 
-#Fen PM
-def fenpm_auth():
+    #Fen PM
         try:
                 if xbmcvfs.exists(var.chk_fen) and xbmcvfs.exists(var.chkset_fen):
                         chk_auth_fen = xbmcaddon.Addon('plugin.video.fen').getSetting("pm.token")
@@ -117,8 +116,7 @@ def fenpm_auth():
         except:
                 pass
 
-#POV PM
-def povpm_auth():
+    #POV PM
         try:
                 if xbmcvfs.exists(var.chk_pov) and xbmcvfs.exists(var.chkset_pov):
                         chk_auth_pov = xbmcaddon.Addon('plugin.video.pov').getSetting("pm.token")
@@ -153,8 +151,7 @@ def povpm_auth():
         except:
                 pass                
 
-#Umbrella PM
-def umbpm_auth():
+    #Umbrella PM
         try:
                 if xbmcvfs.exists(var.chk_umb) and xbmcvfs.exists(var.chkset_umb):
                         chk_auth_umb = xbmcaddon.Addon('plugin.video.umbrella').getSetting("premiumizetoken")
@@ -189,8 +186,7 @@ def umbpm_auth():
         except:
                 pass
         
-#Shadow PM
-def shadowpm_auth():
+    #Shadow PM
         try:
                 if xbmcvfs.exists(var.chk_shadow) and xbmcvfs.exists(var.chkset_shadow):
                         chk_auth_shadow = xbmcaddon.Addon('plugin.video.shadow').getSetting("premiumize.token")
@@ -224,8 +220,7 @@ def shadowpm_auth():
         except:
                 pass
         
-#Ghost PM
-def ghostpm_auth():
+    #Ghost PM
         try:
                 if xbmcvfs.exists(var.chk_ghost) and xbmcvfs.exists(var.chkset_ghost):
                         chk_auth_ghost = xbmcaddon.Addon('plugin.video.ghost').getSetting("premiumize.token")
@@ -252,8 +247,7 @@ def ghostpm_auth():
         except:
                 pass
 
-#Unleashed PM
-def unleashedpm_auth():
+    #Unleashed PM
         try:
                 if xbmcvfs.exists(var.chk_unleashed) and xbmcvfs.exists(var.chkset_unleashed):
                         chk_auth_unleashed = xbmcaddon.Addon('plugin.video.unleashed').getSetting("premiumize.token")
@@ -271,8 +265,7 @@ def unleashedpm_auth():
         except:
                 pass
 
-#Chains PM
-def chainspm_auth():
+    #Chains PM
         try:
                 if xbmcvfs.exists(var.chk_chains) and xbmcvfs.exists(var.chkset_chains):
                         chk_auth_chains = xbmcaddon.Addon('plugin.video.thechains').getSetting("premiumize.token")
@@ -290,8 +283,7 @@ def chainspm_auth():
         except:
                 pass
 
-#Twisted PM
-def twistedpm_auth():
+    #Twisted PM
         try:
                 if xbmcvfs.exists(var.chk_twisted) and xbmcvfs.exists(var.chkset_twisted):
                         chk_auth_twisted = xbmcaddon.Addon('plugin.video.twisted').getSetting("premiumize.token")
@@ -309,8 +301,7 @@ def twistedpm_auth():
         except:
                 pass
 
-#Base19 PM
-def basepm_auth():
+    #Base19 PM
         try:
                 if xbmcvfs.exists(var.chk_base) and xbmcvfs.exists(var.chkset_base):
                         chk_auth_base = xbmcaddon.Addon('plugin.video.base19').getSetting("premiumize.token")
@@ -328,8 +319,7 @@ def basepm_auth():
         except:
                 pass
 
-#Magic Dragon PM
-def mdpm_auth():
+    #Magic Dragon PM
         try:
                 if xbmcvfs.exists(var.chk_md) and xbmcvfs.exists(var.chkset_md):
                         chk_auth_md = xbmcaddon.Addon('plugin.video.magicdragon').getSetting("premiumize.token")
@@ -347,8 +337,7 @@ def mdpm_auth():
         except:
                 pass
 
-#Asgard PM
-def asgardpm_auth():
+    #Asgard PM
         try:
                 if xbmcvfs.exists(var.chk_asgard) and xbmcvfs.exists(var.chkset_asgard):
                         chk_auth_asgard = xbmcaddon.Addon('plugin.video.asgard').getSetting("premiumize.token")
@@ -366,8 +355,7 @@ def asgardpm_auth():
         except:
                 pass
 
-#M.E.T.V PM
-def metvpm_auth():
+    #M.E.T.V PM
         try:
                 if xbmcvfs.exists(var.chk_metv) and xbmcvfs.exists(var.chkset_metv):
                         chk_auth_metv = xbmcaddon.Addon('plugin.video.metv19').getSetting("premiumize.token")
@@ -385,8 +373,173 @@ def metvpm_auth():
         except:
                 pass
 
-#ResolveURL PM
-def rurlpm_auth():
+    #Aliunde PM
+        try:
+                if xbmcvfs.exists(var.chk_aliunde) and xbmcvfs.exists(var.chkset_aliunde):
+                        chk_auth_aliunde = xbmcaddon.Addon('plugin.video.aliundek19').getSetting("premiumize.token")
+                        chk_auth_aliunde_rd = xbmcaddon.Addon('plugin.video.aliundek19').getSetting("rd.auth")
+                        chk_auth_aliunde_ad = xbmcaddon.Addon('plugin.video.aliundek19').getSetting("alldebrid.token")
+                        if not str(var.chk_accountmgr_tk_pm) == str(chk_auth_aliunde) or str(chk_auth_aliunde) == '':
+
+                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
+                                your_username = accountmgr.getSetting("premiumize.username")
+                                your_token = accountmgr.getSetting("premiumize.token")
+                        
+                                addon = xbmcaddon.Addon("plugin.video.aliundek19")
+                                addon.setSetting("premiumize.token", your_token)
+
+                                pm_use = ("true")
+                                addon.setSetting("debrid_use_pm", pm_use)
+
+                                if str(chk_auth_shadow_rd) != '':
+                                        rd_use = ("true")
+                                        addon.setSetting("debrid_use_rd", rd_use)
+                                else:
+                                        rd_use = ("false")
+                                        addon.setSetting("debrid_use_rd", rd_use)
+                        
+                                if str(chk_auth_shadow_ad) != '':
+                                        ad_use = ("true")
+                                        addon.setSetting("debrid_use_ad", ad_use)
+                                else:
+                                        ad_use = ("false")
+                                        addon.setSetting("debrid_use_ad", ad_use)
+        except:
+                pass
+        
+    #Patriot PM
+        try:
+                if xbmcvfs.exists(var.chk_patriot) and xbmcvfs.exists(var.chkset_patriot):
+                        chk_auth_patriot = xbmcaddon.Addon('plugin.video.patriot').getSetting("premiumize.token")
+                        if not str(var.chk_accountmgr_tk_pm) == str(chk_auth_patriot) or str(chk_auth_patriot) == '':
+                                
+                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
+                                your_username = accountmgr.getSetting("premiumize.username")
+                                your_token = accountmgr.getSetting("premiumize.token")
+                        
+                                addon = xbmcaddon.Addon("plugin.video.patriot")
+                                addon.setSetting("premiumize.token", your_token)
+
+                                rd_use = ("false")
+                                addon.setSetting("debrid_use_rd", rd_use)
+
+                                pm_use = ("true")
+                                addon.setSetting("debrid_use_pm", pm_use)
+
+                                ad_use = ("false")
+                                addon.setSetting("debrid_use_ad", ad_use)
+
+                                d_select = ("1")
+                                addon.setSetting("debrid_select", d_select)
+        except:
+                pass
+        
+    #Adina RD
+        try:
+                if xbmcvfs.exists(var.chk_adina) and xbmcvfs.exists(var.chkset_adina):
+                        chk_auth_adina = xbmcaddon.Addon('plugin.video.adina').getSetting("pm.token")
+                        if not str(var.chk_accountmgr_tk_pm) == str(chk_auth_adina) or str(chk_auth_adina) == '':
+                                
+                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
+                                your_username = accountmgr.getSetting("premiumize.username")
+                                your_token = accountmgr.getSetting("premiumize.token")
+                        
+                                addon = xbmcaddon.Addon("plugin.video.adina")
+                                addon.setSetting("pm.account_id", your_username)
+                                addon.setSetting("pm.token", your_token)
+        except:
+                pass
+        
+    #Artemis RD
+        try:
+                if xbmcvfs.exists(var.chk_artemis) and xbmcvfs.exists(var.chkset_artemis):
+                        chk_auth_artemis = xbmcaddon.Addon('plugin.video.artemis').getSetting("premiumize.token")
+                        chk_auth_artemis_rd = xbmcaddon.Addon('plugin.video.artemis').getSetting("realdebrid.token")
+                        chk_auth_artemis_ad = xbmcaddon.Addon('plugin.video.artemis').getSetting("alldebrid.token")
+                        if not str(var.chk_accountmgr_tk_pm) == str(chk_auth_artemis) or str(chk_auth_artemis) == '':
+                                
+                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
+                                your_username = accountmgr.getSetting("premiumize.username")
+                                your_token = accountmgr.getSetting("premiumize.token")
+                        
+                                addon = xbmcaddon.Addon("plugin.video.artemis")
+                                addon.setSetting("premiumize.username", your_username)
+                                addon.setSetting("premiumize.token", your_token)
+                                
+                                enabled_pm = ("true")
+                                addon.setSetting("premiumize.enabled", enabled_pm)
+
+                                if str(chk_auth_artemis_rd) != '':
+                                        enabled_rd = ("true")
+                                        addon.setSetting("realdebrid.enabled", enabled_rd)
+                                else:
+                                        enabled_rd = ("false")
+                                        addon.setSetting("realdebrid.enabled", enabled_rd)
+                        
+                                if str(chk_auth_artemis_ad) != '':
+                                        enabled_ad = ("true")
+                                        addon.setSetting("alldebrid.enabled", enabled_ad)
+                                else:
+                                        enabled_ad = ("false")
+                                        addon.setSetting("alldebrid.enabled", enabled_ad)
+        except:
+                pass
+        
+    #Dynasty RD
+        try:
+                if xbmcvfs.exists(var.chk_dyna) and xbmcvfs.exists(var.chkset_dyna):
+                        chk_auth_dyna = xbmcaddon.Addon('plugin.video.dynasty').getSetting("premiumize.token")
+                        chk_auth_dyna_rd = xbmcaddon.Addon('plugin.video.dynasty').getSetting("realdebrid.token")
+                        chk_auth_dyna_ad = xbmcaddon.Addon('plugin.video.dynasty').getSetting("alldebrid.token")
+                        if not str(var.chk_accountmgr_tk_pm) == str(chk_auth_dyna) or str(chk_auth_dyna) == '':
+                                
+                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
+                                your_username = accountmgr.getSetting("premiumize.username")
+                                your_token = accountmgr.getSetting("premiumize.token")
+                        
+                                addon = xbmcaddon.Addon("plugin.video.dynasty")
+                                addon.setSetting("premiumize.username", your_username)
+                                addon.setSetting("premiumize.token", your_token)
+
+                                enabled_rd = ("true")
+                                addon.setSetting("realdebrid.enabled", enabled_rd)
+
+                                enabled_pm = ("true")
+                                addon.setSetting("premiumize.enabled", enabled_pm)
+
+                                if str(chk_auth_dyna_rd) != '':
+                                        enabled_rd = ("true")
+                                        addon.setSetting("realdebrid.enabled", enabled_rd)
+                                else:
+                                        enabled_rd = ("false")
+                                        addon.setSetting("realdebrid.enabled", enabled_rd)
+                        
+                                if str(chk_auth_dyna_ad) != '':
+                                        enabled_ad = ("true")
+                                        addon.setSetting("alldebrid.enabled", enabled_ad)
+                                else:
+                                        enabled_ad = ("false")
+                                        addon.setSetting("alldebrid.enabled", enabled_ad)
+        except:
+                pass
+
+    #Loonatics Empire
+        try:
+                if xbmcvfs.exists(var.chk_loon) and xbmcvfs.exists(var.chkset_loon):
+                        chk_auth_loon = xbmcaddon.Addon('plugin.video.le').getSetting("premiumize.token")
+                        if not str(var.chk_accountmgr_tk_pm) == str(chk_auth_loon) or str(chk_auth_loon) == '':
+                                
+                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
+                                your_username = accountmgr.getSetting("premiumize.username")
+                                your_token = accountmgr.getSetting("premiumize.token")
+                        
+                                addon = xbmcaddon.Addon("plugin.video.le")
+                                addon.setSetting("premiumize.username", your_username)
+                                addon.setSetting("premiumize.token", your_token)
+        except:
+                pass
+        
+    #ResolveURL PM
         try:
                 if xbmcvfs.exists(var.chk_rurl) and xbmcvfs.exists(var.chkset_rurl):
                         chk_auth_rurl = xbmcaddon.Addon('script.module.resolveurl').getSetting("PremiumizeMeResolver_token")
@@ -403,8 +556,7 @@ def rurlpm_auth():
         except:
                 pass
 
-#My Accounts PM
-def myaccountspm_auth():
+    #My Accounts PM
         try:
                 if xbmcvfs.exists(var.chk_myaccounts) and xbmcvfs.exists(var.chkset_myaccounts):
                         chk_auth_myaccounts = xbmcaddon.Addon('script.module.myaccounts').getSetting("premiumize.token")
@@ -422,8 +574,25 @@ def myaccountspm_auth():
         except:
                 pass
 
-#Premiumizer PM
-def premiumizer_auth():
+    #Your Accounts PM
+        try:
+                if xbmcvfs.exists(var.chk_youraccounts) and xbmcvfs.exists(var.chkset_youraccounts):
+                        chk_auth_youraccounts = xbmcaddon.Addon('script.module.youraccounts').getSetting("premiumize.token")
+                        if not str(var.chk_accountmgr_tk_pm) == str(chk_auth_youraccounts) or str(chk_auth_youraccounts) == '':
+                        
+                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
+                                your_username = accountmgr.getSetting("premiumize.username")
+                                your_token = accountmgr.getSetting("premiumize.token")
+                        
+                                addon = xbmcaddon.Addon("script.module.youraccounts")
+                                addon.setSetting("premiumize.username", your_username)
+
+                                your_token = accountmgr.getSetting("premiumize.token")
+                                addon.setSetting("premiumize.token", your_token)
+        except:
+                pass
+        
+    #Premiumizer PM
         try:
                 if xbmcvfs.exists(var.chk_premiumizer) and xbmcvfs.exists(var.chkset_premiumizer):
                         chk_auth_premiumizer = xbmcaddon.Addon('plugin.video.premiumizerx').getSetting("premiumize.token")
@@ -438,21 +607,3 @@ def premiumizer_auth():
         except:
                 pass
 
-def debrid_auth_pm(): #Sync all add-ons
-                serenpm_auth()
-                ezrapm_auth()
-                fenpm_auth()
-                povpm_auth()
-                umbpm_auth()
-                shadowpm_auth()
-                ghostpm_auth()
-                unleashedpm_auth()
-                chainspm_auth()
-                twistedpm_auth()
-                basepm_auth()
-                mdpm_auth()
-                asgardpm_auth()
-                metvpm_auth()
-                rurlpm_auth()
-                myaccountspm_auth()
-                premiumizer_auth()

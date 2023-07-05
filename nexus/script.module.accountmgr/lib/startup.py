@@ -4,7 +4,12 @@ import xbmcvfs
 import xbmcaddon
 import os.path
 import time
-from accountmgr.modules import var
+from libs.common import var
+from accountmgr.modules import control
+from accountmgr.modules import log_utils
+import _strptime
+
+LOGINFO = 1
 
 timeout_start = time.time()
 timeout = 60*5
@@ -13,18 +18,90 @@ def startup_sync():
         try:
                 if str(var.chk_accountmgr_tk) != '': #Skip sync if Trakt is not authorized
                         from accountmgr.modules import trakt_sync
-                        trakt_sync.sync_all() #Sync Trakt
-                if str(var.chk_accountmgr_tk_rd) != '': #Skip sync if Real-Debrid is not authorized
-                        from accountmgr.modules import debrid_rd
-                        debrid_rd.debrid_auth_rd() #Sync Real-Debrid
-                if str(var.chk_accountmgr_tk_pm) != '': #Skip sync if Premiumize is not authorized
-                        from accountmgr.modules import debrid_pm
-                        debrid_pm.debrid_auth_pm() #Sync Premiumize
-                if str(var.chk_accountmgr_tk_ad) != '': #Skip sync if All-Debrid is not authorized
-                        from accountmgr.modules import debrid_ad 
-                        debrid_ad.debrid_auth_ad() #Sync All-Debrid
+                        trakt_sync.Auth().trakt_auth() #Sync Trakt
         except:
                 pass
+        try:
+                if str(var.chk_accountmgr_tk_rd) != '': #Skip sync if Real-Debrid is not authorized
+                        from accountmgr.modules import debrid_rd
+                        debrid_rd.Auth().realdebrid_auth() #Sync Real-Debrid
+        except:
+                pass
+        try:
+                if str(var.chk_accountmgr_tk_pm) != '': #Skip sync if Premiumize is not authorized
+                        from accountmgr.modules import debrid_pm
+                        debrid_pm.Auth().premiumize_auth() #Sync Premiumize
+        except:
+                pass
+        try:
+                if str(var.chk_accountmgr_tk_ad) != '': #Skip sync if All-Debrid is not authorized
+                        from accountmgr.modules import debrid_ad 
+                        debrid_ad.Auth().alldebrid_auth() #Sync All-Debrid
+        except:
+                pass
+
+def startup_nondebrid_sync():
+        try:    #Skip sync if no data is available to sync
+                if str(var.chk_accountmgr_furk) != '':
+                        from accountmgr.modules import furk_sync
+                        furk_sync.Auth().furk_auth() #Sync Data
+        except:
+                pass
+        
+        try:    #Skip sync if no data is available to sync
+                if str(var.chk_accountmgr_easy) != '':
+                        from accountmgr.modules import easy_sync
+                        easy_sync.Auth().easy_auth() #Sync Data
+        except:
+                pass
+        
+        try:    #Skip sync if no data is available to sync
+                if str(var.chk_accountmgr_file) != '':
+                        from accountmgr.modules import filepursuit_sync
+                        filepursuit_sync.Auth().file_auth() #Sync Data
+        except:
+                pass
+        
+def startup_meta_sync():
+        try:    #Skip sync if no Metadata is available to sync
+                if str(var.chk_accountmgr_fanart) != '' or str(var.chk_accountmgr_omdb) != '' or str(var.chk_accountmgr_mdb) != '' or str(var.chk_accountmgr_imdb) != '' or str(var.chk_accountmgr_tmdb) != '' or str(var.chk_accountmgr_tmdb_user) != '' or str(var.chk_accountmgr_tvdb) != '':
+                        from accountmgr.modules import meta_sync
+                        meta_sync.Auth().meta_auth() #Sync Metadata
+        except:
+                pass
+        
+class AddonCheckUpdate:
+	def run(self):
+		xbmc.log('[ script.module.accountmgr ]  Addon checking available updates', LOGINFO)
+		try:
+			import re
+			import requests
+			repo_xml = requests.get('https://raw.githubusercontent.com/Zaxxon709/nexus/main/zips/script.module.accountmgr/addon.xml')
+			if repo_xml.status_code != 200:
+				return xbmc.log('[ script.module.accountmgr ]  Could not connect to remote repo XML: status code = %s' % repo_xml.status_code, LOGINFO)
+			repo_version = re.search(r'<addon id=\"script.module.accountmgr\".*version=\"(\d*.\d*.\d*)\"', repo_xml.text, re.I).group(1)
+			local_version = control.addonVersion()[:5] # 5 char max so pre-releases do try to compare more chars than github version
+			def check_version_numbers(current, new): # Compares version numbers and return True if github version is newer
+				current = current.split('.')
+				new = new.split('.')
+				step = 0
+				for i in current:
+					if int(new[step]) > int(i): return True
+					if int(i) > int(new[step]): return False
+					if int(i) == int(new[step]):
+						step += 1
+						continue
+				return False
+			if check_version_numbers(local_version, repo_version):
+				while control.condVisibility('Library.IsScanningVideo'):
+					control.sleep(10000)
+				xbmc.log('[ script.module.accountmgr ]  A newer version is available. Installed Version: v%s' % (local_version), LOGINFO)
+				control.notification(message=control.lang(32072) % repo_version, time=5000)
+			return xbmc.log('[ script.module.accountmgr ]  Addon update check complete', LOGINFO)
+		except:
+			import traceback
+			traceback.print_exc()
+			
 def api_check():
 
         while True:
@@ -171,6 +248,20 @@ def api_check():
                                         f.close()
                                         continue
 
+                if xbmcvfs.exists(var.chk_patriot) and xbmcvfs.exists(var.chkset_patriot) and str(var.chk_accountmgr_tk) != '':
+                        with open(var.path_patriot) as f:
+                                if var.chk_api in f.read():
+                                        pass
+                                else:
+                                        f = open(var.path_patriot,'r')
+                                        data = f.read()
+                                        f.close()
+                                        client = data.replace(var.patriot_client,var.client_am).replace(var.patriot_secret,var.secret_am)
+                                        f = open(var.path_patriot,'w')
+                                        f.write(client)
+                                        f.close()
+                                        continue
+                                
                 if xbmcvfs.exists(var.chk_scrubs) and xbmcvfs.exists(var.chkset_scrubs) and str(var.chk_accountmgr_tk) != '':
                         with open(var.path_scrubs) as f:
                                 if var.chk_api in f.read():
@@ -234,6 +325,22 @@ if var.setting('sync.service')=='true': #Check if service is enabled
         startup_sync() #Start service
 else:
         pass
+
+if var.setting('sync.nondebrid.service')=='true': #Check if service is enabled
+        startup_nondebrid_sync() #Start service
+else:
+        pass
+
+if var.setting('sync.metaservice')=='true': #Check if service is enabled
+        startup_meta_sync() #Start service
+else:
+        pass
+
+if var.setting('checkAddonUpdates') == 'true': #Check if service is enabled
+	AddonCheckUpdate().run() #Start service
+else:
+        pass
+
 if var.setting('trakt.service')=='true': #Check if service is enabled
         api_check() #Start service
 else:
