@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<addon id="plugin.video.latinohd" name="Latin TV" version="1.0.1" provider-name="mbebe">
+<addon id="plugin.video.latinohd" name="Tele Latino HD" version="1.0.6" provider-name="mbebe">
     <requires>
         <import addon="script.module.requests" />
         <import addon="script.module.six"/>
@@ -8,9 +8,9 @@
         <provides>video</provides>
     </extension>
     <extension point="xbmc.addon.metadata">
-        <description lang="en">0.1</description>
+        <description lang="en">https://www.telelatinohd.com</description>
         <disclaimer lang="en">https://github.com/mbebe/blomqvist</disclaimer>	
-        <summary lang="en"></summary>
+        <summary lang="en">https://www.telelatinohd.com</summary>
         <language>en</language>
         <platform>all</platform>
         <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>

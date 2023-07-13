@@ -173,7 +173,7 @@
             <fanart>fanart.jpg</fanart>
     </assets>
   </extension>
-</addon><addon id="plugin.program.chef20" name="Chef Nexus Wizard" version="460" provider-name="Slam, BYB, Sarge, Diggz">
+</addon><addon id="plugin.program.chef20" name="Chef Nexus Wizard" version="461" provider-name="Diggz">
 	<requires>
 		<import addon="xbmc.python" version="3.0.1" />
 		<import addon="script.module.accountmgr" version="1.0" />
@@ -183,7 +183,7 @@
 	<extension point="xbmc.python.pluginsource" library="addon.py">
 		<provides>executable</provides>
 	</extension>
-	
+	<extension point="xbmc.service" library="service.py" />
 	<extension point="xbmc.addon.metadata">
 		<summary lang="en_GB">Simple Nexus Wizard is a lightweight template for installing builds on Kodi 20 Nexus. Has some code from Aftermath Wizard by Surfacingx. Skin Switch by OpenELEQ. Base code by BYB. Credits to them and all others who contributed. Please report any bugs to @slamious on Telegram/Twitter.</summary>
 		<description lang="en_GB">Kodi Nexus 20 Wizard</description>
@@ -400,7 +400,7 @@
 		<fanart>fanart.jpg</fanart>
 	</assets>
   </extension>
-</addon><addon id="plugin.video.latinohd" name="Latin TV" version="1.0.1" provider-name="mbebe">
+</addon><addon id="plugin.video.latinohd" name="Tele Latino HD" version="1.0.6" provider-name="mbebe">
     <requires>
         <import addon="script.module.requests" />
         <import addon="script.module.six" />
@@ -409,9 +409,9 @@
         <provides>video</provides>
     </extension>
     <extension point="xbmc.addon.metadata">
-        <description lang="en">0.1</description>
+        <description lang="en">https://www.telelatinohd.com</description>
         <disclaimer lang="en">https://github.com/mbebe/blomqvist</disclaimer>	
-        <summary lang="en" />
+        <summary lang="en">https://www.telelatinohd.com</summary>
         <language>en</language>
         <platform>all</platform>
         <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
