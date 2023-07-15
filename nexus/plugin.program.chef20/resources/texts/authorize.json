@@ -84,8 +84,28 @@
         "icon": "https://techwiser.com/wp-content/uploads/2020/09/trakt-logo.png",
         "items": [
             {
-                "name": "Open Account Manager",
-                "url": "addon.opensettings(script.module.accountmgr)"
+                "name": "Authenticate Real Debrid",
+                "url": "RunScript(script.module.accountmgr, action=realdebridAuth)"
+            },
+            {
+                "name": "Authenticate Premiumize",
+                "url": "RunScript(script.module.accountmgr, action=premiumizeAuth)"
+            },
+            {
+                "name": "Authenticate All Debrid",
+                "url": "RunScript(script.module.accountmgr, action=alldebridAuth)"
+            },
+            {
+                "name": "Authenticate TRAKT",
+                "url": "RunScript(script.module.accountmgr, action=traktAuth)"
+            },
+            {
+                "name": "Re-Sync Debrid Accounts",
+                "url": "RunScript(script.module.accountmgr, action=ReSyncAll)"
+            },
+            {
+                "name": "Re-Sync TRAKT Accounts",
+                "url": "RunScript(script.module.accountmgr, action=traktReSync)"
             },
             {
                 "name": "View Real Debrid logins",
@@ -104,8 +124,8 @@
                 "url": "ActivateWindow(10001,plugin://script.module.acctview/?mode=trakt,return)"
             },
             {
-                "name": "Re-Sync All Accounts",
-                "url": "RunScript(script.module.accountmgr, action=ReSyncAll)"
+                "name": "Open Account Manager",
+                "url": "addon.opensettings(script.module.accountmgr)"
             }
         ]
     }
