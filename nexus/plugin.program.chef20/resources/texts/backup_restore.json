@@ -28,5 +28,10 @@
         "name": "Multi Weather",
         "setting": "savemultiweather",
         "path": "data_path"
-    }	
+    },
+    "weather.gismeteo": {
+        "name": "Gismeteo Weather",
+        "setting": "savegismeteoweather",
+        "path": "data_path"
+    }
 }

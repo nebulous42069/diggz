@@ -173,7 +173,7 @@
             <fanart>fanart.jpg</fanart>
     </assets>
   </extension>
-</addon><addon id="plugin.program.chef20" name="Chef Nexus Wizard" version="462" provider-name="Diggz">
+</addon><addon id="plugin.program.chef20" name="Chef Nexus Wizard" version="463" provider-name="Diggz">
 	<requires>
 		<import addon="xbmc.python" version="3.0.1" />
 		<import addon="script.module.accountmgr" version="1.0" />
