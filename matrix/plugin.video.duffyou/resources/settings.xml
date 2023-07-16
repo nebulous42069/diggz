@@ -1,0 +1,201 @@
+<?xml version="1.0" ?>
+<settings version="1">
+    <section id="plugin.video.duffyou">
+        <category id="general" label="30000" help="">
+            <group id="1" label="">
+                <setting id="default_quality" type="integer" label="30029" help="">
+                    <level>0</level>
+                    <default>3</default>
+                    <constraints>
+                        <options>
+                            <option label="30030">0</option>
+                            <option label="30031">1</option>
+                            <option label="30032">2</option>
+                            <option label="30033">3</option>
+                            <option label="30034">4</option>
+                            <option label="30036">5</option>
+                        </options>
+                    </constraints>
+                    <control type="spinner" format="string"/>
+                </setting>
+                <setting id="region_code" type="string" label="30035" help="">
+                    <level>0</level>
+                    <default>GR</default>
+                    <constraints>
+                        <options>
+                            <option label="30200">DE</option>
+                            <option label="30201">SA</option>
+                            <option label="30202">DZ</option>
+                            <option label="30203">AR</option>
+                            <option label="30204">AU</option>
+                            <option label="30205">AT</option>
+                            <option label="30206">AZ</option>
+                            <option label="30207">BH</option>
+                            <option label="30208">BD</option>
+                            <option label="30209">BE</option>
+                            <option label="30210">BY</option>
+                            <option label="30211">BO</option>
+                            <option label="30212">BA</option>
+                            <option label="30213">BR</option>
+                            <option label="30214">BG</option>
+                            <option label="30215">CA</option>
+                            <option label="30216">CL</option>
+                            <option label="30217">CY</option>
+                            <option label="30218">CO</option>
+                            <option label="30219">KR</option>
+                            <option label="30220">CR</option>
+                            <option label="30221">HR</option>
+                            <option label="30222">DK</option>
+                            <option label="30223">EC</option>
+                            <option label="30224">EG</option>
+                            <option label="30225">LB</option>
+                            <option label="30226">SV</option>
+                            <option label="30227">AE</option>
+                            <option label="30228">SK</option>
+                            <option label="30229">SI</option>
+                            <option label="30230">ES</option>
+                            <option label="30231">US</option>
+                            <option label="30232">EE</option>
+                            <option label="30233">PH</option>
+                            <option label="30234">FI</option>
+                            <option label="30235">FR</option>
+                            <option label="30236">GE</option>
+                            <option label="30237">GH</option>
+                            <option label="30238">GR</option>
+                            <option label="30239">GT</option>
+                            <option label="30240">NL</option>
+                            <option label="30241">HN</option>
+                            <option label="30242">HK</option>
+                            <option label="30243">HU</option>
+                            <option label="30244">ID</option>
+                            <option label="30245">IQ</option>
+                            <option label="30246">IE</option>
+                            <option label="30247">IS</option>
+                            <option label="30248">IL</option>
+                            <option label="30249">IT</option>
+                            <option label="30250">JM</option>
+                            <option label="30251">JP</option>
+                            <option label="30252">JO</option>
+                            <option label="30253">KZ</option>
+                            <option label="30254">KE</option>
+                            <option label="30255">KW</option>
+                            <option label="30256">IN</option>
+                            <option label="30257">LV</option>
+                            <option label="30258">LY</option>
+                            <option label="30259">LI</option>
+                            <option label="30260">LT</option>
+                            <option label="30261">LU</option>
+                            <option label="30262">MK</option>
+                            <option label="30263">MY</option>
+                            <option label="30264">MT</option>
+                            <option label="30265">MA</option>
+                            <option label="30266">MX</option>
+                            <option label="30267">ME</option>
+                            <option label="30268">NP</option>
+                            <option label="30269">NI</option>
+                            <option label="30270">NG</option>
+                            <option label="30271">NO</option>
+                            <option label="30272">NZ</option>
+                            <option label="30273">OM</option>
+                            <option label="30274">PK</option>
+                            <option label="30275">PA</option>
+                            <option label="30276">PG</option>
+                            <option label="30277">PY</option>
+                            <option label="30278">PE</option>
+                            <option label="30279">PL</option>
+                            <option label="30280">PT</option>
+                            <option label="30281">PR</option>
+                            <option label="30282">QA</option>
+                            <option label="30283">GB</option>
+                            <option label="30284">DO</option>
+                            <option label="30285">CZ</option>
+                            <option label="30286">RO</option>
+                            <option label="30287">RU</option>
+                            <option label="30288">SN</option>
+                            <option label="30289">RS</option>
+                            <option label="30290">SG</option>
+                            <option label="30291">LK</option>
+                            <option label="30292">ZA</option>
+                            <option label="30293">SE</option>
+                            <option label="30294">CH</option>
+                            <option label="30295">TH</option>
+                            <option label="30296">TW</option>
+                            <option label="30297">TZ</option>
+                            <option label="30298">TN</option>
+                            <option label="30299">TR</option>
+                            <option label="30300">UA</option>
+                            <option label="30301">UG</option>
+                            <option label="30302">UY</option>
+                            <option label="30303">VE</option>
+                            <option label="30304">VN</option>
+                            <option label="30305">YE</option>
+                            <option label="30306">ZW</option>
+                        </options>
+                    </constraints>
+                    <control type="list" format="string">
+                        <heading>"30035"</heading>
+                    </control>
+                </setting>
+                <setting id="download_path" type="path" label="30155" help="">
+                    <level>0</level>
+                    <default/>
+                    <constraints>
+                        <writable>true</writable>
+                        <allowempty>true</allowempty>
+                    </constraints>
+                    <control type="button" format="path">
+                        <heading>30155</heading>
+                    </control>
+                </setting>
+                <setting id="down_sub" type="boolean" label="30156" help="">
+                    <level>0</level>
+                    <default>false</default>
+                    <control type="toggle"/>
+                </setting>
+            </group>
+            <group id="2" label="30001">
+                <setting id="search_date" type="string" label="30010" help="">
+                    <level>0</level>
+                    <default>None</default>
+                    <constraints>
+                        <options>
+                            <option label="30014">None</option>
+                            <option label="30015">hour</option>
+                            <option label="30016">today</option>
+                            <option label="30017">week</option>
+                            <option label="30018">month</option>
+                            <option label="30019">year</option>
+                        </options>
+                    </constraints>
+                    <control type="spinner" format="string"/>
+                </setting>
+                <setting id="search_duration" type="string" label="30012" help="">
+                    <level>0</level>
+                    <default>None</default>
+                    <constraints>
+                        <options>
+                            <option label="30014">None</option>
+                            <option label="30024">short</option>
+                            <option label="30025">long</option>
+                        </options>
+                    </constraints>
+                    <control type="spinner" format="string"/>
+                </setting>
+                <setting id="search_sort_by" type="string" label="30013" help="">
+                    <level>0</level>
+                    <default>relevance</default>
+                    <constraints>
+                        <options>
+                            <option label="30026">relevance</option>
+                            <option label="30027">rating</option>
+                            <option label="30010">upload_date</option>
+                            <option label="30028">view_count</option>
+                        </options>
+                    </constraints>
+                    <control type="spinner" format="string"/>
+                </setting>
+            </group>
+
+        </category>
+    </section>
+</settings>
