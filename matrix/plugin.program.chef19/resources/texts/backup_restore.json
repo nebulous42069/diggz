@@ -9,7 +9,7 @@
         "setting": "saveadvanced",
         "path": "user_path"
     },
-    "plugin.program.chef20": {
+    "plugin.program.chef19": {
         "name": "Chef Wizard",
         "setting": "savedata",
         "path": "data_path"
