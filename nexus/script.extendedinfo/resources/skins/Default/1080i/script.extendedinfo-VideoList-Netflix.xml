@@ -632,7 +632,7 @@
 				<texturenofocus border="40" colordiffuse="FF999999">common/roundedbutton-nofocus.png</texturenofocus>
 				<font>font13</font>
 				<textcolor>FF999999</textcolor>
-				<onup>5005</onup>
+				<onup>5018</onup>
 				<!---OPENINFO--->
 				<ondown>6001</ondown>
 				<!---OPENINFO--->

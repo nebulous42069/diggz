@@ -221,6 +221,8 @@ def get_movie_window(window_type):
 				selection = xbmcgui.Dialog().select(heading='Choose option', list=listitems)
 			Utils.hide_busy()
 			selection_text = listitems[selection]
+			if selection == -1:
+				selection_text = ''
 			if selection == 0:
 				if self.type == 'tv':
 					url = 'plugin://plugin.video.themoviedb.helper?info=play&amp;tmdb_id=%s&amp;type=episode&amp;season=%s&amp;episode=%s' % (item_id, self.listitem.getProperty('season'), self.listitem.getProperty('episode'))

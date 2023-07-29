@@ -1453,7 +1453,7 @@ class ServiceMonitor(object):
                 xbmc.executebuiltin('RunScript(%s)' % auto_plugin_route)
         library.auto_setup_xml_filenames()
         if  xbmcaddon.Addon(addon_ID()).getSetting('auto_clean_cache_bool') == 'true':
-            process.auto_clean_cache(days=14)
+            process.auto_clean_cache(days=30)
         self.cron_job.start()
         self.player_monitor = PlayerMonitor()
         self.my_monitor = MyMonitor()

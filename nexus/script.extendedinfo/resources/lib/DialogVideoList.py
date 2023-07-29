@@ -78,6 +78,37 @@ LANGUAGES = [
     {'id': 'zh', 'name': 'Chinese'}
 ]
 
+menu = [
+    #{'button': 6666, 'position': 1},
+    #{'button': 600, 'position': 2},
+    #{'button': 700, 'position': 3},
+    #{'button': 6667, 'position': 4},
+    #{'button': 6668, 'position': 5},
+    {'button': 6000, 'position': 1},
+    {'button': 6001, 'position': 2},
+    #{'button': 9000, 'position': 8},
+    {'button': 5007, 'position': 3},
+    {'button': 5001, 'position': 4},
+    {'button': 5004, 'position': 5},
+    #{'button': 5333, 'position': 12},
+    {'button': 5013, 'position': 6},
+    {'button': 50139, 'position': 7},
+    {'button': 5002, 'position': 8},
+    {'button': 5003, 'position': 9},
+    {'button': 5006, 'position': 10},
+    {'button': 5008, 'position': 11},
+    {'button': 5009, 'position': 12},
+    {'button': 5010, 'position': 13},
+    {'button': 5012, 'position': 14},
+    {'button': 5014, 'position': 15},
+    {'button': 5015, 'position': 16},
+    {'button': 5017, 'position': 17},
+    {'button': 5016, 'position': 18},
+    {'button': 5005, 'position': 19},
+    {'button': 5018, 'position': 20}
+]
+
+
 def get_tmdb_window(window_type):
     Utils.show_busy()
     class DialogVideoList(DialogBaseList, window_type):
@@ -95,6 +126,8 @@ def get_tmdb_window(window_type):
             self.prev_window = None
             self.filter_url = None
             self.filter = None
+            self.control_id2 = None
+            self.action2  = None
             xbmcgui.Window(10000).clearProperty('ImageFilter')
             xbmcgui.Window(10000).clearProperty('ImageColor')
 
@@ -122,10 +155,12 @@ def get_tmdb_window(window_type):
 
         def onClick(self, control_id):
             super(DialogVideoList, self).onClick(control_id)
+            self.control_id2 = control_id
             ch.serve(control_id, self)
 
         def onAction(self, action):
             super(DialogVideoList, self).onAction(action)
+            self.action2 = action
             ch.serve_action(action, self.getFocusId(), self)
 
         def update_ui(self):
@@ -161,6 +196,102 @@ def get_tmdb_window(window_type):
                 self.next_page_token = self.page_token
                 self.page_token = self.prev_page_token
                 self.update()
+
+        @ch.action('pagedown', 6666)
+        @ch.action('pageup', 6666)
+        @ch.action('pagedown', 600)
+        @ch.action('pageup', 600)
+        @ch.action('pagedown', 700)
+        @ch.action('pageup', 700)
+        @ch.action('pagedown', 6667)
+        @ch.action('pageup', 6667)
+        @ch.action('pagedown', 6668)
+        @ch.action('pageup', 6668)
+        @ch.action('pagedown', 6000)
+        @ch.action('pageup', 6000)
+        @ch.action('pagedown', 6001)
+        @ch.action('pageup', 6001)
+        @ch.action('pagedown', 6001)
+        @ch.action('pageup', 6001)
+        @ch.action('pagedown', 9000)
+        @ch.action('pageup', 9000)
+        @ch.action('pagedown', 5007)
+        @ch.action('pageup', 5007)
+        @ch.action('pagedown', 5001)
+        @ch.action('pageup', 5001)
+        @ch.action('pagedown', 5004)
+        @ch.action('pageup', 5004)
+        @ch.action('pagedown', 5333)
+        @ch.action('pageup', 5333)
+        @ch.action('pagedown', 5013)
+        @ch.action('pageup', 5013)
+        @ch.action('pagedown', 50139)
+        @ch.action('pageup', 50139)
+        @ch.action('pagedown', 5002)
+        @ch.action('pageup', 5002)
+        @ch.action('pagedown', 5003)
+        @ch.action('pageup', 5003)
+        @ch.action('pagedown', 5006)
+        @ch.action('pageup', 5006)
+        @ch.action('pagedown', 5008)
+        @ch.action('pageup', 5008)
+        @ch.action('pagedown', 5009)
+        @ch.action('pageup', 5009)
+        @ch.action('pagedown', 5010)
+        @ch.action('pageup', 5010)
+        @ch.action('pagedown', 5012)
+        @ch.action('pageup', 5012)
+        @ch.action('pagedown', 5014)
+        @ch.action('pageup', 5014)
+        @ch.action('pagedown', 5015)
+        @ch.action('pageup', 5015)
+        @ch.action('pagedown', 5017)
+        @ch.action('pageup', 5017)
+        @ch.action('pagedown', 5016)
+        @ch.action('pageup', 5016)
+        @ch.action('pagedown', 5005)
+        @ch.action('pageup', 5005)
+        @ch.action('pagedown', 5018)
+        @ch.action('pageup', 5018)
+        def context_testAA(self):
+            #xbmc.log(str(str('Line ')+str(getframeinfo(currentframe()).lineno)+'___'+str(getframeinfo(currentframe()).filename))+'===>OPENINFO', level=xbmc.LOGINFO)
+            jump_number = 4
+            if self.action2.getId() == 6: #page_down
+                for i in menu:
+                    if i['button'] == self.getFocusId():
+                        position = i['position']
+                if position + jump_number <= len(menu):
+                    for i in menu:
+                        if i['position'] >= position + jump_number:
+                            new_button = i['button']
+                            if self.getControl(new_button).isVisible():
+                                break
+                else:
+                    position = (position + jump_number) - len(menu)
+                    for i in menu:
+                        if i['position'] >= position:
+                            new_button = i['button']
+                            if self.getControl(new_button).isVisible():
+                                break
+            if self.action2.getId() == 5: #page_up
+                for i in menu:
+                    if i['button'] == self.getFocusId():
+                        position = i['position']
+                if position - jump_number >= 1:
+                    for i in reversed(menu):
+                        if i['position'] <= position - jump_number:
+                            new_button = i['button']
+                            if self.getControl(new_button).isVisible():
+                                break
+                else:
+                    position = len(menu) + (position - jump_number)
+                    for i in reversed(menu):
+                        if i['position'] <= position:
+                            new_button = i['button']
+                            if self.getControl(new_button).isVisible():
+                                break
+            xbmc.executebuiltin('Control.SetFocus('+str(new_button)+')')
+
 
         @ch.action('info', 500)
         @ch.action('contextmenu', 500)
@@ -368,7 +499,7 @@ def get_tmdb_window(window_type):
                 self.mode='tastedive&' + str(media_type)
                 #self.search_str = TheMovieDB.get_tastedive_data(query=search_str, limit=limit, media_type=media_type)
                 Utils.show_busy()
-                self.search_str = TheMovieDB.get_tastedive_data_scrape(query=search_str, year=self.listitem.getProperty('year'), limit=limit, media_type=media_type)
+                self.search_str = TheMovieDB.get_tastedive_data_scrape(query=search_str, year=self.listitem.getProperty('year'), limit=limit, media_type=media_type,item_id=item_id)
                 if self.search_str == []:
                     if media_type == 'movie':
                         single_movie_info = TheMovieDB.single_movie_info(movie_id=item_id)
@@ -381,12 +512,15 @@ def get_tmdb_window(window_type):
                         alternative_titles = single_tvshow_info['alternative_titles']
                     for i in alternative_titles:
                         #self.search_str = TheMovieDB.get_tastedive_data(query=self.listitem.getProperty('originaltitle'), limit=limit, media_type=media_type)
-                        self.search_str = TheMovieDB.get_tastedive_data_scrape(query=i, year=self.listitem.getProperty('year'), limit=limit, media_type=media_type)
+                        self.search_str = TheMovieDB.get_tastedive_data_scrape(query=i, year=self.listitem.getProperty('year'), limit=limit, media_type=media_type,item_id=item_id)
                         #xbmc.log(str(self.search_str)+'query_get_tastedive_data_scrape===>OPENINFO', level=xbmc.LOGINFO)
                         if self.search_str != []:
                             break
                 self.filter_label='TasteDive Similar ('+str(search_str)+'):'
                 #return wm.open_video_list(mode='tastedive&' + str(media_type), listitems=[], search_str=response, filter_label='TasteDive Similar ('+str(search_str)+'):')
+                #self.fetch_data()
+                #self.update()
+                xbmc.log(str(str('Line ')+str(getframeinfo(currentframe()).lineno)+'___'+str(getframeinfo(currentframe()).filename))+'===>OPENINFO', level=xbmc.LOGINFO)
                 self.fetch_data()
                 self.update()
                 self.update_content(force_update=True)
@@ -822,20 +956,20 @@ def get_tmdb_window(window_type):
                     #response2 = TheMovieDB.get_tastedive_data(query=i['title'], limit=50, media_type='movie')
 
                     release_date = i['release_date'][:4]
-                    single_movie_info = TheMovieDB.single_movie_info(movie_id=i['id'])
-                    alternative_titles = []
-                    for xi in single_movie_info['alternative_titles']['titles']:
-                        if str(xi['iso_3166_1']) in ['US','UK','GB']:
-                            alternative_titles.append(xi['title'])
+                    #single_movie_info = TheMovieDB.single_movie_info(movie_id=i['id'])
+                    #alternative_titles = []
+                    #for xi in single_movie_info['alternative_titles']['titles']:
+                    #    if str(xi['iso_3166_1']) in ['US','UK','GB']:
+                    #        alternative_titles.append(xi['title'])
 
                     response2 = []
-                    response2 = TheMovieDB.get_tastedive_data_scrape(query=i['title'], year=i['release_date'][:4], limit=50, media_type='movie')
+                    response2 = TheMovieDB.get_tastedive_data_scrape(query=i['title'], year=i['release_date'][:4], limit=50, media_type='movie',item_id=i['id'])
 
-                    if response2 == []:
-                        for xi in alternative_titles:
-                            response2 = TheMovieDB.get_tastedive_data_scrape(query=xi, year=release_date, limit=50, media_type='movie')
-                            if response2 != []:
-                                break
+                    #if response2 == []:
+                    #    for xi in alternative_titles:
+                    #        response2 = TheMovieDB.get_tastedive_data_scrape(query=xi, year=release_date, limit=50, media_type='movie',item_id=i['id'])
+                    #        if response2 != []:
+                    #            break
 
                     """
                     response2 = TheMovieDB.get_tastedive_data_scrape(query=i['title'], year=i['release_date'][:4], limit=50, media_type='movie')
@@ -854,9 +988,12 @@ def get_tmdb_window(window_type):
                         response2 = TheMovieDB.get_tastedive_data_scrape(query=i['title'], year=i['release_date'][:4], limit=50, media_type='movie')
                     """
 
-                    response3.append({'slug': i['title'], 'name': i['title'], 'year': release_date, 'media_type': 'movie'})
+                    #if not {'name': i['title'], 'year': release_date, 'media_type': i['media_type'], 'item_id': i['id']} in response3:
+                    if not str("'item_id': %s" % (i['id'])) in str(response3):
+                        response3.append({'name': i['title'], 'year': release_date, 'media_type': i['media_type'], 'item_id': i['id']})
                     for x in response2:
-                        if x not in response3:
+                        #if not x in response3:
+                        if not str("'item_id': %s" % (x['item_id'])) in str(response3):
                             response3.append(x)
 
                 self.mode = mode='tastedive&' + str('movie')
@@ -864,6 +1001,7 @@ def get_tmdb_window(window_type):
                 self.search_str = response3
                 self.filter_label='TasteDive Based on Recently Watched Movies:'
                 self.fetch_data()
+                #xbmc.log(str(str('Line ')+str(getframeinfo(currentframe()).lineno)+'___'+str(getframeinfo(currentframe()).filename))+'===>OPENINFO', level=xbmc.LOGINFO)
                 self.update()
                 Utils.hide_busy()
                 return
@@ -874,15 +1012,17 @@ def get_tmdb_window(window_type):
                 response3 = []
                 for i in response:
                     #response2 = TheMovieDB.get_tastedive_data(query=i['name'], limit=50, media_type='tv')
-                    response2 = TheMovieDB.get_tastedive_data_scrape(query=i['name'], year=i['first_air_date'][:4], limit=50, media_type='tv')
+                    response2 = TheMovieDB.get_tastedive_data_scrape(query=i['name'], year=i['first_air_date'][:4], limit=50, media_type='tv',item_id=i['id'])
                     for x in response2:
-                        if x not in response3:
+                        #if x not in response3:
+                        if not str("'item_id': %s" % (x['item_id'])) in str(response3):
                             response3.append(x)
                 self.mode = mode='tastedive&' + str('tv')
                 self.type = 'tv'
                 self.search_str = response3
                 self.filter_label='TasteDive Based on Recently Watched TV:'
                 self.fetch_data()
+                #xbmc.log(str(str('Line ')+str(getframeinfo(currentframe()).lineno)+'___'+str(getframeinfo(currentframe()).filename))+'===>OPENINFO', level=xbmc.LOGINFO)
                 self.update()
                 Utils.hide_busy()
                 return
@@ -1064,6 +1204,7 @@ def get_tmdb_window(window_type):
             wm.window_stack_empty()
 
         def fetch_data(self, force=False):
+            #xbmc.log(str(str('Line ')+str(getframeinfo(currentframe()).lineno)+'___'+str(getframeinfo(currentframe()).filename))+'===>OPENINFO', level=xbmc.LOGINFO)
             from pathlib import Path
             addon = xbmcaddon.Addon()
             addon_path = addon.getAddonInfo('path')
@@ -1081,6 +1222,7 @@ def get_tmdb_window(window_type):
                 pass
             """
             if wm.pop_video_list == True:
+                #xbmc.log(str(str('Line ')+str(getframeinfo(currentframe()).lineno)+'___'+str(getframeinfo(currentframe()).filename))+'===>OPENINFO', level=xbmc.LOGINFO)
                 self.page = int(wm.prev_window['params']['page'])
                 self.mode = wm.prev_window['params']['mode']
                 self.type = wm.prev_window['params']['type']
@@ -1105,6 +1247,7 @@ def get_tmdb_window(window_type):
                 return info
 
             if self.mode == 'reopen_window':
+                #xbmc.log(str(str('Line ')+str(getframeinfo(currentframe()).lineno)+'___'+str(getframeinfo(currentframe()).filename))+'===>OPENINFO', level=xbmc.LOGINFO)
                 fetch_data_dict_file = open(Path(addonUserDataFolder + '/fetch_data_dict'), "r")
                 import ast
                 fetch_data_dict_read = ast.literal_eval(fetch_data_dict_file.read())
@@ -1356,7 +1499,8 @@ def get_tmdb_window(window_type):
                 fetch_data_dict_file.close()
                 return info
 
-            elif 'tastedive' in self.mode:
+            elif 'tastedive' in str(self.mode):
+                #xbmc.log(str(str('Line ')+str(getframeinfo(currentframe()).lineno)+'___'+str(getframeinfo(currentframe()).filename))+'===>OPENINFO', level=xbmc.LOGINFO)
                 movies = self.search_str
                 media_type = self.mode.replace('tastedive&','')
                 self.type = media_type
@@ -1368,18 +1512,20 @@ def get_tmdb_window(window_type):
                 for i in movies:
                     if x + 1 <= page * 20 and x + 1 > (page - 1) *  20:
                         try: 
-                            if media_type == 'movie':
-                                response1 = TheMovieDB.get_movie_info(i['name'], year=i['year'], use_dialog=False)
-                                if not response1:
-                                    response1 = TheMovieDB.get_movie_info(i['name'], use_dialog=False)
+                            if i['media_type'] == 'movie':
+                                #response1 = TheMovieDB.get_movie_info(i['name'], year=i['year'], use_dialog=False, item_id=i['item_id'])
+                                response1 = TheMovieDB.single_movie_info(movie_id=i['item_id'], cache_time=7)
+                                #if not response1:
+                                #    response1 = TheMovieDB.get_movie_info(i['name'], use_dialog=False, item_id=i['item_id'])
                                 response1['media_type'] = 'movie'
                             else:
-                                #xbmc.log(str(i['name'])+'get_tastedive_data_scrape===>OPENINFO', level=xbmc.LOGINFO)
-                                response1 = TheMovieDB.get_tvshow_info(i['name'], year=i['year'], use_dialog=False)
-                                if not response1:
-                                    response1 = TheMovieDB.get_tvshow_info(i['name'], use_dialog=False)
+                                #response1 = TheMovieDB.get_tvshow_info(i['name'], year=i['year'], use_dialog=False, item_id=i['item_id'])
+                                response1 = TheMovieDB.single_tvshow_info(tvshow_id=i['item_id'], cache_time=7)
+                                #if not response1:
+                                #    response1 = TheMovieDB.get_tvshow_info(i['name'], use_dialog=False, item_id=i['item_id'])
                                 response1['media_type'] = 'tv'
                         except TypeError:
+                            #xbmc.log(str(i)+'except_tastedive===>OPENINFO', level=xbmc.LOGINFO)
                             continue
                         responses['results'].append(response1)
                         x = x + 1
@@ -1430,6 +1576,7 @@ def get_tmdb_window(window_type):
                 fetch_data_dict['self.search_str'] = self.search_str
                 fetch_data_dict_file.write(str(fetch_data_dict))
                 fetch_data_dict_file.close()
+                #xbmc.log(str(str('Line ')+str(getframeinfo(currentframe()).lineno)+'___'+str(getframeinfo(currentframe()).filename))+'===>OPENINFO', level=xbmc.LOGINFO)
                 return info
 
             elif self.mode == 'trakt':

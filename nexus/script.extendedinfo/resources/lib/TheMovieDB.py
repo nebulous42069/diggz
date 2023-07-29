@@ -307,7 +307,9 @@ def search_company(company_name):
     else:
         return ''
 
-def get_movie_info(movie_label, year=None, use_dialog=True):
+def get_movie_info(movie_label, year=None, use_dialog=True, item_id=None):
+    if item_id:
+        return single_movie_info(movie_id=item_id, cache_time=7)
     #movies = movie_label.split(' / ')
     if year:
         year_string = '&primary_release_year=' + str(year)
@@ -329,7 +331,9 @@ def get_movie_info(movie_label, year=None, use_dialog=True):
         return response['results'][0]
     return False
 
-def get_tvshow_info(tvshow_label, year=None, use_dialog=True):
+def get_tvshow_info(tvshow_label, year=None, use_dialog=True, item_id=None):
+    if item_id:
+        return single_tvshow_info(tvshow_id=item_id, cache_time=7)
     #tvshow = tvshow_label.split(' / ')
     if year:
         year_string = '&first_air_date_year=' + str(year)
@@ -429,77 +433,25 @@ def get_fanart_clearlogo(tmdb_id=None, media_type=None):
     return clearlogo
 
 
-def get_tastedive_google_url(query='', year='', media_type=None, cache_days=14, folder='Google'):
-	import time, hashlib, xbmcvfs, os
-	import re, json
-	import requests, html
-	from urllib.parse import quote_plus
-	headers = {
-		'Accept' : '*/*',
-		'Accept-Language': 'en-US,en;q=0.5',
-		'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.82',
-	}
-	imdb_title = query + ' (' + str(year) + ') ' + str(media_type)
-	url='https://www.google.com/search?q=tastedive+' + quote_plus(imdb_title)
-
-	now = time.time()
-	url = url.encode('utf-8')
-	hashed_url = hashlib.md5(url).hexdigest()
-
-	cache_path = xbmcvfs.translatePath(os.path.join(Utils.ADDON_DATA_PATH, folder)) if folder else xbmcvfs.translatePath(os.path.join(Utils.ADDON_DATA_PATH))
-	cache_seconds = int(cache_days * 86400.0)
-	if not cache_days:
-		xbmcgui.Window(10000).clearProperty(hashed_url)
-		xbmcgui.Window(10000).clearProperty('%s_timestamp' % hashed_url)
-	prop_time = xbmcgui.Window(10000).getProperty('%s_timestamp' % hashed_url)
-	if prop_time and now - float(prop_time) < cache_seconds:
-		try:
-			prop = json.loads(xbmcgui.Window(10000).getProperty(hashed_url))
-			if prop:
-				return prop
-		except Exception as e:
-			pass
-	path = os.path.join(cache_path, '%s.txt' % hashed_url)
-
-	imdb_title = None
-	taste_dive_url = None
-	if xbmcvfs.exists(path) and ((now - os.path.getmtime(path)) < cache_seconds):
-		results = Utils.read_from_file(path)
-	else:
-		response = requests.get(url, headers=headers).text
-		split_response = response.split('<div id="search">')[1].split('<div id="bottomads">')[0].split('<cite')
-		for i in split_response:
-			try: google_title = i.split('<h3 class')[1].split('</h3>')[0].split('">')[1]
-			except: google_title = None
-			if google_title:
-				imdb_title = google_title
-				if '<a href="' in str(i):
-					google_link = i.split('<a href="')[1].split('"')[0]
-				if 'tastedive.com' in str(google_link):
-					taste_dive_url = google_link
-				break
-
-		try:
-			Utils.save_to_file(taste_dive_url, hashed_url, cache_path)
-		except:
-			Utils.log('Exception: Could not get new JSON data from %s. Tryin to fallback to cache' % url)
-			Utils.log(url)
-			taste_dive_url = Utils.read_from_file(path) if xbmcvfs.exists(path) else []
-	if not taste_dive_url:
-		return None
-	xbmcgui.Window(10000).setProperty('%s_timestamp' % hashed_url, str(now))
-	xbmcgui.Window(10000).setProperty(hashed_url, json.dumps(taste_dive_url))
-	return taste_dive_url
-
-
-def get_tastedive_data_scrape_NEW(url='', query='', year='', limit=20, media_type=None, cache_days=14, folder='TasteDive'):
+def get_tastedive_data_scrape(url='', query='', year='', limit=20, media_type=None, cache_days=14, folder='TasteDive', item_id=None):
 	import time, hashlib, xbmcvfs, os
 	import re, json, requests, html
-	url = get_tastedive_google_url(query, year, media_type)
+	
+	from urllib.parse import quote_plus
+
+	if item_id:
+		url = 'https://tastedive.com/%s/%s' % (item_id,media_type)
+	else:
+		if 'show' in media_type or 'tv' in media_type:
+			response = get_tvshow_info(tvshow_label=query,year=year,use_dialog=False)
+			item_id = response['id']
+		else:
+			response = get_movie_info(movie_label=query,year=year,use_dialog=False)
+			item_id = response['id']
+		url = 'https://tastedive.com/%s' % (item_id,media_type)
 
 	now = time.time()
 	url = url.encode('utf-8')
-	#xbmc.log(str(url)+'query_get_tastedive_data_scrape===>OPENINFO', level=xbmc.LOGINFO)
 	hashed_url = hashlib.md5(url).hexdigest()
 
 	cache_path = xbmcvfs.translatePath(os.path.join(Utils.ADDON_DATA_PATH, folder)) if folder else xbmcvfs.translatePath(os.path.join(Utils.ADDON_DATA_PATH))
@@ -516,236 +468,81 @@ def get_tastedive_data_scrape_NEW(url='', query='', year='', limit=20, media_typ
 		except Exception as e:
 			pass
 	path = os.path.join(cache_path, '%s.txt' % hashed_url)
-	imdb_header = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
-	imdb_header = {'User-Agent': 'Mozilla/5.1'}
 
-	#xbmc.log(str(urls)+'query_get_tastedive_data_scrape===>OPENINFO', level=xbmc.LOGINFO)
-	#xbmc.log(str(path)+'query_get_tastedive_data_scrape===>OPENINFO', level=xbmc.LOGINFO)
 	if xbmcvfs.exists(path) and ((now - os.path.getmtime(path)) < cache_seconds):
 		results = Utils.read_from_file(path)
 	else:
-		response = requests.get(url, headers=imdb_header)
-		if '[200]' in str(response):
-			#xbmc.log(str(response.text)+'query_get_tastedive_data_scrape===>OPENINFO', level=xbmc.LOGINFO)
+
+		if item_id:
 			if 'show' in media_type or 'tv' in media_type:
-				response_list = response.text.split(',"shows":[{')
+				#response = extended_tvshow_info(item_id)
+				response = single_tvshow_info(tvshow_id=item_id, cache_time=7)
 				type = 'show'
-				test = 'urn:entity:tv_show'
 			else:
-				response_list = response.text.split(',"movies":[{')
+				#response = extended_movie_info(item_id)
+				response = single_movie_info(movie_id=item_id, cache_time=7)
 				type = 'movie'
-				test = 'urn:entity:movie'
-			#xbmc.log(str(response_list)+'query_get_tastedive_data_scrape===>OPENINFO', level=xbmc.LOGINFO)
-			results = []
-			for x in response_list:
-				x_split = x.split('"}],"')
-				for y in x_split:
-					i_split = y.split(',{"id":')
-					for i in i_split:
-						if test in str(i):
-							if 'urn:entity:artist' in str(i) or 'urn:entity:book' in str(i) or 'urn:entity:podcast' in str(i) or 'urn:entity:videogame' in str(i):
-								continue
-							#xbmc.log(str(i)+'get_tastedive_data_scrape===>OPENINFO', level=xbmc.LOGINFO)
-							title = html.unescape(i.split('"entityName":')[1].split(',"')[0]).replace('"','')
-							try: title = title.decode('unicode_escape')
-							except: pass
-							slug = html.unescape(i.split('"slug":')[1].split(',"')[0])
-							try: year = int(str(html.unescape(i.split('"disambiguation":')[1].split(',"')[0])).replace('"',''))
-							except: continue
-							results.append({'slug': slug, 'name': title, 'year': year, 'media_type': type})
-							#xbmc.log(str({'slug': slug, 'name': title, 'year': year, 'media_type': type})+'get_tastedive_data_scrape===>OPENINFO', level=xbmc.LOGINFO)
+		else:
+			if 'show' in media_type or 'tv' in media_type:
+				response = get_tvshow_info(tvshow_label=query,year=year,use_dialog=False)
+				item_id = response['id']
+				#response = extended_tvshow_info(item_id)
+				response = single_tvshow_info(tvshow_id=item_id, cache_time=7)
+				type = 'show'
+			else:
+				response = get_movie_info(movie_label=query,year=year,use_dialog=False)
+				item_id = response['id']
+				#response = extended_movie_info(item_id)
+				response = single_movie_info(movie_id=item_id, cache_time=7)
+				type = 'movie'
+		imdb_response = get_imdb_recommendations(imdb_id=response['imdb_id'], return_items=True)
+		#xbmc.log(str(imdb_response)+'query_get_tastedive_data_scrape===>OPENINFO', level=xbmc.LOGINFO)
+		results = []
+		for i in response['similar']['results']:
+			#xbmc.log(str(i)+'query_get_tastedive_data_scrape===>OPENINFO', level=xbmc.LOGINFO)
+			try: votes = i['Votes']
+			except: votes = i['vote_count']
+			if votes >= 100:
+				try: title = i['title']
+				except: title = i['name']
+				try: year = i['year']
+				except: 
+					try: year = int(i['first_air_date'][0:4])
+					except: 
+						try: year = int(i['Premiered'][0:4])
+						except: year = int(i['release_date'][0:4])
+				results.append({'name': title, 'year': year, 'media_type':  i['media_type'], 'item_id': i['id']})
+		for i in imdb_response:
+			#xbmc.log(str(i)+'query_get_tastedive_data_scrape===>OPENINFO', level=xbmc.LOGINFO)
+			try: title = i['title']
+			except: title = i['name']
+			try: year = i['year']
+			except: 
+				try: year = int(i['first_air_date'][0:4])
+				except: 
+					try: year = int(i['Premiered'][0:4])
+					except: year = int(i['release_date'][0:4])
+			if not str("'item_id': %s" % (i['id'])) in str(results):
+				try: votes = i['Votes']
+				except: votes = i['vote_count']
+				if votes >= 100:
+					results.append({'name': title, 'year': year, 'media_type':  i['media_type'], 'item_id': i['id']})
+
+
 		try:
 			Utils.save_to_file(results, hashed_url, cache_path)
 		except:
 			Utils.log('Exception: Could not get new JSON data from %s. Tryin to fallback to cache' % url)
 			Utils.log(response)
 			results = Utils.read_from_file(path) if xbmcvfs.exists(path) else []
+
 	if not results:
 		return []
 	xbmcgui.Window(10000).setProperty('%s_timestamp' % hashed_url, str(now))
 	xbmcgui.Window(10000).setProperty(hashed_url, json.dumps(results))
+
 	return results
 
-#def get_tastedive_data_scrape_OLD(url='', query='', year='', limit=20, media_type=None, cache_days=14, folder='TasteDive'):
-def get_tastedive_data_scrape(url='', query='', year='', limit=20, media_type=None, cache_days=14, folder='TasteDive'):
-    import time, hashlib, xbmcvfs, os
-    import re, json
-
-    regex = re.compile('[^a-zA-Z0-9]')
-    import string
-    query = string.capwords(query)
-    query = query.replace(' Ix',' IX').replace(' Viii',' VIII').replace(' Vii',' VII').replace(' Vi',' VI').replace(' Iv',' IV').replace(' Iii',' III').replace(' Ii',' II')
-    query = query.replace('-', ' ')
-    query = regex.sub('-', query).replace('--','-')
-    query = query.replace('--','-')
-    if query[-1:] == '-':
-        query = query[:-1]
-    #xbmc.log(str(query)+'query_get_tastedive_data_scrape===>OPENINFO', level=xbmc.LOGINFO)
-    if query.replace('-','') == '':
-        return []
-    query2 = query + '-' + str(year)
-    if 'show' in media_type or 'tv' in media_type:
-        query3 = query + '-TV-Show' 
-        url_like = 'shows/like'
-    else:
-        query3 = query + '-Movie' 
-        url_like = 'movies/like'
-    url = 'https://tastedive.com/%s/%s' % (url_like, query)
-    url2 = 'https://tastedive.com/%s/%s' % (url_like, query2)
-    url3 = 'https://tastedive.com/%s/%s' % (url_like, query3)
-    urls = [url2, url, url3]
-    if 'show' in media_type or 'tv' in media_type:
-        urls.append('https://tastedive.com/%s/%s' % (url_like, query+'-1'))
-        urls.append('https://tastedive.com/%s/%s' % (url_like, query+'-1-' + str(year)))
-    import requests, html
-    #response = requests.get('https://tastedive.com/shows/like/Star-Trek-Deep-Space-Nine')
-    #response = requests.get('https://tastedive.com/shows/like/Star-Trek-Deep-Space-Nine-1993')
-    #response = requests.get('https://tastedive.com/shows/like/Star-Trek-Deep-Space-Nine-TV-Show')
-
-    #response = requests.get('https://tastedive.com/movies/like/Point-Break')
-    #response = requests.get('https://tastedive.com/movies/like/Point-Break-Movie')
-    #response = requests.get('https://tastedive.com/movies/like/Point-Break-1991')
-
-    #xbmc.log(str(urls)+'query_get_tastedive_data_scrape===>OPENINFO', level=xbmc.LOGINFO)
-    now = time.time()
-    url2 = url2.encode('utf-8')
-    hashed_url = hashlib.md5(url2).hexdigest()
-
-    cache_path = xbmcvfs.translatePath(os.path.join(Utils.ADDON_DATA_PATH, folder)) if folder else xbmcvfs.translatePath(os.path.join(Utils.ADDON_DATA_PATH))
-    cache_seconds = int(cache_days * 86400.0)
-    if not cache_days:
-        xbmcgui.Window(10000).clearProperty(hashed_url)
-        xbmcgui.Window(10000).clearProperty('%s_timestamp' % hashed_url)
-    prop_time = xbmcgui.Window(10000).getProperty('%s_timestamp' % hashed_url)
-    if prop_time and now - float(prop_time) < cache_seconds:
-        try:
-            prop = json.loads(xbmcgui.Window(10000).getProperty(hashed_url))
-            if prop:
-                return prop
-        except Exception as e:
-            pass
-    path = os.path.join(cache_path, '%s.txt' % hashed_url)
-    imdb_header = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
-    imdb_header = {'User-Agent': 'Mozilla/5.1'}
-
-    #xbmc.log(str(urls)+'query_get_tastedive_data_scrape===>OPENINFO', level=xbmc.LOGINFO)
-    #xbmc.log(str(path)+'query_get_tastedive_data_scrape===>OPENINFO', level=xbmc.LOGINFO)
-    if xbmcvfs.exists(path) and ((now - os.path.getmtime(path)) < cache_seconds):
-        results = Utils.read_from_file(path)
-    else:
-        response = '[404]'
-        for url in urls:
-            if '[404]' in str(response):
-                response = requests.get(url, headers=imdb_header)
-            if '[200]' in str(response):
-                #xbmc.log(str(response.text)+'query_get_tastedive_data_scrape===>OPENINFO', level=xbmc.LOGINFO)
-                if 'show' in media_type or 'tv' in media_type:
-                    response_list = response.text.split(',"shows":[{')
-                    type = 'show'
-                    test = 'urn:entity:tv_show'
-                else:
-                    response_list = response.text.split(',"movies":[{')
-                    type = 'movie'
-                    test = 'urn:entity:movie'
-                #xbmc.log(str(response_list)+'query_get_tastedive_data_scrape===>OPENINFO', level=xbmc.LOGINFO)
-                results = []
-                for x in response_list:
-                    x_split = x.split('"}],"')
-                    for y in x_split:
-                        i_split = y.split(',{"id":')
-                        for i in i_split:
-                            if test in str(i):
-                                if 'urn:entity:artist' in str(i) or 'urn:entity:book' in str(i) or 'urn:entity:podcast' in str(i) or 'urn:entity:videogame' in str(i):
-                                    continue
-                                #xbmc.log(str(i)+'get_tastedive_data_scrape===>OPENINFO', level=xbmc.LOGINFO)
-                                title = html.unescape(i.split('"entityName":')[1].split(',"')[0]).replace('"','')
-                                try: title = title.decode('unicode_escape')
-                                except: pass
-                                slug = html.unescape(i.split('"slug":')[1].split(',"')[0])
-                                try: year = int(str(html.unescape(i.split('"disambiguation":')[1].split(',"')[0])).replace('"',''))
-                                except: continue
-                                results.append({'slug': slug, 'name': title, 'year': year, 'media_type': type})
-                                #xbmc.log(str({'slug': slug, 'name': title, 'year': year, 'media_type': type})+'get_tastedive_data_scrape===>OPENINFO', level=xbmc.LOGINFO)
-                    """
-                    try:
-                        if 'Tag__Container' in str(i):
-                            type = i.split('class="Tag__Container')[1].split('</div>')[0].split('>')[1]
-                            if 'Show' in type:
-                                type = 'show'
-                            else:
-                                type = 'movie'
-                            title = i.split('class="Tag__Container')[1].split('__Title')[1].split('</div>')[0].split('>')[1]
-                            title = html.unescape(title)
-                            year = i.split('class="Tag__Container')[1].split('EntityCardstyles__Info')[1].split('</div>')[0].split('>')[1]
-                            #xbmc.log(str({'name': title, 'year': year, 'media_type': type})+'get_tastedive_data_scrape===>OPENINFO', level=xbmc.LOGINFO)
-                            results.append({'name': title, 'year': year, 'media_type': type})
-                    except:
-                        pass
-                    """
-                if results == []:
-                    response = '[404]'
-                else:
-                    break
-
-        try:
-            Utils.save_to_file(results, hashed_url, cache_path)
-        except:
-            Utils.log('Exception: Could not get new JSON data from %s. Tryin to fallback to cache' % url)
-            Utils.log(response)
-            results = Utils.read_from_file(path) if xbmcvfs.exists(path) else []
-    if not results:
-        return []
-    xbmcgui.Window(10000).setProperty('%s_timestamp' % hashed_url, str(now))
-    xbmcgui.Window(10000).setProperty(hashed_url, json.dumps(results))
-    return results
-
-
-def get_tastedive_data(url='', query='', limit=20, media_type=None, cache_days=9999, folder='TasteDive'):
-    url = 'https://tastedive.com/api/similar?info=1&q='+str(query)+'&limit=' + str(limit)
-    if media_type:
-        if 'movie' in media_type:
-            url = url.replace('&q=','&q=movie:') + '&type=' + 'movies'
-        else:
-            url = url.replace('&q=','&q=show:')  + '&type=' + 'shows'
-    response = Utils.get_JSON_response(url, cache_days, folder)
-    result = []
-    try:
-        for i in response['Similar']['Results']:
-            for x in i['wTeaser'].split(' '):
-                if len(x) == 4 and x.isnumeric():
-                    result.append({'name': i['Name'], 'year': x, 'media_type': i['Type']})
-                    break
-    except:
-        pass
-    return result
-
-def get_tastedive_items(movies, page=0):
-    responses = {'page': 1, 'results': [],'total_pages': 1, 'total_results': 0}
-    for i in movies:
-        if (x + 1 <= page * 20 and x + 1 > (page - 1) *  20) or page == 0:
-            try: 
-                if 'movie' in i['media_type']:
-                    response1 = get_movie_info(i['name'], year=i['year'], use_dialog=False)
-                    if not response1:
-                        response1 = get_movie_info(i['name'], use_dialog=False)
-                    response1['media_type'] = 'movie'
-                elif 'show' in i['media_type']:
-                    response1 = get_tvshow_info(i['name'], year=i['year'], use_dialog=False)
-                    if not response1:
-                        response1 = get_tvshow_info(i['name'], use_dialog=False)
-                    response1['media_type'] = 'tv'
-            except TypeError:
-                continue
-            responses['results'].append(response1)
-            x = x + 1
-        else:
-            x = x + 1
-    total_pages = int(x/20) + (1 if x % 20 > 0 else 0)
-    total_results = x
-    responses['total_pages'] = total_pages
-    responses['total_results'] = total_results
-    listitems = handle_tmdb_multi_search(responses['results'])
-    return listitems
 
 def get_fanart_data(url='', tmdb_id=None, media_type=None, cache_days=14, folder='FanartTV'):
     fanart_api = fanart_api_key()
@@ -899,7 +696,7 @@ def single_movie_info(movie_id=None, dbid=None, cache_time=14):
     if not movie_id:
         return None
     session_str = ''
-    response = get_tmdb_data('movie/%s?append_to_response=external_ids,alternative_titles&language=%s&%s' % (movie_id, xbmcaddon.Addon().getSetting('LanguageID'), session_str), cache_time)
+    response = get_tmdb_data('movie/%s?append_to_response=external_ids,recommendations,rating,alternative_titles&language=%s&%s' % (movie_id, xbmcaddon.Addon().getSetting('LanguageID'), session_str), cache_time)
     #response = get_tmdb_data('movie/%s?append_to_response=alternative_titles,credits,images,keywords,releases,videos,translations,similar,reviews,rating&include_image_language=en,null,%s&language=%s&%s' % (movie_id, xbmcaddon.Addon().getSetting('LanguageID'), xbmcaddon.Addon().getSetting('LanguageID'), session_str), cache_time)
     if not response:
         Utils.notify('Could not get movie information', sound=False)
@@ -917,6 +714,9 @@ def single_movie_info(movie_id=None, dbid=None, cache_time=14):
         'original_title': response['original_title'],
         'alternative_titles': response['alternative_titles'],
         'overview': response['overview'],
+        'similar': response['recommendations'],
+        'Rating': Utils.fetch(response, 'vote_average'),
+        'Votes': Utils.fetch(response, 'vote_count'),
         'popularity': response['popularity'],
         'poster_path': response['poster_path'],
         'release_date': response['release_date'],
@@ -931,7 +731,7 @@ def single_tvshow_info(tvshow_id=None, cache_time=7, dbid=None):
     if not tvshow_id:
         return None
     session_str = ''
-    response = get_tmdb_data('tv/%s?append_to_response=external_ids,alternative_titles&language=%s&%s' % (tvshow_id, xbmcaddon.Addon().getSetting('LanguageID'), session_str), cache_time)
+    response = get_tmdb_data('tv/%s?append_to_response=external_ids,recommendations,rating,alternative_titles&language=%s&%s' % (tvshow_id, xbmcaddon.Addon().getSetting('LanguageID'), session_str), cache_time)
     #response = get_tmdb_data('tv/%s?append_to_response=alternative_titles,content_ratings,credits,external_ids,images,keywords,rating,similar,translations,videos&language=%s&include_image_language=en,null,%s&%s' % (tvshow_id, xbmcaddon.Addon().getSetting('LanguageID'), xbmcaddon.Addon().getSetting('LanguageID'), session_str), cache_time)
     if not response:
         return False
@@ -948,11 +748,15 @@ def single_tvshow_info(tvshow_id=None, cache_time=7, dbid=None):
         'id': response['id'],
         'imdb_id': Utils.fetch(Utils.fetch(response, 'external_ids'), 'imdb_id'),
         'name': response['name'],
+        'title': response['name'],
         'origin_country': response['origin_country'],
         'original_language': response['original_language'],
         'original_name': response['original_name'],
         'alternative_titles': alternative_titles,
         'overview': response['overview'],
+        'similar': response['recommendations'],
+        'Rating': Utils.fetch(response, 'vote_average'),
+        'Votes': Utils.fetch(response, 'vote_count'),
         'popularity': response['popularity'],
         'poster_path': response['poster_path'],
         'vote_average': response['vote_average'],
@@ -1313,33 +1117,106 @@ def get_set_movies(set_id):
     else:
         return [], {}
 
-def get_imdb_recommendations(imdb_id=None, return_items=False):
-    import requests
-    imdb_url = 'https://www.imdb.com/title/' + str(imdb_id)
-    imdb_header = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
-    imdb_response = requests.get(imdb_url, headers=imdb_header)
+def get_imdb_recommendations(imdb_id=None, return_items=False, cache_days=14, folder='IMDB'):
 
-    #imdb_response.text
-    list_container = str(imdb_response.text).split('<')
-    toggle = False
-    movies = []
-    for i in list_container:
-        if 'StaticFeature_MoreLikeThis' in str(i) or 'MoreLikeThis' in str(i):
-            toggle = True
-        if toggle == True:
-            if '/title/tt' in str(i):
-                for y in str(i).split('"'):
-                    if '/title/tt' in str(y):
-                        for j in str(y).split('/'):
-                            if 'tt' in str(j) and str(j).replace('tt','').isnumeric():
-                                if str(j) not in str(movies):
-                                    movies.append(j)
-        if 'StaticFeature_Storyline' in str(i) or 'Storyline' in str(i):
-            toggle = False
-    if return_items == False:
-        return movies
-    else:
-        return get_imdb_watchlist_items(movies=movies, limit=0)
+	import time, hashlib, xbmcvfs, os
+	import re, json, requests, html
+	
+	imdb_url = 'https://www.imdb.com/title/' + str(imdb_id)
+	imdb_url2 = 'https://www.imdb.com/title/' + str(imdb_id) + '[2]'
+	url = imdb_url
+	url2 = imdb_url2
+	imdb_header = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
+	
+	now = time.time()
+	url = url.encode('utf-8')
+	hashed_url = hashlib.md5(url).hexdigest()
+	cache_path = xbmcvfs.translatePath(os.path.join(Utils.ADDON_DATA_PATH, folder)) if folder else xbmcvfs.translatePath(os.path.join(Utils.ADDON_DATA_PATH))
+	url2 = url2.encode('utf-8')
+	hashed_url2 = hashlib.md5(url2).hexdigest()
+	cache_path2 = xbmcvfs.translatePath(os.path.join(Utils.ADDON_DATA_PATH, folder)) if folder else xbmcvfs.translatePath(os.path.join(Utils.ADDON_DATA_PATH))
+	cache_seconds = int(cache_days * 86400.0)
+	if not cache_days:
+		xbmcgui.Window(10000).clearProperty(hashed_url)
+		xbmcgui.Window(10000).clearProperty('%s_timestamp' % hashed_url)
+	prop_time = xbmcgui.Window(10000).getProperty('%s_timestamp' % hashed_url)
+	if prop_time and now - float(prop_time) < cache_seconds:
+		try:
+			prop = json.loads(xbmcgui.Window(10000).getProperty(hashed_url))
+			if prop:
+				return prop
+		except Exception as e:
+			pass
+	path = os.path.join(cache_path, '%s.txt' % hashed_url)
+	path2 = os.path.join(cache_path2, '%s[2].txt' % hashed_url2)
+	if xbmcvfs.exists(path) and ((now - os.path.getmtime(path)) < cache_seconds):
+		results = Utils.read_from_file(path)
+		results2 = Utils.read_from_file(path2)
+		if return_items == False:
+			if not results2:
+				return []
+			xbmcgui.Window(10000).setProperty('%s_timestamp' % hashed_url2, str(now))
+			xbmcgui.Window(10000).setProperty(hashed_url2, json.dumps(results2))
+			return results2
+		else:
+			if not results:
+				return []
+			xbmcgui.Window(10000).setProperty('%s_timestamp' % hashed_url, str(now))
+			xbmcgui.Window(10000).setProperty(hashed_url, json.dumps(results))
+			return results
+
+	else:
+		imdb_response = requests.get(imdb_url, headers=imdb_header)
+
+		list_container = str(imdb_response.text).split('<')
+		toggle = False
+		movies = []
+		for i in list_container:
+			if 'StaticFeature_MoreLikeThis' in str(i) or 'MoreLikeThis' in str(i):
+				toggle = True
+			if toggle == True:
+				if '/title/tt' in str(i):
+					for y in str(i).split('"'):
+						if '/title/tt' in str(y):
+							for j in str(y).split('/'):
+								if 'tt' in str(j) and str(j).replace('tt','').isnumeric():
+									if str(j) not in str(movies):
+										movies.append(j)
+			if 'StaticFeature_Storyline' in str(i) or 'Storyline' in str(i):
+				toggle = False
+
+		if return_items == False:
+			results2 = movies
+			
+			try:
+				Utils.save_to_file(results2, hashed_url2, cache_path2)
+			except:
+				Utils.log('Exception: Could not get new JSON data from %s. Tryin to fallback to cache' % url)
+				Utils.log(response)
+				results2 = Utils.read_from_file(path2) if xbmcvfs.exists(path2) else []
+
+			if not results2:
+				return []
+			xbmcgui.Window(10000).setProperty('%s_timestamp' % hashed_url2, str(now))
+			xbmcgui.Window(10000).setProperty(hashed_url2, json.dumps(results2))
+			return results2
+		else:
+			results = get_imdb_watchlist_items(movies=movies, limit=0, imdb_url=imdb_url)
+
+			try:
+				Utils.save_to_file(results, hashed_url, cache_path)
+			except:
+				Utils.log('Exception: Could not get new JSON data from %s. Tryin to fallback to cache' % url)
+				Utils.log(response)
+				results = Utils.read_from_file(path) if xbmcvfs.exists(path) else []
+
+			if not results:
+				return []
+			xbmcgui.Window(10000).setProperty('%s_timestamp' % hashed_url, str(now))
+			xbmcgui.Window(10000).setProperty(hashed_url, json.dumps(results))
+			return results
+
+
 
 def get_imdb_watchlist_ids_1(ur_list_str=None, limit=0):
     import requests
@@ -1620,73 +1497,121 @@ def get_imdb_userlists_search(imdb_id=None):
 
 
 def get_imdb_watchlist_ids(ur_list_str=None, limit=0):
-    import requests
-    list_str=ur_list_str
+	import requests
+	list_str=ur_list_str
 
-    imdb_url = 'https://www.imdb.com/user/'+str(list_str)+'/watchlist'
-    imdb_header = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
-    imdb_response = requests.get(imdb_url, headers=imdb_header)
-    #from bs4 import BeautifulSoup
+	imdb_url = 'https://www.imdb.com/user/'+str(list_str)+'/watchlist'
+	imdb_header = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
+	imdb_response = requests.get(imdb_url, headers=imdb_header)
+	#from bs4 import BeautifulSoup
 
-    #html_soup = BeautifulSoup(imdb_response.text, 'html.parser')
+	#html_soup = BeautifulSoup(imdb_response.text, 'html.parser')
 
-    #episode_containers = html_soup.find_all('div', class_='article')
+	#episode_containers = html_soup.find_all('div', class_='article')
 
-    list_container = str(imdb_response.text,).split('<')
-    for i in list_container:
-        if 'IMDbReactWidgets.WatchlistWidget.push' in str(i):
-            list_container2 = i
-            break
+	list_container = str(imdb_response.text,).split('<')
+	for i in list_container:
+		if 'IMDbReactWidgets.WatchlistWidget.push' in str(i):
+			list_container2 = i
+			break
 
-    try: imdb_dict = str(list_container2).split('{')
-    except: return None
-    movies = []
-    x = 0
-    for i in imdb_dict:
-        if 'TITLE_TYPE' in str(i):
-            break
-        if 'position' in str(i):
-            #i
-            imdb_dict2 = str(imdb_dict[x + 1]).split('"')
-            for y in imdb_dict2:
-                if 'tt' in str(y):
-                    movies.append(y)
-        x = x + 1
-    del list_container
-    del list_container2
-    del imdb_dict2
-    del imdb_dict
-    del imdb_response
-    return movies
+	try: imdb_dict = str(list_container2).split('{')
+	except: return None
+	movies = []
+	x = 0
+	for i in imdb_dict:
+		if 'TITLE_TYPE' in str(i):
+			break
+		if 'position' in str(i):
+			#i
+			imdb_dict2 = str(imdb_dict[x + 1]).split('"')
+			for y in imdb_dict2:
+				if 'tt' in str(y):
+					movies.append(y)
+		x = x + 1
+	del list_container
+	del list_container2
+	del imdb_dict2
+	del imdb_dict
+	del imdb_response
+	return movies
 
-def get_imdb_watchlist_items(movies=None, limit=0):
-    listitems = None
-    x = 0
-    if not movies:
-        return None
-    for y in movies:
-        imdb_id = y
-        response = get_tmdb_data('find/%s?language=%s&external_source=imdb_id&' % (imdb_id, xbmcaddon.Addon().getSetting('LanguageID')), 13)
-        try:
-            response['movie_results'][0]['media_type'] = 'movie'
-            if listitems == None:
-                listitems = handle_tmdb_multi_search(response['movie_results'])
-            else:
-                listitems += handle_tmdb_multi_search(response['movie_results'])
-        except:
-            try:
-                response['tv_results'][0]['media_type'] = 'tv'
-                if listitems == None:
-                    listitems = handle_tmdb_multi_search(response['tv_results'])
-                else:
-                    listitems += handle_tmdb_multi_search(response['tv_results'])
-            except:
-                continue
-        if x + 1 == int(limit) and limit != 0:
-            break
-        x = x + 1
+def get_imdb_watchlist_items(movies=None, limit=0, cache_days=14, folder='IMDB', imdb_url=None):
+	import time, hashlib, xbmcvfs, os
+	import re, json, requests, html
 
-    return listitems
+	if imdb_url:
+		url = imdb_url
+	else:
+		url = 'imdb_'
+		for i in movies:
+			url = url + str(i)
+
+	now = time.time()
+	url = url.encode('utf-8')
+	hashed_url = hashlib.md5(url).hexdigest()
+	cache_path = xbmcvfs.translatePath(os.path.join(Utils.ADDON_DATA_PATH, folder)) if folder else xbmcvfs.translatePath(os.path.join(Utils.ADDON_DATA_PATH))
+	cache_seconds = int(cache_days * 86400.0)
+	if not cache_days:
+		xbmcgui.Window(10000).clearProperty(hashed_url)
+		xbmcgui.Window(10000).clearProperty('%s_timestamp' % hashed_url)
+	prop_time = xbmcgui.Window(10000).getProperty('%s_timestamp' % hashed_url)
+	if prop_time and now - float(prop_time) < cache_seconds:
+		try:
+			prop = json.loads(xbmcgui.Window(10000).getProperty(hashed_url))
+			if prop:
+				return prop
+		except Exception as e:
+			pass
+	path = os.path.join(cache_path, '%s.txt' % hashed_url)
+
+	if xbmcvfs.exists(path) and ((now - os.path.getmtime(path)) < cache_seconds):
+		listitems = Utils.read_from_file(path)
+	else:
+
+		listitems = None
+		x = 0
+		if not movies:
+			return None
+		for y in movies:
+			imdb_id = y
+			response = get_tmdb_data('find/%s?language=%s&external_source=imdb_id&' % (imdb_id, xbmcaddon.Addon().getSetting('LanguageID')), 13)
+			try:
+				response['movie_results'][0]['media_type'] = 'movie'
+				if listitems == None:
+					listitems = handle_tmdb_multi_search(response['movie_results'])
+				else:
+					listitems += handle_tmdb_multi_search(response['movie_results'])
+			except:
+				try:
+					response['tv_results'][0]['media_type'] = 'tv'
+					if listitems == None:
+						listitems = handle_tmdb_multi_search(response['tv_results'])
+					else:
+						listitems += handle_tmdb_multi_search(response['tv_results'])
+				except:
+					continue
+			if x + 1 == int(limit) and limit != 0:
+				break
+			x = x + 1
+
+		try:
+			Utils.save_to_file(listitems, hashed_url, cache_path)
+		except:
+			Utils.log('Exception: Could not get new JSON data from %s. Tryin to fallback to cache' % url)
+			Utils.log(response)
+			results = Utils.read_from_file(path) if xbmcvfs.exists(path) else []
+
+	if not listitems:
+		return []
+	xbmcgui.Window(10000).setProperty('%s_timestamp' % hashed_url, str(now))
+	xbmcgui.Window(10000).setProperty(hashed_url, json.dumps(listitems))
+
+	return listitems
+
+
+
+
 
 
 def get_imdb_list(list_str=None, limit=0):

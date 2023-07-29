@@ -909,10 +909,11 @@ def trakt_next_episode_rewatch(tmdb_id_num=None):
             for j in i['episodes']:
                 if last_watched_at == '':
                     last_watched_at = j['last_watched_at']
-                if last_watched_at != '' and last_watched_at <= j['last_watched_at']:
-                    last_watched_at  = j['last_watched_at']
-                    next_season_to_watch = i['number']
-                    next_ep_to_watch = j['number']
+                if j['last_watched_at'] != None:
+                    if last_watched_at != '' and last_watched_at <= j['last_watched_at']:
+                        last_watched_at  = j['last_watched_at']
+                        next_season_to_watch = i['number']
+                        next_ep_to_watch = j['number']
     except:
         last_watched_at = ''
         next_season_to_watch  = ''

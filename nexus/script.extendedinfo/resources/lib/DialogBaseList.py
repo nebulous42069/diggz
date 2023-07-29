@@ -237,7 +237,9 @@ class DialogBaseList(object):
 		data = self.fetch_data(force=force_update)
 		#xbmc.log(str(str('Line ')+str(getframeinfo(currentframe()).lineno)+'___'+str(getframeinfo(currentframe()).filename))+'===>OPENINFO', level=xbmc.LOGINFO)
 		if not data:
+			#xbmc.log(str(str('Line ')+str(getframeinfo(currentframe()).lineno)+'___'+str(getframeinfo(currentframe()).filename))+'===>OPENINFO', level=xbmc.LOGINFO)
 			return None
+		#xbmc.log(str(str('Line ')+str(getframeinfo(currentframe()).lineno)+'___'+str(getframeinfo(currentframe()).filename))+'===>OPENINFO', level=xbmc.LOGINFO)
 		self.listitems = data.get('listitems', [])
 		self.listitems2 = self.listitems
 		self.total_pages = data.get('results_per_page', '')
@@ -467,6 +469,7 @@ class DialogBaseList(object):
 
 	@Utils.busy_dialog
 	def update(self, force_update=False):
+		#xbmc.log(str(str('Line ')+str(getframeinfo(currentframe()).lineno)+'___'+str(getframeinfo(currentframe()).filename))+'===>OPENINFO', level=xbmc.LOGINFO)
 		self.prev_window = self.curr_window
 		if self.page == 1 and wm.prev_page_num != self.page:
 			self.append_window_stack_table('curr_window')

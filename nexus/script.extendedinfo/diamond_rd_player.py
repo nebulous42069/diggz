@@ -24,6 +24,11 @@ from resources.lib.TheMovieDB import get_tmdb_data
 
 from resources.lib.library import get_processor_info
 
+try:
+	from infotagger.listitem import ListItemInfoTag
+except:
+	pass
+
 import sys
 if sys.version_info[0] >= 3:
 	unicode = str
@@ -272,12 +277,12 @@ def prescrape_seren(tmdb=None, season=None, episode=None):
 	#response = requests.get(url, headers=headers)
 	#response = response.json()
 	response = get_trakt_data(url=url, cache_days=14, folder='Trakt')
-	print_log(response)
+	#print_log(response)
 	trakt_show_id = response[0]['show']['ids']['trakt']
 	url = 'https://api.trakt.tv/shows/'+str(trakt_show_id)+'/seasons'
 	#response = requests.get(url, headers=headers).json()
 	response = get_trakt_data(url=url, cache_days=14, folder='Trakt')
-	print_log(response)
+	#print_log(response)
 	for i in response:
 		if str(i['number']) == str(season):
 			trakt_season_id = i['ids']['trakt']
@@ -291,7 +296,7 @@ def prescrape_seren(tmdb=None, season=None, episode=None):
 	#xbmcgui.Window(10000).clearProperty('seren_stream_link')
 	#xbmcgui.Window(10000).clearProperty('seren_prescrape')
 	#xbmcgui.Window(10000).setProperty('seren_prescrape', 'True')
-	print_log(str(action_args)+'===>OPENINFO')
+	#print_log(str(action_args)+'===>OPENINFO')
 	#query = str('RunPlugin(%splugin://plugin.video.seren/?action=preScrape_diamond&action_args=%s&from_widget=true%s)' % ('"',urllib.parse.quote(str(action_args)),'"'))
 	
 	xbmcgui.Window(10000).setProperty('plugin.video.seren.runtime.tempSilent', 'True')
@@ -452,23 +457,28 @@ def download_tv_test(meta_info, filename):
 	for xi in meta_info['episode_list']:
 		if str(xi).lower() in filename:
 			episode_list_flag = True
+			#print_log(str('Line ')+str(getframeinfo(currentframe()).lineno)+'___'+str(getframeinfo(currentframe()).filename))
 			break
 	episode_list_flag2 = False
 	for xi in meta_info['episode_list2']:
 		if str(xi).lower() in filename:
 			episode_list_flag2 = True
+			#print_log(str('Line ')+str(getframeinfo(currentframe()).lineno)+'___'+str(getframeinfo(currentframe()).filename))
 			break
 	season_list_flag = False
 	for xi in meta_info['season_list']:
 		if str(xi).lower() in filename:
 			season_list_flag = True
+			#print_log(str('Line ')+str(getframeinfo(currentframe()).lineno)+'___'+str(getframeinfo(currentframe()).filename))
 			break
 	episode_name_flag = False
 	if str(meta_info['episode_name']).lower() in filename or str(meta_info['clean_episode_name']).lower() in filename:
 		if meta_info['episode_name'] in meta_info['alternate_titles']:
 			episode_name_flag = False
+			#print_log(str('Line ')+str(getframeinfo(currentframe()).lineno)+'___'+str(getframeinfo(currentframe()).filename))
 		else:
 			episode_name_flag = True
+			#print_log(str('Line ')+str(getframeinfo(currentframe()).lineno)+'___'+str(getframeinfo(currentframe()).filename))
 
 	if episode_name_flag == False:
 		name_word_list = meta_info['clean_episode_name'].split(' ')
@@ -491,15 +501,24 @@ def download_tv_test(meta_info, filename):
 
 	if episode_list_flag == True and episode_name_flag == False:
 		for xi in meta_info['season_ep_titles']:
+			if str(xi).lower() in str(meta_info['alternate_titles']).lower() or str(xi).lower() in str(meta_info['show_title']).lower() or str(xi).lower() in str(meta_info['show_title_clean']).lower():
+				continue
 			clean_episode_name = regex.sub(' ', xi.replace('\'s','s').replace('&','and')).replace('  ',' ').lower()
 			clean_episode_name = str(clean_episode_name).lower().replace('part ii','').replace('part 1','').replace('part 2','').replace('part i','').strip()
-			if not xi in meta_info['alternate_titles'] and (str(xi).lower() in filename or str(clean_episode_name).lower() in filename):
+			if len(xi) > 1 and not xi in meta_info['alternate_titles'] and (str(xi).lower() in filename or str(clean_episode_name).lower() in filename):
 				episode_list_flag = False
+				#print_log(str('Line ')+str(getframeinfo(currentframe()).lineno)+'___'+str(getframeinfo(currentframe()).filename))
 				break
+
+	if episode_list_flag == False and episode_name_flag == True:
+		if season_list_flag == False:
+			episode_name_flag = False
+			#print_log(str('Line ')+str(getframeinfo(currentframe()).lineno)+'___'+str(getframeinfo(currentframe()).filename))
 
 	show_title_flag = False
 	if str(meta_info['show_title']).lower() in filename or str(meta_info['show_title_clean']).lower() in filename:
 		show_title_flag = True
+		#print_log(str('Line ')+str(getframeinfo(currentframe()).lineno)+'___'+str(getframeinfo(currentframe()).filename))
 	if show_title_flag == False:
 		show_title_match = 0
 		show_title_split = str(meta_info['show_title_clean']).lower().split(' ')
@@ -508,6 +527,7 @@ def download_tv_test(meta_info, filename):
 				show_title_match = show_title_match + 1
 		if show_title_match >= len(show_title_split)-1 and len(show_title_split)>2:
 			show_title_flag = True
+			#print_log(str('Line ')+str(getframeinfo(currentframe()).lineno)+'___'+str(getframeinfo(currentframe()).filename))
 
 	#if alternate_titles_flag ==True and show_title_flag == False:
 	#	show_title_flag = True
@@ -557,6 +577,7 @@ def download_tv_test(meta_info, filename):
 		if regex_part_1_match or regex_part_i_match:
 			if not regex_part_2_match and not regex_part_ii_match:
 				episode_list_flag = False
+				#print_log(str('Line ')+str(getframeinfo(currentframe()).lineno)+'___'+str(getframeinfo(currentframe()).filename))
 	if part1_part2_match_flag == False:
 		regex_part_check = re.compile('([^a-zA-Z]part[^a-zA-Z]).*')
 		regex_part_check_match = regex_part_check.search(filename)
@@ -567,23 +588,43 @@ def download_tv_test(meta_info, filename):
 	
 	if episode_name_flag == True and part1_part2_match_flag == True and (show_title_flag == False and alternate_titles_flag == False):
 		episode_name_flag = False
+		#print_log(str('Line ')+str(getframeinfo(currentframe()).lineno)+'___'+str(getframeinfo(currentframe()).filename))
 		if episode_list_flag == True:
 			episode_list_flag = False
+			#print_log(str('Line ')+str(getframeinfo(currentframe()).lineno)+'___'+str(getframeinfo(currentframe()).filename))
 		if season_list_flag == True:
 			season_list_flag = False
 
 	if episode_list_flag2 == True and episode_list_flag == False:
 		if part1_part2_match_flag == True and episode_name_flag == True:
 			episode_list_flag == True
+			#print_log(str('Line ')+str(getframeinfo(currentframe()).lineno)+'___'+str(getframeinfo(currentframe()).filename))
 
 	if show_title_flag == True or alternate_titles_flag == True:
+		if alternate_titles_flag == False:
+			alternate_titles_flag = True
+			#print_log(str('Line ')+str(getframeinfo(currentframe()).lineno)+'___'+str(getframeinfo(currentframe()).filename))
+		if show_title_flag == False:
+			show_title_flag = True
+			#print_log(str('Line ')+str(getframeinfo(currentframe()).lineno)+'___'+str(getframeinfo(currentframe()).filename))
 		if episode_list_flag == False and season_list_flag == True and episode_name_flag == False and part1_part2_match_flag == True:
 			season_list_flag = False
+			#print_log(str('Line ')+str(getframeinfo(currentframe()).lineno)+'___'+str(getframeinfo(currentframe()).filename))
+	if part1_part2_match_flag == False and episode_list_flag == False:
+		if episode_name_flag == True and (alternate_titles_flag == True or show_title_flag == True):
+			episode_name_flag = False
+			#print_log(str('Line ')+str(getframeinfo(currentframe()).lineno)+'___'+str(getframeinfo(currentframe()).filename))
+			if alternate_titles_flag == True:
+				alternate_titles_flag = False
+				#print_log(str('Line ')+str(getframeinfo(currentframe()).lineno)+'___'+str(getframeinfo(currentframe()).filename))
+			if show_title_flag == True:
+				show_title_flag = False
+				#print_log(str('Line ')+str(getframeinfo(currentframe()).lineno)+'___'+str(getframeinfo(currentframe()).filename))
 
 	meta_info_flags = {'x265_match_pass': x265_match_pass,'alternate_titles_flag': alternate_titles_flag,'episode_list_flag': episode_list_flag,'season_list_flag': season_list_flag,'episode_name_flag': episode_name_flag,'show_title_flag': show_title_flag,'part1_part2_match_flag': part1_part2_match_flag}
-	if show_title_flag == True or alternate_titles_flag == True:
-		print_log(filename, meta_info)
-		print_log(filename, meta_info_flags)
+	#if (show_title_flag == True or alternate_titles_flag == True):# and season_list_flag == True:
+	#	print_log(filename, meta_info)
+	#	print_log(filename, meta_info_flags)
 	return meta_info_flags
 
 def get_next_ep_details(show_title, show_curr_season, show_curr_episode, tmdb):
@@ -633,9 +674,13 @@ def get_next_ep_details(show_title, show_curr_season, show_curr_episode, tmdb):
 		next_ep_title = next_ep_title[:-1]
 		next_ep_title = next_ep_title[2:]
 	next_ep_rating = response['rating']['average']
-	response2 = extended_episode_info(tvshow_id=tmdb_id, season=next_ep_season, episode=next_ep_episode, cache_time=7)
-	next_ep_rating2 = str(response2[0]['Rating'])
-	next_ep_thumb2 = str(response2[0]['still_original'])
+	try: 
+		response2 = extended_episode_info(tvshow_id=tmdb_id, season=next_ep_season, episode=next_ep_episode, cache_time=7)
+		next_ep_rating2 = str(response2[0]['Rating'])
+		next_ep_thumb2 = str(response2[0]['still_original'])
+	except:
+		next_ep_rating2 = ''
+		next_ep_thumb2 = ''
 
 	next_ep_year = response['airdate'][0:4]
 	next_ep_genre = response['_embedded']['show']['genres']
@@ -668,28 +713,7 @@ def get_next_ep_details(show_title, show_curr_season, show_curr_episode, tmdb):
 	print_log(next_ep_details)
 	return next_ep_details
 
-
-
-def next_ep_play(show_title, show_season, show_episode, tmdb):
-	from resources.lib.TheMovieDB import get_tmdb_data
-	from resources.lib.TheMovieDB import single_tvshow_info
-	from resources.lib.TheMovieDB import get_tvshow_info
-
-	xbmc_plugin = 'True'
-	#print_log(str('Line ')+str(getframeinfo(currentframe()).lineno)+'___'+str(getframeinfo(currentframe()).filename))
-	if not xbmc.Player().isPlaying():
-		xbmc.executebuiltin('ActivateWindow(busydialognocancel)')
-		xbmc.executebuiltin('ActivateWindow(busydialog)')
-	li = None
-	clear_next_ep_props()
-
-	show_title = show_title.replace('+', ' ')
-	kodi_send_command = 'kodi-send --action="RunScript(%s,info=diamond_rd_player,type=tv,show_title=%s,show_season=%s,show_episode=%s,tmdb=%s,test=True)"' % (addon_ID(), show_title, show_season, show_episode, tmdb)
-	print_log(kodi_send_command,'___kodi_send_command')
-	if not xbmc.Player().isPlaying():
-		xbmc.executebuiltin('ActivateWindow(busydialognocancel)')
-		xbmc.executebuiltin('ActivateWindow(busydialog)')
-
+def season_list_episode_list_1(show_season=None, show_episode=None):
 	#print_log(str('Line ')+str(getframeinfo(currentframe()).lineno)+'___'+str(getframeinfo(currentframe()).filename))
 	season_list = []
 	#season_list.append(str(show_season).zfill(1))
@@ -797,79 +821,9 @@ def next_ep_play(show_title, show_season, show_episode, tmdb):
 	episode_list.append('S'+str(show_season).zfill(2)+'E'+str(int(show_episode)).zfill(3)+'&E'+str(int(show_episode)+1).zfill(3))
 	episode_list.append('S'+str(show_season).zfill(2)+'E'+str(int(show_episode)-1).zfill(1)+'&E'+str(show_episode).zfill(1))
 	episode_list.append('S'+str(show_season).zfill(2)+'E'+str(int(show_episode)).zfill(1)+'&E'+str(int(show_episode)+1).zfill(1))
+	return season_list, episode_list
 
-	x265_enabled = xbmcaddon.Addon(addon_ID()).getSetting('x265_setting')
-	#try:
-	#	processor = get_processor_info()
-	#	if 'linux' in str(sys.platform):
-	#		if 'vero' in str(processor).lower() or 'pi 4' in str(processor).lower():
-	#			print_log(str('VERO!!!'),'===>OPENINFO')
-	#			x265_enabled = 'True'
-	#except:
-	#	print_log('processor_ERROR')
-	#	x265_enabled = 'True'
-	
-	show_title_clean = regex.sub(' ', show_title.replace('\'s','s').replace('&','and')).replace('  ',' ').lower()
-	tmdb_id = tmdb
-	response = get_tvshow_info(tvshow_label=show_title, year=None, use_dialog=False)
-	tmdb_id2 = response['id']
-	try:
-		if int(tmdb) > 1:
-			tmdb_id = tmdb
-	except:
-		pass
-
-	response = extended_tvshow_info(tvshow_id=tmdb_id, cache_time=0.001)
-	extended_tvshow_info_response = response
-	try: runtime_seconds = int(response[0]['duration(m)']) * 60
-	except: runtime_seconds = 50 * 60
-	tvdb_id = response[0]['tvdb_id']
-	imdb_id = response[0]['imdb_id']
-
-	response = get_tmdb_data(url='tv/'+str(tmdb_id)+'/alternative_titles?language=en-US&')
-	alternate_titles = []
-	y = 0
-	for i in response['results']:
-		try:
-			alternate_titles.append(response['results'][y]['title'])
-		except:
-			alternate_titles.append(str(u''.join(response['results'][y]['title']).encode('utf-8').strip()))
-		y = y + 1
-
-	tot_episodes = 0
-	show_episode_absolute = 0
-	season_ep_titles = []
-	for i in range(1, int(show_season)+1):
-		response = get_tmdb_data(url='tv/'+str(tmdb_id)+'/season/'+str(i)+'?language=en-US&')
-		for xi in response['episodes']:
-			next_tot_episode = xi['episode_number']
-			if i == int(show_season):
-				season_ep_titles.append(xi['name'])
-			if i < int(show_season):
-				show_episode_absolute = show_episode_absolute + 1
-			elif i == int(show_season) and xi['episode_number'] <= int(show_episode):
-				show_episode_absolute = show_episode_absolute + 1
-	last_episode_number = 's%se%s' % (str(i),str(xi['episode_number']))
-	curr_episode_number = 's%se%s' % (str(show_season),str(show_episode))
-	if last_episode_number == curr_episode_number:
-		last_episode_flag = True
-	else:
-		last_episode_flag = False
-	
-	tmdb_response = extended_episode_info(tvshow_id=tmdb_id, season=show_season, episode=show_episode, cache_time=7)
-	try: tmdb_rating = str(tmdb_response[0]['Rating'])
-	except: tmdb_rating = str(0)
-
-	trakt_progress = get_trakt_playback('tv')
-	resume_progress_seconds = 0
-	if trakt_progress:
-		for i in trakt_progress:
-			if str(i['show']['ids']['tmdb']) == str(tmdb_id):
-				if str(i['episode']['season']) == str(show_season) and str(i['episode']['number']) == str(show_episode):
-					resume_progress = i['progress']
-					resume_progress_seconds = int(float(runtime_seconds) * float(resume_progress/100))
-					break
-
+def season_list_episode_list_2(episode_list=None,show_season=None, show_episode=None, show_episode_absolute=None):
 	episode_list.append('S'+str(show_season).zfill(1)+'E'+str(show_episode_absolute).zfill(1))
 	episode_list.append('S'+str(show_season).zfill(1)+'E'+str(show_episode_absolute).zfill(2))
 	episode_list.append('S'+str(show_season).zfill(1)+'E'+str(show_episode_absolute).zfill(3))
@@ -950,6 +904,157 @@ def next_ep_play(show_title, show_season, show_episode, tmdb):
 	episode_list.append('E'+str(show_episode_absolute).zfill(3))
 	episode_list.append('E'+str(int(show_episode_absolute)).zfill(3)+'&E'+str(int(show_episode_absolute)+1).zfill(3))
 	episode_list.append('E'+str(int(show_episode_absolute)-1).zfill(3)+'&E'+str(int(show_episode_absolute)).zfill(3))
+	return episode_list
+	
+def season_list_episode_list_2(episode_list=None, season_list=None,show_season=None, show_episode=None, show_episode_absolute=None, first_season=None, last_season=None):
+	season_list.append('Complete')
+	season_list.append('The Complete Series')
+	season_list.append('Season '+str(first_season).zfill(1) + '-'+str(last_season).zfill(1))
+	season_list.append('Season '+str(first_season).zfill(2) + '-'+str(last_season).zfill(2))
+	season_list.append('Season '+str(first_season).zfill(1) + ' - '+str(last_season).zfill(1))
+	season_list.append('Season '+str(first_season).zfill(2) + ' - '+str(last_season).zfill(2))
+	season_list.append('Season '+str(first_season).zfill(1) + ' to '+str(last_season).zfill(1))
+	season_list.append('Season '+str(first_season).zfill(2) + ' to '+str(last_season).zfill(2))
+	season_list.append('S'+str(first_season).zfill(1) + '-S'+str(last_season).zfill(1))
+	season_list.append('S'+str(first_season).zfill(2) + '-S'+str(last_season).zfill(2))
+	season_list.append('S'+str(first_season).zfill(1) + ' - S'+str(last_season).zfill(1))
+	season_list.append('S'+str(first_season).zfill(2) + ' - S'+str(last_season).zfill(2))
+	return season_list
+
+
+def next_ep_play(show_title, show_season, show_episode, tmdb):
+	from resources.lib.TheMovieDB import get_tmdb_data
+	from resources.lib.TheMovieDB import single_tvshow_info
+	from resources.lib.TheMovieDB import get_tvshow_info
+
+	xbmc_plugin = 'True'
+	#print_log(str('Line ')+str(getframeinfo(currentframe()).lineno)+'___'+str(getframeinfo(currentframe()).filename))
+	if not xbmc.Player().isPlaying():
+		xbmc.executebuiltin('ActivateWindow(busydialognocancel)')
+		xbmc.executebuiltin('ActivateWindow(busydialog)')
+	li = None
+	clear_next_ep_props()
+	
+	try:
+		if int(tmdb) > 1:
+			tmdb_id = tmdb
+			tmdb_response = extended_tvshow_info(tvshow_id=tmdb_id, cache_time=0.001)
+			show_title = tmdb_response[0]['TVShowTitle']
+	except:
+		tmdb_response = None
+		pass
+	
+	
+	show_title = show_title.replace('+', ' ')
+	kodi_send_command = 'kodi-send --action="RunScript(%s,info=diamond_rd_player,type=tv,show_title=%s,show_season=%s,show_episode=%s,tmdb=%s,test=True)"' % (addon_ID(), show_title, show_season, show_episode, tmdb)
+	print_log(kodi_send_command,'___kodi_send_command')
+	if not xbmc.Player().isPlaying():
+		xbmc.executebuiltin('ActivateWindow(busydialognocancel)')
+		xbmc.executebuiltin('ActivateWindow(busydialog)')
+
+	season_list, episode_list = season_list_episode_list_1(show_season, show_episode)
+
+	x265_enabled = xbmcaddon.Addon(addon_ID()).getSetting('x265_setting')
+	#try:
+	#	processor = get_processor_info()
+	#	if 'linux' in str(sys.platform):
+	#		if 'vero' in str(processor).lower() or 'pi 4' in str(processor).lower():
+	#			print_log(str('VERO!!!'),'===>OPENINFO')
+	#			x265_enabled = 'True'
+	#except:
+	#	print_log('processor_ERROR')
+	#	x265_enabled = 'True'
+	
+	show_title_clean = regex.sub(' ', show_title.replace('\'s','s').replace('&','and')).replace('  ',' ').lower()
+	tmdb_id = tmdb
+	response = get_tvshow_info(tvshow_label=show_title, year=None, use_dialog=False)
+	tmdb_id2 = response['id']
+	try:
+		if int(tmdb) > 1:
+			tmdb_id = tmdb
+	except:
+		pass
+
+	if tmdb_response:
+		response = tmdb_response
+	else:
+		response = extended_tvshow_info(tvshow_id=tmdb_id, cache_time=0.001)
+	extended_tvshow_info_response = response
+	try: runtime_seconds = int(response[0]['duration(m)']) * 60
+	except: runtime_seconds = 50 * 60
+	tvdb_id = response[0]['tvdb_id']
+	imdb_id = response[0]['imdb_id']
+
+	response = get_tmdb_data(url='tv/'+str(tmdb_id)+'/alternative_titles?language=en-US&')
+	alternate_titles = []
+	y = 0
+	for i in response['results']:
+		try:
+			alternate_titles.append(response['results'][y]['title'])
+		except:
+			alternate_titles.append(str(u''.join(response['results'][y]['title']).encode('utf-8').strip()))
+		y = y + 1
+
+	tot_episodes = 0
+	show_episode_absolute = 0
+	season_ep_titles = []
+	i = int(show_season)
+	response = get_tmdb_data(url='tv/'+str(tmdb_id)+'/season/'+str(i)+'?language=en-US&')
+	while response and not 'The resource you requested could not be found' in str(response):
+	#for i in range(int(show_season), int(show_season)+2):
+		last_season = int(i)
+		for xi in response['episodes']:
+			next_tot_episode = xi['episode_number']
+			if i == int(show_season):
+				season_ep_titles.append(xi['name'])
+			if i < int(show_season):
+				show_episode_absolute = show_episode_absolute + 1
+			elif i == int(show_season) and xi['episode_number'] <= int(show_episode):
+				show_episode_absolute = show_episode_absolute + 1
+		last_episode = int(xi['episode_number'])
+		i = int(i) + 1
+		response = get_tmdb_data(url='tv/'+str(tmdb_id)+'/season/'+str(i)+'?language=en-US&')
+	i = int(i) -1
+
+	last_episode_number = 's%se%s' % (str(i),str(xi['episode_number']))
+	curr_episode_number = 's%se%s' % (str(show_season),str(show_episode))
+	if last_episode_number == curr_episode_number:
+		last_episode_flag = True
+	else:
+		last_episode_flag = False
+
+	if int(show_season) == int(last_season) and int(show_episode) > int(last_episode):
+		show_season = str(int(show_season) - 1)
+		show_episode = str(int(show_episode) - int(last_episode))
+
+	tmdb_response = extended_episode_info(tvshow_id=tmdb_id, season=show_season, episode=show_episode, cache_time=7)
+	try: tmdb_rating = str(tmdb_response[0]['Rating'])
+	except: tmdb_rating = str(0)
+
+	special_correction = False
+	if int(last_season) == 1 and int(show_season) == 0:
+		special_correction = True
+		original_show_season = show_season
+		original_show_episode = show_episode
+		show_season = str(1)
+		show_episode = str(int(last_episode) + int(show_episode))
+		curr_episode_number = 's%se%s' % (str(show_season),str(show_episode))
+		season_list, episode_list = season_list_episode_list_1(show_season, show_episode)
+		original_show_season = show_season
+		original_show_episode = show_episode
+
+	trakt_progress = get_trakt_playback('tv')
+	resume_progress_seconds = 0
+	if trakt_progress:
+		for i in trakt_progress:
+			if str(i['show']['ids']['tmdb']) == str(tmdb_id):
+				if str(i['episode']['season']) == str(show_season) and str(i['episode']['number']) == str(show_episode):
+					resume_progress = i['progress']
+					resume_progress_seconds = int(float(runtime_seconds) * float(resume_progress/100))
+					break
+
+	season_list = season_list_episode_list_2(episode_list=episode_list, season_list=season_list,show_season=show_season, show_episode=show_episode, show_episode_absolute=show_episode_absolute, first_season=None, last_season=last_season)
+
 
 	url = 'http://api.tvmaze.com/lookup/shows?thetvdb='+str(tvdb_id)
 	response = get_JSON_response(url=url, cache_days=7.0, folder='TVMaze')
@@ -967,29 +1072,31 @@ def next_ep_play(show_title, show_season, show_episode, tmdb):
 		if int(i['season']) == int(show_season) and int(i['number']) == int(show_episode):
 			episode_id =  i['id']
 			
-	season_list.append('Complete')
-	season_list.append('The Complete Series')
-	season_list.append('Season '+str(first_season).zfill(1) + '-'+str(last_season).zfill(1))
-	season_list.append('Season '+str(first_season).zfill(2) + '-'+str(last_season).zfill(2))
-	season_list.append('Season '+str(first_season).zfill(1) + ' - '+str(last_season).zfill(1))
-	season_list.append('Season '+str(first_season).zfill(2) + ' - '+str(last_season).zfill(2))
-	season_list.append('Season '+str(first_season).zfill(1) + ' to '+str(last_season).zfill(1))
-	season_list.append('Season '+str(first_season).zfill(2) + ' to '+str(last_season).zfill(2))
-	season_list.append('S'+str(first_season).zfill(1) + '-S'+str(last_season).zfill(1))
-	season_list.append('S'+str(first_season).zfill(2) + '-S'+str(last_season).zfill(2))
-	season_list.append('S'+str(first_season).zfill(1) + ' - S'+str(last_season).zfill(1))
-	season_list.append('S'+str(first_season).zfill(2) + ' - S'+str(last_season).zfill(2))
+
+	season_list = season_list_episode_list_2(episode_list=episode_list, season_list=season_list,show_season=show_season, show_episode=show_episode, show_episode_absolute=show_episode_absolute, first_season=first_season, last_season=last_season)
 
 	try: 
 		url = 'http://api.tvmaze.com/episodes/'+str(episode_id)+'?embed=show'
 		response = get_JSON_response(url=url, cache_days=7.0, folder='TVMaze')
 	except: response = ''
+
 	try: 
 		try:
 			episode_name = response['name']
 		except:
 			episode_name = str(u''.join(response['name']).encode('utf-8').strip())
 	except: episode_name = ''
+	if episode_name == '':
+		episode_name = tmdb_response[0]['title']
+		episode_name.replace('(Original Pilot)','')
+		episode_name.replace('(Extended Version)','')
+		episode_name.replace('(Extended Cut)','')
+		response = {}
+		response['rating'] = {}
+		response['rating']['average'] = tmdb_response[0]['Rating']
+		response['airdate'] = tmdb_response[0]['release_date']
+		response['summary'] = tmdb_response[0]['Plot']
+
 	if episode_name[-1] == '\'' and episode_name[:2] == 'b\'':
 		episode_name = episode_name[:-1]
 		episode_name = episode_name[2:]
@@ -1025,9 +1132,10 @@ def next_ep_play(show_title, show_season, show_episode, tmdb):
 		except:
 			genre = str(u''.join(response['_embedded']['show']['genres']).encode('utf-8').strip())
 	except: genre = ''
-	if genre[-1] == '\'' and genre[:2] == 'b\'':
-		genre = genre[:-1]
-		genre = genre[2:]
+	if genre != '':
+		if genre[-1] == '\'' and genre[:2] == 'b\'':
+			genre = genre[:-1]
+			genre = genre[2:]
 	try: 
 		rating = float(tv_maze_rating)
 	except: 
@@ -1137,6 +1245,8 @@ def next_ep_play(show_title, show_season, show_episode, tmdb):
 				if meta_info_flags['season_list_flag'] == True and meta_info_flags['episode_name_flag'] == True and meta_info_flags['x265_match_pass'] == True and meta_info_flags['part1_part2_match_flag'] == True:
 					down_test = down_test + 2
 				if down_test > 3 and meta_info_flags['x265_match_pass']:
+					#print_log(meta_info, 'DOWNLOAD')
+					#print_log(meta_info_flags, 'DOWNLOAD')
 					PTN_link = i['link']
 					PTN_download = i['download']
 					PTN_size = str(int(i['filesize'])/(1024*1024))+'Mb'
@@ -1171,7 +1281,8 @@ def next_ep_play(show_title, show_season, show_episode, tmdb):
 
 					if meta_info_flags['x265_match_pass'] == True and (meta_info_flags['show_title_flag'] == True or meta_info_flags['alternate_titles_flag'] == True):
 						#print_log(k['filename'])
-						#print_log(meta_info_flags)
+						#print_log(meta_info, str(k['filename'])+str(x)+'_TORRENT')
+						#print_log(meta_info_flags, str(x)+'TORRENT')
 						torr_test = True
 						#print_log(k['filename'], 'page==' + str(x) + ',torr_test==TRUE')
 
@@ -1243,7 +1354,14 @@ def next_ep_play(show_title, show_season, show_episode, tmdb):
 										file_id = int(file_id) - 1
 										continue
 									torr_unrestricted = RD_unrestrict_link(file_link=file_link)
-									PTN_download = torr_unrestricted['download']
+									try: 
+										PTN_download = torr_unrestricted['download']
+									except: 
+										torrent_found = 0
+										torr_test = False
+										meta_info_flags['x265_match_pass'] = False
+										file_id = -1
+										continue
 									RD_link = str(PTN_download).split('/')[4]
 									PTN_link = RD_link
 									ptn_data2 = ''
@@ -1335,13 +1453,19 @@ def next_ep_play(show_title, show_season, show_episode, tmdb):
 		duration = runtime
 	if resumeTimeInSeconds == None:
 		resumeTimeInSeconds = 0
-	try:
-		file_name = PTN_download.split('/')[5]
-		delete_result = cur.execute("DELETE FROM files WHERE strFilename = '"+str(file_name)+"' ;")
-		con.commit()
-	except:
-		pass
+	#try:
+	#	file_name = PTN_download.split('/')[5]
+	#	#delete_result = cur.execute("DELETE FROM files WHERE strFilename = '"+str(file_name)+"' ;")
+	#	#con.commit()
+	#except:
+	#	pass
 	cur.close()
+
+	if special_correction == True:
+		show_season = original_show_season
+		show_episode = original_show_episode
+		PTN_season = show_season
+		PTN_episode = show_episode
 
 	#print_log(str('Line ')+str(getframeinfo(currentframe()).lineno)+'___'+str(getframeinfo(currentframe()).filename))
 	next_ep_play_details = {}
@@ -1426,10 +1550,10 @@ def next_ep_play(show_title, show_season, show_episode, tmdb):
 		xbmcgui.Window(10000).setProperty('Next_EP.dbid', dbid)
 		dbtype = 'episode'
 		xbmcgui.Window(10000).setProperty('Next_EP.dbtype', dbtype)
-
-		if (genre[-1] == '\'' and genre[:2] == 'b\'') or (genre[-1] == '"' and genre[:2] == 'b"'):
-			genre = genre[:-1]
-			genre = genre[2:]
+		if genre != '':
+			if (genre[-1] == '\'' and genre[:2] == 'b\'') or (genre[-1] == '"' and genre[:2] == 'b"'):
+				genre = genre[:-1]
+				genre = genre[2:]
 		if (episode_name[-1] == '\'' and episode_name[:2] == 'b\'') or (episode_name[-1] == '"' and episode_name[:2] == 'b"'):
 			episode_name = episode_name[:-1]
 			episode_name = episode_name[2:]
@@ -1555,13 +1679,28 @@ def next_ep_play(show_title, show_season, show_episode, tmdb):
 				json_result['result']['episodedetails']['path'] = PTN_download
 				li.setCast(json_result['result']['episodedetails']['cast'])
 				li.setArt(json_result['result']['episodedetails']['art'])
-				li.setInfo(type='Video', infoLabels=unicode(json_result['result']['episodedetails']))
+				#li.setInfo(type='Video', infoLabels=unicode(json_result['result']['episodedetails']))
+				try:
+					info_tag = ListItemInfoTag(li, 'video')
+					info_tag.set_info(json_result['result']['episodedetails'])
+				except:
+					li.setInfo(type='Video', infoLabels=unicode(json_result['result']['episodedetails']))
 			except:
 				try: 
-					li.setInfo('video', {'sortseason': int(show_season), 'rating': str(rating), 'plotoutline': str(plot), 'year': int(year), 'duration': int(duration), 'FileNameAndPath': str(PTN_download), 'plot': str(plot), 'votes': 0, 'sortepisode': int(show_episode), 'title': str(episode_name), 'aired': str(premiered)+'T00:00:00.000Z', 'season': int(show_season), 'tvshowtitle': str(show_title), 'mediatype': 'episode', 'genre': [], 'dateadded': str(premiered)+'T00:00:00.000Z', 'episode': int(show_episode), 'premiered': str(premiered)+'T00:00:00.000Z', 'originaltitle': str(episode_name), 'sorttitle': str(episode_name)})
+					#li.setInfo('video', {'sortseason': int(show_season), 'rating': str(rating), 'plotoutline': str(plot), 'year': int(year), 'duration': int(duration), 'FileNameAndPath': str(PTN_download), 'plot': str(plot), 'votes': 0, 'sortepisode': int(show_episode), 'title': str(episode_name), 'aired': str(premiered)+'T00:00:00.000Z', 'season': int(show_season), 'tvshowtitle': str(show_title), 'mediatype': 'episode', 'genre': [], 'dateadded': str(premiered)+'T00:00:00.000Z', 'episode': int(show_episode), 'premiered': str(premiered)+'T00:00:00.000Z', 'originaltitle': str(episode_name), 'sorttitle': str(episode_name)})
+					try: 
+						info_tag = ListItemInfoTag(li, 'video')
+						info_tag.set_info({'sortseason': int(show_season), 'rating': str(rating), 'plotoutline': str(plot), 'year': int(year), 'duration': int(duration), 'FileNameAndPath': str(PTN_download), 'plot': str(plot), 'votes': 0, 'sortepisode': int(show_episode), 'title': str(episode_name), 'aired': str(premiered)+'T00:00:00.000Z', 'season': int(show_season), 'tvshowtitle': str(show_title), 'mediatype': 'episode', 'genre': [], 'dateadded': str(premiered)+'T00:00:00.000Z', 'episode': int(show_episode), 'premiered': str(premiered)+'T00:00:00.000Z', 'originaltitle': str(episode_name), 'sorttitle': str(episode_name)})
+					except:
+						li.setInfo('video', {'sortseason': int(show_season), 'rating': str(rating), 'plotoutline': str(plot), 'year': int(year), 'duration': int(duration), 'FileNameAndPath': str(PTN_download), 'plot': str(plot), 'votes': 0, 'sortepisode': int(show_episode), 'title': str(episode_name), 'aired': str(premiered)+'T00:00:00.000Z', 'season': int(show_season), 'tvshowtitle': str(show_title), 'mediatype': 'episode', 'genre': [], 'dateadded': str(premiered)+'T00:00:00.000Z', 'episode': int(show_episode), 'premiered': str(premiered)+'T00:00:00.000Z', 'originaltitle': str(episode_name), 'sorttitle': str(episode_name)})
 				except: 
 					try:
-						li.setInfo('video', {'title': title, 'TVShowTitle': show_title, 'Episode': str(show_episode), 'Season': show_season,'genre': genre, 'plotoutline': plotoutline, 'plot': plot, 'path': PTN_download,'premiered': premiered, 'dbid': dbid, 'mediatype': dbtype, 'duration': duration, 'IMDBNumber': imdb, 'Rating': rating, 'Year': year})
+						#li.setInfo('video', {'title': title, 'TVShowTitle': show_title, 'Episode': str(show_episode), 'Season': show_season,'genre': genre, 'plotoutline': plotoutline, 'plot': plot, 'path': PTN_download,'premiered': premiered, 'dbid': dbid, 'mediatype': dbtype, 'duration': duration, 'IMDBNumber': imdb, 'Rating': rating, 'Year': year})
+						try:
+							info_tag = ListItemInfoTag(li, 'video')
+							info_tag.set_info({'title': title, 'TVShowTitle': show_title, 'Episode': str(show_episode), 'Season': show_season,'genre': genre, 'plotoutline': plotoutline, 'plot': plot, 'path': PTN_download,'premiered': premiered, 'dbid': dbid, 'mediatype': dbtype, 'duration': duration, 'IMDBNumber': imdb, 'Rating': rating, 'Year': year})
+						except:
+							li.setInfo('video', {'title': title, 'TVShowTitle': show_title, 'Episode': str(show_episode), 'Season': show_season,'genre': genre, 'plotoutline': plotoutline, 'plot': plot, 'path': PTN_download,'premiered': premiered, 'dbid': dbid, 'mediatype': dbtype, 'duration': duration, 'IMDBNumber': imdb, 'Rating': rating, 'Year': year})
 					except:
 						try: 
 							print_log(str('['+str(title)+']'+'['+str(show_title)+']'+'['+str(show_episode)+']'+'['+str(show_season)+']'+'['+str(genre)+']'+'['+str(plotoutline)+']'+'['+str(plot)+']'+'['+str(PTN_download)+']'+'['+str(premiered)+']'+'['+str(dbid)+']'+'['+str(dbtype)+']'+'['+str(duration)+']'+'['+str(imdb)+']'+'['+str(rating)+']'+'['+str(year)+']'),'===>OPENINFO')
@@ -1574,6 +1713,7 @@ def next_ep_play(show_title, show_season, show_episode, tmdb):
 			actor_role = []
 			actor_thumbnail = []
 			actor_order = []
+			idx = 0
 			for idx, i in enumerate(tmdb_response[1]['actors']):
 				actor = {'name': i['name'], 'role': i['character'],'thumbnail': i.get('thumb'), 'order': idx+1}
 				actors.append(actor)
@@ -1591,7 +1731,12 @@ def next_ep_play(show_title, show_season, show_episode, tmdb):
 				actor_order.append(idx+1)
 			#print_log(str(list(zip(actor_name,actor_role,actor_thumbnail,actor_order))),'zip_list')
 			if len(actors) > 0:
-				li.setCast(actors)
+				#li.setCast(actors)
+				try:
+					info_tag = ListItemInfoTag(li, 'video')
+					info_tag.set_cast(actors)
+				except:
+					li.setCast(actors)
 				li.setProperty('Cast', str(actors))
 				li.setProperty('CastAndRole', str(actors))
 				infolabels['Cast'] = list(zip(actor_name,actor_role,actor_thumbnail,actor_order))
@@ -1638,7 +1783,13 @@ def next_ep_play(show_title, show_season, show_episode, tmdb):
 			infolabels['EpisodeName'] = episode_name
 			infolabels['path'] = PTN_download
 
-			li.setInfo(type='Video', infoLabels = infolabels)
+			#li.setInfo(type='Video', infoLabels = infolabels)
+			try:
+				info_tag = ListItemInfoTag(li, 'video')
+				info_tag.set_info(infolabels)
+			except:
+				li.setInfo(type='Video', infoLabels = infolabels)
+			#info_tag.set_cast(str(actors))
 			#print_log(infolabels,'infolabels')
 
 		xbmcplugin.setContent(handle, 'episodes')
@@ -2001,12 +2152,12 @@ def next_ep_play_movie(movie_year, movie_title, tmdb):
 		duration = ''
 	if resumeTimeInSeconds == None:
 		resumeTimeInSeconds = 0
-	try:
-		file_name = PTN_download.split('/')[5]
-		delete_result = cur.execute("DELETE FROM files WHERE strFilename = '"+str(file_name)+"' ;")
-		con.commit()
-	except:
-		pass
+	#try:
+	#	file_name = PTN_download.split('/')[5]
+	#	delete_result = cur.execute("DELETE FROM files WHERE strFilename = '"+str(file_name)+"' ;")
+	#	con.commit()
+	#except:
+	#	pass
 	cur.close()
 
 	try: movie_release_date = str(movie_release_date).replace('b\'','').replace('\'','')
@@ -2165,7 +2316,12 @@ def next_ep_play_movie(movie_year, movie_title, tmdb):
 			json_result = xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "VideoLibrary.GetMovieDetails", "params": {"movieid": '+str(dbid)+', "properties": ["title","genre","year","rating","director","trailer","tagline","plot","plotoutline","originaltitle","lastplayed","playcount","writer","studio","mpaa","cast","country","imdbnumber","runtime","set","showlink","streamdetails","top250","votes","fanart","thumbnail","file","sorttitle","resume","setid","dateadded","tag","userrating","ratings","premiered","uniqueid"]}}')
 			json_result = json.loads(json_result)
 			#print_log(str(json_result['result']['episodedetails']['art']),'===>OPENINFO')
-			li.setInfo(type='Video', infoLabels=str(json_result['result']['moviedetails']))
+			#li.setInfo(type='Video', infoLabels=str(json_result['result']['moviedetails']))
+			try:
+				info_tag = ListItemInfoTag(li, 'video')
+				info_tag.set_info(json_result['result']['moviedetails'])
+			except:
+				li.setInfo(type='Video', infoLabels=str(json_result['result']['moviedetails']))
 		except:
 			pass
 
@@ -2194,7 +2350,12 @@ def next_ep_play_movie(movie_year, movie_title, tmdb):
 			actor_order.append(idx+1)
 		#print_log(str(list(zip(actor_name,actor_role,actor_thumbnail,actor_order))),'zip_list')
 		if len(actors) > 0:
-			li.setCast(actors)
+			#li.setCast(actors)
+			try:
+				info_tag = ListItemInfoTag(li, 'video')
+				info_tag.set_cast(actors)
+			except:
+				li.setCast(actors)
 			li.setProperty('Cast', str(actors))
 			li.setProperty('CastAndRole', str(actors))
 			infolabels['Cast'] = list(zip(actor_name,actor_role,actor_thumbnail,actor_order))
@@ -2238,7 +2399,14 @@ def next_ep_play_movie(movie_year, movie_title, tmdb):
 		infolabels['FileNameAndPath'] = PTN_download
 		infolabels['path'] = PTN_download
 
-		li.setInfo(type='Video', infoLabels = infolabels)
+		#li.setInfo(type='Video', infoLabels = infolabels)
+		try:
+			info_tag = ListItemInfoTag(li, 'video')
+			info_tag.set_info(infolabels)
+		except:
+			li.setInfo(type='Video', infoLabels = infolabels)
+		#info_tag.set_cast(infolabels['Cast'])
+		#info_tag.set_cast(infolabels['CastAndRole'])
 
 		if 'test=True' in str(sys.argv):
 			#print_log(sys.argv)
