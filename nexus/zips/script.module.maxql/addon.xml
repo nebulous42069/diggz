@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="script.module.maxql" name="maxql" version="100.0.3" provider-name="Zaxxon709">
+<addon id="script.module.maxql" name="MaxQL" version="100.0.6" provider-name="Zaxxon709">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0"/>
 	</requires>
 	<extension point="xbmc.python.pluginsource" library="addon.py">
+		<provides>executable</provides>
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<summary lang="en_GB">Max Resolution Editor</summary>
-		<description lang="en_GB">Kodi 19</description>
+		<description lang="en_GB">Set supported add-ons to either 1080P or 4K max</description>
 		<disclaimer lang="en_GB">This Addon contains no content</disclaimer>
 		<language>en</language>
 		<platform>all</platform>
@@ -16,5 +17,13 @@
 		<website></website> 
 		<email></email>
 		<source></source>
+		<news>
+1.0.6 - Added chains genocide and Quicksilver.
+1.0.5 - Initial Release. 
+		</news>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+		</assets>
 	</extension>
 </addon>

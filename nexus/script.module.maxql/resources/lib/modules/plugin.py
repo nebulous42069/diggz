@@ -4,6 +4,7 @@ import xbmcaddon
 import sys
 import os
 from .params import Params
+from .menu import main_menu
 from .maxql_1080p import hd_maxset_1080p
 from .maxql_4k import hd_maxset_4k
 
@@ -18,7 +19,10 @@ def router(paramstring):
     
     xbmcplugin.setContent(handle, 'files')
 
-    if mode == 1:
+    if mode is None:
+        main_menu()
+        
+    elif mode == 1:
         hd_maxset_1080p()
 
     elif mode == 2:

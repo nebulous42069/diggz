@@ -231,11 +231,50 @@ def scrubs():
         addon = xbmcaddon.Addon("plugin.video.scrubsv2")
         addon.setSetting("quality.max", res)
 
+def shazam():
+    addon = xbmcvfs.translatePath('special://home/addons/plugin.video.shazam/')
+    file = xbmcvfs.translatePath('special://userdata/addon_data/plugin.video.shazam/settings.xml')
+
+    if xbmcvfs.exists(addon) and xbmcvfs.exists(file):
+
+        res = '1'
+        addon = xbmcaddon.Addon("plugin.video.shazam")
+        addon.setSetting("hosts.quality", res)
+        
+def alvin():
+    addon = xbmcvfs.translatePath('special://home/addons/plugin.video.alvin/')
+    file = xbmcvfs.translatePath('special://userdata/addon_data/plugin.video.alvin/settings.xml')
+
+    if xbmcvfs.exists(addon) and xbmcvfs.exists(file):
+
+        res = '1'
+        addon = xbmcaddon.Addon("plugin.video.alvin")
+        addon.setSetting("hosts.quality", res)
+
+def genocide():
+    addon = xbmcvfs.translatePath('special://home/addons/plugin.video.chainsgenocide/')
+    file = xbmcvfs.translatePath('special://userdata/addon_data/plugin.video.chainsgenocide/settings.xml')
+
+    if xbmcvfs.exists(addon) and xbmcvfs.exists(file):
+
+        res = '1'
+        addon = xbmcaddon.Addon("plugin.video.chainsgenocide")
+        addon.setSetting("hosts.quality", res)
+
+def quicksilver():
+    addon = xbmcvfs.translatePath('special://home/addons/plugin.video.quicksilver/')
+    file = xbmcvfs.translatePath('special://userdata/addon_data/plugin.video.quicksilver/settings.xml')
+
+    if xbmcvfs.exists(addon) and xbmcvfs.exists(file):
+
+        res = '1'
+        addon = xbmcaddon.Addon("plugin.video.quicksilver")
+        addon.setSetting("hosts.quality", res)
+        
 
 def hd_maxset_1080p():
         seren()
         fen()
-        pov()
         ezra()
         ghost()
         shadow()
@@ -254,6 +293,10 @@ def hd_maxset_1080p():
         moria()
         thepromise()
         scrubs()
+        shazam()
+        alvin()
+        genocide()
+        quicksilver()
         xbmc.executebuiltin('dialog.close(all)')
         xbmc.executebuiltin('ActivateWindow(home)')
         xbmcgui.Dialog().ok('1080P Quality Conversion', 'To save changes you now need to force close Kodi, Press OK to force close Kodi')
