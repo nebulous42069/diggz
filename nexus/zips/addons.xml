@@ -1416,7 +1416,7 @@ All changes on GitHub: https://github.com/aitschti/plugin.video.sc19
     <platform>all</platform>
     <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
   </extension>
-</addon><addon id="script.diggzwiki" name="Diggz Wiki" version="420" provider-name="Diggz">
+</addon><addon id="script.diggzwiki" name="Diggz Wiki Forum" version="421" provider-name="Diggz">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
   </requires>

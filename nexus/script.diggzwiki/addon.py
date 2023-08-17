@@ -15,9 +15,9 @@ def menuoptions():
         function1,
         )
         
-    call = dialog.select('[B][COLOR=white]Click Here to learn some tricks[/COLOR][/B]',
+    call = dialog.select('[B][COLOR=white]Click Here for Diggz Help..[/COLOR][/B]',
 	[
-	'[COLOR orange]DiggzWiki[/COLOR]',])
+	'[COLOR orange]DiggzWiki Forum[/COLOR]',])
 
     # dialog.selectreturns
     #   0 -> escape pressed
@@ -52,9 +52,9 @@ myplatform = platform()
 
 def function1():
     if myplatform == 'android': # Android 
-        opensite = xbmc.executebuiltin( 'StartAndroidActivity(,android.intent.action.VIEW,,%s)' % ( 'https://diggz1.me/wiki/index.php/Main_Page' ) )   
+        opensite = xbmc.executebuiltin( 'StartAndroidActivity(,android.intent.action.VIEW,,%s)' % ( 'https://diggz1.me/forum/' ) )   
     else:
-        opensite = webbrowser . open('https://diggz1.me/wiki/index.php/Main_Page')        
+        opensite = webbrowser . open('https://diggz1.me/forum/')        
 
 
 
