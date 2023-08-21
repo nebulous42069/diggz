@@ -277,7 +277,7 @@
             <fanart>fanart.jpg</fanart>
     </assets>
   </extension>
-</addon><addon id="plugin.program.chef20" name="Chef Nexus Wizard" version="463" provider-name="Diggz">
+</addon><addon id="plugin.program.chef20" name="Chef Nexus Wizard" version="464" provider-name="Diggz">
 	<requires>
 		<import addon="xbmc.python" version="3.0.1" />
 		<import addon="script.module.accountmgr" version="1.0" />
@@ -1487,7 +1487,7 @@ All changes on GitHub: https://github.com/aitschti/plugin.video.sc19
 		6.2.0 - Added context menu force "player select" to the play button, available via "c" and long press "enter" button
 		</news>
 	</extension>
-</addon><addon id="script.module.accountmgr" version="420.2.3.1" name="Account Manager" provider-name="Zaxxon709">
+</addon><addon id="script.module.accountmgr" version="421.2.3.1" name="Account Manager" provider-name="Zaxxon709">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
 		<import addon="script.module.requests" version="2.19.1" />
@@ -1510,7 +1510,7 @@ All changes on GitHub: https://github.com/aitschti/plugin.video.sc19
 			<fanart>fanart.png</fanart>
 		</assets>
 	</extension>
-</addon><addon id="script.module.acctview" name="acctviewer" version="420.2.1.6" provider-name="Zaxxon709">
+</addon><addon id="script.module.acctview" name="acctviewer" version="421.2.1.6" provider-name="Zaxxon709">
     <extension point="xbmc.python.pluginsource" library="default.py">
     </extension>
     <extension point="xbmc.python.module" library="resources" />

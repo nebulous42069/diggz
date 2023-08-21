@@ -27,6 +27,10 @@
                 "url": "installaddon(plugin.video.chainsgenocide)"
             },
             {
+                "name": "Install Absolution (DEBRID ONLY)",
+                "url": "installaddon(plugin.video.absolution)"
+            },
+            {
                 "name": "Install Shadow (DEBRID ONLY)",
                 "url": "installaddon(plugin.video.shadow)"
             },

@@ -39,6 +39,60 @@ class Auth:
                             addon.setSetting("watched_indicators", '1')
         except:
                 pass
+    #Seren
+        try:
+            if xbmcvfs.exists(var.chk_seren) and xbmcvfs.exists(var.chkset_seren):
+                    chk_auth_seren = xbmcaddon.Addon('plugin.video.seren').getSetting("trakt.auth")
+                    if not str(var.chk_accountmgr_tk) == str(chk_auth_seren) or str(chk_auth_seren) == '':
+                    
+                            f = open(var.path_seren,'r')
+                            data = f.read()
+                            f.close()
+                            client = data.replace(var.seren_client,var.client_am).replace(var.seren_secret,var.secret_am)
+                            f = open(var.path_seren,'w')
+                            f.write(client)
+                            f.close()
+
+                            accountmgr = xbmcaddon.Addon("script.module.accountmgr")
+                            addon = xbmcaddon.Addon("plugin.video.seren")
+
+                            your_token = accountmgr.getSetting("trakt.token")
+                            addon.setSetting("trakt.auth", your_token)
+
+                            your_username = accountmgr.getSetting("trakt.username")
+                            addon.setSetting("trakt.username", your_username)
+                            
+                            your_refresh = accountmgr.getSetting("trakt.refresh")
+                            addon.setSetting("trakt.refresh", your_refresh)
+
+                            your_expires = accountmgr.getSetting("trakt.expires")
+                            addon.setSetting("trakt.expires", your_expires)
+        except:
+                pass
+                
+    #Absolution
+        try:
+                if xbmcvfs.exists(var.chk_absolution) and xbmcvfs.exists(var.chkset_absolution):
+                        chk_auth_absolution = xbmcaddon.Addon('plugin.video.absolution').getSetting("trakt.token")
+                        if not str(var.chk_accountmgr_tk) == str(chk_auth_absolution) or str(chk_auth_absolution) == '':
+
+                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
+                                addon = xbmcaddon.Addon("plugin.video.absolution")
+
+                                your_username = accountmgr.getSetting("trakt.username")
+                                addon.setSetting("trakt.user", your_username)
+
+                                your_token = accountmgr.getSetting("trakt.token")
+                                addon.setSetting("trakt.token", your_token)
+
+                                your_refresh = accountmgr.getSetting("trakt.refresh")
+                                addon.setSetting("trakt.refresh", your_refresh)
+
+                                addon.setSetting("trakt.authed", 'yes')
+                                addon.setSetting("trakt.client_id", var.client_am)
+                                addon.setSetting("trakt.client_secret", var.secret_am)
+        except:
+                pass
 
     #Ezra
         try:
@@ -536,6 +590,7 @@ class Auth:
         except:
                 pass
         
+
     #Magic Dragon
         try:
                 if xbmcvfs.exists(var.chk_md) and xbmcvfs.exists(var.chkset_md):
