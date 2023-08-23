@@ -49,7 +49,6 @@ chk_accountmgr_file = xbmcaddon.Addon('script.module.accountmgr').getSetting("fi
 
 #Add-on Paths
 chk_seren = xbmcvfs.translatePath('special://home/addons/plugin.video.seren/')
-chk_absolution = xbmcvfs.translatePath('special://home/addons/plugin.video.absolution/')
 chk_fen = xbmcvfs.translatePath('special://home/addons/plugin.video.fen/')
 chk_ezra = xbmcvfs.translatePath('special://home/addons/plugin.video.ezra/')
 chk_pov = xbmcvfs.translatePath('special://home/addons/plugin.video.pov/')
@@ -93,7 +92,6 @@ chk_pvr = xbmcvfs.translatePath('special://home/addons/script.module.pvr.artwork
 
 #Add-on settings.xml Paths
 chkset_seren = xbmcvfs.translatePath('special://userdata/addon_data/plugin.video.seren/settings.xml')
-chkset_absolution = xbmcvfs.translatePath('special://userdata/addon_data/plugin.video.absolution/settings.xml')
 chkset_fen = xbmcvfs.translatePath('special://userdata/addon_data/plugin.video.fen/settings.xml')
 chkset_ezra = xbmcvfs.translatePath('special://userdata/addon_data/plugin.video.ezra/settings.xml')
 chkset_pov = xbmcvfs.translatePath('special://userdata/addon_data/plugin.video.pov/settings.xml')
@@ -137,8 +135,6 @@ chkset_pvr = xbmcvfs.translatePath('special://userdata/addon_data/script.module.
 
 #Add-on API Key Paths
 path_fen = xbmcvfs.translatePath('special://home/addons/plugin.video.fen/resources/lib/apis/trakt_api.py')
-path_seren = xbmcvfs.translatePath('special://home/addons/plugin.video.seren/resources/lib/indexers/trakt.py')
-path_absolution = xbmcvfs.translatePath('special://home/addons/plugin.video.absolution/resources/lib/modules/api_keys.py')
 path_pov = xbmcvfs.translatePath('special://home/addons/plugin.video.pov/resources/lib/apis/trakt_api.py')
 path_crew = xbmcvfs.translatePath('special://home/addons/script.module.thecrew/lib/resources/lib/modules/trakt.py')
 path_shadow = xbmcvfs.translatePath('special://home/addons/plugin.video.shadow/resources/modules/general.py')
@@ -171,10 +167,6 @@ crew_tmdb = f'0049795edb57568b95240bc9e61a9dfc'
 #Trakt
 fen_client = f'645b0f46df29d27e63c4a8d5fff158edd0bef0a6a5d32fc12c1b82388be351af'
 fen_secret = f'422a282ef5fe4b5c47bc60425c009ac3047ebd10a7f6af790303875419f18f98'
-seren_client = f'0c9a30819e4af6ffaf3b954cbeae9b54499088513863c03c02911de00ac2de79'
-seren_secret = f'bf02417f27b514cee6a8d135f2ddc261a15eecfb6ed6289c36239826dcdd1842'
-absolution_client = f'MTk4NDk5MDlhMGY4YzlkYzYzMmJjNWY1YzdjY2FmZDE5ZjNlNDUyZTJlNDRmZWUwNWI4M2ZkNWRjMWU3NzY3NQ=='
-absolution_secret = f'MTIyYjdhNzk0MzdkY2Y0YjY1N2QzYWY5ZTkyZjJkOWZmODkzOWFkZTUzMmUwM2JjODFiZmI1Y2U3OThiMDRiZg=='
 pov_client = f'd4161a7a106424551add171e5470112e4afdaf2438e6ef2fe0548edc75924868'
 pov_secret = f'b5fcd7cb5d9bb963784d11bbf8535bc0d25d46225016191eb48e50792d2155c0'
 crew_client = f'482f9db52ee2611099ce3aa1abf9b0f7ed893c6d3c6b5face95164eac7b01f71'

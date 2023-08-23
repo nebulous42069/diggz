@@ -158,7 +158,7 @@
 		<setting type="action" label="Set Backup Directory" option="close" action="RunScript(script.module.accountmgr, action=SetBackupFolder)" />
 		<setting type="action" label="Reset Backup Directory" option="close" action="RunScript(script.module.accountmgr, action=ResetBackupFolder)" />
 		<setting type="lsep" label="Backup Directory" />
-		<setting label="Current Backup Directory" type="folder" id="backupfolder" source="" option="writeable" default="special://userdata/addon_data/plugin.program.chef20/" enable="false" visible="eq(-2,)" />
+		<setting label="Current Backup Directory" type="folder" id="backupfolder" source="" option="writeable" default="special://userdata/addon_data/script.module.accountmgr/" enable="false" visible="eq(-2,)" />
 	</category>
 	<category label="Advanced">
 		<setting type="lsep" label="Startup Services" />

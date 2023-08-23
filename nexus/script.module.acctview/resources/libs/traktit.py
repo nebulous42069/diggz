@@ -11,7 +11,7 @@ from resources.libs.common import logging
 from resources.libs.common import tools
 from resources.libs.common import var
 
-ORDER = ['acctmgr', 'seren', 'absolution', 'ezra', 'fen', 'pov', 'umbrella', 'shadow', 'ghost', 'unleashed', 'chains', 'base19', 'md', 'asgard', 'patriot', 'homelander', 'quicksilver', 'genocide', 'shazam', 'thepromise', 'thecrew', 'nightwing', 'alvin', 'moria', 'nine', 'scrubs', 'tmdbhelper', 'myact', 'trakt']
+ORDER = ['acctmgr', 'seren', 'ezra', 'fen', 'pov', 'umbrella', 'shadow', 'ghost', 'unleashed', 'chains', 'base19', 'md', 'asgard', 'patriot', 'homelander', 'quicksilver', 'genocide', 'shazam', 'thepromise', 'thecrew', 'nightwing', 'alvin', 'moria', 'nine', 'scrubs', 'tmdbhelper', 'myact', 'trakt']
 
 TRAKTID = {
    'seren': {
@@ -26,18 +26,6 @@ TRAKTID = {
         'default'  : 'trakt.username',
         'data'     : ['trakt.auth', 'trakt.clientid', 'trakt.refresh', 'trakt.secret', 'trakt.username', 'trakt.expires'],
         'activate' : 'Addon.OpenSettings(plugin.video.seren)'},
-   'absolution': {
-        'name'     : 'Absolution',
-        'plugin'   : 'plugin.video.absolution',
-        'saved'    : 'absolution',
-        'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.absolution'),
-        'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.absolution/', 'icon.png'),
-        'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.absolution/', 'fanart.jpg'),
-        'file'     : os.path.join(CONFIG.TRAKTFOLD, 'absolution_trakt'),
-        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.absolution', 'settings.xml'),
-        'default'  : 'trakt.user',
-        'data'     : ['trakt.authed', 'trakt.token', 'trakt.refresh', 'trakt.client_id', 'trakt.user', 'trakt.client_secret'],
-        'activate' : 'Addon.OpenSettings(plugin.video.absolution)'},
     'ezra': {
         'name'     : 'Ezra',
         'plugin'   : 'plugin.video.ezra',
@@ -631,26 +619,6 @@ def revoke_trakt(): #Restore default API keys to all add-ons
         f = open(var.path_fen,'w')
         f.write(client)
         f.close()
-        
-    if xbmcvfs.exists(var.chk_seren):
-                        
-        f = open(var.path_seren,'r')
-        data = f.read()
-        f.close()
-        client = data.replace(var.client_am,var.seren_client).replace(var.secret_am,var.seren_secret)
-        f = open(var.path_seren,'w')
-        f.write(client)
-        f.close()
-        
-    if xbmcvfs.exists(var.chk_absolution):
-                        
-        f = open(var.path_absolution,'r')
-        data = f.read()
-        f.close()
-        client = data.replace(var.client_am,var.absolution_client).replace(var.secret_am,var.absolution_secret)
-        f = open(var.path_absolution,'w')
-        f.write(client)
-        f.close()
 
     if xbmcvfs.exists(var.chk_pov):
 
@@ -801,26 +769,6 @@ def restore_trakt(): #Restore API Keys to all add-ons
         f.close()
         client = data.replace(var.fen_client,var.client_am).replace(var.fen_secret,var.secret_am)
         f = open(var.path_fen,'w')
-        f.write(client)
-        f.close()
-        
-    if xbmcvfs.exists(var.chk_seren):
-                        
-        f = open(var.path_seren,'r')
-        data = f.read()
-        f.close()
-        client = data.replace(var.seren_client,var.client_am).replace(var.seren_secret,var.secret_am)
-        f = open(var.path_seren,'w')
-        f.write(client)
-        f.close()
-        
-    if xbmcvfs.exists(var.chk_absolution):
-                        
-        f = open(var.path_absolution,'r')
-        data = f.read()
-        f.close()
-        client = data.replace(var.absolution_client,var.client_am).replace(var.absolution_secret,var.secret_am)
-        f = open(var.path_absolution,'w')
         f.write(client)
         f.close()
 
