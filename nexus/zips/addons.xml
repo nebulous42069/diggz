@@ -1432,7 +1432,7 @@ All changes on GitHub: https://github.com/aitschti/plugin.video.sc19
 	<icon>icon.png</icon>
     </assets>
   </extension>
-</addon><addon id="script.extendedinfo" name="  [B][COLOR white]Extended Info-Diamond_MOD[/COLOR][/B]" version="420.7.70" provider-name="fryhenryj">
+</addon><addon id="script.extendedinfo" name="  [B][COLOR white]Extended Info-Diamond_MOD[/COLOR][/B]" version="420.7.71" provider-name="fryhenryj">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
 		<import addon="repository.jurialmunkey" version="2.2" optional="true" />
@@ -1467,7 +1467,7 @@ All changes on GitHub: https://github.com/aitschti/plugin.video.sc19
 			</item>
 		</menu>
 	</extension>
-	
+	<extension point="xbmc.service" library="service.py" start="login" />
 	<extension point="xbmc.python.library" library="service2.py" />
 	<extension point="xbmc.addon.metadata">
 		<reuselanguageinvoker>true</reuselanguageinvoker>

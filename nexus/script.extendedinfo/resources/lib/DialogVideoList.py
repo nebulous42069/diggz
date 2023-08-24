@@ -113,6 +113,78 @@ def get_tmdb_window(window_type):
     Utils.show_busy()
     class DialogVideoList(DialogBaseList, window_type):
 
+        def setup_filter(self, meta_filters):
+            #import urllib.parse
+            #meta_filters_encoded  = urllib.parse.quote(str(meta_filters))
+            #meta_filters_encoded = meta_filters
+            #meta_filters_decoded  = eval(urllib.parse.unquote(meta_filters_encoded))
+            meta_filters_decoded = meta_filters
+
+            for i in meta_filters_decoded['filters']:
+                if i == 'sort':
+                    self.order = meta_filters_decoded['filters'][i]
+                if i == 'sort_string':
+                    if self.media_type == 'tv':
+                        if meta_filters_decoded['filters'][i] in str(SORTS['tv']):
+                            self.sort_label = SORTS['tv'][meta_filters_decoded['filters'][i]]
+                            self.sort = meta_filters_decoded['filters'][i]
+                        else:
+                            self.sort = 'popularity'
+                            self.sort_label = SORTS['tv']['popularity']
+                    else:
+                        if meta_filters_decoded['filters'][i] in str(SORTS['movie']):
+                            self.sort_label = SORTS['movie'][meta_filters_decoded['filters'][i]]
+                            self.sort = meta_filters_decoded['filters'][i]
+                        else:
+                            self.sort = 'popularity'
+                            self.sort_label = SORTS['movie']['popularity']
+                if 'genre' in str(i) and i != 'genre_mode':
+                    response = TheMovieDB.get_tmdb_data('genre/%s/list?language=%s&' % (self.type, xbmcaddon.Addon().getSetting('LanguageID')), 10)
+                    id_list = [item['id'] for item in response['genres']]
+                    label_list = [item['name'] for item in response['genres']]
+                    ids = []
+                    labels = ', '
+                    ids_or = '| '
+                    for genre in meta_filters_decoded['filters'][i]:
+                        labels = labels + genre.capitalize() + ', '
+                        for idx, x in enumerate(label_list):
+                            if str(genre).lower() in str(x).lower():
+                                ids.append(id_list[idx])
+                                ids_or = ids_or + str(id_list[idx]) + '| '
+                    labels = labels[2:-2]
+                    ids_or = ids_or[2:-2]
+                    if meta_filters_decoded['filters']['genre_mode'] == 'OR':
+                        ids = ids_or
+                        labels = labels.replace(',','|')
+                    if 'without_genres' == i:
+                        self.add_filter('without_genres', ids, 'Genres', 'NOT ' + labels)
+                    if 'with_genres' == i:
+                        self.add_filter('with_genres', ids, 'Genres', labels)
+                if i == 'with_original_language':
+                    id = meta_filters_decoded['filters'][i]
+                    id_list = [item['id'] for item in LANGUAGES]
+                    label_list = [item['name'] for item in LANGUAGES]
+                    self.add_filter('with_original_language', id, 'Original language', label_list[id_list.index(id)])
+                if i == 'vote_count.gte':
+                    result = meta_filters_decoded['filters'][i]
+                    self.add_filter('vote_count.gte', result, 'Vote count', ' > %s' % result)
+                if i == 'vote_count.lte':
+                    result = meta_filters_decoded['filters'][i]
+                    self.add_filter('vote_count.lte', result, 'Vote count', ' < %s' % result)
+                if i == 'upper_year' or i == 'lower_year':
+                    if i == 'upper_year':
+                        order = 'lte'
+                        value = '%s-12-31' % meta_filters_decoded['filters'][i] 
+                        label = ' < ' + meta_filters_decoded['filters'][i] 
+                    if i == 'lower_year':
+                        order = 'gte'
+                        value = '%s-01-01' % meta_filters_decoded['filters'][i] 
+                        label = ' > ' + meta_filters_decoded['filters'][i] 
+                    if self.media_type == 'movie':
+                        self.add_filter('primary_release_date.%s' % order, value, 'Year', label)
+                    if self.media_type == 'tv':
+                        self.add_filter('first_air_date.%s' % order, value, 'First aired', label)
+
         def __init__(self, *args, **kwargs):
             super(DialogVideoList, self).__init__(*args, **kwargs)
             self.type = kwargs.get('type', 'movie')
@@ -132,6 +204,10 @@ def get_tmdb_window(window_type):
             xbmcgui.Window(10000).clearProperty('ImageColor')
 
             #xbmc.log(str(str('Line ')+str(getframeinfo(currentframe()).lineno)+'___'+str(getframeinfo(currentframe()).filename))+'===>OPENINFO', level=xbmc.LOGINFO)
+            xbmc.log(str(wm.custom_filter)+'===>OPENINFO', level=xbmc.LOGINFO)
+            if wm.custom_filter:
+                self.setup_filter(wm.custom_filter)
+                wm.custom_filter = None
 
             if self.listitem_list:
                 self.listitems = Utils.create_listitems(self.listitem_list)

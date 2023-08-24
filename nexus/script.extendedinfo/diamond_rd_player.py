@@ -485,18 +485,27 @@ def download_tv_test(meta_info, filename):
 		show_title_split = str(meta_info['show_title']).lower().split(' ')
 		word_count = 0
 		total_word_count = 0
+		three_word_count = 0
+		three_total_word_count = 0
 		for i in name_word_list:
 			if str(i) in filename and len(i) > 3 and not str(i) in show_title_split:
 				word_count = word_count + 1
 			if len(i) > 3:
 				total_word_count = total_word_count + 1
+			if str(i) in filename and len(i) >= 3 and not str(i) in show_title_split:
+				three_word_count = three_word_count + 1
+			if len(i) >= 3:
+				three_total_word_count = three_total_word_count + 1
+
 		#if len(name_word_list) <= 3 and len(name_word_list) > 1:
 		#	if word_count >= len(name_word_list) - 1:
 		#		episode_name_flag = True
 		if len(name_word_list) > 3:
 			if word_count >= len(name_word_list) -2:
 				episode_name_flag = True
-		if total_word_count >= 1 and word_count == total_word_count:
+			if three_word_count >= len(name_word_list) -1:
+				episode_name_flag = True
+		if total_word_count >= 1 and word_count == total_word_count and len(name_word_list) -2 <= total_word_count:
 			episode_name_flag = True
 
 	if episode_list_flag == True and episode_name_flag == False:
@@ -1324,7 +1333,10 @@ def next_ep_play(show_title, show_season, show_episode, tmdb):
 					if 'sample' in original_filename:
 						continue
 
-					meta_info_flags = download_tv_test(meta_info=meta_info, filename=torr_data2[str(j)]['filename'].lower())
+					test_file = torr_data2[str(j)]['filename'].lower()
+					if torr_test:
+						test_file = meta_info['show_title_clean'] + ' ' + test_file
+					meta_info_flags = download_tv_test(meta_info=meta_info, filename=test_file)
 					torr_test2 = 0
 					for xi in meta_info_flags:
 						if xi != 'x265_match_pass' and meta_info_flags[xi] == True:

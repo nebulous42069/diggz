@@ -42,6 +42,7 @@ class WindowManager(object):
         self.page_position = None
         self.position = None
         self.focus_id = None
+        self.custom_filter = None
         try: self.window_stack_len = self.window_stack_len
         except: self.window_stack_len = 0
         self.focus_id = None

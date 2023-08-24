@@ -7,13 +7,16 @@ from resources.lib.library import addon_ID_short
 from resources.lib.library import icon_path
 from resources.autocomplete import AutoCompletion
 from resources.autocomplete import AutoCompletion_plugin
-from urllib.parse import urlencode, quote_plus, unquote, unquote_plus
+from urllib.parse import quote, urlencode, quote_plus, unquote, unquote_plus
 import time
 
 def start_info_actions(infos, params):
 	addonID = addon_ID()
 	addonID_short = addon_ID_short()
 
+	wm.custom_filter = params.get('meta_filter')
+	if wm.custom_filter:
+		wm.custom_filter = eval(unquote(wm.custom_filter))
 
 	if 'imdbid' in params and 'imdb_id' not in params:
 		params['imdb_id'] = params['imdbid']
@@ -23,6 +26,14 @@ def start_info_actions(infos, params):
 
 		if info == 'getplayingfile':
 			xbmc.log(str(xbmc.Player().getPlayingFile())+'===>OPENINFO', level=xbmc.LOGINFO)
+
+		if info == 'url_encode_test':
+			meta_filters = "{'filters' : {'sort': 'desc', 'sort_string': 'revenue', 'with_genres': ['action','comedy'], 'without_genres': ['horror','reality','documentary'], 'with_original_language': 'en', 'vote_count.gte': '10', 'vote_count.lte': '10 000 000', 'lower_year': '1990', 'upper_year': '1999' } }"
+			meta_filters = "{'filters' : {'sort': 'desc', 'sort_string': 'popularity', 'without_genres': ['horror','reality','documentary'], 'genre_mode': 'OR', 'with_original_language': 'en' } }"
+			meta_filters = "{'filters' : {'sort': 'desc', 'sort_string': 'popularity', 'with_genres': ['Science Fiction'], 'genre_mode': 'OR', 'with_original_language': 'en' } }"
+			meta_filters = "{'filters' : {'sort': 'desc', 'sort_string': 'popularity', 'with_genres': ['Sci-Fi'], 'genre_mode': 'OR', 'with_original_language': 'en' } }"
+			meta_filters = quote(meta_filters)
+			xbmc.log(str(meta_filters)+'===>META_FILTERS', level=xbmc.LOGINFO)
 
 		if info == 'get_trakt_playback':
 			from resources.lib import TheMovieDB
@@ -178,7 +189,6 @@ def start_info_actions(infos, params):
 				return TheMovieDB.get_tmdb_shows(tmdb_var)
 			wm.window_stack_empty()
 			return wm.open_video_list(media_type=media_type, mode='list_items', filter_label=filter_label, search_str=TheMovieDB.get_tmdb_shows(tmdb_var), listitems=[])
-
 
 		elif info == 'allmovies':
 			wm.window_stack_empty()
@@ -435,6 +445,16 @@ def start_info_actions(infos, params):
 			import json
 			xbmc.log(str('test_route')+'===>OPEN_INFO', level=xbmc.LOGINFO)
 			Utils.hide_busy()
+			from resources.lib.library import trakt_unwatched_tv_shows
+			from resources.lib.library import trakt_watched_tv_shows
+			string = trakt_unwatched_tv_shows()
+			for i in string:
+				xbmc.log(str(i['name'])+'===>OPEN_INFO', level=xbmc.LOGINFO)
+			string = trakt_watched_tv_shows()
+			#xbmc.log(str(string)+'===>OPEN_INFO', level=xbmc.LOGINFO)
+			for i in string:
+				xbmc.log(str(i['show']['title'])+'===>OPEN_INFO', level=xbmc.LOGINFO)
+			return
 			from resources.lib import TheMovieDB
 			#response = TheMovieDB.get_tastedive_data(query=search_str, limit=limit, media_type=media_type)
 			response = TheMovieDB.get_tastedive_data_scrape(query='Alien³', year='1992', limit=50, media_type='movie')
