@@ -15,16 +15,8 @@
                 "url": "installaddon(plugin.video.umbrella)"
             },
             {
-                "name": "Install Ezra (DEBRID ONLY)",
-                "url": "installaddon(plugin.video.ezra)"
-            },
-            {
                 "name": "Install POV (DEBRID ONLY)",
                 "url": "installaddon(plugin.video.pov)"
-            },
-            {
-                "name": "Install Chains Genocide (DEBRID ONLY)",
-                "url": "installaddon(plugin.video.chainsgenocide)"
             },
             {
                 "name": "Install Absolution (DEBRID ONLY)",
