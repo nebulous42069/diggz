@@ -49,16 +49,16 @@
 		<setting id="filepursuit.api.key" type="text" label="FilePursuit API Key" default="" visible="eq(-9,true)" />
 
 		<setting type="lsep" label="Metadata Providers" />
-		<setting id="meta.enabled" type="bool" visible="eq(-1,)" label="Enable" default="false" />
+		<setting id="meta.enabled" type="bool" visible="eq(-1,)" label="Enable" default="true" />
 		<setting type="action" label="Sync Add-ons" option="close" action="RunScript(script.module.accountmgr, action=metaSync)"  visible="eq(-1,true)" />
 		<setting label="32311" type="action" action="RunScript(script.module.accountmgr, action=ShowHelpMeta)" visible="eq(-2,true)" />
 		<setting type="lsep"/>
-		<setting id="fanart.tv.api.key" type="text" label="Fanart.TV API Key" default="" visible="eq(-4,true)"/>
+		<setting id="fanart.tv.api.key" type="text" label="Fanart.TV API Key" default="ad7eccc1dd67f889f7f5c2e9ebb810ae" visible="eq(-4,true)"/>
 		<setting id="omdb.api.key" type="text" label="OMDb API Key" default="" visible="eq(-5,true)" />
 		<setting id="mdb.api.key" type="text" label="MDblist API Key" default="" visible="eq(-6,true)" />
 		<setting id="imdb.user" type="text" label="IMDb User" default="" visible="eq(-7,true)" />
-		<setting id="tvdb.api.key" type="text" label="TVDb API Key" default="" visible="eq(-8,true)" />
-		<setting id="tmdb.api.key" type="text" label="40072" default="" visible="eq(-9,true)" />
+		<setting id="tvdb.api.key" type="text" label="TVDb API Key" default="b29fd3a8-0a70-4098-9409-b9337eb54ded" visible="eq(-8,true)" />
+		<setting id="tmdb.api.key" type="text" label="40072" default="3d000491a0f37d4962d02bdb062af037" visible="eq(-9,true)" />
 		<setting type="sep"/>
 		<setting id="tmdb.username" type="text" label="40060" default="" visible="eq(-11,true)" />
 		<setting id="tmdb.password" type="text" label="40061" option="hidden" default="" visible="eq(-12,true)" />
