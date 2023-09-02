@@ -11,14 +11,14 @@
 		<setting id="realdebrid.refresh" label="realdebrid refresh" type = "text" default="" visible="false" />
 		<setting id="realdebrid.secret" label="realdebrid secret" type = "text" default="" visible="false" />
 
-		<setting type="lsep" label="40057" />
+		<setting type="lsep" label="Premiumize" />
 		<setting id="premiumize.token" label="40078" type="text" default="" visible="false" />
 		<setting id="premiumize.username" label="32318" type="text" default="" visible="!eq(-1,)" enable="false" />
 		<setting id="premiumize.expiry.notice" type="bool" label="40086" default="true" visible="!eq(-2,)" />
 		<setting type="action" label="32316" option="close" action="RunScript(script.module.accountmgr, action=premiumizeAcct)" visible="!eq(-2,)" />
 		<setting type="action" label="32319" option="close" action="RunScript(script.module.accountmgr, action=premiumizeAuth)" visible="eq(-4,)" />
 
-		<setting type="lsep" label="40059" />
+		<setting type="lsep" label="All-Debrid" />
 		<setting id="alldebrid.token" label="40077" type="text" default="" visible="false" />
 		<setting id="alldebrid.username" label="32318" type="text" default="" visible="!eq(-1,)" enable="false" />
 		<setting id="alldebrid.expiry.notice" type="bool" label="40086" default="true" visible="!eq(-2,)" />
@@ -32,12 +32,12 @@
 		<setting id="traktuserkey.enabled" type="bool" visible="eq(3,)" label="40090" default="false" />
 		<setting id="trakt.client.id" type="text" visible="eq(-1,true) + eq(2,)" label="40089" default="" />
 		<setting id="trakt.client.secret" type="text" visible="eq(-2,true)+ eq(1,)" label="40088" default="" />
-		<setting type="action" label="Authorize" option="close" action="RunScript(script.module.accountmgr, action=traktAuth)" visible="eq(-7,)" />
+		<setting type="action" label="Authorize" option="close" action="RunScript(script.module.accountmgr, action=traktAuth)" visible="eq(-6,)" />
 		<setting id="trakt.username" type="text" default="" label="40062" enable="false" visible="!eq(-7,)" />
 		<setting type="action" label="32316" option="close" action="RunScript(script.module.accountmgr, action=traktAcct)" visible="!eq(-1,)" />
 
 		<setting type="lsep" label="Furk/Easynews/FilePursuit" />
-		<setting id="non.enabled" type="bool" visible="eq(-1,)" label="Enable" default="false" />
+		<setting id="non.enabled" type="bool" visible="true" label="Enable" default="false" />
 		<setting type="action" label="Sync Add-ons" option="close" action="RunScript(script.module.accountmgr, action=SyncAll)"  visible="eq(-1,true)" />
 		<setting label="32311" type="action" action="RunScript(script.module.accountmgr, action=ShowHelpNonDebrid)" visible="eq(-2,true)" />
 		<setting type="lsep"/>
@@ -49,7 +49,7 @@
 		<setting id="filepursuit.api.key" type="text" label="FilePursuit API Key" default="" visible="eq(-9,true)" />
 
 		<setting type="lsep" label="Metadata Providers" />
-		<setting id="meta.enabled" type="bool" visible="eq(-1,)" label="Enable" default="true" />
+		<setting id="meta.enabled" type="bool" visible="true" label="Enable" default="true" />
 		<setting type="action" label="Sync Add-ons" option="close" action="RunScript(script.module.accountmgr, action=metaSync)"  visible="eq(-1,true)" />
 		<setting label="32311" type="action" action="RunScript(script.module.accountmgr, action=ShowHelpMeta)" visible="eq(-2,true)" />
 		<setting type="lsep"/>
@@ -70,7 +70,7 @@
 	<category label="Manage Accounts">
 		<setting type="sep"/>
 		<setting type="lsep" label="Manage Multiple Debrid Accounts" />
-		<setting id="debridall.enabled" type="bool" visible="eq(-1,)" label="Enable" default="false" />
+		<setting id="debridall.enabled" type="bool" visible="true" label="Enable" default="false" />
 		<setting type="action" label="View Authorizations" option="close" action="ActivateWindow(10001,plugin://script.module.acctview/?mode=allaccts,return)" visible="eq(-1,true)" />
 		<setting type="action" label="Sync Accounts" option="close" action="RunScript(script.module.accountmgr, action=ReSyncAll)" visible="eq(-2,true)" />
 		<setting type="action" label="Revoke Accounts" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=revokeall&name=all)" visible="eq(-3,true)" />
@@ -81,7 +81,7 @@
 		<setting type="action" label="Sync Add-ons" option="close" action="RunScript(script.module.accountmgr, action=realdebridReSync, opensettings=true)"  visible="!eq(-2,)" />
 		<setting type="action" label="Revoke" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=addondebrid_rd&name=all)"  visible="!eq(-3,)" />
 
-		<setting type="lsep" label="Premiumize.me" />
+		<setting type="lsep" label="Premiumize" />
 		<setting id="premiumize.username" label="" type="text" default="" visible="false" enable="false" />
 		<setting type="action" label="View Authorized Add-ons" option="close" action="ActivateWindow(10001,plugin://script.module.acctview/?mode=premiumize,return)" visible="!eq(-1,)" />
 		<setting type="action" label="Sync Add-ons" option="close" action="RunScript(script.module.accountmgr, action=premiumizeReSync, opensettings=true)"  visible="!eq(-2,)" />
@@ -120,38 +120,38 @@
 		<setting type="lsep" label="Real-Debrid" />
 		<setting id="realdebrid.username" label="" type="text" default="" visible="false" />
 		<setting type="action" label="Backup Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=savedebrid_acctmgr_rd&name=all)"  visible="!eq(-1,)" />
-		<setting type="action" label="Restore Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=restoredebrid_rd&name=all)"  visible="eq(-3,)" />
-		<setting type="action" label="Clear Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=cleardebrid_rd&name=all)" visible="eq(-4,)" />
+		<setting type="action" label="Restore Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=restoredebrid_rd&name=all)"  visible="true" />
+		<setting type="action" label="Clear Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=cleardebrid_rd&name=all)" visible="true" />
 
-		<setting type="lsep" label="Premiumize.me" />
+		<setting type="lsep" label="Premiumize" />
 		<setting id="premiumize.username" label="" type="text" default="" visible="false" />
 		<setting type="action" label="Backup Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=savedebrid_acctmgr_pm&name=all)"  visible="!eq(-1,)" />
-		<setting type="action" label="Restore Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=restoredebrid_pm&name=all)"  visible="eq(-3,)" />
-		<setting type="action" label="Clear Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=cleardebrid_pm&name=all)"  visible="eq(-4,)" />
+		<setting type="action" label="Restore Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=restoredebrid_pm&name=all)"  visible="true" />
+		<setting type="action" label="Clear Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=cleardebrid_pm&name=all)"  visible="true" />
 
 		<setting type="lsep" label="All-Debrid" />
 		<setting id="alldebrid.username" label="" type="text" default="" visible="false" />
 		<setting type="action" label="Backup Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=savedebrid_acctmgr_ad&name=all)"  visible="!eq(-1,)" />
-		<setting type="action" label="Restore Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=restoredebrid_ad&name=all)"  visible="eq(-3,)" />
-		<setting type="action" label="Clear Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=cleardebrid_ad&name=all)"  visible="eq(-4,)" />
+		<setting type="action" label="Restore Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=restoredebrid_ad&name=all)"  visible="true" />
+		<setting type="action" label="Clear Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=cleardebrid_ad&name=all)"  visible="true" />
 
 		<setting type="lsep" label="Trakt" />
 		<setting id="trakt.username" label="" type="text" default="" visible="false" enable="false" />
 		<setting type="action" label="Backup Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=savetrakt_acctmgr&name=all)" visible="!eq(-1,)" />
-		<setting type="action" label="Restore Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=restoretrakt&name=all)" visible="eq(-3,)" />
-		<setting type="action" label="Clear Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=cleartrakt&name=all)" visible="eq(-4,)" />
+		<setting type="action" label="Restore Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=restoretrakt&name=all)" visible="true" />
+		<setting type="action" label="Clear Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=cleartrakt&name=all)" visible="true" />
 
 		<setting type="lsep" label="Furk/Easynews/FilePursuit" />
 		<setting id="non.enabled" type="bool" visible="hidden" default="false" />
 		<setting type="action" label="Backup Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=save_non_acctmgr&name=all)"  visible="eq(-1,true)" />
-		<setting type="action" label="Restore Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=restore_non&name=all)"  visible="eq(-3,true)" />
-		<setting type="action" label="Clear Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=clear_non&name=all)"  visible="eq(-4,true)" />
+		<setting type="action" label="Restore Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=restore_non&name=all)"  visible="true" />
+		<setting type="action" label="Clear Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=clear_non&name=all)"  visible="true" />
 
 		<setting type="lsep" label="Metadata Providers" />
 		<setting id="meta.enabled" type="bool" visible="hidden" default="false" />
 		<setting type="action" label="Backup Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=savemeta_acctmgr&name=all)"  visible="eq(-1,true)" />
-		<setting type="action" label="Restore Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=restoremeta&name=all)"  visible="eq(-3,true)" />
-		<setting type="action" label="Clear Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=clearmeta&name=all)"  visible="eq(-4,true)" />
+		<setting type="action" label="Restore Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=restoremeta&name=all)"  visible="true" />
+		<setting type="action" label="Clear Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=clearmeta&name=all)"  visible="true" />
 	</category>
 	<category label="Configure Backup">
 		<setting type="lsep" label="Configure Backup Directory" />
@@ -163,27 +163,27 @@
 	<category label="Advanced">
 		<setting type="lsep" label="Startup Services" />
 		<setting id="checkAddonUpdates" type="bool" label="Update Notification Service" default="false" />
-		<setting label="Enable to receive update notifications" type="text" visible="eq(-2,)" enable="false" />
-      		<setting id="trakt.service"  type="bool" label="Trakt Service" default="true"/>
-		<setting label="Disable ONLY if you do not use Trakt" type="text" visible="eq(-4,)" enable="false" />
-      		<setting id="sync.service"  type="bool" label="Trakt & Debrid Auto-Sync Service" default="true"/>
-		<setting label="Auto-Sync at startup for newly installed add-ons" type="text" visible="eq(-6,)" enable="false" />
-      		<setting id="sync.nondebrid.service"  type="bool" label="Furk/Easynews/FilePursuit Auto-Sync Service" default="false"/>
-		<setting label="Auto-Sync at startup for newly installed add-ons" type="text" visible="eq(-8,)" enable="false" />
-      		<setting id="sync.metaservice"  type="bool" label="Metadata Auto-Sync Service" default="false"/>
-		<setting label="Auto-Sync at startup for newly installed add-ons" type="text" visible="eq(-10,)" enable="false" />
+		<setting label="40092" type="text" />
+      	<setting id="trakt.service"  type="bool" label="Trakt Service" default="true"/>
+		<setting label="40093" type="text" />
+      	<setting id="sync.service"  type="bool" label="Trakt & Debrid Auto-Sync Service" default="true"/>
+		<setting label="40094" type="text" />
+      	<setting id="sync.nondebrid.service"  type="bool" label="Furk/Easynews/FilePursuit Auto-Sync Service" default="false"/>
+		<setting label="40095" type="text" />
+      	<setting id="sync.metaservice" type="bool" label="Metadata Auto-Sync Service" default="false"/>
+		<setting label="40096" type="text" />
 		<setting type="lsep" label="Restore All Add-ons To Default" />
-		<setting type="action" label="Restore Default Settings" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=wipeclean&name=all)" visible="eq(-1,)" />
-		<setting label="WARNING! Use only to restore system to default settings" type="text" visible="eq(-2,)" enable="false" />
+		<setting type="action" label="Restore Default Settings" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=wipeclean&name=all)" visible="true" />
+		<setting label="40097" type="text" />
 		<setting type="lsep" label="Supported Add-ons" />
-		<setting label="View Supported Trakt Add-ons" type="action" action="RunScript(script.module.accountmgr, action=ShowSupported_Trakt)" />
-		<setting label="View Supported Debrid Add-ons" type="action" action="RunScript(script.module.accountmgr, action=ShowSupported_Debrid)" />
-		<setting label="View Supported Furk Add-ons" type="action" action="RunScript(script.module.accountmgr, action=ShowSupported_Furk)" />
-		<setting label="View Supported Easynews Add-ons" type="action" action="RunScript(script.module.accountmgr, action=ShowSupported_Easy)" />
-		<setting label="View Supported FilePursuit Add-ons" type="action" action="RunScript(script.module.accountmgr, action=ShowSupported_File)" />
-		<setting label="View Supported Metadata Add-ons" type="action" action="RunScript(script.module.accountmgr, action=ShowSupported_Meta)" />
+		<setting label="40099" type="action" action="RunScript(script.module.accountmgr, action=ShowSupported_Debrid)" />
+		<setting label="40098" type="action" action="RunScript(script.module.accountmgr, action=ShowSupported_Trakt)" />
+		<setting label="40103" type="action" action="RunScript(script.module.accountmgr, action=ShowSupported_Meta)" />
+		<setting label="40100" type="action" action="RunScript(script.module.accountmgr, action=ShowSupported_Furk)" />
+		<setting label="40101" type="action" action="RunScript(script.module.accountmgr, action=ShowSupported_Easy)" />
+		<setting label="40102" type="action" action="RunScript(script.module.accountmgr, action=ShowSupported_File)" />
 		<setting type="lsep" label="Changelog" />
-		<setting label="View Changelog" type="action" action="RunScript(script.module.accountmgr, action=ShowChangelog)" />
+		<setting label="40104" type="action" action="RunScript(script.module.accountmgr, action=ShowChangelog)" />
 	</category>
 
 </settings>

@@ -1,26 +1,21 @@
 
-1.  Seren                  
+1.  Seren
 2.  Ezra
 3.  Fen
-4.  POV                  
+4.  POV
 5.  Umbrella
-6.  Adina
-7.  Artemis
-8.  Dynasty
-9.  Loonatics Empire
-10. The Crew
-11. Homelander
-12. Quicksilver
-13. Chains Genocide          
-14. Shazam
-15. The Promise
-16. Nightwing
-17. Alvin
-18. Moria
-19. Nine Lives
-20. TMDb Helper
-21. Embuary Info
-22. Metahandler
-23. PVR Artwork Module
-24. Your Accounts
-25. My Accounts
+6.  The Crew
+7.  Homelander
+8.  Quicksilver
+9.  Chains Genocide
+10. Shazam
+11. Nightwing
+12. Alvin
+13. Moria
+14. Absolution
+15. 9 Lives
+16. TMDb Helper
+17. Embuary Info
+18. Metahandler
+19. PVR Artwork Module
+20. My Accounts

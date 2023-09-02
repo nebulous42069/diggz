@@ -448,3 +448,54 @@ msgctxt "#40091"
 msgid "[COLOR FFA0C12C] -- TMDb Help --[/COLOR]"
 msgstr ""
 
+msgctxt "#40092"
+msgid "[COLOR FF696969]-- Enable to receive update notifications --[/COLOR]"
+msgstr ""
+
+msgctxt "#40093"
+msgid "[COLOR FF696969]-- Disable ONLY if you do not use Trakt --[/COLOR]"
+msgstr ""
+
+msgctxt "#40094"
+msgid "[COLOR FF696969]-- Auto-Sync at startup for newly installed add-ons --[/COLOR]"
+msgstr ""
+
+msgctxt "#40095"
+msgid "[COLOR FF696969]-- Auto-Sync at startup for newly installed add-ons --[/COLOR]"
+msgstr ""
+
+msgctxt "#40096"
+msgid "[COLOR FF696969]-- Auto-Sync at startup for newly installed add-ons --[/COLOR]"
+msgstr ""
+
+msgctxt "#40097"
+msgid "[COLOR FF696969]-- WARNING! Use only to restore system to default settings --[/COLOR]"
+msgstr ""
+
+msgctxt "#40098"
+msgid "[COLOR FFA0C12C]-- View Supported Trakt Add-ons --[/COLOR]"
+msgstr ""
+
+msgctxt "#40099"
+msgid "[COLOR FFA0C12C]-- View Supported Debrid Add-ons --[/COLOR]"
+msgstr ""
+
+msgctxt "#40100"
+msgid "[COLOR FFA0C12C]-- View Supported Furk Add-ons --[/COLOR]"
+msgstr ""
+
+msgctxt "#40101"
+msgid "[COLOR FFA0C12C]-- View Supported Easynews Add-ons --[/COLOR]"
+msgstr ""
+
+msgctxt "#40102"
+msgid "[COLOR FFA0C12C]-- View Supported FilePursuit Add-ons --[/COLOR]"
+msgstr ""
+
+msgctxt "#40103"
+msgid "[COLOR FFA0C12C]-- View Supported Metadata Add-ons --[/COLOR]"
+msgstr ""
+
+msgctxt "#40104"
+msgid "[COLOR FFA0C12C]-- View Changelog --[/COLOR]"
+msgstr ""

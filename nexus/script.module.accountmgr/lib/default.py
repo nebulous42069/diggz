@@ -73,7 +73,7 @@ elif action == 'traktAuth':
 	from accountmgr.modules import trakt
 	control.function_monitor(trakt.Trakt().auth)
 
-elif action == 'traktReSync': #Sync additional add-ons after Account Manager is already authoorized
+elif action == 'traktReSync': #Sync additional add-ons after Account Manager is already authorized
 	if str(var.chk_accountmgr_tk) != '': #Skip sync if Account Mananger is not authorized
                 from accountmgr.modules import trakt_sync
                 control.function_monitor(trakt_sync.Auth().trakt_auth)
@@ -98,7 +98,7 @@ elif action == 'realdebridAuth':
 	from accountmgr.modules import realdebrid
 	control.function_monitor(realdebrid.RealDebrid().auth)
 
-elif action == 'realdebridReSync': #Sync additional add-ons after Account Manager is already authoorized
+elif action == 'realdebridReSync': #Sync additional add-ons after Account Manager is already authorized
 	if str(var.chk_accountmgr_tk_rd) != '': #Skip sync if Account Mananger is not authorized
                 from accountmgr.modules import debrid_rd
                 control.function_monitor(debrid_rd.Auth().realdebrid_auth)
@@ -119,7 +119,7 @@ elif action == 'premiumizeAuth':
 	from accountmgr.modules import premiumize
 	control.function_monitor(premiumize.Premiumize().auth)
 
-elif action == 'premiumizeReSync': #Sync additional add-ons after Account Manager is already authoorized
+elif action == 'premiumizeReSync': #Sync additional add-ons after Account Manager is already authorized
 	if str(var.chk_accountmgr_tk_pm) != '': #Skip sync if Account Mananger is not authorized
                 from accountmgr.modules import debrid_pm
                 control.function_monitor(debrid_pm.Auth().premiumize_auth)
@@ -140,7 +140,7 @@ elif action == 'alldebridAuth':
 	from accountmgr.modules import alldebrid
 	control.function_monitor(alldebrid.AllDebrid().auth)
 
-elif action == 'alldebridReSync': #Sync additional add-ons after Account Manager is already authoorized
+elif action == 'alldebridReSync': #Sync additional add-ons after Account Manager is already authorized
 	if str(var.chk_accountmgr_tk_ad) != '': #Skip sync if Account Mananger is not authorized
                 from accountmgr.modules import debrid_ad
                 control.function_monitor(debrid_ad.Auth().alldebrid_auth)

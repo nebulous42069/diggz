@@ -183,177 +183,6 @@ class Auth:
                 except:
                         pass
 
-
-        #Adina
-                try:
-                        if xbmcvfs.exists(var.chk_adina) and xbmcvfs.exists(var.chkset_adina):
-                                #Check Add-on API Keys
-                                chk_fanart_api = xbmcaddon.Addon('plugin.video.adina').getSetting("fanart_client_key")
-                                chk_imdb_api = xbmcaddon.Addon('plugin.video.adina').getSetting("imdb_user")    
-                                chk_tmdb_api = xbmcaddon.Addon('plugin.video.adina').getSetting("tmdb_api")
-
-                                #Account Manager API Keys
-                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
-                                your_fanart_api = accountmgr.getSetting("fanart.tv.api.key")
-                                your_imdb_api = accountmgr.getSetting("imdb.user")
-                                your_tmdb_api = accountmgr.getSetting("tmdb.api.key")
-                                
-                                if not str(var.chk_accountmgr_fanart) == str(chk_fanart_api) or str(chk_fanart_api) == '':
-                                        #Write Meta API to settings.xml
-                                        addon = xbmcaddon.Addon("plugin.video.adina")
-                                        addon.setSetting("fanart_client_key", your_fanart_api)
-
-                                if not str(var.chk_accountmgr_imdb) == str(chk_imdb_api) or str(chk_imdb_api) == '':
-                                        addon = xbmcaddon.Addon("plugin.video.adina")
-                                        addon.setSetting("imdb_user", your_imdb_api)
-                                        
-                                if not str(var.chk_accountmgr_tmdb) == str(chk_tmdb_api) or str(chk_tmdb_api) == '':
-                                        addon = xbmcaddon.Addon("plugin.video.adina")
-                                        addon.setSetting("tmdb_api", your_tmdb_api)
-                except:
-                        pass
-                
-        #Artemis
-                try:
-                        if xbmcvfs.exists(var.chk_artemis) and xbmcvfs.exists(var.chkset_artemis):
-                                #Check Add-on API Keys
-                                chk_fanart_api = xbmcaddon.Addon('plugin.video.artemis').getSetting("fanart_tv.api_key")
-                                chk_imdb_api = xbmcaddon.Addon('plugin.video.artemis').getSetting("imdb.user")    
-                                chk_tmdb_api = xbmcaddon.Addon('plugin.video.artemis').getSetting("tmdb.api.key")
-                                chk_tmdb_user = xbmcaddon.Addon('plugin.video.artemis').getSetting("tmdb.username")
-                                chk_tmdb_pass = xbmcaddon.Addon('plugin.video.artemis').getSetting("tmdb.password")
-                                chk_tmdb_session = xbmcaddon.Addon('plugin.video.artemis').getSetting("tmdb.session_id")
-
-                                #Account Manager API Keys
-                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
-                                your_fanart_api = accountmgr.getSetting("fanart.tv.api.key")
-                                your_imdb_api = accountmgr.getSetting("imdb.user")
-                                your_tmdb_api = accountmgr.getSetting("tmdb.api.key")
-                                your_tmdb_user = accountmgr.getSetting("tmdb.username")
-                                your_tmdb_pass = accountmgr.getSetting("tmdb.password")
-                                your_tmdb_session = accountmgr.getSetting("tmdb.session_id")
-                                
-                                if not str(var.chk_accountmgr_fanart) == str(chk_fanart_api) or str(chk_fanart_api) == '':
-                                        #Write Meta API to settings.xml
-                                        addon = xbmcaddon.Addon("plugin.video.artemis")
-                                        addon.setSetting("fanart_tv.api_key", your_fanart_api)
-
-                                if not str(var.chk_accountmgr_imdb) == str(chk_imdb_api) or str(chk_imdb_api) == '':
-                                        addon = xbmcaddon.Addon("plugin.video.artemis")
-                                        addon.setSetting("imdb.user", your_imdb_api)
-                                        
-                                if not str(var.chk_accountmgr_tmdb) == str(chk_tmdb_api) or str(chk_tmdb_api) == '':
-                                        addon = xbmcaddon.Addon("plugin.video.artemis")
-                                        addon.setSetting("tmdb.api.key", your_tmdb_api)
-
-                                if not str(var.chk_accountmgr_tmdb_user) == str(chk_tmdb_user) or str(chk_tmdb_user) == '':
-                                        addon = xbmcaddon.Addon("plugin.video.artemis")
-                                        addon.setSetting("tmdb.username", your_tmdb_user)
-
-                                if not str(var.chk_accountmgr_tmdb_pass) == str(chk_tmdb_pass) or str(chk_tmdb_pass) == '':
-                                        addon = xbmcaddon.Addon("plugin.video.artemis")
-                                        addon.setSetting("tmdb.password", your_tmdb_pass)
-
-                                if not str(var.chk_accountmgr_tmdb_session) == str(chk_tmdb_session) or str(chk_tmdb_session) == '':
-                                        addon = xbmcaddon.Addon("plugin.video.artemis")
-                                        addon.setSetting("tmdb.session_id", your_tmdb_session)
-                except:
-                        pass
-                
-        #Dynasty
-                try:
-                        if xbmcvfs.exists(var.chk_dyna) and xbmcvfs.exists(var.chkset_dyna):
-                                #Check Add-on API Keys
-                                chk_fanart_api = xbmcaddon.Addon('plugin.video.dynasty').getSetting("fanart_tv.api_key")
-                                chk_imdb_api = xbmcaddon.Addon('plugin.video.dynasty').getSetting("imdb.user")    
-                                chk_tmdb_api = xbmcaddon.Addon('plugin.video.dynasty').getSetting("tmdb.api.key")
-                                chk_tmdb_user = xbmcaddon.Addon('plugin.video.dynasty').getSetting("tmdb.username")
-                                chk_tmdb_pass = xbmcaddon.Addon('plugin.video.dynasty').getSetting("tmdb.password")
-                                chk_tmdb_session = xbmcaddon.Addon('plugin.video.dynasty').getSetting("tmdb.session_id")
-
-                                #Account Manager API Keys
-                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
-                                your_fanart_api = accountmgr.getSetting("fanart.tv.api.key")
-                                your_imdb_api = accountmgr.getSetting("imdb.user")
-                                your_tmdb_api = accountmgr.getSetting("tmdb.api.key")
-                                your_tmdb_user = accountmgr.getSetting("tmdb.username")
-                                your_tmdb_pass = accountmgr.getSetting("tmdb.password")
-                                your_tmdb_session = accountmgr.getSetting("tmdb.session_id")
-                                
-                                if not str(var.chk_accountmgr_fanart) == str(chk_fanart_api) or str(chk_fanart_api) == '':
-                                        #Write Meta API to settings.xml
-                                        addon = xbmcaddon.Addon("plugin.video.dynasty")
-                                        addon.setSetting("fanart_tv.api_key", your_fanart_api)
-
-                                if not str(var.chk_accountmgr_imdb) == str(chk_imdb_api) or str(chk_imdb_api) == '':
-                                        addon = xbmcaddon.Addon("plugin.video.dynasty")
-                                        addon.setSetting("imdb.user", your_imdb_api)
-                                        
-                                if not str(var.chk_accountmgr_tmdb) == str(chk_tmdb_api) or str(chk_tmdb_api) == '':
-                                        addon = xbmcaddon.Addon("plugin.video.dynasty")
-                                        addon.setSetting("tmdb.api.key", your_tmdb_api)
-
-                                if not str(var.chk_accountmgr_tmdb_user) == str(chk_tmdb_user) or str(chk_tmdb_user) == '':
-                                        addon = xbmcaddon.Addon("plugin.video.dynasty")
-                                        addon.setSetting("tmdb.username", your_tmdb_user)
-
-                                if not str(var.chk_accountmgr_tmdb_pass) == str(chk_tmdb_pass) or str(chk_tmdb_pass) == '':
-                                        addon = xbmcaddon.Addon("plugin.video.dynasty")
-                                        addon.setSetting("tmdb.password", your_tmdb_pass)
-
-                                if not str(var.chk_accountmgr_tmdb_session) == str(chk_tmdb_session) or str(chk_tmdb_session) == '':
-                                        addon = xbmcaddon.Addon("plugin.video.dynasty")
-                                        addon.setSetting("tmdb.session_id", your_tmdb_session)
-                except:
-                        pass
-
-        #Loonatics Empire
-                try:
-                        if xbmcvfs.exists(var.chk_loon) and xbmcvfs.exists(var.chkset_loon):
-                                #Check Add-on API Keys
-                                chk_fanart_api = xbmcaddon.Addon('plugin.video.le').getSetting("fanart.tv.api.key")
-                                chk_imdb_api = xbmcaddon.Addon('plugin.video.le').getSetting("imdb.user")    
-                                chk_tmdb_api = xbmcaddon.Addon('plugin.video.le').getSetting("tmdb.api.key")
-                                chk_tmdb_user = xbmcaddon.Addon('plugin.video.le').getSetting("tmdb.username")
-                                chk_tmdb_pass = xbmcaddon.Addon('plugin.video.le').getSetting("tmdb.password")
-                                chk_tmdb_session = xbmcaddon.Addon('plugin.video.le').getSetting("tmdb.session_id")
-
-                                #Account Manager API Keys
-                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
-                                your_fanart_api = accountmgr.getSetting("fanart.tv.api.key")
-                                your_imdb_api = accountmgr.getSetting("imdb.user")
-                                your_tmdb_api = accountmgr.getSetting("tmdb.api.key")
-                                your_tmdb_user = accountmgr.getSetting("tmdb.username")
-                                your_tmdb_pass = accountmgr.getSetting("tmdb.password")
-                                your_tmdb_session = accountmgr.getSetting("tmdb.session_id")
-                                
-                                if not str(var.chk_accountmgr_fanart) == str(chk_fanart_api) or str(chk_fanart_api) == '':
-                                        #Write Meta API to settings.xml
-                                        addon = xbmcaddon.Addon("plugin.video.le")
-                                        addon.setSetting("fanart.tv.api.key", your_fanart_api)
-
-                                if not str(var.chk_accountmgr_imdb) == str(chk_imdb_api) or str(chk_imdb_api) == '':
-                                        addon = xbmcaddon.Addon("plugin.video.le")
-                                        addon.setSetting("imdb.user", your_imdb_api)
-                                        
-                                if not str(var.chk_accountmgr_tmdb) == str(chk_tmdb_api) or str(chk_tmdb_api) == '':
-                                        addon = xbmcaddon.Addon("plugin.video.le")
-                                        addon.setSetting("tmdb.api.key", your_tmdb_api)
-
-                                if not str(var.chk_accountmgr_tmdb_user) == str(chk_tmdb_user) or str(chk_tmdb_user) == '':
-                                        addon = xbmcaddon.Addon("plugin.video.le")
-                                        addon.setSetting("tmdb.username", your_tmdb_user)
-
-                                if not str(var.chk_accountmgr_tmdb_pass) == str(chk_tmdb_pass) or str(chk_tmdb_pass) == '':
-                                        addon = xbmcaddon.Addon("plugin.video.le")
-                                        addon.setSetting("tmdb.password", your_tmdb_pass)
-
-                                if not str(var.chk_accountmgr_tmdb_session) == str(chk_tmdb_session) or str(chk_tmdb_session) == '':
-                                        addon = xbmcaddon.Addon("plugin.video.le")
-                                        addon.setSetting("tmdb.session_id", your_tmdb_session)
-                except:
-                        pass
-
         #The Crew
                 try:
                         if xbmcvfs.exists(var.chk_crew) and xbmcvfs.exists(var.chkset_crew):
@@ -418,6 +247,64 @@ class Auth:
                 except:
                         pass
 
+        #Quicksilver
+                try:
+                        if xbmcvfs.exists(var.chk_quick) and xbmcvfs.exists(var.chkset_quick):
+                                #Check Add-on API Keys
+                                chk_fanart_api = xbmcaddon.Addon('plugin.video.quicksilver').getSetting("fanart.tv.user")
+                                chk_imdb_api = xbmcaddon.Addon('plugin.video.quicksilver').getSetting("imdb.user")    
+                                chk_tmdb_api = xbmcaddon.Addon('plugin.video.quicksilver').getSetting("tm.user")
+
+                                #Account Manager API Keys
+                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
+                                your_fanart_api = accountmgr.getSetting("fanart.tv.api.key")
+                                your_imdb_api = accountmgr.getSetting("imdb.user")
+                                your_tmdb_api = accountmgr.getSetting("tmdb.api.key")
+                                
+                                if not str(var.chk_accountmgr_fanart) == str(chk_fanart_api) or str(chk_fanart_api) == '':
+                                        #Write Meta API to settings.xml
+                                        addon = xbmcaddon.Addon("plugin.video.quicksilver")
+                                        addon.setSetting("fanart.tv.user", your_fanart_api)
+
+                                if not str(var.chk_accountmgr_imdb) == str(chk_imdb_api) or str(chk_imdb_api) == '':
+                                        addon = xbmcaddon.Addon("plugin.video.quicksilver")
+                                        addon.setSetting("imdb.user", your_imdb_api)
+                                        
+                                if not str(var.chk_accountmgr_tmdb) == str(chk_tmdb_api) or str(chk_tmdb_api) == '':
+                                        addon = xbmcaddon.Addon("plugin.video.quicksilver")
+                                        addon.setSetting("tm.user", your_tmdb_api)
+                except:
+                        pass
+
+        #Chains Genocide
+                try:
+                        if xbmcvfs.exists(var.chk_genocide) and xbmcvfs.exists(var.chkset_genocide):
+                                #Check Add-on API Keys
+                                chk_fanart_api = xbmcaddon.Addon('plugin.video.chainsgenocide').getSetting("fanart.tv.user")
+                                chk_imdb_api = xbmcaddon.Addon('plugin.video.chainsgenocide').getSetting("imdb.user")    
+                                chk_tmdb_api = xbmcaddon.Addon('plugin.video.chainsgenocide').getSetting("tm.user")
+
+                                #Account Manager API Keys
+                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
+                                your_fanart_api = accountmgr.getSetting("fanart.tv.api.key")
+                                your_imdb_api = accountmgr.getSetting("imdb.user")
+                                your_tmdb_api = accountmgr.getSetting("tmdb.api.key")
+                                
+                                if not str(var.chk_accountmgr_fanart) == str(chk_fanart_api) or str(chk_fanart_api) == '':
+                                        #Write Meta API to settings.xml
+                                        addon = xbmcaddon.Addon("plugin.video.chainsgenocide")
+                                        addon.setSetting("fanart.tv.user", your_fanart_api)
+
+                                if not str(var.chk_accountmgr_imdb) == str(chk_imdb_api) or str(chk_imdb_api) == '':
+                                        addon = xbmcaddon.Addon("plugin.video.chainsgenocide")
+                                        addon.setSetting("imdb.user", your_imdb_api)
+                                        
+                                if not str(var.chk_accountmgr_tmdb) == str(chk_tmdb_api) or str(chk_tmdb_api) == '':
+                                        addon = xbmcaddon.Addon("plugin.video.chainsgenocide")
+                                        addon.setSetting("tm.user", your_tmdb_api)
+                except:
+                        pass
+
         #Shazam
                 try:
                         if xbmcvfs.exists(var.chk_shazam) and xbmcvfs.exists(var.chkset_shazam):
@@ -476,13 +363,13 @@ class Auth:
                 except:
                         pass
 
-        #Chains Genocide
+        #Alvin
                 try:
-                        if xbmcvfs.exists(var.chk_genocide) and xbmcvfs.exists(var.chkset_genocide):
+                        if xbmcvfs.exists(var.chk_alvin) and xbmcvfs.exists(var.chkset_alvin):
                                 #Check Add-on API Keys
-                                chk_fanart_api = xbmcaddon.Addon('plugin.video.chainsgenocide').getSetting("fanart.tv.user")
-                                chk_imdb_api = xbmcaddon.Addon('plugin.video.chainsgenocide').getSetting("imdb.user")    
-                                chk_tmdb_api = xbmcaddon.Addon('plugin.video.chainsgenocide').getSetting("tm.user")
+                                chk_fanart_api = xbmcaddon.Addon('plugin.video.alvin').getSetting("fanart.tv.user")
+                                chk_imdb_api = xbmcaddon.Addon('plugin.video.alvin').getSetting("imdb.user")    
+                                chk_tmdb_api = xbmcaddon.Addon('plugin.video.alvin').getSetting("tm.user")
 
                                 #Account Manager API Keys
                                 accountmgr = xbmcaddon.Addon("script.module.accountmgr")
@@ -492,44 +379,15 @@ class Auth:
                                 
                                 if not str(var.chk_accountmgr_fanart) == str(chk_fanart_api) or str(chk_fanart_api) == '':
                                         #Write Meta API to settings.xml
-                                        addon = xbmcaddon.Addon("plugin.video.chainsgenocide")
+                                        addon = xbmcaddon.Addon("plugin.video.alvin")
                                         addon.setSetting("fanart.tv.user", your_fanart_api)
 
                                 if not str(var.chk_accountmgr_imdb) == str(chk_imdb_api) or str(chk_imdb_api) == '':
-                                        addon = xbmcaddon.Addon("plugin.video.chainsgenocide")
+                                        addon = xbmcaddon.Addon("plugin.video.alvin")
                                         addon.setSetting("imdb.user", your_imdb_api)
                                         
                                 if not str(var.chk_accountmgr_tmdb) == str(chk_tmdb_api) or str(chk_tmdb_api) == '':
-                                        addon = xbmcaddon.Addon("plugin.video.chainsgenocide")
-                                        addon.setSetting("tm.user", your_tmdb_api)
-                except:
-                        pass
-
-        #Nine Lives
-                try:
-                        if xbmcvfs.exists(var.chk_nine) and xbmcvfs.exists(var.chkset_nine):
-                                #Check Add-on API Keys
-                                chk_fanart_api = xbmcaddon.Addon('plugin.video.nine').getSetting("fanart.tv.user")
-                                chk_imdb_api = xbmcaddon.Addon('plugin.video.nine').getSetting("imdb.user")    
-                                chk_tmdb_api = xbmcaddon.Addon('plugin.video.nine').getSetting("tm.user")
-
-                                #Account Manager API Keys
-                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
-                                your_fanart_api = accountmgr.getSetting("fanart.tv.api.key")
-                                your_imdb_api = accountmgr.getSetting("imdb.user")
-                                your_tmdb_api = accountmgr.getSetting("tmdb.api.key")
-                                
-                                if not str(var.chk_accountmgr_fanart) == str(chk_fanart_api) or str(chk_fanart_api) == '':
-                                        #Write Meta API to settings.xml
-                                        addon = xbmcaddon.Addon("plugin.video.nine")
-                                        addon.setSetting("fanart.tv.user", your_fanart_api)
-
-                                if not str(var.chk_accountmgr_imdb) == str(chk_imdb_api) or str(chk_imdb_api) == '':
-                                        addon = xbmcaddon.Addon("plugin.video.nine")
-                                        addon.setSetting("imdb.user", your_imdb_api)
-                                        
-                                if not str(var.chk_accountmgr_tmdb) == str(chk_tmdb_api) or str(chk_tmdb_api) == '':
-                                        addon = xbmcaddon.Addon("plugin.video.nine")
+                                        addon = xbmcaddon.Addon("plugin.video.alvin")
                                         addon.setSetting("tm.user", your_tmdb_api)
                 except:
                         pass
@@ -563,13 +421,13 @@ class Auth:
                 except:
                         pass
 
-        #Quicksilver
+        #Absolution
                 try:
-                        if xbmcvfs.exists(var.chk_quick) and xbmcvfs.exists(var.chkset_quick):
+                        if xbmcvfs.exists(var.chk_absol) and xbmcvfs.exists(var.chkset_absol):
                                 #Check Add-on API Keys
-                                chk_fanart_api = xbmcaddon.Addon('plugin.video.quicksilver').getSetting("fanart.tv.user")
-                                chk_imdb_api = xbmcaddon.Addon('plugin.video.quicksilver').getSetting("imdb.user")    
-                                chk_tmdb_api = xbmcaddon.Addon('plugin.video.quicksilver').getSetting("tm.user")
+                                chk_fanart_api = xbmcaddon.Addon('plugin.video.absolution').getSetting("fanart.tv.user")
+                                chk_imdb_api = xbmcaddon.Addon('plugin.video.absolution').getSetting("imdb.user")    
+                                chk_tmdb_api = xbmcaddon.Addon('plugin.video.absolution').getSetting("tm.user")
 
                                 #Account Manager API Keys
                                 accountmgr = xbmcaddon.Addon("script.module.accountmgr")
@@ -579,26 +437,26 @@ class Auth:
                                 
                                 if not str(var.chk_accountmgr_fanart) == str(chk_fanart_api) or str(chk_fanart_api) == '':
                                         #Write Meta API to settings.xml
-                                        addon = xbmcaddon.Addon("plugin.video.quicksilver")
+                                        addon = xbmcaddon.Addon("plugin.video.absolution")
                                         addon.setSetting("fanart.tv.user", your_fanart_api)
 
                                 if not str(var.chk_accountmgr_imdb) == str(chk_imdb_api) or str(chk_imdb_api) == '':
-                                        addon = xbmcaddon.Addon("plugin.video.quicksilver")
+                                        addon = xbmcaddon.Addon("plugin.video.absolution")
                                         addon.setSetting("imdb.user", your_imdb_api)
                                         
                                 if not str(var.chk_accountmgr_tmdb) == str(chk_tmdb_api) or str(chk_tmdb_api) == '':
-                                        addon = xbmcaddon.Addon("plugin.video.quicksilver")
+                                        addon = xbmcaddon.Addon("plugin.video.absolution")
                                         addon.setSetting("tm.user", your_tmdb_api)
                 except:
                         pass
 
-        #The Promise
+        #Nine Lives
                 try:
-                        if xbmcvfs.exists(var.chk_promise) and xbmcvfs.exists(var.chkset_promise):
+                        if xbmcvfs.exists(var.chk_nine) and xbmcvfs.exists(var.chkset_nine):
                                 #Check Add-on API Keys
-                                chk_fanart_api = xbmcaddon.Addon('plugin.video.thepromise').getSetting("fanart.tv.user")
-                                chk_imdb_api = xbmcaddon.Addon('plugin.video.thepromise').getSetting("imdb.user")    
-                                chk_tmdb_api = xbmcaddon.Addon('plugin.video.thepromise').getSetting("tm.user")
+                                chk_fanart_api = xbmcaddon.Addon('plugin.video.nine').getSetting("fanart.tv.user")
+                                chk_imdb_api = xbmcaddon.Addon('plugin.video.nine').getSetting("imdb.user")    
+                                chk_tmdb_api = xbmcaddon.Addon('plugin.video.nine').getSetting("tm.user")
 
                                 #Account Manager API Keys
                                 accountmgr = xbmcaddon.Addon("script.module.accountmgr")
@@ -608,48 +466,19 @@ class Auth:
                                 
                                 if not str(var.chk_accountmgr_fanart) == str(chk_fanart_api) or str(chk_fanart_api) == '':
                                         #Write Meta API to settings.xml
-                                        addon = xbmcaddon.Addon("plugin.video.thepromise")
+                                        addon = xbmcaddon.Addon("plugin.video.nine")
                                         addon.setSetting("fanart.tv.user", your_fanart_api)
 
                                 if not str(var.chk_accountmgr_imdb) == str(chk_imdb_api) or str(chk_imdb_api) == '':
-                                        addon = xbmcaddon.Addon("plugin.video.thepromise")
+                                        addon = xbmcaddon.Addon("plugin.video.nine")
                                         addon.setSetting("imdb.user", your_imdb_api)
                                         
                                 if not str(var.chk_accountmgr_tmdb) == str(chk_tmdb_api) or str(chk_tmdb_api) == '':
-                                        addon = xbmcaddon.Addon("plugin.video.thepromise")
+                                        addon = xbmcaddon.Addon("plugin.video.nine")
                                         addon.setSetting("tm.user", your_tmdb_api)
                 except:
                         pass
-
-        #Alvin
-                try:
-                        if xbmcvfs.exists(var.chk_alvin) and xbmcvfs.exists(var.chkset_alvin):
-                                #Check Add-on API Keys
-                                chk_fanart_api = xbmcaddon.Addon('plugin.video.alvin').getSetting("fanart.tv.user")
-                                chk_imdb_api = xbmcaddon.Addon('plugin.video.alvin').getSetting("imdb.user")    
-                                chk_tmdb_api = xbmcaddon.Addon('plugin.video.alvin').getSetting("tm.user")
-
-                                #Account Manager API Keys
-                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
-                                your_fanart_api = accountmgr.getSetting("fanart.tv.api.key")
-                                your_imdb_api = accountmgr.getSetting("imdb.user")
-                                your_tmdb_api = accountmgr.getSetting("tmdb.api.key")
-                                
-                                if not str(var.chk_accountmgr_fanart) == str(chk_fanart_api) or str(chk_fanart_api) == '':
-                                        #Write Meta API to settings.xml
-                                        addon = xbmcaddon.Addon("plugin.video.alvin")
-                                        addon.setSetting("fanart.tv.user", your_fanart_api)
-
-                                if not str(var.chk_accountmgr_imdb) == str(chk_imdb_api) or str(chk_imdb_api) == '':
-                                        addon = xbmcaddon.Addon("plugin.video.alvin")
-                                        addon.setSetting("imdb.user", your_imdb_api)
-                                        
-                                if not str(var.chk_accountmgr_tmdb) == str(chk_tmdb_api) or str(chk_tmdb_api) == '':
-                                        addon = xbmcaddon.Addon("plugin.video.alvin")
-                                        addon.setSetting("tm.user", your_tmdb_api)
-                except:
-                        pass
-
+                
         #TMDB Helper
                 try:
                         if xbmcvfs.exists(var.chk_tmdbh) and xbmcvfs.exists(var.chkset_tmdbh):
@@ -725,54 +554,6 @@ class Auth:
                                         addon.setSetting("tmdb.session_id", your_tmdb_session)
                 except:
                         pass
-                
-        #Your Accounts
-                try:
-                        if xbmcvfs.exists(var.chk_youraccounts) and xbmcvfs.exists(var.chkset_youraccounts):
-                                #Check Add-on API Keys
-                                chk_fanart_api = xbmcaddon.Addon('script.module.youraccounts').getSetting("fanart.tv.api.key")
-                                chk_imdb_api = xbmcaddon.Addon('script.module.youraccounts').getSetting("imdb.user")    
-                                chk_tmdb_api = xbmcaddon.Addon('script.module.youraccounts').getSetting("tmdb.api.key")
-                                chk_tmdb_user = xbmcaddon.Addon('script.module.youraccounts').getSetting("tmdb.username")
-                                chk_tmdb_pass = xbmcaddon.Addon('script.module.youraccounts').getSetting("tmdb.password")
-                                chk_tmdb_session = xbmcaddon.Addon('script.module.youraccounts').getSetting("tmdb.session_id")
-
-                                #Account Manager API Keys
-                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
-                                your_fanart_api = accountmgr.getSetting("fanart.tv.api.key")
-                                your_imdb_api = accountmgr.getSetting("imdb.user")
-                                your_tmdb_api = accountmgr.getSetting("tmdb.api.key")
-                                your_tmdb_user = accountmgr.getSetting("tmdb.username")
-                                your_tmdb_pass = accountmgr.getSetting("tmdb.password")
-                                your_tmdb_session = accountmgr.getSetting("tmdb.session_id")
-                                
-                                if not str(var.chk_accountmgr_fanart) == str(chk_fanart_api) or str(chk_fanart_api) == '':
-                                        #Write Meta API to settings.xml
-                                        addon = xbmcaddon.Addon("script.module.youraccounts")
-                                        addon.setSetting("fanart.tv.api.key", your_fanart_api)
-
-                                if not str(var.chk_accountmgr_imdb) == str(chk_imdb_api) or str(chk_imdb_api) == '':
-                                        addon = xbmcaddon.Addon("script.module.youraccounts")
-                                        addon.setSetting("imdb.user", your_imdb_api)
-                                        
-                                if not str(var.chk_accountmgr_tmdb) == str(chk_tmdb_api) or str(chk_tmdb_api) == '':
-                                        addon = xbmcaddon.Addon("script.module.youraccounts")
-                                        addon.setSetting("tmdb.api.key", your_tmdb_api)
-
-                                if not str(var.chk_accountmgr_tmdb_user) == str(chk_tmdb_user) or str(chk_tmdb_user) == '':
-                                        addon = xbmcaddon.Addon("script.module.youraccounts")
-                                        addon.setSetting("tmdb.username", your_tmdb_user)
-
-                                if not str(var.chk_accountmgr_tmdb_pass) == str(chk_tmdb_pass) or str(chk_tmdb_pass) == '':
-                                        addon = xbmcaddon.Addon("script.module.youraccounts")
-                                        addon.setSetting("tmdb.password", your_tmdb_pass)
-                                        
-                                if not str(var.chk_accountmgr_tmdb_session) == str(chk_tmdb_session) or str(chk_tmdb_session) == '':
-                                        addon = xbmcaddon.Addon("script.module.youraccounts")
-                                        addon.setSetting("tmdb.session_id", your_tmdb_session)
-                except:
-                        pass
-
 
         #Embuary Info
                 try:

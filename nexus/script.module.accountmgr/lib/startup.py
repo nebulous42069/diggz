@@ -107,12 +107,26 @@ def api_check():
         while True:
                 if time.time() > timeout_start + timeout: #Time out after 5min
                         break
-              
-                if xbmcvfs.exists(var.chk_fen) and xbmcvfs.exists(var.chkset_fen) and str(var.chk_accountmgr_tk) != '': #Check that the addon is installed, settings.xml exists and Account Manager is authorized
-                        with open(var.path_fen) as f: #Check add-on for Account Manager API keys. If found, move on to next add-on
+
+                if xbmcvfs.exists(var.chk_seren) and xbmcvfs.exists(var.chkset_seren) and str(var.chk_accountmgr_tk) != '' and var.setting('traktuserkey.enabled') == 'true': #Check that the addon is installed, settings.xml exists and Account Manager is authorized
+                        with open(var.path_seren) as f: #Check add-on for Account Manager API keys. If found, move on to next add-on
                                 if var.chk_api in f.read():
                                         pass
                                 else:   #Insert Account Mananger API keys into add-on
+                                        f = open(var.path_seren,'r')
+                                        data = f.read()
+                                        f.close()
+                                        client = data.replace(var.seren_client,var.client_am).replace(var.seren_secret,var.secret_am)
+                                        f = open(var.path_seren,'w')
+                                        f.write(client)
+                                        f.close()
+                                        continue
+                                
+                if xbmcvfs.exists(var.chk_fen) and xbmcvfs.exists(var.chkset_fen) and str(var.chk_accountmgr_tk) != '':
+                        with open(var.path_fen) as f:
+                                if var.chk_api in f.read():
+                                        pass
+                                else:   
                                         f = open(var.path_fen,'r')
                                         data = f.read()
                                         f.close()
@@ -174,20 +188,6 @@ def api_check():
                                         f.close()
                                         client = data.replace(var.ghost_client,var.client_am).replace(var.ghost_secret,var.secret_am)
                                         f = open(var.path_ghost,'w')
-                                        f.write(client)
-                                        f.close()
-                                        continue
-
-                if xbmcvfs.exists(var.chk_base) and xbmcvfs.exists(var.chkset_base) and str(var.chk_accountmgr_tk) != '':
-                        with open(var.path_base) as f:
-                                if var.chk_api in f.read():
-                                        pass
-                                else:
-                                        f = open(var.path_base,'r')
-                                        data = f.read()
-                                        f.close()
-                                        client = data.replace(var.base_client,var.client_am).replace(var.base_secret,var.secret_am)
-                                        f = open(var.path_base,'w')
                                         f.write(client)
                                         f.close()
                                         continue

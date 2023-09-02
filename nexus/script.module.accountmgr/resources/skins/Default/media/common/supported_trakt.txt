@@ -1,27 +1,28 @@
 
-1. TMDb Helper	
-2. Trakt Add-on
-3. Ezra
-4. Fen
-5. POV
-6. Umbrella
-7. Shadow
-8. Ghost
-9. Unleashed
-10. Chain Reaction
-11. Base 19
-12. Magic Dragon
-13. Asgard
-14. Patriot
-15. Homelander
-16. Quicksilver
-17. Chains Genocide
-18. Shazam
-19. The Promise	
-20. The Crew
-21. Nightwing
-22. Alvin
-23. Moria
-24. Nine Lives
-25. Scrubs V2
-26. My Accounts
+1.  Seren (Custom Trakt API Keys Only)
+2.  Ezra
+3.  Fen
+4.  POV
+5.  Umbrella
+6.  Shadow
+7.  Ghost
+8.  Unleashed
+9.  Chain Reaction
+10. Magic Dragon
+11. Asgard
+12. Patriot
+13. Black Lightning
+14. Homelander
+15. Quicksilver
+16. Chains Genocide
+17. Shazam
+18. The Crew
+19. Nightwing
+20. Alvin
+21. Moria
+22. Absolution
+23. 9 Lives
+24. Scrubs V2
+25. TMDb Helper
+26. Trakt Add-on
+27. My Accounts

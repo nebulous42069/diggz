@@ -86,15 +86,15 @@ class Router:
             menu.alldebrid_menu()
             self._finish(handle)
 
-        elif mode == 'nondebrid':  # Non-Debrid Accounts Viewer
+        elif mode == 'nondebrid':  # Non-Debrid Account Viewer
             menu.nondebrid_accounts_menu()
             self._finish(handle)
 
-        elif mode == 'metadata':  # Metadata Accounts Viewer
+        elif mode == 'metadata':  # Metadata Account Viewer
             menu.meta_accounts_menu()
             self._finish(handle)
 
-        elif mode == 'allaccts':  # All Accounts Viewer
+        elif mode == 'allaccts':  # All Account Viewer
             menu.all_accounts_menu()
             self._finish(handle)
             
