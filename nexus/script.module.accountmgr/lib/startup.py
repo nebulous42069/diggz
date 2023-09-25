@@ -135,6 +135,20 @@ def api_check():
                                         f.write(client)
                                         f.close()
                                         continue
+
+                if xbmcvfs.exists(var.chk_coal) and xbmcvfs.exists(var.chkset_coal) and str(var.chk_accountmgr_tk) != '':
+                        with open(var.path_coal) as f:
+                                if var.chk_api in f.read():
+                                        pass
+                                else:   
+                                        f = open(var.path_coal,'r')
+                                        data = f.read()
+                                        f.close()
+                                        client = data.replace(var.coal_client,var.client_am).replace(var.coal_secret,var.secret_am)
+                                        f = open(var.path_coal,'w')
+                                        f.write(client)
+                                        f.close()
+                                        continue
          
                 if xbmcvfs.exists(var.chk_pov) and xbmcvfs.exists(var.chkset_pov) and str(var.chk_accountmgr_tk) != '':
                         with open(var.path_pov) as f:
@@ -146,20 +160,6 @@ def api_check():
                                         f.close()
                                         client = data.replace(var.pov_client,var.client_am).replace(var.pov_client,var.secret_am)
                                         f = open(var.path_pov,'w')
-                                        f.write(client)
-                                        f.close()
-                                        continue
-                                                                                
-                if xbmcvfs.exists(var.chk_crew) and xbmcvfs.exists(var.chkset_crew) and str(var.chk_accountmgr_tk) != '':
-                        with open(var.path_crew) as f:
-                                if var.chk_api in f.read():
-                                        pass
-                                else:
-                                        f = open(var.path_crew,'r')
-                                        data = f.read()
-                                        f.close()
-                                        client = data.replace(var.crew_client,var.client_am).replace(var.crew_client,var.secret_am)
-                                        f = open(var.path_crew,'w')
                                         f.write(client)
                                         f.close()
                                         continue
@@ -192,6 +192,20 @@ def api_check():
                                         f.close()
                                         continue
 
+                if xbmcvfs.exists(var.chk_base) and xbmcvfs.exists(var.chkset_base) and str(var.chk_accountmgr_tk) != '':
+                        with open(var.path_base) as f:
+                                if var.chk_api in f.read():
+                                        pass
+                                else:
+                                        f = open(var.path_base,'r')
+                                        data = f.read()
+                                        f.close()
+                                        client = data.replace(var.base_client,var.client_am).replace(var.base_secret,var.secret_am)
+                                        f = open(var.path_base,'w')
+                                        f.write(client)
+                                        f.close()
+                                        continue
+                                
                 if xbmcvfs.exists(var.chk_unleashed) and xbmcvfs.exists(var.chkset_unleashed) and str(var.chk_accountmgr_tk) != '':
                         with open(var.path_unleashed) as f:
                                 if var.chk_api in f.read():
@@ -258,6 +272,48 @@ def api_check():
                                         f.close()
                                         client = data.replace(var.patriot_client,var.client_am).replace(var.patriot_secret,var.secret_am)
                                         f = open(var.path_patriot,'w')
+                                        f.write(client)
+                                        f.close()
+                                        continue
+
+                if xbmcvfs.exists(var.chk_blackl) and xbmcvfs.exists(var.chkset_blackl) and str(var.chk_accountmgr_tk) != '':
+                        with open(var.path_blackl) as f:
+                                if var.chk_api in f.read():
+                                        pass
+                                else:
+                                        f = open(var.path_blackl,'r')
+                                        data = f.read()
+                                        f.close()
+                                        client = data.replace(var.blackl_client,var.client_am).replace(var.blackl_secret,var.secret_am)
+                                        f = open(var.path_blackl,'w')
+                                        f.write(client)
+                                        f.close()
+                                        continue
+                                
+                if xbmcvfs.exists(var.chk_aliunde) and xbmcvfs.exists(var.chkset_aliunde) and str(var.chk_accountmgr_tk) != '':
+                        with open(var.path_aliunde) as f:
+                                if var.chk_api in f.read():
+                                        pass
+                                else:
+                                        f = open(var.path_aliunde,'r')
+                                        data = f.read()
+                                        f.close()
+                                        client = data.replace(var.aliunde_client,var.client_am).replace(var.aliunde_secret,var.secret_am)
+                                        f = open(var.path_aliunde,'w')
+                                        f.write(client)
+                                        f.close()
+                                        continue
+
+                if xbmcvfs.exists(var.chk_crew) and xbmcvfs.exists(var.chkset_crew) and str(var.chk_accountmgr_tk) != '':
+                        with open(var.path_crew) as f:
+                                if var.chk_api in f.read():
+                                        pass
+                                else:
+                                        f = open(var.path_crew,'r')
+                                        data = f.read()
+                                        f.close()
+                                        client = data.replace(var.crew_client,var.client_am).replace(var.crew_client,var.secret_am)
+                                        f = open(var.path_crew,'w')
                                         f.write(client)
                                         f.close()
                                         continue

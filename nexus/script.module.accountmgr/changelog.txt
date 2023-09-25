@@ -1,3 +1,5 @@
+2.3.4 - Added Coalition and Base19. Added new artwork. Fixed a bug preventing revoke of All-Debrid data.
+
 2.3.3 - Added 9 Lives and Black Lightning. Bug fixes
 
 2.3.2 - Removed addons with broken repos. Removed addons with restrictions. Added Seren Trakt support but with custom Trakt API keys only. Added Absolution. Multiple bug fixes and cleanup

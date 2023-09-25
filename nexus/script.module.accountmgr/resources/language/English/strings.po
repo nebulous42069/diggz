@@ -457,15 +457,7 @@ msgid "[COLOR FF696969]-- Disable ONLY if you do not use Trakt --[/COLOR]"
 msgstr ""
 
 msgctxt "#40094"
-msgid "[COLOR FF696969]-- Auto-Sync at startup for newly installed add-ons --[/COLOR]"
-msgstr ""
-
-msgctxt "#40095"
-msgid "[COLOR FF696969]-- Auto-Sync at startup for newly installed add-ons --[/COLOR]"
-msgstr ""
-
-msgctxt "#40096"
-msgid "[COLOR FF696969]-- Auto-Sync at startup for newly installed add-ons --[/COLOR]"
+msgid "[COLOR FF696969]-- Enable to Auto-Sync newly installed add-ons at start-up --[/COLOR]"
 msgstr ""
 
 msgctxt "#40097"

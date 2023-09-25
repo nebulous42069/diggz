@@ -45,41 +45,6 @@ class Auth:
                                         addon.setSetting("premiumize.enabled", enabled_pm)
         except:
                 pass
-        
-    #Ezra AD
-        try:
-                if xbmcvfs.exists(var.chk_ezra) and xbmcvfs.exists(var.chkset_ezra):
-                        chk_auth_ezra = xbmcaddon.Addon('plugin.video.ezra').getSetting("ad.token")
-                        chk_auth_ezra_rd = xbmcaddon.Addon('plugin.video.ezra').getSetting("rd.token")
-                        chk_auth_ezra_pm = xbmcaddon.Addon('plugin.video.ezra').getSetting("pm.token")
-                        if not str(var.chk_accountmgr_tk_ad) == str(chk_auth_ezra) or str(chk_auth_ezra) == '':
-                                
-                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
-                                your_username = accountmgr.getSetting("alldebrid.username")
-                                your_token = accountmgr.getSetting("alldebrid.token")
-                        
-                                addon = xbmcaddon.Addon("plugin.video.ezra")
-                                addon.setSetting("ad.account_id", your_username)
-                                addon.setSetting("ad.token", your_token)
-
-                                enabled_ad = ("true")
-                                addon.setSetting("ad.enabled", enabled_ad)
-
-                                if str(chk_auth_ezra_rd) != '':
-                                        enabled_rd = ("true")
-                                        addon.setSetting("rd.enabled", enabled_rd)
-                                else:
-                                        enabled_rd = ("false")
-                                        addon.setSetting("rd.enabled", enabled_rd)
-                        
-                                if str(chk_auth_ezra_pm) != '':
-                                        enabled_pm = ("true")
-                                        addon.setSetting("pm.enabled", enabled_pm)
-                                else:
-                                        enabled_pm = ("false")
-                                        addon.setSetting("pm.enabled", enabled_pm)
-        except:
-                pass
 
     #Fen AD
         try:
@@ -115,7 +80,77 @@ class Auth:
                                         addon.setSetting("pm.enabled", enabled_pm)
         except:
                 pass
+            
+    #Ezra AD
+        try:
+                if xbmcvfs.exists(var.chk_ezra) and xbmcvfs.exists(var.chkset_ezra):
+                        chk_auth_ezra = xbmcaddon.Addon('plugin.video.ezra').getSetting("ad.token")
+                        chk_auth_ezra_rd = xbmcaddon.Addon('plugin.video.ezra').getSetting("rd.token")
+                        chk_auth_ezra_pm = xbmcaddon.Addon('plugin.video.ezra').getSetting("pm.token")
+                        if not str(var.chk_accountmgr_tk_ad) == str(chk_auth_ezra) or str(chk_auth_ezra) == '':
+                                
+                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
+                                your_username = accountmgr.getSetting("alldebrid.username")
+                                your_token = accountmgr.getSetting("alldebrid.token")
+                        
+                                addon = xbmcaddon.Addon("plugin.video.ezra")
+                                addon.setSetting("ad.account_id", your_username)
+                                addon.setSetting("ad.token", your_token)
 
+                                enabled_ad = ("true")
+                                addon.setSetting("ad.enabled", enabled_ad)
+
+                                if str(chk_auth_ezra_rd) != '':
+                                        enabled_rd = ("true")
+                                        addon.setSetting("rd.enabled", enabled_rd)
+                                else:
+                                        enabled_rd = ("false")
+                                        addon.setSetting("rd.enabled", enabled_rd)
+                        
+                                if str(chk_auth_ezra_pm) != '':
+                                        enabled_pm = ("true")
+                                        addon.setSetting("pm.enabled", enabled_pm)
+                                else:
+                                        enabled_pm = ("false")
+                                        addon.setSetting("pm.enabled", enabled_pm)
+        except:
+                pass
+            
+    #Coalition AD
+        try:
+                if xbmcvfs.exists(var.chk_coal) and xbmcvfs.exists(var.chkset_coal):
+                        chk_auth_coal = xbmcaddon.Addon('plugin.video.coalition').getSetting("ad.token")
+                        chk_auth_coal_rd = xbmcaddon.Addon('plugin.video.coalition').getSetting("rd.token")
+                        chk_auth_coal_pm = xbmcaddon.Addon('plugin.video.coalition').getSetting("pm.token")
+                        if not str(var.chk_accountmgr_tk_ad) == str(chk_auth_coal) or str(chk_auth_coal) == '':
+                                
+                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
+                                your_username = accountmgr.getSetting("alldebrid.username")
+                                your_token = accountmgr.getSetting("alldebrid.token")
+                        
+                                addon = xbmcaddon.Addon("plugin.video.coalition")
+                                addon.setSetting("ad.account_id", your_username)
+                                addon.setSetting("ad.token", your_token)
+
+                                enabled_ad = ("true")
+                                addon.setSetting("ad.enabled", enabled_ad)
+
+                                if str(chk_auth_coal_rd) != '':
+                                        enabled_rd = ("true")
+                                        addon.setSetting("rd.enabled", enabled_rd)
+                                else:
+                                        enabled_rd = ("false")
+                                        addon.setSetting("rd.enabled", enabled_rd)
+                        
+                                if str(chk_auth_coal_pm) != '':
+                                        enabled_pm = ("true")
+                                        addon.setSetting("pm.enabled", enabled_pm)
+                                else:
+                                        enabled_pm = ("false")
+                                        addon.setSetting("pm.enabled", enabled_pm)
+        except:
+                pass
+            
     #POV AD
         try:
                 if xbmcvfs.exists(var.chk_pov) and xbmcvfs.exists(var.chkset_pov):
@@ -242,7 +277,26 @@ class Auth:
                                 addon.setSetting("debrid_select", d_select)
         except:
                 pass
-        
+
+    #Base 19 AD
+        try:
+                if xbmcvfs.exists(var.chk_base) and xbmcvfs.exists(var.chkset_base):
+                        chk_auth_base = xbmcaddon.Addon('plugin.video.base19').getSetting("alldebrid.token")
+                        if not str(var.chk_accountmgr_tk_ad) == str(chk_auth_base) or str(chk_auth_base) == '':
+                                
+                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
+                                your_username = accountmgr.getSetting("alldebrid.username")
+                                your_token = accountmgr.getSetting("alldebrid.token")
+                        
+                                addon = xbmcaddon.Addon("plugin.video.base19")
+                                addon.setSetting("alldebrid.username", your_username)
+                                addon.setSetting("alldebrid.token", your_token)
+
+                                d_select = ("2")
+                                addon.setSetting("debrid_select", d_select)
+        except:
+                pass
+            
     #Unleashed AD
         try:
                 if xbmcvfs.exists(var.chk_unleashed) and xbmcvfs.exists(var.chkset_unleashed):
@@ -353,63 +407,6 @@ class Auth:
         except:
                 pass
 
-    #M.E.T.V AD
-        try:
-                if xbmcvfs.exists(var.chk_metv) and xbmcvfs.exists(var.chkset_metv):
-                        chk_auth_metv = xbmcaddon.Addon('plugin.video.metv19').getSetting("alldebrid.token")
-                        if not str(var.chk_accountmgr_tk_ad) == str(chk_auth_metv) or str(chk_auth_metv) == '':
-                                
-                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
-                                your_username = accountmgr.getSetting("alldebrid.username")
-                                your_token = accountmgr.getSetting("alldebrid.token")
-                        
-                                addon = xbmcaddon.Addon("plugin.video.metv19")
-                                addon.setSetting("alldebrid.username", your_username)
-                                addon.setSetting("alldebrid.token", your_token)
-
-                                d_use = ("true")
-                                addon.setSetting("debrid_use", d_use)
-                                
-                                d_select = ("2")
-                                addon.setSetting("debrid_select", d_select)
-        except:
-                pass
-
-    #Aliunde AD
-        try:
-                if xbmcvfs.exists(var.chk_aliunde) and xbmcvfs.exists(var.chkset_aliunde):
-                        chk_auth_aliunde = xbmcaddon.Addon('plugin.video.aliundek19').getSetting("alldebrid.token")
-                        chk_auth_aliunde_rd = xbmcaddon.Addon('plugin.video.aliundek19').getSetting("rd.auth")
-                        chk_auth_aliunde_pm = xbmcaddon.Addon('plugin.video.aliundek19').getSetting("premiumize.token")
-                        if not str(var.chk_accountmgr_tk_ad) == str(chk_auth_aliunde) or str(chk_auth_aliunde) == '':
-                        
-                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
-                                your_username = accountmgr.getSetting("alldebrid.username")
-                                your_token = accountmgr.getSetting("alldebrid.token")
-                        
-                                addon = xbmcaddon.Addon("plugin.video.aliundek19")
-                                addon.setSetting("alldebrid.username", your_username)
-                                addon.setSetting("alldebrid.token", your_token)
-
-                                enabled_ad = ("true")
-                                addon.setSetting("debrid_use_ad", enabled_ad)
-
-                                if str(chk_auth_aliunde_rd) != '':
-                                        rd_use = ("true")
-                                        addon.setSetting("debrid_use_rd", rd_use)
-                                else:
-                                        rd_use = ("false")
-                                        addon.setSetting("debrid_use_rd", rd_use)
-                        
-                                if str(chk_auth_aliunde_pm) != '':
-                                        pm_use = ("true")
-                                        addon.setSetting("debrid_use_pm", pm_use)
-                                else:
-                                        pm_use = ("false")
-                                        addon.setSetting("debrid_use_pm", pm_use)
-        except:
-                pass
-
     #Patriot AD
         try:
                 if xbmcvfs.exists(var.chk_patriot) and xbmcvfs.exists(var.chkset_patriot):
@@ -466,6 +463,79 @@ class Auth:
                                         addon.setSetting("debrid_use_pm", pm_use)
         except:
                 pass
+
+    #M.E.T.V AD
+        try:
+                if xbmcvfs.exists(var.chk_metv) and xbmcvfs.exists(var.chkset_metv):
+                        chk_auth_metv = xbmcaddon.Addon('plugin.video.metv19').getSetting("alldebrid.token")
+                        if not str(var.chk_accountmgr_tk_ad) == str(chk_auth_metv) or str(chk_auth_metv) == '':
+                                
+                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
+                                your_username = accountmgr.getSetting("alldebrid.username")
+                                your_token = accountmgr.getSetting("alldebrid.token")
+                        
+                                addon = xbmcaddon.Addon("plugin.video.metv19")
+                                addon.setSetting("alldebrid.username", your_username)
+                                addon.setSetting("alldebrid.token", your_token)
+
+                                d_use = ("true")
+                                addon.setSetting("debrid_use", d_use)
+                                
+                                d_select = ("2")
+                                addon.setSetting("debrid_select", d_select)
+        except:
+                pass
+
+    #Aliunde AD
+        try:
+                if xbmcvfs.exists(var.chk_aliunde) and xbmcvfs.exists(var.chkset_aliunde):
+                        chk_auth_aliunde = xbmcaddon.Addon('plugin.video.aliundek19').getSetting("alldebrid.token")
+                        chk_auth_aliunde_rd = xbmcaddon.Addon('plugin.video.aliundek19').getSetting("rd.auth")
+                        chk_auth_aliunde_pm = xbmcaddon.Addon('plugin.video.aliundek19').getSetting("premiumize.token")
+                        if not str(var.chk_accountmgr_tk_ad) == str(chk_auth_aliunde) or str(chk_auth_aliunde) == '':
+                        
+                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
+                                your_username = accountmgr.getSetting("alldebrid.username")
+                                your_token = accountmgr.getSetting("alldebrid.token")
+                        
+                                addon = xbmcaddon.Addon("plugin.video.aliundek19")
+                                addon.setSetting("alldebrid.username", your_username)
+                                addon.setSetting("alldebrid.token", your_token)
+
+                                enabled_ad = ("true")
+                                addon.setSetting("debrid_use_ad", enabled_ad)
+
+                                if str(chk_auth_aliunde_rd) != '':
+                                        rd_use = ("true")
+                                        addon.setSetting("debrid_use_rd", rd_use)
+                                else:
+                                        rd_use = ("false")
+                                        addon.setSetting("debrid_use_rd", rd_use)
+                        
+                                if str(chk_auth_aliunde_pm) != '':
+                                        pm_use = ("true")
+                                        addon.setSetting("debrid_use_pm", pm_use)
+                                else:
+                                        pm_use = ("false")
+                                        addon.setSetting("debrid_use_pm", pm_use)
+        except:
+                pass
+            
+    #My Accounts AD
+        try:
+                if xbmcvfs.exists(var.chk_myaccounts) and xbmcvfs.exists(var.chkset_myaccounts):
+                        chk_auth_myaccounts = xbmcaddon.Addon('script.module.myaccounts').getSetting("alldebrid.token")
+                        if not str(var.chk_accountmgr_tk_ad) == str(chk_auth_myaccounts) or str(chk_auth_myaccounts) == '':
+                        
+                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
+                                your_username = accountmgr.getSetting("alldebrid.username")
+                                your_token = accountmgr.getSetting("alldebrid.token")
+                        
+                                addon = xbmcaddon.Addon("script.module.myaccounts")
+                                addon.setSetting("alldebrid.username", your_username)
+                                addon.setSetting("alldebrid.token", your_token)
+        except:
+                pass
             
     #ResolveURL AD
         try:
@@ -483,21 +553,5 @@ class Auth:
 
                                 cache_only = ("true")
                                 addon.setSetting("AllDebridResolver_cached_only", cache_only)
-        except:
-                pass
-
-    #My Accounts AD
-        try:
-                if xbmcvfs.exists(var.chk_myaccounts) and xbmcvfs.exists(var.chkset_myaccounts):
-                        chk_auth_myaccounts = xbmcaddon.Addon('script.module.myaccounts').getSetting("alldebrid.token")
-                        if not str(var.chk_accountmgr_tk_ad) == str(chk_auth_myaccounts) or str(chk_auth_myaccounts) == '':
-                        
-                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
-                                your_username = accountmgr.getSetting("alldebrid.username")
-                                your_token = accountmgr.getSetting("alldebrid.token")
-                        
-                                addon = xbmcaddon.Addon("script.module.myaccounts")
-                                addon.setSetting("alldebrid.username", your_username)
-                                addon.setSetting("alldebrid.token", your_token)
         except:
                 pass

@@ -11,9 +11,9 @@ from resources.libs.common.config import CONFIG
 from resources.libs.common import logging
 from resources.libs.common import tools
 
-ORDER = ['acctmgr',
+ORDER = ['fen',
          'ezra',
-         'fen',
+         'coal',
          'pov',
          'umb',
          'thecrew',
@@ -26,24 +26,10 @@ ORDER = ['acctmgr',
          'moria',
          'absolution',
          'nine',
-         'myact',]
+         'acctmgr',
+         'myact']
 
 DEBRIDID = {
-    'ezra': {
-        'name'     : 'Ezra',
-        'plugin'   : 'plugin.video.ezra',
-        'saved'    : 'ezra',
-        'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.ezra'),
-        'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.ezra', 'icon.png'),
-        'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.ezra', 'fanart.png'),
-        'file'     : os.path.join(CONFIG.NONDEBRIDFOLD, 'ezra_nondebrid'),
-        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.ezra', 'settings.xml'),
-        'default'  : '',
-        'default_furk'  : 'furk_login',
-        'default_easy'  : 'easynews_user',
-        'default_file'  : '',
-        'data'     : ['furk_login', 'furk_password', 'furk_api_key', 'provider.furk', 'provider.easynews', 'easynews_user',  'easynews_password', 'furk.mod.level', 'furk.title_filter', 'check.furk', 'fu.priority', 'easynews.title_filter', 'easynews.filter_lang', 'en.priority', 'easynews.lang_filters', 'easynews_moderation', 'check.easynews'],
-        'activate' : 'Addon.OpenSettings(plugin.video.ezra)'},
     'fen': {
         'name'     : 'Fen',
         'plugin'   : 'plugin.video.fen',
@@ -59,6 +45,36 @@ DEBRIDID = {
         'default_file'  : '',
         'data'     : ['furk_login', 'furk_password', 'furk_api_key', 'provider.furk', 'provider.easynews', 'easynews_user', 'easynews_password', 'furk.title_filter', 'check.furk', 'fu.priority', 'easynews.use_custom_farm', 'easynews.server_name', 'easynews.title_filter', 'easynews.filter_lang', 'en.priority', 'easynews.lang_filters', 'check.easynews'],
         'activate' : 'Addon.OpenSettings(plugin.video.fen)'},
+    'ezra': {
+        'name'     : 'Ezra',
+        'plugin'   : 'plugin.video.ezra',
+        'saved'    : 'ezra',
+        'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.ezra'),
+        'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.ezra', 'icon.png'),
+        'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.ezra', 'fanart.png'),
+        'file'     : os.path.join(CONFIG.NONDEBRIDFOLD, 'ezra_nondebrid'),
+        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.ezra', 'settings.xml'),
+        'default'  : '',
+        'default_furk'  : 'furk_login',
+        'default_easy'  : 'easynews_user',
+        'default_file'  : '',
+        'data'     : ['furk_login', 'furk_password', 'furk_api_key', 'provider.furk', 'provider.easynews', 'easynews_user',  'easynews_password', 'furk.mod.level', 'furk.title_filter', 'check.furk', 'fu.priority', 'easynews.title_filter', 'easynews.filter_lang', 'en.priority', 'easynews.lang_filters', 'easynews_moderation', 'check.easynews'],
+        'activate' : 'Addon.OpenSettings(plugin.video.ezra)'},
+    'coal': {
+        'name'     : 'Coalition',
+        'plugin'   : 'plugin.video.coalition',
+        'saved'    : 'coal',
+        'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.coalition'),
+        'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.coalition/resources/media/', 'fen_icon.png'),
+        'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.coalition/resources/media/', 'fen_fanart.png'),
+        'file'     : os.path.join(CONFIG.NONDEBRIDFOLD, 'coal_nondebrid'),
+        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.coalition', 'settings.xml'),
+        'default'  : '',
+        'default_furk'  : 'furk_login',
+        'default_easy'  : 'easynews_user',
+        'default_file'  : '',
+        'data'     : ['furk_login', 'furk_password', 'furk_api_key', 'provider.furk', 'provider.easynews', 'easynews_user', 'easynews_password', 'furk.title_filter', 'check.furk', 'fu.priority', 'easynews.use_custom_farm', 'easynews.server_name', 'easynews.title_filter', 'easynews.filter_lang', 'en.priority', 'easynews.lang_filters', 'check.easynews'],
+        'activate' : 'Addon.OpenSettings(plugin.video.coalition)'},
     'pov': {
         'name'     : 'POV',
         'plugin'   : 'plugin.video.pov',
@@ -239,21 +255,6 @@ DEBRIDID = {
         'default_file'  : '',
         'data'     : ['furk.user_name', 'furk.user_pass', 'furk.api', 'furk.limit'],
         'activate' : 'Addon.OpenSettings(plugin.video.nine)'},
-    'myact': {
-        'name'     : 'My Accounts',
-        'plugin'   : 'script.module.myaccounts',
-        'saved'    : 'myact',
-        'path'     : os.path.join(CONFIG.ADDONS, 'script.module.myaccounts'),
-        'icon'     : os.path.join(CONFIG.ADDONS, 'script.module.myaccounts', 'icon.png'),
-        'fanart'   : os.path.join(CONFIG.ADDONS, 'script.module.myaccounts', 'fanart.png'),
-        'file'     : os.path.join(CONFIG.NONDEBRIDFOLD, 'myact_nondebrid'),
-        'settings' : os.path.join(CONFIG.ADDON_DATA, 'script.module.myaccounts', 'settings.xml'),
-        'default'  : '',
-        'default_furk'  : 'furk.username',
-        'default_easy'  : 'easynews.username',
-        'default_file'  : 'filepursuit.api.key',
-        'data'     : ['furk.username', 'furk.password', 'furk.api.key', 'easynews.username', 'easynews.password', 'filepursuit.api.key'],
-        'activate' : 'Addon.OpenSettings(script.module.myaccounts)'},
     'acctmgr': {
         'name'     : 'Account Manager',
         'plugin'   : 'script.module.accountmgr',
@@ -268,7 +269,22 @@ DEBRIDID = {
         'default_easy'  : 'easynews.username',
         'default_file'  : 'filepursuit.api.key',
         'data'     : ['furk.username', 'furk.password', 'furk.api.key', 'easynews.username', 'easynews.password', 'filepursuit.api.key'],
-        'activate' : 'Addon.OpenSettings(script.module.accountmgr)'}
+        'activate' : 'Addon.OpenSettings(script.module.accountmgr)'},
+    'myact': {
+        'name'     : 'My Accounts',
+        'plugin'   : 'script.module.myaccounts',
+        'saved'    : 'myact',
+        'path'     : os.path.join(CONFIG.ADDONS, 'script.module.myaccounts'),
+        'icon'     : os.path.join(CONFIG.ADDONS, 'script.module.myaccounts', 'icon.png'),
+        'fanart'   : os.path.join(CONFIG.ADDONS, 'script.module.myaccounts', 'fanart.png'),
+        'file'     : os.path.join(CONFIG.NONDEBRIDFOLD, 'myact_nondebrid'),
+        'settings' : os.path.join(CONFIG.ADDON_DATA, 'script.module.myaccounts', 'settings.xml'),
+        'default'  : '',
+        'default_furk'  : 'furk.username',
+        'default_easy'  : 'easynews.username',
+        'default_file'  : 'filepursuit.api.key',
+        'data'     : ['furk.username', 'furk.password', 'furk.api.key', 'easynews.username', 'easynews.password', 'filepursuit.api.key'],
+        'activate' : 'Addon.OpenSettings(script.module.myaccounts)'}
 }
     
 def debrid_user_furk(who):

@@ -49,16 +49,16 @@
 		<setting id="filepursuit.api.key" type="text" label="FilePursuit API Key" default="" visible="eq(-9,true)" />
 
 		<setting type="lsep" label="Metadata Providers" />
-		<setting id="meta.enabled" type="bool" visible="true" label="Enable" default="true" />
+		<setting id="meta.enabled" type="bool" visible="true" label="Enable" default="false" />
 		<setting type="action" label="Sync Add-ons" option="close" action="RunScript(script.module.accountmgr, action=metaSync)"  visible="eq(-1,true)" />
 		<setting label="32311" type="action" action="RunScript(script.module.accountmgr, action=ShowHelpMeta)" visible="eq(-2,true)" />
 		<setting type="lsep"/>
-		<setting id="fanart.tv.api.key" type="text" label="Fanart.TV API Key" default="ad7eccc1dd67f889f7f5c2e9ebb810ae" visible="eq(-4,true)"/>
+		<setting id="fanart.tv.api.key" type="text" label="Fanart.TV API Key" default="" visible="eq(-4,true)"/>
 		<setting id="omdb.api.key" type="text" label="OMDb API Key" default="" visible="eq(-5,true)" />
 		<setting id="mdb.api.key" type="text" label="MDblist API Key" default="" visible="eq(-6,true)" />
 		<setting id="imdb.user" type="text" label="IMDb User" default="" visible="eq(-7,true)" />
-		<setting id="tvdb.api.key" type="text" label="TVDb API Key" default="b29fd3a8-0a70-4098-9409-b9337eb54ded" visible="eq(-8,true)" />
-		<setting id="tmdb.api.key" type="text" label="40072" default="3d000491a0f37d4962d02bdb062af037" visible="eq(-9,true)" />
+		<setting id="tvdb.api.key" type="text" label="TVDb API Key" default="" visible="eq(-8,true)" />
+		<setting id="tmdb.api.key" type="text" label="40072" default="" visible="eq(-9,true)" />
 		<setting type="sep"/>
 		<setting id="tmdb.username" type="text" label="40060" default="" visible="eq(-11,true)" />
 		<setting id="tmdb.password" type="text" label="40061" option="hidden" default="" visible="eq(-12,true)" />
@@ -72,86 +72,87 @@
 		<setting type="lsep" label="Manage Multiple Debrid Accounts" />
 		<setting id="debridall.enabled" type="bool" visible="true" label="Enable" default="false" />
 		<setting type="action" label="View Authorizations" option="close" action="ActivateWindow(10001,plugin://script.module.acctview/?mode=allaccts,return)" visible="eq(-1,true)" />
-		<setting type="action" label="Sync Accounts" option="close" action="RunScript(script.module.accountmgr, action=ReSyncAll)" visible="eq(-2,true)" />
-		<setting type="action" label="Revoke Accounts" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=revokeall&name=all)" visible="eq(-3,true)" />
+		<setting type="action" label="Sync Add-ons" option="close" action="RunScript(script.module.accountmgr, action=ReSyncAll)" visible="eq(-2,true)" />
+		<setting type="action" label="Revoke" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=revokeall&name=all)" visible="eq(-3,true)" />
 
 		<setting type="lsep" label="Real-Debrid" />
 		<setting id="realdebrid.username" label="" type="text" default="" visible="false" enable="false" />
-		<setting type="action" label="View Authorized Add-ons" option="close" action="ActivateWindow(10001,plugin://script.module.acctview/?mode=realdebrid,return)" visible="!eq(-1,)" />
+		<setting type="action" label="View Authorizations" option="close" action="ActivateWindow(10001,plugin://script.module.acctview/?mode=realdebrid,return)" visible="!eq(-1,)" />
 		<setting type="action" label="Sync Add-ons" option="close" action="RunScript(script.module.accountmgr, action=realdebridReSync, opensettings=true)"  visible="!eq(-2,)" />
 		<setting type="action" label="Revoke" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=addondebrid_rd&name=all)"  visible="!eq(-3,)" />
 
 		<setting type="lsep" label="Premiumize" />
 		<setting id="premiumize.username" label="" type="text" default="" visible="false" enable="false" />
-		<setting type="action" label="View Authorized Add-ons" option="close" action="ActivateWindow(10001,plugin://script.module.acctview/?mode=premiumize,return)" visible="!eq(-1,)" />
+		<setting type="action" label="View Authorizations" option="close" action="ActivateWindow(10001,plugin://script.module.acctview/?mode=premiumize,return)" visible="!eq(-1,)" />
 		<setting type="action" label="Sync Add-ons" option="close" action="RunScript(script.module.accountmgr, action=premiumizeReSync, opensettings=true)"  visible="!eq(-2,)" />
 		<setting type="action" label="Revoke" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=addondebrid_pm&name=all)"  visible="!eq(-3,)" />
 	
 		<setting type="lsep" label="All-Debrid" />
 		<setting id="alldebrid.username" label="" type="text" default="" visible="false" enable="false" />
-		<setting type="action" label="View Authorized Add-ons" option="close" action="ActivateWindow(10001,plugin://script.module.acctview/?mode=alldebrid,return)" visible="!eq(-1,)" />
+		<setting type="action" label="View Authorizations" option="close" action="ActivateWindow(10001,plugin://script.module.acctview/?mode=alldebrid,return)" visible="!eq(-1,)" />
 		<setting type="action" label="Sync Add-ons" option="close" action="RunScript(script.module.accountmgr, action=alldebridReSync, opensettings=true)"  visible="!eq(-2,)" />
 		<setting type="action" label="Revoke" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=addondebrid_ad&name=all)"  visible="!eq(-3,)" />
 
 		<setting type="lsep" label="Trakt" />
 		<setting id="trakt.username" label="" type="text" default="" visible="false" enable="false" />
-		<setting type="action" label="View Authorized Add-ons" option="close" action="ActivateWindow(10001,plugin://script.module.acctview/?mode=trakt,return)" visible="!eq(-1,)" />
+		<setting type="action" label="View Authorizations" option="close" action="ActivateWindow(10001,plugin://script.module.acctview/?mode=trakt,return)" visible="!eq(-1,)" />
 		<setting type="action" label="Sync Add-ons" option="close" action="RunScript(script.module.accountmgr, action=traktReSync, opensettings=true)" visible="!eq(-2,)" />
 		<setting type="action" label="Revoke" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=addontrakt&name=all)" visible="!eq(-3,)" />
 
 		<setting type="lsep" label="Furk/Easynews/FilePursuit" />
 		<setting id="non.enabled" type="bool" visible="false" label="" default="false" />
-		<setting type="action" label="View All Accounts" option="close" action="ActivateWindow(10001,plugin://script.module.acctview/?mode=nondebrid,return)" visible="eq(-1,true)" />
+		<setting type="action" label="View Authorizations" option="close" action="ActivateWindow(10001,plugin://script.module.acctview/?mode=nondebrid,return)" visible="eq(-1,true)" />
 		<setting type="action" label="Sync Add-ons" option="close" action="RunScript(script.module.accountmgr, action=SyncAll)"  visible="eq(-2,true)" />
 		<setting type="action" label="Revoke" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=addon_non&name=all)"  visible="eq(-3,true)" />
 
 		<setting type="lsep" label="Metadata Providers" />
 		<setting id="meta.enabled" type="bool" visible="false" label="" default="false" />
-		<setting type="action" label="View All Accounts" option="close" action="ActivateWindow(10001,plugin://script.module.acctview/?mode=metadata,return)" visible="eq(-1,true)" />
+		<setting type="action" label="View Authorizations" option="close" action="ActivateWindow(10001,plugin://script.module.acctview/?mode=metadata,return)" visible="eq(-1,true)" />
 		<setting type="action" label="Sync Add-ons" option="close" action="RunScript(script.module.accountmgr, action=metaReSync, opensettings=true)"  visible="eq(-2,true)" />
 		<setting type="action" label="Revoke" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=addonmeta&name=all)"  visible="eq(-3,true)" />
 	</category>
 	<category label="Backup & Restore">
+                <setting type="lsep" label="Backup & Restore Multiple Debrid Accounts" />
 		<setting id="debridall.enabled" type="bool" visible="hidden" label="Enable" default="false" />
-		<setting type="action" label="Backup All Your Debrid Accounts" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=backupall&name=all)" visible="eq(-1,true)" />
-		<setting type="action" label="Restore All Your Debrid Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=restoreall&name=all)" visible="eq(-2,true)" />
-		<setting type="action" label="Clear All Your Debrid Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=clearall&name=all)" visible="eq(-3,true)" />
+		<setting type="action" label="Backup Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=backupall&name=all)" visible="eq(-1,true)" />
+		<setting type="action" label="Restore Saved Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=restoreall&name=all)" visible="eq(-2,true)" />
+		<setting type="action" label="Clear Saved Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=clearall&name=all)" visible="eq(-3,true)" />
 
 		<setting type="lsep" label="Real-Debrid" />
 		<setting id="realdebrid.username" label="" type="text" default="" visible="false" />
 		<setting type="action" label="Backup Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=savedebrid_acctmgr_rd&name=all)"  visible="!eq(-1,)" />
-		<setting type="action" label="Restore Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=restoredebrid_rd&name=all)"  visible="true" />
-		<setting type="action" label="Clear Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=cleardebrid_rd&name=all)" visible="true" />
+		<setting type="action" label="Restore Saved Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=restoredebrid_rd&name=all)"  visible="true" />
+		<setting type="action" label="Clear Saved Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=cleardebrid_rd&name=all)" visible="true" />
 
 		<setting type="lsep" label="Premiumize" />
 		<setting id="premiumize.username" label="" type="text" default="" visible="false" />
 		<setting type="action" label="Backup Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=savedebrid_acctmgr_pm&name=all)"  visible="!eq(-1,)" />
-		<setting type="action" label="Restore Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=restoredebrid_pm&name=all)"  visible="true" />
-		<setting type="action" label="Clear Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=cleardebrid_pm&name=all)"  visible="true" />
+		<setting type="action" label="Restore Saved Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=restoredebrid_pm&name=all)"  visible="true" />
+		<setting type="action" label="Clear Saved Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=cleardebrid_pm&name=all)"  visible="true" />
 
 		<setting type="lsep" label="All-Debrid" />
 		<setting id="alldebrid.username" label="" type="text" default="" visible="false" />
 		<setting type="action" label="Backup Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=savedebrid_acctmgr_ad&name=all)"  visible="!eq(-1,)" />
-		<setting type="action" label="Restore Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=restoredebrid_ad&name=all)"  visible="true" />
-		<setting type="action" label="Clear Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=cleardebrid_ad&name=all)"  visible="true" />
+		<setting type="action" label="Restore Saved Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=restoredebrid_ad&name=all)"  visible="true" />
+		<setting type="action" label="Clear Saved Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=cleardebrid_ad&name=all)"  visible="true" />
 
 		<setting type="lsep" label="Trakt" />
 		<setting id="trakt.username" label="" type="text" default="" visible="false" enable="false" />
 		<setting type="action" label="Backup Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=savetrakt_acctmgr&name=all)" visible="!eq(-1,)" />
-		<setting type="action" label="Restore Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=restoretrakt&name=all)" visible="true" />
-		<setting type="action" label="Clear Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=cleartrakt&name=all)" visible="true" />
+		<setting type="action" label="Restore Saved Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=restoretrakt&name=all)" visible="true" />
+		<setting type="action" label="Clear Saved Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=cleartrakt&name=all)" visible="true" />
 
 		<setting type="lsep" label="Furk/Easynews/FilePursuit" />
 		<setting id="non.enabled" type="bool" visible="hidden" default="false" />
 		<setting type="action" label="Backup Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=save_non_acctmgr&name=all)"  visible="eq(-1,true)" />
-		<setting type="action" label="Restore Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=restore_non&name=all)"  visible="true" />
-		<setting type="action" label="Clear Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=clear_non&name=all)"  visible="true" />
+		<setting type="action" label="Restore Saved Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=restore_non&name=all)"  visible="true" />
+		<setting type="action" label="Clear Saved Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=clear_non&name=all)"  visible="true" />
 
 		<setting type="lsep" label="Metadata Providers" />
 		<setting id="meta.enabled" type="bool" visible="hidden" default="false" />
 		<setting type="action" label="Backup Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=savemeta_acctmgr&name=all)"  visible="eq(-1,true)" />
-		<setting type="action" label="Restore Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=restoremeta&name=all)"  visible="true" />
-		<setting type="action" label="Clear Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=clearmeta&name=all)"  visible="true" />
+		<setting type="action" label="Restore Saved Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=restoremeta&name=all)"  visible="true" />
+		<setting type="action" label="Clear Saved Data" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=clearmeta&name=all)"  visible="true" />
 	</category>
 	<category label="Configure Backup">
 		<setting type="lsep" label="Configure Backup Directory" />
@@ -169,9 +170,9 @@
       	<setting id="sync.service"  type="bool" label="Trakt & Debrid Auto-Sync Service" default="true"/>
 		<setting label="40094" type="text" />
       	<setting id="sync.nondebrid.service"  type="bool" label="Furk/Easynews/FilePursuit Auto-Sync Service" default="false"/>
-		<setting label="40095" type="text" />
+		<setting label="40094" type="text" />
       	<setting id="sync.metaservice" type="bool" label="Metadata Auto-Sync Service" default="false"/>
-		<setting label="40096" type="text" />
+		<setting label="40094" type="text" />
 		<setting type="lsep" label="Restore All Add-ons To Default" />
 		<setting type="action" label="Restore Default Settings" option="close" action="PlayMedia(plugin://script.module.acctview/?mode=wipeclean&name=all)" visible="true" />
 		<setting label="40097" type="text" />

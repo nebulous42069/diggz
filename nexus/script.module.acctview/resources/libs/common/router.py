@@ -114,6 +114,9 @@ class Router:
                         from resources.libs import traktit
                         traktit.trakt_it_restore('restore', name)
                         xbmcgui.Dialog().notification('Account Manager', 'Trakt Data Restored!', trakt_icon, 3000)
+                        xbmc.sleep(2000)
+                        xbmcgui.Dialog().ok('Account Manager', 'To save changes, please close Kodi, Press OK to force close Kodi')
+                        os._exit(1)
                     else:
                         xbmcgui.Dialog().notification('Account Manager', 'No Trakt Data to Restore!', amgr_icon, 3000)
                 except:
@@ -124,6 +127,9 @@ class Router:
             from resources.libs import traktit
             traktit.trakt_it_revoke('wipeaddon', name)
             xbmcgui.Dialog().notification('Account Manager', 'All Add-ons Revoked!', trakt_icon, 3000)
+            xbmc.sleep(2000)
+            xbmcgui.Dialog().ok('Account Manager', 'To save changes, please close Kodi, Press OK to force close Kodi')
+            os._exit(1)
         elif mode == 'cleartrakt':  # Clear All Saved Trakt Data
             if xbmcvfs.exists(trakt_backup): # Skip clearing data if no Trakt folder present in backup folder
                 try:
@@ -446,7 +452,7 @@ class Router:
                         path_ad = os.listdir(ad_backup)
                         if len(path_ad) != 0: # Skip if backup directory is empty
                             from resources.libs import debridit_ad
-                            debridit_pm.debrid_it('restore', name)
+                            debridit_ad.debrid_it('restore', name)
                             xbmcgui.Dialog().notification('Account Manager', 'All-Debrid Data Restored!', ad_icon, 3000)
                         else:
                             xbmcgui.Dialog().notification('Account Manager', 'No All-Debrid Data Found!', ad_icon, 3000)

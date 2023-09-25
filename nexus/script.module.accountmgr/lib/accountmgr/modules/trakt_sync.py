@@ -98,7 +98,41 @@ class Auth:
                                 addon.setSetting("watched_indicators", '1')
         except:
                 pass
-        
+
+     #Coalition
+        try:
+            if xbmcvfs.exists(var.chk_coal) and xbmcvfs.exists(var.chkset_coal):
+                    chk_auth_coal = xbmcaddon.Addon('plugin.video.coalition').getSetting("trakt.token")
+                    if not str(var.chk_accountmgr_tk) == str(chk_auth_coal) or str(chk_auth_coal) == '':
+                    
+                                f = open(var.path_coal,'r')
+                                data = f.read()
+                                f.close()
+                                client = data.replace(var.coal_client,var.client_am).replace(var.coal_secret,var.secret_am)
+                                f = open(var.path_coal,'w')
+                                f.write(client)
+                                f.close()
+
+                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
+                                addon = xbmcaddon.Addon("plugin.video.coalition")
+
+                                your_token = accountmgr.getSetting("trakt.token")
+                                addon.setSetting("trakt.token", your_token)
+
+                                your_username = accountmgr.getSetting("trakt.username")
+                                addon.setSetting("trakt_user", your_username)
+                                
+                                your_refresh = accountmgr.getSetting("trakt.refresh")
+                                addon.setSetting("trakt.refresh", your_refresh)
+
+                                your_expires = accountmgr.getSetting("trakt.expires")
+                                addon.setSetting("trakt.expires", your_expires)
+
+                                addon.setSetting("trakt.indicators_active", 'true')
+                                addon.setSetting("watched_indicators", '1')
+        except:
+                pass
+            
     #POV
         try:
                 if xbmcvfs.exists(var.chk_pov) and xbmcvfs.exists(var.chkset_pov):
@@ -216,7 +250,35 @@ class Auth:
                                 addon.setSetting("trakt_expires_at", your_expires)
         except:
                 pass
-        
+
+    #Base 19
+        try:
+                if xbmcvfs.exists(var.chk_base) and xbmcvfs.exists(var.chkset_base):
+                        chk_auth_base = xbmcaddon.Addon('plugin.video.base19').getSetting("trakt_access_token")
+                        if not str(var.chk_accountmgr_tk) == str(chk_auth_base) or str(chk_auth_base) == '':
+                                
+                                f = open(var.path_base,'r')
+                                data = f.read()
+                                f.close()
+                                client = data.replace(var.base_client,var.client_am).replace(var.base_secret,var.secret_am)
+                                f = open(var.path_base,'w')
+                                f.write(client)
+                                f.close()
+
+                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
+                                addon = xbmcaddon.Addon("plugin.video.base19")
+
+                                your_token = accountmgr.getSetting("trakt.token")
+                                addon.setSetting("trakt_access_token", your_token)
+
+                                your_refresh = accountmgr.getSetting("trakt.refresh")
+                                addon.setSetting("trakt_refresh_token", your_refresh)
+
+                                your_expires = accountmgr.getSetting("trakt.expires")
+                                addon.setSetting("trakt_expires_at", your_expires)
+        except:
+                pass
+            
     #Unleashed
         try:
                 if xbmcvfs.exists(var.chk_unleashed) and xbmcvfs.exists(var.chkset_unleashed):
@@ -356,6 +418,62 @@ class Auth:
                                 addon.setSetting("trakt_expires_at", your_expires)
         except:
                 pass
+
+    #Black Lightning
+        try:
+                if xbmcvfs.exists(var.chk_blackl) and xbmcvfs.exists(var.chkset_blackl):
+                        chk_auth_blackl = xbmcaddon.Addon('plugin.video.blacklightning').getSetting("trakt_access_token")
+                        if not str(var.chk_accountmgr_tk) == str(chk_auth_blackl) or str(chk_auth_blackl) == '':
+                                
+                                f = open(var.path_blackl,'r')
+                                data = f.read()
+                                f.close()
+                                client = data.replace(var.blackl_client,var.client_am).replace(var.blackl_secret,var.secret_am)
+                                f = open(var.path_blackl,'w')
+                                f.write(client)
+                                f.close()
+
+                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
+                                addon = xbmcaddon.Addon("plugin.video.blacklightning")
+
+                                your_token = accountmgr.getSetting("trakt.token")
+                                addon.setSetting("trakt_access_token", your_token)
+
+                                your_refresh = accountmgr.getSetting("trakt.refresh")
+                                addon.setSetting("trakt_refresh_token", your_refresh)
+
+                                your_expires = accountmgr.getSetting("trakt.expires")
+                                addon.setSetting("trakt_expires_at", your_expires)
+        except:
+                pass
+            
+    #Aliunde
+        try:
+                if xbmcvfs.exists(var.chk_aliunde) and xbmcvfs.exists(var.chkset_aliunde):
+                        chk_auth_aliunde = xbmcaddon.Addon('plugin.video.aliundek19').getSetting("trakt_access_token")
+                        if not str(var.chk_accountmgr_tk) == str(chk_auth_aliunde) or str(chk_auth_aliunde) == '':
+                                
+                                f = open(var.path_aliunde,'r')
+                                data = f.read()
+                                f.close()
+                                client = data.replace(var.aliunde_client,var.client_am).replace(var.aliunde_secret,var.secret_am)
+                                f = open(var.path_aliunde,'w')
+                                f.write(client)
+                                f.close()
+
+                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
+                                addon = xbmcaddon.Addon("plugin.video.aliundek19")
+
+                                your_token = accountmgr.getSetting("trakt.token")
+                                addon.setSetting("trakt_access_token", your_token)
+
+                                your_refresh = accountmgr.getSetting("trakt.refresh")
+                                addon.setSetting("trakt_refresh_token", your_refresh)
+
+                                your_expires = accountmgr.getSetting("trakt.expires")
+                                addon.setSetting("trakt_expires_at", your_expires)
+        except:
+                pass
             
     #Homelander
         try:
@@ -426,34 +544,6 @@ class Auth:
                                 addon.setSetting("trakt.authed", 'yes')
                                 addon.setSetting("trakt.client_id", var.client_am)
                                 addon.setSetting("trakt.client_secret", var.secret_am)
-        except:
-                pass
-
-    #Black Lightning
-        try:
-                if xbmcvfs.exists(var.chk_blackl) and xbmcvfs.exists(var.chkset_blackl):
-                        chk_auth_blackl = xbmcaddon.Addon('plugin.video.blacklightning').getSetting("trakt_access_token")
-                        if not str(var.chk_accountmgr_tk) == str(chk_auth_blackl) or str(chk_auth_blackl) == '':
-                                
-                                f = open(var.path_blackl,'r')
-                                data = f.read()
-                                f.close()
-                                client = data.replace(var.blackl_client,var.client_am).replace(var.blackl_secret,var.secret_am)
-                                f = open(var.path_blackl,'w')
-                                f.write(client)
-                                f.close()
-
-                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
-                                addon = xbmcaddon.Addon("plugin.video.blacklightning")
-
-                                your_token = accountmgr.getSetting("trakt.token")
-                                addon.setSetting("trakt_access_token", your_token)
-
-                                your_refresh = accountmgr.getSetting("trakt.refresh")
-                                addon.setSetting("trakt_refresh_token", your_refresh)
-
-                                your_expires = accountmgr.getSetting("trakt.expires")
-                                addon.setSetting("trakt_expires_at", your_expires)
         except:
                 pass
             
@@ -604,7 +694,31 @@ class Auth:
                                 addon.setSetting("trakt.client_secret", var.secret_am)
         except:
                 pass
-        
+
+    #Nine Lives
+        try:
+                if xbmcvfs.exists(var.chk_nine) and xbmcvfs.exists(var.chkset_nine):
+                        chk_auth_nine = xbmcaddon.Addon('plugin.video.nine').getSetting("trakt.token")
+                        if not str(var.chk_accountmgr_tk) == str(chk_auth_nine) or str(chk_auth_nine) == '':
+
+                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
+                                addon = xbmcaddon.Addon("plugin.video.nine")
+
+                                your_username = accountmgr.getSetting("trakt.username")
+                                addon.setSetting("trakt.user", your_username)
+
+                                your_token = accountmgr.getSetting("trakt.token")
+                                addon.setSetting("trakt.token", your_token)
+
+                                your_refresh = accountmgr.getSetting("trakt.refresh")
+                                addon.setSetting("trakt.refresh", your_refresh)
+
+                                addon.setSetting("trakt.authed", 'yes')
+                                addon.setSetting("trakt.client_id", var.client_am)
+                                addon.setSetting("trakt.client_secret", var.secret_am)
+        except:
+                pass
+            
     #Scrubs V2
         try:
                 if xbmcvfs.exists(var.chk_scrubs) and xbmcvfs.exists(var.chkset_scrubs):
@@ -635,61 +749,6 @@ class Auth:
         except:
                 pass
 
-    #Nine Lives
-        try:
-                if xbmcvfs.exists(var.chk_nine) and xbmcvfs.exists(var.chkset_nine):
-                        chk_auth_nine = xbmcaddon.Addon('plugin.video.nine').getSetting("trakt.token")
-                        if not str(var.chk_accountmgr_tk) == str(chk_auth_nine) or str(chk_auth_nine) == '':
-
-                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
-                                addon = xbmcaddon.Addon("plugin.video.nine")
-
-                                your_username = accountmgr.getSetting("trakt.username")
-                                addon.setSetting("trakt.user", your_username)
-
-                                your_token = accountmgr.getSetting("trakt.token")
-                                addon.setSetting("trakt.token", your_token)
-
-                                your_refresh = accountmgr.getSetting("trakt.refresh")
-                                addon.setSetting("trakt.refresh", your_refresh)
-
-                                addon.setSetting("trakt.authed", 'yes')
-                                addon.setSetting("trakt.client_id", var.client_am)
-                                addon.setSetting("trakt.client_secret", var.secret_am)
-        except:
-                pass
-            
-    #My Accounts
-        try:
-                if xbmcvfs.exists(var.chk_myaccounts) and xbmcvfs.exists(var.chkset_myaccounts):
-                        chk_auth_myaccounts = xbmcaddon.Addon('script.module.myaccounts').getSetting("trakt.token")
-                        if not str(var.chk_accountmgr_tk) == str(chk_auth_myaccounts) or str(chk_auth_myaccounts) == '':
-
-                                f = open(var.path_myaccounts,'r')
-                                data = f.read()
-                                f.close()
-                                client = data.replace(var.myacts_client,var.client_am).replace(var.myacts_secret,var.secret_am)
-                                f = open(var.path_myaccounts,'w')
-                                f.write(client)
-                                f.close()
-
-                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
-                                addon = xbmcaddon.Addon("script.module.myaccounts")
-
-                                your_token = accountmgr.getSetting("trakt.token")
-                                addon.setSetting("trakt.token", your_token)
-
-                                your_username = accountmgr.getSetting("trakt.username")
-                                addon.setSetting("trakt.username", your_username)
-
-                                your_expires = accountmgr.getSetting("trakt.refresh")
-                                addon.setSetting("trakt.refresh", your_expires)
-                                
-                                your_expires = accountmgr.getSetting("trakt.expires")
-                                addon.setSetting("trakt.expires", your_expires)
-        except:
-                pass
-        
     #TMDB Helper
         try:
                 if xbmcvfs.exists(var.chk_tmdbh) and xbmcvfs.exists(var.chkset_tmdbh):
@@ -716,6 +775,7 @@ class Auth:
                                 expires = f'","scope":"public","created_at":'
                                 tmdbh_data = '%s%s%s%s%s%s}' %(token,your_token,refresh,your_refresh,expires,your_expires_rnd)
                                 addon.setSettingString("Trakt_token", tmdbh_data)
+                                addon.setSetting("startup_notifications", 'false')
         except:
                 pass
 
@@ -748,5 +808,36 @@ class Auth:
                                 expires = f'", "scope": "public", "created_at": '
                                 trakt_data = '%s%s%s%s%s%s}' %(token, your_token, refresh, your_refresh, expires, your_expires_rnd)
                                 addon.setSetting("authorization", trakt_data)
+        except:
+                pass
+            
+    #My Accounts
+        try:
+                if xbmcvfs.exists(var.chk_myaccounts) and xbmcvfs.exists(var.chkset_myaccounts):
+                        chk_auth_myaccounts = xbmcaddon.Addon('script.module.myaccounts').getSetting("trakt.token")
+                        if not str(var.chk_accountmgr_tk) == str(chk_auth_myaccounts) or str(chk_auth_myaccounts) == '':
+
+                                f = open(var.path_myaccounts,'r')
+                                data = f.read()
+                                f.close()
+                                client = data.replace(var.myacts_client,var.client_am).replace(var.myacts_secret,var.secret_am)
+                                f = open(var.path_myaccounts,'w')
+                                f.write(client)
+                                f.close()
+
+                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
+                                addon = xbmcaddon.Addon("script.module.myaccounts")
+
+                                your_token = accountmgr.getSetting("trakt.token")
+                                addon.setSetting("trakt.token", your_token)
+
+                                your_username = accountmgr.getSetting("trakt.username")
+                                addon.setSetting("trakt.username", your_username)
+
+                                your_expires = accountmgr.getSetting("trakt.refresh")
+                                addon.setSetting("trakt.refresh", your_expires)
+                                
+                                your_expires = accountmgr.getSetting("trakt.expires")
+                                addon.setSetting("trakt.expires", your_expires)
         except:
                 pass

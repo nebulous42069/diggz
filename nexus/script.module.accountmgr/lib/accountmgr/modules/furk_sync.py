@@ -7,7 +7,28 @@ from libs.common import var
 
 class Auth:
         def furk_auth(self):
-               
+
+        #Fen
+                try:
+                        if xbmcvfs.exists(var.chk_fen) and xbmcvfs.exists(var.chkset_fen):
+
+                                chk_furk = xbmcaddon.Addon('plugin.video.fen').getSetting("furk_password")
+
+                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
+                                your_furk_user = accountmgr.getSetting("furk.username")
+                                your_furk_pass = accountmgr.getSetting("furk.password")
+                                your_furk_api = accountmgr.getSetting("furk.api.key")
+                                enable_furk = ("true")
+                        
+                                if not str(var.chk_accountmgr_furk) == str(chk_furk) or str(chk_furk) == '':
+                                        addon = xbmcaddon.Addon("plugin.video.fen")
+                                        addon.setSetting("provider.furk", enable_furk)
+                                        addon.setSetting("furk_login", your_furk_user)
+                                        addon.setSetting("furk_password", your_furk_pass)
+                                        addon.setSetting("furk_api_key", your_furk_api)
+                except:
+                        pass
+                
         #Ezra
                 try:
                         if xbmcvfs.exists(var.chk_ezra) and xbmcvfs.exists(var.chkset_ezra):
@@ -31,12 +52,12 @@ class Auth:
                                         addon.setSetting("furk_api_key", your_furk_api)
                 except:
                         pass
-
-        #Fen
+                
+        #Coalition
                 try:
-                        if xbmcvfs.exists(var.chk_fen) and xbmcvfs.exists(var.chkset_fen):
+                        if xbmcvfs.exists(var.chk_coal) and xbmcvfs.exists(var.chkset_coal):
 
-                                chk_furk = xbmcaddon.Addon('plugin.video.fen').getSetting("furk_password")
+                                chk_furk = xbmcaddon.Addon('plugin.video.coalition').getSetting("furk_password")
 
                                 accountmgr = xbmcaddon.Addon("script.module.accountmgr")
                                 your_furk_user = accountmgr.getSetting("furk.username")
@@ -45,14 +66,13 @@ class Auth:
                                 enable_furk = ("true")
                         
                                 if not str(var.chk_accountmgr_furk) == str(chk_furk) or str(chk_furk) == '':
-                                        addon = xbmcaddon.Addon("plugin.video.fen")
+                                        addon = xbmcaddon.Addon("plugin.video.coalition")
                                         addon.setSetting("provider.furk", enable_furk)
                                         addon.setSetting("furk_login", your_furk_user)
                                         addon.setSetting("furk_password", your_furk_pass)
                                         addon.setSetting("furk_api_key", your_furk_api)
                 except:
                         pass
-
                 
         #POV
                 try:

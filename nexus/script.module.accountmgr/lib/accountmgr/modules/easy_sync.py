@@ -7,7 +7,26 @@ from libs.common import var
 
 class Auth:
         def easy_auth(self):
-               
+
+        #Fen
+                try:
+                        if xbmcvfs.exists(var.chk_fen) and xbmcvfs.exists(var.chkset_fen):
+
+                                chk_easy = xbmcaddon.Addon('plugin.video.fen').getSetting("easynews_password")
+
+                                accountmgr = xbmcaddon.Addon("script.module.accountmgr")
+                                your_easy_user = accountmgr.getSetting("easynews.username")
+                                your_easy_pass = accountmgr.getSetting("easynews.password")
+                                enable_easy = ("true")
+                                     
+                                if not str(var.chk_accountmgr_easy) == str(chk_easy) or str(chk_easy) == '':
+                                        addon = xbmcaddon.Addon("plugin.video.fen")
+                                        addon.setSetting("provider.easynews", enable_easy)
+                                        addon.setSetting("easynews_user", your_easy_user)
+                                        addon.setSetting("easynews_password", your_easy_pass)
+                except:
+                        pass
+                
         #Ezra
                 try:
                         if xbmcvfs.exists(var.chk_ezra) and xbmcvfs.exists(var.chkset_ezra ):
@@ -30,11 +49,11 @@ class Auth:
                 except:
                         pass
 
-        #Fen
+        #Coalition
                 try:
-                        if xbmcvfs.exists(var.chk_fen) and xbmcvfs.exists(var.chkset_fen):
+                        if xbmcvfs.exists(var.chk_coal) and xbmcvfs.exists(var.chkset_coal):
 
-                                chk_easy = xbmcaddon.Addon('plugin.video.fen').getSetting("easynews_password")
+                                chk_easy = xbmcaddon.Addon('plugin.video.coalition').getSetting("easynews_password")
 
                                 accountmgr = xbmcaddon.Addon("script.module.accountmgr")
                                 your_easy_user = accountmgr.getSetting("easynews.username")
@@ -42,13 +61,12 @@ class Auth:
                                 enable_easy = ("true")
                                      
                                 if not str(var.chk_accountmgr_easy) == str(chk_easy) or str(chk_easy) == '':
-                                        addon = xbmcaddon.Addon("plugin.video.fen")
+                                        addon = xbmcaddon.Addon("plugin.video.coalition")
                                         addon.setSetting("provider.easynews", enable_easy)
                                         addon.setSetting("easynews_user", your_easy_user)
                                         addon.setSetting("easynews_password", your_easy_pass)
                 except:
                         pass
-
                 
         #POV
                 try:
