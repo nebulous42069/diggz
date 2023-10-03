@@ -95,7 +95,7 @@ def CATEGORIES():
 	addDir2('[B][COLOR blue]TRIPPY[/COLOR][/B]',base + 'TRIPPY/',5,icon,FANARTICO)
 	addDir2('[B][COLOR blue]URBAN[/COLOR][/B]',base + 'Urban/',5,icon,FANARTICO)
 	addDir2('[B][COLOR blue]WISEGUYS[/COLOR][/B]', base + 'WISEGUYS/',5,icon,FANARTICO)
-	addDir2('[B][COLOR blue]cg VARIOUS[/COLOR][/B]', base + 'cg_VARIOUS/',5,icon,FANARTICO)
+	addDir2('[B][COLOR blue]cg VARIOUS[/COLOR][/B]', base + 'cg%20_VARIOUS/',5,icon,FANARTICO)
 	
 #############Diggz Wallpapers########
 def Diggz_content(name,url):
