@@ -28,8 +28,10 @@ import sys
 import json
 from datetime import datetime
 import xbmc
-import xbmcvfs
+import xbmcgui
 import xbmcaddon
+import xbmcplugin
+import xbmcvfs
 from .utils import Utils 
 
 
@@ -82,7 +84,7 @@ class History:
         return self.data
         
     def writeFile(self):
-        filepath = xbmcvfs.translatePath(__addon__.getAddonInfo('profile')) + self.name + '.json'
+        filepath = xbmc.translatePath(__addon__.getAddonInfo('profile')) + self.name + '.json'
         try:
             with open(filepath, 'w+') as text_file:
                 text_file.write(json.dumps(self.data, indent = 4 * ' '))
