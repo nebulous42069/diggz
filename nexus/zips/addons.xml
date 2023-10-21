@@ -1349,10 +1349,9 @@ All changes on GitHub: https://github.com/aitschti/plugin.video.sc19
 				<icon>icon.png</icon>
 		</assets>
     </extension>
-</addon><addon id="script.autorunsburst" name="Autoruns Burst" version="2" provider-name="fight night, Jon Bovi">
+</addon><addon id="script.autorunsburst" name="Autoruns Burst" version="3" provider-name="fight night, Jon Bovi">
     <requires>
-        <import addon="xbmc.python" version="3.0.0" />
-        <import addon="plugin.video.elementum" version="0.1.98" />			
+        <import addon="xbmc.python" version="3.0.0" />			
         <import addon="script.module.six" />
         <import addon="script.module.kodi-six" />
 		<import addon="inputstream.rtmp" />
