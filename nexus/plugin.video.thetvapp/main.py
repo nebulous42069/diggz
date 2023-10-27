@@ -104,19 +104,46 @@ def ListMovies(url):
 	else:
 		xbmcgui.Dialog().notification('[B]Info[/B]', 'No streams found',xbmcgui.NOTIFICATION_INFO, 6000)
 		
+def decr(e):
+### 	function Ul(e) {
+### 	  const i = "Try9-Stubble9";
+### 	  let o = "";
+### 	  const l = atob(e);
+### 	  for (let c = 0; c < l.length; c++) {
+### 	    o += String.fromCharCode(l.charCodeAt(c) ^ i.charCodeAt(c % i.length));
+### 	  }
+### 	  return o;
+### 	}
+
+
+
+	import base64
+	i = "Try9-Stubble9"
+	l = base64.b64decode(e).decode('utf-8')
+	o=''
+	for c in range(len(e)):
 	
+		try:
+			a=ord(l[c])
+			b = ord(i[c%len(i)])
+			o+=chr(a^b)
+		except:
+			pass
+	
+	return o   
 def PlayVideo(url):	
 	stream_url = ''
 	html = sess.get(url, headers = headers, verify=False).text
-
 	ajax = re.findall('ajaxSetup(.*?)\$\.ajax',html,re.DOTALL)
+	encrypt = re.findall('encryption"\s*content="([^"]+)"',html,re.DOTALL)
 	if ajax:
 		url = re.findall('url\:\s*"([^"]+)"',ajax[0],re.DOTALL)[0]
 		url = 'https://thetvapp.to'+url if url.startswith('/') else url
 		tok = re.findall('csrf\-token"\s*content\s*=\s*"([^"]+)"',html,re.DOTALL)[0]
 		headers.update({"X-CSRF-TOKEN": tok,"X-Requested-With":"XMLHttpRequest"}) #
 		stream_url = sess.post(url, headers = headers, verify=False).text
-
+	elif encrypt:
+		stream_url = decr(encrypt[0])
 	if stream_url:	
 		play_item = xbmcgui.ListItem(path=stream_url)
 
