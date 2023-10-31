@@ -132,10 +132,13 @@ def decr(e):
 	
 	return o   
 def PlayVideo(url):	
+
 	stream_url = ''
 	html = sess.get(url, headers = headers, verify=False).text
 	ajax = re.findall('ajaxSetup(.*?)\$\.ajax',html,re.DOTALL)
 	encrypt = re.findall('encryption"\s*content="([^"]+)"',html,re.DOTALL)
+	kolejny =re.findall('player.setup.*?file\:\s*"([^"]+)"',(html.replace("\'",'"')),re.DOTALL+re.I)
+
 	if ajax:
 		url = re.findall('url\:\s*"([^"]+)"',ajax[0],re.DOTALL)[0]
 		url = 'https://thetvapp.to'+url if url.startswith('/') else url
@@ -144,6 +147,8 @@ def PlayVideo(url):
 		stream_url = sess.post(url, headers = headers, verify=False).text
 	elif encrypt:
 		stream_url = decr(encrypt[0])
+	elif kolejny:
+		stream_url = kolejny[0]
 	if stream_url:	
 		play_item = xbmcgui.ListItem(path=stream_url)
 
