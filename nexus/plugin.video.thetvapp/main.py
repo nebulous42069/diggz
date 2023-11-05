@@ -104,7 +104,7 @@ def ListMovies(url):
 	else:
 		xbmcgui.Dialog().notification('[B]Info[/B]', 'No streams found',xbmcgui.NOTIFICATION_INFO, 6000)
 		
-def decr(e):
+def decr(e, i="Try9-Stubble9"):
 ### 	function Ul(e) {
 ### 	  const i = "Try9-Stubble9";
 ### 	  let o = "";
@@ -118,7 +118,7 @@ def decr(e):
 
 
 	import base64
-	i = "Try9-Stubble9"
+	#i = "Try9-Stubble9"
 	l = base64.b64decode(e).decode('utf-8')
 	o=''
 	for c in range(len(e)):
@@ -135,8 +135,10 @@ def PlayVideo(url):
 
 	stream_url = ''
 	html = sess.get(url, headers = headers, verify=False).text
+	html = html.replace("\'",'"')
 	ajax = re.findall('ajaxSetup(.*?)\$\.ajax',html,re.DOTALL)
 	encrypt = re.findall('encryption"\s*content="([^"]+)"',html,re.DOTALL)
+	encrypt2 = re.findall('const\s*encrypted\s*=\s*"([^"]+)"',html,re.DOTALL)
 	kolejny =re.findall('player.setup.*?file\:\s*"([^"]+)"',(html.replace("\'",'"')),re.DOTALL+re.I)
 
 	if ajax:
@@ -149,6 +151,8 @@ def PlayVideo(url):
 		stream_url = decr(encrypt[0])
 	elif kolejny:
 		stream_url = kolejny[0]
+	elif encrypt2:
+		stream_url = decr(encrypt2[0],"OZpNkbOM8rkt4af")
 	if stream_url:	
 		play_item = xbmcgui.ListItem(path=stream_url)
 
