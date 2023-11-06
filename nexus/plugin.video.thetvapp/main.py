@@ -152,7 +152,7 @@ def PlayVideo(url):
 	elif kolejny:
 		stream_url = kolejny[0]
 	elif encrypt2:
-		stream_url = decr(encrypt2[0],"OZpNkbOM8rkt4af")
+		stream_url = decr(encrypt2[0],"PLUgfZYJt5BW9gyhU")
 	if stream_url:	
 		play_item = xbmcgui.ListItem(path=stream_url)
 
