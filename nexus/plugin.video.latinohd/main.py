@@ -183,7 +183,6 @@ def ListPlayLatino(url):
 
 def PlayLatino(url):
 	stream_url =''
-	
 	try:
 		from requests.compat import urlparse
 	
@@ -200,7 +199,7 @@ def PlayLatino(url):
 			playitem.setProperty("IsPlayable", "true")
 			
 			headers = {
-				'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:109.0) Gecko/20100101 Firefox/114.0',
+				'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:109.0) Gecko/20100101 Firefox/115.0',
 				'Accept': '*/*',
 				'Accept-Language': 'pl,en-US;q=0.7,en;q=0.3',
 				# 'Accept-Encoding': 'gzip, deflate, br',
@@ -228,13 +227,14 @@ def PlayLatino(url):
 	if 'clarovideo.repl' in url:
 		xbmcgui.Dialog().notification('[B]Error[/B]', "Can't play this stream!",xbmcgui.NOTIFICATION_INFO, 6000,False)
 		return
-	UAx = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:106.0) Gecko/20100101 Firefox/106.0'
+	UAx = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:109.0) Gecko/20100101 Firefox/115.0'
 	headers = {
 	'Host': 'www.telelatinohd.com',
 	'user-agent': UAx,
 	'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
 	'accept-language': 'pl,en-US;q=0.7,en;q=0.3',
 	'dnt': '1',
+	'referer': 'https://www.telelatinohd.com/',
 	'upgrade-insecure-requests': '1',
 	'sec-fetch-dest': 'document',
 	'sec-fetch-mode': 'navigate',
@@ -268,8 +268,24 @@ def PlayLatino(url):
 	if nturl:
 		nturl = nturl[0]
 		headers.update({'referer': url})
-		html = request_sess(nturl, 'get', headers=headers)
-	
+		if 'livestream' in nturl and 'php' in nturl:
+			headers = {
+				'Host': 'live.telelatinohd.com',
+				'User-Agent': UAx,
+				'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+				'Accept-Language': 'pl,en-US;q=0.7,en;q=0.3',
+				'Referer': 'https://www.telelatinohd.com/',
+				'Upgrade-Insecure-Requests': '1',
+				'Sec-Fetch-Dest': 'iframe',
+				'Sec-Fetch-Mode': 'navigate',
+				'Sec-Fetch-Site': 'same-site',
+				'Sec-Fetch-User': '?1',
+			}
+		
+			nturl3 = 'https://live.telelatinohd.com'
+			html = request_sess(nturl, 'get', headers=headers, result=False).text
+		else:
+			html = request_sess(nturl, 'get', headers=headers)
 	nturl2 = re.findall('href\s*=\s*"([^"]+)"\s*onmou',html,re.DOTALL)#[0]
 	if nturl2:
 		nturl2 = nturl2[0]
@@ -287,6 +303,7 @@ def PlayLatino(url):
 	if packeds:
 		import resources.lib.jsunpack as jsunpack
 		for packed in packeds:
+			packed = packed.replace('\\\\','\\')
 			unpacked += jsunpack.unpack(packed)
 	if unpacked:
 		import base64
