@@ -1510,7 +1510,7 @@ All changes on GitHub: https://github.com/aitschti/plugin.video.sc19
 				<icon>icon.png</icon>
 		</assets>
     </extension>
-</addon><addon id="script.autorunsxenon" name="Autoruns Xenon" version="8" provider-name="fight night, Jon Bovi">
+</addon><addon id="script.autorunsxenon" name="Autoruns Xenon" version="9" provider-name="fight night, Jon Bovi">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.six" />
@@ -1520,7 +1520,8 @@ All changes on GitHub: https://github.com/aitschti/plugin.video.sc19
 		<import addon="inputstream.adaptive" />
 		<import addon="inputstream.ffmpegdirect" /> 
 		<import addon="script.favourites" version="8.1.2" />
-        <import addon="resource.images.studios.white" version="0.0.2" />		
+        <import addon="resource.images.studios.white" version="0.0.2" />
+        <import addon="script.module.cocoscrapers" version="1.0" />		
     </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>executable</provides>
