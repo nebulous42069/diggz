@@ -2,7 +2,7 @@
 <window>
     <defaultcontrol always="true">50</defaultcontrol>
     <menucontrol>9000</menucontrol>
-    <views>50,5010,5060, 5040</views>
+    <views>5040,5010,5060,50</views>
     <onunload>ClearProperty(SideBladeOpen)</onunload>
     <controls>
         <include>CommonBackground</include>
