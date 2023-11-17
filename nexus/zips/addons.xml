@@ -1305,6 +1305,20 @@ All changes on GitHub: https://github.com/aitschti/plugin.video.sc19
     - changes due to website changes
     </news>
   </extension>
+</addon><addon id="plugin.video.xtream-codes" name="Xtream-Codes IPTV" version="3.4" provider-name="michaz">
+  <requires>
+    <import addon="script.module.six" />
+	<import addon="inputstream.ffmpegdirect" version="1.21.8" optional="true" /> 
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="init.py">
+        <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <assets>
+            <icon>icon.png</icon>
+        </assets>
+    <platform>all</platform>
+  </extension>
 </addon><addon id="repository.diggz" name="Diggz Repository" version="15" provider-name="Diggz">
     <extension point="xbmc.addon.repository" name="Diggz Repository">
         <dir minversion="19.0.0" maxversion="19.9.9">
