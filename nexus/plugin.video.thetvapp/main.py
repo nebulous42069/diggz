@@ -116,9 +116,19 @@ def decr(e, i="Try9-Stubble9"):
 ### 	}
 
 
-
+	if i == "requests":
+		response = requests.get('https://raw.githubusercontent.com/matecky/bub/keys/keys.json', verify=False)
+		ff=re.findall('\s*(\w+)\(encrypt',response.text,re.DOTALL+re.I)
+		if ff:
+			key = re.findall('function\s*'+ff[0]+".*?'([^']+)'",response.text,re.DOTALL+re.I)
+			if key:
+				i=key[0]
+			else:
+				return ''
+		else:
+			return ''
+		
 	import base64
-	#i = "Try9-Stubble9"
 	l = base64.b64decode(e).decode('utf-8')
 	o=''
 	for c in range(len(e)):
@@ -152,7 +162,7 @@ def PlayVideo(url):
 	elif kolejny:
 		stream_url = kolejny[0]
 	elif encrypt2:
-		stream_url = decr(encrypt2[0],"PLUgfZYJt5BW9gyhU")
+		stream_url = decr(encrypt2[0],"requests")
 	if stream_url:	
 		play_item = xbmcgui.ListItem(path=stream_url)
 
