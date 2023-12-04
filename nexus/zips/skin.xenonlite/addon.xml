@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon
   id="skin.xenonlite"
-  version="5.1"
+  version="5.3"
   name="[B][COLOR gold]Xenon Light[/COLOR][/B]  (Low Power)"
   provider-name="Helly,bsoriano">
   <requires>
@@ -12,7 +12,7 @@
   <extension
     point="xbmc.gui.skin"
     debugging="false"
-    effectslowdown=".5">
+    effectslowdown="1.0">
     <res width="1920" height="1080" aspect="16:9" default="true" folder="xml" />
   </extension>
   <extension point="xbmc.addon.metadata">

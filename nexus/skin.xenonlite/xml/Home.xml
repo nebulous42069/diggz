@@ -46,7 +46,7 @@
             <top></top>
             <bottom>0</bottom>
             <width>1980</width>
-            <height>375</height>
+            <height>380</height>
             <texture>floor.png</texture>
             <animation effect="slide" time="200" condition="Window.Previous(Home)">WindowOpen</animation>
             <animation effect="slide" time="200" condition="Window.Next(Home)">WindowClose</animation>
