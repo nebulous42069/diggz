@@ -1454,6 +1454,18 @@
                             <height>720</height>
                             <itemgap>-1</itemgap>
                             <pagecontrol>2065</pagecontrol>
+							<control type="button" id="177">
+                                <description>Hide OSD</description>
+                                <width>1125</width>
+                                <height>60</height>
+                                <font>font13</font>
+                                <label>Auto Hide OSD</label>
+                                <label2>[COLOR=selected]$VAR[OSDHideLabel][/COLOR]</label2>
+                                <textcolor>grey</textcolor>
+                                <focusedcolor>white</focusedcolor>
+                                <include>MenuButton</include>
+                                <onclick>ActivateWindow(2139)</onclick>
+                            </control>							
                             <control type="radiobutton" id="178">
                                 <description>OSD Start Media Intro</description>
                                 <width>1125</width>
@@ -1628,7 +1640,7 @@
                                 <include>MenuButton</include>
                                 <onclick>Skin.ToggleSetting(ShowFullScreenClock)</onclick>
                                 <selected>Skin.HasSetting(ShowFullScreenClock)</selected>
-                            </control>
+                            </control>							
                         </control>
                         <control type="scrollbar" id="2065">
                             <left>1155</left>
