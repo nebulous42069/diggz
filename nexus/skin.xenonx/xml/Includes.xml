@@ -3462,78 +3462,36 @@
                     <onleft>2</onleft>
                     <onright>15</onright>
                     <onup>15</onup>
-                    <ondown>2</ondown>
+                    <ondown>4</ondown>
                 </control>
             </control>
-            <control type="group" id="2">
+            <control type="group" id="11">
                 <width>510</width>
-                <height>60</height>
+                <height>105</height>
+                <visible>System.HasAlarm(shutdowntimer)</visible>
                 <control type="image">
                     <description>background image</description>
                     <left>0</left>
                     <top>0</top>
                     <width>510</width>
-                    <height>60</height>
+                    <height>105</height>
                     <texture border="25,5,25,5">$VAR[DialogPath]DialogContextMiddle.png</texture>
                 </control>
-                <control type="button" id="300">
-                    <description>Exit button</description>
-                    <left>27</left>
-                    <top>0</top>
-                    <width>456</width>
-                    <height>60</height>
-                    <onleft>4</onleft>
-                    <onright>2</onright>
-                    <onup>1</onup>
-                    <ondown>3</ondown>
-                    <textcolor>grey2</textcolor>
-                    <focusedcolor>white</focusedcolor>
+                <control type="textbox">
+                    <left>38</left>
+                    <top>33</top>
+                    <width>435</width>
+                    <height>72</height>
+                    <font>font12</font>
+                    <textcolor>white</textcolor>
+                    <shadowcolor>black</shadowcolor>
                     <align>center</align>
-                    <textwidth>435</textwidth>
-                    <onclick condition="!Skin.HasSetting(MinimizeOnExit)">ActivateWindow(10001,&quot;plugin://plugin.program.chef20/?description=Force%20Close%20Kodi&amp;fanart=C%3a%5cUsers%5cjeddi%5cAppData%5cRoaming%5cKodi%5caddons%5cplugin.program.chef20%5cresources%5cfanart.jpg&amp;icon=C%3a%5cUsers%5cjeddi%5cAppData%5cRoaming%5cKodi%5caddons%5cplugin.program.chef20%5cresources%5cicon.png&amp;mode=18&amp;name=Force%20Close&amp;name2&amp;url&amp;version&quot;,return)</onclick>
-                    <onclick condition="Skin.HasSetting(MinimizeOnExit)">ActivateWindow(10001,&quot;plugin://plugin.program.chef20/?description=Force%20Close%20Kodi&amp;fanart=C%3a%5cUsers%5cjeddi%5cAppData%5cRoaming%5cKodi%5caddons%5cplugin.program.chef20%5cresources%5cfanart.jpg&amp;icon=C%3a%5cUsers%5cjeddi%5cAppData%5cRoaming%5cKodi%5caddons%5cplugin.program.chef20%5cresources%5cicon.png&amp;mode=18&amp;name=Force%20Close&amp;name2&amp;url&amp;version&quot;,return)</onclick>
-                    <pulseonselect>no</pulseonselect>
-                    <font>font13</font>
-                    <label>Force Close Kodi</label>
+                    <label>$LOCALIZE[31329] [B]$INFO[System.Alarmpos][/B]</label>
                 </control>
             </control>			
-            <control type="group" id="3">
-                <width>510</width>
-                <height>60</height>
-                <visible>System.ShowExitButton</visible>
-                <control type="image">
-                    <description>background image</description>
-                    <left>0</left>
-                    <top>0</top>
-                    <width>510</width>
-                    <height>60</height>
-                    <texture border="25,5,25,5">$VAR[DialogPath]DialogContextMiddle.png</texture>
-                </control>
-                <control type="button" id="200">
-                    <description>Exit button</description>
-                    <left>27</left>
-                    <top>0</top>
-                    <width>456</width>
-                    <height>60</height>
-                    <onleft>3</onleft>
-                    <onright>1</onright>
-                    <onup>2</onup>
-                    <ondown>4</ondown>
-                    <textcolor>grey2</textcolor>
-                    <focusedcolor>white</focusedcolor>
-                    <align>center</align>
-                    <textwidth>435</textwidth>
-                    <onclick condition="!Skin.HasSetting(MinimizeOnExit)">Quit()</onclick>
-                    <onclick condition="Skin.HasSetting(MinimizeOnExit)">Minimize</onclick>
-                    <pulseonselect>no</pulseonselect>
-                    <font>font13</font>
-                    <label>Close Kodi</label>
-                </control>
-            </control>
             <control type="group" id="4">
                 <width>510</width>
                 <height>60</height>
-                <visible>!System.HasAlarm(shutdowntimer)</visible>
                 <control type="image">
                     <description>background image</description>
                     <left>0</left>
@@ -3544,13 +3502,12 @@
                 </control>
                 <control type="button" id="400">
                     <description>Custom Shutdown Timer</description>
+                    <visible>!System.HasAlarm(shutdowntimer)</visible>					
                     <left>27</left>
                     <top>0</top>
                     <width>456</width>
                     <height>60</height>
-                    <onleft>5</onleft>
-                    <onright>3</onright>
-                    <onup>3</onup>
+                    <onup>1</onup>
                     <ondown>5</ondown>
                     <textcolor>grey2</textcolor>
                     <focusedcolor>white</focusedcolor>
@@ -3581,10 +3538,8 @@
                     <top>0</top>
                     <width>456</width>
                     <height>60</height>
-                    <onleft>6</onleft>
-                    <onright>4</onright>
                     <onup>4</onup>
-                    <ondown>6</ondown>
+                    <ondown>2</ondown>
                     <textcolor>grey2</textcolor>
                     <focusedcolor>white</focusedcolor>
                     <align>center</align>
@@ -3593,6 +3548,67 @@
                     <pulseonselect>no</pulseonselect>
                     <font>font13</font>
                     <label>20151</label>
+                </control>
+            </control>			
+            <control type="group" id="2">
+                <width>510</width>
+                <height>60</height>
+                <control type="image">
+                    <description>background image</description>
+                    <left>0</left>
+                    <top>0</top>
+                    <width>510</width>
+                    <height>60</height>
+                    <texture border="25,5,25,5">$VAR[DialogPath]DialogContextMiddle.png</texture>
+                </control>
+                <control type="button" id="300">
+                    <description>Exit button</description>
+                    <left>27</left>
+                    <top>0</top>
+                    <width>456</width>
+                    <height>60</height>
+                    <onup>5</onup>
+                    <ondown>3</ondown>
+                    <textcolor>grey2</textcolor>
+                    <focusedcolor>white</focusedcolor>
+                    <align>center</align>
+                    <textwidth>435</textwidth>
+                    <onclick condition="!Skin.HasSetting(MinimizeOnExit)">ActivateWindow(10001,&quot;plugin://plugin.program.chef20/?description=Force%20Close%20Kodi&amp;fanart=C%3a%5cUsers%5cjeddi%5cAppData%5cRoaming%5cKodi%5caddons%5cplugin.program.chef20%5cresources%5cfanart.jpg&amp;icon=C%3a%5cUsers%5cjeddi%5cAppData%5cRoaming%5cKodi%5caddons%5cplugin.program.chef20%5cresources%5cicon.png&amp;mode=18&amp;name=Force%20Close&amp;name2&amp;url&amp;version&quot;,return)</onclick>
+                    <onclick condition="Skin.HasSetting(MinimizeOnExit)">ActivateWindow(10001,&quot;plugin://plugin.program.chef20/?description=Force%20Close%20Kodi&amp;fanart=C%3a%5cUsers%5cjeddi%5cAppData%5cRoaming%5cKodi%5caddons%5cplugin.program.chef20%5cresources%5cfanart.jpg&amp;icon=C%3a%5cUsers%5cjeddi%5cAppData%5cRoaming%5cKodi%5caddons%5cplugin.program.chef20%5cresources%5cicon.png&amp;mode=18&amp;name=Force%20Close&amp;name2&amp;url&amp;version&quot;,return)</onclick>
+                    <pulseonselect>no</pulseonselect>
+                    <font>font13</font>
+                    <label>Force Close Kodi</label>
+                </control>
+            </control>			
+            <control type="group" id="3">
+                <width>510</width>
+                <height>60</height>
+                <visible>System.ShowExitButton</visible>
+                <control type="image">
+                    <description>background image</description>
+                    <left>0</left>
+                    <top>0</top>
+                    <width>510</width>
+                    <height>60</height>
+                    <texture border="25,5,25,5">$VAR[DialogPath]DialogContextMiddle.png</texture>
+                </control>
+                <control type="button" id="200">
+                    <description>Exit button</description>
+                    <left>27</left>
+                    <top>0</top>
+                    <width>456</width>
+                    <height>60</height>
+                    <onup>2</onup>
+                    <ondown>6</ondown>
+                    <textcolor>grey2</textcolor>
+                    <focusedcolor>white</focusedcolor>
+                    <align>center</align>
+                    <textwidth>435</textwidth>
+                    <onclick condition="!Skin.HasSetting(MinimizeOnExit)">Quit()</onclick>
+                    <onclick condition="Skin.HasSetting(MinimizeOnExit)">Minimize</onclick>
+                    <pulseonselect>no</pulseonselect>
+                    <font>font13</font>
+                    <label>Close Kodi</label>
                 </control>
             </control>
             <control type="group" id="6">
@@ -3613,9 +3629,7 @@
                     <top>0</top>
                     <width>456</width>
                     <height>60</height>
-                    <onleft>7</onleft>
-                    <onright>5</onright>
-                    <onup>5</onup>
+                    <onup>3</onup>
                     <ondown>7</ondown>
                     <textcolor>grey2</textcolor>
                     <focusedcolor>white</focusedcolor>
@@ -3646,8 +3660,6 @@
                     <top>0</top>
                     <width>456</width>
                     <height>60</height>
-                    <onleft>8</onleft>
-                    <onright>6</onright>
                     <onup>6</onup>
                     <ondown>8</ondown>
                     <textcolor>grey2</textcolor>
@@ -3679,8 +3691,6 @@
                     <top>0</top>
                     <width>456</width>
                     <height>60</height>
-                    <onleft>9</onleft>
-                    <onright>7</onright>
                     <onup>7</onup>
                     <ondown>9</ondown>
                     <textcolor>grey2</textcolor>
@@ -3712,8 +3722,6 @@
                     <top>0</top>
                     <width>456</width>
                     <height>60</height>
-                    <onleft>9</onleft>
-                    <onright>7</onright>
                     <onup>7</onup>
                     <ondown>9</ondown>
                     <textcolor>grey2</textcolor>
@@ -3746,8 +3754,6 @@
                     <top>0</top>
                     <width>456</width>
                     <height>60</height>
-                    <onleft>10</onleft>
-                    <onright>8</onright>
                     <onup>8</onup>
                     <ondown>10</ondown>
                     <textcolor>grey2</textcolor>
@@ -3779,8 +3785,6 @@
                     <top>0</top>
                     <width>456</width>
                     <height>60</height>
-                    <onleft>12</onleft>
-                    <onright>9</onright>
                     <onup>9</onup>
                     <ondown>12</ondown>
                     <textcolor>grey2</textcolor>
@@ -3795,30 +3799,6 @@
                     <font>font13</font>
                     <label>20046</label>
                     <altlabel>20045</altlabel>
-                </control>
-            </control>
-            <control type="group" id="11">
-                <width>510</width>
-                <height>105</height>
-                <visible>System.HasAlarm(shutdowntimer)</visible>
-                <control type="image">
-                    <description>background image</description>
-                    <left>0</left>
-                    <top>0</top>
-                    <width>510</width>
-                    <height>105</height>
-                    <texture border="25,5,25,5">$VAR[DialogPath]DialogContextMiddle.png</texture>
-                </control>
-                <control type="textbox">
-                    <left>38</left>
-                    <top>33</top>
-                    <width>435</width>
-                    <height>72</height>
-                    <font>font12</font>
-                    <textcolor>white</textcolor>
-                    <shadowcolor>black</shadowcolor>
-                    <align>center</align>
-                    <label>$LOCALIZE[31329] [B]$INFO[System.Alarmpos][/B]</label>
                 </control>
             </control>
             <control type="group" id="12">
@@ -3839,8 +3819,6 @@
                     <top>0</top>
                     <width>456</width>
                     <height>60</height>
-                    <onleft>13</onleft>
-                    <onright>10</onright>
                     <onup>10</onup>
                     <ondown>13</ondown>
                     <textcolor>grey2</textcolor>
@@ -3871,8 +3849,6 @@
                     <top>0</top>
                     <width>456</width>
                     <height>60</height>
-                    <onleft>14</onleft>
-                    <onright>12</onright>
                     <onup>12</onup>
                     <ondown>14</ondown>
                     <textcolor>grey2</textcolor>
@@ -3902,8 +3878,6 @@
                     <top>0</top>
                     <width>456</width>
                     <height>60</height>
-                    <onleft>1</onleft>
-                    <onright>13</onright>
                     <onup>13</onup>
                     <ondown>15</ondown>
                     <textcolor>grey2</textcolor>
@@ -3934,8 +3908,6 @@
                     <top>0</top>
                     <width>456</width>
                     <height>60</height>
-                    <onleft>1</onleft>
-                    <onright>14</onright>
                     <onup>14</onup>
                     <ondown>1</ondown>
                     <textcolor>grey2</textcolor>

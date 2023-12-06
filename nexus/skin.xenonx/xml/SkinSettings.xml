@@ -1738,18 +1738,6 @@
                                 <include>MenuButton</include>
                                 <enable>!Skin.HasSetting(HideHomePowerBtn)</enable>
                             </control>
-                            <control type="button" id="193">
-                                <width>1125</width>
-                                <height>60</height>
-                                <font>font13</font>
-                                <label>$LOCALIZE[31065]</label>
-                                <label2>[COLOR=selected]$VAR[FavBtnLabel][/COLOR]</label2>
-                                <textcolor>grey</textcolor>
-                                <focusedcolor>white</focusedcolor>
-                                <include>MenuButton</include>
-                                <onclick>SetProperty(UsrSelectBtn,UsrFavBtnCmd,Home)</onclick>
-                                <onclick>ActivateWindow(2119)</onclick>
-                            </control>
                             <control type="radiobutton" id="194">
                                 <width>1125</width>
                                 <height>60</height>
