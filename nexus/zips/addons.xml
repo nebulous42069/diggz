@@ -1241,6 +1241,37 @@ All changes on GitHub: https://github.com/aitschti/plugin.video.sc19
             <screenshot>resources/images/screenshot05.png</screenshot>
         </assets>
     </extension>
+</addon><addon id="plugin.video.themoviedb.helper" version="420.5.2.9~nexus" name="TheMovieDb Helper" provider-name="jurialmunkey">
+<requires>
+  <import addon="xbmc.python" version="3.0.1" />
+  <import addon="script.module.requests" version="2.9.1" />
+  <import addon="script.module.pil" version="1.1.7" />
+  <import addon="script.module.addon.signals" version="0.0.6" />
+  <import addon="script.module.jurialmunkey" version="0.1.14" />
+  <import addon="script.module.infotagger" version="0.0.5" />
+  <import addon="script.module.beautifulsoup4" version="4.9.3" />
+</requires>
+<extension point="xbmc.python.pluginsource" library="resources/plugin.py">
+  <provides>video</provides>
+</extension>
+<extension point="xbmc.python.script" library="resources/script.py" />
+<extension point="xbmc.service" library="resources/service.py" />
+<extension point="xbmc.python.module" library="resources/modules" />
+<extension point="xbmc.addon.metadata">
+  <reuselanguageinvoker>false</reuselanguageinvoker>
+  <summary lang="en_GB">TheMovieDb Helper</summary>
+  <description lang="en_GB">TheMovieDb Helper provides details about movies, tvshows and actors from TMDb. Users can access a variety of lists from TMDb TVDb MDbList and Trakt.</description>
+  <disclaimer lang="en_GB">Data provided by TheMovieDb TVDb MDbList OMDb FanartTV and Trakt. Some of the information is provided by TheTVDB.com. Please consider supporting them. https://thetvdb.com/subscribe</disclaimer>
+  <license>GPL-3.0-or-later</license>
+  <website>https://github.com/jurialmunkey/plugin.video.themoviedb.helper</website>
+  <forum>https://forum.kodi.tv/showthread.php?tid=345847</forum>
+  <assets>
+    <icon>icon.png</icon>
+    <fanart>fanart.jpg</fanart>
+    <screenshot>resources/screenshot-01.jpg</screenshot>
+    <screenshot>resources/screenshot-02.jpg</screenshot>
+  </assets>
+</extension>
 </addon><addon id="plugin.video.thetvapp" name="The_TV_app" version="420.6" provider-name="xxxxxx">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
@@ -2507,11 +2538,12 @@ v1.0.0 - schumi2004,CaTz, Mafarricos
             -Various changes so skin would install on Matrix
         </news>
     </extension>
-</addon><addon id="skin.diggzkids" version="5.1" name="[B][COLOR gold]Diggz Kidz[/COLOR][/B]  (Mid Power)" provider-name="Helly,bsoriano">
+</addon><addon id="skin.diggzkids" version="5.2" name="[B][COLOR gold]Diggz Kidz[/COLOR][/B]  (Mid Power)" provider-name="Helly,bsoriano">
   <requires>
     <import addon="xbmc.gui" version="5.16.0" />
 	<import addon="script.favourites" version="8.1.2" />
-	<import addon="script.image.resource.select" version="3.0.2" />	
+	<import addon="script.image.resource.select" version="3.0.2" />
+	<import addon="resource.images.skinbackgrounds.diggzkidz" version="0.0.1" />	
   </requires>
   <extension point="xbmc.gui.skin" debugging="false" effectslowdown=".5">
     <res width="1920" height="1080" aspect="16:9" default="true" folder="xml" />
