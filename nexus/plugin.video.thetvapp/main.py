@@ -118,7 +118,11 @@ def decr(e, i="Try9-Stubble9"):
 
 	if i == "requests":
 		response = requests.get('https://raw.githubusercontent.com/matecky/bub/keys/keys.json', verify=False)
-		ff=re.findall('\s*(\w+)\(encrypt',response.text,re.DOTALL+re.I)
+		xx = re.findall('\s+file\:\s*(\w*)\,',response.text,re.DOTALL+re.I)
+		ff = None
+		if xx:
+			ff=re.findall(xx[0]+'\s*\=\s*(\w*)\(',response.text,re.DOTALL+re.I)
+
 		if ff:
 			key = re.findall('function\s*'+ff[0]+".*?'([^']+)'",response.text,re.DOTALL+re.I)
 			if key:
@@ -148,7 +152,7 @@ def PlayVideo(url):
 	html = html.replace("\'",'"')
 	ajax = re.findall('ajaxSetup(.*?)\$\.ajax',html,re.DOTALL)
 	encrypt = re.findall('encryption"\s*content="([^"]+)"',html,re.DOTALL)
-	encrypt2 = re.findall('const\s*encrypted\s*=\s*"([^"]+)"',html,re.DOTALL)
+	encrypt2 = re.findall('const\s*|\w*encrypted\s*=\s*"([^"]+)"',html,re.DOTALL)
 	kolejny =re.findall('player.setup.*?file\:\s*"([^"]+)"',(html.replace("\'",'"')),re.DOTALL+re.I)
 
 	if ajax:
