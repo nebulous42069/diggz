@@ -1519,7 +1519,7 @@ All changes on GitHub: https://github.com/aitschti/plugin.video.sc19
     			<fanart>fanart.png</fanart>
   		</assets>
         </extension>
-</addon><addon id="script.autoruns" name="Autoruns" version="9" provider-name="fight night, Jon Bovi">
+</addon><addon id="script.autoruns" name="Autoruns" version="10" provider-name="fight night, Jon Bovi">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.six" />
