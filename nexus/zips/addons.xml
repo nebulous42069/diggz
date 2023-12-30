@@ -451,6 +451,31 @@
         </assets>
         <news>INFO: For latest changes see Changelog within Tools of add-on.</news>
     </extension>
+</addon><addon id="plugin.video.free99" version="1.2" name="[COLOR goldenrod]Diggz Free99[/COLOR]" provider-name="JewBMX, DIGGZ">
+    <requires>
+        <import addon="script.module.six" />
+        <import addon="script.module.kodi-six" />
+        <import addon="script.module.simplejson" />
+        <import addon="script.module.requests" />
+        <import addon="script.module.resolveurl" />
+        <import addon="script.free99.artwork" />
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="main.py">
+        <provides>video</provides>
+    </extension>
+    <extension library="service.py" point="xbmc.service" start="startup" />
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Squeezing the last drop out of free scapers</summary>
+        <description lang="en">Diggz Scrubs Fork</description>
+        <disclaimer lang="en">The author is not responsible for the use of this addon. The author is not responsible for the content found using this addon. The author does not host or own any content found within this addon.[CR]The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation.[CR]This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.</disclaimer>
+        <license />
+        <platform>all</platform>
+        <assets>
+            <icon>resources/images/icon.png</icon>
+            <fanart>resources/images/fanart.jpg</fanart>
+        </assets>
+        <news />
+    </extension>
 </addon><addon id="plugin.video.fullmatchtv" name="Full Match TV" version="0.0.2" provider-name="Demonstratorz">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
@@ -1664,6 +1689,16 @@ All changes on GitHub: https://github.com/aitschti/plugin.video.sc19
 	<icon>icon.png</icon>
     </assets>
   </extension>
+</addon><addon id="script.free99.artwork" version="1.0" name="[COLOR orange]Free99 Artwork[/COLOR]" provider-name="JewBMX">
+    <extension point="xbmc.python.module" library="lib" />
+    <extension point="xbmc.addon.metadata">
+        <summary>Free99 Artwork</summary>
+        <description>Free99 Artwork</description>
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+        </assets>
+    </extension>
 </addon><addon id="script.module.accountmgr" version="2.4.1" name="Account Manager" provider-name="Zaxxon709">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
