@@ -161,6 +161,8 @@
         <setting id="provider.tinyzonetv_to" type="bool" label="provider.tinyzonetv_to" default="true" />
         <setting id="provider.vumoo_to" type="bool" label="provider.vumoo_to" default="true" />	
         <setting id="provider.1movies_la" type="bool" label="provider.1movies_la" default="true" />		
+        <setting id="provider.cinecalidad_vet" type="bool" label="provider.cinecalidad_vet" default="true" />	
+        <setting id="provider.123movies_net" type="bool" label="provider.123movies_net" default="true" />		
     </category>
 
     <category label="Dev'ish Settings">
