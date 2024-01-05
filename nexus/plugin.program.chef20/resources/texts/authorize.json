@@ -92,7 +92,11 @@
                 "url": "RunScript(script.module.accountmgr, action=alldebridAuth)"
             },
             {
-                "name": "Authenticate TRAKT",
+                "name": "Authenticate SEREN TRAKT",
+                "url": "RunPlugin(plugin://plugin.video.seren/?action=authTrakt)"
+            },
+            {
+                "name": "Authenticate ALL TRAKT",
                 "url": "RunScript(script.module.accountmgr, action=traktAuth)"
             },
             {
