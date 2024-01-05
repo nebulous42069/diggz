@@ -160,6 +160,7 @@
         <setting id="provider.putlocker_to" type="bool" label="provider.putlocker_to" default="true" />
         <setting id="provider.tinyzonetv_to" type="bool" label="provider.tinyzonetv_to" default="true" />
         <setting id="provider.vumoo_to" type="bool" label="provider.vumoo_to" default="true" />	
+        <setting id="provider.1movies_la" type="bool" label="provider.1movies_la" default="true" />		
     </category>
 
     <category label="Dev'ish Settings">
