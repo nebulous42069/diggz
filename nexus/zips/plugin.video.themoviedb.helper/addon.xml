@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon id="plugin.video.themoviedb.helper"
-version="420.5.2.9~nexus"
-name="TheMovieDb Helper"
+version="420.5.2.14~nexus"
+name="TheMovieDb Helper-No auth popup"
 provider-name="jurialmunkey">
 <requires>
   <import addon="xbmc.python" version="3.0.1"/>
