@@ -3,6 +3,7 @@ import xbmcaddon
 import xbmcgui
 import os.path
 import xbmcvfs
+import json
 import os
 import time
 import sqlite3
@@ -37,6 +38,7 @@ ORDER = ['serenrd',
          'metvrd',
          'aliunderd',
          'otakurd',
+         'realxrd',
          'acctmgrrd',
          'allactrd',
          'myactrd',
@@ -319,6 +321,18 @@ DEBRIDID = {
         'default'  : 'rd.username',
         'data'     : ['rd.username', 'rd.auth', 'rd.client_id', 'rd.secret', 'rd.expiry', 'rd.refresh', 'realdebrid.enabled'],
         'activate' : 'Addon.OpenSettings(plugin.video.otaku)'},
+    'realxrd': {
+        'name'     : 'Realizer',
+        'plugin'   : 'plugin.video.realizerx',
+        'saved'    : 'realxrd',
+        'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.realizerx'),
+        'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.realizerx', 'icon.png'),
+        'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.realizerx', 'fanart.png'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD_RD, 'realx_rd'),
+        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.realizerx', 'rdauth.json'),
+        'default'  : '',
+        'data'     : [],
+        'activate' : 'Addon.OpenSettings(plugin.video.realizerx)'},
     'acctmgrrd': {
         'name'     : 'Account Manager',
         'plugin'   : 'script.module.accountmgr',
@@ -420,6 +434,18 @@ def debrid_user(who):
                     cur.close()
             except:
                 xbmc.log('%s: Debridit_rd afFENity Failed!' % var.amgr, xbmc.LOGINFO)
+                pass
+        elif os.path.exists(DEBRIDID[who]['path']) and name == 'Realizer':
+            try:
+                with open(var.chkset_realx_json) as r:
+                    data = json.load(r)
+                    chk_auth_realx = data['token']
+                    if not str(var.chk_accountmgr_tk_rd) == str(chk_auth_realx) or str(chk_auth_realx) == '':
+                        user = None
+                    else:
+                        user = str(chk_auth_realx)
+            except:
+                xbmc.log('%s: Debridit_rd Realizer Failed!' % var.amgr, xbmc.LOGINFO)
                 pass
         else:
             if os.path.exists(DEBRIDID[who]['path']):

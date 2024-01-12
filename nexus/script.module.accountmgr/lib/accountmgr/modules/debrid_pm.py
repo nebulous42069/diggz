@@ -722,6 +722,27 @@ class Auth:
         except:
                 xbmc.log('%s: Otaku Premiumize Failed!' % var.amgr, xbmc.LOGINFO)
                 pass
+
+     #Premiumizer PM
+        try:
+                if xbmcvfs.exists(var.chk_premx) and not xbmcvfs.exists(var.premx_ud):
+                        os.mkdir(var.premx_ud)
+                        xbmcvfs.copy(os.path.join(var.premx), os.path.join(var.chkset_premx))
+                        
+                if not xbmcvfs.exists(var.chkset_premx):
+                        xbmcvfs.copy(os.path.join(var.premx), os.path.join(var.chkset_premx))
+
+                if xbmcvfs.exists(var.chk_premx) and xbmcvfs.exists(var.chkset_premx):
+                        chk_auth_premx = xbmcaddon.Addon('plugin.video.premiumizerx').getSetting("premiumize.token")
+                        if not str(var.chk_accountmgr_tk_pm) == str(chk_auth_premx) or str(chk_auth_premx) == '':
+                                
+                                addon = xbmcaddon.Addon("plugin.video.premiumizerx")
+                                addon.setSetting("premiumize.status", 'Authorized')
+                                addon.setSetting("premiumize.token", your_pm_token)
+                                addon.setSetting("premiumize.refresh", '315360000')
+        except:
+                xbmc.log('%s: Premiumizer Premiumize Failed!' % var.amgr, xbmc.LOGINFO)
+                pass
             
     #All Accounts PM
         try:

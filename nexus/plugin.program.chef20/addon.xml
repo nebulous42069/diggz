@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.program.chef20" name="Chef Nexus Wizard" version="466" provider-name="Diggz">
+<addon id="plugin.program.chef20" name="[B][COLOR chartreuse]Chef Nexus Wizard[/COLOR][/B]" version="467" provider-name="Diggz">
 	<requires>
 		<import addon="xbmc.python" version="3.0.1"/>
-		<import addon="script.module.accountmgr" version="1.0"/>
-		<import addon="script.module.acctview" version="1.0"/>
-		<import addon="script.module.requests" version="1.0"/>
+		<import addon="repository.xbmc.org" />		
+		<import addon="script.module.accountmgr" />
+		<import addon="script.module.acctview" />
+		<import addon="script.module.requests" />
 	</requires>
 	<extension point="xbmc.python.pluginsource" library="addon.py">
 		<provides>executable</provides>

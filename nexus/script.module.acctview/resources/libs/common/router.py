@@ -172,12 +172,16 @@ class Router:
             from resources.libs import databit
             databit.backup_fenlt_rd()
             databit.backup_affen_rd()
+            from resources.libs import jsonit
+            jsonit.realizer_bk()
         elif mode == 'savedebrid_acctmgr_rd':  # Save Debrid Data via Account Manager settings menu
             from resources.libs import debridit_rd
             debridit_rd.debrid_it('update', name)
             from resources.libs import databit
             databit.backup_fenlt_rd()
             databit.backup_affen_rd()
+            from resources.libs import jsonit
+            jsonit.realizer_bk()
             xbmcgui.Dialog().notification('Account Manager', 'Real-Debrid Backup Complete!', rd_icon, 3000)
         elif mode == 'restoredebrid_rd':  # Recover All Saved Debrid Data
             if xbmcvfs.exists(var.rd_backup): # Skip restore if no debrid folder present in backup folder
@@ -189,6 +193,8 @@ class Router:
                         from resources.libs import databit
                         databit.restore_fenlt_rd()
                         databit.restore_affen_rd()
+                        from resources.libs import jsonit
+                        jsonit.realizer_rst()
                         xbmcgui.Dialog().notification('Account Manager', 'Real-Debrid Data Restored!', rd_icon, 3000)
                     else:
                         xbmcgui.Dialog().notification('Account Manager', 'No Real-Debrid Data to Restore!', rd_icon, 3000)
@@ -203,6 +209,8 @@ class Router:
             from resources.libs import databit
             databit.revoke_fenlt_rd()
             databit.revoke_affen_rd()
+            from resources.libs import jsonit
+            jsonit.realizer_rvk()
             xbmcgui.Dialog().notification('Account Manager', 'All Add-ons Revoked!', rd_icon, 3000)
         elif mode == 'cleardebrid_rd':  # Clear All Saved Debrid Data
             if xbmcvfs.exists(var.rd_backup): # Skip clearing data if no debrid folder present in backup folder
@@ -214,6 +222,8 @@ class Router:
                         from resources.libs import databit
                         databit.delete_fenlt_rd()
                         databit.delete_affen_rd()
+                        from resources.libs import jsonit
+                        jsonit.realizer_rm()
                         xbmcgui.Dialog().notification('Account Manager', 'Real-Debrid Data Cleared!', rd_icon, 3000)
                     else:
                         xbmcgui.Dialog().notification('Account Manager', 'No Real-Debrid Data to Clear!', rd_icon, 3000)
@@ -514,6 +524,8 @@ class Router:
                 databit.revoke_affen_pm()
                 databit.revoke_fenlt_ad()
                 databit.revoke_affen_ad()
+                from resources.libs import jsonit
+                jsonit.realizer_rvk()
                 xbmcgui.Dialog().notification('Account Manager', 'All Add-ons Revoked!', amgr_icon, 3000)
             else:
                 xbmcgui.Dialog().notification('Account Manager', 'No Active Debrid Accounts!', amgr_icon, 3000) # If Accounts authorized notify user
@@ -532,6 +544,8 @@ class Router:
                 databit.backup_affen_rd()
                 databit.backup_affen_pm()
                 databit.backup_affen_ad()
+                from resources.libs import jsonit
+                jsonit.realizer_bk()
                 xbmcgui.Dialog().notification('Account Manager', 'Backup Complete!', amgr_icon, 3000)
             if str(var.chk_accountmgr_tk_rd) == '': # If Account Mananger is not Authorized notify user
                 xbmcgui.Dialog().notification('Account Manager', 'No Active Debrid Accounts!', amgr_icon, 3000)
@@ -548,6 +562,8 @@ class Router:
                             from resources.libs import databit
                             databit.restore_fenlt_rd()
                             databit.restore_affen_rd()
+                            from resources.libs import jsonit
+                            jsonit.realizer_rst()
                             xbmcgui.Dialog().notification('Account Manager', 'Real-Debrid Data Restored!', rd_icon, 3000)
                         else:
                             xbmcgui.Dialog().notification('Account Manager', 'No Real-Debrid Data Found!', rd_icon, 3000)
@@ -597,6 +613,8 @@ class Router:
                             from resources.libs import databit
                             databit.delete_fenlt_rd()
                             databit.delete_affen_rd()
+                            from resources.libs import jsonit
+                            jsonit.realizer_rm()
                             xbmcgui.Dialog().notification('Account Manager', 'Real-Debrid Data Cleared!', rd_icon, 3000)
                         else:
                             xbmcgui.Dialog().notification('Account Manager', 'No Real-Debrid Data to Clear!', rd_icon, 3000)
@@ -639,7 +657,7 @@ class Router:
             yes = dialog.yesno('Account Manager', 'WARNING! This will completely wipe all data and restore add-ons to default settings. Click proceed to continue or cancel to quit.', 'Cancel', 'Proceed') # Ask user for permission
             if yes:
                 try:
-                    from resources.libs import traktit, metait_all, non_debrid_all, debridit_rd, debridit_pm, debridit_ad, databit
+                    from resources.libs import traktit, metait_all, non_debrid_all, debridit_rd, debridit_pm, debridit_ad, databit, jsonit
                     #Revoke Trakt
                     traktit.trakt_it_revoke('wipeaddon', name)
                     databit.revoke_fenlt_trakt()
@@ -657,6 +675,7 @@ class Router:
                     databit.revoke_affen_rd()
                     databit.revoke_affen_pm()
                     databit.revoke_affen_ad()
+                    jsonit.realizer_rvk()
                     xbmcgui.Dialog().notification('Account Manager', 'Debrid Revoked!', amgr_icon, 3000)
 
                     #Revoke Metadata & Non-Debrid
@@ -686,6 +705,7 @@ class Router:
                     databit.delete_affen_rd()
                     databit.delete_affen_pm()
                     databit.delete_affen_ad()
+                    jsonit.realizer_rm()
                     databit.delete_affen_trakt()
                     databit.delete_fenlt_easy()
                     databit.delete_fenlt_meta()

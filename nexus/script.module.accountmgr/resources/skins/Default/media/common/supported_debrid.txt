@@ -22,9 +22,11 @@
 21. M.E.T.V
 22. Aliunde K19
 23. Otaku
-24. All Accounts
-25. My Accounts
-26. ResolveURL			
+24. Realizer
+25. Premiumizer
+26. All Accounts
+27. My Accounts
+28. ResolveURL			
 						
 						
 						

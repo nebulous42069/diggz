@@ -315,7 +315,7 @@ DEBRIDID = {
         'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.otaku', 'icon.png'),
         'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.otaku', 'fanart.jpg'),
         'file'     : os.path.join(CONFIG.DEBRIDFOLD_AD, 'otaku_ad'),
-        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.dradis', 'settings.xml'),
+        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.otaku', 'settings.xml'),
         'default'  : 'alldebrid.username',
         'data'     : ['alldebrid.username', 'alldebrid.apikey', 'alldebrid.enabled'],
         'activate' : 'Addon.OpenSettings(plugin.video.otaku)'},

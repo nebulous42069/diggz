@@ -277,12 +277,13 @@
             <fanart>fanart.jpg</fanart>
     </assets>
   </extension>
-</addon><addon id="plugin.program.chef20" name="Chef Nexus Wizard" version="466" provider-name="Diggz">
+</addon><addon id="plugin.program.chef20" name="[B][COLOR chartreuse]Chef Nexus Wizard[/COLOR][/B]" version="467" provider-name="Diggz">
 	<requires>
 		<import addon="xbmc.python" version="3.0.1" />
-		<import addon="script.module.accountmgr" version="1.0" />
-		<import addon="script.module.acctview" version="1.0" />
-		<import addon="script.module.requests" version="1.0" />
+		<import addon="repository.xbmc.org" />		
+		<import addon="script.module.accountmgr" />
+		<import addon="script.module.acctview" />
+		<import addon="script.module.requests" />
 	</requires>
 	<extension point="xbmc.python.pluginsource" library="addon.py">
 		<provides>executable</provides>
@@ -1789,11 +1790,11 @@ All changes on GitHub: https://github.com/aitschti/plugin.video.sc19
             <icon>icon.png</icon>
         </assets>
     </extension>
-</addon><addon id="script.module.accountmgr" version="2.4.1" name="Account Manager" provider-name="Zaxxon709">
+</addon><addon id="script.module.accountmgr" version="2.4.2" name="Account Manager" provider-name="Zaxxon709">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
 		<import addon="script.module.requests" version="2.19.1" />
-            	<import addon="script.module.acctview" version="2.2.7" />
+            	<import addon="script.module.acctview" version="2.2.8" />
 	</requires>
 	<extension point="xbmc.service" library="lib/startup.py" start="startup" />
 	<extension point="xbmc.python.script" library="lib/default.py">
@@ -1812,7 +1813,7 @@ All changes on GitHub: https://github.com/aitschti/plugin.video.sc19
 			<fanart>fanart.png</fanart>
 		</assets>
 	</extension>
-</addon><addon id="script.module.acctview" name="acctviewer" version="2.2.7" provider-name="Zaxxon709">
+</addon><addon id="script.module.acctview" name="acctviewer" version="2.2.8" provider-name="Zaxxon709">
     <extension point="xbmc.python.pluginsource" library="default.py">
     </extension>
     <extension point="xbmc.python.module" library="resources" />

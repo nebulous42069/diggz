@@ -702,9 +702,9 @@ def revoke_affen_ad():
         # Create database connection
         conn = create_conn(var.affen_settings_db)
         with conn:
-            connect_affen_ad(conn, ('empty_setting', 'ad.enabled'))
-            connect_affen_ad(conn, ('empty_setting', 'ad.token'))
-            connect_affen_ad(conn, ('empty_setting', 'ad.account_id'))
+            connect_ad(conn, ('empty_setting', 'ad.enabled'))
+            connect_ad(conn, ('empty_setting', 'ad.token'))
+            connect_ad(conn, ('empty_setting', 'ad.account_id'))
     except:
         xbmc.log('%s: Databit_db Revoke afFENity AD Failed!' % var.amgr, xbmc.LOGINFO)
         pass
@@ -929,12 +929,12 @@ def revoke_affen_trakt():
         # Create database connection
         conn = create_conn(var.affen_settings_db)
         with conn:
-            connect_affen_trakt(conn, ('empty_setting', 'trakt.token'))
-            connect_affen_trakt(conn, ('empty_setting', 'trakt.user'))
-            connect_affen_trakt(conn, ('empty_setting', 'trakt.refresh'))
-            connect_affen_trakt(conn, ('empty_setting', 'trakt.expires'))
-            connect_affen_trakt(conn, (0, 'watched_indicators'))
-            connect_affen_trakt(conn, ('afFENity', 'watched_indicators_name'))
+            connect_trakt(conn, ('empty_setting', 'trakt.token'))
+            connect_trakt(conn, ('empty_setting', 'trakt.user'))
+            connect_trakt(conn, ('empty_setting', 'trakt.refresh'))
+            connect_trakt(conn, ('empty_setting', 'trakt.expires'))
+            connect_trakt(conn, (0, 'watched_indicators'))
+            connect_trakt(conn, ('afFENity', 'watched_indicators_name'))
     except:
         xbmc.log('%s: Databit_db Revoke afFENity Trakt Failed!' % var.amgr, xbmc.LOGINFO)
         pass
@@ -1094,9 +1094,9 @@ def revoke_affen_easy():
         # Create database connection
         conn = create_conn(var.affen_settings_db)
         with conn:
-            connect_affen_trakt(conn, ('empty_setting', 'provider.easynews'))
-            connect_affen_trakt(conn, ('empty_setting', 'easynews_user'))
-            connect_affen_trakt(conn, ('empty_setting', 'easynews_password'))
+            connect_easy(conn, ('empty_setting', 'provider.easynews'))
+            connect_easy(conn, ('empty_setting', 'easynews_user'))
+            connect_easy(conn, ('empty_setting', 'easynews_password'))
     except:
         xbmc.log('%s: Databit_db Revoke afFENity Easynews Failed!' % var.amgr, xbmc.LOGINFO)
         pass
@@ -1216,7 +1216,7 @@ def revoke_affen_meta():
         # Create database connection
         conn = create_conn(var.affen_settings_db)
         with conn:
-            connect_affen_trakt(conn, ('empty_setting', 'omdb_api'))
+            connect_meta(conn, ('empty_setting', 'omdb_api'))
     except:
         xbmc.log('%s: Databit_db Revoke afFENity Metadata Failed!' % var.amgr, xbmc.LOGINFO)
         pass

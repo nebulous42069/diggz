@@ -1,6 +1,7 @@
 import xbmc, xbmcaddon
 import xbmcvfs
 import os
+import json
 
 from pathlib import Path
 from accountmgr.modules import control
@@ -779,6 +780,37 @@ class Auth:
                                 addon.setSetting("realdebrid.enabled", enabled_rd)
         except:
                 xbmc.log('%s: Otaku Real-Debrid Failed!' % var.amgr, xbmc.LOGINFO)
+                pass
+
+     #Realizer RD
+        try:
+
+                if xbmcvfs.exists(var.chk_realx) and not xbmcvfs.exists(var.realx_ud):
+                        os.mkdir(var.realx_ud)
+                        xbmcvfs.copy(os.path.join(var.realx), os.path.join(var.chkset_realx))
+                        
+                if not xbmcvfs.exists(var.chkset_realx):
+                        xbmcvfs.copy(os.path.join(var.realx), os.path.join(var.chkset_realx))
+
+                if not xbmcvfs.exists(var.chkset_realx_json):
+                        xbmcvfs.copy(os.path.join(var.realx_json), os.path.join(var.chkset_realx_json))
+
+                if xbmcvfs.exists(var.chk_realx) and xbmcvfs.exists(var.chkset_realx) and xbmcvfs.exists(var.chkset_realx_json):
+                        
+                        with open(var.chkset_realx_json) as r:
+                            data = json.load(r)
+                            chk_auth_realx = data['token']
+
+                            if not str(var.chk_accountmgr_tk_rd) == str(chk_auth_realx) or str(chk_auth_realx) == '':
+                                
+                                rdauth = {}
+                                rdauth = {'client_id': accountmgr.getSetting('realdebrid.client_id'), 'client_secret': accountmgr.getSetting('realdebrid.secret'), 'token': accountmgr.getSetting('realdebrid.token'), 'refresh_token': accountmgr.getSetting('realdebrid.refresh'), 'added': '202312010243'}
+
+                                with open(var.chkset_realx_json, 'w') as w:
+                                        json.dump(rdauth, w)
+                        
+        except:
+                xbmc.log('%s: Realizer Real-Debrid Failed!' % var.amgr, xbmc.LOGINFO)
                 pass
             
     #All Accounts RD

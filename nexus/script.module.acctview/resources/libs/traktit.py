@@ -320,11 +320,11 @@ TRAKTID = {
    'genocide': {
         'name'     : 'Chains Genocide',
         'plugin'   : 'plugin.video.chainsgenocide',
-        'saved'    : 'chainsgenocide',
+        'saved'    : 'genocide',
         'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.chainsgenocide'),
         'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.chainsgenocide', 'icon.png'),
         'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.chainsgenocide', 'fanart.jpg'),
-        'file'     : os.path.join(CONFIG.TRAKTFOLD, 'chainsgenocide_trakt'),
+        'file'     : os.path.join(CONFIG.TRAKTFOLD, 'genocide_trakt'),
         'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.chainsgenocide', 'settings.xml'),
         'default'  : 'trakt.user',
         'data'     : ['trakt.authed', 'trakt.user', 'trakt.token' 'trakt.refresh', 'trakt.client_id', 'trakt.client_secret'],
