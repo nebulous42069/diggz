@@ -391,7 +391,6 @@ def get_tmdb_api(tmdb_api=None):
 	return tmdb_api or tmdb_api_key()
 
 def get_tmdb(url):
-	response = None
 	try: response = session.get(url, timeout=timeout)
-	except: response = session.get(url, verify=False, timeout=timeout)
+	except: response = None
 	return response

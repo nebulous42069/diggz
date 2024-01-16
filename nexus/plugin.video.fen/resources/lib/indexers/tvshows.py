@@ -130,8 +130,10 @@ class TVShows:
 			meta_get = meta.get
 			tmdb_id, total_seasons, total_aired_eps = meta_get('tmdb_id'), meta_get('total_seasons'), meta_get('total_aired_eps')
 			playcount, overlay, total_watched, total_unwatched = get_watched_function(self.watched_info, string(tmdb_id), total_aired_eps)
-			try: progress = int((float(total_watched)/total_aired_eps)*100)
-			except: progress = 0
+			if total_watched:
+				try: progress = int((float(total_watched)/total_aired_eps)*100) or 1
+				except: progress = 1
+			else: progress = 0
 			cm = []
 			cm_append = cm.append
 			listitem = make_listitem()

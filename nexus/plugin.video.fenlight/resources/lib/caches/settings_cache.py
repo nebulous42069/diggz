@@ -174,8 +174,8 @@ def default_settings():
 {'setting_id': 'update.action', 'setting_type': 'action', 'setting_default': '2', 'settings_options': {'0': 'Prompt', '1': 'Automatic', '2': 'Notification', '3': 'Off'}},
 {'setting_id': 'update.delay', 'setting_type': 'action', 'setting_default': '45', 'min_value': '10', 'max_value': '300'},
 #==================== General
+{'setting_id': 'auto_start_fenlight', 'setting_type': 'boolean', 'setting_default': 'false'},
 {'setting_id': 'addon_fanart', 'setting_type': 'path', 'setting_default': addon_fanart, 'browse_mode': '2'},
-{'setting_id': 'use_skin_fonts', 'setting_type': 'boolean', 'setting_default': 'true'},
 #==================== Watched Indicators
 {'setting_id': 'watched_indicators', 'setting_type': 'action', 'setting_default': '0', 'settings_options': {'0': 'Fen Light', '1': 'Trakt'}},
 #======+============= Trakt Cache
@@ -221,6 +221,7 @@ def default_settings():
 {'setting_id': 'nextep.include_unwatched', 'setting_type': 'action', 'setting_default': '0', 'settings_options': {'0': 'None', '1': 'Watchlist', '2': 'Favorites', '3': 'Both'}},
 {'setting_id': 'nextep.include_unaired', 'setting_type': 'boolean', 'setting_default': 'false'},
 #==================== Widgets
+{'setting_id': 'widget_hide_watched', 'setting_type': 'boolean', 'setting_default': 'false'},
 {'setting_id': 'widget_hide_next_page', 'setting_type': 'boolean', 'setting_default': 'true'},
 
 

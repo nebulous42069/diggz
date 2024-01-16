@@ -5,12 +5,11 @@ from modules.utils import adjust_premiered_date, get_datetime
 from modules.watched_status import get_watched_info_tv, get_watched_status_season
 # logger = kodi_utils.logger
 
+poster_empty, fanart_empty, xbmc_actor, set_category, home = kodi_utils.empty_poster, kodi_utils.get_addon_fanart(), kodi_utils.xbmc_actor, kodi_utils.set_category, kodi_utils.home
 sys, add_items, set_content, end_directory, set_view_mode = kodi_utils.sys, kodi_utils.add_items, kodi_utils.set_content, kodi_utils.end_directory, kodi_utils.set_view_mode
-poster_empty, fanart_empty, xbmc_actor, set_category = kodi_utils.empty_poster, kodi_utils.get_addon_fanart(), kodi_utils.xbmc_actor, kodi_utils.set_category
 make_listitem, build_url, external, date_offset_info = kodi_utils.make_listitem, kodi_utils.build_url, kodi_utils.external, settings.date_offset
-use_minimal_media_info = settings.use_minimal_media_info
+use_minimal_media_info, watched_indicators_info, widget_hide_watched = settings.use_minimal_media_info, settings.watched_indicators, settings.widget_hide_watched
 adjust_premiered_date_function, get_datetime_function, get_watched_status, get_watched_info = adjust_premiered_date, get_datetime, get_watched_status_season, get_watched_info_tv
-watched_indicators_info = settings.watched_indicators
 string, run_plugin, unaired_label, tmdb_poster = str, 'RunPlugin(%s)', '[COLOR red][I]%s[/I][/COLOR]', 'https://image.tmdb.org/t/p/w780%s'
 view_mode, content_type = 'view.seasons', 'seasons'
 season_name_str = 'Season %s'
@@ -51,19 +50,21 @@ def build_season_list(params):
 				url_params = build_url({'mode': 'build_episode_list', 'tmdb_id': tmdb_id, 'season': season_number})
 				extras_params = build_url({'mode': 'extras_menu_choice', 'tmdb_id': tmdb_id, 'media_type': 'tvshow', 'is_external': is_external})
 				options_params = build_url({'mode': 'options_menu_choice', 'content': 'season', 'tmdb_id': tmdb_id, 'poster': show_poster, 'playcount': playcount,
-											'progress': progress, 'season': season_number, 'is_external': is_external, 'season_poster': poster})
+											'progress': progress, 'season': season_number, 'is_external': is_external, 'unaired': unaired, 'season_poster': poster})
 				cm_append(('[B]Extras...[/B]', run_plugin % extras_params))
 				cm_append(('[B]Options...[/B]', run_plugin % options_params))
-				if not playcount:
+				if playcount:
+					if hide_watched: continue
+				elif not unaired:
 					cm_append(('[B]Mark Watched %s[/B]' % watched_title, run_plugin % build_url({'mode': 'watched_status.mark_season', 'action': 'mark_as_watched',
 														'title': show_title, 'tmdb_id': tmdb_id, 'tvdb_id': tvdb_id, 'season': season_number})))
 				if progress:
 					cm_append(('[B]Mark Unwatched %s[/B]' % watched_title, run_plugin % build_url({'mode': 'watched_status.mark_season', 'action': 'mark_as_unwatched',
 														'title': show_title, 'tmdb_id': tmdb_id, 'tvdb_id': tvdb_id, 'season': season_number})))
-				set_properties({'watchedepisodes': string(watched), 'unwatchedepisodes': string(unwatched)})
+					set_properties({'watchedepisodes': string(watched), 'unwatchedepisodes': string(unwatched)})
 				set_properties({'totalepisodes': string(episode_count), 'watchedprogress': string(progress),
 								'fenlight.extras_params': extras_params, 'fenlight.options_params': options_params})
-				if is_external: cm_append(('[B]Refresh Widgets[/B]', run_plugin % build_url({'mode': 'kodi_refresh'})))
+				if is_home: cm_append(('[B]Refresh Widgets[/B]', run_plugin % build_url({'mode': 'kodi_refresh'})))
 				info_tag = listitem.getVideoInfoTag()
 				info_tag.setMediaType('season'), info_tag.setTitle(title), info_tag.setOriginalTitle(orig_title), info_tag.setTvShowTitle(show_title), info_tag.setIMDBNumber(imdb_id)
 				info_tag.setSeason(season_number), info_tag.setPlot(plot), info_tag.setDuration(episode_run_time), info_tag.setPlaycount(playcount), info_tag.setGenres(genre)
@@ -78,10 +79,8 @@ def build_season_list(params):
 				listitem.addContextMenuItems(cm)
 				yield (url_params, listitem, True)
 			except: pass
-	handle, is_external, category_name = int(sys.argv[1]), external(), 'Season'
-	watched_indicators = watched_indicators_info()
-	use_minimal_media = use_minimal_media_info()
-	adjust_hours = date_offset_info()
+	handle, is_external, is_home, category_name = int(sys.argv[1]), external(), home(), 'Season'
+	watched_indicators, use_minimal_media, adjust_hours, hide_watched = watched_indicators_info(), use_minimal_media_info(), date_offset_info(), is_home and widget_hide_watched()
 	watched_info, current_date = get_watched_info(watched_indicators), get_datetime_function()
 	meta = tvshow_meta('tmdb_id', params['tmdb_id'], current_date)
 	meta_get = meta.get

@@ -3,6 +3,7 @@ import shutil
 import time
 import sqlite3 as database
 from zipfile import ZipFile
+from modules.utils import string_alphanum_to_num
 from modules import kodi_utils 
 # logger = kodi_utils.logger
 
@@ -16,15 +17,18 @@ home_addons_dir = translate_path('special://home/addons/')
 destination_check = translate_path('special://home/addons/plugin.video.fenlight/')
 
 def get_versions():
-	result = requests.get('https://github.com/Tikipeter/tikipeter.github.io/raw/main/packages/fen_light_version')
-	if result.status_code != 200: return
-	online_version = result.text.replace('\n', '')
-	current_version = addon_info('version')
-	return current_version, online_version
+	try:
+		result = requests.get('https://github.com/Tikipeter/tikipeter.github.io/raw/main/packages/fen_light_version')
+		if result.status_code != 200: return None, None
+		online_version = string_alphanum_to_num(result.text.replace('\n', ''))
+		current_version = string_alphanum_to_num(addon_info('version'))
+		return current_version, online_version
+	except: return None, None
 
 def update_check(action=4):
 	if action == 3: return
 	current_version, online_version = get_versions()
+	if not current_version: return notification('Fen Light Update Error')
 	line = 'Installed Version: [B]%s[/B][CR]Online Version: [B]%s[/B][CR][CR] ' % (current_version, online_version)
 	if current_version == online_version:
 		if action == 4: return ok_dialog(heading='Fen Light Updater', text=line + '[B]No Update Available[/B]')

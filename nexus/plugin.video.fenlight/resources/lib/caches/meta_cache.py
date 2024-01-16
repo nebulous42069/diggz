@@ -47,7 +47,7 @@ class MetaCache:
 			meta = self.get_memory_cache_season(prop_string, current_time)
 			if meta is None:
 				dbcon = connect_database('metacache_db')
-				cache_data = self.dbcon.execute(GET_SEASON, (prop_string,)).fetchone()
+				cache_data = dbcon.execute(GET_SEASON, (prop_string,)).fetchone()
 				if cache_data:
 					meta, expiry = eval(cache_data[0]), cache_data[1]
 					if expiry < current_time:

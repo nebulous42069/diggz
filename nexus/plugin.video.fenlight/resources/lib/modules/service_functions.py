@@ -7,13 +7,14 @@ from modules.updater import update_check
 from modules import kodi_utils, settings
 from modules.utils import jsondate_to_datetime, datetime_workaround
 
-get_infolabel, run_plugin, external = kodi_utils.get_infolabel, kodi_utils.run_plugin, kodi_utils.external
+get_infolabel, run_plugin, external, run_addon = kodi_utils.get_infolabel, kodi_utils.run_plugin, kodi_utils.external, kodi_utils.run_addon
 pause_services_prop, xbmc_monitor, xbmc_player, userdata_path = kodi_utils.pause_services_prop, kodi_utils.xbmc_monitor, kodi_utils.xbmc_player, kodi_utils.userdata_path
 get_window_id, make_directories = kodi_utils.get_window_id, kodi_utils.make_directories
 logger, close_dialog = kodi_utils.logger, kodi_utils.close_dialog
 get_property, set_property, clear_property, get_visibility = kodi_utils.get_property, kodi_utils.set_property, kodi_utils.clear_property, kodi_utils.get_visibility
 kodi_refresh, current_skin_prop, notification = kodi_utils.kodi_refresh, kodi_utils.current_skin_prop, kodi_utils.notification
 trakt_sync_interval, auto_start, update_action, update_delay = settings.trakt_sync_interval, settings.auto_start, settings.update_action, settings.update_delay
+auto_start_fenlight = settings.auto_start_fenlight
 window_top_str, listitem_property_str = 'Window.IsTopMost(%s)', 'ListItem.Property(%s)'
 movieinformation_str, contextmenu_str = 'movieinformation', 'contextmenu'
 trakt_service_string = 'TraktSync Service Update %s - %s'
@@ -32,32 +33,6 @@ class CheckSettings:
 		logger('Fen Light', 'CheckSettingsFile Service Starting')
 		sync_settings()
 		return logger('Fen Light', 'CheckSettingsFile Service Finished')
-
-class TraktMonitor:
-	def run(self):
-		logger('Fen Light', 'TraktMonitor Service Starting')
-		monitor, player = xbmc_monitor(), xbmc_player()
-		wait_for_abort, is_playing = monitor.waitForAbort, player.isPlayingVideo
-		while not monitor.abortRequested():
-			while is_playing() or get_property(pause_services_prop) == 'true': wait_for_abort(10)
-			wait_time = 1800
-			try:
-				sync_interval, wait_time = trakt_sync_interval()
-				next_update_string = update_string % sync_interval
-				status = trakt_sync_activities()
-				if status == 'failed': logger('Fen Light', trakt_service_string % ('Failed. Error from Trakt', next_update_string))
-				else:
-					if status in ('success', 'no account'): logger('Fen Light', trakt_service_string % ('Success. %s' % trakt_success_line_dict[status], next_update_string))
-					else: logger('Fen Light', trakt_service_string % ('Success. No Changes Needed', next_update_string))# 'not needed'
-					if status == 'success' and get_setting('fenlight.trakt.refresh_widgets', 'false') == 'true': kodi_refresh()
-			except Exception as e: logger('Fen Light', trakt_service_string % ('Failed', 'The following Error Occured: %s' % str(e)))
-			logger('Fen Light', 'TraktSync Finished')
-			wait_for_abort(wait_time)
-		try: del monitor
-		except: pass
-		try: del player
-		except: pass
-		return logger('Fen Light', 'TraktMonitor Service Finished')
 
 class CustomActions:
 	def run(self):
@@ -120,15 +95,31 @@ class RemoveOldDatabases:
 		remove_old_databases()
 		return logger('Fen Light', 'RemoveOldDatabases Service Finished')
 
-class OnNotificationActions:
-	def run(self, sender, method, data):
-		if sender == 'xbmc':
-			if method in ('GUI.OnScreensaverActivated', 'System.OnSleep'):
-				set_property(pause_services_prop, 'true')
-				logger('OnNotificationActions', 'PAUSING Fen Light Services Due to Device Sleep')
-			elif method in ('GUI.OnScreensaverDeactivated', 'System.OnWake'):
-				clear_property(pause_services_prop)
-				logger('OnNotificationActions', 'UNPAUSING Fen Light Services Due to Device Awake')
+class TraktMonitor:
+	def run(self):
+		logger('Fen Light', 'TraktMonitor Service Starting')
+		monitor, player = xbmc_monitor(), xbmc_player()
+		wait_for_abort, is_playing = monitor.waitForAbort, player.isPlayingVideo
+		while not monitor.abortRequested():
+			while is_playing() or get_property(pause_services_prop) == 'true': wait_for_abort(10)
+			wait_time = 1800
+			try:
+				sync_interval, wait_time = trakt_sync_interval()
+				next_update_string = update_string % sync_interval
+				status = trakt_sync_activities()
+				if status == 'failed': logger('Fen Light', trakt_service_string % ('Failed. Error from Trakt', next_update_string))
+				else:
+					if status in ('success', 'no account'): logger('Fen Light', trakt_service_string % ('Success. %s' % trakt_success_line_dict[status], next_update_string))
+					else: logger('Fen Light', trakt_service_string % ('Success. No Changes Needed', next_update_string))# 'not needed'
+					if status == 'success' and get_setting('fenlight.trakt.refresh_widgets', 'false') == 'true': kodi_refresh()
+			except Exception as e: logger('Fen Light', trakt_service_string % ('Failed', 'The following Error Occured: %s' % str(e)))
+			logger('Fen Light', 'TraktSync Finished')
+			wait_for_abort(wait_time)
+		try: del monitor
+		except: pass
+		try: del player
+		except: pass
+		return logger('Fen Light', 'TraktMonitor Service Finished')
 
 class UpdateCheck:
 	def run(self):
@@ -145,3 +136,19 @@ class UpdateCheck:
 		try: del player
 		except: pass
 		return logger('Fen Light', 'UpdateCheck Service Finished')
+
+class AutoStart:
+	def run(self):
+		logger('Fen Light', 'AutoStart Service Starting')
+		if auto_start_fenlight(): run_addon()
+		return logger('Fen Light', 'AutoStart Service Finished')
+
+class OnNotificationActions:
+	def run(self, sender, method, data):
+		if sender == 'xbmc':
+			if method in ('GUI.OnScreensaverActivated', 'System.OnSleep'):
+				set_property(pause_services_prop, 'true')
+				logger('OnNotificationActions', 'PAUSING Fen Light Services Due to Device Sleep')
+			elif method in ('GUI.OnScreensaverDeactivated', 'System.OnWake'):
+				clear_property(pause_services_prop)
+				logger('OnNotificationActions', 'UNPAUSING Fen Light Services Due to Device Awake')

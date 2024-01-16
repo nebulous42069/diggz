@@ -2,7 +2,8 @@
 from modules import meta_lists
 from modules import kodi_utils, settings
 from modules.metadata import tvshow_meta
-from modules.utils import manual_function_import, get_datetime, make_thread_list, make_thread_list_enumerate, make_thread_list_multi_arg, get_current_timestamp, paginate_list
+from modules.utils import manual_function_import, get_datetime, make_thread_list, make_thread_list_enumerate, make_thread_list_multi_arg, \
+						get_current_timestamp, paginate_list, jsondate_to_datetime
 from modules.watched_status import get_watched_info_tv, get_watched_status_tvshow
 # logger = kodi_utils.logger
 
@@ -11,11 +12,11 @@ set_content, end_directory, set_view_mode, folder_path, random = kodi_utils.set_
 sleep, meta_function, get_datetime_function, add_item, xbmc_actor, home = kodi_utils.sleep, tvshow_meta, get_datetime, kodi_utils.add_item, kodi_utils.xbmc_actor, kodi_utils.home
 get_watched_function, get_watched_info_function, set_category, json = get_watched_status_tvshow, get_watched_info_tv, kodi_utils.set_category, kodi_utils.json
 make_listitem, build_url, set_property = kodi_utils.make_listitem, kodi_utils.build_url, kodi_utils.set_property
+jsondate_to_datetime_function = jsondate_to_datetime
 poster_empty, fanart_empty = kodi_utils.empty_poster, kodi_utils.get_addon_fanart()
 nextpage_landscape, item_jump_landscape = kodi_utils.nextpage_landscape, kodi_utils.item_jump_landscape
-watched_indicators, paginate = settings.watched_indicators, settings.paginate
-extras_open_action, default_all_episodes, page_limit = settings.extras_open_action, settings.default_all_episodes, settings.page_limit
-widget_hide_next_page = settings.widget_hide_next_page
+extras_open_action, default_all_episodes, page_limit, paginate = settings.extras_open_action, settings.default_all_episodes, settings.page_limit, settings.paginate
+widget_hide_next_page, widget_hide_watched, watched_indicators = settings.widget_hide_next_page, settings.widget_hide_watched, settings.watched_indicators
 run_plugin, container_update = 'RunPlugin(%s)', 'Container.Update(%s)'
 main = ('tmdb_tv_popular', 'tmdb_tv_popular_today', 'tmdb_tv_premieres', 'tmdb_tv_airing_today','tmdb_tv_on_the_air','tmdb_tv_upcoming')
 special = ('tmdb_tv_languages', 'tmdb_tv_networks', 'tmdb_tv_year', 'tmdb_tv_decade', 'tmdb_tv_recommendations', 'tmdb_tv_genres',
@@ -37,7 +38,8 @@ class TVShows:
 		self.category_name = self.params_get('category_name', None) or self.params_get('name', None) or 'TV Shows'
 		self.id_type, self.list, self.action = self.params_get('id_type', 'tmdb_id'), self.params_get('list', []), self.params_get('action', None)
 		self.items, self.new_page, self.total_pages, self.is_external, self.is_home = [], {}, None, external(), home()
-		self.widget_hide_next_page = False if not self.is_home else widget_hide_next_page()
+		self.widget_hide_next_page = self.is_home and widget_hide_next_page()
+		self.widget_hide_watched = self.is_home and widget_hide_watched()
 		self.custom_order = self.params_get('custom_order', 'false') == 'true'
 		self.paginate_start = int(self.params_get('paginate_start', '0'))
 		self.in_progress_menu = 'true' if self.action == 'in_progress_tvshows' else 'false'
@@ -118,6 +120,10 @@ class TVShows:
 			meta = meta_function(self.id_type, _id, self.current_date, self.current_time)
 			if not meta or 'blank_entry' in meta: return
 			meta_get = meta.get
+			premiered = meta_get('premiered')
+			first_airdate = jsondate_to_datetime_function(premiered, '%Y-%m-%d', True)
+			if not first_airdate or self.current_date < first_airdate: unaired = True
+			else: unaired = False
 			tmdb_id, total_seasons, total_aired_eps = meta_get('tmdb_id'), meta_get('total_seasons'), meta_get('total_aired_eps')
 			playcount, total_watched, total_unwatched = get_watched_function(self.watched_info, string(tmdb_id), total_aired_eps)
 			try: progress = int((float(total_watched)/total_aired_eps)*100)
@@ -132,7 +138,7 @@ class TVShows:
 			fanart = meta_get('fanart') or fanart_empty
 			clearlogo = meta_get('clearlogo') or ''
 			options_params = build_url({'mode': 'options_menu_choice', 'content': 'tvshow', 'tmdb_id': tmdb_id, 'poster': poster, 'playcount': playcount,
-										'progress': progress, 'is_external': self.is_external, 'in_progress_menu': self.in_progress_menu})
+										'progress': progress, 'is_external': self.is_external, 'unaired': unaired, 'in_progress_menu': self.in_progress_menu})
 			extras_params = build_url({'mode': 'extras_menu_choice', 'tmdb_id': tmdb_id, 'media_type': 'tvshow', 'is_external': self.is_external})
 			if self.all_episodes:
 				if self.all_episodes == 1 and total_seasons > 1: url_params = build_url({'mode': 'build_season_list', 'tmdb_id': tmdb_id})
@@ -143,7 +149,9 @@ class TVShows:
 				url_params = extras_params
 			else: cm_append(('[B]Extras...[/B]', run_plugin % extras_params))
 			cm_append(('[B]Options...[/B]', run_plugin % options_params))
-			if not playcount:
+			if playcount:
+				if self.widget_hide_watched: return
+			elif not unaired:
 				cm_append(('[B]Mark Watched %s[/B]' % self.watched_title, run_plugin % build_url({'mode': 'watched_status.mark_tvshow', 'action': 'mark_as_watched',
 																			'title': title,'tmdb_id': tmdb_id, 'tvdb_id': tvdb_id})))
 			if progress:
@@ -151,7 +159,7 @@ class TVShows:
 																			'title': title, 'tmdb_id': tmdb_id, 'tvdb_id': tvdb_id})))
 				set_properties({'watchedepisodes': string(total_watched), 'unwatchedepisodes': string(total_unwatched)})
 			set_properties({'watchedprogress': string(progress), 'totalepisodes': string(total_aired_eps), 'totalseasons': string(total_seasons)})
-			if self.is_external: cm_append(('[B]Refresh Widgets[/B]', run_plugin % build_url({'mode': 'kodi_refresh'})))
+			if self.is_home: cm_append(('[B]Refresh Widgets[/B]', run_plugin % build_url({'mode': 'kodi_refresh'})))
 			else: cm_append(('[B]Exit TV Show List[/B]', run_plugin % build_url({'mode': 'navigator.exit_media_menu'})))
 			listitem.setLabel(title)
 			listitem.addContextMenuItems(cm)
@@ -163,7 +171,7 @@ class TVShows:
 			if not self.use_minimal_media:
 				info_tag.setTagLine(meta_get('tagline')), info_tag.setStudios(meta_get('studio')), info_tag.setWriters(meta_get('writer')), info_tag.setDirectors(meta_get('director'))
 				info_tag.setVotes(meta_get('votes')), info_tag.setMpaa(meta_get('mpaa')), info_tag.setDuration(meta_get('duration')), info_tag.setCountries(meta_get('country'))
-				info_tag.setTrailer(meta_get('trailer')), info_tag.setPremiered(meta_get('premiered'))
+				info_tag.setTrailer(meta_get('trailer')), info_tag.setPremiered(premiered)
 				info_tag.setTvShowStatus(meta_get('status')), info_tag.setRating(meta_get('rating'))
 				info_tag.setCast([xbmc_actor(name=item['name'], role=item['role'], thumbnail=item['thumbnail']) for item in meta_get('cast', [])])
 			set_properties({'fenlight.extras_params': extras_params, 'fenlight.options_params': options_params})

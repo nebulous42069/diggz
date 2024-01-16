@@ -78,10 +78,8 @@ class Sources():
 		else: self.season = ''
 		if 'episode' in self.params: self.episode = int(params_get('episode'))
 		else: self.episode = ''
-		self._grab_meta()
-		self.active_internal_scrapers = active_internal_scrapers()
-		if not 'external' in self.active_internal_scrapers and (self.disabled_ext_ignored or self.default_ext_only): self.active_internal_scrapers.append('external')
-		self.active_external = 'external' in self.active_internal_scrapers
+		self.get_meta()
+		self.determine_scrapers_status()
 		self.sleep_time, self.provider_sort_ranks, self.scraper_settings = 100, provider_sort_ranks(), scraping_settings()
 		self.include_prerelease_results, self.ignore_results_filter, self.limit_resolve = include_prerelease_results(), ignore_results_filter(), limit_resolve()
 		self.filter_hevc, self.filter_hdr = filter_status('hevc'), filter_status('hdr')
@@ -92,10 +90,19 @@ class Sources():
 		self.hybrid_allowed = self.filter_hdr in (0, 2)
 		self.include_unknown_size = get_setting('fenlight.results.include.unknown.size', 'false') == 'true'
 		self.include_3D_results = get_setting('fenlight.include_3d_results', 'true') == 'true'
-		self._update_meta()
-		self._search_info()
+		self.search_info()
 		if self.autoscrape: self.autoscrape_nextep_handler()
 		else: return self.get_sources()
+
+	def determine_scrapers_status(self):
+		self.active_internal_scrapers = active_internal_scrapers()
+		if not 'external' in self.active_internal_scrapers and (self.disabled_ext_ignored or self.default_ext_only): self.active_internal_scrapers.append('external')
+		self.active_external = 'external' in self.active_internal_scrapers
+		if self.active_external:
+			self.debrid_enabled = debrid_enabled()
+			if not self.debrid_enabled: return self.disable_external()
+			self.ext_folder, self.ext_name = external_scraper_info()
+			if not self.ext_folder or not self.ext_name: return self.disable_external()
 
 	def get_sources(self):
 		if not self.progress_dialog and not self.background: self._make_progress_dialog()
@@ -108,7 +115,6 @@ class Sources():
 			self.prescrape = False
 			self.prepare_internal_scrapers()
 			if self.active_external:
-				self.debrid_enabled = debrid_enabled()
 				self.activate_external_providers()
 			elif not self.active_internal_scrapers: self._kill_progress_dialog()
 			self.orig_results = self.collect_results()
@@ -223,9 +229,6 @@ class Sources():
 		else: self.sources.extend(sources)
 
 	def activate_external_providers(self):
-		if not self.debrid_enabled: return self.disable_external('No Debrid Providers Enabled')
-		self.ext_folder, self.ext_name = external_scraper_info()
-		if not self.ext_folder or not self.ext_name: return self.disable_external('No External Scrapers Module Enabled')
 		if not self.import_external_scrapers(): return self.disable_external('Error Importing External Module')
 		self.external_providers = self.external_sources()
 		if not self.external_providers: self.disable_external('No External Providers Enabled')
@@ -238,12 +241,11 @@ class Sources():
 		except: return False
 		return True
 
-	def disable_external(self, line1):
-		notification(line1, 2000)
+	def disable_external(self, line1=''):
+		if line1: notification(line1, 2000)
 		try: self.active_internal_scrapers.remove('external')
 		except: pass
-		self.active_external = False
-		self.external_providers = []
+		self.active_external, self.external_providers = False, []
 
 	def internal_sources(self, prescrape=False):
 		active_sources = [i for i in self.active_internal_scrapers if i in internal_include_list]
@@ -351,26 +353,12 @@ class Sources():
 		if self.background: return notification('[B]Next Up:[/B] No Results', 5000)
 		notification('No Results', 2000)
 
-	def _update_meta(self):
-		self.meta.update({'media_type': self.media_type, 'season': self.season, 'episode': self.episode, 'background': self.background, 'custom_title': self.custom_title,
-						'custom_year': self.custom_year, 'custom_season': self.custom_season, 'custom_episode': self.custom_episode})
-
-	def _search_info(self):
-		title, year, season, episode, ep_name = self.get_search_title(), self.get_search_year(), self.get_season(), self.get_episode(), self.get_ep_name()
-		aliases = make_alias_dict(self.meta, title)
-		expiry_times = get_cache_expiry(self.media_type, self.meta, self.season)
-		self.search_info = {'media_type': self.media_type, 'title': title, 'year': year, 'tmdb_id': self.tmdb_id, 'imdb_id': self.meta.get('imdb_id'), 'aliases': aliases,
-							'season': season, 'episode': episode, 'tvdb_id': self.meta.get('tvdb_id'), 'ep_name': ep_name, 'expiry_times': expiry_times,
-							'total_seasons': self.meta.get('total_seasons', 1)}
-
 	def get_search_title(self):
 		search_title = self.meta.get('custom_title', None) or self.meta.get('english_title') or self.meta.get('title')
 		return search_title
 
 	def get_search_year(self):
-		custom_year = self.meta.get('custom_year', None)
-		if custom_year: year = custom_year
-		else: year = self.meta.get('year')
+		year = self.meta.get('custom_year', None) or self.meta.get('year')
 		return year
 
 	def get_season(self):
@@ -454,18 +442,27 @@ class Sources():
 		elif enable_setting == 3: results = [i for i in results if not any(x in i['extraInfo'] for x in key)]
 		return results
 
-	def _grab_meta(self):
+	def get_meta(self):
 		if self.media_type == 'movie': self.meta = metadata.movie_meta('tmdb_id', self.tmdb_id, get_datetime())
 		else:
 			self.meta = metadata.tvshow_meta('tmdb_id', self.tmdb_id, get_datetime())
 			episodes_data = metadata.episodes_meta(self.season, self.meta)
 			try:
 				episode_data = [i for i in episodes_data if i['episode'] == self.episode][0]
-				thumb = episode_data.get('thumb', None) or self.meta.get('fanart') or ''
-				self.meta['tvshow_plot'] = self.meta['plot']
-				self.meta.update({'media_type': 'episode', 'season': episode_data['season'], 'episode': episode_data['episode'], 'premiered': episode_data['premiered'],
-								'ep_name': episode_data['title'], 'ep_thumb': episode_data.get('thumb', None), 'plot': episode_data['plot']})
+				ep_thumb = episode_data.get('thumb', None) or self.meta.get('fanart') or ''
+				self.meta.update({'season': episode_data['season'], 'episode': episode_data['episode'], 'premiered': episode_data['premiered'],
+								'ep_name': episode_data['title'], 'ep_thumb': ep_thumb, 'plot': episode_data['plot'], 'tvshow_plot': self.meta['plot'],
+								'custom_season': self.custom_season, 'custom_episode': self.custom_episode})
 			except: pass
+		self.meta.update({'media_type': self.media_type, 'background': self.background, 'custom_title': self.custom_title, 'custom_year': self.custom_year})
+
+	def search_info(self):
+		title, year, season, episode, ep_name = self.get_search_title(), self.get_search_year(), self.get_season(), self.get_episode(), self.get_ep_name()
+		aliases = make_alias_dict(self.meta, title)
+		expiry_times = get_cache_expiry(self.media_type, self.meta, self.season)
+		self.search_info = {'media_type': self.media_type, 'title': title, 'year': year, 'tmdb_id': self.tmdb_id, 'imdb_id': self.meta.get('imdb_id'), 'aliases': aliases,
+							'season': season, 'episode': episode, 'tvdb_id': self.meta.get('tvdb_id'), 'ep_name': ep_name, 'expiry_times': expiry_times,
+							'total_seasons': self.meta.get('total_seasons', 1)}
 
 	def _get_module(self, module_type, function):
 		if module_type == 'external': module = function.source(*self.external_args)

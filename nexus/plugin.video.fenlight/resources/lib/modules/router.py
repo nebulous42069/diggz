@@ -161,6 +161,8 @@ def routing(sys):
 			return base_cache.clear_all_cache()
 		if mode == 'clean_databases_cache':
 			return base_cache.clean_databases()
+		if mode == 'check_databases_integrity_cache':
+			return base_cache.check_databases_integrity()
 	if '_image' in mode:
 		from indexers.images import Images
 		return Images().run(params)

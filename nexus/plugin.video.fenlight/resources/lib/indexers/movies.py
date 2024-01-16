@@ -2,7 +2,8 @@
 from modules import meta_lists
 from modules import kodi_utils, settings
 from modules.metadata import movie_meta
-from modules.utils import manual_function_import, get_datetime, make_thread_list, make_thread_list_enumerate, make_thread_list_multi_arg, get_current_timestamp, paginate_list
+from modules.utils import manual_function_import, get_datetime, make_thread_list, make_thread_list_enumerate, make_thread_list_multi_arg, \
+						get_current_timestamp, paginate_list, jsondate_to_datetime
 from modules.watched_status import get_watched_info_movie, get_watched_status_movie, get_bookmarks, get_progress_percent
 # logger = kodi_utils.logger
 
@@ -13,8 +14,9 @@ progress_percent_function, get_watched_function, get_watched_info_function, rand
 poster_empty, fanart_empty, set_property = kodi_utils.empty_poster, kodi_utils.get_addon_fanart(), kodi_utils.set_property
 sleep, xbmc_actor, set_category, json = kodi_utils.sleep, kodi_utils.xbmc_actor, kodi_utils.set_category, kodi_utils.json
 meta_function, get_datetime_function, add_item, home = movie_meta, get_datetime, kodi_utils.add_item, kodi_utils.home
+jsondate_to_datetime_function = jsondate_to_datetime
 watched_indicators, use_minimal_media_info, widget_hide_next_page = settings.watched_indicators, settings.use_minimal_media_info, settings.widget_hide_next_page
-extras_open_action, page_limit, paginate = settings.extras_open_action, settings.page_limit, settings.paginate
+widget_hide_watched, extras_open_action, page_limit, paginate = settings.widget_hide_watched, settings.extras_open_action, settings.page_limit, settings.paginate
 run_plugin = 'RunPlugin(%s)'
 main = ('tmdb_movies_popular', 'tmdb_movies_popular_today','tmdb_movies_blockbusters','tmdb_movies_in_theaters',
 			'tmdb_movies_upcoming', 'tmdb_movies_latest_releases', 'tmdb_movies_premieres', 'tmdb_movies_oscar_winners')
@@ -35,7 +37,8 @@ class Movies:
 		self.category_name = self.params_get('category_name', None) or self.params_get('name', None) or 'Movies'
 		self.id_type, self.list, self.action = self.params_get('id_type', 'tmdb_id'), self.params_get('list', []), self.params_get('action', None)
 		self.items, self.new_page, self.total_pages, self.is_external, self.is_home = [], {}, None, external(), home()
-		self.widget_hide_next_page = False if not self.is_home else widget_hide_next_page()
+		self.widget_hide_next_page = self.is_home and widget_hide_next_page()
+		self.widget_hide_watched = self.is_home and widget_hide_watched()
 		self.custom_order = self.params_get('custom_order', 'false') == 'true'
 		self.paginate_start = int(self.params_get('paginate_start', '0'))
 		self.append = self.items.append
@@ -105,6 +108,10 @@ class Movies:
 			meta = meta_function(self.id_type, _id, self.current_date, self.current_time)
 			if not meta or 'blank_entry' in meta: return
 			meta_get = meta.get
+			premiered = meta_get('premiered')
+			first_airdate = jsondate_to_datetime_function(premiered, '%Y-%m-%d', True)
+			if not first_airdate or self.current_date < first_airdate: unaired = True
+			else: unaired = False
 			playcount = get_watched_function(self.watched_info, string(meta_get('tmdb_id')))
 			cm = []
 			cm_append = cm.append
@@ -115,13 +122,10 @@ class Movies:
 			tmdb_id, imdb_id = meta_get('tmdb_id'), meta_get('imdb_id')
 			poster, fanart, clearlogo = meta_get('poster') or poster_empty, meta_get('fanart') or fanart_empty, meta_get('clearlogo') or ''
 			progress = progress_percent_function(self.bookmarks, tmdb_id)
-			if playcount:
-				watched_action, watchedstr = 'mark_as_unwatched', '[B]Mark Unwatched %s[/B]'
-			else: watched_action, watchedstr = 'mark_as_watched', '[B]Mark Watched %s[/B]'
 			play_params = build_url({'mode': 'playback.media', 'media_type': 'movie', 'tmdb_id': tmdb_id})
 			extras_params = build_url({'mode': 'extras_menu_choice', 'media_type': 'movie', 'tmdb_id': tmdb_id, 'is_external': self.is_external})
 			options_params = build_url({'mode': 'options_menu_choice', 'content': 'movie', 'tmdb_id': tmdb_id, 'poster': poster, 'playcount': playcount,
-										'progress': progress, 'is_external': self.is_external})
+										'progress': progress, 'is_external': self.is_external, 'unaired': unaired})
 			if self.open_extras:
 				url_params = extras_params
 				cm_append(('[B]Playback...[/B]', run_plugin % play_params))
@@ -130,15 +134,21 @@ class Movies:
 				cm_append(('[B]Extras...[/B]', run_plugin % extras_params))
 			cm_append(('[B]Options...[/B]', run_plugin % options_params))
 			cm_append(('[B]Playback Options...[/B]', run_plugin % build_url({'mode': 'playback_choice', 'media_type': 'movie', 'poster': poster, 'meta': tmdb_id})))
+			if playcount:
+				if self.widget_hide_watched: return
+				cm_append(('[B]Mark Unwatched %s[/B]' % self.watched_title, run_plugin % build_url({'mode': 'watched_status.mark_movie', 'action': 'mark_as_unwatched',
+							'tmdb_id': tmdb_id, 'title': title})))
+			elif not unaired:
+				cm_append(('[B]Mark Watched %s[/B]' % self.watched_title, run_plugin % build_url({'mode': 'watched_status.mark_movie', 'action': 'mark_as_watched',
+							'tmdb_id': tmdb_id, 'title': title})))
 			if progress:
 				cm_append(('[B]Clear Progress[/B]', run_plugin % build_url({'mode': 'watched_status.erase_bookmark', 'media_type': 'movie', 'tmdb_id': tmdb_id, 'refresh': 'true'})))
-			cm_append((watchedstr % self.watched_title, run_plugin % build_url({'mode': 'watched_status.mark_movie', 'action': watched_action, 'tmdb_id': tmdb_id, 'title': title})))
-			if self.is_external: cm_append(('[B]Refresh Widgets[/B]', run_plugin % build_url({'mode': 'kodi_refresh'})))
+			if self.is_home: cm_append(('[B]Refresh Widgets[/B]', run_plugin % build_url({'mode': 'kodi_refresh'})))
 			else: cm_append(('[B]Exit Movie List[/B]', run_plugin % build_url({'mode': 'navigator.exit_media_menu'})))
 			info_tag = listitem.getVideoInfoTag()
 			info_tag.setMediaType('movie'), info_tag.setTitle(title), info_tag.setOriginalTitle(meta_get('original_title')), info_tag.setGenres(meta_get('genre'))
 			info_tag.setDuration(meta_get('duration')), info_tag.setPlaycount(playcount), info_tag.setPlot(meta_get('plot'))
-			info_tag.setUniqueIDs({'imdb': imdb_id, 'tmdb': string(tmdb_id)}), info_tag.setIMDBNumber(imdb_id), info_tag.setPremiered(meta_get('premiered'))
+			info_tag.setUniqueIDs({'imdb': imdb_id, 'tmdb': string(tmdb_id)}), info_tag.setIMDBNumber(imdb_id), info_tag.setPremiered(premiered)
 			if not self.use_minimal_media:
 				info_tag.setYear(int(year)), info_tag.setRating(meta_get('rating')), info_tag.setVotes(meta_get('votes')), info_tag.setMpaa(meta_get('mpaa'))
 				info_tag.setCountries(meta_get('country')), info_tag.setTrailer(meta_get('trailer'))

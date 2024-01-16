@@ -13,7 +13,7 @@ add_items, show_text, container_refresh, focus_index, add_item = kodi_utils.add_
 ls, build_url, make_listitem, set_property, set_content = kodi_utils.local_string, kodi_utils.build_url, kodi_utils.make_listitem, kodi_utils.set_property, kodi_utils.set_content
 end_directory, set_view_mode, maincache_db = kodi_utils.end_directory, kodi_utils.set_view_mode, kodi_utils.maincache_db
 clear_property, confirm_dialog, numeric_input = kodi_utils.clear_property, kodi_utils.confirm_dialog, kodi_utils.numeric_input
-default_icon, fanart, default_poster, default_cast = get_icon('discover'), kodi_utils.addon_fanart, 'box_office', 'genre_family'
+default_icon, fanart, default_poster, default_cast = get_icon('discover'), kodi_utils.addon_fanart, 'box_office', get_icon('genre_family')
 set_category = kodi_utils.set_category
 years_movies, years_tvshows, movie_genres, tvshow_genres = meta_lists.years_movies, meta_lists.years_tvshows, meta_lists.movie_genres, meta_lists.tvshow_genres
 languages, regions, movie_certifications, networks = meta_lists.languages, meta_lists.regions, meta_lists.movie_certifications, meta_lists.networks
@@ -231,7 +231,7 @@ class Discover:
 				known_for_list = [i for i in known_for_list if not i == 'NA']
 				known_for = ', '.join(known_for_list) if known_for_list else ''
 				if item.get('profile_path'): icon = 'https://image.tmdb.org/t/p/h632/%s' % item['profile_path']
-				else: icon = translate_path(default_cast)
+				else: icon = default_cast
 				append({'line1': name, 'line2': known_for, 'icon': icon, 'name': name, 'id': item['id']})
 			heading = heading_base % ls(32664)
 			kwargs = {'items': json.dumps(actor_list), 'heading': heading, 'enumerate': 'false', 'multi_choice': 'false', 'multi_line': 'true'}

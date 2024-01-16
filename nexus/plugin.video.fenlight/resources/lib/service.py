@@ -17,6 +17,7 @@ class FenLightMonitor(xbmc_monitor):
 		service_functions.RemoveOldDatabases().run()
 		Thread(target=service_functions.TraktMonitor().run).start()
 		Thread(target=service_functions.UpdateCheck().run).start()
+		service_functions.AutoStart().run()
 
 	def onNotification(self, sender, method, data):
 		on_notification_actions.run(sender, method, data)

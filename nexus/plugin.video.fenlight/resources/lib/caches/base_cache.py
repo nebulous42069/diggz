@@ -27,26 +27,28 @@ database_locations = {
 'maincache_db': maincache_db, 'metacache_db': metacache_db, 'debridcache_db': debridcache_db, 'lists_db': lists_db, 'external_db': external_db
 		}
 integrity_check = {
-'settings_db': (settings_db, ('settings',)),
-'navigator_db': (navigator_db, ('navigator',)),
-'watched_db': (watched_db, ('watched_status', 'progress')),
-'favorites_db': (favorites_db, ('favourites',)),
-'trakt_db': (trakt_db, ('trakt_data', 'watched_status', 'progress')),
-'maincache_db': (maincache_db, ('maincache',)),
-'metacache_db': (metacache_db, ('metadata', 'season_metadata', 'function_cache')),
-'debridcache_db': (debridcache_db, ('debrid_data',)),
-'external_db': (external_db, ('results_data',))
+'settings_db': ('settings',),
+'navigator_db': ('navigator',),
+'watched_db': ('watched_status', 'progress'),
+'favorites_db': ('favourites',),
+'trakt_db': ('trakt_data', 'watched_status', 'progress'),
+'maincache_db': ('maincache',),
+'metacache_db': ('metadata', 'season_metadata', 'function_cache'),
+'lists_db': ('lists',),
+'debridcache_db': ('debrid_data',),
+'external_db': ('results_data',)
 		}
+
 table_creators = {
 'navigator_db': (
-'CREATE TABLE IF NOT EXISTS navigator (list_name text, list_type text, list_contents text, unique(list_name, list_type))',),
+'CREATE TABLE IF NOT EXISTS navigator (list_name text, list_type text, list_contents text, unique (list_name, list_type))',),
 'watched_db': (
 'CREATE TABLE IF NOT EXISTS watched \
-(db_type text not null, media_id text not null, season integer, episode integer, last_played text, title text, unique(db_type, media_id, season, episode))',
+(db_type text not null, media_id text not null, season integer, episode integer, last_played text, title text, unique (db_type, media_id, season, episode))',
 'CREATE TABLE IF NOT EXISTS progress \
 (db_type text not null, media_id text not null, season integer, episode integer, resume_point text, curr_time text, \
-last_played text, resume_id integer, title text, unique(db_type, media_id, season, episode))',
-'CREATE TABLE IF NOT EXISTS watched_status (db_type text not null, media_id text not null, status text, unique(db_type, media_id))'),
+last_played text, resume_id integer, title text, unique (db_type, media_id, season, episode))',
+'CREATE TABLE IF NOT EXISTS watched_status (db_type text not null, media_id text not null, status text, unique (db_type, media_id))'),
 'favorites_db': (
 'CREATE TABLE IF NOT EXISTS favourites (db_type text not null, tmdb_id text not null, title text not null, unique (db_type, tmdb_id))',),
 'settings_db': (
@@ -54,11 +56,11 @@ last_played text, resume_id integer, title text, unique(db_type, media_id, seaso
 'trakt_db': (
 'CREATE TABLE IF NOT EXISTS trakt_data (id text unique, data text)',
 'CREATE TABLE IF NOT EXISTS watched \
-(db_type text not null, media_id text not null, season integer, episode integer, last_played text, title text, unique(db_type, media_id, season, episode))',
+(db_type text not null, media_id text not null, season integer, episode integer, last_played text, title text, unique (db_type, media_id, season, episode))',
 'CREATE TABLE IF NOT EXISTS progress \
 (db_type text not null, media_id text not null, season integer, episode integer, resume_point text, curr_time text, \
-last_played text, resume_id integer, title text, unique(db_type, media_id, season, episode))',
-'CREATE TABLE IF NOT EXISTS watched_status (db_type text not null, media_id text not null, status text, unique(db_type, media_id))'),
+last_played text, resume_id integer, title text, unique (db_type, media_id, season, episode))',
+'CREATE TABLE IF NOT EXISTS watched_status (db_type text not null, media_id text not null, status text, unique (db_type, media_id))'),
 'maincache_db': (
 'CREATE TABLE IF NOT EXISTS maincache (id text unique, data text, expires integer)',),
 'metacache_db': (
@@ -107,6 +109,25 @@ def remove_old_databases():
 				try: delete_file(databases_path + item)
 				except: pass
 	except: pass
+
+def check_databases_integrity():
+	def _process(database_name, tables):
+		database_location = database_locations[database_name]
+		try:
+			dbcon = database.connect(database_location)
+			for db_table in tables: dbcon.execute(command_base % db_table)
+		except:
+			database_errors.append(database_name)
+			if path_exists(database_location):
+				try: dbcon.close()
+				except: pass
+				delete_file(database_location)
+	command_base = 'SELECT * FROM %s LIMIT 1'
+	database_errors = []
+	for database_name, tables in integrity_check.items(): _process(database_name, tables)
+	make_databases()
+	if database_errors: ok_dialog(text='[B]Following Databases Rebuilt:[/B][CR][CR]%s' % ', '.join(database_errors))
+	else: notification('No Corrupt or Missing Databases', time=3000)
 
 def clean_databases():
 	from caches.external_cache import external_cache

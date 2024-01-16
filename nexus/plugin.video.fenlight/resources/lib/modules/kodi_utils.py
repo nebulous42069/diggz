@@ -37,7 +37,7 @@ nextpage_landscape, item_jump_landscape = img_url % icons.nextpage_landscape, im
 tmdb_default_api = 'b370b60447737762ca38457bd77579b3'
 int_window_prop, pause_services_prop = 'fenlight.internal_results.%s', 'fenlight.pause_services'
 current_skin_prop = 'fenlight.current_skin'
-myvideos_db_paths = {19: '119', 20: '121', 21: '121'}
+myvideos_db_paths = {19: '119', 20: '121', 21: '124'}
 sort_method_dict = {'episodes': 24, 'files': 5, 'label': 2}
 playlist_type_dict = {'music': 0, 'video': 1}
 tmdb_dict_removals = ('adult', 'backdrop_path', 'genre_ids', 'original_language', 'original_title', 'overview', 'popularity', 'vote_count', 'video', 'origin_country', 'original_name')
@@ -296,7 +296,7 @@ def update_kodi_addons_db(addon_name='plugin.video.fenlight'):
 		dbcon = database.connect(translate_path('special://database/Addons33.db'), timeout=40.0)
 		dbcon.execute("INSERT OR REPLACE INTO installed (addonID, enabled, lastUpdated) VALUES (?, ?, ?)", (addon_name, 1, date))
 		dbcon.close()
-	except Exception as e: logger('error update_kodi_addons_db', str(e))
+	except: pass
 
 def get_jsonrpc(request):
 	response = execute_JSON(json.dumps(request))

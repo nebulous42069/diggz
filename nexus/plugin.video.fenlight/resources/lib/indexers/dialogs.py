@@ -448,6 +448,7 @@ def options_menu_choice(params, meta=None):
 	params_get = params.get
 	tmdb_id, content, poster, season_poster = params_get('tmdb_id', None), params_get('content', None), params_get('poster', None), params_get('season_poster', None)
 	is_external, from_extras = params_get('is_external') in (True, 'True', 'true'), params_get('from_extras', 'false') == 'true'
+	unaired = params_get('unaired') in (True, 'True', 'true')
 	season, episode, in_progress_menu = params_get('season', ''), params_get('episode', ''), params_get('in_progress_menu', 'false') == 'true'
 	if not content: content = container_content()[:-1]
 	menu_type = content
@@ -472,24 +473,26 @@ def options_menu_choice(params, meta=None):
 			else: listing_append(('Extras', '', 'extras'))
 			if menu_type == 'movie':
 				listing_append(('Playback Options', 'Scrapers Options', 'playback_choice'))
-				if playcount: watched_action, watchedstr = 'mark_as_unwatched', 'Mark Unwatched'
-				else: watched_action, watchedstr = 'mark_as_watched', 'Mark Watched'
-				listing_append((watchedstr, '', 'mark_movie'))
+				if not unaired:
+					if playcount: listing_append(('Mark Unwatched', '', 'mark_unwatched_movie'))
+					else: listing_append(('Mark Watched', '', 'mark_watched_movie'))
 				if progress: listing_append(('Clear Progress', '', 'clear_progress'))
 			else:
-				if not playcount: listing_append(('Mark Watched', '', 'mark_watched_tvshow'))
-				if progress: listing_append(('Mark Unwatched', '', 'mark_unwatched_tvshow'))
+				if not unaired:
+					if not playcount: listing_append(('Mark Watched', '', 'mark_watched_tvshow'))
+					if progress: listing_append(('Mark Unwatched', '', 'mark_unwatched_tvshow'))
 			if not is_external: listing_append(('Exit Movie List' if menu_type == 'movie' else 'Exit TV Show List', '', 'exit_menu'))
 		else:
 			listing_append(('Extras', '', 'extras'))
 			if menu_type == 'season':
-				if not playcount: listing_append(('Mark Watched', '', 'mark_watched_season'))
-				if progress: listing_append(('Mark Unwatched', '', 'mark_unwatched_season'))
+				if not unaired:
+					if not playcount: listing_append(('Mark Watched', '', 'mark_watched_season'))
+					if progress: listing_append(('Mark Unwatched', '', 'mark_unwatched_season'))
 			else:
 				listing_append(('Playback Options', 'Scrapers Options', 'playback_choice'))
-				if playcount: watched_action, watchedstr = 'mark_as_unwatched', 'Mark Unwatched'
-				else: watched_action, watchedstr = 'mark_as_watched', 'Mark Watched'
-				listing_append((watchedstr, '', 'mark_episode'))
+				if not unaired:
+					if not playcount: listing_append(('Mark Watched', '', 'mark_watched_episode'))
+					else: listing_append(('Mark Unwatched', '', 'mark_unwatched_episode'))
 				if progress: listing_append(('Clear Progress', '', 'clear_progress'))
 		if is_external: listing_append(('Refresh Widgets', '', 'refresh_widgets'))
 	if menu_type in ('movie', 'episode') or menu_type in single_ep_list:
@@ -535,10 +538,15 @@ def options_menu_choice(params, meta=None):
 		return run_plugin({'mode': 'playback.media', 'media_type': 'movie', 'tmdb_id': tmdb_id})
 	if choice == 'extras':
 		return extras_menu_choice({'tmdb_id': tmdb_id, 'media_type': content, 'is_external': str(is_external)})
-	if choice == 'mark_movie':
-		return run_plugin({'mode': 'watched_status.mark_movie', 'action': watched_action, 'title': title, 'tmdb_id': tmdb_id})
-	if choice == 'mark_episode':
-		return run_plugin({'mode': 'watched_status.mark_episode', 'action': watched_action, 'title': title, 'tmdb_id': tmdb_id,
+	if choice == 'mark_watched_movie':
+		return run_plugin({'mode': 'watched_status.mark_movie', 'action': 'mark_as_watched', 'title': title, 'tmdb_id': tmdb_id})
+	if choice == 'mark_unwatched_movie':
+		return run_plugin({'mode': 'watched_status.mark_movie', 'action': 'mark_as_unwatched', 'title': title, 'tmdb_id': tmdb_id})
+	if choice == 'mark_watched_episode':
+		return run_plugin({'mode': 'watched_status.mark_episode', 'action': 'mark_as_watched', 'title': title, 'tmdb_id': tmdb_id,
+							'tvdb_id': tvdb_id, 'season': season, 'episode': episode})
+	if choice == 'mark_unwatched_episode':
+		return run_plugin({'mode': 'watched_status.mark_episode', 'action': 'mark_as_unwatched', 'title': title, 'tmdb_id': tmdb_id,
 							'tvdb_id': tvdb_id, 'season': season, 'episode': episode})
 	if choice == 'mark_watched_tvshow':
 		return run_plugin({'mode': 'watched_status.mark_tvshow', 'action': 'mark_as_watched', 'title': title, 'tmdb_id': tmdb_id, 'tvdb_id': tvdb_id})

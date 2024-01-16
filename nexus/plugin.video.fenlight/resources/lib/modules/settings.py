@@ -51,6 +51,9 @@ def tv_show_directory():
 def download_directory(media_type):
 	return translate_path(get_setting(download_directories_dict[media_type]))
 
+def auto_start_fenlight():
+	return get_setting('fenlight.auto_start_fenlight', 'false') == 'true'
+
 def source_folders_directory(media_type, source):
 	setting = 'fenlight.%s.movies_directory' % source if media_type == 'movie' else 'fenlight.%s.tv_shows_directory' % source
 	if get_setting(setting) not in ('', 'None', None): return translate_path( get_setting(setting))
@@ -232,6 +235,9 @@ def default_all_episodes():
 def widget_hide_next_page():
 	return get_setting('fenlight.widget_hide_next_page', 'false') == 'true'
 
+def widget_hide_watched():
+	return get_setting('fenlight.widget_hide_watched', 'false') == 'true'
+
 def calendar_sort_order():
 	return int(get_setting('fenlight.trakt.calendar_sort_order', '0'))
 
@@ -252,7 +258,7 @@ def nextep_include_unaired():
 	return get_setting('fenlight.nextep.include_unaired', 'false') == 'true'
 
 def update_delay():
-	return int(get_setting('update.delay', '90'))
+	return int(get_setting('fenlight.update.delay', '45'))
 
 def update_action():
-	return int(get_setting('update.action', '0'))
+	return int(get_setting('fenlight.update.action', '2'))

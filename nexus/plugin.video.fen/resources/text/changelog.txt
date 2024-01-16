@@ -1,5 +1,9 @@
 [B]Please utilize Fen Tips (Tools->Tips for Fen Use) to catch up on any important new features. New features will be highlighted with a [COLOR chartreuse]NEW!!![/COLOR] label.[/B]
 
+[COLOR dodgerblue][B]Version 3.2.18[/B][/COLOR]
+- Quick fix for incorrect rounding down of small TV Show progress floats.
+- Other changes/fixes.
+
 [COLOR dodgerblue][B]Version 3.2.17[/B][/COLOR]
 - Update test...
 

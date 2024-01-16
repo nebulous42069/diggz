@@ -67,6 +67,7 @@ def string_alphanum_to_num(string):
 	except ValueError: return string
 
 def jsondate_to_datetime(jsondate_object, resformat, remove_time=False):
+	if not jsondate_object: return None
 	if remove_time: datetime_object = datetime_workaround(jsondate_object, resformat).date()
 	else: datetime_object = datetime_workaround(jsondate_object, resformat)
 	return datetime_object

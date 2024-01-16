@@ -1,5 +1,16 @@
 ++
 
+[COLOR dodgerblue][B]Version 1.0.18[/B][/COLOR]
+- Added Info for all settings within Fen Light. Found at the bottom of the settings window when browsing the settings.
+- Re-added "Autostart FenLight when Kodi Starts" to Settings->General. Removed temporarily whilst database issues were being resolved.
+- Re-added "Check for Corrupt databases" to Tools->Database & Cache Maintenance. Removed temporarily whilst database issues were being resolved.
+- Other changes/fixes.
+
+[COLOR dodgerblue][B]Version 1.0.17[/B][/COLOR]
+- Fixed nasty little bug slowing down all single episode lists.
+- Added "Hide Watched Items in Widgets" to Navigation->Widgets.
+- Other changes/fixes.
+
 [COLOR dodgerblue][B]Version 1.0.15[/B][/COLOR]
 - Attempt to fix database issues.
 - Slight rework of entering numeric settings when negative numbers possible.
