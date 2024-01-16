@@ -133,6 +133,10 @@
 					<onclick>RunPlugin(plugin://script.diggzskins)</onclick>
 				</item>
 				<item>
+					<label>Install Planet Diggz</label>
+					<onclick>InstallAddon(skin.planetdiggz)</onclick>
+				</item>				
+				<item>
 					<label>Install Fentastic</label>
 					<onclick>InstallAddon(skin.eminence.2.fen)</onclick>
 				</item>
