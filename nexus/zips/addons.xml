@@ -277,7 +277,7 @@
             <fanart>fanart.jpg</fanart>
     </assets>
   </extension>
-</addon><addon id="plugin.program.chef20" name="[B][COLOR chartreuse]Chef Nexus Wizard[/COLOR][/B]" version="467" provider-name="Diggz">
+</addon><addon id="plugin.program.chef20" name="[B][COLOR chartreuse]Chef Nexus Wizard[/COLOR][/B]" version="468" provider-name="Diggz">
 	<requires>
 		<import addon="xbmc.python" version="3.0.1" />
 		<import addon="repository.xbmc.org" />		
@@ -1890,6 +1890,24 @@ All changes on GitHub: https://github.com/aitschti/plugin.video.sc19
       <icon>icon.png</icon>
     </assets>
   </extension>
+</addon><addon id="script.module.xenonplus" name="Xenon Plus Switcher" version="1.0.1" provider-name="Zaxxon709">
+	<requires>
+		<import addon="xbmc.python" version="3.0.0" />
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="addon.py">
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en_GB">Home Screen Changer</summary>
+		<description lang="en_GB">Kodi 19</description>
+		<disclaimer lang="en_GB">This Addon contains no content</disclaimer>
+		<language>en</language>
+		<platform>all</platform>
+		<license>GPL-2.0-or-later</license>
+		<forum />
+		<website /> 
+		<email />
+		<source />
+	</extension>
 </addon><addon id="script.moviequiz" name="Movie Quiz" version="2.0.0" provider-name="twinther, seveerekaj">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
@@ -3434,7 +3452,7 @@ v1.0.0 - schumi2004,CaTz, Mafarricos
     </assets>
     <news>See changelog for latest changes</news>
   </extension>
-</addon><addon id="skin.xenonx" version="5.5" name="[B][COLOR gold]Xenon[/COLOR][/B]  (Mid Power)" provider-name="Helly,bsoriano">
+</addon><addon id="skin.xenonx" version="6.0" name="[B][COLOR gold]Xenon[/COLOR][/B]  (Mid Power)" provider-name="Helly,bsoriano">
   <requires>
     <import addon="xbmc.gui" version="5.16.0" />
 	<import addon="script.favourites" version="8.1.2" />
