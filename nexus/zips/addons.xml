@@ -259,7 +259,7 @@
             <fanart>resources/fanart.jpg</fanart>
         </assets>
     </extension>
-</addon><addon id="plugin.image.diggzwallpapers" name=" [COLOR blue] Diggz Wallpapers[/COLOR]" version="5" provider-name="FTG">
+</addon><addon id="plugin.image.diggzwallpapers" name=" [COLOR blue] Diggz Wallpapers[/COLOR]" version="6" provider-name="FTG">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
 	<import addon="script.module.beautifulsoup4" />		

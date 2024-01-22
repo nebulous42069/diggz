@@ -51,7 +51,7 @@ download_dir = xbmcvfs.translatePath(os.path.join(backupdir,''))
 ADDON        = xbmcaddon.Addon()
 dialog       = xbmcgui.Dialog()
 dp           = xbmcgui.DialogProgress()
-base= 'https://ia601602.us.archive.org/6/items/tr049_20230511/WALLPAPERS/'
+base= 'https://diggz1.me/WALLPAPERS/'
 if not os.path.exists(download_dir): os.makedirs(download_dir)
 
 def CATEGORIES():
@@ -95,7 +95,7 @@ def CATEGORIES():
 	addDir2('[B][COLOR blue]TRIPPY[/COLOR][/B]',base + 'TRIPPY/',5,icon,FANARTICO)
 	addDir2('[B][COLOR blue]URBAN[/COLOR][/B]',base + 'Urban/',5,icon,FANARTICO)
 	addDir2('[B][COLOR blue]WISEGUYS[/COLOR][/B]', base + 'WISEGUYS/',5,icon,FANARTICO)
-	addDir2('[B][COLOR blue]cg VARIOUS[/COLOR][/B]', base + 'cg%20_VARIOUS/',5,icon,FANARTICO)
+	addDir2('[B][COLOR blue]cg VARIOUS[/COLOR][/B]', base + 'cg_VARIOUS/',5,icon,FANARTICO)
 	
 #############Diggz Wallpapers########
 def Diggz_content(name,url):
