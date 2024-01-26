@@ -277,7 +277,7 @@
             <fanart>fanart.jpg</fanart>
     </assets>
   </extension>
-</addon><addon id="plugin.program.chef20" name="[B][COLOR chartreuse]Chef Nexus Wizard[/COLOR][/B]" version="468" provider-name="Diggz">
+</addon><addon id="plugin.program.chef20" name="[B][COLOR chartreuse]Chef Nexus Wizard[/COLOR][/B]" version="469" provider-name="Diggz">
 	<requires>
 		<import addon="xbmc.python" version="3.0.1" />
 		<import addon="repository.xbmc.org" />		
