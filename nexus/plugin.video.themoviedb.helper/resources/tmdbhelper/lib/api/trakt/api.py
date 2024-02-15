@@ -49,9 +49,6 @@ class TraktAPI(RequestAPI, TraktMethods):
         # Check for saved credentials from previous login
         token = self.get_token()
 
-        # No saved credentials and user trying to use a feature that requires authorization so ask them to login
-        if not token and login:
-            self.ask_for_login()
 
         if not confirmation:
             return self.authorization

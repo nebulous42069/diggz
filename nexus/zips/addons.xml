@@ -332,7 +332,7 @@
     </assets>
     <platform>all</platform>
   </extension>
-</addon><addon id="plugin.program.livetv" name="Diggz Live TV Browser " version="420.2" provider-name="Diggz, JewBMX">
+</addon><addon id="plugin.program.livetv" name="Diggz Live TV Browser " version="420.3" provider-name="Diggz, JewBMX">
     <requires>
         <import addon="script.module.kodi-six" />
     </requires>
@@ -400,6 +400,20 @@
 				<screenshot />
 		</assets>
 	</extension>
+</addon><addon id="plugin.program.sports" name="Diggz Sports Browser " version="420.2" provider-name="Diggz, JewBMX">
+    <requires>
+        <import addon="script.module.kodi-six" />
+    </requires>
+    <extension point="xbmc.python.script" library="addon.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <summary lang="en">Opens Sports Websites from Kodi</summary>
+        <assets>
+            <icon>resources/icon.png</icon>
+        </assets>
+    </extension>
 </addon><addon id="plugin.video.bnwmovie19" name="Black and White Movies" version="420.1.0" provider-name="Anonymous">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
@@ -1238,7 +1252,7 @@ All changes on GitHub: https://github.com/aitschti/plugin.video.sc19
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
-</addon><addon id="plugin.video.themoviedb.helper" version="420.5.2.14~nexus" name="TheMovieDb Helper-No auth popup" provider-name="jurialmunkey">
+</addon><addon id="plugin.video.themoviedb.helper" version="5.2.16~nexus" name="TheMovieDb Helper No Auth Popup" provider-name="jurialmunkey">
 <requires>
   <import addon="xbmc.python" version="3.0.1" />
   <import addon="script.module.requests" version="2.9.1" />
